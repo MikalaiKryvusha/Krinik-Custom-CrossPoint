@@ -1,0 +1,16 @@
+{
+  "version": "cp-2.0.0-krinik-1.1.1-debug5",
+  "bytes": 5421904,
+  "sha256": "284fc17c00c05e3127d44326398c0596ca6510b161f7b2846ce4a8cfa334be7e",
+  "build_env": "x4pro-krinik-debug",
+  "battery_log_interval_seconds": 1200,
+  "charge_events_min_seconds": 10,
+  "feature": "home menu item \u0421\u043e\u043d under \u0424\u043e\u043d\u0430\u0440\u0438\u043a",
+  "hardware_tested": false,
+  "installed": false,
+  "image": "/Users/kryvusha/Xteink/firmware-builds/cp-2.0.0-krinik-1.1.1-debug5.bin",
+  "destination": "/Volumes/X4-KRINIK/.firmware/cp-2.0.0-krinik-1.1.1-debug5.bin",
+  "copied": true,
+  "readback_verified": true,
+  "ejected": true
+}

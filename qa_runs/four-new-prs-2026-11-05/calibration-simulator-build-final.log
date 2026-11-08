@@ -1,0 +1,151 @@
+Processing simulator_x4_pro (platform: native)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+Language              Code  BCP47        Own  Fallback  Unused  Data (B)
+--------------------  ----  -----------  ---  --------  ------  --------
+English               EN    en           664  0         17      11596   
+العربية               AR    ar           450  214       8       13845   
+Azərbaycanca          AZ    az           641  23        17      14762   
+Беларуская            BE    be           441  223       8       15671   
+Български             BG    bg           424  240       8       15705   
+Bosanski              BS    bs           441  223       8       9293    
+Català                CA    ca           657  7         17      14792   
+Valencià              CAV   ca-valencia  657  7         17      14769   
+Čeština               CS    cs           441  223       8       9719    
+Dansk                 DA    da           330  334       7       5904    
+Deutsch               DE    de           632  32        17      12754   
+Español               ES    es           657  7         17      14131   
+فارسی                 FA    fa           453  211       9       14911   
+Suomi                 FI    fi           302  362       5       6034    
+Français              FR    fr           498  166       12      10038   
+עברית                 HE    he           657  7         17      17680   
+Magyar                HU    hu           441  223       8       10247   
+Bahasa Indonesia      ID    id           441  223       8       8681    
+Italiano              IT    it           657  7         17      13407   
+Қазақша               KK    kk           441  223       8       15852   
+Lietuvių              LT    lt           441  223       8       8123    
+Norsk bokmål          NB    nb           441  223       8       8277    
+Nederlands            NL    nl           330  334       7       5979    
+Orangutan             OOK   ook          334  330       4       2695    
+Polski                PL    pl           551  113       12      11675   
+Português (Brasil)    PT    pt-BR        523  141       12      10401   
+Português (Portugal)  P2    pt-PT        523  141       12      11164   
+Română                RO    ro           330  334       7       6736    
+Русский               RU    ru           642  22        17      21793   
+Slovenčina            SK    sk           441  223       8       9860    
+Slovenščina           SI    sl           441  223       8       9224    
+Svenska               SV    sv           640  24        0       12896   
+Türkçe                TR    tr           442  222       8       9280    
+Українська            UK    uk           443  221       8       16066   
+Tiếng Việt            VI    vi           657  7         17      16043   
+
+  Total: 664  |  Used in code: 647  |  Never used: 17
+  Flash: 410,003 B strings (deduped)  +  46,480 B offset tables  =  456,483 B
+
+  Stripping 17 unused string(s) from output.
+
+Code generation complete!
+  Languages: 35
+  String keys: 647
+Generated: src/images/logoSvg.generated.h
+  Original: 654 bytes
+  Minified: 654 bytes (100.0%)
+  Compressed: 382 bytes (58.4%)
+Generated: src/network/html/HomePageHtml.generated.h
+  Original: 2195 bytes
+  Minified: 5362 bytes (244.3%)
+  Compressed: 1932 bytes (88.0%)
+Generated: src/network/html/SettingsPageHtml.generated.h
+  Original: 21779 bytes
+  Minified: 19617 bytes (90.1%)
+  Compressed: 5021 bytes (23.1%)
+Generated: src/network/html/FontsPageHtml.generated.h
+  Original: 8398 bytes
+  Minified: 9046 bytes (107.7%)
+  Compressed: 3296 bytes (39.2%)
+Generated: src/network/html/PluginsPageHtml.generated.h
+  Original: 1277 bytes
+  Minified: 4742 bytes (371.3%)
+  Compressed: 1812 bytes (141.9%)
+Generated: src/network/html/RunnerPageHtml.generated.h
+  Original: 1223 bytes
+  Minified: 731 bytes (59.8%)
+  Compressed: 477 bytes (39.0%)
+Generated: src/network/html/FilesPageHtml.generated.h
+  Original: 146959 bytes
+  Minified: 104126 bytes (70.9%)
+  Compressed: 25458 bytes (17.3%)
+Generated: src/network/html/js/jszip_minJs.generated.h
+  Original: 97630 bytes
+  Minified: 97630 bytes (100.0%)
+  Compressed: 28379 bytes (29.1%)
+Generated: src/network/html/js/epub_optimizerJs.generated.h
+  Original: 68679 bytes
+  Minified: 44771 bytes (65.2%)
+  Compressed: 11319 bytes (16.5%)
+Generated: src/network/html/js/plugin_hostJs.generated.h
+  Original: 10845 bytes
+  Minified: 5971 bytes (55.1%)
+  Compressed: 2204 bytes (20.3%)
+Generated: src/network/html/assets/crosspoint_iconSvg.generated.h
+  Original: 586 bytes
+  Minified: 586 bytes (100.0%)
+  Compressed: 344 bytes (58.7%)
+Generated: src/network/html/assets/iconsSvg.generated.h
+  Original: 1167 bytes
+  Minified: 1167 bytes (100.0%)
+  Compressed: 471 bytes (40.4%)
+Generated: src/network/html/assets/webCss.generated.h
+  Original: 21184 bytes
+  Minified: 17166 bytes (81.0%)
+  Compressed: 4238 bytes (20.0%)
+Generated: src/components/icons/checkbox_onSvg.generated.h
+  Original: 252 bytes
+  Minified: 252 bytes (100.0%)
+  Compressed: 171 bytes (67.9%)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ deep+, Compatibility ~ off
+Found 41 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- Crosspoint Simulator @ 1.0.0+sha.4c78f3f
+|-- JsonSax @ 1.0.0
+|-- Opds @ 1.0.0
+|-- CatalogList @ 1.0.0
+|-- FreeInkUI @ 0.1.0
+|-- Icons @ 1.0.0
+|-- FreeInkFont @ 0.1.0
+|-- ArduinoJson @ 7.4.2
+|-- QRCode @ 0.0.1
+|-- AnimatedGIF @ 2.2.0+sha.d01888f
+|-- Logging
+|-- Memory
+|-- Serialization
+|-- Utf8
+|-- BlePageTurner @ 0.1.0
+|-- Epub
+|-- I18n
+|-- EpdFont
+|-- KOReaderSync
+|-- HttpHeader
+|-- GfxRenderer
+|-- FsHelpers
+|-- expat @ 2.7.3
+|-- LibraryIndex
+|-- BmpToBmpConverter
+|-- Xtc
+|-- TrustedTime
+|-- MiniBidi
+|-- InflateReader
+|-- uzlib @ 2.9.8
+|-- DeviceSecret
+|-- Txt
+Building in release mode
+Compiling .pio/build/simulator_x4_pro/src/activities/util/BmpViewerActivity.o
+Linking .pio/build/simulator_x4_pro/program
+========================= [SUCCESS] Took 13.16 seconds =========================
+
+Environment       Status    Duration
+----------------  --------  ------------
+simulator_x4_pro  SUCCESS   00:00:13.161
+========================= 1 succeeded in 00:00:13.161 =========================

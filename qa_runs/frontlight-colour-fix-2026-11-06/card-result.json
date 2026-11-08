@@ -1,0 +1,13 @@
+{
+  "card": "/Volumes/X4-KRINIK",
+  "uuid": "649C18D8-130F-3C63-AD1A-F6396E1014A6",
+  "device": "disk6s1",
+  "new_firmware": "cp-2.0.0-krinik-1.1.1-debug2.bin",
+  "sha256": "0076ec028760615fcbdda93537576655b1a0aceafa00c0603b8befe68f6e277d",
+  "existing_files_unchanged": 153,
+  "battery_log_backup": "/Users/kryvusha/Xteink/qa_runs/frontlight-colour-fix-2026-11-06/card-state-before/.crosspoint/battery_log.csv",
+  "flashed": false,
+  "ejected": true,
+  "owner_battery_pct": 68,
+  "owner_next_battery_step": "discharge to ~50% before charge measurement"
+}

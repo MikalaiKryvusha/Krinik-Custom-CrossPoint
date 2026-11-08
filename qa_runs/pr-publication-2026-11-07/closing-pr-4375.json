@@ -1,0 +1,160 @@
+{
+  "body": "## Summary\n\n* **Goal:** keep screen-maintenance options in one place with a short explanation.\n* **What changes:** **Settings → Display → Screen Cleaning**, with **Refresh Frequency** and **Sunlight Fading Fix** moved there. Saved values, JSON keys and web settings stay compatible; Sunlight Fading Fix keeps its board restrictions. No refresh behavior changes.\n\n| Display | Screen Cleaning | Refresh Frequency |\n| --- | --- | --- |\n| ![Display](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/07-screen-cleaning/cleaning-display-en.webp) | ![Screen Cleaning](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/07-screen-cleaning/cleaning-menu-en.webp) | ![Refresh options](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/07-screen-cleaning/cleaning-options-en.webp) |\n\n## Scope Check\n\n- [x] I have read SCOPE.md and ROADMAP.md.\n- [x] This PR is **not** a new built-in theme.\n- [x] This PR is **not** a new external network connector.\n- [x] This PR is **not** an interactive app, writing tool, RSS/news/browser, media playback, or PDF feature.\n- [x] The stock firmware does not already handle this well, **and** no other popular CrossPoint fork already does.\n- [x] This PR does not touch `freeink-sdk/`, `lib/hal/`, the bootloader, OTA, or recovery code.\n\n## Additional Context\n\n* On branch commit `ea0a3625`, `default` (C3), `x4pro-gh_release` and the simulator builds passed. In English and Russian: open the submenu, change Refresh Frequency, check the saved value, Back through Display → Settings → Home.\n* This PR provides the submenu. **#4376 adds Refresh Images and Refresh Sleep Screen** with optional one-time delayed redraws to reduce traces of previous screens. Its description shows the combined menu and delay controls.\n\n---\n\n### AI Usage\n\nDid you use AI tools to help write this code? _**YES**_\n",
+  "headRefOid": "ea0a3625cda5a5fc01f668d3b3babf7f7f04ce3f",
+  "mergeable": "MERGEABLE",
+  "number": 4375,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:03:37Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219434",
+      "name": "clang-format",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:03:10Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409128944/job/128513219580",
+      "name": "Title Check",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "PR Formatting"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:12:19Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409900017/job/128515556375",
+      "name": "Title Check",
+      "startedAt": "2026-11-07T20:12:09Z",
+      "status": "COMPLETED",
+      "workflowName": "PR Formatting"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:07:54Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219225",
+      "name": "cppcheck",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:08:36Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219369",
+      "name": "Build default",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:07:51Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219339",
+      "name": "Build sticky",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:13Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219377",
+      "name": "Build x4pro",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:30Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219459",
+      "name": "Build x4c",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:09:38Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219356",
+      "name": "Build papermono",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:08:49Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219425",
+      "name": "Build metalio_eink4",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:08:47Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219457",
+      "name": "Build eego_a4",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:09:56Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219476",
+      "name": "Build picco",
+      "startedAt": "2026-11-07T20:03:00Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:05:01Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128513219487",
+      "name": "unit-tests",
+      "startedAt": "2026-11-07T20:03:12Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:35Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409129063/job/128515145214",
+      "name": "Test Status",
+      "startedAt": "2026-11-07T20:10:32Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:58Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://app.coderabbit.ai/change-stack/crosspoint-reader/crosspoint-reader/pull/4375?scope=ghh_OusAJGA4HG8ljoOV0wJvVx8NmnZIjc2DdjmxOu0xZWA",
+      "name": "CodeRabbit",
+      "startedAt": "2026-11-07T20:03:10Z",
+      "status": "COMPLETED",
+      "workflowName": ""
+    }
+  ],
+  "url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4375"
+}

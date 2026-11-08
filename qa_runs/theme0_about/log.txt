@@ -1,0 +1,67 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_about/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_about/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_about/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[2] [DBG] [UI] Using Classic theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 10:17
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[244] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_about/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[244] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_about/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[244] [DBG] [SDREG] Fonts directory not found: /fonts
+[244] [DBG] [SDREG] Discovery complete: 0 families
+[244] [DBG] [SDFS] SD font system ready (0 families discovered)
+[244] [DBG] [MAIN] Fonts setup
+[244] [DBG] [ACT] Entering activity: Boot
+[244] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[268] [DBG] [ACT] Exiting activity: Boot
+[268] [DBG] [ACT] Entering activity: Home
+[268] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[281] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[4506] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[4908] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[5312] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5883] [DBG] [ACT] Exiting activity: Home
+[5883] [DBG] [ACT] Entering activity: SettingsList
+[5884] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[7581] [DBG] [ACT] Pushed to activity stack, new size = 1
+[7582] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_about/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[7582] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_about/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[7582] [DBG] [DREG] No /.dictionaries directory on SD card
+[7583] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[9005] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[9309] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[9603] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[9906] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[10003] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10003] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10209] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[10503] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[10990] [DBG] [ACT] Pushed to activity stack, new size = 2
+[10990] [DBG] [ACT] Entering activity: About
+[10992] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/theme0_about/shots/about_top.bmp
+[14052] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[14363] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[14711] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[15051] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[15404] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[15760] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[16111] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[16457] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[16808] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[17163] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[17505] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[17858] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[18211] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[18552] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[20013] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20013] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/theme0_about/shots/about_last.bmp

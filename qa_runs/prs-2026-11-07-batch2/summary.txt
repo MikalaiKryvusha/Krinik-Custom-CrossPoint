@@ -1,0 +1,17 @@
+night-epub-images simulator_x4_pro exit=0
+night-epub-images x4pro exit=0
+night-epub-images default exit=0
+night-epub-images host exit=8 99% tests passed, 3 tests failed out of 898
+lyra-title-lines simulator_x4_pro exit=0
+lyra-title-lines x4pro exit=0
+lyra-title-lines default exit=0
+lyra-title-lines host exit=8 99% tests passed, 1 tests failed out of 898
+viewer-reader-controls simulator_x4_pro exit=0
+viewer-reader-controls x4pro exit=0
+viewer-reader-controls default exit=0
+viewer-reader-controls host exit=0 100% tests passed out of 898
+DONE
+sleep x4pro exit=0
+sleep default exit=0
+sleep host exit=0 100% tests passed out of 906
+SLEEP-DONE

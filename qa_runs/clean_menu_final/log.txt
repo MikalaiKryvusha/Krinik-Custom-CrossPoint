@@ -1,0 +1,54 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-05 08:26
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[252] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[252] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[252] [DBG] [SDREG] Fonts directory not found: /fonts
+[252] [DBG] [SDREG] Discovery complete: 0 families
+[252] [DBG] [SDFS] SD font system ready (0 families discovered)
+[252] [DBG] [MAIN] Fonts setup
+[253] [DBG] [ACT] Entering activity: Boot
+[253] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[276] [DBG] [ACT] Exiting activity: Boot
+[276] [DBG] [ACT] Entering activity: Home
+[277] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[291] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2086] [DBG] [ACT] Exiting activity: Home
+[2086] [DBG] [ACT] Entering activity: SettingsList
+[2087] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[3082] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3082] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[3082] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[3082] [DBG] [DREG] No /.dictionaries directory on SD card
+[3086] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[5308] [DBG] [LIST] Settings swipe delta=10 count=14
+[5313] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[7088] [DBG] [ACT] Pushed to activity stack, new size = 2
+[7088] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[7088] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[7089] [DBG] [DREG] No /.dictionaries directory on SD card
+[7093] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/shots/sub.bmp
+[9085] [DBG] [GFX] Time = 1996 ms from clearScreen to displayBuffer
+[10000] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10000] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/shots/popup.bmp
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[11086] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/clean_menu_final/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[11086] [DBG] [DREG] No /.dictionaries directory on SD card
+[11092] [DBG] [GFX] Time = 6 ms from clearScreen to displayBuffer

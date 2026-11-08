@@ -1,0 +1,35 @@
+[0] [DBG] [UI] Using Lyra theme
+[7] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/cal-small-bmp-fixed-0/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/cal-small-bmp-fixed-0/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/cal-small-bmp-fixed-0/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[10] [DBG] [CPS] Resaving settings to update format
+[10] [DBG] [CPS] Settings loaded from file
+[11] [DBG] [UI] Using Lyra theme
+[11] [INF] [CLK] RTC clock read: 2026-11-05 18:08
+[SIM] Frontlight: off, brightness=60%, warmth=50%
+[12] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[17] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/cal-small-bmp-fixed-0/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[18] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/cal-small-bmp-fixed-0/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[18] [DBG] [SDREG] Fonts directory not found: /fonts
+[18] [DBG] [SDREG] Discovery complete: 0 families
+[18] [DBG] [SDFS] SD font system ready (0 families discovered)
+[18] [DBG] [MAIN] Fonts setup
+[18] [DBG] [ACT] Entering activity: Boot
+[20] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[26] [DBG] [ACT] Exiting activity: Boot
+[26] [DBG] [ACT] Entering activity: BmpViewer
+[27] [DBG] [GFX] Time = 9 ms from clearScreen to displayBuffer
+[31] [DBG] [GFX] Time = 13 ms from clearScreen to displayBuffer
+[35] [DBG] [GFX] Time = 17 ms from clearScreen to displayBuffer
+[39] [DBG] [GFX] Cropping 100x100 by 0x0 pix, is bottom-up
+[39] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[43] [DBG] [GFX] Cropping 100x100 by 0x0 pix, is bottom-up
+[43] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[44] [DBG] [GFX] Cropping 100x100 by 0x0 pix, is bottom-up
+[44] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[48] [DBG] [GFX] Cropping 100x100 by 0x0 pix, is bottom-up
+[48] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/cal-small-bmp-fixed-0/shots/image.bmp

@@ -1,0 +1,42 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[0] [DBG] [CPS] Settings loaded from file
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 10:01
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[207] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/2f_bad_files/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[207] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/2f_bad_files/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[207] [DBG] [SDREG] Fonts directory not found: /fonts
+[207] [DBG] [SDREG] Discovery complete: 0 families
+[207] [DBG] [SDFS] SD font system ready (0 families discovered)
+[207] [DBG] [MAIN] Fonts setup
+[207] [DBG] [ACT] Entering activity: Boot
+[208] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[229] [DBG] [ACT] Exiting activity: Boot
+[229] [DBG] [ACT] Entering activity: Home
+[229] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[243] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2810] [DBG] [MAIN] Power button held 306ms, sleeping
+[2810] [DBG] [ACT] Exiting activity: Home
+[2810] [DBG] [ACT] Entering activity: Sleep
+[2810] [DBG] [GFX] Time = 2568 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/2f_bad_files/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[2813] [DBG] [SLP] Skipping invalid sleep image: garbage.bmp
+[2813] [DBG] [SLP] Skipping unsupported sleep image: notes.txt
+[2813] [DBG] [SLP] Skipping unsupported sleep image: pic.png
+[2914] [DBG] [SLP] Loading: /sleep/truncated.bmp
+[2914] [DBG] [CRV] Panel curve loaded: be170a3a
+[2915] [ERR] [BMP] Failed to read source row 797
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/2f_bad_files/sd/.crosspoint/sleep_3584418071173698058.bmp (flags=0x0 errno=2 No such file or directory)
+[2915] [ERR] [SLP] Sleep image conversion failed; drawing /sleep/truncated.bmp directly
+[2915] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[2915] [DBG] [SLP] drawing to 0 x 0
+[2915] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2915] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2915] [ERR] [GFX] Failed to read row 2 from bitmap
+[2915] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2917] [DBG] [MAIN] Entering deep sleep
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/2f_bad_files/sleep6.bmp

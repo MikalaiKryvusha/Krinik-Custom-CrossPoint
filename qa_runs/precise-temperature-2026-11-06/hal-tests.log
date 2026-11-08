@@ -1,0 +1,3 @@
+Real HAL+SDK: runtime option, 10/11% gate, 100/50 idle, low mix, fade/reversal, off/sleep/queued callback and timer failure passed
+Non-dither X4 Pro: original channel rounding, 20ms fade and sleep preserved
+C3/no frontlight: no PWM writes or timer created

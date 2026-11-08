@@ -1,0 +1,26 @@
+[
+  {
+    "elf": "/Users/kryvusha/Xteink/pr-fixes/sleep/.cache/B5/b593cf0b957a3344b59a844546ad30df",
+    "sha256": "e0e10f7e9d4ccfcbdf87f6e15a8a1c8ffab710b33dff39111f57dab0b0d17b99",
+    "machine": 243,
+    "rtc": [
+      "  [ 3] .rtc.data         PROGBITS        50000014 827014 000121 00  WA  0   0  4"
+    ],
+    "cursor": [
+      "   128: 50000014   289 OBJECT  LOCAL  DEFAULT    3 _ZN12_GLOBAL__N_118unsavedSleepCursorE"
+    ],
+    "sleep_dynamic_initializers": []
+  },
+  {
+    "elf": "/Users/kryvusha/Xteink/pr-fixes/sleep/.cache/C7/c7e6f19b20ab3ad921d70bfbf7704b99",
+    "sha256": "692fd9911dd6b42225eb12a8ecbe06a0de6fb5de014263fad29962da47de73d6",
+    "machine": 94,
+    "rtc": [
+      "  [ 3] .rtc.data         PROGBITS        50000200 544200 000121 00  WA  0   0  1"
+    ],
+    "cursor": [
+      "    88: 50000200   289 OBJECT  LOCAL  DEFAULT    3 _ZN12_GLOBAL__N_118unsavedSleepCursorE"
+    ],
+    "sleep_dynamic_initializers": []
+  }
+]

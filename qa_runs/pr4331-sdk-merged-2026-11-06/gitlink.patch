@@ -1,0 +1,7 @@
+diff --git a/freeink-sdk b/freeink-sdk
+index 180c6ff0..fb7e9264 160000
+--- a/freeink-sdk
++++ b/freeink-sdk
+@@ -1 +1 @@
+-Subproject commit 180c6ff02f87c466877631ef2077d48d9e66bb7a
++Subproject commit fb7e926461e8cdf43b22736768a81512df5ddb34

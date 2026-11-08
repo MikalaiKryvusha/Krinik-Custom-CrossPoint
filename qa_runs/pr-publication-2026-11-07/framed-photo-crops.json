@@ -1,0 +1,50 @@
+[
+  {
+    "source": "/Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/review/photo-originals-oriented/photo_pictures_135812.jpg",
+    "source_sha256": "628f672236a2026e06964d12f9b218c890fbab1066b3bcac0e26cab829c4ef46",
+    "output": "/Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/calibration-photos-with-frame/pictures-before-framed.jpg",
+    "crop_xyxy": [
+      416,
+      352,
+      2464,
+      3856
+    ],
+    "method": "lossless jpegtran crop only; photographed screen and bezel preserved; no tone or content changes"
+  },
+  {
+    "source": "/Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/review/photo-originals-oriented/photo_books_135832.jpg",
+    "source_sha256": "e23f354c29cd15be9e703c7ea114afab413a4be667bb1a99886580dae1c15583",
+    "output": "/Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/calibration-photos-with-frame/books-before-framed.jpg",
+    "crop_xyxy": [
+      400,
+      352,
+      2480,
+      3856
+    ],
+    "method": "lossless jpegtran crop only; photographed screen and bezel preserved; no tone or content changes"
+  },
+  {
+    "source": "/Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/review/photo-originals-oriented/v2check_143452.jpg",
+    "source_sha256": "280f019a636bd124e91a1dac9092e1a6076db703b49f7f9c0113df6a64ddb1af",
+    "output": "/Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/calibration-photos-with-frame/books-after-framed.jpg",
+    "crop_xyxy": [
+      416,
+      192,
+      2544,
+      3840
+    ],
+    "method": "lossless jpegtran crop only; photographed screen and bezel preserved; no tone or content changes"
+  },
+  {
+    "source": "/Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/review/photo-originals-oriented/v2check_143634.jpg",
+    "source_sha256": "c39cd3ca672c0bc94e0c98b3c871884faa696e0fab32f7634c026fd2e9a6f1b2",
+    "output": "/Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/calibration-photos-with-frame/pictures-after-framed.jpg",
+    "crop_xyxy": [
+      320,
+      256,
+      2528,
+      3920
+    ],
+    "method": "lossless jpegtran crop only; photographed screen and bezel preserved; no tone or content changes"
+  }
+]

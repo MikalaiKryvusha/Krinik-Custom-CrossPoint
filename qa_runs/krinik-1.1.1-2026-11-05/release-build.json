@@ -1,0 +1,12 @@
+{
+  "source": "fc50d20614d36c9f74decf23b2b4f5f6b16bda05",
+  "sdk": "50196ef183e647ef60edd6726e0243960d790d54",
+  "target": "x4pro-krinik",
+  "size": 5421344,
+  "sha256": "a9104bc7b7b7ae2eea252e4d552cce0b936c2e4d414bb5f93a27ccd88bfdee99",
+  "image_header_chip_id": 9,
+  "embedded_version": "cp-2.0.0-krinik-1.1.1",
+  "embedded_build": "SUCCESS",
+  "host_tests": 935,
+  "simulator_cases": 8
+}

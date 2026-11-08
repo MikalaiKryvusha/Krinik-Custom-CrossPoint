@@ -1,0 +1,9 @@
+unnecessary pending: total=25 warmth=60
+unnecessary pending: total=45 warmth=60
+unnecessary pending: total=50 warmth=30
+unnecessary pending: total=50 warmth=54
+unnecessary pending: total=50 warmth=60
+unnecessary pending: total=75 warmth=36
+unnecessary pending: total=75 warmth=72
+unnecessary pending: total=75 warmth=84
+integer-target cases with unnecessary timer: 535

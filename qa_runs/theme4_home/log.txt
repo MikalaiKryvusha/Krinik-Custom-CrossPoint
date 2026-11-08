@@ -1,0 +1,153 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 10:07
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[227] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[227] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[227] [DBG] [SDREG] Fonts directory not found: /fonts
+[227] [DBG] [SDREG] Discovery complete: 0 families
+[227] [DBG] [SDFS] SD font system ready (0 families discovered)
+[227] [DBG] [MAIN] Fonts setup
+[227] [DBG] [ACT] Entering activity: Boot
+[227] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[260] [DBG] [ACT] Exiting activity: Boot
+[260] [DBG] [ACT] Entering activity: Home
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[261] [DBG] [GFX] Time = 34 ms from clearScreen to displayBuffer
+[263] [DBG] [LIBIDX] phase prepare/prior: 0ms
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_6356251370301420133/book.bin (flags=0x0 errno=2 No such file or directory)
+[265] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[265] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[265] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_1904033327718914090/book.bin (flags=0x0 errno=2 No such file or directory)
+[265] [DBG] [ZIP] Decompressed 169 bytes into 240 bytes
+[265] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[265] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_5112959142090641435/book.bin (flags=0x0 errno=2 No such file or directory)
+[266] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[266] [DBG] [EBP] Parsing content.opf: content.opf
+[267] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_3326978849599308136/book.bin (flags=0x0 errno=2 No such file or directory)
+[267] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[267] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[267] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_16224160833964083072/book.bin (flags=0x0 errno=2 No such file or directory)
+[268] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[268] [DBG] [EBP] Parsing content.opf: content.opf
+[268] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_17215692838832747456/book.bin (flags=0x0 errno=2 No such file or directory)
+[268] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[268] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[269] [DBG] [EBP] Successfully parsed package metadata
+[269] [DBG] [LIBIDX] phase walk/metadata/stage: 6ms
+[269] [DBG] [LIBIDX] phase reconcile: 0ms
+[269] [DBG] [LIBIDX] title sort alloc: 84 bytes, heap 1048576, max block 1048576
+[271] [DBG] [LIBIDX] phase title order: 2ms
+[271] [DBG] [LIBIDX] author sort alloc: 84 bytes, heap 1048576, max block 1048576
+[281] [DBG] [LIBIDX] phase author/orders/emit: 10ms
+[281] [INF] [LIBIDX] built: 6 books, 2 folders, 6 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 18ms
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_17215692838832747456/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_16224160833964083072/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_3326978849599308136/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_5112959142090641435/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_1904033327718914090/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_6356251370301420133/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[282] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_17215692838832747456/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_16224160833964083072/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_3326978849599308136/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_5112959142090641435/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_1904033327718914090/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme4_home/sd/.crosspoint/epub_6356251370301420133/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[297] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[299] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[300] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[302] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[302] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[303] [DBG] [ZIP] Decompressed 2117 bytes into 10118 bytes
+[303] [DBG] [EBP] Successfully parsed content.opf
+[303] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[304] [DBG] [ZIP] Decompressed 16875 bytes into 17041 bytes
+[304] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 130x218)
+[306] [DBG] [JPG] JPEG dimensions: 200x278
+[306] [DBG] [JPG] Scaling source 200x278 (decode grid 200x278) -> 156x218 (target 130x218)
+[360] [DBG] [JPG] Successfully converted JPEG to BMP
+[360] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[360] [DBG] [GFX] Time = 64 ms from clearScreen to displayBuffer
+[362] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[362] [DBG] [EBP] Parsing content.opf: content.opf
+[363] [DBG] [COF] Entering guide state.
+[363] [DBG] [COF] Found cover reference in guide: titlepage.xhtml
+[363] [DBG] [ZIP] Decompressed 2343 bytes into 13023 bytes
+[363] [DBG] [EBP] Successfully parsed content.opf
+[363] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[366] [DBG] [ZIP] Decompressed 318998 bytes into 319190 bytes
+[366] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 130x218)
+[387] [DBG] [JPG] JPEG dimensions: 570x841
+[387] [DBG] [JPG] Scaling source 570x841 (decode grid 570x841) -> 147x217 (target 130x218)
+[485] [DBG] [JPG] Successfully converted JPEG to BMP
+[488] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[488] [DBG] [GFX] Time = 192 ms from clearScreen to displayBuffer
+[490] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[490] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[491] [DBG] [ZIP] Decompressed 958 bytes into 3851 bytes
+[491] [DBG] [EBP] Successfully parsed content.opf
+[491] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[492] [DBG] [ZIP] Decompressed 72712 bytes into 76689 bytes
+[493] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 130x218)
+[500] [DBG] [JPG] JPEG dimensions: 480x800
+[501] [DBG] [JPG] Scaling source 480x800 (decode grid 480x800) -> 130x218 (target 130x218)
+[599] [DBG] [JPG] Successfully converted JPEG to BMP
+[601] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[601] [DBG] [GFX] Time = 305 ms from clearScreen to displayBuffer
+[604] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[604] [DBG] [EBP] Parsing content.opf: content.opf
+[607] [DBG] [COF] Entering guide state.
+[607] [DBG] [COF] Found cover reference in guide: titlepage.xhtml
+[607] [DBG] [ZIP] Decompressed 4942 bytes into 44313 bytes
+[607] [DBG] [EBP] Successfully parsed content.opf
+[607] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[610] [DBG] [ZIP] Decompressed 156319 bytes into 156707 bytes
+[610] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 130x218)
+[629] [DBG] [JPG] JPEG dimensions: 787x1186
+[629] [DBG] [JPG] Scaling source 787x1186 (decode grid 787x1186) -> 144x218 (target 130x218)
+[759] [DBG] [JPG] Successfully converted JPEG to BMP
+[765] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[765] [DBG] [GFX] Time = 469 ms from clearScreen to displayBuffer
+[768] [DBG] [ZIP] Decompressed 169 bytes into 240 bytes
+[768] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[768] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[768] [DBG] [ZIP] Decompressed 534 bytes into 1337 bytes
+[768] [DBG] [EBP] Successfully parsed content.opf
+[768] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[769] [DBG] [ZIP] Decompressed 20023 bytes into 30997 bytes
+[769] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 130x218)
+[776] [DBG] [JPG] JPEG dimensions: 480x800
+[776] [DBG] [JPG] Scaling source 480x800 (decode grid 480x800) -> 130x218 (target 130x218)
+[872] [DBG] [JPG] Successfully converted JPEG to BMP
+[874] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[874] [DBG] [GFX] Time = 578 ms from clearScreen to displayBuffer
+[877] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[877] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[877] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[877] [DBG] [ZIP] Decompressed 462 bytes into 897 bytes
+[877] [DBG] [EBP] Successfully parsed content.opf
+[877] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[878] [DBG] [ZIP] Decompressed 25654 bytes into 41071 bytes
+[878] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 130x218)
+[884] [DBG] [JPG] JPEG dimensions: 480x800
+[884] [DBG] [JPG] Scaling source 480x800 (decode grid 480x800) -> 130x218 (target 130x218)
+[979] [DBG] [JPG] Successfully converted JPEG to BMP
+[981] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[981] [DBG] [GFX] Time = 685 ms from clearScreen to displayBuffer
+[1032] [DBG] [GFX] Time = 18 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/theme4_home/shots/home.bmp

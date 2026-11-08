@@ -1,0 +1,56 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Classic theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 10:09
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[217] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[217] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[217] [DBG] [SDREG] Fonts directory not found: /fonts
+[217] [DBG] [SDREG] Discovery complete: 0 families
+[217] [DBG] [SDFS] SD font system ready (0 families discovered)
+[217] [DBG] [MAIN] Fonts setup
+[217] [DBG] [ACT] Entering activity: Boot
+[217] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[241] [DBG] [ACT] Exiting activity: Boot
+[241] [DBG] [ACT] Entering activity: Home
+[242] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[255] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1509] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1902] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2307] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[2884] [DBG] [ACT] Exiting activity: Home
+[2885] [DBG] [ACT] Entering activity: SettingsList
+[2887] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[4512] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[4989] [DBG] [ACT] Pushed to activity stack, new size = 1
+[4989] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[4989] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[4989] [DBG] [DREG] No /.dictionaries directory on SD card
+[4995] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/theme0_display/shots/display.bmp
+[7006] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[7414] [DBG] [GFX] Time = 7 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[7986] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[7986] [DBG] [DREG] No /.dictionaries directory on SD card
+[7990] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[9508] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[10003] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10003] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[10092] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme0_display/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[10092] [DBG] [DREG] No /.dictionaries directory on SD card
+[10097] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/theme0_display/shots/display_toggled.bmp

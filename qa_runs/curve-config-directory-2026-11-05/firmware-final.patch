@@ -1,0 +1,227 @@
+diff --git a/README.md b/README.md
+index d078f15e..7ab1e349 100644
+--- a/README.md
++++ b/README.md
+@@ -33,7 +33,10 @@
+   «Обновлять заставку», «Обновлять картинки» (ВЫКЛ / через 1 / 2 / 5 мин).
+ - «Экран → Калибровка экрана»: калибровочные экраны картинок и книг (карточка из 33 ступеней), галочки «Калибровка
+   картинок» / «Калибровка книг». Поправку по фото экрана считает [KEINKT Calibrator](https://github.com/MikalaiKryvusha/KEINKT):
+-  `panel_curve.txt` / `panel_curve_book.txt` в корень карты. Картинки в книгах тоже идут через свою кривую (по галочке).
++  `panel_curve.txt` / `panel_curve_book.txt` в скрытую папку `/.crosspoint/` на карте. На Mac скрытые файлы показывает
++  `⌘⇧.`. Для передачи по Wi-Fi включите «Показать скрытые файлы» в настройках прошивки.
++  Старые кривые из корня тоже читаются; существующие файлы в `/.crosspoint/` имеют приоритет.
++  Картинки в книгах тоже идут через свою кривую (по галочке).
+   Кривая читается с карты в момент, когда ставите галочку, — перезагрузка не нужна.
+ - Обложка недавней книги на главном не уходит в негатив после смены темы; шторка над фото выезжает в своей теме.
+ 
+diff --git a/src/util/PanelCurve.cpp b/src/util/PanelCurve.cpp
+index b3be8409..dd9a3152 100644
+--- a/src/util/PanelCurve.cpp
++++ b/src/util/PanelCurve.cpp
+@@ -69,9 +69,9 @@ void useBuiltIn(const Source& src, uint8_t table[256], uint32_t& hash) {
+   LOG_DBG("CRV", "Built-in curve %s: %08x", src.rootPath, static_cast<unsigned>(hash));
+ }
+ 
+-// Reads the card file (root first, then the hidden folder) or falls back to the built-in curve.
++// Prefer the configuration directory, retaining root files as a read-only legacy fallback.
+ void readFromCard(const Source& src, uint8_t table[256], uint32_t& hash) {
+-  const char* path = Storage.exists(src.rootPath) ? src.rootPath : src.hiddenPath;
++  const char* path = Storage.exists(src.hiddenPath) ? src.hiddenPath : src.rootPath;
+   std::string text;
+   if (!Storage.exists(path) || !Storage.readFileToString("CRV", path, 4096, text)) return useBuiltIn(src, table, hash);
+ 
+diff --git a/src/util/PanelCurve.h b/src/util/PanelCurve.h
+index e1d74b18..28362c73 100644
+--- a/src/util/PanelCurve.h
++++ b/src/util/PanelCurve.h
+@@ -9,7 +9,7 @@
+ // makes the file from a photo of the calibration card: KEINKT Calibrator, https://github.com/MikalaiKryvusha/KEINKT
+ // (calibrator/index.html).
+ namespace panelcurve {
+-// The card root wins: a hidden folder is not shown by Finder / Explorer, the root is where users put files.
++// Curves live beside the firmware settings. Root paths remain readable for older configurations.
+ constexpr char ROOT_PATH[] = "/panel_curve.txt";
+ constexpr char PATH[] = "/.crosspoint/panel_curve.txt";
+ 
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index d1384469..1651d614 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -117,3 +117,4 @@ add_test(NAME recursive_dictionary COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT
+ 
+ add_subdirectory(sleep_image_cursor)
+ add_subdirectory(calibration_card)
++add_subdirectory(panel_curve)
+diff --git a/test/panel_curve/CMakeLists.txt b/test/panel_curve/CMakeLists.txt
+new file mode 100644
+index 00000000..170f6645
+--- /dev/null
++++ b/test/panel_curve/CMakeLists.txt
+@@ -0,0 +1,4 @@
++add_executable(PanelCurveTest PanelCurveTest.cpp ${REPO_ROOT}/src/util/PanelCurve.cpp)
++target_include_directories(PanelCurveTest BEFORE PRIVATE stubs ${REPO_ROOT}/src/util)
++target_link_libraries(PanelCurveTest PRIVATE crosspoint_test_common GTest::gtest_main)
++gtest_discover_tests(PanelCurveTest)
+diff --git a/test/panel_curve/PanelCurveTest.cpp b/test/panel_curve/PanelCurveTest.cpp
+new file mode 100644
+index 00000000..eba72cc4
+--- /dev/null
++++ b/test/panel_curve/PanelCurveTest.cpp
+@@ -0,0 +1,111 @@
++#include <gtest/gtest.h>
++
++#include <array>
++#include <string>
++
++#include "CrossPointSettings.h"
++#include "HalStorage.h"
++#include "PanelCurve.h"
++
++class PanelCurveTest : public ::testing::Test {
++ protected:
++  void SetUp() override {
++    Storage = {};
++    SETTINGS = {};
++    panelcurve::forget();
++  }
++  static std::string curve(const int value) {
++    std::string result;
++    for (int i = 0; i < 256; ++i) result += std::to_string(value) + "\n";
++    return result;
++  }
++  std::array<uint8_t, 256> pictures(uint32_t* outHash = nullptr) {
++    std::array<uint8_t, 256> result{};
++    uint32_t hash;
++    EXPECT_TRUE(panelcurve::load(result.data(), hash));
++    if (outHash) *outHash = hash;
++    return result;
++  }
++  void expectConstant(const uint8_t* table, const int value) {
++    for (int i = 0; i < 256; ++i) EXPECT_EQ(table[i], value) << i;
++  }
++};
++
++TEST_F(PanelCurveTest, HiddenPictureCurveWinsOverLegacyRootFile) {
++  Storage.files[panelcurve::PATH] = curve(61);
++  Storage.files[panelcurve::ROOT_PATH] = curve(24);
++  expectConstant(pictures().data(), 61);
++  EXPECT_EQ(Storage.files.at(panelcurve::ROOT_PATH), curve(24));
++  EXPECT_EQ(Storage.files.at(panelcurve::PATH), curve(61));
++}
++
++TEST_F(PanelCurveTest, LegacyCurvesRemainReadableWithoutChangingTheCard) {
++  Storage.files[panelcurve::ROOT_PATH] = curve(45);
++  Storage.files[panelcurve::BOOK_ROOT_PATH] = curve(83);
++  const auto before = Storage.files;
++  expectConstant(pictures().data(), 45);
++  uint32_t hash;
++  expectConstant(panelcurve::bookCurve(hash), 83);
++  EXPECT_EQ(Storage.files, before);
++}
++
++TEST_F(PanelCurveTest, InvalidLegacyDataUsesTheBuiltinCurveWithoutChangingTheCard) {
++  const auto builtin = pictures();
++  Storage.files[panelcurve::ROOT_PATH] = "0 255";
++  panelcurve::forget();
++  EXPECT_EQ(pictures(), builtin);
++  EXPECT_EQ(Storage.files.at(panelcurve::ROOT_PATH), "0 255");
++  EXPECT_FALSE(Storage.exists(panelcurve::PATH));
++}
++
++TEST_F(PanelCurveTest, UnreadableLegacyDataUsesTheBuiltinCurve) {
++  const auto builtin = pictures();
++  Storage.files[panelcurve::ROOT_PATH] = curve(45);
++  Storage.canRead = false;
++  panelcurve::forget();
++  EXPECT_EQ(pictures(), builtin);
++  EXPECT_TRUE(Storage.exists(panelcurve::ROOT_PATH));
++  EXPECT_FALSE(Storage.exists(panelcurve::PATH));
++}
++
++TEST_F(PanelCurveTest, InvalidHiddenConfigurationDoesNotLoadALegacyCurve) {
++  const auto builtin = pictures();
++  Storage.files[panelcurve::PATH] = "0 255";
++  Storage.files[panelcurve::ROOT_PATH] = curve(45);
++  panelcurve::forget();
++  EXPECT_EQ(pictures(), builtin);
++  EXPECT_EQ(Storage.files.at(panelcurve::PATH), "0 255");
++  EXPECT_TRUE(Storage.exists(panelcurve::ROOT_PATH));
++}
++
++TEST_F(PanelCurveTest, ForgetReloadsTheHiddenCurve) {
++  Storage.files[panelcurve::PATH] = curve(45);
++  expectConstant(pictures().data(), 45);
++  Storage.files[panelcurve::PATH] = curve(68);
++  expectConstant(pictures().data(), 45);
++  panelcurve::forget();
++  expectConstant(pictures().data(), 68);
++}
++
++TEST_F(PanelCurveTest, HiddenBookCurveWinsIndependentlyOfThePictureCurve) {
++  Storage.files[panelcurve::PATH] = curve(45);
++  Storage.files[panelcurve::BOOK_PATH] = curve(68);
++  Storage.files[panelcurve::BOOK_ROOT_PATH] = curve(83);
++  expectConstant(pictures().data(), 45);
++  uint32_t hash;
++  expectConstant(panelcurve::bookCurve(hash), 68);
++  EXPECT_EQ(Storage.files.at(panelcurve::BOOK_ROOT_PATH), curve(83));
++}
++
++TEST_F(PanelCurveTest, DisabledCalibrationKeepsFilesAndUsesIdentity) {
++  SETTINGS.panelCalPictures = false;
++  SETTINGS.panelCalBooks = false;
++  Storage.files[panelcurve::ROOT_PATH] = curve(45);
++  Storage.files[panelcurve::BOOK_ROOT_PATH] = curve(83);
++  const auto identity = pictures();
++  for (int i = 0; i < 256; ++i) EXPECT_EQ(identity[i], i);
++  uint32_t hash;
++  EXPECT_EQ(panelcurve::bookCurve(hash), nullptr);
++  EXPECT_TRUE(Storage.exists(panelcurve::ROOT_PATH));
++  EXPECT_TRUE(Storage.exists(panelcurve::BOOK_ROOT_PATH));
++}
+diff --git a/test/panel_curve/stubs/CrossPointSettings.h b/test/panel_curve/stubs/CrossPointSettings.h
+new file mode 100644
+index 00000000..97a4cf37
+--- /dev/null
++++ b/test/panel_curve/stubs/CrossPointSettings.h
+@@ -0,0 +1,7 @@
++#pragma once
++
++struct PanelCurveSettingsStub {
++  bool panelCalPictures = true;
++  bool panelCalBooks = true;
++};
++inline PanelCurveSettingsStub SETTINGS;
+diff --git a/test/panel_curve/stubs/HalStorage.h b/test/panel_curve/stubs/HalStorage.h
+new file mode 100644
+index 00000000..ec437186
+--- /dev/null
++++ b/test/panel_curve/stubs/HalStorage.h
+@@ -0,0 +1,18 @@
++#pragma once
++
++#include <map>
++#include <string>
++
++struct PanelCurveStorageStub {
++  std::map<std::string, std::string> files;
++  bool canRead = true;
++
++  bool exists(const char* path) const { return files.count(path); }
++  bool readFileToString(const char*, const char* path, const size_t limit, std::string& out) const {
++    const auto it = files.find(path);
++    if (!canRead || it == files.end() || it->second.size() > limit) return false;
++    out = it->second;
++    return true;
++  }
++};
++inline PanelCurveStorageStub Storage;
+diff --git a/test/panel_curve/stubs/Logging.h b/test/panel_curve/stubs/Logging.h
+new file mode 100644
+index 00000000..4a023d72
+--- /dev/null
++++ b/test/panel_curve/stubs/Logging.h
+@@ -0,0 +1,3 @@
++#pragma once
++#define LOG_DBG(...) ((void)0)
++#define LOG_ERR(...) ((void)0)

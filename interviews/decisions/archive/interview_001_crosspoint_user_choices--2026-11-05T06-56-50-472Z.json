@@ -1,0 +1,22 @@
+{
+  "kind": "interview",
+  "document": "interviews/interview_001_crosspoint_user_choices.md",
+  "by": "Николай",
+  "at": "2026-11-05T06:56:50.472Z",
+  "atHuman": "5 ноября 2026, 09:56 (+03:00)",
+  "comment": "",
+  "answers": {
+    "Q1": {
+      "choice": "D",
+      "text": "показываем как A, но пишем не прочерки, а  \"Error.\"",
+      "comment": ""
+    },
+    "Q2": {
+      "choice": "A",
+      "text": "",
+      "comment": ""
+    }
+  },
+  "rev": "07352b305894c13010f0c80d41fa289c80b8611e130a8db6d7d1e0f0407e03fb",
+  "revAfter": "b70fce3110bea82533c48c1e157463e761f49f6e29adcf183f4cbbed109bfd2e"
+}

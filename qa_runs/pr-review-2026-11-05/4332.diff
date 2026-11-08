@@ -1,0 +1,127 @@
+diff --git a/lib/I18n/translations/english.yaml b/lib/I18n/translations/english.yaml
+index 81d3eddfc0c..1ffc42a67aa 100644
+--- a/lib/I18n/translations/english.yaml
++++ b/lib/I18n/translations/english.yaml
+@@ -101,6 +101,9 @@ STR_TOUCH_TOGGLE: "Touch"
+ STR_NIGHT_MODE: "Night Mode"
+ STR_QUICK_RESUME_TIMEOUT: "Quick Resume on Timeout"
+ STR_SLEEP_COVER_MODE: "Sleep Screen Cover Mode"
++STR_SLEEP_IMAGE_ORDER: "Sleep Image Order"
++STR_SLEEP_ORDER_RANDOM: "Random"
++STR_SLEEP_ORDER_SEQUENTIAL: "In Order"
+ STR_HIDE_BATTERY: "Hide Battery %"
+ STR_EXTRA_SPACING: "Extra Paragraph Spacing"
+ STR_PARAGRAPH_INDENTATION: "Paragraph Indentation"
+diff --git a/lib/I18n/translations/russian.yaml b/lib/I18n/translations/russian.yaml
+index ba1038530b0..441dfe77162 100644
+--- a/lib/I18n/translations/russian.yaml
++++ b/lib/I18n/translations/russian.yaml
+@@ -98,6 +98,9 @@ STR_TOUCH_TOGGLE: "Сенсор"
+ STR_NIGHT_MODE: "Ночной режим"
+ STR_QUICK_RESUME_TIMEOUT: "Возобновление по таймауту"
+ STR_SLEEP_COVER_MODE: "Режим обложки сна"
++STR_SLEEP_IMAGE_ORDER: "Порядок обложек сна"
++STR_SLEEP_ORDER_RANDOM: "Случайный"
++STR_SLEEP_ORDER_SEQUENTIAL: "По порядку"
+ STR_HIDE_BATTERY: "Скрыть % батареи"
+ STR_EXTRA_SPACING: "Доп. интервал абзаца"
+ STR_PARAGRAPH_INDENTATION: "Отступ абзаца"
+diff --git a/src/CrossPointSettings.h b/src/CrossPointSettings.h
+index f7a9d49ebab..0d49d887ae7 100644
+--- a/src/CrossPointSettings.h
++++ b/src/CrossPointSettings.h
+@@ -30,6 +30,8 @@ class CrossPointSettings : public PersistableStore<CrossPointSettings> {
+     SLEEP_SCREEN_MODE_COUNT
+   };
+   enum SLEEP_SCREEN_COVER_MODE { FIT = 0, CROP = 1, SLEEP_SCREEN_COVER_MODE_COUNT };
++  // Images from /.sleep and /sleep: a shuffled pick, or one after another in path order.
++  enum SLEEP_IMAGE_ORDER { SLEEP_ORDER_RANDOM = 0, SLEEP_ORDER_SEQUENTIAL = 1, SLEEP_IMAGE_ORDER_COUNT };
+   enum SLEEP_SCREEN_COVER_FILTER {
+     NO_FILTER = 0,
+     BLACK_AND_WHITE = 1,
+@@ -257,6 +259,7 @@ class CrossPointSettings : public PersistableStore<CrossPointSettings> {
+   uint8_t screenInverted = 0;
+   // Sleep screen cover mode settings
+   uint8_t sleepScreenCoverMode = FIT;
++  uint8_t sleepImageOrder = SLEEP_ORDER_RANDOM;
+   // Sleep screen cover filter
+   uint8_t sleepScreenCoverFilter = NO_FILTER;
+   // Status bar settings
+diff --git a/src/SettingsList.cpp b/src/SettingsList.cpp
+index 666649e96a0..6d8c67bab3b 100644
+--- a/src/SettingsList.cpp
++++ b/src/SettingsList.cpp
+@@ -36,6 +36,9 @@ void forEachBaseSetting(SettingVisitor visit, void* context) {
+                                "sleepScreen", StrId::STR_CAT_DISPLAY));
+   emit(SettingInfo::Enum(StrId::STR_SLEEP_COVER_MODE, &CrossPointSettings::sleepScreenCoverMode,
+                          {StrId::STR_FIT, StrId::STR_CROP}, "sleepScreenCoverMode", StrId::STR_CAT_DISPLAY));
++  emit(SettingInfo::Enum(StrId::STR_SLEEP_IMAGE_ORDER, &CrossPointSettings::sleepImageOrder,
++                         {StrId::STR_SLEEP_ORDER_RANDOM, StrId::STR_SLEEP_ORDER_SEQUENTIAL}, "sleepImageOrder",
++                         StrId::STR_CAT_DISPLAY));
+   emit(SettingInfo::Enum(StrId::STR_SLEEP_COVER_FILTER, &CrossPointSettings::sleepScreenCoverFilter,
+                          {StrId::STR_NONE_OPT, StrId::STR_FILTER_CONTRAST, StrId::STR_INVERTED},
+                          "sleepScreenCoverFilter", StrId::STR_CAT_DISPLAY));
+diff --git a/src/activities/boot_sleep/SleepActivity.cpp b/src/activities/boot_sleep/SleepActivity.cpp
+index 1a2f2272fd8..9ce72765017 100644
+--- a/src/activities/boot_sleep/SleepActivity.cpp
++++ b/src/activities/boot_sleep/SleepActivity.cpp
+@@ -505,6 +505,46 @@ bool findNextValidSleepImage(HalFile& dir, const SleepRecentKind recentKind, cha
+   return false;
+ }
+ 
++// Sequential sleep images: each sleep shows the next valid image after the last one shown, in path order across
++// both sleep directories, wrapping to the first. The folders are rescanned on every sleep, so added and removed
++// images take effect at once. One pass, no name list in RAM; the last shown path is kept on the card.
++constexpr char SLEEP_LAST_SHOWN_PATH[] = "/.crosspoint/sleep_last.txt";
++
++bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirPath, std::string& selectedPath) {
++  auto name = makeUniqueNoThrow<char[]>(MAX_SLEEP_FILE_NAME_LEN);
++  if (!name) {
++    LOG_ERR("SLP", "OOM: sleep filename buffer");
++    return false;
++  }
++  std::string lastShown;
++  if (Storage.exists(SLEEP_LAST_SHOWN_PATH)) {
++    Storage.readFileToString("SLP", SLEEP_LAST_SHOWN_PATH, MAX_SLEEP_FILE_NAME_LEN + 32, lastShown);
++  }
++
++  std::string first;
++  std::string next;
++  std::string path;
++  for (const char* dirPath : {firstDirPath, secondDirPath}) {
++    auto dir = Storage.open(dirPath);
++    if (!dir || !dir.isDirectory()) continue;
++    while (findNextValidSleepImage(dir, SleepRecentKind::Standard, name.get())) {
++      path = dirPath;
++      path += '/';
++      path += name.get();
++      if (first.empty() || path < first) first = path;
++      if (path > lastShown && (next.empty() || path < next)) next = path;
++    }
++  }
++  if (first.empty()) return false;
++
++  selectedPath = next.empty() ? first : next;
++  Storage.mkdir("/.crosspoint");
++  if (!Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()))) {
++    LOG_ERR("SLP", "Failed to save last sleep image");
++  }
++  return true;
++}
++
+ bool selectRandomSleepFile(const char* firstDirPath, const char* secondDirPath, const SleepRecentKind recentKind,
+                            std::string& selectedPath) {
+   auto name = makeUniqueNoThrow<char[]>(MAX_SLEEP_FILE_NAME_LEN);
+@@ -806,7 +846,11 @@ void SleepActivity::renderCustomSleepScreen() const {
+   if (renderCustomSleepBmp("/sleep.bmp")) return;
+ 
+   std::string selectedPath;
+-  selectRandomSleepFile("/.sleep", "/sleep", SleepRecentKind::Standard, selectedPath);
++  if (SETTINGS.sleepImageOrder == CrossPointSettings::SLEEP_ORDER_SEQUENTIAL) {
++    selectNextSleepFileInOrder("/.sleep", "/sleep", selectedPath);
++  } else {
++    selectRandomSleepFile("/.sleep", "/sleep", SleepRecentKind::Standard, selectedPath);
++  }
+   if (!selectedPath.empty()) {
+     delay(100);
+     if (renderCustomSleepBmp(selectedPath)) return;

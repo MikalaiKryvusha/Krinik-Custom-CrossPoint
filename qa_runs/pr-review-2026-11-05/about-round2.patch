@@ -1,0 +1,55 @@
+diff --git a/freeink-sdk b/freeink-sdk
+--- a/freeink-sdk
++++ b/freeink-sdk
+@@ -1 +1 @@
+-Subproject commit 5e94fe7480f019c89fbf691aef87523eb1b46704
++Subproject commit 5e94fe7480f019c89fbf691aef87523eb1b46704-dirty
+diff --git a/lib/hal/HalStorage.cpp b/lib/hal/HalStorage.cpp
+index 006f4f0d..29c083b8 100644
+--- a/lib/hal/HalStorage.cpp
++++ b/lib/hal/HalStorage.cpp
+@@ -124,7 +124,7 @@ UsbDriveState HalStorage::usbDriveState() const {
+   return SDCard.method(__VA_ARGS__);
+ 
+ uint64_t HalStorage::sdTotalBytes() { HAL_STORAGE_WRAPPED_CALL(sdTotalBytes); }
+-uint64_t HalStorage::sdUsedBytes() { HAL_STORAGE_WRAPPED_CALL(sdUsedBytes); }
++bool HalStorage::sdUsedBytes(uint64_t& usedBytes) { HAL_STORAGE_WRAPPED_CALL(sdUsedBytes, usedBytes); }
+ 
+ std::vector<String> HalStorage::listFiles(const char* path, int maxFiles) {
+   HAL_STORAGE_WRAPPED_CALL(listFiles, path, maxFiles);
+diff --git a/lib/hal/HalStorage.h b/lib/hal/HalStorage.h
+index 0e3964ba..bee6736b 100644
+--- a/lib/hal/HalStorage.h
++++ b/lib/hal/HalStorage.h
+@@ -38,7 +38,8 @@ class HalStorage {
+   bool usbDriveHostSuspended() const;
+   // Card capacity and used space (the first used-space call scans the FAT; the SDK caches it ~20 s).
+   uint64_t sdTotalBytes();
+-  uint64_t sdUsedBytes();
++  // False means unavailable, including a failed scan; zero can also be a valid result.
++  bool sdUsedBytes(uint64_t& usedBytes);
+   std::vector<String> listFiles(const char* path = "/", int maxFiles = 200);
+   // Read the entire file at `path` into a String. Returns empty string on failure.
+   String readFile(const char* path);
+diff --git a/src/activities/settings/AboutActivity.cpp b/src/activities/settings/AboutActivity.cpp
+index d44000cc..fc781fae 100644
+--- a/src/activities/settings/AboutActivity.cpp
++++ b/src/activities/settings/AboutActivity.cpp
+@@ -159,10 +159,14 @@ void AboutActivity::onEnter() {
+     rowValues_[ITEM_SD_SIZE] = "No card";
+     rowValues_[ITEM_SD_USED] = rowValues_[ITEM_SD_FREE] = "-";
+   } else {
+-    const uint64_t sdUsed = Storage.sdUsedBytes();
+     rowValues_[ITEM_SD_SIZE] = formatBytes(sdTotal);
+-    rowValues_[ITEM_SD_USED] = formatBytes(sdUsed);
+-    rowValues_[ITEM_SD_FREE] = formatBytes(sdUsed <= sdTotal ? sdTotal - sdUsed : 0);
++    uint64_t sdUsed = 0;
++    if (Storage.sdUsedBytes(sdUsed)) {
++      rowValues_[ITEM_SD_USED] = formatBytes(sdUsed);
++      rowValues_[ITEM_SD_FREE] = formatBytes(sdUsed <= sdTotal ? sdTotal - sdUsed : 0);
++    } else {
++      rowValues_[ITEM_SD_USED] = rowValues_[ITEM_SD_FREE] = "Error.";
++    }
+   }
+ }
+ 

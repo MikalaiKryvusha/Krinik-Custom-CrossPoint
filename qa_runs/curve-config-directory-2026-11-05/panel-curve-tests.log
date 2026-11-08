@@ -1,0 +1,27 @@
+Test project /Users/kryvusha/Xteink/pr-fixes/krinik/build/test
+      Start 921: PanelCurveTest.HiddenPictureCurveWinsOverLegacyRootFile
+ 1/11 Test #921: PanelCurveTest.HiddenPictureCurveWinsOverLegacyRootFile ....................   Passed    0.00 sec
+      Start 922: PanelCurveTest.ValidLegacyCurvesMoveToTheConfigurationDirectory
+ 2/11 Test #922: PanelCurveTest.ValidLegacyCurvesMoveToTheConfigurationDirectory ............   Passed    0.00 sec
+      Start 923: PanelCurveTest.ExistingConfigurationDirectoryDoesNotNeedCreation
+ 3/11 Test #923: PanelCurveTest.ExistingConfigurationDirectoryDoesNotNeedCreation ...........   Passed    0.00 sec
+      Start 924: PanelCurveTest.FailedRenameKeepsTheLegacyFileAndItsCorrection
+ 4/11 Test #924: PanelCurveTest.FailedRenameKeepsTheLegacyFileAndItsCorrection ..............   Passed    0.00 sec
+      Start 925: PanelCurveTest.FailedDirectoryCreationKeepsTheLegacyFileAndItsCorrection
+ 5/11 Test #925: PanelCurveTest.FailedDirectoryCreationKeepsTheLegacyFileAndItsCorrection ...   Passed    0.00 sec
+      Start 926: PanelCurveTest.InvalidLegacyDataIsNotMoved
+ 6/11 Test #926: PanelCurveTest.InvalidLegacyDataIsNotMoved .................................   Passed    0.00 sec
+      Start 927: PanelCurveTest.UnreadableLegacyDataIsNotMoved
+ 7/11 Test #927: PanelCurveTest.UnreadableLegacyDataIsNotMoved ..............................   Passed    0.00 sec
+      Start 928: PanelCurveTest.InvalidHiddenConfigurationDoesNotLoadOrMoveALegacyCurve
+ 8/11 Test #928: PanelCurveTest.InvalidHiddenConfigurationDoesNotLoadOrMoveALegacyCurve .....   Passed    0.00 sec
+      Start 929: PanelCurveTest.ForgetReloadsTheHiddenCurve
+ 9/11 Test #929: PanelCurveTest.ForgetReloadsTheHiddenCurve .................................   Passed    0.00 sec
+      Start 930: PanelCurveTest.HiddenBookCurveWinsIndependentlyOfThePictureCurve
+10/11 Test #930: PanelCurveTest.HiddenBookCurveWinsIndependentlyOfThePictureCurve ...........   Passed    0.00 sec
+      Start 931: PanelCurveTest.DisabledCalibrationDoesNotMoveFiles
+11/11 Test #931: PanelCurveTest.DisabledCalibrationDoesNotMoveFiles .........................   Passed    0.00 sec
+
+100% tests passed out of 11
+
+Total Test time (real) =   0.07 sec

@@ -1,0 +1,143 @@
+[0] [DBG] [UI] Using Lyra theme
+[7] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[10] [DBG] [CPS] Resaving settings to update format
+[10] [DBG] [CPS] Settings loaded from file
+[12] [DBG] [UI] Using Lyra theme
+[12] [INF] [CLK] RTC clock read: 2026-11-05 09:42
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[12] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[252] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[252] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[252] [DBG] [SDREG] Fonts directory not found: /fonts
+[252] [DBG] [SDREG] Discovery complete: 0 families
+[252] [DBG] [SDFS] SD font system ready (0 families discovered)
+[252] [DBG] [MAIN] Fonts setup
+[253] [DBG] [ACT] Entering activity: Boot
+[255] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[264] [DBG] [ACT] Exiting activity: Boot
+[265] [DBG] [ACT] Entering activity: Home
+[267] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[283] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2087] [DBG] [ACT] Exiting activity: Home
+[2087] [DBG] [ACT] Entering activity: SettingsList
+[2088] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[3580] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3581] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[3581] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[3581] [DBG] [DREG] No /.dictionaries directory on SD card
+[3587] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[5808] [DBG] [LIST] Settings swipe delta=10 count=15
+[5813] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[7803] [DBG] [LIST] Settings swipe delta=10 count=15
+[7809] [DBG] [GFX] Time = 6 ms from clearScreen to displayBuffer
+[9581] [DBG] [ACT] Pushed to activity stack, new size = 2
+[9581] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[9581] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[9581] [DBG] [DREG] No /.dictionaries directory on SD card
+[9589] [DBG] [GFX] Time = 7 ms from clearScreen to displayBuffer
+[10011] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10011] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[11648] [DBG] [ACT] Exiting activity: Settings
+[11648] [DBG] [ACT] Exiting activity: Settings
+[11648] [DBG] [ACT] Exiting activity: SettingsList
+[11648] [DBG] [UI] Using Lyra theme
+[11648] [DBG] [ACT] Entering activity: EpubReader
+[11648] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[11648] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[11649] [DBG] [GFX] Time = 2067 ms from clearScreen to displayBuffer
+[11655] [DBG] [EBP] Loading ePub: /.crosspoint/calibration/books_card_v1.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.crosspoint/epub_17237363056044662373/book.bin (flags=0x0 errno=2 No such file or directory)
+[11656] [DBG] [EBP] Cache not found, building spine/TOC cache
+[11656] [DBG] [BMC] Entering write mode
+[11656] [DBG] [BMC] Beginning content opf pass
+[11657] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[11658] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[11658] [DBG] [COF] Using fast index for 3 manifest items
+[11658] [DBG] [EBP] Successfully parsed content.opf
+[11658] [DBG] [EBP] OPF pass completed in 2 ms
+[11658] [DBG] [BMC] Beginning toc pass
+[11658] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[11658] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[11658] [DBG] [NAV] Found nav toc element
+[11658] [DBG] [NAV] Finished parsing nav toc
+[11658] [DBG] [EBP] Parsed TOC nav items
+[11658] [DBG] [EBP] TOC pass completed in 0 ms
+[11658] [DBG] [BMC] Wrote 1 spine, 1 TOC entries
+[11659] [DBG] [BMC] Successfully built book.bin
+[11659] [DBG] [EBP] buildBookBin completed in 1 ms
+[11659] [DBG] [EBP] Total indexing completed in 3 ms
+[11659] [DBG] [EBP] No CSS files to parse, but CssParser created for inline styles
+[11659] [DBG] [EBP] CSS files to parse: 0
+[11659] [DBG] [CSS] Saved 0 rules to complete cache
+[11659] [DBG] [EBP] Loaded 0 CSS style rules from 0 files (0 identical duplicates skipped, complete)
+[11659] [DBG] [BMC] Loaded cache data: 1 spine, 1 TOC entries
+[11659] [DBG] [EBP] Loaded ePub: /.crosspoint/calibration/books_card_v1.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.crosspoint/epub_17237363056044662373/progress.bin (flags=0x0 errno=2 No such file or directory)
+[11660] [DBG] [EBP] Core Metadata: cover(0)=, textReference(0)=
+[11660] [DBG] [LOOP] New max loop duration: 69 ms (activity: 69 ms)
+[11660] [DBG] [ERS] Loading file: OEBPS/card.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.crosspoint/epub_17237363056044662373/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[11660] [DBG] [ERS] Cache not found, building...
+[11660] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[11661] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_17237363056044662373/html/.tmp_0.html (274 bytes)
+[11662] [DBG] [CSS] Loaded 0 rules from complete cache
+[11663] [DBG] [EHP] Found image: src=card.png
+[11663] [DBG] [EHP] Image dimensions: 480x800
+[11663] [DBG] [EHP] Display size from CSS width: 267x445
+[11663] [DBG] [EHP] Time to parse and build pages: 0 ms
+[11663] [DBG] [SCT] Page 0 processed
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.crosspoint/epub_17237363056044662373/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[11664] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[11666] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.crosspoint/epub_17237363056044662373/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[11666] [DBG] [IMG] Lazy-extracting OEBPS/card.png -> /.crosspoint/epub_17237363056044662373/img_0_0.png
+[11666] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_17237363056044662373/img_0_0.png
+[11667] [DBG] [IMG] Using PNG decoder
+[11667] [DBG] [PNG] Decoding PNG: /.crosspoint/epub_17237363056044662373/img_0_0.png
+[11671] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 267x445 (scale 0.56), type: 6, bpp: 8
+[11671] [DBG] [IMG] Cache stream started: /.crosspoint/epub_17237363056044662373/img_0_0.pxc (267x445, band 16 rows)
+[11677] [DBG] [PNG] PNG decoding complete - render time: 6 ms
+[11677] [DBG] [IMG] Cache written: /.crosspoint/epub_17237363056044662373/img_0_0.pxc (267x445, 29819 bytes)
+[11682] [DBG] [IMG] Decode successful
+[11683] [DBG] [GFX] Time = 17 ms from clearScreen to displayBuffer
+[11684] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11684] [DBG] [IMG] Loading from cache: /.crosspoint/epub_17237363056044662373/img_0_0.pxc (267x445)
+[11685] [DBG] [IMG] Cache render complete (payload now in RAM)
+[11685] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11685] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11685] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11685] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11685] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11685] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11686] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11686] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11686] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11686] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11686] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[11691] [DBG] [ERS] Page render (tiled): prewarm=0ms bw_render=19ms display=1ms gray_lsb=1ms gray_msb=1ms gray_display=4ms cleanup=1ms total=27ms
+[11691] [DBG] [ERS] Rendered page in 27ms
+[11691] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[20066] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20066] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/cal_books2/shots/book.bmp
+[25261] [DBG] [ACT] Exiting activity: EpubReader
+[25261] [INF] [MEM] reader exit: free=1048576 max_block=1048576
+[25262] [DBG] [ACT] Entering activity: SettingsList
+[25263] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[25277] [DBG] [ACT] Pushed to activity stack, new size = 1
+[25277] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[25277] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_books2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[25277] [DBG] [DREG] No /.dictionaries directory on SD card
+[25279] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/cal_books2/shots/back.bmp

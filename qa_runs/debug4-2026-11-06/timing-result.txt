@@ -1,0 +1,1 @@
+PASS: 20min boundary, no 60s tick, charge throttle/reset, 32-bit rollover. Host unsigned long modeled as uint32_t to match ESP32.

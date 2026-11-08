@@ -1,0 +1,110 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[1] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-05 16:36
+[SIM] Frontlight: on, brightness=100%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[2] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [SDREG] Fonts directory not found: /fonts
+[2] [DBG] [SDREG] Discovery complete: 0 families
+[2] [DBG] [SDFS] SD font family not found on card: Literata (clearing)
+[2] [DBG] [SDFS] SD font system ready (0 families discovered)
+[2] [DBG] [MAIN] Fonts setup
+[2] [DBG] [ACT] Entering activity: Boot
+[2] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[7] [DBG] [ACT] Exiting activity: Boot
+[7] [DBG] [ACT] Entering activity: BmpViewer
+[7] [DBG] [CRV] Built-in curve /panel_curve.txt: be170a3a
+[7] [DBG] [BMP] Show 1/1: /.crosspoint/calibration/pictures_landscape_v2.bmp
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/sd/.crosspoint/view_cache.idx (flags=0x0 errno=2 No such file or directory)
+[34] [DBG] [GFX] Cropping 800x480 by 0x0 pix, is bottom-up
+[34] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[47] [DBG] [GFX] Cropping 800x480 by 0x0 pix, is bottom-up
+[47] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[64] [DBG] [GFX] Cropping 800x480 by 0x0 pix, is bottom-up
+[64] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[72] [DBG] [LOOP] New max loop duration: 65 ms (activity: 65 ms)
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/card.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2050.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2060.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2070.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2080.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2090.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2100.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2110.bmp
+[2166] [DBG] [ACT] Exiting activity: BmpViewer
+[2166] [DBG] [ACT] Entering activity: SettingsList
+[2166] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2166] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2166] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2166] [DBG] [DREG] No /.dictionaries directory on SD card
+[2167] [DBG] [ACT] Pushed to activity stack, new size = 2
+[2167] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2167] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2167] [DBG] [DREG] No /.dictionaries directory on SD card
+[2169] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2120.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2130.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2140.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2150.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2160.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2170.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2180.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2190.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2200.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2210.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2220.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2230.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2240.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2250.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2260.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2270.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2280.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2290.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2300.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2310.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2320.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2330.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2340.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2350.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2360.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2370.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2380.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2390.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2400.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2410.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2420.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2430.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2440.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2450.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2460.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2470.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2480.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2490.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/transition-2500.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/calibration.bmp
+[3131] [DBG] [ACT] Exiting activity: Settings
+[3132] [DBG] [ACT] Popped from activity stack, new size = 1
+[3132] [DBG] [ACT] Handling result for popped activity
+[3137] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/display.bmp
+[4134] [DBG] [ACT] Exiting activity: Settings
+[4134] [DBG] [ACT] Popped from activity stack, new size = 0
+[4134] [DBG] [ACT] Handling result for popped activity
+[4135] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/settings.bmp
+[5121] [DBG] [ACT] Exiting activity: SettingsList
+[5121] [DBG] [UI] Using Lyra theme
+[5121] [DBG] [ACT] Entering activity: Home
+[5122] [DBG] [HOME] Clean Home Screen: FULL refresh
+[5122] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5142] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-pictures-3/shots/home.bmp

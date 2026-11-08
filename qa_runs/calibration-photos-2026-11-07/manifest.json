@@ -1,0 +1,30 @@
+[
+  {
+    "device_path": "/sdcard/DCIM/Camera/20261107_232016.jpg",
+    "local_path": "/Users/kryvusha/Xteink/qa_runs/calibration-photos-2026-11-07/originals/20261107_232016.jpg",
+    "sha256": "067ad6c952a090e266149bf5b05628f54f6b4a547af5500b527e35fb4728e57e",
+    "device_md5": "529ee5154706c06ff1a2dd48a95c8675",
+    "bytes": 3233843
+  },
+  {
+    "device_path": "/sdcard/DCIM/Camera/20261107_232039.jpg",
+    "local_path": "/Users/kryvusha/Xteink/qa_runs/calibration-photos-2026-11-07/originals/20261107_232039.jpg",
+    "sha256": "739bd90eb0344b9dfa79fb8b8ca159ee0744425c7df034654fa808a083b67971",
+    "device_md5": "1ca991c27047f0f42bb081d8b5ce54f0",
+    "bytes": 3167287
+  },
+  {
+    "device_path": "/sdcard/DCIM/Camera/20261107_232137.jpg",
+    "local_path": "/Users/kryvusha/Xteink/qa_runs/calibration-photos-2026-11-07/originals/20261107_232137.jpg",
+    "sha256": "f41fb703b7fd501fe089d128fb5448466e6f4a02e9d7b33d96d348633e526556",
+    "device_md5": "dea235485f1e2f7413953080346aa81f",
+    "bytes": 3320032
+  },
+  {
+    "device_path": "/sdcard/DCIM/Camera/20261107_232147.jpg",
+    "local_path": "/Users/kryvusha/Xteink/qa_runs/calibration-photos-2026-11-07/originals/20261107_232147.jpg",
+    "sha256": "8c21894cb797e17bce95b1a08483438bf09095783a1607e55274084d91eb6ec6",
+    "device_md5": "b8e337321e0ca0ff1e98265583c9ae52",
+    "bytes": 3411779
+  }
+]

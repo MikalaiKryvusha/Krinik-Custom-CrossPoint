@@ -1,0 +1,30 @@
+{
+  "firmware_sha256": "c351f56e9ee3ebe18d1c01c69d451848b08bab615f2a37bb53a3a84af3520dd5",
+  "guide_sha256": "03c69a1fc2c9ebcb20e1a8b99eca2969c3c51ccf162dcd253ba75834360fe122",
+  "index_updates": [
+    {
+      "row": 0,
+      "old_path": "Калибровка.epub",
+      "path": "/КАЛИБРОВКА.epub",
+      "old_size": 248394,
+      "size": 251017
+    },
+    {
+      "row": 3,
+      "old_path": "РУКОВОДСТВО.epub",
+      "path": "/РУКОВОДСТВО.epub",
+      "old_size": 38849,
+      "size": 40480
+    }
+  ],
+  "recent_before": 7,
+  "recent_after": 6,
+  "index_records": 6,
+  "protected_files_verified": 14,
+  "backup": "/Users/kryvusha/Xteink/qa_runs/card-final-2026-11-05/before",
+  "physical_flash": "owner confirmed after update",
+  "visual_ghost_check": "owner confirmed: «да, остались по одному экзеппляру»",
+  "post_cleanup_verified": true,
+  "card_ejected": true,
+  "settings_version_header": "owner: «все хорошо помещается»"
+}

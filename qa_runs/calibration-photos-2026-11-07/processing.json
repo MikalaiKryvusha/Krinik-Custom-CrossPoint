@@ -1,0 +1,56 @@
+{
+  "normalization": "one identical global affine RGB map for all four images",
+  "black_rgb": [
+    46.0,
+    37.0,
+    27.0
+  ],
+  "white_rgb": [
+    250.0,
+    222.0,
+    169.0
+  ],
+  "output_black": 12,
+  "output_white": 242,
+  "per_image_histogram_matching": false,
+  "local_tone_edits": false,
+  "gamma_change": false,
+  "inpainting_or_generation": false,
+  "clipping": {
+    "20261107_232016.jpg": {
+      "channels_below_0_fraction": 2.6041666666666666e-06,
+      "channels_above_255_fraction": 0.0
+    },
+    "20261107_232039.jpg": {
+      "channels_below_0_fraction": 2.170138888888889e-07,
+      "channels_above_255_fraction": 0.0009312065972222223
+    },
+    "20261107_232137.jpg": {
+      "channels_below_0_fraction": 3.4722222222222224e-06,
+      "channels_above_255_fraction": 0.0
+    },
+    "20261107_232147.jpg": {
+      "channels_below_0_fraction": 0.00012044270833333334,
+      "channels_above_255_fraction": 0.0
+    }
+  },
+  "pairs": [
+    {
+      "scene": "Oblivion Remastered screenshot",
+      "off": "20261107_232016.jpg",
+      "on": "20261107_232137.jpg"
+    },
+    {
+      "scene": "Artwork inspired by Oblivion",
+      "off": "20261107_232039.jpg",
+      "on": "20261107_232147.jpg"
+    }
+  ],
+  "owner_confirmed_order": true,
+  "conditions": {
+    "frontlight_brightness_percent": 100,
+    "frontlight_warmth_percent": 100,
+    "external_light": "ring lamp"
+  },
+  "camera_note": "EXIF exposure-bias tags differ (+0.3, +1.0, 0.0, -0.3 EV); shutter and ISO tags all show approximately 1/350 s and ISO 200. These photographs are illustrative, not a controlled metrology run."
+}

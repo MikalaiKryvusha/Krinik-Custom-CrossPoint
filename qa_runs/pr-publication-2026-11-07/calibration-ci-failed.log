@@ -1,0 +1,70 @@
+cppcheck	Run cppcheck	﻿2026-11-07T20:13:24.7223356Z ##[group]Run pio check --fail-on-defect low --fail-on-defect medium --fail-on-defect high
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7224060Z ^[[36;1mpio check --fail-on-defect low --fail-on-defect medium --fail-on-defect high^[[0m
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7244984Z shell: /usr/bin/bash -e {0}
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7245254Z env:
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7245532Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.18/x64
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7246028Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.18/x64/lib/pkgconfig
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7246489Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7247045Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7247465Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.18/x64
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7248186Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.18/x64/lib
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7248619Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/_temp/uv-python-dir
+cppcheck	Run cppcheck	2026-11-07T20:13:24.7248952Z ##[endgroup]
+cppcheck	Run cppcheck	2026-11-07T20:13:25.5850092Z Checking default > cppcheck (platform: https://github.com/pioarduino/platform-espressif32/releases/download/55.03.311/platform-espressif32.zip; board: esp32-c3-devkitm-1; framework: arduino)
+cppcheck	Run cppcheck	2026-11-07T20:13:25.5851948Z --------------------------------------------------------------------------------
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1065730Z git version 2.56.0
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1100169Z hint: Using 'master' as the name for the initial branch. This default branch name
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1100949Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1101524Z hint: to use in all of your new repositories, which will suppress this warning,
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1101931Z hint: call:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1102125Z hint:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1102494Z hint: 	git config --global init.defaultBranch <name>
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1102819Z hint:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1103128Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1103652Z hint: 'development'. The just-created branch can be renamed via this command:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1104067Z hint:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1104274Z hint: 	git branch -m <name>
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1104517Z hint:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1104973Z hint: Disable this message with "git config set advice.defaultBranchName false"
+cppcheck	Run cppcheck	2026-11-07T20:13:36.1106229Z Initialized empty Git repository in /home/runner/.platformio/.cache/tmp/pkg-installing-vz0n5z20/.git/
+cppcheck	Run cppcheck	2026-11-07T20:13:36.6733506Z From https://github.com/bitbank2/JPEGDEC
+cppcheck	Run cppcheck	2026-11-07T20:13:36.6734296Z  * branch            86282979224c8a32fd51e091ed5a35b0c699a52b -> FETCH_HEAD
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7015079Z HEAD is now at 8628297 Fixed 2 issues which occur when decoding progressive images
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7572457Z git version 2.56.0
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7604062Z hint: Using 'master' as the name for the initial branch. This default branch name
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7605167Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7606346Z hint: to use in all of your new repositories, which will suppress this warning,
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7607232Z hint: call:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7607659Z hint:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7608622Z hint: 	git config --global init.defaultBranch <name>
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7609346Z hint:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7609867Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7610489Z hint: 'development'. The just-created branch can be renamed via this command:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7611119Z hint:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7611540Z hint: 	git branch -m <name>
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7611890Z hint:
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7612377Z hint: Disable this message with "git config set advice.defaultBranchName false"
+cppcheck	Run cppcheck	2026-11-07T20:13:36.7613138Z Initialized empty Git repository in /home/runner/.platformio/.cache/tmp/pkg-installing-3srz3zo0/.git/
+cppcheck	Run cppcheck	2026-11-07T20:13:37.7193923Z From https://github.com/bitbank2/AnimatedGIF
+cppcheck	Run cppcheck	2026-11-07T20:13:37.7194990Z  * branch            67cfacafe12ef4926c7713342c57d2a4af040e5e -> FETCH_HEAD
+cppcheck	Run cppcheck	2026-11-07T20:13:37.8548969Z HEAD is now at 67cfaca Updated tests with new corrupt files and fixed a crash from invalid block sizes
+cppcheck	Run cppcheck	2026-11-07T20:17:26.7979049Z src/util/CalibrationCard.cpp:64: [low:style] Variable 'f' can be declared as pointer to const [constVariableReference]
+cppcheck	Run cppcheck	2026-11-07T20:17:26.7980246Z src/util/CalibrationCard.cpp:131: [low:style] Variable 'adler' can be declared as const array [constVariable]
+cppcheck	Run cppcheck	2026-11-07T20:17:30.6862490Z ========================= [FAILED] Took 164.64 seconds =========================
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7051823Z 
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7055403Z Component     HIGH    MEDIUM    LOW
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7055883Z -----------  ------  --------  -----
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7056266Z src/util       0        0        2
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7056507Z 
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7056642Z Total          0        0        2
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7056866Z 
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7058167Z Environment    Tool      Status    Duration
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7058849Z -------------  --------  --------  ------------
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7059539Z default        cppcheck  FAILED    00:02:44.637
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7060340Z ==================== 1 failed, 0 succeeded in 00:02:44.637 ====================
+cppcheck	Run cppcheck	2026-11-07T20:17:30.7414297Z ##[error]Process completed with exit code 1.
+Test Status	Fail because needed jobs failed	﻿2026-11-07T20:19:45.1693595Z ##[group]Run exit 1
+Test Status	Fail because needed jobs failed	2026-11-07T20:19:45.1694206Z ^[[36;1mexit 1^[[0m
+Test Status	Fail because needed jobs failed	2026-11-07T20:19:45.2028971Z shell: /usr/bin/bash -e {0}
+Test Status	Fail because needed jobs failed	2026-11-07T20:19:45.2030526Z ##[endgroup]
+Test Status	Fail because needed jobs failed	2026-11-07T20:19:45.2275800Z ##[error]Process completed with exit code 1.

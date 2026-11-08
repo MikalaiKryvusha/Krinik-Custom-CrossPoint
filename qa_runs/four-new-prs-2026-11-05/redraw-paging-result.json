@@ -1,0 +1,7 @@
+{
+  "scheduled_swipes": 40,
+  "viewer_reopens": 41,
+  "exit_code": 0,
+  "errors": 0,
+  "limit": "native refresh timing; no physical latency claim"
+}

@@ -1,0 +1,313 @@
+[0] [DBG] [UI] Using Lyra theme
+[5] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[7] [DBG] [CPS] Resaving settings to update format
+[7] [DBG] [CPS] Settings loaded from file
+[8] [DBG] [UI] Using Lyra theme
+[9] [INF] [CLK] RTC clock read: 2026-11-04 19:13
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[9] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[284] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[284] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[284] [DBG] [SDREG] Fonts directory not found: /fonts
+[284] [DBG] [SDREG] Discovery complete: 0 families
+[284] [DBG] [SDFS] SD font system ready (0 families discovered)
+[284] [DBG] [MAIN] Fonts setup
+[285] [DBG] [ACT] Entering activity: Boot
+[286] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[308] [DBG] [ACT] Exiting activity: Boot
+[308] [DBG] [ACT] Entering activity: EpubReader
+[308] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[308] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[309] [DBG] [GFX] Time = 24 ms from clearScreen to displayBuffer
+[315] [DBG] [EBP] Loading ePub: /Книги/Артур Шопенгауэр. О четверояком корне закона достаточного основания.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.crosspoint/epub_3326978849599308136/book.bin (flags=0x0 errno=2 No such file or directory)
+[315] [DBG] [EBP] Cache not found, building spine/TOC cache
+[315] [DBG] [BMC] Entering write mode
+[315] [DBG] [BMC] Beginning content opf pass
+[317] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[317] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[318] [DBG] [COF] Using fast index for 30 manifest items
+[318] [DBG] [ZIP] Decompressed 958 bytes into 3851 bytes
+[318] [DBG] [EBP] Successfully parsed content.opf
+[319] [DBG] [EBP] OPF pass completed in 4 ms
+[319] [DBG] [BMC] Beginning toc pass
+[319] [DBG] [EBP] Falling back to NCX TOC
+[319] [DBG] [EBP] Parsing toc ncx file: OPS/toc.ncx
+[321] [DBG] [ZIP] Decompressed 2332 bytes into 11198 bytes
+[321] [DBG] [EBP] Parsed TOC items
+[321] [DBG] [EBP] TOC pass completed in 2 ms
+[321] [DBG] [BMC] Wrote 18 spine, 60 TOC entries
+[321] [DBG] [BMC] Warning: Could not find TOC entry for spine item 0: OPS/ch1.xhtml, using title from last section
+[322] [DBG] [BMC] Successfully built book.bin
+[322] [DBG] [EBP] buildBookBin completed in 1 ms
+[322] [DBG] [EBP] Total indexing completed in 7 ms
+[322] [DBG] [EBP] CSS files to parse: 1
+[322] [DBG] [EBP] Parsing CSS file: OPS/style.css
+[323] [DBG] [ZIP] Decompressed 453 bytes into 1923 bytes
+[323] [DBG] [CSS] Parsed 13 rules from 1923 bytes
+[324] [DBG] [CSS] Saved 13 rules to complete cache
+[324] [DBG] [EBP] Loaded 13 CSS style rules from 1 files (0 identical duplicates skipped, complete)
+[324] [DBG] [BMC] Loaded cache data: 18 spine, 60 TOC entries
+[324] [DBG] [EBP] Loaded ePub: /Книги/Артур Шопенгауэр. О четверояком корне закона достаточного основания.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.crosspoint/epub_3326978849599308136/progress.bin (flags=0x0 errno=2 No such file or directory)
+[324] [DBG] [EBP] Core Metadata: cover(13)=OPS/cover.jpg, textReference(0)=
+[324] [DBG] [ERS] Loading file: OPS/ch1.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.crosspoint/epub_3326978849599308136/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[325] [DBG] [ERS] Cache not found, building...
+[325] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[325] [DBG] [ZIP] Decompressed 512 bytes into 903 bytes
+[325] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_3326978849599308136/html/.tmp_0.html (903 bytes)
+[326] [DBG] [CSS] Loaded 13 rules from complete cache
+[328] [DBG] [EHP] Time to parse and build pages: 2 ms
+[331] [DBG] [SCT] Page 0 processed
+[337] [DBG] [FDC] Prewarm: 11 glyphs in 788 bytes from 1 groups (0 missed)
+[338] [DBG] [FDC] Prewarm: 35 glyphs in 1933 bytes from 2 groups (0 missed)
+[341] [DBG] [GFX] Time = 9 ms from clearScreen to displayBuffer
+[358] [DBG] [ERS] Page render (tiled): prewarm=7ms bw_render=2ms display=3ms gray_lsb=1ms gray_msb=2ms gray_display=11ms cleanup=0ms total=26ms
+[358] [DBG] [ERS] Rendered page in 26ms
+[359] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[3706] [DBG] [ERS] Loading file: OPS/ch1-1.xhtml, index: 1
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.crosspoint/epub_3326978849599308136/sections/1.bin (flags=0x0 errno=2 No such file or directory)
+[3707] [DBG] [ERS] Cache not found, building...
+[3707] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[3707] [DBG] [ZIP] Decompressed 3137 bytes into 8205 bytes
+[3707] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_3326978849599308136/html/.tmp_1.html (8205 bytes)
+[3708] [DBG] [CSS] Loaded 13 rules from complete cache
+[3712] [DBG] [SCT] Page 0 processed
+[3714] [DBG] [SCT] Page 1 processed
+[3718] [DBG] [SCT] Page 2 processed
+[3720] [DBG] [SCT] Page 3 processed
+[3723] [DBG] [SCT] Page 4 processed
+[3723] [DBG] [EHP] Time to parse and build pages: 15 ms
+[3724] [DBG] [SCT] Page 5 processed
+[3725] [DBG] [FDC] Prewarm: 43 glyphs in 2074 bytes from 2 groups (0 missed)
+[3727] [DBG] [FDC] Prewarm: 11 glyphs in 1786 bytes from 1 groups (0 missed)
+[3739] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=1ms display=1ms gray_lsb=3ms gray_msb=3ms gray_display=4ms cleanup=0ms total=14ms
+[3739] [DBG] [ERS] Rendered page in 14ms
+[3739] [DBG] [ERS] Progress saved: spine=1 offset=0 page=0
+[4145] [DBG] [FDC] Prewarm: 69 glyphs in 3402 bytes from 4 groups (0 missed)
+[4145] [DBG] [ERS] Idle prewarm: page 1 in 1ms
+[4712] [DBG] [FDC] Prewarm: 69 glyphs in 3402 bytes from 4 groups (0 missed)
+[4730] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=5ms display=2ms gray_lsb=3ms gray_msb=4ms gray_display=4ms cleanup=0ms total=21ms
+[4730] [DBG] [ERS] Rendered page in 21ms
+[4731] [DBG] [ERS] Progress saved: spine=1 offset=625 page=1
+[5138] [DBG] [FDC] Prewarm: 38 glyphs in 1904 bytes from 3 groups (0 missed)
+[5138] [DBG] [ERS] Idle prewarm: page 2 in 1ms
+[5708] [DBG] [FDC] Prewarm: 38 glyphs in 1904 bytes from 3 groups (0 missed)
+[5726] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=2ms display=1ms gray_lsb=6ms gray_msb=4ms gray_display=4ms cleanup=1ms total=20ms
+[5726] [DBG] [ERS] Rendered page in 20ms
+[5726] [DBG] [ERS] Progress saved: spine=1 offset=1389 page=2
+[6133] [DBG] [FDC] Prewarm: 62 glyphs in 3204 bytes from 3 groups (0 missed)
+[6133] [DBG] [ERS] Idle prewarm: page 3 in 1ms
+[6714] [DBG] [FDC] Prewarm: 62 glyphs in 3204 bytes from 3 groups (0 missed)
+[6730] [DBG] [ERS] Page render (tiled): prewarm=1ms bw_render=2ms display=1ms gray_lsb=4ms gray_msb=4ms gray_display=5ms cleanup=0ms total=17ms
+[6730] [DBG] [ERS] Rendered page in 17ms
+[6731] [DBG] [ERS] Progress saved: spine=1 offset=2202 page=3
+[7139] [DBG] [FDC] Prewarm: 41 glyphs in 1989 bytes from 2 groups (0 missed)
+[7139] [DBG] [ERS] Idle prewarm: page 4 in 1ms
+[7709] [DBG] [FDC] Prewarm: 41 glyphs in 1989 bytes from 2 groups (0 missed)
+[7728] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=2ms display=1ms gray_lsb=8ms gray_msb=3ms gray_display=5ms cleanup=0ms total=21ms
+[7728] [DBG] [ERS] Rendered page in 21ms
+[7729] [DBG] [ERS] Progress saved: spine=1 offset=3062 page=4
+[8140] [DBG] [FDC] Prewarm: 43 glyphs in 2074 bytes from 4 groups (0 missed)
+[8140] [DBG] [ERS] Idle prewarm: page 5 in 1ms
+[8710] [DBG] [FDC] Prewarm: 43 glyphs in 2074 bytes from 4 groups (0 missed)
+[8724] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=2ms display=5ms gray_lsb=1ms gray_msb=2ms gray_display=4ms cleanup=0ms total=17ms
+[8724] [DBG] [ERS] Rendered page in 17ms
+[8725] [DBG] [ERS] Progress saved: spine=1 offset=3886 page=5
+[9708] [DBG] [ERS] Loading file: OPS/ch1-2.xhtml, index: 2
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.crosspoint/epub_3326978849599308136/sections/2.bin (flags=0x0 errno=2 No such file or directory)
+[9708] [DBG] [ERS] Cache not found, building...
+[9708] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[9710] [DBG] [ZIP] Decompressed 4383 bytes into 13111 bytes
+[9710] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_3326978849599308136/html/.tmp_2.html (13111 bytes)
+[9710] [DBG] [CSS] Loaded 13 rules from complete cache
+[9714] [DBG] [SCT] Page 0 processed
+[9716] [DBG] [SCT] Page 1 processed
+[9717] [DBG] [SCT] Page 2 processed
+[9722] [DBG] [SCT] Page 3 processed
+[9724] [DBG] [SCT] Page 4 processed
+[9725] [DBG] [SCT] Page 5 processed
+[9729] [DBG] [SCT] Page 6 processed
+[9730] [DBG] [SCT] Page 7 processed
+[9731] [DBG] [SCT] Page 8 processed
+[9733] [DBG] [FDC] Prewarm: 15 glyphs in 776 bytes from 2 groups (0 missed)
+[9734] [DBG] [FDC] Prewarm: 44 glyphs in 2112 bytes from 3 groups (0 missed)
+[9735] [DBG] [FDC] Prewarm: 8 glyphs in 921 bytes from 1 groups (0 missed)
+[9747] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=1ms display=1ms gray_lsb=3ms gray_msb=3ms gray_display=4ms cleanup=0ms total=15ms
+[9747] [DBG] [ERS] Rendered page in 15ms
+[9747] [DBG] [ERS] Progress saved: spine=2 offset=0 page=0
+[9750] [DBG] [SCT] Page 9 processed
+[9751] [DBG] [SCT] Page 10 processed
+[9752] [DBG] [EHP] Time to parse and build pages: 42 ms
+[9753] [DBG] [SCT] Page 11 processed
+[10009] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10009] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10156] [DBG] [FDC] Prewarm: 8 glyphs in 439 bytes from 1 groups (0 missed)
+[10157] [DBG] [FDC] Prewarm: 60 glyphs in 2780 bytes from 3 groups (0 missed)
+[10157] [DBG] [ERS] Idle prewarm: page 1 in 1ms
+[10711] [DBG] [FDC] Prewarm: 8 glyphs in 439 bytes from 1 groups (0 missed)
+[10713] [DBG] [FDC] Prewarm: 60 glyphs in 2780 bytes from 3 groups (0 missed)
+[10732] [DBG] [ERS] Page render (tiled): prewarm=4ms bw_render=5ms display=2ms gray_lsb=4ms gray_msb=4ms gray_display=4ms cleanup=0ms total=23ms
+[10732] [DBG] [ERS] Rendered page in 23ms
+[10733] [DBG] [ERS] Progress saved: spine=2 offset=581 page=1
+[11139] [DBG] [FDC] Prewarm: 25 glyphs in 1025 bytes from 2 groups (0 missed)
+[11139] [DBG] [ERS] Idle prewarm: page 2 in 1ms
+[11703] [DBG] [FDC] Prewarm: 25 glyphs in 1025 bytes from 2 groups (0 missed)
+[11715] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=1ms display=5ms gray_lsb=2ms gray_msb=0ms gray_display=4ms cleanup=0ms total=14ms
+[11715] [DBG] [ERS] Rendered page in 14ms
+[11716] [DBG] [ERS] Progress saved: spine=2 offset=1430 page=2
+[12124] [DBG] [FDC] Prewarm: 16 glyphs in 761 bytes from 2 groups (0 missed)
+[12125] [DBG] [FDC] Prewarm: 35 glyphs in 1696 bytes from 2 groups (0 missed)
+[12126] [DBG] [FDC] Prewarm: 20 glyphs in 2280 bytes from 3 groups (0 missed)
+[12126] [DBG] [ERS] Idle prewarm: page 3 in 3ms
+[12703] [DBG] [FDC] Prewarm: 16 glyphs in 761 bytes from 2 groups (0 missed)
+[12706] [DBG] [FDC] Prewarm: 35 glyphs in 1696 bytes from 2 groups (0 missed)
+[12710] [DBG] [FDC] Prewarm: 20 glyphs in 2280 bytes from 3 groups (0 missed)
+[12721] [DBG] [ERS] Page render (tiled): prewarm=9ms bw_render=1ms display=2ms gray_lsb=2ms gray_msb=2ms gray_display=4ms cleanup=0ms total=20ms
+[12721] [DBG] [ERS] Rendered page in 20ms
+[12722] [DBG] [ERS] Progress saved: spine=2 offset=1531 page=3
+[13129] [DBG] [FDC] Prewarm: 7 glyphs in 397 bytes from 1 groups (0 missed)
+[13130] [DBG] [FDC] Prewarm: 41 glyphs in 2050 bytes from 4 groups (0 missed)
+[13130] [DBG] [ERS] Idle prewarm: page 4 in 2ms
+[13709] [DBG] [FDC] Prewarm: 7 glyphs in 397 bytes from 1 groups (0 missed)
+[13710] [DBG] [FDC] Prewarm: 41 glyphs in 2050 bytes from 4 groups (0 missed)
+[13727] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=1ms display=1ms gray_lsb=4ms gray_msb=5ms gray_display=5ms cleanup=0ms total=18ms
+[13727] [DBG] [ERS] Rendered page in 18ms
+[13728] [DBG] [ERS] Progress saved: spine=2 offset=2027 page=4
+[14132] [DBG] [FDC] Prewarm: 67 glyphs in 3151 bytes from 4 groups (0 missed)
+[14132] [DBG] [ERS] Idle prewarm: page 5 in 1ms
+[14709] [DBG] [FDC] Prewarm: 67 glyphs in 3151 bytes from 4 groups (0 missed)
+[14724] [DBG] [ERS] Page render (tiled): prewarm=1ms bw_render=1ms display=1ms gray_lsb=6ms gray_msb=3ms gray_display=4ms cleanup=0ms total=16ms
+[14724] [DBG] [ERS] Rendered page in 16ms
+[14725] [DBG] [ERS] Progress saved: spine=2 offset=2859 page=5
+[15129] [DBG] [FDC] Prewarm: 16 glyphs in 868 bytes from 2 groups (0 missed)
+[15130] [DBG] [FDC] Prewarm: 42 glyphs in 1865 bytes from 3 groups (0 missed)
+[15132] [DBG] [FDC] Prewarm: 19 glyphs in 2018 bytes from 3 groups (0 missed)
+[15132] [DBG] [ERS] Idle prewarm: page 6 in 4ms
+[15705] [DBG] [FDC] Prewarm: 16 glyphs in 868 bytes from 2 groups (0 missed)
+[15708] [DBG] [FDC] Prewarm: 42 glyphs in 1865 bytes from 3 groups (0 missed)
+[15712] [DBG] [FDC] Prewarm: 19 glyphs in 2018 bytes from 3 groups (0 missed)
+[15724] [DBG] [ERS] Page render (tiled): prewarm=9ms bw_render=1ms display=2ms gray_lsb=2ms gray_msb=3ms gray_display=4ms cleanup=0ms total=21ms
+[15724] [DBG] [ERS] Rendered page in 21ms
+[15725] [DBG] [ERS] Progress saved: spine=2 offset=3297 page=6
+[16138] [DBG] [FDC] Prewarm: 65 glyphs in 3293 bytes from 4 groups (0 missed)
+[16138] [DBG] [ERS] Idle prewarm: page 7 in 1ms
+[16703] [DBG] [FDC] Prewarm: 65 glyphs in 3293 bytes from 4 groups (0 missed)
+[16720] [DBG] [ERS] Page render (tiled): prewarm=1ms bw_render=2ms display=1ms gray_lsb=4ms gray_msb=5ms gray_display=5ms cleanup=0ms total=18ms
+[16720] [DBG] [ERS] Rendered page in 18ms
+[16721] [DBG] [ERS] Progress saved: spine=2 offset=3908 page=7
+[17123] [DBG] [FDC] Prewarm: 38 glyphs in 1875 bytes from 3 groups (0 missed)
+[17123] [DBG] [ERS] Idle prewarm: page 8 in 1ms
+[17716] [DBG] [FDC] Prewarm: 38 glyphs in 1875 bytes from 3 groups (0 missed)
+[17731] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=2ms display=5ms gray_lsb=2ms gray_msb=2ms gray_display=4ms cleanup=0ms total=18ms
+[17731] [DBG] [ERS] Rendered page in 18ms
+[17732] [DBG] [ERS] Progress saved: spine=2 offset=4742 page=8
+[18137] [DBG] [FDC] Prewarm: 9 glyphs in 537 bytes from 1 groups (0 missed)
+[18138] [DBG] [FDC] Prewarm: 51 glyphs in 2316 bytes from 2 groups (0 missed)
+[18140] [DBG] [FDC] Prewarm: 19 glyphs in 2056 bytes from 3 groups (0 missed)
+[18140] [DBG] [ERS] Idle prewarm: page 9 in 4ms
+[18704] [DBG] [FDC] Prewarm: 9 glyphs in 537 bytes from 1 groups (0 missed)
+[18706] [DBG] [FDC] Prewarm: 51 glyphs in 2316 bytes from 2 groups (0 missed)
+[18711] [DBG] [FDC] Prewarm: 19 glyphs in 2056 bytes from 3 groups (0 missed)
+[18725] [DBG] [ERS] Page render (tiled): prewarm=9ms bw_render=4ms display=1ms gray_lsb=3ms gray_msb=2ms gray_display=4ms cleanup=0ms total=23ms
+[18725] [DBG] [ERS] Rendered page in 23ms
+[18726] [DBG] [ERS] Progress saved: spine=2 offset=5157 page=9
+[19127] [DBG] [FDC] Prewarm: 67 glyphs in 3165 bytes from 3 groups (0 missed)
+[19127] [DBG] [ERS] Idle prewarm: page 10 in 1ms
+[19703] [DBG] [FDC] Prewarm: 67 glyphs in 3165 bytes from 3 groups (0 missed)
+[19720] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=1ms display=1ms gray_lsb=8ms gray_msb=2ms gray_display=4ms cleanup=1ms total=19ms
+[19720] [DBG] [ERS] Rendered page in 19ms
+[19720] [DBG] [ERS] Progress saved: spine=2 offset=5675 page=10
+[20014] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20014] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[20126] [DBG] [FDC] Prewarm: 55 glyphs in 2471 bytes from 3 groups (0 missed)
+[20128] [DBG] [FDC] Prewarm: 12 glyphs in 1370 bytes from 3 groups (0 missed)
+[20128] [DBG] [ERS] Idle prewarm: page 11 in 3ms
+[20710] [DBG] [FDC] Prewarm: 55 glyphs in 2471 bytes from 3 groups (0 missed)
+[20715] [DBG] [FDC] Prewarm: 12 glyphs in 1370 bytes from 3 groups (0 missed)
+[20726] [DBG] [ERS] Page render (tiled): prewarm=8ms bw_render=1ms display=2ms gray_lsb=1ms gray_msb=2ms gray_display=4ms cleanup=0ms total=18ms
+[20726] [DBG] [ERS] Rendered page in 18ms
+[20727] [DBG] [ERS] Progress saved: spine=2 offset=6273 page=11
+[21707] [DBG] [ERS] Loading file: OPS/ch1-3.xhtml, index: 3
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_repro/sd/.crosspoint/epub_3326978849599308136/sections/3.bin (flags=0x0 errno=2 No such file or directory)
+[21707] [DBG] [ERS] Cache not found, building...
+[21707] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[21709] [DBG] [ZIP] Decompressed 7150 bytes into 22214 bytes
+[21709] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_3326978849599308136/html/.tmp_3.html (22214 bytes)
+[21710] [DBG] [CSS] Loaded 13 rules from complete cache
+[21710] [DBG] [SCT] Page 0 processed
+[21711] [DBG] [EHP] Text block soft flush (328 words)
+[21716] [DBG] [SCT] Page 1 processed
+[21718] [DBG] [SCT] Page 2 processed
+[21719] [DBG] [EHP] Text block soft flush (339 words)
+[21722] [DBG] [SCT] Page 3 processed
+[21724] [DBG] [SCT] Page 4 processed
+[21726] [DBG] [SCT] Page 5 processed
+[21729] [DBG] [SCT] Page 6 processed
+[21731] [DBG] [SCT] Page 7 processed
+[21732] [DBG] [SCT] Page 8 processed
+[21732] [DBG] [FDC] Prewarm: 1 glyphs in 0 bytes from 1 groups (0 missed)
+[21734] [DBG] [FDC] Prewarm: 9 glyphs in 1013 bytes from 1 groups (0 missed)
+[21739] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=0ms display=1ms gray_lsb=0ms gray_msb=0ms gray_display=4ms cleanup=0ms total=7ms
+[21739] [DBG] [ERS] Rendered page in 7ms
+[21740] [DBG] [ERS] Progress saved: spine=3 offset=0 page=0
+[21740] [DBG] [EHP] Text block soft flush (372 words)
+[21744] [DBG] [SCT] Page 9 processed
+[21745] [DBG] [SCT] Page 10 processed
+[21747] [DBG] [SCT] Page 11 processed
+[21752] [DBG] [SCT] Page 12 processed
+[21756] [DBG] [SCT] Page 13 processed
+[21758] [DBG] [SCT] Page 14 processed
+[21759] [DBG] [SCT] Page 15 processed
+[21759] [DBG] [EHP] Time to parse and build pages: 49 ms
+[21760] [DBG] [SCT] Page 16 processed
+[22153] [DBG] [FDC] Prewarm: 6 glyphs in 362 bytes from 1 groups (0 missed)
+[22153] [DBG] [FDC] Prewarm: 36 glyphs in 1798 bytes from 2 groups (0 missed)
+[22155] [DBG] [FDC] Prewarm: 23 glyphs in 2053 bytes from 3 groups (0 missed)
+[22155] [DBG] [ERS] Idle prewarm: page 1 in 3ms
+[22706] [DBG] [FDC] Prewarm: 6 glyphs in 362 bytes from 1 groups (0 missed)
+[22707] [DBG] [FDC] Prewarm: 36 glyphs in 1798 bytes from 2 groups (0 missed)
+[22709] [DBG] [FDC] Prewarm: 23 glyphs in 2053 bytes from 3 groups (0 missed)
+[22721] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=1ms display=1ms gray_lsb=3ms gray_msb=3ms gray_display=4ms cleanup=0ms total=15ms
+[22721] [DBG] [ERS] Rendered page in 15ms
+[22721] [DBG] [ERS] Progress saved: spine=3 offset=17 page=1
+[23125] [DBG] [FDC] Prewarm: 9 glyphs in 508 bytes from 1 groups (0 missed)
+[23126] [DBG] [FDC] Prewarm: 84 glyphs in 4237 bytes from 4 groups (0 missed)
+[23126] [DBG] [ERS] Idle prewarm: page 2 in 1ms
+[23711] [DBG] [FDC] Prewarm: 9 glyphs in 508 bytes from 1 groups (0 missed)
+[23712] [DBG] [FDC] Prewarm: 84 glyphs in 4237 bytes from 4 groups (0 missed)
+[23727] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=1ms display=1ms gray_lsb=4ms gray_msb=4ms gray_display=4ms cleanup=1ms total=17ms
+[23727] [DBG] [ERS] Rendered page in 17ms
+[23727] [DBG] [ERS] Progress saved: spine=3 offset=592 page=2
+[24131] [DBG] [FDC] Prewarm: 4 glyphs in 235 bytes from 1 groups (0 missed)
+[24132] [DBG] [FDC] Prewarm: 84 glyphs in 4288 bytes from 4 groups (0 missed)
+[24132] [DBG] [ERS] Idle prewarm: page 3 in 2ms
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_repro/shots/a_before.bmp
+[25062] [DBG] [FDC] Prewarm: 4 glyphs in 235 bytes from 1 groups (0 missed)
+[25063] [DBG] [FDC] Prewarm: 84 glyphs in 4288 bytes from 4 groups (0 missed)
+[25077] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=1ms display=2ms gray_lsb=3ms gray_msb=4ms gray_display=4ms cleanup=0ms total=16ms
+[25077] [DBG] [ERS] Rendered page in 16ms
+[25078] [DBG] [ERS] Progress saved: spine=3 offset=1507 page=3
+[25481] [DBG] [FDC] Prewarm: 7 glyphs in 413 bytes from 1 groups (0 missed)
+[25482] [DBG] [FDC] Prewarm: 71 glyphs in 3387 bytes from 4 groups (0 missed)
+[25482] [DBG] [ERS] Idle prewarm: page 4 in 2ms
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_repro/shots/b_note.bmp
+[29311] [DBG] [FDC] Prewarm: 9 glyphs in 508 bytes from 1 groups (0 missed)
+[29312] [DBG] [FDC] Prewarm: 84 glyphs in 4237 bytes from 4 groups (0 missed)
+[29326] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=1ms display=1ms gray_lsb=4ms gray_msb=4ms gray_display=4ms cleanup=0ms total=16ms
+[29326] [DBG] [ERS] Rendered page in 16ms
+[29327] [DBG] [ERS] Progress saved: spine=3 offset=592 page=2
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_repro/shots/c_after_swipe_0.6s.bmp
+[29734] [DBG] [FDC] Prewarm: 4 glyphs in 235 bytes from 1 groups (0 missed)
+[29735] [DBG] [FDC] Prewarm: 84 glyphs in 4288 bytes from 4 groups (0 missed)
+[29735] [DBG] [ERS] Idle prewarm: page 3 in 2ms
+[30017] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30017] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_repro/shots/d_after_2s.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_repro/shots/e_after_5s.bmp

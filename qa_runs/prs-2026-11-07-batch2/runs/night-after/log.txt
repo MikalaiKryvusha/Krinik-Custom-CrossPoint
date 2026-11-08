@@ -1,0 +1,214 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[1] [DBG] [CPS] Resaving settings to update format
+[1] [DBG] [CPS] Settings loaded from file
+[2] [DBG] [RBS] Recent books loaded from file (1 entries)
+[2] [DBG] [UI] Using Lyra theme
+[2] [INF] [CLK] RTC clock read: 2026-11-07 21:18
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[2] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[218] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[219] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[219] [DBG] [SDREG] Fonts directory not found: /fonts
+[219] [DBG] [SDREG] Discovery complete: 0 families
+[219] [DBG] [SDFS] SD font system ready (0 families discovered)
+[219] [DBG] [MAIN] Fonts setup
+[219] [DBG] [ACT] Entering activity: Boot
+[219] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[236] [DBG] [ACT] Exiting activity: Boot
+[236] [DBG] [ACT] Entering activity: Home
+[236] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[250] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2589] [DBG] [ACT] Exiting activity: Home
+[2590] [DBG] [ACT] Entering activity: EpubReader
+[2590] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[2591] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[2593] [DBG] [GFX] Time = 2343 ms from clearScreen to displayBuffer
+[2599] [DBG] [EBP] Loading ePub: /Books/JPEG Image Tests.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/book.bin (flags=0x0 errno=2 No such file or directory)
+[2600] [DBG] [EBP] Cache not found, building spine/TOC cache
+[2600] [DBG] [BMC] Entering write mode
+[2600] [DBG] [BMC] Beginning content opf pass
+[2603] [DBG] [ZIP] Decompressed 173 bytes into 251 bytes
+[2603] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[2604] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[2605] [DBG] [COF] Using fast index for 19 manifest items
+[2606] [DBG] [ZIP] Decompressed 512 bytes into 2373 bytes
+[2606] [DBG] [EBP] Successfully parsed content.opf
+[2606] [DBG] [EBP] OPF pass completed in 6 ms
+[2606] [DBG] [BMC] Beginning toc pass
+[2607] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[2607] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[2607] [DBG] [NAV] Found nav toc element
+[2607] [DBG] [NAV] Finished parsing nav toc
+[2607] [DBG] [ZIP] Decompressed 351 bytes into 861 bytes
+[2607] [DBG] [EBP] Parsed TOC nav items
+[2607] [DBG] [EBP] TOC pass completed in 1 ms
+[2607] [DBG] [BMC] Wrote 10 spine, 10 TOC entries
+[2608] [DBG] [BMC] Successfully built book.bin
+[2608] [DBG] [EBP] buildBookBin completed in 1 ms
+[2608] [DBG] [EBP] Total indexing completed in 8 ms
+[2609] [DBG] [EBP] No CSS files to parse, but CssParser created for inline styles
+[2609] [DBG] [EBP] CSS files to parse: 0
+[2609] [DBG] [CSS] Saved 0 rules to complete cache
+[2609] [DBG] [EBP] Loaded 0 CSS style rules from 0 files (0 identical duplicates skipped, complete)
+[2609] [DBG] [BMC] Loaded cache data: 10 spine, 10 TOC entries
+[2609] [DBG] [EBP] Loaded ePub: /Books/JPEG Image Tests.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/progress.bin (flags=0x0 errno=2 No such file or directory)
+[2610] [DBG] [EBP] Core Metadata: cover(0)=, textReference(0)=
+[2610] [DBG] [ERS] Loading file: OEBPS/chapter1.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[2611] [DBG] [ERS] Cache not found, building...
+[2611] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[2612] [DBG] [ZIP] Decompressed 292 bytes into 465 bytes
+[2612] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_14587376882725383662/html/.tmp_0.html (465 bytes)
+[2612] [DBG] [CSS] Loaded 0 rules from complete cache
+[2616] [DBG] [EHP] Time to parse and build pages: 2 ms
+[2617] [DBG] [SCT] Page 0 processed
+[2618] [DBG] [FDC] Prewarm: 9 glyphs in 404 bytes from 1 groups (0 missed)
+[2619] [DBG] [FDC] Prewarm: 41 glyphs in 2136 bytes from 3 groups (0 missed)
+[2619] [DBG] [FDC] Prewarm: 12 glyphs in 1479 bytes from 1 groups (0 missed)
+[2620] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[2629] [DBG] [ERS] Page render (tiled): prewarm=1ms bw_render=1ms display=1ms gray_lsb=1ms gray_msb=1ms gray_display=6ms cleanup=0ms total=11ms
+[2629] [DBG] [ERS] Rendered page in 11ms
+[2629] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/shots/p1.bmp
+[7090] [DBG] [ERS] Loading file: OEBPS/chapter2.xhtml, index: 1
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/sections/1.bin (flags=0x0 errno=2 No such file or directory)
+[7090] [DBG] [ERS] Cache not found, building...
+[7090] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[7091] [DBG] [ZIP] Decompressed 234 bytes into 345 bytes
+[7091] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_14587376882725383662/html/.tmp_1.html (345 bytes)
+[7092] [DBG] [CSS] Loaded 0 rules from complete cache
+[7093] [DBG] [EHP] Found image: src=images/jpeg_format.jpg
+[7093] [DBG] [EHP] Image dimensions: 350x250
+[7093] [DBG] [EHP] Display size: 350x250 (scale 1.00)
+[7093] [DBG] [EHP] Time to parse and build pages: 1 ms
+[7094] [DBG] [SCT] Page 0 processed
+[7096] [DBG] [FDC] Prewarm: 32 glyphs in 1679 bytes from 2 groups (0 missed)
+[7097] [DBG] [FDC] Prewarm: 13 glyphs in 1544 bytes from 1 groups (0 missed)
+[7097] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/img_1_0.pxc (flags=0x0 errno=2 No such file or directory)
+[7098] [DBG] [IMG] Lazy-extracting OEBPS/images/jpeg_format.jpg -> /.crosspoint/epub_14587376882725383662/img_1_0.jpg
+[7098] [DBG] [ZIP] Decompressed 13662 bytes into 17065 bytes
+[7098] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_14587376882725383662/img_1_0.jpg
+[7098] [DBG] [IMG] Using JPEG decoder
+[7099] [DBG] [JPG] Decoding JPEG: /.crosspoint/epub_14587376882725383662/img_1_0.jpg
+[7102] [DBG] [JPG] JPEG 350x250 -> 350x250 (scale 1.00, jpegScale 1/1, fineScale 1.00)
+[7103] [DBG] [IMG] Cache stream started: /.crosspoint/epub_14587376882725383662/img_1_0.pxc (350x250, band 20 rows)
+[7109] [DBG] [JPG] JPEG decoding complete - render time: 6 ms
+[7109] [DBG] [IMG] Cache written: /.crosspoint/epub_14587376882725383662/img_1_0.pxc (350x250, 22004 bytes)
+[7110] [DBG] [IMG] Decode successful
+[7114] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7114] [DBG] [IMG] Loading from cache: /.crosspoint/epub_14587376882725383662/img_1_0.pxc (350x250)
+[7114] [DBG] [IMG] Cache render complete (payload now in RAM)
+[7114] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7114] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7115] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7115] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7116] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7116] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7116] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7116] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7117] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7117] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7117] [DBG] [IMG] Rendering image at 65,111: /.crosspoint/epub_14587376882725383662/img_1_0.jpg (350x250)
+[7126] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=13ms display=4ms gray_lsb=2ms gray_msb=1ms gray_display=9ms cleanup=0ms total=31ms
+[7126] [DBG] [ERS] Rendered page in 31ms
+[7127] [DBG] [ERS] Progress saved: spine=1 offset=0 page=0
+[10002] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10002] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/shots/p2.bmp
+[11080] [DBG] [ERS] Loading file: OEBPS/chapter3.xhtml, index: 2
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/sections/2.bin (flags=0x0 errno=2 No such file or directory)
+[11081] [DBG] [ERS] Cache not found, building...
+[11081] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[11083] [DBG] [ZIP] Decompressed 215 bytes into 300 bytes
+[11083] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_14587376882725383662/html/.tmp_2.html (300 bytes)
+[11084] [DBG] [CSS] Loaded 0 rules from complete cache
+[11085] [DBG] [EHP] Found image: src=images/grayscale_test.jpg
+[11085] [DBG] [EHP] Image dimensions: 400x600
+[11085] [DBG] [EHP] Display size: 400x600 (scale 1.00)
+[11085] [DBG] [EHP] Time to parse and build pages: 1 ms
+[11087] [DBG] [SCT] Page 0 processed
+[11088] [DBG] [FDC] Prewarm: 24 glyphs in 1255 bytes from 2 groups (0 missed)
+[11089] [DBG] [FDC] Prewarm: 10 glyphs in 1116 bytes from 1 groups (0 missed)
+[11089] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/img_2_0.pxc (flags=0x0 errno=2 No such file or directory)
+[11089] [DBG] [IMG] Lazy-extracting OEBPS/images/grayscale_test.jpg -> /.crosspoint/epub_14587376882725383662/img_2_0.jpg
+[11090] [DBG] [ZIP] Decompressed 23715 bytes into 27208 bytes
+[11091] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_14587376882725383662/img_2_0.jpg
+[11091] [DBG] [IMG] Using JPEG decoder
+[11091] [DBG] [JPG] Decoding JPEG: /.crosspoint/epub_14587376882725383662/img_2_0.jpg
+[11097] [DBG] [JPG] JPEG 400x600 -> 400x600 (scale 1.00, jpegScale 1/1, fineScale 1.00)
+[11097] [DBG] [IMG] Cache stream started: /.crosspoint/epub_14587376882725383662/img_2_0.pxc (400x600, band 20 rows)
+[11112] [DBG] [JPG] JPEG decoding complete - render time: 15 ms
+[11112] [DBG] [IMG] Cache written: /.crosspoint/epub_14587376882725383662/img_2_0.pxc (400x600, 60004 bytes)
+[11114] [DBG] [IMG] Decode successful
+[11117] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11117] [DBG] [IMG] Loading from cache: /.crosspoint/epub_14587376882725383662/img_2_0.pxc (400x600)
+[11117] [DBG] [IMG] Cache render complete (payload now in RAM)
+[11117] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11118] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11118] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11119] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11119] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11119] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11120] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11120] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11120] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11121] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11121] [DBG] [IMG] Rendering image at 40,139: /.crosspoint/epub_14587376882725383662/img_2_0.jpg (400x600)
+[11129] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=25ms display=3ms gray_lsb=2ms gray_msb=2ms gray_display=8ms cleanup=0ms total=42ms
+[11129] [DBG] [ERS] Rendered page in 42ms
+[11130] [DBG] [ERS] Progress saved: spine=2 offset=0 page=0
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/shots/p3.bmp
+[15087] [DBG] [ERS] Loading file: OEBPS/chapter4.xhtml, index: 3
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/sections/3.bin (flags=0x0 errno=2 No such file or directory)
+[15088] [DBG] [ERS] Cache not found, building...
+[15088] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[15089] [DBG] [ZIP] Decompressed 209 bytes into 291 bytes
+[15089] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_14587376882725383662/html/.tmp_3.html (291 bytes)
+[15090] [DBG] [CSS] Loaded 0 rules from complete cache
+[15091] [DBG] [EHP] Found image: src=images/gradient_test.jpg
+[15091] [DBG] [EHP] Image dimensions: 400x500
+[15091] [DBG] [EHP] Display size: 400x500 (scale 1.00)
+[15091] [DBG] [EHP] Time to parse and build pages: 1 ms
+[15092] [DBG] [SCT] Page 0 processed
+[15093] [DBG] [FDC] Prewarm: 22 glyphs in 1173 bytes from 2 groups (0 missed)
+[15094] [DBG] [FDC] Prewarm: 10 glyphs in 1107 bytes from 1 groups (0 missed)
+[15095] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/sd/.crosspoint/epub_14587376882725383662/img_3_0.pxc (flags=0x0 errno=2 No such file or directory)
+[15095] [DBG] [IMG] Lazy-extracting OEBPS/images/gradient_test.jpg -> /.crosspoint/epub_14587376882725383662/img_3_0.jpg
+[15096] [DBG] [ZIP] Decompressed 24834 bytes into 33370 bytes
+[15096] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_14587376882725383662/img_3_0.jpg
+[15096] [DBG] [IMG] Using JPEG decoder
+[15096] [DBG] [JPG] Decoding JPEG: /.crosspoint/epub_14587376882725383662/img_3_0.jpg
+[15102] [DBG] [JPG] JPEG 400x500 -> 400x500 (scale 1.00, jpegScale 1/1, fineScale 1.00)
+[15103] [DBG] [IMG] Cache stream started: /.crosspoint/epub_14587376882725383662/img_3_0.pxc (400x500, band 20 rows)
+[15116] [DBG] [JPG] JPEG decoding complete - render time: 13 ms
+[15116] [DBG] [IMG] Cache written: /.crosspoint/epub_14587376882725383662/img_3_0.pxc (400x500, 50004 bytes)
+[15117] [DBG] [IMG] Decode successful
+[15121] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15121] [DBG] [IMG] Loading from cache: /.crosspoint/epub_14587376882725383662/img_3_0.pxc (400x500)
+[15121] [DBG] [IMG] Cache render complete (payload now in RAM)
+[15121] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15121] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15122] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15122] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15123] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15123] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15123] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15124] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15124] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15125] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15125] [DBG] [IMG] Rendering image at 40,111: /.crosspoint/epub_14587376882725383662/img_3_0.jpg (400x500)
+[15133] [DBG] [ERS] Page render (tiled): prewarm=1ms bw_render=23ms display=3ms gray_lsb=3ms gray_msb=2ms gray_display=8ms cleanup=0ms total=40ms
+[15133] [DBG] [ERS] Rendered page in 40ms
+[15134] [DBG] [ERS] Progress saved: spine=3 offset=0 page=0
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/night-after/shots/p4.bmp

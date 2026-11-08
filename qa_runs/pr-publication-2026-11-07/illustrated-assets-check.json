@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://mikalaikryvusha.github.io/KEINKT/calibrator/",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/books-after-framed.jpg",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/books-before-framed.jpg",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/calibration-accuracy-x4pro-en.png",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/calibration-books-card-en.webp",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/calibration-calibration-en.webp",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/calibration-pictures-card-en.webp",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/pictures-after-framed.jpg",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/pictures-before-framed.jpg",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/09-delayed-redraw/image-delay-options.webp",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/09-delayed-redraw/screen-cleaning.webp",
+    "status": "200",
+    "ok": true
+  },
+  {
+    "url": "https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/09-delayed-redraw/sleep-delay-options.webp",
+    "status": "200",
+    "ok": true
+  }
+]

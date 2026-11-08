@@ -1,0 +1,656 @@
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- Found EXPAT: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libexpat.tbd (found version "2.7.4")
+-- Found ZLIB: /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib/libz.tbd (found version "1.2.12")
+-- Found Python3: /opt/homebrew/Frameworks/Python.framework/Versions/3.12/bin/python3.12 (found version "3.12.13") found components: Interpreter
+-- Configuring done (2.3s)
+-- Generating done (0.6s)
+CMake Warning (unused-cli):
+  Manually-specified variables were not used by the project:
+
+    FETCHCONTENT_SOURCE_DIR_ANIMATEDGIF
+
+
+-- Build files have been written to: /Users/kryvusha/Xteink/pr-fixes/calibration/build/test
+[  1%] Building CXX object gif_support/CMakeFiles/animatedgif_host.dir/Users/kryvusha/Xteink/fw-pr/build/test/_deps/animatedgif-src/src/AnimatedGIF.cpp.o
+[  1%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[  1%] Linking CXX static library libanimatedgif_host.a
+[  1%] Built target animatedgif_host
+In file included from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/src/gtest-all.cc:38:
+In file included from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/include/gtest/gtest.h:64:
+In file included from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/include/gtest/gtest-matchers.h:49:
+/Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/include/gtest/gtest-printers.h:528:35: warning: implicit conversion from 'char8_t' to 'char32_t' may change the meaning of the represented code unit [-Wcharacter-conversion]
+  528 |   PrintTo(ImplicitCast_<char32_t>(c), os);
+      |           ~~~~~~~~~~~~~           ^
+1 warning generated.
+[  2%] Linking CXX static library ../../../lib/libgtest.a
+[  2%] Built target gtest
+[  2%] Building CXX object _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[  3%] Linking CXX static library ../../../lib/libgtest_main.a
+[  3%] Built target gtest_main
+[  3%] Building CXX object utf8_compose/CMakeFiles/Utf8ComposeTest.dir/Utf8ComposeTest.cpp.o
+[  3%] Building CXX object hyphenation_eval/CMakeFiles/HyphenationEvaluationTest.dir/HyphenationEvaluationTest.cpp.o
+[  3%] Building CXX object release_json_parser/CMakeFiles/ReleaseJsonParserTest.dir/ReleaseJsonParserTest.cpp.o
+[  3%] Building CXX object opds_filename/CMakeFiles/OpdsFilenameTest.dir/OpdsFilenameTest.cpp.o
+[  4%] Building CXX object differential_rounding/CMakeFiles/DifferentialRoundingTest.dir/DifferentialRoundingTest.cpp.o
+[  5%] Building CXX object streaming_json_parser/CMakeFiles/StreamingJsonParserTest.dir/StreamingJsonParserTest.cpp.o
+[  6%] Building CXX object opds_filename/CMakeFiles/OpdsFilenameTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/util/OpdsFilename.cpp.o
+[  6%] Building CXX object differential_rounding/CMakeFiles/DifferentialRoundingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/EpdFont/EpdFont.cpp.o
+[  7%] Building CXX object release_json_parser/CMakeFiles/ReleaseJsonParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/JsonParser/ReleaseJsonParser.cpp.o
+[  7%] Building CXX object opds_filename/CMakeFiles/OpdsFilenameTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/util/StringUtils.cpp.o
+[  7%] Building CXX object release_json_parser/CMakeFiles/ReleaseJsonParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/freeink-sdk/libs/network/JsonSax/src/StreamingJsonParser.cpp.o
+[  9%] Linking CXX executable ReleaseJsonParserTest
+[  9%] Building CXX object hyphenation_eval/CMakeFiles/HyphenationEvaluationTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/Hyphenator.cpp.o
+[  9%] Built target ReleaseJsonParserTest
+[  9%] Building CXX object url_utils/CMakeFiles/UrlUtilsTest.dir/UrlUtilsTest.cpp.o
+[ 10%] Building CXX object utf8_compose/CMakeFiles/Utf8ComposeTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 10%] Building CXX object differential_rounding/CMakeFiles/DifferentialRoundingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 10%] Building CXX object opds_filename/CMakeFiles/OpdsFilenameTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 10%] Building CXX object streaming_json_parser/CMakeFiles/StreamingJsonParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/freeink-sdk/libs/network/JsonSax/src/StreamingJsonParser.cpp.o
+[ 10%] Linking CXX executable StreamingJsonParserTest
+[ 10%] Linking CXX executable Utf8ComposeTest
+[ 11%] Linking CXX executable DifferentialRoundingTest
+[ 11%] Built target StreamingJsonParserTest
+[ 11%] Built target Utf8ComposeTest
+[ 11%] Built target DifferentialRoundingTest
+[ 12%] Building CXX object opds_feed_error/CMakeFiles/OpdsFeedErrorTest.dir/OpdsFeedErrorTest.cpp.o
+[ 12%] Building CXX object hyphenation_eval/CMakeFiles/HyphenationEvaluationTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/LanguageRegistry.cpp.o
+[ 13%] Building CXX object html_to_plain_text/CMakeFiles/HtmlToPlainTextTest.dir/HtmlToPlainTextTest.cpp.o
+[ 14%] Linking CXX executable OpdsFilenameTest
+[ 15%] Building CXX object hyphenation_eval/CMakeFiles/HyphenationEvaluationTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/LiangHyphenation.cpp.o
+[ 15%] Built target OpdsFilenameTest
+[ 15%] Building CXX object library_text/CMakeFiles/LibraryTextTest.dir/LibraryTextTest.cpp.o
+[ 15%] Building CXX object url_utils/CMakeFiles/UrlUtilsTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/util/UrlUtils.cpp.o
+[ 15%] Building CXX object hyphenation_eval/CMakeFiles/HyphenationEvaluationTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/HyphenationCommon.cpp.o
+[ 15%] Building CXX object hyphenation_eval/CMakeFiles/HyphenationEvaluationTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 15%] Linking CXX executable OpdsFeedErrorTest
+[ 16%] Linking CXX executable UrlUtilsTest
+[ 16%] Building CXX object library_format/CMakeFiles/LibraryFormatTest.dir/LibraryFormatTest.cpp.o
+[ 16%] Built target OpdsFeedErrorTest
+[ 16%] Built target UrlUtilsTest
+[ 17%] Building CXX object library_index_file/CMakeFiles/LibraryIndexFileTest.dir/LibraryIndexFileTest.cpp.o
+[ 17%] Building CXX object library_text/CMakeFiles/LibraryTextTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/LibraryIndex/LibraryText.cpp.o
+[ 18%] Linking CXX executable HyphenationEvaluationTest
+[ 18%] Building CXX object html_to_plain_text/CMakeFiles/HtmlToPlainTextTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/util/HtmlToPlainText.cpp.o
+[ 18%] Built target HyphenationEvaluationTest
+[ 19%] Building CXX object library_format/CMakeFiles/LibraryFormatTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/LibraryIndex/LibraryFormat.cpp.o
+[ 19%] Building CXX object library_index_file/CMakeFiles/LibraryIndexFileTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/LibraryIndex/LibraryIndexFile.cpp.o
+[ 20%] Building CXX object html_to_plain_text/CMakeFiles/HtmlToPlainTextTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/htmlEntities.cpp.o
+[ 21%] Building CXX object library_text/CMakeFiles/LibraryTextTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 21%] Building CXX object library_index_file/CMakeFiles/LibraryIndexFileTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/LibraryIndex/LibraryFormat.cpp.o
+[ 22%] Building CXX object library_builder/CMakeFiles/LibraryBuilderTest.dir/LibraryBuilderTest.cpp.o
+[ 23%] Building CXX object minibidi_arabic/CMakeFiles/MiniBidiArabicTest.dir/MiniBidiArabicTest.cpp.o
+[ 23%] Linking CXX executable HtmlToPlainTextTest
+[ 23%] Built target HtmlToPlainTextTest
+[ 24%] Building CXX object combining_marks/CMakeFiles/CombiningMarkAnchorTest.dir/CombiningMarkAnchorTest.cpp.o
+[ 24%] Linking CXX executable LibraryTextTest
+[ 24%] Built target LibraryTextTest
+[ 24%] Building CXX object library_builder/CMakeFiles/LibraryBuilderTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/LibraryIndex/LibraryBuilder.cpp.o
+[ 25%] Linking CXX executable LibraryIndexFileTest
+[ 25%] Linking CXX executable LibraryFormatTest
+[ 25%] Built target LibraryIndexFileTest
+[ 25%] Building C object minibidi_arabic/CMakeFiles/MiniBidiArabicTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/MiniBidi/minibidi.c.o
+[ 25%] Built target LibraryFormatTest
+[ 26%] Building CXX object credential_integrity/CMakeFiles/CredentialIntegrityTest.dir/CredentialIntegrityTest.cpp.o
+[ 27%] Building CXX object minibidi_arabic/CMakeFiles/MiniBidiArabicTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/MiniBidi/BidiUtils.cpp.o
+[ 27%] Linking CXX executable CombiningMarkAnchorTest
+[ 27%] Building CXX object minibidi_arabic/CMakeFiles/MiniBidiArabicTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 27%] Built target CombiningMarkAnchorTest
+[ 27%] Building CXX object xml_parser_utils/CMakeFiles/XmlParserUtilsTest.dir/XmlParserUtilsTest.cpp.o
+[ 28%] Building CXX object library_builder/CMakeFiles/LibraryBuilderTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/LibraryIndex/LibraryIndexFile.cpp.o
+[ 28%] Linking CXX executable CredentialIntegrityTest
+[ 28%] Built target CredentialIntegrityTest
+[ 28%] Linking CXX executable MiniBidiArabicTest
+[ 29%] Building CXX object token_boundary/CMakeFiles/TokenBoundaryTest.dir/TokenBoundaryTest.cpp.o
+[ 29%] Built target MiniBidiArabicTest
+[ 29%] Building CXX object koreader_xpath_resolver/CMakeFiles/KOReaderXPathResolverTest.dir/KOReaderXPathResolverTest.cpp.o
+[ 30%] Linking CXX executable XmlParserUtilsTest
+[ 30%] Building CXX object token_boundary/CMakeFiles/TokenBoundaryTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/HyphenationCommon.cpp.o
+[ 30%] Built target XmlParserUtilsTest
+[ 30%] Building CXX object library_builder/CMakeFiles/LibraryBuilderTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/LibraryIndex/LibraryFormat.cpp.o
+[ 30%] Building CXX object library_builder/CMakeFiles/LibraryBuilderTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/LibraryIndex/LibraryText.cpp.o
+[ 31%] Building CXX object library_builder/CMakeFiles/LibraryBuilderTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 32%] Building CXX object koreader_xpath_resolver/CMakeFiles/KOReaderXPathResolverTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/KOReaderSync/ChapterXPathResolver.cpp.o
+[ 32%] Building CXX object token_boundary/CMakeFiles/TokenBoundaryTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 32%] Building CXX object progress_comparison/CMakeFiles/ProgressComparisonTest.dir/ProgressComparisonTest.cpp.o
+[ 32%] Building CXX object koreader_xpath_resolver/CMakeFiles/KOReaderXPathResolverTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 32%] Linking CXX executable LibraryBuilderTest
+[ 33%] Building C object koreader_xpath_resolver/CMakeFiles/KOReaderXPathResolverTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/expat/xmlparse.c.o
+[ 33%] Built target LibraryBuilderTest
+[ 34%] Linking CXX executable TokenBoundaryTest
+[ 34%] Building CXX object font_cache_manager/CMakeFiles/FontCacheManagerTest.dir/FontCacheManagerTest.cpp.o
+[ 34%] Built target TokenBoundaryTest
+[ 35%] Building CXX object progress_comparison/CMakeFiles/ProgressComparisonTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/KOReaderSync/ProgressComparison.cpp.o
+[ 36%] Building CXX object css_parser/CMakeFiles/CssParserTest.dir/CssParserTest.cpp.o
+[ 36%] Building C object koreader_xpath_resolver/CMakeFiles/KOReaderXPathResolverTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/expat/xmlrole.c.o
+[ 36%] Building C object koreader_xpath_resolver/CMakeFiles/KOReaderXPathResolverTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/expat/xmltok.c.o
+[ 37%] Building CXX object font_cache_manager/CMakeFiles/FontCacheManagerTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/GfxRenderer/FontCacheManager.cpp.o
+[ 38%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/ChapterHtmlSlimParserTest.cpp.o
+[ 38%] Linking CXX executable ProgressComparisonTest
+[ 39%] Linking CXX executable KOReaderXPathResolverTest
+[ 39%] Built target ProgressComparisonTest
+[ 39%] Building CXX object css_parser/CMakeFiles/CssParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/css/CssParser.cpp.o
+[ 39%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/KoreanLineBreakingTest.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/css_parser/CssParserTest.cpp:202:21: warning: loop variable 'style' creates a copy from type 'CssStyle const' [-Wrange-loop-construct]
+  202 |     for (const auto style : {parser->resolveStyle("p", "inherited", "inherited"), parser->resolveStyle("p", "last")}) {
+      |                     ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/css_parser/CssParserTest.cpp:202:10: note: use reference type 'CssStyle const &' to prevent copying
+  202 |     for (const auto style : {parser->resolveStyle("p", "inherited", "inherited"), parser->resolveStyle("p", "last")}) {
+      |          ^~~~~~~~~~~~~~~~~~
+      |                     &
+[ 39%] Built target KOReaderXPathResolverTest
+[ 39%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/EmDashLineBreakingTest.cpp.o
+[ 39%] Building CXX object font_cache_manager/CMakeFiles/FontCacheManagerTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:9: warning: keyword is hidden by macro definition [-Wkeyword-macro]
+   22 | #define class struct
+      |         ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:9: warning: keyword is hidden by macro definition [-Wkeyword-macro]
+   23 | #define private public
+      |         ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:24:
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:15:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/ParsedText.h:16:1: warning: struct 'GfxRenderer' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   16 | class GfxRenderer;
+      | ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:15: note: expanded from macro 'class'
+   22 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/stubs/GfxRenderer.h:20:7: note: previous use is here
+   20 | class GfxRenderer {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/ParsedText.h:16:1: note: did you mean class here?
+   16 | class GfxRenderer;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:15: note: expanded from macro 'class'
+   22 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:24:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:21:1: warning: struct 'Page' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   21 | class Page;
+      | ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:15: note: expanded from macro 'class'
+   22 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/Page.h:124:7: note: previous use is here
+  124 | class Page {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:21:1: note: did you mean class here?
+   21 | class Page;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:15: note: expanded from macro 'class'
+   22 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:24:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:22:1: warning: struct 'GfxRenderer' was previously declared as a struct; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   22 | class GfxRenderer;
+      | ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:15: note: expanded from macro 'class'
+   22 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/stubs/GfxRenderer.h:20:7: note: previous use is here
+   20 | class GfxRenderer {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:22:1: note: did you mean class here?
+   22 | class GfxRenderer;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:15: note: expanded from macro 'class'
+   22 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:24:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:23:1: warning: struct 'Epub' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   23 | class Epub;
+      | ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:15: note: expanded from macro 'class'
+   22 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/stubs/Epub.h:8:7: note: previous use is here
+    8 | class Epub {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:23:1: note: did you mean class here?
+   23 | class Epub;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:22:15: note: expanded from macro 'class'
+   22 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:24:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:312:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  305 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  306 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  307 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  308 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  309 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  310 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  311 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  312 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  313 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  314 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+[ 40%] Linking CXX executable FontCacheManagerTest
+[ 40%] Built target FontCacheManagerTest
+[ 41%] Building CXX object ligature_guard/CMakeFiles/LigatureGuardTest.dir/LigatureGuardTest.cpp.o
+[ 41%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/ParserLinkStubs.cpp.o
+1 warning generated.
+[ 41%] Linking CXX executable CssParserTest
+[ 41%] Building CXX object ligature_guard/CMakeFiles/LigatureGuardTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/EpdFont/EpdFont.cpp.o
+[ 41%] Built target CssParserTest
+[ 41%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp.o
+[ 42%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/FocusReadingTest.cpp.o
+[ 42%] Building CXX object ligature_guard/CMakeFiles/LigatureGuardTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 43%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/WordStore.cpp.o
+[ 43%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp.o
+[ 44%] Linking CXX executable LigatureGuardTest
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp:1153:39: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+ 1153 |       const int extraStartOffset = (j == i) ? calculateRubyExtraStartOffset(i, totalWordCount, renderer, fontId) : 0;
+      |                                     ~ ^  ~
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp:1155:43: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+ 1155 |       currlen += wordWidths[j] + gap + (j == i ? extraStartOffset : 0);
+      |                                         ~ ^  ~
+[ 44%] Built target LigatureGuardTest
+[ 45%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/DictionaryHtmlPagesTest.cpp.o
+[ 45%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/blocks/TextBlock.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp:1153:39: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+ 1153 |       const int extraStartOffset = (j == i) ? calculateRubyExtraStartOffset(i, totalWordCount, renderer, fontId) : 0;
+      |                                     ~ ^  ~
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp:1155:43: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+ 1155 |       currlen += wordWidths[j] + gap + (j == i ? extraStartOffset : 0);
+      |                                         ~ ^  ~
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/blocks/TextBlock.cpp:8:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Serialization/Serialization.h:79:44: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+   79 |   return len == 0 || file.read(&s[0], len) == static_cast<int>(len);
+      |                      ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+[ 45%] Building CXX object page_link/CMakeFiles/PageLinkTest.dir/PageLinkTest.cpp.o
+1 warning generated.
+[ 45%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/CjkBreaks.cpp.o
+[ 45%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/util/DictHtmlPages.cpp.o
+[ 46%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/Hyphenator.cpp.o
+2 warnings generated.
+[ 46%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/LanguageRegistry.cpp.o
+[ 47%] Linking CXX executable PageLinkTest
+[ 47%] Built target PageLinkTest
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/src/util/DictHtmlPages.cpp:4:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:312:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  305 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  306 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  307 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  308 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  309 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  310 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  311 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  312 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  313 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  314 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+[ 47%] Building CXX object content_opf_parser/CMakeFiles/ContentOpfParserTest.dir/ContentOpfParserTest.cpp.o
+2 warnings generated.
+[ 47%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/WordStore.cpp.o
+[ 48%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/LiangHyphenation.cpp.o
+1 warning generated.
+[ 49%] Building CXX object content_opf_parser/CMakeFiles/ContentOpfParserTest.dir/EncryptionManifestProbeTest.cpp.o
+[ 49%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/HyphenationCommon.cpp.o
+[ 50%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/blocks/TextBlock.cpp.o
+[ 50%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/MiniBidi/BidiUtils.cpp.o
+[ 50%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/Page.cpp.o
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/blocks/TextBlock.cpp:8:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Serialization/Serialization.h:79:44: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+   79 |   return len == 0 || file.read(&s[0], len) == static_cast<int>(len);
+      |                      ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+[ 51%] Building C object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/MiniBidi/minibidi.c.o
+[ 51%] Building CXX object chapter_position/CMakeFiles/ChapterPositionTest.dir/ChapterPositionTest.cpp.o
+[ 51%] Building CXX object content_opf_parser/CMakeFiles/ContentOpfParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ContentOpfParser.cpp.o
+[ 51%] Building CXX object korean_line_breaking/CMakeFiles/KoreanLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/Page.cpp:6:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Serialization/Serialization.h:79:44: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+   79 |   return len == 0 || file.read(&s[0], len) == static_cast<int>(len);
+      |                      ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/Page.cpp:100:57: warning: unused parameter 'fontId' [-Wunused-parameter]
+  100 | void PageImage::render(GfxRenderer& renderer, const int fontId, const int xOffset, const int yOffset) {
+      |                                                         ^
+1 warning generated.
+[ 51%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/CjkBreaks.cpp.o
+[ 51%] Linking CXX executable KoreanLineBreakingTest
+[ 51%] Built target KoreanLineBreakingTest
+[ 52%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/blocks/TextBlock.cpp.o
+2 warnings generated.
+[ 52%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/CjkBreaks.cpp.o
+[ 52%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/Hyphenator.cpp.o
+[ 53%] Linking CXX executable ChapterPositionTest
+[ 53%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/MiniBidi/BidiUtils.cpp.o
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/blocks/TextBlock.cpp:8:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Serialization/Serialization.h:79:44: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+   79 |   return len == 0 || file.read(&s[0], len) == static_cast<int>(len);
+      |                      ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+[ 53%] Built target ChapterPositionTest
+[ 53%] Building CXX object book_metadata_cache/CMakeFiles/BookMetadataCacheTest.dir/BookMetadataCacheTest.cpp.o
+[ 53%] Linking CXX executable ContentOpfParserTest
+1 warning generated.
+[ 54%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/LanguageRegistry.cpp.o
+[ 55%] Building C object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/MiniBidi/minibidi.c.o
+[ 55%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/LiangHyphenation.cpp.o
+[ 55%] Built target ContentOpfParserTest
+[ 56%] Building CXX object book_metadata_cache/CMakeFiles/BookMetadataCacheTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/BookMetadataCache.cpp.o
+[ 56%] Building CXX object home_button/CMakeFiles/HomeButtonInputTest.dir/HomeButtonInputTest.cpp.o
+7 warnings generated.
+[ 56%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp.o
+[ 57%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/hyphenation/HyphenationCommon.cpp.o
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/BookMetadataCache.cpp:5:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/Serialization/Serialization.h:79:44: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+   79 |   return len == 0 || file.read(&s[0], len) == static_cast<int>(len);
+      |                      ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+[ 57%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/MiniBidi/BidiUtils.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/BookMetadataCache.cpp:282:11: warning: variable 'matched' set but not used [-Wunused-but-set-variable]
+  282 |       int matched = 0;
+      |           ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:1:
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:312:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  305 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  306 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  307 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  308 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  309 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  310 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  311 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  312 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  313 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  314 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+[ 57%] Building C object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/MiniBidi/minibidi.c.o
+[ 57%] Building CXX object book_metadata_cache/CMakeFiles/BookMetadataCacheTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 57%] Linking CXX executable HomeButtonInputTest
+[ 58%] Building CXX object em_dash_line_breaking/CMakeFiles/EmDashLineBreakingTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2003:40: warning: '&&' within '||' [-Wlogical-op-parentheses]
+ 2003 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2003:40: note: place parentheses around the '&&' expression to silence this warning
+ 2003 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |                                        ^
+      |           (                                                                        )
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2004:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+ 2003 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |                                                                                     ~~
+ 2004 |           strcmp(atts[i], "epub:type") == 0 && strcmp(atts[i + 1], "pagebreak") == 0) {
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2004:45: note: place parentheses around the '&&' expression to silence this warning
+ 2004 |           strcmp(atts[i], "epub:type") == 0 && strcmp(atts[i + 1], "pagebreak") == 0) {
+      |                                             ^                                       
+      |           (                                                                         )
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2387:59: warning: comparison of integers of different signs: 'int' and 'unsigned long' [-Wsign-compare]
+ 2387 |     for (int i = start; (self->currentFootnoteLinkTextLen < sizeof(self->currentFootnote.number) - 1) && (i <= end);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 58%] Building CXX object button_press_navigation/CMakeFiles/ButtonPressNavigationTest.dir/ButtonPressNavigationTest.cpp.o
+[ 58%] Built target HomeButtonInputTest
+[ 59%] Building CXX object inflate_stream/CMakeFiles/InflateStreamTest.dir/InflateStreamTest.cpp.o
+[ 60%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/css/CssParser.cpp.o
+[ 60%] Linking CXX executable EmDashLineBreakingTest
+[ 60%] Built target EmDashLineBreakingTest
+[ 60%] Building CXX object inflate_reader/CMakeFiles/InflateReaderTest.dir/InflateReaderTest.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/css/CssParser.cpp:1252:10: warning: variable 'totalRead' set but not used [-Wunused-but-set-variable]
+ 1252 |   size_t totalRead = 0;
+      |          ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/css/CssParser.cpp:1839:14: warning: unused variable 'partial' [-Wunused-variable]
+ 1839 |   const bool partial = (flags & CSS_CACHE_FLAG_PARTIAL) != 0;
+      |              ^~~~~~~
+2 warnings generated.
+[ 61%] Linking CXX executable BookMetadataCacheTest
+[ 61%] Building CXX object button_press_navigation/CMakeFiles/ButtonPressNavigationTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/util/ButtonNavigator.cpp.o
+[ 61%] Built target BookMetadataCacheTest
+[ 61%] Building CXX object zip_file/CMakeFiles/ZipFileTest.dir/ZipFileTest.cpp.o
+[ 61%] Building C object inflate_stream/CMakeFiles/InflateStreamTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/miniz/src/miniz_impl.c.o
+[ 61%] Building CXX object inflate_stream/CMakeFiles/InflateStreamTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Memory/BuildScratch.cpp.o
+[ 62%] Building CXX object inflate_stream/CMakeFiles/InflateStreamTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/hal/HalMemory.cpp.o
+[ 63%] Linking CXX executable ButtonPressNavigationTest
+4 warnings generated.
+[ 63%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp.o
+[ 63%] Linking CXX executable InflateStreamTest
+[ 63%] Built target ButtonPressNavigationTest
+[ 63%] Building CXX object inflate_reader/CMakeFiles/InflateReaderTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/InflateReader/InflateReader.cpp.o
+[ 63%] Building CXX object fs_helpers/CMakeFiles/FsHelpersTest.dir/FsHelpersTest.cpp.o
+[ 64%] Building C object inflate_reader/CMakeFiles/InflateReaderTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/uzlib/src/tinflate.c.o
+[ 64%] Built target InflateStreamTest
+[ 64%] Building CXX object http_header/CMakeFiles/HttpHeaderTest.dir/HttpHeaderTest.cpp.o
+[ 64%] Linking CXX executable InflateReaderTest
+2 warnings generated.
+[ 64%] Building CXX object zip_file/CMakeFiles/ZipFileTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/ZipFile/ZipFile.cpp.o
+[ 64%] Built target InflateReaderTest
+[ 64%] Building CXX object fs_helpers/CMakeFiles/FsHelpersTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/FsHelpers/FsHelpers.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp:1153:39: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+ 1153 |       const int extraStartOffset = (j == i) ? calculateRubyExtraStartOffset(i, totalWordCount, renderer, fontId) : 0;
+      |                                     ~ ^  ~
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/ParsedText.cpp:1155:43: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+ 1155 |       currlen += wordWidths[j] + gap + (j == i ? extraStartOffset : 0);
+      |                                         ~ ^  ~
+[ 64%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/WordStore.cpp.o
+[ 65%] Building CXX object fs_helpers/CMakeFiles/FsHelpersTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 66%] Building CXX object zip_file/CMakeFiles/ZipFileTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/miniz/src/InflateStream.cpp.o
+[ 67%] Building CXX object http_header/CMakeFiles/HttpHeaderTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/HttpHeader/HttpHeader.cpp.o
+[ 67%] Building C object zip_file/CMakeFiles/ZipFileTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/miniz/src/miniz_impl.c.o
+[ 67%] Building CXX object txt_to_html/CMakeFiles/TxtToHtmlTest.dir/TxtToHtmlTest.cpp.o
+[ 68%] Building CXX object zip_file/CMakeFiles/ZipFileTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Memory/BuildScratch.cpp.o
+[ 68%] Building CXX object zip_file/CMakeFiles/ZipFileTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/hal/HalMemory.cpp.o
+[ 68%] Building CXX object absolute_grayscale/CMakeFiles/AbsoluteGrayscaleTest.dir/AbsoluteGrayscaleTest.cpp.o
+[ 68%] Linking CXX executable HttpHeaderTest
+[ 68%] Linking CXX executable FsHelpersTest
+[ 68%] Linking CXX executable ZipFileTest
+[ 68%] Built target FsHelpersTest
+[ 68%] Built target HttpHeaderTest
+[ 69%] Building CXX object txt_to_html/CMakeFiles/TxtToHtmlTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Txt/TxtToHtml.cpp.o
+[ 69%] Building CXX object gif_support/CMakeFiles/GifSupportTest.dir/GifSupportTest.cpp.o
+[ 69%] Built target ZipFileTest
+[ 69%] Building CXX object gif_support/CMakeFiles/GifBmpTest.dir/GifBmpTest.cpp.o
+[ 70%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/converters/ImageDimsProbe.cpp.o
+[ 70%] Building CXX object txt_to_html/CMakeFiles/TxtToHtmlTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/FsHelpers/FsHelpers.cpp.o
+[ 70%] Linking CXX executable AbsoluteGrayscaleTest
+[ 70%] Building CXX object gif_support/CMakeFiles/GifSupportTest.dir/PixelCacheTest.cpp.o
+2 warnings generated.
+[ 70%] Built target AbsoluteGrayscaleTest
+[ 70%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/converters/ImageToFramebufferDecoder.cpp.o
+[ 71%] Building CXX object bmp_to_bmp/CMakeFiles/BmpToBmpTest.dir/BmpToBmpTest.cpp.o
+[ 72%] Building CXX object gif_support/CMakeFiles/GifBmpTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/GifToBmpConverter/GifToBmpConverter.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/converters/ImageToFramebufferDecoder.cpp:7:94: warning: unused parameter 'format' [-Wunused-parameter]
+    7 |                                                            ImageDimensions& out, const char* format) {
+      |                                                                                              ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/converters/ImageToFramebufferDecoder.cpp:41:75: warning: unused parameter 'feature' [-Wunused-parameter]
+   41 | void ImageToFramebufferDecoder::warnUnsupportedFeature(const std::string& feature, const std::string& imagePath) {
+      |                                                                           ^
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Epub/Epub/converters/ImageToFramebufferDecoder.cpp:41:103: warning: unused parameter 'imagePath' [-Wunused-parameter]
+   41 | void ImageToFramebufferDecoder::warnUnsupportedFeature(const std::string& feature, const std::string& imagePath) {
+      |                                                                                                       ^
+3 warnings generated.
+[ 72%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 72%] Building CXX object txt_to_html/CMakeFiles/TxtToHtmlTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/lib/GifToBmpConverter/GifToBmpConverter.cpp:3:
+/Users/kryvusha/Xteink/fw-pr/build/test/_deps/animatedgif-src/src/AnimatedGIF.h:234:20: warning: unused parameter 'iEndian' [-Wunused-parameter]
+  234 |     void begin(int iEndian, uint8_t ucPaletteType) { begin(ucPaletteType); };
+      |                    ^
+[ 73%] Building CXX object gif_support/CMakeFiles/GifSupportTest.dir/GifDecoderTest.cpp.o
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/gif_support/GifDecoderTest.cpp:1:
+/Users/kryvusha/Xteink/fw-pr/build/test/_deps/animatedgif-src/src/AnimatedGIF.h:234:20: warning: unused parameter 'iEndian' [-Wunused-parameter]
+  234 |     void begin(int iEndian, uint8_t ucPaletteType) { begin(ucPaletteType); };
+      |                    ^
+[ 74%] Linking CXX executable ChapterHtmlSlimParserTest
+[ 75%] Linking CXX executable TxtToHtmlTest
+1 warning generated.
+[ 75%] Building CXX object gif_support/CMakeFiles/GifBmpTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/GfxRenderer/BitmapHelpers.cpp.o
+[ 75%] Built target TxtToHtmlTest
+[ 75%] Built target ChapterHtmlSlimParserTest
+[ 75%] Building CXX object calibration_card/CMakeFiles/CalibrationCardTest.dir/CalibrationCardTest.cpp.o
+[ 75%] Building CXX object panel_curve/CMakeFiles/PanelCurveTest.dir/PanelCurveTest.cpp.o
+[ 75%] Building CXX object bmp_to_bmp/CMakeFiles/BmpToBmpTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/BmpToBmpConverter/BmpToBmpConverter.cpp.o
+[ 76%] Linking CXX executable GifBmpTest
+[ 76%] Building CXX object bmp_to_bmp/CMakeFiles/BmpToBmpTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/GfxRenderer/Bitmap.cpp.o
+[ 76%] Built target GifBmpTest
+[ 76%] Building CXX object calibration_card/CMakeFiles/CalibrationCardTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/util/CalibrationCard.cpp.o
+[ 77%] Building CXX object bmp_to_bmp/CMakeFiles/BmpToBmpTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/GfxRenderer/BitmapHelpers.cpp.o
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/GfxRenderer/Bitmap.cpp:199:38: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'const int' [-Wsign-compare]
+  199 |   if (file.read(rowBuffer, rowBytes) != rowBytes) return BmpReaderError::ShortReadRow;
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~
+/Users/kryvusha/Xteink/pr-fixes/calibration/lib/GfxRenderer/Bitmap.cpp:304:38: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'const int' [-Wsign-compare]
+  304 |   if (file.read(rowBuffer, rowBytes) != rowBytes) return BmpReaderError::ShortReadRow;
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~
+2 warnings generated.
+[ 77%] Building CXX object panel_curve/CMakeFiles/PanelCurveTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/util/PanelCurve.cpp.o
+[ 78%] Building CXX object sd_card_font/CMakeFiles/SdCardFontTest.dir/SdCardFontTest.cpp.o
+[ 78%] Linking CXX executable BmpToBmpTest
+1 warning generated.
+[ 78%] Linking CXX executable GifSupportTest
+[ 78%] Built target BmpToBmpTest
+[ 78%] Building CXX object sd_font_registry/CMakeFiles/SdFontRegistryTest.dir/SdFontRegistryTest.cpp.o
+[ 78%] Built target GifSupportTest
+[ 79%] Linking CXX executable CalibrationCardTest
+[ 79%] Building CXX object clipping_preview/CMakeFiles/ClippingPreviewTest.dir/ClippingPreviewTest.cpp.o
+[ 79%] Building CXX object sd_card_font/CMakeFiles/SdCardFontTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/EpdFont/EpdFont.cpp.o
+[ 79%] Built target CalibrationCardTest
+[ 79%] Building CXX object glyph_bitmap/CMakeFiles/GlyphBitmapTest.dir/GlyphBitmapTest.cpp.o
+[ 80%] Linking CXX executable PanelCurveTest
+[ 80%] Built target PanelCurveTest
+[ 80%] Building CXX object clipping_store/CMakeFiles/ClippingStoreTest.dir/ClippingStoreTest.cpp.o
+[ 80%] Building CXX object sd_card_font/CMakeFiles/SdCardFontTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/EpdFont/SdCardFont.cpp.o
+[ 81%] Linking CXX executable GlyphBitmapTest
+[ 81%] Built target GlyphBitmapTest
+[ 82%] Building CXX object clipping_store/CMakeFiles/ClippingStoreS3Test.dir/ClippingStoreTest.cpp.o
+[ 83%] Building CXX object sd_font_registry/CMakeFiles/SdFontRegistryTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/EpdFont/SdCardFontRegistry.cpp.o
+[ 84%] Building CXX object clipping_store/CMakeFiles/ClippingStoreTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/ClippingStore.cpp.o
+[ 85%] Building CXX object sd_card_font/CMakeFiles/SdCardFontTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 85%] Linking CXX executable ClippingPreviewTest
+[ 85%] Built target ClippingPreviewTest
+[ 85%] Building CXX object clipping_store/CMakeFiles/ClippingStoreS3Test.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/ClippingStore.cpp.o
+[ 85%] Linking CXX executable SdCardFontTest
+[ 85%] Built target SdCardFontTest
+[ 85%] Building CXX object reader_session/CMakeFiles/ReaderSessionTest.dir/ReaderSessionTest.cpp.o
+[ 85%] Building CXX object clipping_store/CMakeFiles/ClippingStoreS3Test.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 85%] Linking CXX executable SdFontRegistryTest
+[ 85%] Building CXX object plugin_catalog_paging/CMakeFiles/PluginCatalogPagingTest.dir/PluginCatalogPagingTest.cpp.o
+[ 85%] Built target SdFontRegistryTest
+[ 86%] Building CXX object plugin_manifest_classification/CMakeFiles/PluginManifestClassificationTest.dir/PluginManifestClassificationTest.cpp.o
+[ 86%] Building CXX object clipping_store/CMakeFiles/ClippingStoreTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 87%] Building CXX object reader_session/CMakeFiles/ReaderSessionTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/src/activities/reader/ReaderSession.cpp.o
+[ 87%] Linking CXX executable ClippingStoreTest
+[ 88%] Building CXX object plugin_picker_layout/CMakeFiles/PluginPickerLayoutTest.dir/PluginPickerLayoutTest.cpp.o
+[ 89%] Linking CXX executable ClippingStoreS3Test
+[ 89%] Linking CXX executable ReaderSessionTest
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/plugin_picker_layout/PluginPickerLayoutTest.cpp:2:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/EpdFont/builtinFonts/ubuntu_10_regular.h:3715:1: warning: missing field 'glyphMissHandler' initializer [-Wmissing-field-initializers]
+ 3715 | };
+      | ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/calibration/test/plugin_picker_layout/PluginPickerLayoutTest.cpp:3:
+/Users/kryvusha/Xteink/pr-fixes/calibration/test/../lib/EpdFont/builtinFonts/ubuntu_12_regular.h:4371:1: warning: missing field 'glyphMissHandler' initializer [-Wmissing-field-initializers]
+ 4371 | };
+      | ^
+[ 89%] Built target ClippingStoreTest
+[ 89%] Built target ClippingStoreS3Test
+[ 89%] Built target ReaderSessionTest
+[ 90%] Building CXX object protected_paths/CMakeFiles/ProtectedPathsTest.dir/ProtectedPathsTest.cpp.o
+[ 90%] Building CXX object ble_link_note_title/CMakeFiles/LinkNoteTitleTest.dir/LinkNoteTitleTest.cpp.o
+[ 90%] Building CXX object ble_chapter_build_gate/CMakeFiles/ChapterBuildGateTest.dir/ChapterBuildGateTest.cpp.o
+[ 90%] Linking CXX executable PluginCatalogPagingTest
+[ 90%] Linking CXX executable PluginManifestClassificationTest
+[ 90%] Built target PluginCatalogPagingTest
+[ 90%] Building CXX object ble_remote_turn_gate/CMakeFiles/RemoteTurnGateTest.dir/RemoteTurnGateTest.cpp.o
+[ 90%] Built target PluginManifestClassificationTest
+[ 90%] Building CXX object plugin_picker_layout/CMakeFiles/PluginPickerLayoutTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/EpdFont/EpdFont.cpp.o
+[ 90%] Building CXX object plugin_picker_layout/CMakeFiles/PluginPickerLayoutTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/Utf8/Utf8.cpp.o
+[ 90%] Linking CXX executable LinkNoteTitleTest
+[ 90%] Linking CXX executable ChapterBuildGateTest
+2 warnings generated.
+[ 90%] Linking CXX executable ProtectedPathsTest
+[ 91%] Building CXX object plugin_picker_layout/CMakeFiles/PluginPickerLayoutTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/freeink-sdk/libs/ui/FreeInkUI/src/FreeInkUI.cpp.o
+[ 91%] Built target LinkNoteTitleTest
+[ 91%] Built target ChapterBuildGateTest
+[ 91%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerPolicyTest.dir/RadioVerdictTest.cpp.o
+[ 91%] Built target ProtectedPathsTest
+[ 91%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerRuntimeTest.dir/RuntimeTest.cpp.o
+[ 91%] Linking CXX executable RemoteTurnGateTest
+[ 91%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerHomeStartTest.dir/HomeStartTest.cpp.o
+[ 92%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerPolicyTest.dir/RadioVerdictS3Test.cpp.o
+[ 92%] Built target RemoteTurnGateTest
+[ 93%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerRuntimeTest.dir/TickTest.cpp.o
+[ 93%] Linking CXX executable PluginPickerLayoutTest
+[ 93%] Built target PluginPickerLayoutTest
+[ 94%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerNoRadioTest.dir/NoRadioTest.cpp.o
+[ 95%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerHomeStartTest.dir/Fakes.cpp.o
+[ 95%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerPolicyTest.dir/HeapRestartTest.cpp.o
+[ 95%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerHomeStartTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/BlePageTurner/src/Runtime.cpp.o
+[ 95%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerNoRadioTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/BlePageTurner/src/Runtime.cpp.o
+[ 96%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerConfigTest.dir/ConfigJsonTest.cpp.o
+[ 96%] Linking CXX executable BlePageTurnerHomeStartTest
+[ 97%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerNoRadioTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/BlePageTurner/src/NoRadio.cpp.o
+[ 97%] Built target BlePageTurnerHomeStartTest
+[ 97%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerRuntimeTest.dir/LinkNoteTest.cpp.o
+[ 98%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerSourceContractTest.dir/SourceContractTest.cpp.o
+[ 98%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerPolicyTest.dir/KeyBindingTest.cpp.o
+[ 98%] Linking CXX executable BlePageTurnerNoRadioTest
+[ 98%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerRuntimeTest.dir/RequestConnectTest.cpp.o
+[ 98%] Built target BlePageTurnerNoRadioTest
+[ 99%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerRuntimeTest.dir/Fakes.cpp.o
+[ 99%] Building CXX object BlePageTurnerTests/CMakeFiles/BlePageTurnerRuntimeTest.dir/Users/kryvusha/Xteink/pr-fixes/calibration/lib/BlePageTurner/src/Runtime.cpp.o
+[ 99%] Linking CXX executable BlePageTurnerRuntimeTest
+[100%] Linking CXX executable BlePageTurnerPolicyTest
+[100%] Linking CXX executable BlePageTurnerConfigTest
+[100%] Built target BlePageTurnerRuntimeTest
+[100%] Built target BlePageTurnerPolicyTest
+[100%] Built target BlePageTurnerConfigTest
+[100%] Linking CXX executable BlePageTurnerSourceContractTest
+[100%] Built target BlePageTurnerSourceContractTest

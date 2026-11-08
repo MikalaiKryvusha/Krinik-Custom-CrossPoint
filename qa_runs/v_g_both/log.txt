@@ -1,0 +1,118 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_g_both/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_g_both/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_g_both/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 12:33
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[206] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_g_both/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[207] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_g_both/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[207] [DBG] [SDREG] Fonts directory not found: /fonts
+[207] [DBG] [SDREG] Discovery complete: 0 families
+[207] [DBG] [SDFS] SD font system ready (0 families discovered)
+[207] [DBG] [MAIN] Fonts setup
+[207] [DBG] [ACT] Entering activity: Boot
+[207] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[225] [DBG] [ACT] Exiting activity: Boot
+[226] [DBG] [ACT] Entering activity: Home
+[226] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[241] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2587] [DBG] [ACT] Exiting activity: Home
+[2587] [DBG] [ACT] Entering activity: FileBrowser
+[2589] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[4588] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[6084] [DBG] [ACT] Exiting activity: FileBrowser
+[6084] [DBG] [ACT] Entering activity: BmpViewer
+[6085] [DBG] [CRV] Panel curve loaded: be170a3a
+[6086] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[6149] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[6149] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6163] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[6163] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6184] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[6184] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6210] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[6210] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6222] [DBG] [LOOP] New max loop duration: 139 ms (activity: 138 ms)
+[10033] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10034] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10252] [DBG] [BMP] Input: touch next
+[10252] [DBG] [BMP] Show 2/6: /sleep/oblivion_2.bmp
+[10311] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[10311] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[10323] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[10323] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10346] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[10346] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10371] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[10371] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14259] [DBG] [BMP] Input: touch prev
+[14259] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[14260] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[14260] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[14273] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[14274] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14302] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[14302] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14331] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[14331] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[18088] [DBG] [BMP] Input: touch next
+[18088] [DBG] [BMP] Show 2/6: /sleep/oblivion_2.bmp
+[18088] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[18088] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[18102] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[18102] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[18130] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[18130] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[18157] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[18157] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[20045] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20045] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[22080] [DBG] [BMP] Input: touch prev
+[22080] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[22080] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[22080] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[22085] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[22085] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[22105] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[22105] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[22127] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[22127] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[26088] [DBG] [BMP] Input: button next
+[26088] [DBG] [BMP] Show 2/6: /sleep/oblivion_2.bmp
+[26088] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[26088] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[26103] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[26103] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[26129] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[26129] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[26156] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[26156] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[30051] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30051] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[30088] [DBG] [BMP] Input: button prev
+[30088] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[30088] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[30088] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[30101] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[30101] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[30128] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[30128] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[30155] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[30155] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[34083] [DBG] [BMP] Input: button next
+[34083] [DBG] [BMP] Show 2/6: /sleep/oblivion_2.bmp
+[34083] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[34083] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[34098] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[34098] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[34126] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[34126] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[34153] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[34153] [DBG] [GFX] Scaling by 1.000000 - not scaled

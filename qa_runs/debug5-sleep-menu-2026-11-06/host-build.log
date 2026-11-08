@@ -1,0 +1,191 @@
+[1/14] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/converters/ImageToFramebufferDecoder.cpp.o
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/converters/ImageToFramebufferDecoder.cpp:7:94: warning: unused parameter 'format' [-Wunused-parameter]
+    7 |                                                            ImageDimensions& out, const char* format) {
+      |                                                                                              ^
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/converters/ImageToFramebufferDecoder.cpp:41:75: warning: unused parameter 'feature' [-Wunused-parameter]
+   41 | void ImageToFramebufferDecoder::warnUnsupportedFeature(const std::string& feature, const std::string& imagePath) {
+      |                                                                           ^
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/converters/ImageToFramebufferDecoder.cpp:41:103: warning: unused parameter 'imagePath' [-Wunused-parameter]
+   41 | void ImageToFramebufferDecoder::warnUnsupportedFeature(const std::string& feature, const std::string& imagePath) {
+      |                                                                                                       ^
+3 warnings generated.
+[2/14] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/converters/ImageDimsProbe.cpp.o
+[3/14] Building CXX object gif_support/CMakeFiles/GifBmpTest.dir/Users/kryvusha/Xteink/firmware/lib/GfxRenderer/BitmapHelpers.cpp.o
+[4/14] Building CXX object bmp_to_bmp/CMakeFiles/BmpToBmpTest.dir/Users/kryvusha/Xteink/firmware/lib/GfxRenderer/Bitmap.cpp.o
+/Users/kryvusha/Xteink/firmware/lib/GfxRenderer/Bitmap.cpp:199:38: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'const int' [-Wsign-compare]
+  199 |   if (file.read(rowBuffer, rowBytes) != rowBytes) return BmpReaderError::ShortReadRow;
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~
+/Users/kryvusha/Xteink/firmware/lib/GfxRenderer/Bitmap.cpp:304:38: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'const int' [-Wsign-compare]
+  304 |   if (file.read(rowBuffer, rowBytes) != rowBytes) return BmpReaderError::ShortReadRow;
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~
+2 warnings generated.
+[5/14] Building CXX object bmp_to_bmp/CMakeFiles/BmpToBmpTest.dir/Users/kryvusha/Xteink/firmware/lib/BmpToBmpConverter/BmpToBmpConverter.cpp.o
+[6/14] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/ParserLinkStubs.cpp.o
+[7/14] Building CXX object bmp_to_bmp/CMakeFiles/BmpToBmpTest.dir/Users/kryvusha/Xteink/firmware/lib/GfxRenderer/BitmapHelpers.cpp.o
+[8/14] Linking CXX executable gif_support/GifBmpTest
+[9/14] Linking CXX executable bmp_to_bmp/BmpToBmpTest
+[10/14] Building CXX object clipping_preview/CMakeFiles/ClippingPreviewTest.dir/ClippingPreviewTest.cpp.o
+[11/14] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp.o
+In file included from /Users/kryvusha/Xteink/firmware/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:1:
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:323:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  316 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  317 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  318 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  319 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  320 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  321 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  322 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  323 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  324 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  325 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2043:40: warning: '&&' within '||' [-Wlogical-op-parentheses]
+ 2043 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2043:40: note: place parentheses around the '&&' expression to silence this warning
+ 2043 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |                                        ^
+      |           (                                                                        )
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2044:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+ 2043 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |                                                                                     ~~
+ 2044 |           strcmp(atts[i], "epub:type") == 0 && strcmp(atts[i + 1], "pagebreak") == 0) {
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2044:45: note: place parentheses around the '&&' expression to silence this warning
+ 2044 |           strcmp(atts[i], "epub:type") == 0 && strcmp(atts[i + 1], "pagebreak") == 0) {
+      |                                             ^                                       
+      |           (                                                                         )
+/Users/kryvusha/Xteink/firmware/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2427:59: warning: comparison of integers of different signs: 'int' and 'unsigned long' [-Wsign-compare]
+ 2427 |     for (int i = start; (self->currentFootnoteLinkTextLen < sizeof(self->currentFootnote.number) - 1) && (i <= end);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4 warnings generated.
+[12/14] Linking CXX executable clipping_preview/ClippingPreviewTest
+[13/14] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/ChapterHtmlSlimParserTest.cpp.o
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:9: warning: keyword is hidden by macro definition [-Wkeyword-macro]
+   23 | #define class struct
+      |         ^
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:24:9: warning: keyword is hidden by macro definition [-Wkeyword-macro]
+   24 | #define private public
+      |         ^
+In file included from /Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+In file included from /Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:15:
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/ParsedText.h:16:1: warning: struct 'GfxRenderer' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   16 | class GfxRenderer;
+      | ^
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/stubs/GfxRenderer.h:20:7: note: previous use is here
+   20 | class GfxRenderer {
+      |       ^
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/ParsedText.h:16:1: note: did you mean class here?
+   16 | class GfxRenderer;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:21:1: warning: struct 'Page' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   21 | class Page;
+      | ^
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/Page.h:124:7: note: previous use is here
+  124 | class Page {
+      |       ^
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:21:1: note: did you mean class here?
+   21 | class Page;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:22:1: warning: struct 'GfxRenderer' was previously declared as a struct; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   22 | class GfxRenderer;
+      | ^
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/stubs/GfxRenderer.h:20:7: note: previous use is here
+   20 | class GfxRenderer {
+      |       ^
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:22:1: note: did you mean class here?
+   22 | class GfxRenderer;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:23:1: warning: struct 'Epub' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   23 | class Epub;
+      | ^
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/stubs/Epub.h:8:7: note: previous use is here
+    8 | class Epub {
+      |       ^
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:23:1: note: did you mean class here?
+   23 | class Epub;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/firmware/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+/Users/kryvusha/Xteink/firmware/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:323:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  316 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  317 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  318 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  319 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  320 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  321 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  322 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  323 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  324 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  325 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+7 warnings generated.
+[14/14] Linking CXX executable chapter_html_slim_parser/ChapterHtmlSlimParserTest

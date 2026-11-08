@@ -1,0 +1,5 @@
+epoch,uptime_s,event,vcell_mv,soc_pct,charging,light_on,brightness_pct,warm_pct
+1793950249,0,boot,0,100,0,1,57,80
+1793950309,60,tick,0,100,0,1,57,80
+1793950319,70,sleep,0,100,0,1,57,80
+1793950321,0,boot,0,100,0,1,57,80

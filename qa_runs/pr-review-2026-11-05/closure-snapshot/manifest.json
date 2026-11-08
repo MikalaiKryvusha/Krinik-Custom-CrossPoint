@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-05T10:42:06.195930+03:00",
+  "published": false,
+  "firmware_builds_run": false,
+  "worktrees": {
+    "epub": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/epub",
+      "head": "b3f25945e235f79a2222139284dd2982f8913006",
+      "branch": "pr/epub-anchor-first-line",
+      "status": " M lib/Epub/Epub/Section.cpp\n M lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp\n M lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h\n M test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp\n",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/closure-snapshot/epub.patch",
+      "sha256": "90bebbd688292802f770da7a7c6b9735493a10989cb32bbfa6dd1ab9e2f1c8a1"
+    },
+    "about": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/about",
+      "head": "edad8db1e9db501c4139b2c95174d36df73734c3",
+      "branch": "pr/about-sd-card",
+      "status": " m freeink-sdk\n M lib/hal/HalStorage.cpp\n M lib/hal/HalStorage.h\n M src/activities/settings/AboutActivity.cpp\n",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/closure-snapshot/about.patch",
+      "sha256": "6d7c9e17ba9f8d7142bb4d5e95f4fea9779032f1e24224e517e56f470d8dce99"
+    },
+    "sleep": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/sleep",
+      "head": "4a5ac6031b9b03ea951e03037801bf89428f8227",
+      "branch": "pr/sleep-image-order",
+      "status": " M USER_GUIDE.md\n M src/activities/boot_sleep/SleepActivity.cpp\n A src/activities/boot_sleep/SleepImageCursor.h\n M test/CMakeLists.txt\n A test/sleep_image_cursor/CMakeLists.txt\n A test/sleep_image_cursor/SleepImageCursorTest.cpp\n",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/closure-snapshot/sleep.patch",
+      "sha256": "ef261bf67700e16f7370c1476d0b1062bfe67a68c834a93e7e39b6445b457170"
+    },
+    "krinik": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/krinik",
+      "head": "a955a572807950011502b0297933846a2472a744",
+      "branch": "fix/krinik-1.0.1-coderabbit",
+      "status": " m freeink-sdk\n M lib/Epub/Epub/Section.cpp\n M lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp\n M lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h\n M lib/hal/HalStorage.cpp\n M lib/hal/HalStorage.h\n M src/activities/boot_sleep/SleepActivity.cpp\n A src/activities/boot_sleep/SleepImageCursor.h\n M src/activities/settings/AboutActivity.cpp\n M test/CMakeLists.txt\n M test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp\n A test/sleep_image_cursor/CMakeLists.txt\n A test/sleep_image_cursor/SleepImageCursorTest.cpp\n",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/closure-snapshot/krinik.patch",
+      "sha256": "2445f7ee1be67eb0f462b0e64ac4a85f96d869c56e38091bdd733ce756fb5860"
+    },
+    "sdk": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/about/freeink-sdk",
+      "head": "5e94fe7480f019c89fbf691aef87523eb1b46704",
+      "branch": "",
+      "status": " M libs/hardware/SDCardManager/include/SDCardManager.h\n M libs/hardware/SDCardManager/src/SDCardManager.cpp\n M libs/hardware/SDCardManager/test/host/stubs/BoardConfig.h\n M libs/hardware/SDCardManager/test/host/stubs/SdFat.h\n M libs/hardware/SDCardManager/test/host/test_stream.cpp\n",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/closure-snapshot/sdk.patch",
+      "sha256": "d6b04323b566c2b442678e651075ccc1f459030bf6a99af86f356afabb3224fb"
+    },
+    "krinik-sdk": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/krinik/freeink-sdk",
+      "head": "4feaf66d2c54185239849d9fc39697d9797f731a",
+      "branch": "",
+      "status": " M libs/hardware/SDCardManager/include/SDCardManager.h\n M libs/hardware/SDCardManager/src/SDCardManager.cpp\n M libs/hardware/SDCardManager/test/host/stubs/SdFat.h\n M libs/hardware/SDCardManager/test/host/test_stream.cpp\n",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/closure-snapshot/krinik-sdk.patch",
+      "sha256": "5377fea8397cb32985200ac48e4b7b3e48d0cde10b3efab2c7e08de4e800ab98"
+    }
+  }
+}

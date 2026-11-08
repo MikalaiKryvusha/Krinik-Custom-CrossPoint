@@ -1,0 +1,56 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using RoundedRaff theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 10:10
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[205] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[205] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[205] [DBG] [SDREG] Fonts directory not found: /fonts
+[205] [DBG] [SDREG] Discovery complete: 0 families
+[205] [DBG] [SDFS] SD font system ready (0 families discovered)
+[205] [DBG] [MAIN] Fonts setup
+[205] [DBG] [ACT] Entering activity: Boot
+[205] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[230] [DBG] [ACT] Exiting activity: Boot
+[230] [DBG] [ACT] Entering activity: Home
+[230] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[254] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1506] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1907] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2309] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2882] [DBG] [ACT] Exiting activity: Home
+[2882] [DBG] [ACT] Entering activity: SettingsList
+[2884] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[4510] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[4984] [DBG] [ACT] Pushed to activity stack, new size = 1
+[4984] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[4984] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[4984] [DBG] [DREG] No /.dictionaries directory on SD card
+[4988] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/theme3_display/shots/display.bmp
+[7015] [DBG] [GFX] Time = 7 ms from clearScreen to displayBuffer
+[7413] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[7987] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[7987] [DBG] [DREG] No /.dictionaries directory on SD card
+[7993] [DBG] [GFX] Time = 6 ms from clearScreen to displayBuffer
+[9510] [DBG] [GFX] Time = 6 ms from clearScreen to displayBuffer
+[10003] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10003] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[10089] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/theme3_display/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[10089] [DBG] [DREG] No /.dictionaries directory on SD card
+[10091] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/theme3_display/shots/display_toggled.bmp

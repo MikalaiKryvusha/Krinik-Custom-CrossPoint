@@ -1,0 +1,265 @@
+8c8
+< +> *Проект посвящён моей маме — Кривуше Софии Фадеевне, очень большому читателю-книголюбу, которая привила мне любовь к чтению книг.*
+---
+> +> ❤️ *Проект посвящён моей маме — Кривуше Софии Фадеевне, очень большому читателю-книголюбу, которая привила мне любовь к чтению книг.*
+10c10
+< +> *Dedicated to my mother, Sofia Fadeevna Kryvusha — a great reader and lover of books, who gave me my love of reading.*
+---
+> +> ❤️ *Dedicated to my mother, Sofia Fadeevna Kryvusha — a great reader and lover of books, who gave me my love of reading.*
+15c15
+< @@ -17,13 +21,15 @@
+---
+> @@ -17,13 +21,18 @@
+32a33,35
+> +- «Экран → Калибровка экрана»: калибровочные экраны картинок и книг (карточка из 33 ступеней), галочки «Калибровка
+> +  картинок» / «Калибровка книг». Поправку по фото экрана считает [KEINKT Calibrator](https://github.com/MikalaiKryvusha/KEINKT):
+> +  `panel_curve.txt` / `panel_curve_book.txt` в корень карты. Картинки в книгах тоже идут через свою кривую (по галочке).
+36c39
+< @@ -48,7 +54,7 @@
+---
+> @@ -48,7 +57,7 @@
+48c51
+< @@ -249,7 +249,9 @@ Settings are grouped into **System**, **Display**, **Reader**, **Controls**, **L
+---
+> @@ -249,7 +249,15 @@ Settings are grouped into **System**, **Display**, **Reader**, **Controls**, **L
+52a56,61
+> +- **Screen Calibration**: The pictures and books calibration screens draw a card of 33 gray steps; photograph it and
+> +  compute the correction with [KEINKT Calibrator](https://github.com/MikalaiKryvusha/KEINKT), then put
+> +  `panel_curve.txt` (pictures, sleep images) or `panel_curve_book.txt` (images in books) into the card root and wake the
+> +  reader from sleep. The Pictures Calibration (on by default) and Books Calibration (off) checkboxes apply the curves;
+> +  off, a calibration screen shows the panel as it is (measure), on — with the correction (check).
+> +
+387c396
+< @@ -249,9 +249,19 @@ STR_MS_500: "500 ms"
+---
+> @@ -249,9 +249,20 @@ STR_MS_500: "500 ms"
+406a416
+> +STR_CAL_CARD_FAILED: "Could not write the card to the memory card"
+422c432
+< @@ -240,11 +240,21 @@ STR_LIGHT_RAMP: "Плавная подсветка"
+---
+> @@ -240,11 +240,22 @@ STR_LIGHT_RAMP: "Плавная подсветка"
+444a455
+> +STR_CAL_CARD_FAILED: "Не удалось записать карточку на карту памяти"
+496c507
+< +    (`transitionGrayscaleBase`), опция «Очищать после картинок» убрана 05.11 (Николай: меню и так чистое);
+---
+> +    (`transitionGrayscaleBase`), опция «Перерисовка меню» (ненадолго «Очищать после картинок») убрана 05.11 (Николай: меню и так чистое);
+825a837,846
+> @@ -742,7 +743,8 @@ void EpubReaderActivity::loop() {
+>    }
+>  
+>    if (atEndOfBook) {
+> -    pendingReadFolderMove = SETTINGS.moveFinishedToReadFolder && !isInReadFolder(epub->getPath());
+> +    pendingReadFolderMove = SETTINGS.moveFinishedToReadFolder && !isInReadFolder(epub->getPath()) &&
+> +                            !calibcard::isCalibrationPath(epub->getPath());
+>    } else {
+>      pendingReadFolderMove = false;
+>    }
+837c858,870
+< @@ -87,6 +88,8 @@ void ReaderActivity::onEnter() {
+---
+> @@ -67,8 +68,9 @@ void ReaderActivity::onEnter() {
+>      return;
+>    }
+>  
+> -  // Clear remembered book after opening it
+> -  if (!APP_STATE.openEpubPath.empty()) {
+> +  // Clear remembered book after opening it (not for the books calibration card: the last real book stays the one
+> +  // the cover sleep screen and quick resume use)
+> +  if (!APP_STATE.openEpubPath.empty() && !calibcard::isCalibrationPath(bookPath)) {
+>      APP_STATE.openEpubPath.clear();
+>      APP_STATE.saveToFile();
+>    }
+> @@ -87,6 +89,8 @@ void ReaderActivity::onEnter() {
+857,862c890,896
+< @@ -270,6 +271,11 @@ inline bool handleBackNavigation(const MappedInputManager& mappedInput, Activity
+<                               mappedInput.wasReleased(MappedInputManager::Button::Back);
+<    if (!backTriggered) return false;
+<  
+< +  // From the books calibration card back to Settings → Display, where it was opened.
+< +  if (filePath && calibcard::isCalibrationPath(filePath)) {
+---
+> @@ -262,6 +263,12 @@ inline bool handleBackNavigation(const MappedInputManager& mappedInput, Activity
+>    // available in menus and other activities; only this reader-surface handler
+>    // ignores them. Physical Back buttons are unaffected: isPressed() is
+>    // button-only, and this guard skips just the gesture's own release frame.
+> +  // The books calibration card: Back — the button or the edge swipe (X4 Pro has no Back button) — returns to
+> +  // Settings → Display, the level that holds «Калибровка экрана». Before the reading surface's swipe guard below.
+> +  if (filePath && calibcard::isCalibrationPath(filePath) && mappedInput.wasReleased(MappedInputManager::Button::Back)) {
+866,868c900,902
+<    const bool longPress = mappedInput.getHeldTime() >= GO_BACK_OR_HOME_MS;
+<    if (longPress != SETTINGS.backShortToFileBrowser) {
+<      activityManager.goToFileBrowser(filePath);
+---
+>    if (mappedInput.wasBackGesture()) {
+>      return false;
+>    }
+980c1014
+< @@ -291,6 +314,40 @@ void SettingsActivity::toggleSelectedSetting() {
+---
+> @@ -291,6 +314,42 @@ void SettingsActivity::toggleSelectedSetting() {
+1004c1038,1039
+< +        // The card is written once (a few hundred KB) and opened like any image / book; Back returns to Settings.
+---
+> +        // The card is written once (BMP 1.15 MB, EPUB 0.4 MB) and opened like any image / book; Back returns to
+> +        // Settings → Display.
+1012a1048
+> +          activityManager.goToFullScreenMessage(tr(STR_CAL_CARD_FAILED));
+1021c1057
+< @@ -528,6 +585,19 @@ void SettingsActivity::buildScreen(UiScreen& screen) {
+---
+> @@ -528,6 +587,19 @@ void SettingsActivity::buildScreen(UiScreen& screen) {
+1131c1167
+< @@ -405,9 +407,9 @@ void BmpViewerActivity::onExit() {
+---
+> @@ -405,9 +407,10 @@ void BmpViewerActivity::onExit() {
+1140c1176,1177
+< +  // (Nikolai on the reader, 05.11.2026); the «Очищать после картинок» option is gone with it.
+---
+> +  // (Nikolai on the reader, 05.11.2026); the option («Перерисовка меню», briefly «Очищать после картинок») is gone with
+> +  // it.
+1144c1181
+< @@ -591,22 +593,28 @@ void BmpViewerActivity::loop() {
+---
+> @@ -591,22 +594,28 @@ void BmpViewerActivity::loop() {
+1173c1210
+< +    // From the pictures calibration card back to Settings → Display, where it was opened.
+---
+> +    // From the pictures calibration card back to Settings → Display, the level that holds «Калибровка экрана».
+1349c1386
+< @@ -0,0 +1,251 @@
+---
+> @@ -0,0 +1,258 @@
+1363c1400,1402
+< +constexpr int FID[4][2] = {{FM + F / 2, FM + F / 2}, {W - FM - F / 2, FM + F / 2}, {W - FM - F / 2, H - FM - F / 2},
+---
+> +constexpr int FID[4][2] = {{FM + F / 2, FM + F / 2},
+> +                           {W - FM - F / 2, FM + F / 2},
+> +                           {W - FM - F / 2, H - FM - F / 2},
+1489,1492c1528,1535
+< +    if (ch == '&') t += "&amp;";
+< +    else if (ch == '<') t += "&lt;";
+< +    else if (ch == '>') t += "&gt;";
+< +    else t += ch;
+---
+> +    if (ch == '&')
+> +      t += "&amp;";
+> +    else if (ch == '<')
+> +      t += "&lt;";
+> +    else if (ch == '>')
+> +      t += "&gt;";
+> +    else
+> +      t += ch;
+1522,1523c1565,1567
+< +  Entry entries[] = {{"mimetype", nullptr}, {"META-INF/container.xml", &container}, {"OEBPS/content.opf", &opf},
+< +                     {"OEBPS/nav.xhtml", &nav}, {"OEBPS/card.xhtml", &page}, {"OEBPS/card.png", nullptr}};
+---
+> +  Entry entries[] = {{"mimetype", nullptr},       {"META-INF/container.xml", &container},
+> +                     {"OEBPS/content.opf", &opf}, {"OEBPS/nav.xhtml", &nav},
+> +                     {"OEBPS/card.xhtml", &page}, {"OEBPS/card.png", nullptr}};
+1605c1649
+< @@ -0,0 +1,38 @@
+---
+> @@ -0,0 +1,39 @@
+1612,1616c1656,1660
+< +// The screen calibration card (Display → Screen calibration, Nikolai 05.11.2026): 33 gray steps from black to white, four
+< +// corner marks and two paper cells, the layout the KEINKT Calibrator page measures (calibrator/index.html, renderCard).
+< +// The pictures card is a BMP opened in the image viewer; the books card is a one-page EPUB, so the reader draws it the
+< +// way it draws images inside books. Both are drawn through the current curve: with the checkbox off they show the
+< +// panel's own response (calibrate), with it on the corrected one (check).
+---
+> +// The screen calibration card (Display → Screen calibration, Nikolai 05.11.2026): 33 gray steps from black to white,
+> +// four corner marks and two paper cells, the layout the KEINKT Calibrator page measures (calibrator/index.html,
+> +// renderCard). The pictures card is a BMP opened in the image viewer; the books card is a one-page EPUB, so the reader
+> +// draws it the way it draws images inside books. Both are drawn through the current curve: with the checkbox off they
+> +// show the panel's own response (calibrate), with it on the corrected one (check).
+1626c1670,1671
+< +// Writes the card (if missing) and returns its path: the pictures BMP in the reading orientation's shape, the books EPUB.
+---
+> +// Writes the card (if missing) and returns its path: the pictures BMP in the reading orientation's shape, the books
+> +// EPUB.
+1648c1693
+< @@ -0,0 +1,91 @@
+---
+> @@ -0,0 +1,106 @@
+1652a1698,1700
+> +#include <memory>
+> +#include <new>
+> +
+1655a1704
+> +// «_v1»: a changed card layout gets a new name, so an old card on the SD is never reused.
+1658,1660c1707,1709
+< +constexpr char PICTURES_PORTRAIT[] = "/.crosspoint/calibration/pictures_portrait.bmp";
+< +constexpr char PICTURES_LANDSCAPE[] = "/.crosspoint/calibration/pictures_landscape.bmp";
+< +constexpr char BOOKS[] = "/.crosspoint/calibration/books_card.epub";
+---
+> +constexpr char PICTURES_PORTRAIT[] = "/.crosspoint/calibration/pictures_portrait_v1.bmp";
+> +constexpr char PICTURES_LANDSCAPE[] = "/.crosspoint/calibration/pictures_landscape_v1.bmp";
+> +constexpr char BOOKS[] = "/.crosspoint/calibration/books_card_v1.epub";
+1671a1721
+> +// `fill` returns false when it could not produce the content.
+1680c1730
+< +  fill(sink);
+---
+> +  const bool filled = fill(sink);
+1682c1732
+< +  if (!sink.ok || !closed || !Storage.rename(tmp.c_str(), path)) {
+---
+> +  if (!filled || !sink.ok || !closed || !Storage.rename(tmp.c_str(), path)) {
+1691c1741
+< +void writeBmp(Sink& out, const bool landscape) {
+---
+> +bool writeBmp(Sink& out, const bool landscape) {
+1709c1759,1765
+< +  static uint8_t line[H * 3];  // the widest row; static: 2.4 KB off the task stack
+---
+> +  // The widest row, on the heap only while writing (2.4 KB).
+> +  std::unique_ptr<uint8_t[]> buf(new (std::nothrow) uint8_t[H * 3]);
+> +  if (!buf) {
+> +    LOG_ERR("CAL", "OOM: card row");
+> +    return false;
+> +  }
+> +  uint8_t* line = buf.get();
+1716a1773
+> +  return true;
+1725c1782
+< +  return writeFile(path.c_str(), [&](Sink& s) { writeBmp(s, landscape); });
+---
+> +  return writeFile(path.c_str(), [&](Sink& s) { return writeBmp(s, landscape); });
+1732c1789,1792
+< +  return writeFile(BOOKS, [&](Sink& s) { writeEpub(s, title); });
+---
+> +  return writeFile(BOOKS, [&](Sink& s) {
+> +    writeEpub(s, title);
+> +    return true;
+> +  });
+1750c1810
+< +// sleep image and the optional cleans (sheet close, leaving a viewer image for the menus).
+---
+> +// sleep image and the optional clean after the control center closes.
+1948c2008
+< @@ -1,16 +1,26 @@
+---
+> @@ -1,16 +1,27 @@
+1959,1960c2019,2021
+< +// images be prepared flat, as for a computer screen. The calibration page (tools/panel-calibration) makes the file from
+< +// a photo of the calibration card.
+---
+> +// images be prepared flat, as for a computer screen. The KEINKT Calibrator page (github.com/MikalaiKryvusha/KEINKT)
+> +// makes the file from a photo of the calibration card: KEINKT Calibrator, https://github.com/MikalaiKryvusha/KEINKT
+> +// (calibrator/index.html).
+2030,2031c2091,2092
+< +  EXPECT_EQ(pixel(36 + 36, 112 + 36, false), 0);                  // level 0
+< +  EXPECT_EQ(pixel(36 + 2 * 84 + 36, 112 + 3 * 84 + 36, false), 135);  // level 17: round(17·255/32 = 135.47)
+---
+> +  EXPECT_EQ(pixel(36 + 36, 112 + 36, false), 0);                                // level 0
+> +  EXPECT_EQ(pixel(36 + 2 * 84 + 36, 112 + 3 * 84 + 36, false), 135);            // level 17: round(17·255/32 = 135.47)
+2033,2035c2094,2096
+< +  EXPECT_EQ(pixel(36 + 4 * 84 + 36, 112 + 6 * 84 + 36, false), 255);  // last cell: paper on the pictures card
+< +  EXPECT_EQ(pixel(36 + 4 * 84 + 36, 112 + 6 * 84 + 36, true), 0);     // black on the books card
+< +  EXPECT_EQ(pixel(36 + 72 + 6, 112 + 36, false), 255);                // the gap between cells
+---
+> +  EXPECT_EQ(pixel(36 + 4 * 84 + 36, 112 + 6 * 84 + 36, false), 255);            // last cell: paper on the pictures card
+> +  EXPECT_EQ(pixel(36 + 4 * 84 + 36, 112 + 6 * 84 + 36, true), 0);               // black on the books card
+> +  EXPECT_EQ(pixel(36 + 72 + 6, 112 + 36, false), 255);                          // the gap between cells

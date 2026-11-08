@@ -1,0 +1,13 @@
+✓ straight, portrait: max curve error 1.6 % at tone 131, rho 1.000, issues []
+✓ rotated 90° (landscape view): max curve error 1.6 % at tone 131, rho 1.000, issues []
+✓ upside down + perspective: max curve error 1.6 % at tone 131, rho 1.000, issues [tilt]
+✓ tilt + light gradient: max curve error 1.6 % at tone 131, rho 0.996, issues []
+✓ small in frame: max curve error 1.6 % at tone 131, rho 1.000, issues [small]
+✓ night mode reported: night
+✓ manual marks: rho 1.000
+✓ card kind: pictures / books
+✓ card BMP 1152054 bytes
+✓ four photos: mean screen error 0.7 % (worst single photo 1.7 %)
+✓ second iteration: mean screen error 1.4 % → 0.9 %
+✓ check deviation: mean 0.3 %, max 1.6 %
+all passed

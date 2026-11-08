@@ -1,0 +1,69 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-06 19:11
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[215] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[215] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[215] [DBG] [SDREG] Fonts directory not found: /fonts
+[215] [DBG] [SDREG] Discovery complete: 0 families
+[215] [DBG] [SDFS] SD font system ready (0 families discovered)
+[215] [DBG] [MAIN] Fonts setup
+[215] [DBG] [ACT] Entering activity: Boot
+[216] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[247] [DBG] [ACT] Exiting activity: Boot
+[247] [DBG] [ACT] Entering activity: Home
+[248] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[264] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1506] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1910] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2302] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2708] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[3102] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/shots/selected.bmp
+[3793] [DBG] [SLP] Sleep requested from the home menu
+[3794] [DBG] [ACT] Exiting activity: Home
+[3794] [DBG] [ACT] Entering activity: Sleep
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[3896] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[3897] [DBG] [CRV] Curve loaded from /.crosspoint/panel_curve.txt: be170a3a
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/.crosspoint/sleep_cache.idx (flags=0x0 errno=2 No such file or directory)
+[3954] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[3954] [DBG] [SLP] drawing to 0 x 0
+[3954] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3954] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3971] [DBG] [CLN] Short clean: HALF scrub to white
+[3971] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3983] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3983] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4001] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4001] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4022] [DBG] [MAIN] Entering deep sleep
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[1] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[2] [INF] [CLK] RTC clock read: 2026-11-06 19:11
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[2] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+2026-11-06 19:11:51.591 program[86978:5562325] Task policy set failed: 4 ((os/kern) invalid argument)
+[199] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[199] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[199] [DBG] [SDREG] Fonts directory not found: /fonts
+[199] [DBG] [SDREG] Discovery complete: 0 families
+[199] [DBG] [SDFS] SD font system ready (0 families discovered)
+[199] [DBG] [MAIN] Fonts setup
+[199] [DBG] [ACT] Entering activity: Home
+[215] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[229] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/sim-debug5-keys/shots/woke.bmp

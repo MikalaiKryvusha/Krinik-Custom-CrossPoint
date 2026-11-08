@@ -1,0 +1,13 @@
+{
+  "script": "1500:TAP:240,642;2500:TAP:240,200;3500:TAP:240,684;4500:TAP:240,210;5500:TAP:240,330;6500:BACK;7500:BACK;8500:BACK;9500:QUIT",
+  "shots": {
+    "2100": "settings",
+    "3100": "display",
+    "4100": "cleaning",
+    "5100": "refresh-options",
+    "6100": "cleaning-after",
+    "7100": "back-display",
+    "8100": "back-settings",
+    "9100": "back-home"
+  }
+}

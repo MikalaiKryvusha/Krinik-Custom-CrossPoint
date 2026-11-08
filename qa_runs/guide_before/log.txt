@@ -1,0 +1,155 @@
+[0] [DBG] [UI] Using Lyra theme
+[4] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[6] [DBG] [CPS] Resaving settings to update format
+[6] [DBG] [CPS] Settings loaded from file
+[7] [DBG] [UI] Using Lyra theme
+[7] [INF] [CLK] RTC clock read: 2026-11-04 09:54
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[7] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[216] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[216] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[216] [DBG] [SDREG] Fonts directory not found: /fonts
+[216] [DBG] [SDREG] Discovery complete: 0 families
+[216] [DBG] [SDFS] SD font system ready (0 families discovered)
+[216] [DBG] [MAIN] Fonts setup
+[217] [DBG] [ACT] Entering activity: Boot
+[219] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[240] [DBG] [ACT] Exiting activity: Boot
+[240] [DBG] [ACT] Entering activity: Home
+[242] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[254] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1505] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2284] [DBG] [ACT] Exiting activity: Home
+[2284] [DBG] [ACT] Entering activity: Library
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[2286] [DBG] [GFX] Time = 782 ms from clearScreen to displayBuffer
+[2291] [DBG] [LIBIDX] phase prepare/prior: 1ms
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_6356251370301420133/book.bin (flags=0x0 errno=2 No such file or directory)
+[2294] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[2294] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[2294] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_1904033327718914090/book.bin (flags=0x0 errno=2 No such file or directory)
+[2295] [DBG] [ZIP] Decompressed 169 bytes into 240 bytes
+[2295] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[2296] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_5112959142090641435/book.bin (flags=0x0 errno=2 No such file or directory)
+[2297] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[2297] [DBG] [EBP] Parsing content.opf: content.opf
+[2298] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_3326978849599308136/book.bin (flags=0x0 errno=2 No such file or directory)
+[2299] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[2299] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[2299] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_16224160833964083072/book.bin (flags=0x0 errno=2 No such file or directory)
+[2300] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[2300] [DBG] [EBP] Parsing content.opf: content.opf
+[2300] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_17215692838832747456/book.bin (flags=0x0 errno=2 No such file or directory)
+[2301] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[2301] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[2302] [DBG] [EBP] Successfully parsed package metadata
+[2302] [DBG] [LIBIDX] phase walk/metadata/stage: 11ms
+[2302] [DBG] [LIBIDX] phase reconcile: 0ms
+[2302] [DBG] [LIBIDX] title sort alloc: 84 bytes, heap 1048576, max block 1048576
+[2304] [DBG] [LIBIDX] phase title order: 2ms
+[2305] [DBG] [LIBIDX] author sort alloc: 84 bytes, heap 1048576, max block 1048576
+[2314] [DBG] [LIBIDX] phase author/orders/emit: 10ms
+[2315] [INF] [LIBIDX] built: 6 books, 2 folders, 6 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 25ms
+[2315] [INF] [LIB] reconciled: 0 unchanged, 6 added, 0 renamed, 0 removed, 6 enriched (0 dup, 0 unreadable)
+[2317] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[2317] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[2317] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[2322] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[2322] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[2323] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[4511] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[4511] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[4511] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[4913] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[4913] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[4913] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[5307] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[5307] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[5307] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[5718] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[5718] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[5718] [DBG] [GFX] Time = 7 ms from clearScreen to displayBuffer
+[6110] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[6110] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[6110] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[6514] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[6514] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[6514] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[6891] [DBG] [ACT] Exiting activity: Library
+[6892] [DBG] [ACT] Entering activity: EpubReader
+[6892] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[6892] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[6894] [DBG] [GFX] Time = 384 ms from clearScreen to displayBuffer
+[6905] [DBG] [EBP] Loading ePub: /РУКОВОДСТВО.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_6356251370301420133/book.bin (flags=0x0 errno=2 No such file or directory)
+[6905] [DBG] [EBP] Cache not found, building spine/TOC cache
+[6906] [DBG] [BMC] Entering write mode
+[6906] [DBG] [BMC] Beginning content opf pass
+[6907] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[6907] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[6907] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[6907] [DBG] [COF] Using fast index for 4 manifest items
+[6907] [DBG] [ZIP] Decompressed 462 bytes into 897 bytes
+[6908] [DBG] [EBP] Successfully parsed content.opf
+[6908] [DBG] [EBP] OPF pass completed in 2 ms
+[6908] [DBG] [BMC] Beginning toc pass
+[6909] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[6909] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[6909] [DBG] [NAV] Found nav toc element
+[6909] [DBG] [NAV] Finished parsing nav toc
+[6909] [DBG] [ZIP] Decompressed 258 bytes into 337 bytes
+[6909] [DBG] [EBP] Parsed TOC nav items
+[6909] [DBG] [EBP] TOC pass completed in 1 ms
+[6909] [DBG] [BMC] Wrote 1 spine, 1 TOC entries
+[6909] [DBG] [BMC] Successfully built book.bin
+[6909] [DBG] [EBP] buildBookBin completed in 0 ms
+[6909] [DBG] [EBP] Total indexing completed in 3 ms
+[6910] [DBG] [EBP] CSS files to parse: 1
+[6910] [DBG] [EBP] Parsing CSS file: OEBPS/style.css
+[6910] [DBG] [ZIP] Decompressed 149 bytes into 241 bytes
+[6910] [DBG] [CSS] Parsed 4 rules from 241 bytes
+[6911] [DBG] [CSS] Saved 4 rules to complete cache
+[6911] [DBG] [EBP] Loaded 4 CSS style rules from 1 files (0 identical duplicates skipped, complete)
+[6911] [DBG] [BMC] Loaded cache data: 1 spine, 1 TOC entries
+[6911] [DBG] [EBP] Loaded ePub: /РУКОВОДСТВО.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_6356251370301420133/progress.bin (flags=0x0 errno=2 No such file or directory)
+[6911] [DBG] [EBP] Core Metadata: cover(15)=OEBPS/cover.jpg, textReference(0)=
+[6912] [DBG] [ERS] Loading file: OEBPS/readme.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/guide_before/sd/.crosspoint/epub_6356251370301420133/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[6912] [DBG] [ERS] Cache not found, building...
+[6912] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[6913] [DBG] [ZIP] Decompressed 2695 bytes into 6369 bytes
+[6913] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_6356251370301420133/html/.tmp_0.html (6369 bytes)
+[6913] [DBG] [CSS] Loaded 4 rules from complete cache
+[6920] [DBG] [SCT] Page 0 processed
+[6923] [DBG] [SCT] Page 1 processed
+[6926] [DBG] [SCT] Page 2 processed
+[6930] [DBG] [SCT] Page 3 processed
+[6933] [DBG] [SCT] Page 4 processed
+[6935] [DBG] [SCT] Page 5 processed
+[6938] [DBG] [SCT] Page 6 processed
+[6941] [DBG] [SCT] Page 7 processed
+[6942] [DBG] [EHP] Time to parse and build pages: 28 ms
+[6942] [DBG] [SCT] Page 8 processed
+[6945] [DBG] [FDC] Prewarm: 31 glyphs in 1963 bytes from 2 groups (0 missed)
+[6946] [DBG] [FDC] Prewarm: 66 glyphs in 3334 bytes from 3 groups (0 missed)
+[6947] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[6959] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=1ms display=2ms gray_lsb=3ms gray_msb=2ms gray_display=5ms cleanup=0ms total=16ms
+[6959] [DBG] [ERS] Rendered page in 16ms
+[6960] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[7369] [DBG] [FDC] Prewarm: 32 glyphs in 1932 bytes from 3 groups (0 missed)
+[7372] [DBG] [FDC] Prewarm: 65 glyphs in 3393 bytes from 4 groups (0 missed)
+[7372] [DBG] [ERS] Idle prewarm: page 1 in 8ms
+[10003] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10003] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/guide_before/shots/page.bmp

@@ -1,0 +1,2 @@
+8a3b93abe43fcc92183c7fc86cc8c694bbc25fab5f0fb5841a64fd44418cd5c3  RUKOVODSTVO-krinik.epub
+a9104bc7b7b7ae2eea252e4d552cce0b936c2e4d414bb5f93a27ccd88bfdee99  cp-2.0.0-krinik-1.1.1.bin

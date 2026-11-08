@@ -1,0 +1,515 @@
+[0] [DBG] [UI] Using Lyra theme
+[8] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/redraw-paging-stress-fixed/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/redraw-paging-stress-fixed/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/redraw-paging-stress-fixed/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[13] [DBG] [CPS] Resaving settings to update format
+[13] [DBG] [CPS] Settings loaded from file
+[14] [DBG] [UI] Using Lyra theme
+[15] [INF] [CLK] RTC clock read: 2026-11-05 18:24
+[SIM] Frontlight: off, brightness=60%, warmth=50%
+[15] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[16] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/redraw-paging-stress-fixed/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[17] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/redraw-paging-stress-fixed/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[17] [DBG] [SDREG] Fonts directory not found: /fonts
+[17] [DBG] [SDREG] Discovery complete: 0 families
+[17] [DBG] [SDFS] SD font system ready (0 families discovered)
+[17] [DBG] [MAIN] Fonts setup
+[17] [DBG] [ACT] Entering activity: Boot
+[18] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[24] [DBG] [ACT] Exiting activity: Boot
+[24] [DBG] [ACT] Entering activity: BmpViewer
+[25] [DBG] [GFX] Time = 8 ms from clearScreen to displayBuffer
+[27] [DBG] [GFX] Time = 10 ms from clearScreen to displayBuffer
+[28] [DBG] [GFX] Time = 11 ms from clearScreen to displayBuffer
+[30] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[30] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[48] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[48] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[66] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[66] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[88] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[88] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1021] [DBG] [ACT] Entering activity: BmpViewer
+[1021] [DBG] [GFX] Time = 933 ms from clearScreen to displayBuffer
+[1025] [DBG] [GFX] Time = 937 ms from clearScreen to displayBuffer
+[1029] [DBG] [GFX] Time = 941 ms from clearScreen to displayBuffer
+[1032] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1032] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1056] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1056] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1080] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1080] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1104] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1104] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1135] [DBG] [ACT] Entering activity: BmpViewer
+[1135] [DBG] [GFX] Time = 31 ms from clearScreen to displayBuffer
+[1137] [DBG] [GFX] Time = 33 ms from clearScreen to displayBuffer
+[1139] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[1141] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1141] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1160] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1160] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1178] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1178] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1199] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1199] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1234] [DBG] [ACT] Entering activity: BmpViewer
+[1234] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[1235] [DBG] [GFX] Time = 36 ms from clearScreen to displayBuffer
+[1237] [DBG] [GFX] Time = 38 ms from clearScreen to displayBuffer
+[1238] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1238] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1251] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1251] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1267] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1267] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1288] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1288] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1335] [DBG] [ACT] Entering activity: BmpViewer
+[1335] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[1337] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[1339] [DBG] [GFX] Time = 51 ms from clearScreen to displayBuffer
+[1341] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1341] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1361] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1361] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1379] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1379] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1400] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1400] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1434] [DBG] [ACT] Entering activity: BmpViewer
+[1434] [DBG] [GFX] Time = 34 ms from clearScreen to displayBuffer
+[1436] [DBG] [GFX] Time = 36 ms from clearScreen to displayBuffer
+[1438] [DBG] [GFX] Time = 38 ms from clearScreen to displayBuffer
+[1439] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1439] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1453] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1453] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1471] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1471] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1492] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1492] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1521] [DBG] [ACT] Entering activity: BmpViewer
+[1521] [DBG] [GFX] Time = 29 ms from clearScreen to displayBuffer
+[1523] [DBG] [GFX] Time = 31 ms from clearScreen to displayBuffer
+[1524] [DBG] [GFX] Time = 32 ms from clearScreen to displayBuffer
+[1526] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1526] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1544] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1544] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1562] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1562] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1583] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1583] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1634] [DBG] [ACT] Entering activity: BmpViewer
+[1634] [DBG] [GFX] Time = 51 ms from clearScreen to displayBuffer
+[1636] [DBG] [GFX] Time = 53 ms from clearScreen to displayBuffer
+[1638] [DBG] [GFX] Time = 55 ms from clearScreen to displayBuffer
+[1640] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1640] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1655] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1655] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1673] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1673] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1694] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1694] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1724] [DBG] [ACT] Entering activity: BmpViewer
+[1725] [DBG] [GFX] Time = 31 ms from clearScreen to displayBuffer
+[1726] [DBG] [GFX] Time = 32 ms from clearScreen to displayBuffer
+[1728] [DBG] [GFX] Time = 34 ms from clearScreen to displayBuffer
+[1730] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1730] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1748] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1749] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1767] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1767] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1789] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1789] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1825] [DBG] [ACT] Entering activity: BmpViewer
+[1825] [DBG] [GFX] Time = 36 ms from clearScreen to displayBuffer
+[1826] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[1828] [DBG] [GFX] Time = 39 ms from clearScreen to displayBuffer
+[1830] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1830] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1844] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1844] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1861] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1861] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1882] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1882] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1929] [DBG] [ACT] Entering activity: BmpViewer
+[1929] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[1931] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[1933] [DBG] [GFX] Time = 51 ms from clearScreen to displayBuffer
+[1935] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1935] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1955] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1955] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1973] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1973] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1994] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1994] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2027] [DBG] [ACT] Entering activity: BmpViewer
+[2028] [DBG] [GFX] Time = 34 ms from clearScreen to displayBuffer
+[2029] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[2031] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[2033] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2033] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2046] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2046] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2064] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2064] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2085] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2085] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2129] [DBG] [ACT] Entering activity: BmpViewer
+[2129] [DBG] [GFX] Time = 44 ms from clearScreen to displayBuffer
+[2131] [DBG] [GFX] Time = 46 ms from clearScreen to displayBuffer
+[2133] [DBG] [GFX] Time = 48 ms from clearScreen to displayBuffer
+[2135] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2135] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2155] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2155] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2172] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2173] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2194] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2194] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2228] [DBG] [ACT] Entering activity: BmpViewer
+[2228] [DBG] [GFX] Time = 34 ms from clearScreen to displayBuffer
+[2230] [DBG] [GFX] Time = 36 ms from clearScreen to displayBuffer
+[2232] [DBG] [GFX] Time = 38 ms from clearScreen to displayBuffer
+[2234] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2234] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2248] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2248] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2266] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2266] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2287] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2287] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2334] [DBG] [ACT] Entering activity: BmpViewer
+[2334] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[2336] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[2338] [DBG] [GFX] Time = 51 ms from clearScreen to displayBuffer
+[2340] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2340] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2360] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2360] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2378] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2378] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2399] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2399] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2434] [DBG] [ACT] Entering activity: BmpViewer
+[2434] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[2436] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[2438] [DBG] [GFX] Time = 39 ms from clearScreen to displayBuffer
+[2440] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2440] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2454] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2454] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2472] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2472] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2493] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2493] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2523] [DBG] [ACT] Entering activity: BmpViewer
+[2524] [DBG] [GFX] Time = 31 ms from clearScreen to displayBuffer
+[2525] [DBG] [GFX] Time = 32 ms from clearScreen to displayBuffer
+[2527] [DBG] [GFX] Time = 34 ms from clearScreen to displayBuffer
+[2529] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2529] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2548] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2548] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2565] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2566] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2587] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2587] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2622] [DBG] [ACT] Entering activity: BmpViewer
+[2622] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[2624] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[2626] [DBG] [GFX] Time = 39 ms from clearScreen to displayBuffer
+[2628] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2628] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2642] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2642] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2659] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2659] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2681] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2681] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2728] [DBG] [ACT] Entering activity: BmpViewer
+[2728] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[2730] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[2732] [DBG] [GFX] Time = 51 ms from clearScreen to displayBuffer
+[2734] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2734] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2754] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2754] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2772] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2772] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2793] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2793] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2828] [DBG] [ACT] Entering activity: BmpViewer
+[2828] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[2830] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[2832] [DBG] [GFX] Time = 39 ms from clearScreen to displayBuffer
+[2833] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2833] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2848] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2848] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2865] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2865] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2886] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2886] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2931] [DBG] [ACT] Entering activity: BmpViewer
+[2931] [DBG] [GFX] Time = 45 ms from clearScreen to displayBuffer
+[2933] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[2935] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[2937] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2937] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2957] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2957] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2975] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2975] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2996] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2996] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3031] [DBG] [ACT] Entering activity: BmpViewer
+[3031] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[3033] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[3035] [DBG] [GFX] Time = 39 ms from clearScreen to displayBuffer
+[3036] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3036] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3050] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3050] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3068] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3068] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3089] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3089] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3134] [DBG] [ACT] Entering activity: BmpViewer
+[3134] [DBG] [GFX] Time = 45 ms from clearScreen to displayBuffer
+[3136] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[3138] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[3140] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3140] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3159] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3159] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3177] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3177] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3199] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3199] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3231] [DBG] [ACT] Entering activity: BmpViewer
+[3231] [DBG] [GFX] Time = 32 ms from clearScreen to displayBuffer
+[3233] [DBG] [GFX] Time = 34 ms from clearScreen to displayBuffer
+[3234] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[3236] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3236] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3250] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3250] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3268] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3268] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3289] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3289] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3334] [DBG] [ACT] Entering activity: BmpViewer
+[3334] [DBG] [GFX] Time = 45 ms from clearScreen to displayBuffer
+[3336] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[3338] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[3340] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3340] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3359] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3359] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3377] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3378] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3399] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3399] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3434] [DBG] [ACT] Entering activity: BmpViewer
+[3434] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[3436] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[3438] [DBG] [GFX] Time = 39 ms from clearScreen to displayBuffer
+[3440] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3440] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3454] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3454] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3472] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3472] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3493] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3493] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3535] [DBG] [ACT] Entering activity: BmpViewer
+[3536] [DBG] [GFX] Time = 43 ms from clearScreen to displayBuffer
+[3537] [DBG] [GFX] Time = 44 ms from clearScreen to displayBuffer
+[3539] [DBG] [GFX] Time = 46 ms from clearScreen to displayBuffer
+[3541] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3541] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3561] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3561] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3578] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3579] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3600] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3600] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3634] [DBG] [ACT] Entering activity: BmpViewer
+[3635] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[3636] [DBG] [GFX] Time = 36 ms from clearScreen to displayBuffer
+[3638] [DBG] [GFX] Time = 38 ms from clearScreen to displayBuffer
+[3640] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3640] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3654] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3654] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3672] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3672] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3693] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3693] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3723] [DBG] [ACT] Entering activity: BmpViewer
+[3723] [DBG] [GFX] Time = 30 ms from clearScreen to displayBuffer
+[3725] [DBG] [GFX] Time = 32 ms from clearScreen to displayBuffer
+[3727] [DBG] [GFX] Time = 34 ms from clearScreen to displayBuffer
+[3729] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3729] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3747] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3747] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3765] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3765] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3786] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3786] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3821] [DBG] [ACT] Entering activity: BmpViewer
+[3821] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[3822] [DBG] [GFX] Time = 36 ms from clearScreen to displayBuffer
+[3824] [DBG] [GFX] Time = 38 ms from clearScreen to displayBuffer
+[3826] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3826] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3840] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3840] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3858] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3858] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3879] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3879] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3926] [DBG] [ACT] Entering activity: BmpViewer
+[3926] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[3928] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[3930] [DBG] [GFX] Time = 51 ms from clearScreen to displayBuffer
+[3931] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3932] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3951] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3951] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3969] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3969] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3991] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3991] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4026] [DBG] [ACT] Entering activity: BmpViewer
+[4026] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[4028] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[4029] [DBG] [GFX] Time = 38 ms from clearScreen to displayBuffer
+[4031] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4031] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4046] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4046] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4063] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4063] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4084] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4084] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4126] [DBG] [ACT] Entering activity: BmpViewer
+[4126] [DBG] [GFX] Time = 42 ms from clearScreen to displayBuffer
+[4128] [DBG] [GFX] Time = 44 ms from clearScreen to displayBuffer
+[4130] [DBG] [GFX] Time = 46 ms from clearScreen to displayBuffer
+[4132] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4132] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4151] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4151] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4169] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4169] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4191] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4191] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4226] [DBG] [ACT] Entering activity: BmpViewer
+[4226] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[4228] [DBG] [GFX] Time = 37 ms from clearScreen to displayBuffer
+[4230] [DBG] [GFX] Time = 39 ms from clearScreen to displayBuffer
+[4231] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4231] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4245] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4245] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4263] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4263] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4284] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4284] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4331] [DBG] [ACT] Entering activity: BmpViewer
+[4332] [DBG] [GFX] Time = 48 ms from clearScreen to displayBuffer
+[4333] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[4335] [DBG] [GFX] Time = 51 ms from clearScreen to displayBuffer
+[4337] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4337] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4357] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4357] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4375] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4375] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4396] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4396] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4427] [DBG] [ACT] Entering activity: BmpViewer
+[4428] [DBG] [GFX] Time = 32 ms from clearScreen to displayBuffer
+[4429] [DBG] [GFX] Time = 33 ms from clearScreen to displayBuffer
+[4431] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[4433] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4433] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4447] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4447] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4465] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4465] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4486] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4486] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4533] [DBG] [ACT] Entering activity: BmpViewer
+[4533] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[4535] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[4537] [DBG] [GFX] Time = 51 ms from clearScreen to displayBuffer
+[4539] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4539] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4558] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4558] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4577] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4577] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4599] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4599] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4634] [DBG] [ACT] Entering activity: BmpViewer
+[4634] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[4635] [DBG] [GFX] Time = 36 ms from clearScreen to displayBuffer
+[4637] [DBG] [GFX] Time = 38 ms from clearScreen to displayBuffer
+[4639] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4639] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4653] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4653] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4670] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4671] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4691] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4691] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4722] [DBG] [ACT] Entering activity: BmpViewer
+[4722] [DBG] [GFX] Time = 31 ms from clearScreen to displayBuffer
+[4724] [DBG] [GFX] Time = 33 ms from clearScreen to displayBuffer
+[4726] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[4727] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4727] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4746] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4746] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4763] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4763] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4785] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4785] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4830] [DBG] [ACT] Entering activity: BmpViewer
+[4831] [DBG] [GFX] Time = 46 ms from clearScreen to displayBuffer
+[4832] [DBG] [GFX] Time = 47 ms from clearScreen to displayBuffer
+[4834] [DBG] [GFX] Time = 49 ms from clearScreen to displayBuffer
+[4836] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4836] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4851] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4851] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4868] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4868] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4889] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4889] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4920] [DBG] [ACT] Entering activity: BmpViewer
+[4920] [DBG] [GFX] Time = 31 ms from clearScreen to displayBuffer
+[4922] [DBG] [GFX] Time = 33 ms from clearScreen to displayBuffer
+[4924] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[4926] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4926] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4944] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4944] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4962] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4962] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4983] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4983] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/redraw-paging-stress-fixed/shots/final.bmp

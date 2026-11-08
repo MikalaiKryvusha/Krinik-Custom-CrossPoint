@@ -1,0 +1,68 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[1] [DBG] [CPS] Resaving settings to update format
+[1] [DBG] [CPS] Settings loaded from file
+[2] [DBG] [UI] Using Lyra theme
+[2] [INF] [CLK] RTC clock read: 2026-11-07 21:25
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[2] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[224] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[224] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[224] [DBG] [SDREG] Fonts directory not found: /fonts
+[224] [DBG] [SDREG] Discovery complete: 0 families
+[224] [DBG] [SDFS] SD font system ready (0 families discovered)
+[224] [DBG] [MAIN] Fonts setup
+[224] [DBG] [ACT] Entering activity: Boot
+[224] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[250] [DBG] [ACT] Exiting activity: Boot
+[250] [DBG] [ACT] Entering activity: Home
+[253] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[265] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1583] [DBG] [ACT] Exiting activity: Home
+[1583] [DBG] [ACT] Entering activity: FileBrowser
+[1584] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3085] [DBG] [ACT] Exiting activity: FileBrowser
+[3085] [DBG] [ACT] Entering activity: BmpViewer
+[3085] [DBG] [GFX] Time = 1501 ms from clearScreen to displayBuffer
+[3087] [DBG] [GFX] Time = 1503 ms from clearScreen to displayBuffer
+[3096] [DBG] [PNG] Decoding PNG: /1.png
+[3098] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 480x800 (scale 1.00), type: 6, bpp: 8
+[3105] [DBG] [PNG] PNG decoding complete - render time: 7 ms
+[3110] [DBG] [GFX] Time = 21 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/shots/v1.bmp
+[6083] [DBG] [ACT] Entering activity: BmpViewer
+[6083] [DBG] [GFX] Time = 2994 ms from clearScreen to displayBuffer
+[6085] [DBG] [GFX] Time = 2996 ms from clearScreen to displayBuffer
+[6094] [DBG] [PNG] Decoding PNG: /2.png
+[6096] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 480x800 (scale 1.00), type: 6, bpp: 8
+[6103] [DBG] [PNG] PNG decoding complete - render time: 7 ms
+[6109] [DBG] [GFX] Time = 22 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/shots/tap1.bmp
+[9587] [DBG] [ACT] Entering activity: BmpViewer
+[9587] [DBG] [GFX] Time = 3500 ms from clearScreen to displayBuffer
+[9589] [DBG] [GFX] Time = 3502 ms from clearScreen to displayBuffer
+[9598] [DBG] [PNG] Decoding PNG: /3.png
+[9600] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 480x800 (scale 1.00), type: 6, bpp: 8
+[9607] [DBG] [PNG] PNG decoding complete - render time: 7 ms
+[9612] [DBG] [GFX] Time = 21 ms from clearScreen to displayBuffer
+[10004] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10004] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/shots/tap2.bmp
+[13089] [DBG] [ACT] Entering activity: BmpViewer
+[13089] [DBG] [GFX] Time = 3498 ms from clearScreen to displayBuffer
+[13091] [DBG] [GFX] Time = 3500 ms from clearScreen to displayBuffer
+[13099] [DBG] [PNG] Decoding PNG: /2.png
+[13101] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 480x800 (scale 1.00), type: 6, bpp: 8
+[13109] [DBG] [PNG] PNG decoding complete - render time: 8 ms
+[13114] [DBG] [GFX] Time = 21 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/shots/tapl.bmp
+[16587] [DBG] [ACT] Exiting activity: BmpViewer
+[16587] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[16589] [DBG] [ACT] Entering activity: FileBrowser
+[16590] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-after/shots/back.bmp

@@ -1,0 +1,97 @@
+{
+  "source_sha256": "a0f8cd1fef40f8c879e02553bbeedadc1aada5361fcd9f743341f244f96ecc29",
+  "total_rows": 561,
+  "off": {
+    "samples": 60,
+    "first": {
+      "epoch": 1793978020,
+      "uptime_s": 1,
+      "event": "boot",
+      "vcell_mv": 4311,
+      "soc_pct": 100,
+      "charging": 0,
+      "light_on": 0,
+      "brightness_pct": 100,
+      "warm_pct": 80
+    },
+    "last": {
+      "epoch": 1793981565,
+      "uptime_s": 3545,
+      "event": "tick",
+      "vcell_mv": 4216,
+      "soc_pct": 96,
+      "charging": 0,
+      "light_on": 0,
+      "brightness_pct": 100,
+      "warm_pct": 80
+    },
+    "sample_span_seconds": 3545,
+    "observed_soc_drop_pp": 4,
+    "linear_fit_pp_per_hour": -5.118096571457936
+  },
+  "on_100_warm_50": {
+    "samples": 60,
+    "first": {
+      "epoch": 1793981625,
+      "uptime_s": 3606,
+      "event": "tick",
+      "vcell_mv": 4187,
+      "soc_pct": 95,
+      "charging": 0,
+      "light_on": 1,
+      "brightness_pct": 100,
+      "warm_pct": 50
+    },
+    "last": {
+      "epoch": 1793985169,
+      "uptime_s": 7150,
+      "event": "tick",
+      "vcell_mv": 4057,
+      "soc_pct": 87,
+      "charging": 0,
+      "light_on": 1,
+      "brightness_pct": 100,
+      "warm_pct": 50
+    },
+    "sample_span_seconds": 3544,
+    "observed_soc_drop_pp": 8,
+    "linear_fit_pp_per_hour": -8.626448917846785
+  },
+  "first_on": {
+    "epoch": 1793981625,
+    "uptime_s": 3606,
+    "event": "tick",
+    "vcell_mv": 4187,
+    "soc_pct": 95,
+    "charging": 0,
+    "light_on": 1,
+    "brightness_pct": 100,
+    "warm_pct": 50
+  },
+  "first_off_after_test": {
+    "epoch": 1793985230,
+    "uptime_s": 7210,
+    "event": "tick",
+    "vcell_mv": 4087,
+    "soc_pct": 87,
+    "charging": 0,
+    "light_on": 0,
+    "brightness_pct": 100,
+    "warm_pct": 50
+  },
+  "phase_marker_elapsed_seconds": [
+    3605,
+    3605
+  ],
+  "boundary_soc_before_after": [
+    96,
+    95
+  ],
+  "total_soc_drop_pp": 13,
+  "max_sample_gap_seconds_uptime": 61,
+  "voltage_on_transition_adjacent_samples_mv": -29,
+  "voltage_off_transition_adjacent_samples_mv": 30,
+  "logging_energy_isolated": false,
+  "current_measured": false,
+  "owner_proposal": "Periodic log interval 20 minutes; not implemented or tested."
+}

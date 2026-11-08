@@ -1,0 +1,278 @@
+[  1%] Built target animatedgif_host
+[  2%] Built target gtest
+[  3%] Built target gtest_main
+[  4%] Built target StreamingJsonParserTest
+[  5%] Built target Utf8ComposeTest
+[  5%] Built target OpdsFeedErrorTest
+[  7%] Built target ReleaseJsonParserTest
+[  8%] Built target UrlUtilsTest
+[ 12%] Built target OpdsFilenameTest
+[ 12%] Built target DifferentialRoundingTest
+[ 15%] Built target HyphenationEvaluationTest
+[ 16%] Built target LibraryTextTest
+[ 17%] Built target LibraryFormatTest
+[ 18%] Built target HtmlToPlainTextTest
+[ 20%] Built target LibraryIndexFileTest
+[ 21%] Built target CombiningMarkAnchorTest
+[ 23%] Built target MiniBidiArabicTest
+[ 23%] Built target CredentialIntegrityTest
+[ 25%] Built target LibraryBuilderTest
+[ 26%] Built target ProgressComparisonTest
+[ 27%] Built target XmlParserUtilsTest
+[ 29%] Built target TokenBoundaryTest
+[ 32%] Built target KOReaderXPathResolverTest
+[ 33%] Built target CssParserTest
+[ 35%] Built target FontCacheManagerTest
+[ 36%] Built target PageLinkTest
+[ 38%] Built target LigatureGuardTest
+[ 40%] Built target ContentOpfParserTest
+[ 41%] Built target ChapterPositionTest
+[ 42%] Built target HomeButtonInputTest
+[ 47%] Built target KoreanLineBreakingTest
+[ 49%] Built target BookMetadataCacheTest
+[ 50%] Built target ButtonPressNavigationTest
+[ 55%] Built target EmDashLineBreakingTest
+[ 56%] Built target InflateReaderTest
+[ 58%] Built target InflateStreamTest
+[ 58%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/ChapterHtmlSlimParserTest.cpp.o
+[ 59%] Built target HttpHeaderTest
+[ 61%] Built target ZipFileTest
+[ 62%] Built target FsHelpersTest
+[ 62%] Built target AbsoluteGrayscaleTest
+[ 62%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/ParserLinkStubs.cpp.o
+[ 64%] Built target TxtToHtmlTest
+[ 65%] Built target GifSupportTest
+[ 67%] Built target GifBmpTest
+[ 68%] Built target SdFontRegistryTest
+[ 70%] Built target BmpToBmpTest
+[ 70%] Built target ClippingPreviewTest
+[ 71%] Built target GlyphBitmapTest
+[ 73%] Built target SdCardFontTest
+[ 74%] Built target ClippingStoreTest
+[ 75%] Built target PluginCatalogPagingTest
+[ 76%] Built target ReaderSessionTest
+[ 76%] Built target PluginManifestClassificationTest
+[ 77%] Built target ProtectedPathsTest
+[ 79%] Built target ClippingStoreS3Test
+[ 80%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/DictionaryHtmlPagesTest.cpp.o
+[ 82%] Built target PluginPickerLayoutTest
+[ 83%] Built target LinkNoteTitleTest
+[ 84%] Built target ChapterBuildGateTest
+[ 84%] Built target RemoteTurnGateTest
+[ 86%] Built target BlePageTurnerPolicyTest
+[ 87%] Built target BlePageTurnerHomeStartTest
+[ 89%] Built target BlePageTurnerNoRadioTest
+[ 90%] Built target BlePageTurnerConfigTest
+[ 91%] Built target BlePageTurnerSourceContractTest
+[ 91%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/krinik/src/util/DictHtmlPages.cpp.o
+[ 91%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/Page.cpp.o
+[ 93%] Built target BlePageTurnerRuntimeTest
+[ 93%] Building CXX object chapter_html_slim_parser/CMakeFiles/ChapterHtmlSlimParserTest.dir/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp.o
+[ 93%] Building CXX object calibration_card/CMakeFiles/CalibrationCardTest.dir/CalibrationCardTest.cpp.o
+[ 94%] Built target SleepImageCursorTest
+[ 94%] Building CXX object calibration_card/CMakeFiles/CalibrationCardTest.dir/Users/kryvusha/Xteink/pr-fixes/krinik/src/util/CalibrationCard.cpp.o
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:1:
+/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:323:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  316 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  317 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  318 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  319 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  320 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  321 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  322 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  323 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  324 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  325 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/src/util/DictHtmlPages.cpp:4:
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:323:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  316 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  317 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  318 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  319 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  320 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  321 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  322 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  323 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  324 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  325 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/Page.cpp:6:
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Serialization/Serialization.h:79:44: warning: comparison of integers of different signs: 'size_t' (aka 'unsigned long') and 'int' [-Wsign-compare]
+   79 |   return len == 0 || file.read(&s[0], len) == static_cast<int>(len);
+      |                      ~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~
+/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/Page.cpp:100:57: warning: unused parameter 'fontId' [-Wunused-parameter]
+  100 | void PageImage::render(GfxRenderer& renderer, const int fontId, const int xOffset, const int yOffset) {
+      |                                                         ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2041:40: warning: '&&' within '||' [-Wlogical-op-parentheses]
+ 2041 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~
+/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2041:40: note: place parentheses around the '&&' expression to silence this warning
+ 2041 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |                                        ^
+      |           (                                                                        )
+/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2042:45: warning: '&&' within '||' [-Wlogical-op-parentheses]
+ 2041 |       if (strcmp(atts[i], "role") == 0 && strcmp(atts[i + 1], "doc-pagebreak") == 0 ||
+      |                                                                                     ~~
+ 2042 |           strcmp(atts[i], "epub:type") == 0 && strcmp(atts[i + 1], "pagebreak") == 0) {
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2042:45: note: place parentheses around the '&&' expression to silence this warning
+ 2042 |           strcmp(atts[i], "epub:type") == 0 && strcmp(atts[i + 1], "pagebreak") == 0) {
+      |                                             ^                                       
+      |           (                                                                         )
+/Users/kryvusha/Xteink/pr-fixes/krinik/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp:2425:59: warning: comparison of integers of different signs: 'int' and 'unsigned long' [-Wsign-compare]
+ 2425 |     for (int i = start; (self->currentFootnoteLinkTextLen < sizeof(self->currentFootnote.number) - 1) && (i <= end);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:9: warning: keyword is hidden by macro definition [-Wkeyword-macro]
+   23 | #define class struct
+      |         ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:24:9: warning: keyword is hidden by macro definition [-Wkeyword-macro]
+   24 | #define private public
+      |         ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:15:
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/ParsedText.h:16:1: warning: struct 'GfxRenderer' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   16 | class GfxRenderer;
+      | ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/stubs/GfxRenderer.h:20:7: note: previous use is here
+   20 | class GfxRenderer {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/ParsedText.h:16:1: note: did you mean class here?
+   16 | class GfxRenderer;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:21:1: warning: struct 'Page' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   21 | class Page;
+      | ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/Page.h:124:7: note: previous use is here
+  124 | class Page {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:21:1: note: did you mean class here?
+   21 | class Page;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:22:1: warning: struct 'GfxRenderer' was previously declared as a struct; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   22 | class GfxRenderer;
+      | ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/stubs/GfxRenderer.h:20:7: note: previous use is here
+   20 | class GfxRenderer {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:22:1: note: did you mean class here?
+   22 | class GfxRenderer;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:23:1: warning: struct 'Epub' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   23 | class Epub;
+      | ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/stubs/Epub.h:8:7: note: previous use is here
+    8 | class Epub {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:23:1: note: did you mean class here?
+   23 | class Epub;
+      | ^~~~~
+      | class
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /Users/kryvusha/Xteink/pr-fixes/krinik/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:25:
+/Users/kryvusha/Xteink/pr-fixes/krinik/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:323:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  316 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  317 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  318 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  319 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  320 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  321 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  322 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  323 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  324 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  325 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+2 warnings generated.
+1 warning generated.
+[ 95%] Linking CXX executable CalibrationCardTest
+[ 95%] Built target CalibrationCardTest
+4 warnings generated.
+7 warnings generated.
+[ 95%] Linking CXX executable ChapterHtmlSlimParserTest
+[100%] Built target ChapterHtmlSlimParserTest

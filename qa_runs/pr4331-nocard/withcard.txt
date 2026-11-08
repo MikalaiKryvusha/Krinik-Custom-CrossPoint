@@ -1,0 +1,3 @@
+about.webp
+home.webp
+errors in log: 0

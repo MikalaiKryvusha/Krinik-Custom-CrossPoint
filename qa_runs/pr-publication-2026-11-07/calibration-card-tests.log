@@ -1,0 +1,17 @@
+Running main() from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from CalibrationCard
+[ RUN      ] CalibrationCard.LayoutMatchesThePage
+[       OK ] CalibrationCard.LayoutMatchesThePage (0 ms)
+[ RUN      ] CalibrationCard.Crc32CheckValue
+[       OK ] CalibrationCard.Crc32CheckValue (0 ms)
+[ RUN      ] CalibrationCard.PngDecodesToTheCard
+[       OK ] CalibrationCard.PngDecodesToTheCard (10 ms)
+[ RUN      ] CalibrationCard.EpubIsAValidStoreZip
+[       OK ] CalibrationCard.EpubIsAValidStoreZip (12 ms)
+[----------] 4 tests from CalibrationCard (23 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (23 ms total)
+[  PASSED  ] 4 tests.

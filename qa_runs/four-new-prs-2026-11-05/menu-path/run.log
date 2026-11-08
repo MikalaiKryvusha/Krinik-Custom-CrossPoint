@@ -1,0 +1,43 @@
+[0] [DBG] [UI] Using Lyra theme
+[5] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[9] [DBG] [CPS] Resaving settings to update format
+[9] [DBG] [CPS] Settings loaded from file
+[10] [DBG] [UI] Using Classic theme
+[10] [INF] [CLK] RTC clock read: 2026-11-05 17:52
+[SIM] Frontlight: off, brightness=60%, warmth=50%
+[10] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[15] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[16] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[16] [DBG] [SDREG] Fonts directory not found: /fonts
+[16] [DBG] [SDREG] Discovery complete: 0 families
+[16] [DBG] [SDFS] SD font system ready (0 families discovered)
+[16] [DBG] [MAIN] Fonts setup
+[16] [DBG] [ACT] Entering activity: Boot
+[17] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[24] [DBG] [ACT] Exiting activity: Boot
+[24] [DBG] [ACT] Entering activity: Home
+[26] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[41] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1581] [DBG] [ACT] Exiting activity: Home
+[1581] [DBG] [ACT] Entering activity: SettingsList
+[1583] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/shots/settings.bmp
+[2584] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2584] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2584] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2584] [DBG] [DREG] No /.dictionaries directory on SD card
+[2587] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/shots/display.bmp
+[3908] [DBG] [LIST] Settings swipe delta=10 count=10
+[3911] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/shots/display-scroll1.bmp
+[4901] [DBG] [LIST] Settings swipe delta=10 count=10
+[4903] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/menu-path/shots/display-scroll2.bmp

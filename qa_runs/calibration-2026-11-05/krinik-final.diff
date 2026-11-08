@@ -1,0 +1,37 @@
+commit 8dd71e194633ad7dcb844d63c4aaeb85c90e3b65
+Author: Mikalai Kryvusha <59587509+MikalaiKryvusha@users.noreply.github.com>
+Date:   Thu Nov 5 15:07:09 2026 +0300
+
+    fix: OTA ignores versions that do not parse as x.y.z; mama build named by the rule; README for 1.1.0
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+diff --git a/platformio.ini b/platformio.ini
+index 6a21ffcf..6028b30c 100644
+--- a/platformio.ini
++++ b/platformio.ini
+@@ -876,7 +876,7 @@ build_flags =
+   -DBOARD_HAS_PSRAM
+   -DUSB_PRODUCT=\"CrossPoint_X4_Pro\"
+   -DUSB_MANUFACTURER=\"CrossPoint\"
+-  -DCROSSPOINT_VERSION=\"${crosspoint.version}-krinik-mama\"
++  -DCROSSPOINT_VERSION=\"cp-${crosspoint.version}-krinik-${krinik.version}-mama\"
+   -DENABLE_SERIAL_LOG
+   -DLOG_LEVEL=1
+   -DUSE_BLOCK_DEVICE_INTERFACE=1
+diff --git a/src/network/OtaUpdater.cpp b/src/network/OtaUpdater.cpp
+index 1625c9cb..1e46301a 100644
+--- a/src/network/OtaUpdater.cpp
++++ b/src/network/OtaUpdater.cpp
+@@ -104,8 +104,9 @@ bool OtaUpdater::isUpdateNewer() const {
+   if (strncmp(currentVersion, "cp-", 3) == 0) currentVersion += 3;
+ 
+   // semantic version check (only match on 3 segments)
+-  sscanf(latestVersion.c_str(), "%d.%d.%d", &latestMajor, &latestMinor, &latestPatch);
+-  sscanf(currentVersion, "%d.%d.%d", &currentMajor, &currentMinor, &currentPatch);
++  // A version that does not start with three numbers (an old «v1.5.0» tag, «dev-simulator») is never «newer».
++  if (sscanf(latestVersion.c_str(), "%d.%d.%d", &latestMajor, &latestMinor, &latestPatch) != 3) return false;
++  if (sscanf(currentVersion, "%d.%d.%d", &currentMajor, &currentMinor, &currentPatch) != 3) return false;
+ 
+   /*
+    * Compare major versions.

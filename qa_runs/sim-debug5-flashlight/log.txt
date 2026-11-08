@@ -1,0 +1,28 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-flashlight/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-flashlight/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-flashlight/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[1] [DBG] [CPS] Resaving settings to update format
+[1] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-06 19:12
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[204] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-flashlight/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[204] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-flashlight/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[204] [DBG] [SDREG] Fonts directory not found: /fonts
+[204] [DBG] [SDREG] Discovery complete: 0 families
+[204] [DBG] [SDFS] SD font system ready (0 families discovered)
+[204] [DBG] [MAIN] Fonts setup
+[204] [DBG] [ACT] Entering activity: Boot
+[204] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[221] [DBG] [ACT] Exiting activity: Boot
+[222] [DBG] [ACT] Entering activity: Home
+[222] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[236] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2580] [DBG] [ACT] Exiting activity: Home
+[2581] [DBG] [ACT] Entering activity: Flashlight
+[2581] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer

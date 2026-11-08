@@ -1,0 +1,16 @@
+{
+  "name": "pluginhub",
+  "title": "Plugin Hub",
+  "mount": "settings",
+  "description": "Discover, install, and update CrossPoint plugins.",
+  "author": "Jadehawk",
+  "version": "0.1.13",
+  "files": [
+    "manifest.json",
+    "device.json",
+    "plugin.js",
+    "README.md",
+    "DETAILS.md"
+  ]
+}
+

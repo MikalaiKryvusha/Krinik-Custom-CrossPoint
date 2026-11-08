@@ -1,0 +1,43 @@
+Running main() from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ChapterAnchorPageTest.InlineTargetImmediatelyAfter*:ChapterAnchorPageTest.InlineTargetAfterAnImageStartsALongTextBlock
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from ChapterAnchorPageTest
+[ RUN      ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterALongImagePlaceholderFollowsItsText
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2578: Failure
+Expected equality of these values:
+  anchorPage("after")
+    Which is: (0)
+  pageOfWord("TARGET")
+    Which is: (1)
+
+[  FAILED  ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterALongImagePlaceholderFollowsItsText (0 ms)
+[ RUN      ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterASecondImageFollowsItsText
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2599: Failure
+Expected equality of these values:
+  anchorPage("after-second")
+    Which is: (2)
+  pageOfWord("TARGET")
+    Which is: (3)
+
+[  FAILED  ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterASecondImageFollowsItsText (0 ms)
+[ RUN      ] ChapterAnchorPageTest.InlineTargetAfterAnImageStartsALongTextBlock
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2619: Failure
+Expected equality of these values:
+  anchorPage("after")
+    Which is: (0)
+  pageOfWord("TARGET")
+    Which is: (1)
+
+[  FAILED  ] ChapterAnchorPageTest.InlineTargetAfterAnImageStartsALongTextBlock (0 ms)
+[----------] 3 tests from ChapterAnchorPageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterALongImagePlaceholderFollowsItsText
+[  FAILED  ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterASecondImageFollowsItsText
+[  FAILED  ] ChapterAnchorPageTest.InlineTargetAfterAnImageStartsALongTextBlock
+
+ 3 FAILED TESTS

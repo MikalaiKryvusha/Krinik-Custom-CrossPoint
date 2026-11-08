@@ -1,0 +1,208 @@
+[0] [DBG] [UI] Using Lyra theme
+[7] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[11] [DBG] [CPS] Resaving settings to update format
+[11] [DBG] [CPS] Settings loaded from file
+[13] [DBG] [UI] Using Lyra theme
+[14] [INF] [CLK] RTC clock read: 2026-11-04 10:47
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[14] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[322] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[323] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[323] [DBG] [SDREG] Fonts directory not found: /fonts
+[323] [DBG] [SDREG] Discovery complete: 0 families
+[323] [DBG] [SDFS] SD font system ready (0 families discovered)
+[323] [DBG] [MAIN] Fonts setup
+[324] [DBG] [ACT] Entering activity: Boot
+[326] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[333] [DBG] [ACT] Exiting activity: Boot
+[333] [DBG] [ACT] Entering activity: Home
+[336] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[347] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/shots/home.bmp
+[4502] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[5281] [DBG] [ACT] Exiting activity: Home
+[5281] [DBG] [ACT] Entering activity: Library
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[5282] [DBG] [GFX] Time = 780 ms from clearScreen to displayBuffer
+[5284] [DBG] [LIBIDX] phase prepare/prior: 0ms
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_6356251370301420133/book.bin (flags=0x0 errno=2 No such file or directory)
+[5287] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[5287] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[5288] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_1904033327718914090/book.bin (flags=0x0 errno=2 No such file or directory)
+[5288] [DBG] [ZIP] Decompressed 169 bytes into 240 bytes
+[5288] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[5288] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_5112959142090641435/book.bin (flags=0x0 errno=2 No such file or directory)
+[5289] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[5289] [DBG] [EBP] Parsing content.opf: content.opf
+[5290] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_3326978849599308136/book.bin (flags=0x0 errno=2 No such file or directory)
+[5290] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[5290] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[5290] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_16224160833964083072/book.bin (flags=0x0 errno=2 No such file or directory)
+[5291] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[5291] [DBG] [EBP] Parsing content.opf: content.opf
+[5291] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_17215692838832747456/book.bin (flags=0x0 errno=2 No such file or directory)
+[5292] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[5292] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[5292] [DBG] [EBP] Successfully parsed package metadata
+[5292] [DBG] [LIBIDX] phase walk/metadata/stage: 8ms
+[5292] [DBG] [LIBIDX] phase reconcile: 0ms
+[5292] [DBG] [LIBIDX] title sort alloc: 84 bytes, heap 1048576, max block 1048576
+[5295] [DBG] [LIBIDX] phase title order: 3ms
+[5295] [DBG] [LIBIDX] author sort alloc: 84 bytes, heap 1048576, max block 1048576
+[5305] [DBG] [LIBIDX] phase author/orders/emit: 10ms
+[5305] [INF] [LIBIDX] built: 6 books, 2 folders, 6 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 21ms
+[5305] [INF] [LIB] reconciled: 0 unchanged, 6 added, 0 renamed, 0 removed, 6 enriched (0 dup, 0 unreadable)
+[5306] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[5306] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[5306] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5309] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[5309] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[5309] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[7513] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[7513] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[7514] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[7910] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[7910] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[7910] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[8311] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[8311] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[8311] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[8882] [DBG] [ACT] Exiting activity: Library
+[8882] [DBG] [ACT] Entering activity: EpubReader
+[8882] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[8882] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[8884] [DBG] [GFX] Time = 577 ms from clearScreen to displayBuffer
+[8892] [DBG] [EBP] Loading ePub: /Книги/Артур Шопенгауэр. О четверояком корне закона достаточного основания.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_3326978849599308136/book.bin (flags=0x0 errno=2 No such file or directory)
+[8892] [DBG] [EBP] Cache not found, building spine/TOC cache
+[8892] [DBG] [BMC] Entering write mode
+[8892] [DBG] [BMC] Beginning content opf pass
+[8892] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[8892] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[8894] [DBG] [COF] Using fast index for 30 manifest items
+[8894] [DBG] [ZIP] Decompressed 958 bytes into 3851 bytes
+[8894] [DBG] [EBP] Successfully parsed content.opf
+[8895] [DBG] [EBP] OPF pass completed in 3 ms
+[8895] [DBG] [BMC] Beginning toc pass
+[8895] [DBG] [EBP] Falling back to NCX TOC
+[8895] [DBG] [EBP] Parsing toc ncx file: OPS/toc.ncx
+[8899] [DBG] [ZIP] Decompressed 2332 bytes into 11198 bytes
+[8899] [DBG] [EBP] Parsed TOC items
+[8899] [DBG] [EBP] TOC pass completed in 4 ms
+[8899] [DBG] [BMC] Wrote 18 spine, 60 TOC entries
+[8899] [DBG] [BMC] Warning: Could not find TOC entry for spine item 0: OPS/ch1.xhtml, using title from last section
+[8900] [DBG] [BMC] Successfully built book.bin
+[8900] [DBG] [EBP] buildBookBin completed in 1 ms
+[8900] [DBG] [EBP] Total indexing completed in 8 ms
+[8900] [DBG] [EBP] CSS files to parse: 1
+[8900] [DBG] [EBP] Parsing CSS file: OPS/style.css
+[8901] [DBG] [ZIP] Decompressed 453 bytes into 1923 bytes
+[8901] [DBG] [CSS] Parsed 13 rules from 1923 bytes
+[8902] [DBG] [CSS] Saved 13 rules to complete cache
+[8902] [DBG] [EBP] Loaded 13 CSS style rules from 1 files (0 identical duplicates skipped, complete)
+[8902] [DBG] [BMC] Loaded cache data: 18 spine, 60 TOC entries
+[8902] [DBG] [EBP] Loaded ePub: /Книги/Артур Шопенгауэр. О четверояком корне закона достаточного основания.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_3326978849599308136/progress.bin (flags=0x0 errno=2 No such file or directory)
+[8902] [DBG] [EBP] Core Metadata: cover(13)=OPS/cover.jpg, textReference(0)=
+[8903] [DBG] [ERS] Loading file: OPS/ch1.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_3326978849599308136/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[8903] [DBG] [ERS] Cache not found, building...
+[8903] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[8904] [DBG] [ZIP] Decompressed 512 bytes into 903 bytes
+[8904] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_3326978849599308136/html/.tmp_0.html (903 bytes)
+[8904] [DBG] [CSS] Loaded 13 rules from complete cache
+[8908] [DBG] [EHP] Time to parse and build pages: 3 ms
+[8910] [DBG] [SCT] Page 0 processed
+[8911] [DBG] [FDC] Prewarm: 11 glyphs in 788 bytes from 1 groups (0 missed)
+[8913] [DBG] [FDC] Prewarm: 35 glyphs in 1933 bytes from 2 groups (0 missed)
+[8913] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[8924] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=0ms display=3ms gray_lsb=1ms gray_msb=1ms gray_display=6ms cleanup=0ms total=14ms
+[8924] [DBG] [ERS] Rendered page in 14ms
+[8924] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[10011] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10011] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/shots/book_open.bmp
+[14088] [DBG] [FDC] Prewarm: 11 glyphs in 788 bytes from 1 groups (0 missed)
+[14091] [DBG] [FDC] Prewarm: 35 glyphs in 1933 bytes from 2 groups (0 missed)
+[14112] [DBG] [ERS] Page render (tiled): prewarm=4ms bw_render=1ms display=4ms gray_lsb=4ms gray_msb=2ms gray_display=9ms cleanup=1ms total=25ms
+[14112] [DBG] [ERS] Rendered page in 25ms
+[15088] [DBG] [FDC] Prewarm: 11 glyphs in 788 bytes from 1 groups (0 missed)
+[15090] [DBG] [FDC] Prewarm: 35 glyphs in 1933 bytes from 2 groups (0 missed)
+[15112] [DBG] [ERS] Page render (tiled): prewarm=4ms bw_render=2ms display=5ms gray_lsb=3ms gray_msb=3ms gray_display=9ms cleanup=0ms total=26ms
+[15112] [DBG] [ERS] Rendered page in 26ms
+[16093] [DBG] [FDC] Prewarm: 11 glyphs in 788 bytes from 1 groups (0 missed)
+[16095] [DBG] [FDC] Prewarm: 35 glyphs in 1933 bytes from 2 groups (0 missed)
+[16103] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=0ms display=2ms gray_lsb=1ms gray_msb=1ms gray_display=4ms cleanup=0ms total=11ms
+[16103] [DBG] [ERS] Rendered page in 11ms
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/shots/book_p3.bmp
+[18968] [DBG] [ACT] Exiting activity: EpubReader
+[18968] [INF] [MEM] reader exit: free=1048576 max_block=1048576
+[18969] [DBG] [ACT] Entering activity: Home
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.crosspoint/epub_3326978849599308136/thumb_226.bmp (flags=0x0 errno=2 No such file or directory)
+[18971] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[18984] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[18985] [DBG] [EBP] Loading ePub: /Книги/Артур Шопенгауэр. О четверояком корне закона достаточного основания.epub
+[18985] [DBG] [BMC] Loaded cache data: 18 spine, 60 TOC entries
+[18985] [DBG] [EBP] Loaded ePub: /Книги/Артур Шопенгауэр. О четверояком корне закона достаточного основания.epub
+[18985] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[18987] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[18989] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[18992] [DBG] [ZIP] Decompressed 70018 bytes into 74621 bytes
+[18992] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 135x226)
+[19003] [DBG] [JPG] JPEG dimensions: 480x800
+[19003] [DBG] [JPG] Scaling source 480x800 (decode grid 480x800) -> 135x226 (target 135x226)
+[19105] [DBG] [JPG] Successfully converted JPEG to BMP
+[19108] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[19165] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[20055] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20055] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/shots/home_cover.bmp
+[23342] [DBG] [MAIN] Power button held 306ms, sleeping
+[23343] [DBG] [ACT] Exiting activity: Home
+[23343] [DBG] [ACT] Entering activity: Sleep
+[23343] [DBG] [GFX] Time = 4179 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[23453] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[23454] [DBG] [CRV] Panel curve loaded: be170a3a
+[23496] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[23496] [DBG] [SLP] drawing to 0 x 0
+[23496] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[23496] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[23508] [DBG] [SLP] Clean to white (FULL) before absolute gray
+[23508] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[23522] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[23522] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[23538] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[23538] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[23562] [DBG] [MAIN] Entering deep sleep
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[1] [DBG] [CPS] Settings loaded from file
+[2] [DBG] [RBS] Recent books loaded from file (1 entries)
+[2] [DBG] [UI] Using Lyra theme
+[2] [INF] [CLK] RTC clock read: 2026-11-04 10:48
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[2] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+2026-11-04 10:48:16.867 program[32160:3745442] Task policy set failed: 4 ((os/kern) invalid argument)
+[185] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[186] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[186] [DBG] [SDREG] Fonts directory not found: /fonts
+[186] [DBG] [SDREG] Discovery complete: 0 families
+[186] [DBG] [SDFS] SD font system ready (0 families discovered)
+[186] [DBG] [MAIN] Fonts setup
+[186] [DBG] [ACT] Entering activity: Home
+[189] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[202] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/smoke_simulator_x4_pro/shots/wake_home.bmp

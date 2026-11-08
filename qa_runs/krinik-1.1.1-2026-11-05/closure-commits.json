@@ -1,0 +1,14 @@
+[
+  {
+    "name": "firmware",
+    "branch": "fix/krinik-1.1.1",
+    "sha": "fc50d20614d36c9f74decf23b2b4f5f6b16bda05",
+    "pushed": true
+  },
+  {
+    "name": "calibrator",
+    "branch": "fix/curve-config-directory",
+    "sha": "a176601b28e6e1b9d4290e4781f76cb3c041fe08",
+    "pushed": true
+  }
+]

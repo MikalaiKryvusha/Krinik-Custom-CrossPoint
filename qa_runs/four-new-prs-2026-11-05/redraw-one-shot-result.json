@@ -1,0 +1,7 @@
+{
+  "delay_seconds": 60,
+  "observed_seconds": 126,
+  "redraws": 1,
+  "exit_code": 0,
+  "hardware_sleep_timer": "not exercised in native build"
+}

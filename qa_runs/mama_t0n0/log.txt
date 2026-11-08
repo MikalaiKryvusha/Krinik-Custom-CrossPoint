@@ -1,0 +1,41 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/mama_t0n0/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/mama_t0n0/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/mama_t0n0/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Classic theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 10:28
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[292] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/mama_t0n0/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[292] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/mama_t0n0/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[292] [DBG] [SDREG] Fonts directory not found: /fonts
+[292] [DBG] [SDREG] Discovery complete: 0 families
+[292] [DBG] [SDFS] SD font system ready (0 families discovered)
+[292] [DBG] [MAIN] Fonts setup
+[292] [DBG] [ACT] Entering activity: Boot
+[292] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[322] [DBG] [ACT] Exiting activity: Boot
+[322] [DBG] [ACT] Entering activity: Home
+[323] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[342] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/mama_t0n0/shots/home.bmp
+[5054] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5412] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5804] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[6211] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[6782] [DBG] [ACT] Exiting activity: Home
+[6782] [DBG] [ACT] Entering activity: Mama
+[6782] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/mama_t0n0/shots/mama.bmp
+[10015] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10015] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[11085] [DBG] [ACT] Exiting activity: Mama
+[11086] [DBG] [ACT] Entering activity: Home
+[11087] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[11108] [DBG] [GFX] Time = 10 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/mama_t0n0/shots/back.bmp

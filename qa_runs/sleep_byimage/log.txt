@@ -1,0 +1,44 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sleep_byimage/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sleep_byimage/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sleep_byimage/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 19:14
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[200] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sleep_byimage/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[200] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sleep_byimage/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[200] [DBG] [SDREG] Fonts directory not found: /fonts
+[200] [DBG] [SDREG] Discovery complete: 0 families
+[200] [DBG] [SDFS] SD font system ready (0 families discovered)
+[200] [DBG] [MAIN] Fonts setup
+[200] [DBG] [ACT] Entering activity: Boot
+[200] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[223] [DBG] [ACT] Exiting activity: Boot
+[223] [DBG] [ACT] Entering activity: Home
+[224] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[237] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[3310] [DBG] [MAIN] Power button held 306ms, sleeping
+[3311] [DBG] [ACT] Exiting activity: Home
+[3312] [DBG] [ACT] Entering activity: Sleep
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sleep_byimage/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[3416] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[3416] [DBG] [CRV] Panel curve loaded: be170a3a
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sleep_byimage/sd/.crosspoint/sleep_cache.idx (flags=0x0 errno=2 No such file or directory)
+[3462] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[3462] [DBG] [SLP] drawing to 0 x 0
+[3462] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3462] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3477] [DBG] [CLN] Short clean: HALF scrub to white
+[3477] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3489] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3489] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3505] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3505] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3526] [DBG] [MAIN] Entering deep sleep
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/sleep_byimage/shots/sleep.bmp

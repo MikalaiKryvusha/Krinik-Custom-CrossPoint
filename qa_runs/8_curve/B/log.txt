@@ -1,0 +1,44 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/8_curve/B/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/8_curve/B/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/8_curve/B/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 09:50
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[233] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/8_curve/B/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[233] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/8_curve/B/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[233] [DBG] [SDREG] Fonts directory not found: /fonts
+[233] [DBG] [SDREG] Discovery complete: 0 families
+[233] [DBG] [SDFS] SD font system ready (0 families discovered)
+[233] [DBG] [MAIN] Fonts setup
+[233] [DBG] [ACT] Entering activity: Boot
+[233] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[255] [DBG] [ACT] Exiting activity: Boot
+[255] [DBG] [ACT] Entering activity: Home
+[256] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[269] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2810] [DBG] [MAIN] Power button held 306ms, sleeping
+[2811] [DBG] [ACT] Exiting activity: Home
+[2811] [DBG] [ACT] Entering activity: Sleep
+[2812] [DBG] [GFX] Time = 2543 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/8_curve/B/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[2924] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[2924] [DBG] [CRV] Panel curve loaded: 90a458c5
+[2985] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[2985] [DBG] [SLP] drawing to 0 x 0
+[2985] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2985] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3002] [DBG] [SLP] Clean to white (FULL) before absolute gray
+[3002] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3007] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3007] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3025] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3026] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3046] [DBG] [MAIN] Entering deep sleep
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/8_curve/B/shots/sleep.bmp

@@ -1,0 +1,37 @@
+{
+  "core_sha256": "de84d45ff81cf0fa73ca52b86282750e6f73b9810dd183830281cf03ace2ab39",
+  "results": [
+    {
+      "width": 1280,
+      "lang": "ru",
+      "text": "4\nУстановите поправку\nПоложите файл в скрытую папку /.crosspoint/ на карте памяти — кабелем, по Wi-Fi через «Передачу файлов» или картридером: panel_curve.txt для картинок, panel_curve_book.txt для книг. На Mac скрытые файлы показывает ⌘⇧. Для передачи по Wi-Fi включите «Показать скрытые файлы» в настройках прошивки.\nКалибровка экрана → включите галочку «Калибровка картинок» или «Калибровка книг».\nПоправка читается с карты в момент, когда ставите галочку. Если галочка уже стояла — снимите и поставьте снова. Картинки перерисуются с новой поправкой сами.\n\nВернуть как было: снимите галочку в «Калибровке экрана». Файлы поправок хранятся в /.crosspoint/ вместе с настройками прошивки.",
+      "help": "Картинки не изменились. Проверьте имя файла (без «(1)» в конце) и что он лежит в /.crosspoint/ на карте. Затем снимите и поставьте соответствующую галочку в «Калибровке экрана», чтобы перечитать поправку.",
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "lang": "en",
+      "text": "4\nInstall the correction\nPut the file into the hidden /.crosspoint/ folder on the memory card — by cable, over Wi-Fi with File Transfer or with a card reader: panel_curve.txt for pictures, panel_curve_book.txt for books. On a Mac, ⌘⇧. shows hidden files. For Wi-Fi transfer, enable Show Hidden Files in the firmware settings.\nScreen calibration → turn on Pictures calibration or Books calibration.\nThe correction is read from the card the moment you tick the checkbox. If it was already ticked, untick it and tick it again. Pictures are redrawn with the new correction by themselves.\n\nTo undo: turn the checkbox off in Screen calibration. The curve files live in /.crosspoint/ alongside the firmware settings.",
+      "help": "Pictures did not change. Check the file name (no “(1)” at the end) and that it is in /.crosspoint/ on the card. Then turn the matching checkbox off and on in Screen calibration to reload the curve.",
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "lang": "ru",
+      "text": "4\nУстановите поправку\nПоложите файл в скрытую папку /.crosspoint/ на карте памяти — кабелем, по Wi-Fi через «Передачу файлов» или картридером: panel_curve.txt для картинок, panel_curve_book.txt для книг. На Mac скрытые файлы показывает ⌘⇧. Для передачи по Wi-Fi включите «Показать скрытые файлы» в настройках прошивки.\nКалибровка экрана → включите галочку «Калибровка картинок» или «Калибровка книг».\nПоправка читается с карты в момент, когда ставите галочку. Если галочка уже стояла — снимите и поставьте снова. Картинки перерисуются с новой поправкой сами.\n\nВернуть как было: снимите галочку в «Калибровке экрана». Файлы поправок хранятся в /.crosspoint/ вместе с настройками прошивки.",
+      "help": "Картинки не изменились. Проверьте имя файла (без «(1)» в конце) и что он лежит в /.crosspoint/ на карте. Затем снимите и поставьте соответствующую галочку в «Калибровке экрана», чтобы перечитать поправку.",
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "lang": "en",
+      "text": "4\nInstall the correction\nPut the file into the hidden /.crosspoint/ folder on the memory card — by cable, over Wi-Fi with File Transfer or with a card reader: panel_curve.txt for pictures, panel_curve_book.txt for books. On a Mac, ⌘⇧. shows hidden files. For Wi-Fi transfer, enable Show Hidden Files in the firmware settings.\nScreen calibration → turn on Pictures calibration or Books calibration.\nThe correction is read from the card the moment you tick the checkbox. If it was already ticked, untick it and tick it again. Pictures are redrawn with the new correction by themselves.\n\nTo undo: turn the checkbox off in Screen calibration. The curve files live in /.crosspoint/ alongside the firmware settings.",
+      "help": "Pictures did not change. Check the file name (no “(1)” at the end) and that it is in /.crosspoint/ on the card. Then turn the matching checkbox off and on in Screen calibration to reload the curve.",
+      "overflow": false,
+      "errors": []
+    }
+  ]
+}

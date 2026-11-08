@@ -1,0 +1,85 @@
+415c415
+< +STR_PANEL_CAL_NOTE: "Photograph a calibration screen and compute the correction in KEINKT Calibrator. Checkbox off: the screen as it is (measure); on: with your correction (check)."
+---
+> +STR_PANEL_CAL_NOTE: "Photograph a calibration screen with the checkboxes below off and compute the correction in KEINKT Calibrator. Checkbox off: the screen as it is (measure); on: with your correction (check)."
+454c454
+< +STR_PANEL_CAL_NOTE: "Сфотографируйте калибровочный экран и рассчитайте поправку в KEINKT Calibrator. Галочка снята — экран показан как есть (замер), стоит — с поправкой (проверка)."
+---
+> +STR_PANEL_CAL_NOTE: "Сфотографируйте калибровочный экран со снятыми галочками ниже и рассчитайте поправку в KEINKT Calibrator. Галочка снята — экран показан как есть (замер), стоит — с поправкой (проверка)."
+890c890
+< @@ -262,6 +263,12 @@ inline bool handleBackNavigation(const MappedInputManager& mappedInput, Activity
+---
+> @@ -262,6 +263,14 @@ inline bool handleBackNavigation(const MappedInputManager& mappedInput, Activity
+895,896c895,898
+< +  // Settings → Display, the level that holds «Калибровка экрана». Before the reading surface's swipe guard below.
+< +  if (filePath && calibcard::isCalibrationPath(filePath) && mappedInput.wasReleased(MappedInputManager::Button::Back)) {
+---
+> +  // Settings → Display → «Калибровка экрана». Before the reading surface's swipe guard below.
+> +  // wasReleased first: no path string is built on every frame of a normal book.
+> +  if (mappedInput.wasReleased(MappedInputManager::Button::Back) && filePath && calibcard::isCalibrationPath(filePath)) {
+> +    pendingSettingsSubSection = SettingsSection::ScreenCalibration;  // back into «Калибровка экрана»
+1014c1016,1032
+< @@ -291,6 +314,42 @@ void SettingsActivity::toggleSelectedSetting() {
+---
+> @@ -216,6 +239,15 @@ void SettingsActivity::applyUiSettingChange(uint8_t CrossPointSettings::* valueP
+>  }
+>  
+>  bool SettingsActivity::handleCustomInput() {
+> +  // Back from a calibration screen: Settings opened at Display, now down into «Калибровка экрана».
+> +  if (section == SettingsSection::Display && pendingSettingsSubSection != SettingsSection::End) {
+> +    const SettingsSection sub = pendingSettingsSubSection;
+> +    pendingSettingsSubSection = SettingsSection::End;
+> +    if (auto activity = makeUniqueNoThrow<SettingsActivity>(renderer, mappedInput, sub)) {
+> +      startActivityForResult(std::move(activity), [this](const ActivityResult&) { requestUpdate(); });
+> +    }
+> +    return true;
+> +  }
+>    return optionPopup.handleInput(mappedInput, [this] { requestUpdate(); });
+>  }
+>  
+> @@ -291,6 +323,42 @@ void SettingsActivity::toggleSelectedSetting() {
+1057c1075
+< @@ -528,6 +587,19 @@ void SettingsActivity::buildScreen(UiScreen& screen) {
+---
+> @@ -528,6 +596,19 @@ void SettingsActivity::buildScreen(UiScreen& screen) {
+1107c1125
+< @@ -7,7 +7,19 @@
+---
+> @@ -7,7 +7,23 @@
+1124a1143,1146
+> +
+> +// A sub-screen of Display to reopen when Settings opens at Display (the calibration screens return there, Nikolai
+> +// 05.11.2026); End — none. Read and cleared by SettingsActivity.
+> +inline SettingsSection pendingSettingsSubSection = SettingsSection::End;
+1181c1203
+< @@ -591,22 +594,28 @@ void BmpViewerActivity::loop() {
+---
+> @@ -591,22 +594,29 @@ void BmpViewerActivity::loop() {
+1210c1232
+< +    // From the pictures calibration card back to Settings → Display, the level that holds «Калибровка экрана».
+---
+> +    // From the pictures calibration card back to Settings → Display → «Калибровка экрана».
+1211a1234
+> +      pendingSettingsSubSection = SettingsSection::ScreenCalibration;  // back into «Калибровка экрана»
+1693c1716
+< @@ -0,0 +1,106 @@
+---
+> @@ -0,0 +1,110 @@
+1704c1727
+< +// «_v1»: a changed card layout gets a new name, so an old card on the SD is never reused.
+---
+> +// «_vN»: a changed card layout gets a new name, so an old card on the SD is never reused.
+1707,1708c1730,1731
+< +constexpr char PICTURES_PORTRAIT[] = "/.crosspoint/calibration/pictures_portrait_v1.bmp";
+< +constexpr char PICTURES_LANDSCAPE[] = "/.crosspoint/calibration/pictures_landscape_v1.bmp";
+---
+> +constexpr char PICTURES_PORTRAIT[] = "/.crosspoint/calibration/pictures_portrait_v2.bmp";
+> +constexpr char PICTURES_LANDSCAPE[] = "/.crosspoint/calibration/pictures_landscape_v2.bmp";
+1768c1791,1795
+< +      const uint8_t v = landscape ? pixel(y, H - 1 - x, false) : pixel(x, y, false);
+---
+> +      // The card at 86 % with paper around it: its corner marks stay clear of the reader's black bezel in a photo
+> +      // (the first real photo, 05.11.2026, lost a mark 12 px from the edge). The page finds the card at any scale.
+> +      const int xp = landscape ? y : x, yp = landscape ? H - 1 - x : y;
+> +      const int xc = W / 2 + (xp - W / 2) * 100 / 86, yc = H / 2 + (yp - H / 2) * 100 / 86;
+> +      const uint8_t v = pixel(xc, yc, false);

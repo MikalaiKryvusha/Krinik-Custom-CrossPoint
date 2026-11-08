@@ -1,0 +1,54 @@
+[
+  {
+    "file": "lib/hal/HalFrontlight.cpp",
+    "sha256": "ffb673d017de29c158f3013a4284c7afc513c795b0e8c407752e53f2b51d302e"
+  },
+  {
+    "file": "lib/hal/HalFrontlight.h",
+    "sha256": "3d9e96e82379d01ea49d5fb1477112e283a07bfb08154dab3b6d6129b9451ff7"
+  },
+  {
+    "file": "src/CrossPointSettings.h",
+    "sha256": "e3f9409f8a954cf098b6cdfd2c296a5b1424dba31dc9035f414d0565a0d8e54c"
+  },
+  {
+    "file": "src/SettingsList.cpp",
+    "sha256": "35d91a7f2a61b4f5880e3fcdcbdd2c217702ee1f3d97b75859c31a4873a37024"
+  },
+  {
+    "file": "src/main.cpp",
+    "sha256": "9c3c8ac0ce6c9ba779ca03cc57f727dfad2cbba935f6eb6daa4eca0f3f031f88"
+  },
+  {
+    "file": "platformio.ini",
+    "sha256": "45f7362c0c66386394d589cf6b022ec8b45a1c9c8d0be0e0fe10c44e96ca77e3"
+  },
+  {
+    "file": "lib/I18n/translations/english.yaml",
+    "sha256": "35e9067343ed32df7d95bedec74308361a5b7ad050a7232b095283dbae6227d2"
+  },
+  {
+    "file": "lib/I18n/translations/russian.yaml",
+    "sha256": "e182b8c3af4167738c86f24983c2b46cdfd8f7181dfa9559ecdcd4d5d7f484bc"
+  },
+  {
+    "file": "test/frontlight_dither/FrontlightDitherTest.cpp",
+    "sha256": "72bf90c9a72e0309778cc432f9a7c8826547afdc40f6195edd27a996e386af5e"
+  },
+  {
+    "file": "test/test_frontlight_dither.py",
+    "sha256": "65cd955823b893468b4ef1a316a1217a591f2927ecdb4ad86b884f1b2909b227"
+  },
+  {
+    "file": "freeink-sdk/libs/hardware/FrontlightManager/include/FrontlightManager.h",
+    "sha256": "3e06a098efcdb203a67c9f05b23578f49066006d3ff543c3293d236fb720c3fb"
+  },
+  {
+    "file": "freeink-sdk/libs/hardware/FrontlightManager/include/FrontlightPwmDither.h",
+    "sha256": "ac3ca5222a6138059f0e407bee09664aca1ca2c6083a133537757fba0f7a0b39"
+  },
+  {
+    "file": "freeink-sdk/libs/hardware/FrontlightManager/src/FrontlightManager.cpp",
+    "sha256": "e422e5f55bbe01f6ed762ef576da0322805011413c66517c6c0e72c6e314b1d9"
+  }
+]

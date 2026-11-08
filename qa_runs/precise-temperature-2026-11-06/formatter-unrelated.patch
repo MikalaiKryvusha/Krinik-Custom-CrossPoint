@@ -1,0 +1,236 @@
+diff --git a/lib/Epub/Epub/converters/ImageToFramebufferDecoder.h b/lib/Epub/Epub/converters/ImageToFramebufferDecoder.h
+index 6b0e3529..ed5a6b58 100644
+--- a/lib/Epub/Epub/converters/ImageToFramebufferDecoder.h
++++ b/lib/Epub/Epub/converters/ImageToFramebufferDecoder.h
+@@ -18,11 +18,11 @@ struct RenderConfig {
+   bool useGrayscale = true;
+   bool useDithering = true;
+   bool performanceMode = false;
+-  bool useExactDimensions = false;  // If true, use maxWidth/maxHeight as exact output size (no recalculation)
+-  float sourceCropX = 0.0f;         // Fraction cropped equally from the left and right edges
+-  float sourceCropY = 0.0f;         // Fraction cropped equally from the top and bottom edges
+-  bool preserveAlpha = false;       // Skip transparent pixels instead of compositing them against white
+-  std::string cachePath;            // If non-empty, decoder will write pixel cache to this path
++  bool useExactDimensions = false;     // If true, use maxWidth/maxHeight as exact output size (no recalculation)
++  float sourceCropX = 0.0f;            // Fraction cropped equally from the left and right edges
++  float sourceCropY = 0.0f;            // Fraction cropped equally from the top and bottom edges
++  bool preserveAlpha = false;          // Skip transparent pixels instead of compositing them against white
++  std::string cachePath;               // If non-empty, decoder will write pixel cache to this path
+   const uint8_t* toneCurve = nullptr;  // Optional 256-entry tone curve applied to each gray before quantizing
+ };
+ 
+diff --git a/lib/GfxRenderer/Bitmap.h b/lib/GfxRenderer/Bitmap.h
+index 495ee8b8..44781e6f 100644
+--- a/lib/GfxRenderer/Bitmap.h
++++ b/lib/GfxRenderer/Bitmap.h
+@@ -82,7 +82,9 @@ class Bitmap {
+   uint16_t getBpp() const { return bpp; }
+   uint32_t getDataOffset() const { return bfOffBits; }
+   // Bytes the header promises: pixel data start + every row. A shorter file is truncated.
+-  uint64_t expectedFileSize() const { return bfOffBits + static_cast<uint64_t>(rowBytes) * static_cast<uint64_t>(height); }
++  uint64_t expectedFileSize() const {
++    return bfOffBits + static_cast<uint64_t>(rowBytes) * static_cast<uint64_t>(height);
++  }
+ 
+  private:
+   static uint16_t readLE16(HalFile& f);
+diff --git a/src/activities/ActivityManager.h b/src/activities/ActivityManager.h
+index d525d904..eaddc779 100644
+--- a/src/activities/ActivityManager.h
++++ b/src/activities/ActivityManager.h
+@@ -18,7 +18,16 @@
+ class Activity;    // forward declaration
+ class RenderLock;  // forward declaration
+ 
+-enum class HomeMenuItem { NONE, FILE_BROWSER, LIBRARY, OPDS_BROWSER, FILE_TRANSFER, SETTINGS_MENU, FLASHLIGHT, MAMA_HEART };
++enum class HomeMenuItem {
++  NONE,
++  FILE_BROWSER,
++  LIBRARY,
++  OPDS_BROWSER,
++  FILE_TRANSFER,
++  SETTINGS_MENU,
++  FLASHLIGHT,
++  MAMA_HEART
++};
+ 
+ /**
+  * ActivityManager
+diff --git a/src/activities/home/FileBrowserActivity.cpp b/src/activities/home/FileBrowserActivity.cpp
+index 0a7d32a6..1b866af4 100644
+--- a/src/activities/home/FileBrowserActivity.cpp
++++ b/src/activities/home/FileBrowserActivity.cpp
+@@ -118,7 +118,8 @@ void FileBrowserActivity::loadFiles() {
+     file.getName(fileNameBuffer.get(), NAME_BUFFER_SIZE);
+     const bool isDirectory = file.isDirectory();
+     // The firmware picker also sees the hidden /.firmware folder (images live there, out of the library's way).
+-    const bool firmwareFolder = mode == Mode::PickFirmware && isDirectory && strcmp(fileNameBuffer.get(), ".firmware") == 0;
++    const bool firmwareFolder =
++        mode == Mode::PickFirmware && isDirectory && strcmp(fileNameBuffer.get(), ".firmware") == 0;
+     if ((!SETTINGS.showHiddenFiles && fileNameBuffer[0] == '.' && !firmwareFolder) ||
+         strcmp(fileNameBuffer.get(), "System Volume Information") == 0) {
+       continue;
+diff --git a/src/activities/util/FlashlightActivity.cpp b/src/activities/util/FlashlightActivity.cpp
+index f651ba15..06e50c83 100644
+--- a/src/activities/util/FlashlightActivity.cpp
++++ b/src/activities/util/FlashlightActivity.cpp
+@@ -10,7 +10,7 @@
+ 
+ void FlashlightActivity::onEnter() {
+   Activity::onEnter();
+-#ifndef SIMULATOR  // the simulator HAL (external dependency, not ours to edit) has no raw light output
++#ifndef SIMULATOR                // the simulator HAL (external dependency, not ours to edit) has no raw light output
+   Frontlight.rampOutputTo(255);  // full output over «Плавная подсветка»; saved brightness and on/off untouched
+ #endif
+   requestUpdate();
+diff --git a/src/activities/util/FlashlightActivity.h b/src/activities/util/FlashlightActivity.h
+index 64514c5b..9bee248d 100644
+--- a/src/activities/util/FlashlightActivity.h
++++ b/src/activities/util/FlashlightActivity.h
+@@ -2,8 +2,8 @@
+ #include "activities/Activity.h"
+ 
+ // Home → «Фонарик» (Nikolai 04.11.2026): a white screen under a header band (back arrow + «Выйти») and the frontlight
+-// at full output. A tap anywhere (or Back / OK) returns Home; leaving by any way — Home, sleep — puts the light back as it was: the saved brightness, or dark if
+-// it was off. The saved brightness and the on/off setting are never touched.
++// at full output. A tap anywhere (or Back / OK) returns Home; leaving by any way — Home, sleep — puts the light back as
++// it was: the saved brightness, or dark if it was off. The saved brightness and the on/off setting are never touched.
+ class FlashlightActivity final : public Activity {
+  public:
+   explicit FlashlightActivity(GfxRenderer& renderer, MappedInputManager& mappedInput)
+diff --git a/src/activities/util/FrontlightPanelActivity.cpp b/src/activities/util/FrontlightPanelActivity.cpp
+index 913deb1e..8d2abd33 100644
+--- a/src/activities/util/FrontlightPanelActivity.cpp
++++ b/src/activities/util/FrontlightPanelActivity.cpp
+@@ -164,7 +164,7 @@ void FrontlightPanelActivity::onTileEvent(const fui::ActionEvent& event, void* u
+ 
+ void FrontlightPanelActivity::runTile(const int idx) {
+   switch (idx) {
+-    case 0:  // Night mode (inverted output polarity, applied to the whole UI)
++    case 0:                  // Night mode (inverted output polarity, applied to the whole UI)
+       themeApplying = true;  // no close until render() shows the sheet in the new theme
+       SETTINGS.screenInverted = SETTINGS.screenInverted ? 0 : 1;
+       SETTINGS.saveToFile();
+diff --git a/src/activities/util/FrontlightPanelActivity.h b/src/activities/util/FrontlightPanelActivity.h
+index e4e40a49..6513507c 100644
+--- a/src/activities/util/FrontlightPanelActivity.h
++++ b/src/activities/util/FrontlightPanelActivity.h
+@@ -76,7 +76,7 @@ class FrontlightPanelActivity final : public Activity, private UiAppHost {
+   // Night mode toggled and its repaint of the sheet not finished yet: close is ignored until it is (Nikolai
+   // 04.11.2026 — a quick close printed the sheet into the home screen). Set by the input loop, cleared by render().
+   std::atomic<bool> themeApplying{false};
+-  bool traced = false;         // first-frame path written to the shade trace
++  bool traced = false;  // first-frame path written to the shade trace
+ 
+  public:
+   explicit FrontlightPanelActivity(GfxRenderer& renderer, MappedInputManager& mappedInput);
+diff --git a/src/activities/util/MamaActivity.cpp b/src/activities/util/MamaActivity.cpp
+index 2fd8cb29..2e0b4420 100644
+--- a/src/activities/util/MamaActivity.cpp
++++ b/src/activities/util/MamaActivity.cpp
+@@ -3,8 +3,8 @@
+ #include <GfxRenderer.h>
+ 
+ #include "MappedInputManager.h"
+-#include "components/UITheme.h"
+ #include "activities/ActivityManager.h"
++#include "components/UITheme.h"
+ #include "fontIds.h"
+ #include "images/HeartBig.h"
+ 
+diff --git a/src/components/CoverGridHomeUi.cpp b/src/components/CoverGridHomeUi.cpp
+index 7a64effe..5b9bb780 100644
+--- a/src/components/CoverGridHomeUi.cpp
++++ b/src/components/CoverGridHomeUi.cpp
+@@ -12,8 +12,8 @@
+ #include "UITheme.h"
+ #include "icons/blocks.h"
+ #include "icons/book.h"
+-#include "icons/folder.h"
+ #include "icons/flashlight.h"
++#include "icons/folder.h"
+ #include "icons/heart.h"
+ #include "icons/library.h"
+ #include "icons/settings2.h"
+@@ -289,8 +289,8 @@ void CoverGridHomeUi::drawTabs(UiScreen& screen, fui::Rect rect) {
+   static constexpr const uint8_t* ICONS[] = {FolderIcon,    LibraryIcon,    BlocksIcon, TransferIcon,
+                                              Settings2Icon, FlashlightIcon, HeartIcon};
+ #else
+-  static constexpr const uint8_t* ICONS[] = {FolderIcon, LibraryIcon, BlocksIcon, TransferIcon, Settings2Icon,
+-                                             FlashlightIcon};
++  static constexpr const uint8_t* ICONS[] = {FolderIcon,   LibraryIcon,   BlocksIcon,
++                                             TransferIcon, Settings2Icon, FlashlightIcon};
+ #endif
+   constexpr int ICON_COUNT = sizeof(ICONS) / sizeof(ICONS[0]);
+   int count = 0;
+diff --git a/src/components/themes/BaseTheme.cpp b/src/components/themes/BaseTheme.cpp
+index ee9cc14e..cbbf766c 100644
+--- a/src/components/themes/BaseTheme.cpp
++++ b/src/components/themes/BaseTheme.cpp
+@@ -724,8 +724,8 @@ void BaseTheme::drawRecentBookCover(GfxRenderer& renderer, Rect rect, const std:
+     const auto hint = renderer.wrappedText(hintFont, tr(STR_START_READING), textWidth, 3);
+     const int titleLine = renderer.getLineHeight(titleFont);
+     const int hintLine = renderer.getLineHeight(hintFont);
+-    int y = bookY + (bookHeight - static_cast<int>(title.size()) * titleLine -
+-                     static_cast<int>(hint.size()) * hintLine) / 2;
++    int y = bookY +
++            (bookHeight - static_cast<int>(title.size()) * titleLine - static_cast<int>(hint.size()) * hintLine) / 2;
+     for (const auto& line : title) {
+       renderer.drawCenteredText(titleFont, y, line.c_str());
+       y += titleLine;
+diff --git a/src/components/themes/lyra/LyraTheme.cpp b/src/components/themes/lyra/LyraTheme.cpp
+index 1d3c0aff..63474b12 100644
+--- a/src/components/themes/lyra/LyraTheme.cpp
++++ b/src/components/themes/lyra/LyraTheme.cpp
+@@ -16,10 +16,10 @@
+ #include "components/icons/blocks.h"
+ #include "components/icons/book.h"
+ #include "components/icons/bookmark.h"
+-#include "components/icons/heart.h"
+-#include "components/icons/flashlight.h"
+ #include "components/icons/cover.h"
++#include "components/icons/flashlight.h"
+ #include "components/icons/folder.h"
++#include "components/icons/heart.h"
+ #include "components/icons/hotspot.h"
+ #include "components/icons/library.h"
+ #include "components/icons/recent.h"
+@@ -285,7 +285,8 @@ void LyraTheme::drawRecentBookCover(GfxRenderer& renderer, Rect rect, const std:
+                                hPaddingInSelection, cornerRadius, false, false, true, true, Color::LightGray);
+     }
+ 
+-    auto titleLines = renderer.wrappedText(UI_12_FONT_ID, book.title.c_str(), textWidth, 5, EpdFontFamily::BOLD);  // krinik: 5 lines (was 3), the cover is tall enough
++    auto titleLines = renderer.wrappedText(UI_12_FONT_ID, book.title.c_str(), textWidth, 5,
++                                           EpdFontFamily::BOLD);  // krinik: 5 lines (was 3), the cover is tall enough
+ 
+     auto author = renderer.truncatedText(UI_10_FONT_ID, book.author.c_str(), textWidth);
+     const int titleLineHeight = renderer.getLineHeight(UI_12_FONT_ID);
+diff --git a/src/images/HeartBig.h b/src/images/HeartBig.h
+index dc21d1ab..e3084635 100644
+--- a/src/images/HeartBig.h
++++ b/src/images/HeartBig.h
+@@ -1,7 +1,8 @@
+ #pragma once
+ #include <cstdint>
+ 
+-// Image dimensions: 160x160 — filled heart (stored rotated 90° CCW: drawn rotated into the portrait UI), krinik «для мамы» build
++// Image dimensions: 160x160 — filled heart (stored rotated 90° CCW: drawn rotated into the portrait UI), krinik «для
++// мамы» build
+ static const uint8_t HeartBig[] = {
+     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+     0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
+diff --git a/src/util/CacheLimit.h b/src/util/CacheLimit.h
+index b52a4c25..da7bf4cc 100644
+--- a/src/util/CacheLimit.h
++++ b/src/util/CacheLimit.h
+@@ -8,8 +8,8 @@
+ // remember() appends it to a small queue file and deletes the oldest files while there are more than `keep`.
+ //
+ // The order lives in the queue file, not in file dates: FAT dates come from the reader's clock (HalStorage), which
+-// may be unset or wrong, so they are not trusted for ordering. Cache files found on the card but missing from the queue (older firmware, a
+-// lost queue) count as the oldest, in directory order.
++// may be unset or wrong, so they are not trusted for ordering. Cache files found on the card but missing from the queue
++// (older firmware, a lost queue) count as the oldest, in directory order.
+ namespace cachelimit {
+ // Nikolai 04.11.2026: «кеш на 100 файлов». A full-screen 2-bit image is ≈ 94 KB, so each cache stays under ≈ 9.4 MB.
+ constexpr size_t VIEWER_CACHE_FILES = 100;

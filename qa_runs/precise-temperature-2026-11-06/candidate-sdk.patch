@@ -1,0 +1,78 @@
+diff --git a/libs/hardware/FrontlightManager/include/FrontlightManager.h b/libs/hardware/FrontlightManager/include/FrontlightManager.h
+index 2f964c5..c654a49 100644
+--- a/libs/hardware/FrontlightManager/include/FrontlightManager.h
++++ b/libs/hardware/FrontlightManager/include/FrontlightManager.h
+@@ -40,6 +40,8 @@ class FrontlightManager {
+   // Raw total duty, without a curve. Debug X4 Pro retains its fraction and quantizes each channel separately.
+   // brightness()/brightnessLevel() keep their values. Repeat while needsPwmDither() is true.
+   void setTotalDuty(float duty);
++  // Fractional channel mixing is allowed up to this total duty, inclusive; zero disables it.
++  void setPwmDitherLimit(uint32_t duty);
+   bool needsPwmDither() const {
+ #if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
+     return _pwmDither.pending();
+@@ -188,6 +190,7 @@ class FrontlightManager {
+   float _rawDuty = 0.0f;
+ #if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
+   FrontlightPwmDither _pwmDither;
++  uint32_t _pwmDitherLimit = UINT32_MAX;
+ #endif
+   // Duty written by the previous apply(); 0 = the light was off. The off->on
+   // edge is what arms the boost kick-start (see apply()).
+diff --git a/libs/hardware/FrontlightManager/include/FrontlightPwmDither.h b/libs/hardware/FrontlightManager/include/FrontlightPwmDither.h
+index c160707..d52ec2b 100644
+--- a/libs/hardware/FrontlightManager/include/FrontlightPwmDither.h
++++ b/libs/hardware/FrontlightManager/include/FrontlightPwmDither.h
+@@ -25,6 +25,12 @@ class FrontlightPwmDither {
+ 
+   bool pending() const { return needsUpdates; }
+ 
++  void reset() {
++    coolError = 0.0f;
++    warmError = 0.0f;
++    needsUpdates = false;
++  }
++
+  private:
+   static uint32_t quantize(float target, float& error) {
+     if (target <= 0.0f) {
+diff --git a/libs/hardware/FrontlightManager/src/FrontlightManager.cpp b/libs/hardware/FrontlightManager/src/FrontlightManager.cpp
+index ab3b34c..4ec049e 100644
+--- a/libs/hardware/FrontlightManager/src/FrontlightManager.cpp
++++ b/libs/hardware/FrontlightManager/src/FrontlightManager.cpp
+@@ -558,9 +558,15 @@ void FrontlightManager::apply() {
+   if (dual) {
+ #if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
+     const float exactDuty = _useRawDuty ? _rawDuty : static_cast<float>(totalDuty);
+-    const auto sample = _pwmDither.next(exactDuty, _warmPercent, full);
+-    warmDuty = sample.warm;
+-    coolDuty = sample.cool;
++    if (_pwmDitherLimit > 0 && exactDuty <= static_cast<float>(_pwmDitherLimit)) {
++      const auto sample = _pwmDither.next(exactDuty, _warmPercent, full);
++      warmDuty = sample.warm;
++      coolDuty = sample.cool;
++    } else {
++      _pwmDither.reset();
++      warmDuty = (totalDuty * _warmPercent + 50u) / 100u;
++      coolDuty = totalDuty - warmDuty;
++    }
+ #else
+     warmDuty = (totalDuty * _warmPercent + 50u) / 100u;
+     coolDuty = totalDuty - warmDuty;
+@@ -701,6 +707,16 @@ void FrontlightManager::setTotalDuty(float duty) {
+ #endif
+ }
+ 
++void FrontlightManager::setPwmDitherLimit(uint32_t duty) {
++#if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
++  if (_pwmDitherLimit == duty) return;
++  _pwmDitherLimit = duty;
++  apply();
++#else
++  (void)duty;
++#endif
++}
++
+ void FrontlightManager::setBrightnessLevel(uint8_t level) {
+ #if FREEINK_CAP_FRONTLIGHT
+   _brightnessLevel = level;

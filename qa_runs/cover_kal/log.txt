@@ -1,0 +1,188 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[1] [DBG] [CPS] Resaving settings to update format
+[1] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 09:52
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[246] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[246] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[246] [DBG] [SDREG] Fonts directory not found: /fonts
+[246] [DBG] [SDREG] Discovery complete: 0 families
+[246] [DBG] [SDFS] SD font system ready (0 families discovered)
+[246] [DBG] [MAIN] Fonts setup
+[246] [DBG] [ACT] Entering activity: Boot
+[247] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[270] [DBG] [ACT] Exiting activity: Boot
+[270] [DBG] [ACT] Entering activity: Home
+[271] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[290] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1511] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2282] [DBG] [ACT] Exiting activity: Home
+[2282] [DBG] [ACT] Entering activity: Library
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[2282] [DBG] [GFX] Time = 772 ms from clearScreen to displayBuffer
+[2290] [DBG] [LIBIDX] phase prepare/prior: 1ms
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_6356251370301420133/book.bin (flags=0x0 errno=2 No such file or directory)
+[2292] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[2292] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[2292] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_1904033327718914090/book.bin (flags=0x0 errno=2 No such file or directory)
+[2293] [DBG] [ZIP] Decompressed 169 bytes into 240 bytes
+[2293] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[2293] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_5112959142090641435/book.bin (flags=0x0 errno=2 No such file or directory)
+[2295] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[2295] [DBG] [EBP] Parsing content.opf: content.opf
+[2296] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_3326978849599308136/book.bin (flags=0x0 errno=2 No such file or directory)
+[2297] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[2297] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[2298] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_16224160833964083072/book.bin (flags=0x0 errno=2 No such file or directory)
+[2299] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[2299] [DBG] [EBP] Parsing content.opf: content.opf
+[2299] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_17215692838832747456/book.bin (flags=0x0 errno=2 No such file or directory)
+[2300] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[2300] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[2300] [DBG] [EBP] Successfully parsed package metadata
+[2301] [DBG] [LIBIDX] phase walk/metadata/stage: 11ms
+[2301] [DBG] [LIBIDX] phase reconcile: 0ms
+[2301] [DBG] [LIBIDX] title sort alloc: 84 bytes, heap 1048576, max block 1048576
+[2303] [DBG] [LIBIDX] phase title order: 2ms
+[2303] [DBG] [LIBIDX] author sort alloc: 84 bytes, heap 1048576, max block 1048576
+[2313] [DBG] [LIBIDX] phase author/orders/emit: 10ms
+[2314] [INF] [LIBIDX] built: 6 books, 2 folders, 6 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 25ms
+[2314] [INF] [LIB] reconciled: 0 unchanged, 6 added, 0 renamed, 0 removed, 6 enriched (0 dup, 0 unreadable)
+[2317] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[2317] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[2317] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[2323] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[2323] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[2323] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[4513] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[4513] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[4513] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[4905] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[4906] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[4906] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[5308] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[5308] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[5308] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[5715] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[5715] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[5715] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[6105] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[6105] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[6105] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[6883] [DBG] [ACT] Exiting activity: Library
+[6883] [DBG] [ACT] Entering activity: EpubReader
+[6883] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[6883] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[6884] [DBG] [GFX] Time = 781 ms from clearScreen to displayBuffer
+[6890] [DBG] [EBP] Loading ePub: /Калибровка.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_1904033327718914090/book.bin (flags=0x0 errno=2 No such file or directory)
+[6890] [DBG] [EBP] Cache not found, building spine/TOC cache
+[6891] [DBG] [BMC] Entering write mode
+[6891] [DBG] [BMC] Beginning content opf pass
+[6891] [DBG] [ZIP] Decompressed 169 bytes into 240 bytes
+[6891] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[6891] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[6891] [DBG] [COF] Using fast index for 10 manifest items
+[6891] [DBG] [ZIP] Decompressed 534 bytes into 1337 bytes
+[6891] [DBG] [EBP] Successfully parsed content.opf
+[6892] [DBG] [EBP] OPF pass completed in 1 ms
+[6892] [DBG] [BMC] Beginning toc pass
+[6892] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[6892] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[6892] [DBG] [NAV] Found nav toc element
+[6892] [DBG] [NAV] Finished parsing nav toc
+[6892] [DBG] [ZIP] Decompressed 344 bytes into 576 bytes
+[6892] [DBG] [EBP] Parsed TOC nav items
+[6892] [DBG] [EBP] TOC pass completed in 0 ms
+[6892] [DBG] [BMC] Wrote 4 spine, 4 TOC entries
+[6892] [DBG] [BMC] Successfully built book.bin
+[6892] [DBG] [EBP] buildBookBin completed in 0 ms
+[6892] [DBG] [EBP] Total indexing completed in 1 ms
+[6892] [DBG] [EBP] No CSS files to parse, but CssParser created for inline styles
+[6892] [DBG] [EBP] CSS files to parse: 0
+[6892] [DBG] [CSS] Saved 0 rules to complete cache
+[6892] [DBG] [EBP] Loaded 0 CSS style rules from 0 files (0 identical duplicates skipped, complete)
+[6892] [DBG] [BMC] Loaded cache data: 4 spine, 4 TOC entries
+[6892] [DBG] [EBP] Loaded ePub: /Калибровка.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_1904033327718914090/progress.bin (flags=0x0 errno=2 No such file or directory)
+[6893] [DBG] [EBP] Core Metadata: cover(15)=OEBPS/cover.jpg, textReference(0)=
+[6893] [DBG] [ERS] Loading file: OEBPS/scale.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_1904033327718914090/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[6893] [DBG] [ERS] Cache not found, building...
+[6893] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[6893] [DBG] [ZIP] Decompressed 242 bytes into 304 bytes
+[6893] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_1904033327718914090/html/.tmp_0.html (304 bytes)
+[6893] [DBG] [CSS] Loaded 0 rules from complete cache
+[6894] [DBG] [EHP] Found image: src=images/scale.png
+[6894] [DBG] [EHP] Image dimensions: 783x470
+[6894] [DBG] [EHP] Display size from CSS width: 741x445
+[6894] [DBG] [EHP] Time to parse and build pages: 0 ms
+[6894] [DBG] [SCT] Page 0 processed
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_1904033327718914090/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[6894] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6896] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_1904033327718914090/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[6896] [DBG] [IMG] Lazy-extracting OEBPS/images/scale.png -> /.crosspoint/epub_1904033327718914090/img_0_0.png
+[6896] [DBG] [ZIP] Decompressed 12609 bytes into 13948 bytes
+[6896] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_1904033327718914090/img_0_0.png
+[6896] [DBG] [IMG] Using PNG decoder
+[6896] [DBG] [PNG] Decoding PNG: /.crosspoint/epub_1904033327718914090/img_0_0.png
+[6899] [DBG] [PNG] PNG 783x470 (visible 783x470) -> 741x445 (scale 0.95), type: 6, bpp: 8
+[6899] [DBG] [IMG] Cache stream started: /.crosspoint/epub_1904033327718914090/img_0_0.pxc (741x445, band 16 rows)
+[6911] [DBG] [PNG] PNG decoding complete - render time: 12 ms
+[6911] [DBG] [IMG] Cache written: /.crosspoint/epub_1904033327718914090/img_0_0.pxc (741x445, 82774 bytes)
+[6916] [DBG] [IMG] Decode successful
+[6916] [DBG] [GFX] Time = 20 ms from clearScreen to displayBuffer
+[6918] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6918] [DBG] [IMG] Loading from cache: /.crosspoint/epub_1904033327718914090/img_0_0.pxc (741x445)
+[6919] [DBG] [IMG] Cache render complete (payload now in RAM)
+[6919] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6919] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6920] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6920] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6921] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6921] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6922] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6922] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6923] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6923] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6924] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[6929] [DBG] [ERS] Page render (tiled): prewarm=0ms bw_render=22ms display=2ms gray_lsb=3ms gray_msb=3ms gray_display=5ms cleanup=0ms total=35ms
+[6929] [DBG] [ERS] Rendered page in 35ms
+[6929] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[10004] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10004] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/cover_kal/shots/book.bmp
+[13032] [DBG] [ACT] Exiting activity: EpubReader
+[13032] [INF] [MEM] reader exit: free=1048576 max_block=1048576
+[13033] [DBG] [ACT] Entering activity: Home
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cover_kal/sd/.crosspoint/epub_1904033327718914090/thumb_226.bmp (flags=0x0 errno=2 No such file or directory)
+[13034] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[13098] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[13103] [DBG] [EBP] Loading ePub: /Калибровка.epub
+[13103] [DBG] [BMC] Loaded cache data: 4 spine, 4 TOC entries
+[13103] [DBG] [EBP] Loaded ePub: /Калибровка.epub
+[13103] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[13107] [DBG] [GFX] Time = 9 ms from clearScreen to displayBuffer
+[13111] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[13112] [DBG] [ZIP] Decompressed 20023 bytes into 30997 bytes
+[13113] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 135x226)
+[13121] [DBG] [JPG] JPEG dimensions: 480x800
+[13121] [DBG] [JPG] Scaling source 480x800 (decode grid 480x800) -> 135x226 (target 135x226)
+[13226] [DBG] [JPG] Successfully converted JPEG to BMP
+[13230] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[13289] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/cover_kal/shots/home.bmp

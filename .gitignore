@@ -1,0 +1,13 @@
+# local clones (code lives in the forks, see STATUS.md → Code map)
+/firmware/
+/KEINKT/
+# toolchains and dependencies
+.pio/
+.pio-venv/
+.venv/
+node_modules/
+__pycache__/
+# OS noise
+.DS_Store
+._*
+Thumbs.db

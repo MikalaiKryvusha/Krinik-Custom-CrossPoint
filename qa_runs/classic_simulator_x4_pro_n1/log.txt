@@ -1,0 +1,26 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/classic_simulator_x4_pro_n1/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/classic_simulator_x4_pro_n1/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/classic_simulator_x4_pro_n1/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Classic theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 10:34
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[240] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/classic_simulator_x4_pro_n1/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[240] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/classic_simulator_x4_pro_n1/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[240] [DBG] [SDREG] Fonts directory not found: /fonts
+[240] [DBG] [SDREG] Discovery complete: 0 families
+[240] [DBG] [SDFS] SD font system ready (0 families discovered)
+[240] [DBG] [MAIN] Fonts setup
+[240] [DBG] [ACT] Entering activity: Boot
+[241] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[265] [DBG] [ACT] Exiting activity: Boot
+[265] [DBG] [ACT] Entering activity: Home
+[266] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[280] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/classic_simulator_x4_pro_n1/shots/home.bmp

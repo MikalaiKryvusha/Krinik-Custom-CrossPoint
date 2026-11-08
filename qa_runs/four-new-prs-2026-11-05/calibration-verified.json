@@ -1,0 +1,22 @@
+{
+  "base": "bb93a462",
+  "judge": "VERIFIED WITH CAVEATS; P2 small BMP scaling and P3 formatting resolved; additional blank exit frame resolved",
+  "tests": 912,
+  "builds": {
+    "default": "SUCCESS after final change",
+    "x4pro-gh_release": "SUCCESS",
+    "simulator_x4_pro": "SUCCESS, native-only controllerName shim"
+  },
+  "navigation_cases": 8,
+  "small_bmp_bbox_off_on": [
+    190,
+    350,
+    290,
+    450
+  ],
+  "ui_menu_entry_both_cards": true,
+  "both_checkboxes_saved": true,
+  "resume_recent_preserved": true,
+  "hardware_port": "pending",
+  "published": false
+}

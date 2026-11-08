@@ -1,0 +1,4 @@
+../../src/FrontlightManager.cpp:572:3: error: use of undeclared identifier 'LOG_DBG'
+  572 |   LOG_DBG("FrontlightMgr", "apply: brightness=%u level=%u totalDuty=%u coolDuty=%u warmDuty=%u lit=%d", _brightness,
+      |   ^~~~~~~
+1 error generated.

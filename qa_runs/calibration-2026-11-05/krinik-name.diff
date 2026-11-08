@@ -1,0 +1,48 @@
+commit 9e902d0197218129a33e3bfebcb52721104dfd2d
+Author: Mikalai Kryvusha <59587509+MikalaiKryvusha@users.noreply.github.com>
+Date:   Thu Nov 5 14:56:39 2026 +0300
+
+    feat: firmware name cp-<CrossPoint version>-krinik-<fork version> (cp-2.0.0-krinik-1.1.0); OTA compares the CrossPoint part
+    
+    Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+
+diff --git a/platformio.ini b/platformio.ini
+index 903a9862..6a21ffcf 100644
+--- a/platformio.ini
++++ b/platformio.ini
+@@ -6,6 +6,11 @@ extra_configs = platformio.local.ini
+ [crosspoint]
+ version = 2.0.0
+ 
++; Our fork's own version. The firmware name is cp-<CrossPoint version>-krinik-<this>, e.g. cp-2.0.0-krinik-1.1.0
++; (Nikolai 05.11.2026): it shows in Settings → About → Firmware and names the release image.
++[krinik]
++version = 1.1.0
++
+ [base]
+ platform = https://github.com/pioarduino/platform-espressif32/releases/download/55.03.311/platform-espressif32.zip
+ board = esp32-c3-devkitm-1
+@@ -773,7 +778,7 @@ build_flags =
+   -DBOARD_HAS_PSRAM
+   -DUSB_PRODUCT=\"CrossPoint_X4_Pro\"
+   -DUSB_MANUFACTURER=\"CrossPoint\"
+-  -DCROSSPOINT_VERSION=\"${crosspoint.version}-krinik\"
++  -DCROSSPOINT_VERSION=\"cp-${crosspoint.version}-krinik-${krinik.version}\"
+   -DENABLE_SERIAL_LOG
+   -DLOG_LEVEL=1
+   -DUSE_BLOCK_DEVICE_INTERFACE=1
+diff --git a/src/network/OtaUpdater.cpp b/src/network/OtaUpdater.cpp
+index 1f64b229..1625c9cb 100644
+--- a/src/network/OtaUpdater.cpp
++++ b/src/network/OtaUpdater.cpp
+@@ -99,7 +99,9 @@ bool OtaUpdater::isUpdateNewer() const {
+   int currentMajor, currentMinor, currentPatch;
+   int latestMajor, latestMinor, latestPatch;
+ 
+-  const auto currentVersion = CROSSPOINT_VERSION;
++  // A downstream name «cp-<CrossPoint version>-…» (krinik) compares by the CrossPoint version after the prefix.
++  const char* currentVersion = CROSSPOINT_VERSION;
++  if (strncmp(currentVersion, "cp-", 3) == 0) currentVersion += 3;
+ 
+   // semantic version check (only match on 3 segments)
+   sscanf(latestVersion.c_str(), "%d.%d.%d", &latestMajor, &latestMinor, &latestPatch);

@@ -1,0 +1,58 @@
+[0] [DBG] [UI] Using Lyra theme
+[6] [INF] [MAIN] Device: xteink_x4_pro
+[8] [DBG] [CPS] Settings loaded from file
+[8] [DBG] [UI] Using Classic theme
+[9] [INF] [CLK] RTC clock read: 2026-11-07 20:10
+[SIM] Frontlight: off, brightness=60%, warmth=50%
+[9] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[13] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[13] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[13] [DBG] [SDREG] Fonts directory not found: /fonts
+[13] [DBG] [SDREG] Discovery complete: 0 families
+[13] [DBG] [SDFS] SD font system ready (0 families discovered)
+[13] [DBG] [MAIN] Fonts setup
+[13] [DBG] [ACT] Entering activity: Boot
+[15] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[20] [DBG] [ACT] Exiting activity: Boot
+[20] [DBG] [ACT] Entering activity: Home
+[21] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[38] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[1581] [DBG] [ACT] Exiting activity: Home
+[1581] [DBG] [ACT] Entering activity: SettingsList
+[1582] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[2582] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2583] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2583] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2583] [DBG] [DREG] No /.dictionaries directory on SD card
+[2588] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[3589] [DBG] [ACT] Pushed to activity stack, new size = 2
+[3589] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[3589] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[3590] [DBG] [DREG] No /.dictionaries directory on SD card
+[3596] [DBG] [GFX] Time = 6 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/shots/cleaning.bmp
+[4586] [DBG] [GFX] Time = 996 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/shots/sleep-delay-options.bmp
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[5583] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[5583] [DBG] [DREG] No /.dictionaries directory on SD card
+[5586] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/shots/between-options.bmp
+[6586] [DBG] [GFX] Time = 1003 ms from clearScreen to displayBuffer
+[SIM] refresh mode=2
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/redraw-illustrations/shots/image-delay-options.bmp

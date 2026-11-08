@@ -1,0 +1,127 @@
+[
+  {
+    "id": "01",
+    "repo": "/Users/kryvusha/Xteink/pr-fixes/screen-clean-menu",
+    "branch": "pr/screen-clean-menu",
+    "sha": "ea0a3625cda5a5fc01f668d3b3babf7f7f04ce3f",
+    "title": "feat: group screen cleaning settings",
+    "body": "/Users/kryvusha/Xteink/qa_runs/prs-2026-11-06/bodies/01-screen-cleaning.md",
+    "requires_merged": [],
+    "destination": "crosspoint-reader/crosspoint-reader",
+    "base": "develop",
+    "pr_number": 4375,
+    "pr_url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4375",
+    "state": "OPEN",
+    "published_body": "/Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/01-screen-cleaning.md"
+  },
+  {
+    "id": "02",
+    "repo": "/Users/kryvusha/Xteink/pr-fixes/calibration",
+    "branch": "pr/screen-calibration",
+    "sha": "f90b29b492d16c330710c46206470f0d35779943",
+    "title": "feat: calibrate picture and book image tones",
+    "body": "/Users/kryvusha/Xteink/qa_runs/prs-2026-11-06/bodies/02-calibration.md",
+    "requires_merged": [],
+    "destination": "crosspoint-reader/crosspoint-reader",
+    "base": "develop",
+    "prepared_body": "/Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/02-calibration.md",
+    "next_selected": true,
+    "pr_number": 4377,
+    "pr_url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4377",
+    "state": "OPEN",
+    "published_body": "/Users/kryvusha/Xteink/qa_runs/calibration-photos-2026-11-07/pr4377-body-updated.md",
+    "asset_commit": "5b48440",
+    "ci_const_fix": "f90b29b4"
+  },
+  {
+    "id": "03",
+    "repo": "/Users/kryvusha/Xteink/pr-fixes/screen-redraw-delay",
+    "branch": "pr/screen-redraw-delay",
+    "sha": "d7cc4e830cede35c7e73e21207863603d9a421f8",
+    "title": "feat: add optional delayed image redraws",
+    "body": "/Users/kryvusha/Xteink/qa_runs/prs-2026-11-06/bodies/03-delayed-redraw.md",
+    "requires_merged": [
+      "01"
+    ],
+    "destination": "crosspoint-reader/crosspoint-reader",
+    "base": "develop",
+    "pr_number": 4376,
+    "pr_url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4376",
+    "state": "OPEN",
+    "published_body": "/Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/03-delayed-redraw.md"
+  },
+  {
+    "id": "04",
+    "repo": "/Users/kryvusha/Xteink/pr-fixes/screen-clean-return",
+    "branch": "pr/screen-clean-return",
+    "sha": "8e063cedc622010b20e742e1907e60c8644d866b",
+    "title": "feat: add Clean Home Screen and Clean After Control Center",
+    "body": "/Users/kryvusha/Xteink/qa_runs/prs-2026-11-06/bodies/04-home-control-center-clean.md",
+    "requires_merged": [
+      "01",
+      "03"
+    ],
+    "destination": "crosspoint-reader/crosspoint-reader",
+    "base": "develop",
+    "prepared_body": "/Users/kryvusha/Xteink/qa_runs/pr-publication-2026-11-07/04-home-control-center-clean.md",
+    "owner_hardware_check": "2026-11-07: Nikolai tested redraws on his reader, OK",
+    "publish_attempt": {
+      "at": "2026-11-07T20:43Z",
+      "result": "refused: no permission to CreatePullRequest (upstream open-PR limit, 5 open)",
+      "sha": "8e063cedc622010b20e742e1907e60c8644d866b",
+      "merge_vs_develop": "clean"
+    }
+  },
+  {
+    "id": "11",
+    "repo": "/Users/kryvusha/Xteink/pr-fixes/night-epub-images",
+    "branch": "pr/night-epub-images",
+    "sha": "584c04e0e469e639ed0c4d0bc81c27d4304a7963",
+    "title": "fix(reader): dither EPUB images in Night Mode",
+    "body": "/Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/bodies/11-night-epub-images.md",
+    "requires_merged": [],
+    "destination": "crosspoint-reader/crosspoint-reader",
+    "base": "develop",
+    "checks": "x4pro, default, simulator_x4_pro SUCCESS; host 898/898 (parallel flakes in ParserStopTest rerun PASS); judge 2026-11-08 reviewed",
+    "owner_text_review": "pending"
+  },
+  {
+    "id": "12",
+    "repo": "/Users/kryvusha/Xteink/pr-fixes/lyra-title-lines",
+    "branch": "pr/lyra-title-lines",
+    "sha": "9d8bd77e64c946b840e21ec97d7dd45139c56a5c",
+    "title": "feat(lyra): show up to five lines of the recent book title",
+    "body": "/Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/bodies/12-lyra-title-lines.md",
+    "requires_merged": [],
+    "destination": "crosspoint-reader/crosspoint-reader",
+    "base": "develop",
+    "checks": "x4pro, default, simulator_x4_pro SUCCESS; host 898/898 (parallel flakes in ParserStopTest rerun PASS); judge 2026-11-08 reviewed",
+    "owner_text_review": "pending"
+  },
+  {
+    "id": "13",
+    "repo": "/Users/kryvusha/Xteink/pr-fixes/viewer-reader-controls",
+    "branch": "pr/viewer-reader-controls",
+    "sha": "636126c5d9f5c84a961be64bf3507b15d17beb85",
+    "title": "feat(viewer): turn images with the reader's page-turn settings",
+    "body": "/Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/bodies/13-viewer-reader-controls.md",
+    "requires_merged": [],
+    "destination": "crosspoint-reader/crosspoint-reader",
+    "base": "develop",
+    "checks": "x4pro, default, simulator_x4_pro SUCCESS; host 898/898 (parallel flakes in ParserStopTest rerun PASS); judge 2026-11-08 reviewed",
+    "owner_text_review": "pending"
+  },
+  {
+    "id": "14",
+    "repo": "/Users/kryvusha/Xteink/pr-fixes/sleep-skip-truncated-bmp",
+    "branch": "pr/sleep-skip-truncated-bmp",
+    "sha": "5977ce1ebcbd9331c07b055a36cceee10960759c",
+    "title": "fix(sleep): skip truncated BMPs when picking from the sleep folders",
+    "body": "/Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/bodies/14-sleep-skip-truncated-bmp.md",
+    "requires_merged": [],
+    "destination": "crosspoint-reader/crosspoint-reader",
+    "base": "develop",
+    "checks": "x4pro, default, simulator SUCCESS; host 906/906 incl. new test; judge 2026-11-08: no bugs, scope notes added",
+    "owner_text_review": "pending"
+  }
+]

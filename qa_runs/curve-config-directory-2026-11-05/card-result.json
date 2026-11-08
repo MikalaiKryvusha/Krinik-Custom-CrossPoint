@@ -1,0 +1,25 @@
+{
+  "moved": {
+    "panel_curve.txt": "/.crosspoint/panel_curve.txt",
+    "panel_curve_book.txt": "/.crosspoint/panel_curve_book.txt"
+  },
+  "sha256": {
+    "panel_curve.txt": "b86ebc2da5380ea5ae97b078cd82dcde82e953e934d68b5c6275dd5a90e89d54",
+    "panel_curve_book.txt": "670c745e30b4b48c5b72728f38aadbd9a8ed9e45dcb521a16e3baef127fa9b4b"
+  },
+  "protected_files_verified": 9,
+  "guide_updated": true,
+  "card_ejected": true,
+  "guide_sha256": "c5f3583400189d631ac8641cc0048722d0b3164fbd076b830fe57c6adf32d204",
+  "guide_size": 40573,
+  "index_records": 6,
+  "index_guide_row": 3,
+  "guide_cache_absent": true,
+  "macos_metadata_cleanup": {
+    "appledouble": "card_clean.sh passed; no duplicates outside protected OS index",
+    "ds_store": "none",
+    "fseventsd": "removed",
+    "spotlight": "pre-existing protected directory; mdutil -X requires root, sudo -n unavailable"
+  },
+  "index_file_sizes_verified": true
+}

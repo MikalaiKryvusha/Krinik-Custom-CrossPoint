@@ -1,0 +1,12 @@
+{
+  "firmware": {
+    "head": "8dd71e194633ad7dcb844d63c4aaeb85c90e3b65",
+    "branch": "fix/curve-config-directory",
+    "diff_sha256": "21f27f0bb506ad1f930445034c00e307f740a68bf43632579037d39a223a5b96"
+  },
+  "calibrator": {
+    "head": "02d6130eff5d379f82069dbdf5a6974e8b1f2c7b",
+    "branch": "fix/curve-config-directory",
+    "diff_sha256": "c7baffa5a62a7995cb2cebd835aae85c5921b6b8affebce56b85ed9605f5f87f"
+  }
+}

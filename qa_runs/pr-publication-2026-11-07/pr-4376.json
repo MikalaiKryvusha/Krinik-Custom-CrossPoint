@@ -1,0 +1,169 @@
+{
+  "author": {
+    "id": "MDQ6VXNlcjU5NTg3NTA5",
+    "is_bot": false,
+    "login": "MikalaiKryvusha",
+    "name": "Mikalai Kryvusha"
+  },
+  "baseRefName": "develop",
+  "body": "## Summary\n\n**Reduce ghosting from previous screens on pictures and sleep images.** On my X4 Pro, a gray image can retain outlines of menu text, headers, or other content shown just before it. Repainting immediately did not remove those traces in my experiments; waiting and then repainting the same image did. This PR makes that delayed repaint optional and automatic.\n\nThis is separate from **Refresh Frequency**, which controls full refreshes while turning book pages. A picture left open, or a sleeping reader, does not turn pages and needs its own trigger. See also the ghosting reports in #4154; this PR addresses delayed picture/sleep-image redraws, not every menu-ghosting case in that issue.\n\n### Settings\n\nUnder **Settings → Display → Screen Cleaning** from #4375:\n\n| Option | Where | Values | Default |\n| --- | --- | --- | --- |\n| **Refresh Images** | Image viewer | Off / after 1 / 2 / 5 min | Off |\n| **Refresh Sleep Screen** | Custom sleep images on X4 Pro | Off / after 1 / 2 / 5 min | Off |\n\n| Screen Cleaning | Sleep-screen delay | Image-viewer delay |\n| --- | --- | --- |\n| ![Screen Cleaning settings](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/09-delayed-redraw/screen-cleaning.webp) | ![Sleep-screen redraw choices](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/09-delayed-redraw/sleep-delay-options.webp) | ![Image redraw choices](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/09-delayed-redraw/image-delay-options.webp) |\n\n*Screenshots captured from this PR's X4 Pro simulator. They show the controls, not the physical panel's ghosting.*\n\n### How it works\n\n```mermaid\nflowchart TD\n    V[\"Open a picture\"] --> VW[\"Wait the selected 1, 2 or 5 minutes\"]\n    VW --> VR[\"Redraw the same picture once, without a Loading popup\"]\n    VR --> VD[\"No further timed redraw for this picture visit\"]\n    S[\"Sleep with a custom image on X4 Pro\"] --> SW[\"Deep sleep until the selected delay\"]\n    SW --> SR[\"Wake, redraw the same image with the light off\"]\n    SR --> SD[\"Return to deep sleep without rearming the timer\"]\n```\n\n* Opening another image starts a new image-viewer delay. Leaving the viewer ends that visit.\n* The sleep redraw keeps the same image instead of selecting the next one. The normal power-button wake remains available.\n* Quick Resume, panic recovery, a battery level below 15%, and a missing or overlong custom-image path do not arm the sleep redraw. A failed timer setup also leaves it unarmed.\n* No controller waveform or SDK change is included. Both options are Off by default.\n\n## Scope Check\n\n- [x] I have read SCOPE.md and ROADMAP.md.\n- [x] This PR is **not** a new built-in theme.\n- [x] This PR is **not** a new external network connector.\n- [x] This PR is **not** an interactive app, writing tool, RSS/news/browser, media playback, or PDF feature.\n- [x] The stock firmware does not already handle this well, **and** no other popular CrossPoint fork already does.\n- [x] This PR does not touch `freeink-sdk/`, `lib/hal/`, the bootloader, OTA, or recovery code.\n\n## Additional Context\n\n**Dependency:** #4375 adds the Screen Cleaning submenu. Merge it first. This branch includes that commit, so its changes also appear here until it is merged. The delayed-redraw change itself is commit `d7cc4e83`.\n\n**Checks on `d7cc4e83`:** C3 `default`, `x4pro-gh_release` and simulator builds passed. In the simulator, a 60-second setting produced one redraw during 126 seconds; 40 swipes reopened the viewer 41 times without errors.\n\nThe delayed-redraw approach was tried on my X4 Pro in my personal build. The exact upstream port's sleep-timer wake and power-button interaction during redraw have not yet been checked on hardware. Simulator images illustrate the controls; they do not reproduce physical e-ink ghosting or demonstrate its removal. No power-consumption measurement is claimed.\n\n---\n\n### AI Usage\n\nDid you use AI tools to help write this code? _**YES**_\n",
+  "headRefName": "pr/screen-redraw-delay",
+  "headRefOid": "d7cc4e830cede35c7e73e21207863603d9a421f8",
+  "mergeable": "MERGEABLE",
+  "number": 4376,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:07:15Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513294846",
+      "name": "clang-format",
+      "startedAt": "2026-11-07T20:06:24Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:03:48Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409154703/job/128513294383",
+      "name": "Title Check",
+      "startedAt": "2026-11-07T20:03:38Z",
+      "status": "COMPLETED",
+      "workflowName": "PR Formatting"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:12:11Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409886095/job/128515515160",
+      "name": "Title Check",
+      "startedAt": "2026-11-07T20:11:59Z",
+      "status": "COMPLETED",
+      "workflowName": "PR Formatting"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:38Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513294887",
+      "name": "cppcheck",
+      "startedAt": "2026-11-07T20:05:05Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:13Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513294788",
+      "name": "Build default",
+      "startedAt": "2026-11-07T20:04:17Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:12:28Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513294883",
+      "name": "Build sticky",
+      "startedAt": "2026-11-07T20:06:21Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:11:08Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513294805",
+      "name": "Build x4pro",
+      "startedAt": "2026-11-07T20:03:58Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:12:11Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513294855",
+      "name": "Build x4c",
+      "startedAt": "2026-11-07T20:05:03Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:12:12Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513295081",
+      "name": "Build papermono",
+      "startedAt": "2026-11-07T20:06:39Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:59Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513294845",
+      "name": "Build metalio_eink4",
+      "startedAt": "2026-11-07T20:05:02Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:28Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513295089",
+      "name": "Build eego_a4",
+      "startedAt": "2026-11-07T20:05:39Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:10:40Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513295084",
+      "name": "Build picco",
+      "startedAt": "2026-11-07T20:05:56Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:06:37Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128513294809",
+      "name": "unit-tests",
+      "startedAt": "2026-11-07T20:03:50Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:12:34Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409155224/job/128515644237",
+      "name": "Test Status",
+      "startedAt": "2026-11-07T20:12:31Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://app.coderabbit.ai/change-stack/crosspoint-reader/crosspoint-reader/pull/4376",
+      "name": "CodeRabbit",
+      "startedAt": "2026-11-07T20:03:26Z",
+      "status": "IN_PROGRESS",
+      "workflowName": ""
+    }
+  ],
+  "title": "feat: add optional delayed image redraws",
+  "url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4376"
+}

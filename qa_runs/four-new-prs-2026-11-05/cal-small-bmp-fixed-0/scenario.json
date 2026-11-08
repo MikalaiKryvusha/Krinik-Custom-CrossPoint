@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "language": "EN",
+    "panelCalPictures": 0,
+    "sleepTimeoutMinutes": 30
+  },
+  "state": {
+    "openEpubPath": "/test.bmp",
+    "lastSleepFromReader": true,
+    "readerActivityLoadCount": 0,
+    "showBootScreen": true
+  },
+  "script": "2500:QUIT"
+}

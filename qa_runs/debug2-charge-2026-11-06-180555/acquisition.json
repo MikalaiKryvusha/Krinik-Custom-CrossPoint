@@ -1,0 +1,18 @@
+{
+  "captured_at": "2026-11-06T18:05:55.873868+03:00",
+  "source": "/Volumes/X4-KRINIK/.crosspoint/battery_log.csv",
+  "volume_uuid": "649C18D8-130F-3C63-AD1A-F6396E1014A6",
+  "device": "disk6s1",
+  "bytes": 17212,
+  "sha256": "1c1cdcb177bb225f82b07eb10363cfed4eee2d538ba6cf58945b72da1664a755",
+  "source_second_read_identical": true,
+  "firmware_unchanged": true,
+  "card_writes_by_agent": false,
+  "owner_conditions": {
+    "firmware": "1.1.1-debug2 (owner report)",
+    "awake": true,
+    "frontlight": "off",
+    "flashlight": "once, a few seconds"
+  },
+  "recon": "/Users/kryvusha/Xteink/researches/2026-11-06_debug2_charge_50_to_100.md"
+}

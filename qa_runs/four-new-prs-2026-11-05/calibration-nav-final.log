@@ -1,0 +1,9 @@
+pictures 0 PASS: card → calibration → display → settings → home; no intermediate return frames
+pictures 1 PASS: card → calibration → display → settings → home; no intermediate return frames
+pictures 2 PASS: card → calibration → display → settings → home; no intermediate return frames
+pictures 3 PASS: card → calibration → display → settings → home; no intermediate return frames
+books 0 PASS: card → calibration → display → settings → home; no intermediate return frames
+books 1 PASS: card → calibration → display → settings → home; no intermediate return frames
+books 2 PASS: card → calibration → display → settings → home; no intermediate return frames
+books 3 PASS: card → calibration → display → settings → home; no intermediate return frames
+ALL_8_NAVIGATION_CASES_GREEN

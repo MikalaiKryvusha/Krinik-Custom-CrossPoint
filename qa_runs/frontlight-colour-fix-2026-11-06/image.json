@@ -1,0 +1,13 @@
+{
+  "version": "cp-2.0.0-krinik-1.1.1-debug2",
+  "image": "/Users/kryvusha/Xteink/firmware-builds/cp-2.0.0-krinik-1.1.1-debug2.bin",
+  "size_bytes": 5420800,
+  "sha256": "0076ec028760615fcbdda93537576655b1a0aceafa00c0603b8befe68f6e277d",
+  "firmware_base": "2ccdbe383b094133c535e5a033412dd371f75189",
+  "sdk_base": "f75cf9596733088324beda6fd92a4ab08fedb17b",
+  "source_state": "uncommitted patches saved in this directory",
+  "hardware_tested": false,
+  "build_env": "x4pro-krinik-debug",
+  "build_result": "SUCCESS",
+  "host_tests": 936
+}

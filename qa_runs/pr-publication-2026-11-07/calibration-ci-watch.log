@@ -1,0 +1,1931 @@
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* cppcheck (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  * Run cppcheck
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build metalio_eink4 (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build metalio_eink4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build papermono (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build papermono firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* cppcheck (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  * Run cppcheck
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build metalio_eink4 (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build metalio_eink4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build papermono (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build papermono firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* cppcheck (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  * Run cppcheck
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build metalio_eink4 (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build metalio_eink4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build papermono (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build papermono firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* cppcheck (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  * Run cppcheck
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build metalio_eink4 (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build metalio_eink4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build papermono (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build papermono firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* cppcheck (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  * Run cppcheck
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build metalio_eink4 (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build metalio_eink4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+✓ Build papermono in 4m29s (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build papermono firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build papermono: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build papermono: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* cppcheck (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  * Run cppcheck
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ Build metalio_eink4 in 4m53s (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build metalio_eink4 firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+✓ Build papermono in 4m29s (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build papermono firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build papermono: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build papermono: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ cppcheck in 5m2s (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  ✓ Run cppcheck
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ Build metalio_eink4 in 4m53s (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build metalio_eink4 firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+✓ Build papermono in 4m29s (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build papermono firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build papermono: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build papermono: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ cppcheck in 5m2s (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  ✓ Run cppcheck
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ Build metalio_eink4 in 4m53s (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build metalio_eink4 firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+✓ Build papermono in 4m29s (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build papermono firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build papermono: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build papermono: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ cppcheck in 5m2s (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  ✓ Run cppcheck
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ Build metalio_eink4 in 4m53s (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build metalio_eink4 firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+✓ Build papermono in 4m29s (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build papermono firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build papermono: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build papermono: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 6 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ cppcheck in 5m2s (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  ✓ Run cppcheck
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ Build metalio_eink4 in 4m53s (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build metalio_eink4 firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4c (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4c firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+✓ Build papermono in 4m29s (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build papermono firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build papermono: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build papermono: .github#1
+
+Refreshing run status every 15 seconds. Press Ctrl+C to quit.
+
+* pr/screen-calibration CI (build) crosspoint-reader/crosspoint-reader#4377 · 42411467849
+Triggered via pull_request about 6 minutes ago
+
+JOBS
+✓ clang-format in 44s (ID 128520327737)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install clang-format-21
+  ✓ Run clang-format
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build sticky (ID 128520327892)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build sticky firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ cppcheck in 5m2s (ID 128520327899)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Install cppcheck runtime dependency
+  ✓ Run cppcheck
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build eego_a4 (ID 128520327950)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build eego_a4 firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+* Build x4pro (ID 128520327963)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build x4pro firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ Build metalio_eink4 in 4m53s (ID 128520327971)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build metalio_eink4 firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build default (ID 128520327976)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build default firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+✓ Build x4c in 6m18s (ID 128520327997)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build x4c firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+✓ unit-tests in 2m10s (ID 128520328010)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Install build tools
+  ✓ Cache googletest source
+  ✓ Configure
+  ✓ Build
+  ✓ Run tests
+  ✓ Post Cache googletest source
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+✓ Build papermono in 4m29s (ID 128520328015)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  ✓ Build papermono firmware
+  ✓ Extract firmware stats
+  ✓ Upload firmware artifact
+  ✓ Post Cache PlatformIO packages
+  ✓ Post Install uv
+  ✓ Post Run actions/setup-python@v6
+  ✓ Post Run actions/checkout@v6
+  ✓ Complete job
+* Build picco (ID 128520328072)
+  ✓ Set up job
+  ✓ Run actions/checkout@v6
+  ✓ Run actions/setup-python@v6
+  ✓ Install uv
+  ✓ Install PlatformIO Core
+  ✓ Cache PlatformIO packages
+  ✓ Pin pioarduino core inside the platform penv
+  * Build picco firmware
+  * Extract firmware stats
+  * Upload firmware artifact
+  * Post Cache PlatformIO packages
+  * Post Install uv
+  * Post Run actions/setup-python@v6
+  * Post Run actions/checkout@v6
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+clang-format: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+unit-tests: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+unit-tests: .github#1
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/cache@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build papermono: .github#2
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Build papermono: .github#1
+

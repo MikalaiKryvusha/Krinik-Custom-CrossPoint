@@ -1,0 +1,20 @@
+{
+  "version": "cp-2.0.0-krinik-1.1.2",
+  "sdk": "40ce5c37c163938f09c095623f3ca6ccc924cf7d",
+  "build": "x4pro-krinik SUCCESS (260.21s)",
+  "host_tests": 936,
+  "sha256": "3e0cc45bbb3dec91052070edce51e5c5c3bda5ffe03440e6ea2ea05b26216d6a",
+  "battery_log_in_binary": false,
+  "assets": [
+    "cp-2.0.0-krinik-1.1.2.bin",
+    "RUKOVODSTVO-krinik.epub",
+    "SHA256SUMS.txt"
+  ],
+  "published": false,
+  "hardware_acceptance": "owner: стало плавно, красиво, on matching debug2 lighting code",
+  "device_unchanged": true,
+  "firmware_commit": "198d385e4de1130b1eaa390de75d56a5783b24d4",
+  "fork_branch_pushed": true,
+  "sdk_fork": "MikalaiKryvusha/freeink-sdk-upstream",
+  "release_published": false
+}

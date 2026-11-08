@@ -1,0 +1,47 @@
+[0] [DBG] [UI] Using Lyra theme
+[6] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[9] [DBG] [CPS] Resaving settings to update format
+[9] [DBG] [CPS] Settings loaded from file
+[10] [DBG] [UI] Using Lyra theme
+[10] [INF] [CLK] RTC clock read: 2026-11-07 21:26
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[11] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[215] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[216] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[216] [DBG] [SDREG] Fonts directory not found: /fonts
+[216] [DBG] [SDREG] Discovery complete: 0 families
+[216] [DBG] [SDFS] SD font system ready (0 families discovered)
+[216] [DBG] [MAIN] Fonts setup
+[216] [DBG] [ACT] Entering activity: Boot
+[217] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[239] [DBG] [ACT] Exiting activity: Boot
+[239] [DBG] [ACT] Entering activity: Home
+[241] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[253] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1585] [DBG] [ACT] Exiting activity: Home
+[1585] [DBG] [ACT] Entering activity: FileBrowser
+[1586] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3088] [DBG] [ACT] Exiting activity: FileBrowser
+[3088] [DBG] [ACT] Entering activity: BmpViewer
+[3088] [DBG] [GFX] Time = 1502 ms from clearScreen to displayBuffer
+[3090] [DBG] [GFX] Time = 1504 ms from clearScreen to displayBuffer
+[3099] [DBG] [PNG] Decoding PNG: /1.png
+[3101] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 480x800 (scale 1.00), type: 6, bpp: 8
+[3109] [DBG] [PNG] PNG decoding complete - render time: 8 ms
+[3114] [DBG] [GFX] Time = 22 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/shots/v1.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/shots/tap1.bmp
+[10006] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10006] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/shots/tap2.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/shots/tapl.bmp
+[16590] [DBG] [ACT] Exiting activity: BmpViewer
+[16590] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[16592] [DBG] [ACT] Entering activity: FileBrowser
+[16593] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/prs-2026-11-07-batch2/runs/viewer2-before/shots/back.bmp

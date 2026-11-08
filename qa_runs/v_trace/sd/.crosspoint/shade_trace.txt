@@ -1,0 +1,1 @@
+1: shade over gray: rect h=377 result=10 (0 driven)

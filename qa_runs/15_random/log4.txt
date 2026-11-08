@@ -1,0 +1,56 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[0] [DBG] [CPS] Settings loaded from file
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 09:55
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[206] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[207] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[207] [DBG] [SDREG] Fonts directory not found: /fonts
+[207] [DBG] [SDREG] Discovery complete: 0 families
+[207] [DBG] [SDFS] SD font system ready (0 families discovered)
+[207] [DBG] [MAIN] Fonts setup
+[207] [DBG] [ACT] Entering activity: Boot
+[207] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[228] [DBG] [ACT] Exiting activity: Boot
+[228] [DBG] [ACT] Entering activity: Home
+[228] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[242] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1127] [DBG] [ACT] Exiting activity: Home
+[1127] [DBG] [ACT] Entering activity: Sleep
+[1127] [DBG] [GFX] Time = 886 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[1232] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[1232] [DBG] [CRV] Panel curve loaded: be170a3a
+[1279] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[1279] [DBG] [SLP] drawing to 0 x 0
+[1279] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1279] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1294] [DBG] [SLP] Clean to white (FULL) before absolute gray
+[1294] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1306] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1306] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1322] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1322] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1342] [DBG] [MAIN] Entering deep sleep
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[1] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 09:55
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+2026-11-04 09:55:48.917 program[5807:3523628] Task policy set failed: 4 ((os/kern) invalid argument)
+[478] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[478] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[478] [DBG] [SDREG] Fonts directory not found: /fonts
+[478] [DBG] [SDREG] Discovery complete: 0 families
+[478] [DBG] [SDFS] SD font system ready (0 families discovered)
+[478] [DBG] [MAIN] Fonts setup
+[478] [DBG] [ACT] Entering activity: Home

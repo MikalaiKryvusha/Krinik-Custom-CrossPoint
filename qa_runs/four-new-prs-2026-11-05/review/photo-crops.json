@@ -1,0 +1,54 @@
+[
+  {
+    "source": "/Users/kryvusha/Xteink/qa_runs/calibration-2026-11-05/photo_pictures_135812.jpg",
+    "source_sha256": "332d3416da645897ba5bcbc375ba9d5e9817f65c54fc437d882a58e595b5ae16",
+    "output": "/Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/review/assets/pictures-before-s21.jpg",
+    "crop_oriented_pixels": [
+      560,
+      496,
+      2288,
+      3456
+    ],
+    "transform": "lossless JPEG rotation/crop with jpegtran; no exposure/color/contrast or screen-content alteration",
+    "classification": "pictures-before-s21.jpg"
+  },
+  {
+    "source": "/Users/kryvusha/Xteink/qa_runs/calibration-2026-11-05/photo_books_135832.jpg",
+    "source_sha256": "b723879d3d15105d7673a02ae55628f21e216343f5be52f03dfdca6225966d0d",
+    "output": "/Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/review/assets/books-before-s21.jpg",
+    "crop_oriented_pixels": [
+      544,
+      512,
+      2304,
+      3472
+    ],
+    "transform": "lossless JPEG rotation/crop with jpegtran; no exposure/color/contrast or screen-content alteration",
+    "classification": "books-before-s21.jpg"
+  },
+  {
+    "source": "/Users/kryvusha/Xteink/qa_runs/calibration-2026-11-05/v2check_143452.jpg",
+    "source_sha256": "37fe8ef5ba2bb8f20fd5db83528c1a3cc9fc6213e3acc5efdf7f4627b76ccae3",
+    "output": "/Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/review/assets/books-after-s21.jpg",
+    "crop_oriented_pixels": [
+      576,
+      336,
+      2384,
+      3440
+    ],
+    "transform": "lossless JPEG rotation/crop with jpegtran; no exposure/color/contrast or screen-content alteration",
+    "classification": "books-after-s21.jpg"
+  },
+  {
+    "source": "/Users/kryvusha/Xteink/qa_runs/calibration-2026-11-05/v2check_143634.jpg",
+    "source_sha256": "a3b692e2df349600976a3cfc5722fc89338d28d5e96b51be4b3d80eb1d88e0de",
+    "output": "/Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/review/assets/pictures-after-s21.jpg",
+    "crop_oriented_pixels": [
+      464,
+      384,
+      2336,
+      3536
+    ],
+    "transform": "lossless JPEG rotation/crop with jpegtran; no exposure/color/contrast or screen-content alteration",
+    "classification": "pictures-after-s21.jpg"
+  }
+]

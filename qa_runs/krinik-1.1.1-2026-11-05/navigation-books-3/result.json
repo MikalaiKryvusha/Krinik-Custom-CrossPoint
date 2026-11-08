@@ -1,0 +1,28 @@
+{
+  "card": "books",
+  "orientation": 3,
+  "screenshots": 51,
+  "return_content_states": 2,
+  "no_intermediate_frames": true,
+  "return_size": [
+    480,
+    800
+  ],
+  "headless": true,
+  "route_before_first_draw": [
+    "[2131] [DBG] [ACT] Entering activity: SettingsList",
+    "[2131] [DBG] [ACT] Pushed to activity stack, new size = 1",
+    "[2131] [DBG] [ACT] Entering activity: Settings",
+    "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+    "[2131] [DBG] [DREG] No /dictionaries directory on SD card",
+    "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+    "[2131] [DBG] [DREG] No /.dictionaries directory on SD card",
+    "[2131] [DBG] [ACT] Pushed to activity stack, new size = 2",
+    "[2131] [DBG] [ACT] Entering activity: Settings",
+    "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+    "[2131] [DBG] [DREG] No /dictionaries directory on SD card",
+    "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+    "[2131] [DBG] [DREG] No /.dictionaries directory on SD card",
+    "[2135] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer"
+  ]
+}
