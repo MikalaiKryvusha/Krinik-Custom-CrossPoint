@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шрифты для чтения</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Charis+SIL:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #e9e7e1; --paper: #f4f3ee; --ink: #141414; --muted: #6b6a66; --line: #cfccc4; --size: 17px; --lh: 1.45; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
+header { padding: 20px 16px 8px; max-width: 1500px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; }
+.sub { color: var(--muted); margin: 0 0 12px; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; }
+.controls label { display: flex; gap: 8px; align-items: center; }
+.controls output { min-width: 3.5em; font-variant-numeric: tabular-nums; }
+main { max-width: 1500px; margin: 0 auto; padding: 8px 16px 32px; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 460px), 1fr)); gap: 16px; }
+.card { background: #2a2a2a; border-radius: 14px; padding: 10px 10px 14px; }
+.meta { color: #eee; padding: 2px 6px 8px; }
+.meta b { font-size: 15px; }
+.tag { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 8px; margin-left: 6px; vertical-align: 1px; }
+.free { background: #d9ead3; color: #1d3b16; }
+.mac { background: #e3e0f0; color: #2b2550; }
+.now { background: #fff; color: #000; }
+.why { color: #bbb; font-size: 12px; margin-top: 3px; }
+.screen { background: var(--paper); aspect-ratio: 800 / 480; overflow: hidden; padding: 16px 16px; border-radius: 3px; font-size: var(--size); line-height: var(--lh); hyphens: auto; -webkit-hyphens: auto; text-align: justify; }
+.screen h3 { font-size: 1.15em; margin: 0 0 0.2em; text-align: center; font-weight: 700; }
+.screen .ep { font-style: italic; text-align: right; margin: 0 0 0.6em; font-size: 0.9em; }
+.screen p { margin: 0; text-indent: 1.3em; }
+.gl { color: #f4f3ee; font-size: 17px; margin-top: 6px; letter-spacing: 0.02em; }
+.warn { color: #ffb4a8; font-size: 12px; }
+footer { max-width: 1500px; margin: 0 auto; padding: 0 16px 32px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Шрифты для чтения: сравнение</h1>
+  <p class="sub">Один и тот же текст в каждом шрифте. Карточка повторяет пропорции экрана X4 Pro в альбомной ориентации (800×480). Зелёная метка: свободный TTF, можно поставить на читалку. Сиреневая: шрифт macOS, только для сравнения.</p>
+  <div class="controls">
+    <label>Кегль <input id="size" type="range" min="13" max="24" value="17"><output id="sizeOut">17 px</output></label>
+    <label>Интервал <input id="lh" type="range" min="1.15" max="1.8" step="0.05" value="1.45"><output id="lhOut">1.45</output></label>
+  </div>
+</header>
+<main id="grid"></main>
+<footer>Не показаны: Bookerly (есть только внутри Kindle) и Atkinson Hyperlegible (кириллицы нет). Текст: А. С. Пушкин, «Капитанская дочка».</footer>
+<script>
+const FONTS = [
+  ['Literata', 'free now', 'Google Play Books, рисовалась под экранное чтение. Стоит у тебя'],
+  ['PT Serif', 'free', 'ParaType, рисовался в первую очередь под русский текст'],
+  ['Charis SIL', 'free', 'Свободная версия Charter от SIL, с кириллицей'],
+  ['Charter', 'mac', 'Мэтью Картер, под низкое разрешение'],
+  ['Georgia', 'mac', 'Мэтью Картер, классический экранный шрифт, Microsoft'],
+  ['Iowan Old Style', 'mac', 'По умолчанию в Apple Books'],
+  ['Merriweather', 'free', 'Под экран: крупные строчные, плотный штрих'],
+  ['Source Serif 4', 'free', 'Adobe, спокойный текстовый шрифт с засечками'],
+  ['EB Garamond', 'free', 'Классический книжный Гарамон'],
+  ['Gentium Book Plus', 'free', 'SIL, книжный, широкий набор языков'],
+  ['Noto Sans', 'free', 'Без засечек; встроен в прошивку читалки'],
+  ['Source Sans 3', 'free', 'Adobe, без засечек, мягкий'],
+];
+const TEXT = `<h3>Глава I. Сержант гвардии</h3>
+<div class="ep">— Был бы гвардии он завтра ж капитан.<br>— Того не надобно; пусть в армии послужит.</div>
+<p>Отец мой Андрей Петрович Гринёв в молодости своей служил при графе Минихе и вышел в отставку премьер-майором в 17.. году. С тех пор жил он в своей Симбирской деревне, где и женился на девице Авдотье Васильевне Ю., дочери бедного тамошнего дворянина. Нас было девять человек детей. Все мои братья и сестры умерли во младенчестве.</p>
+<p>Матушка была ещё мною брюхата, как уже я был записан в Семёновский полк <i>сержантом</i>, по милости майора гвардии князя Б., близкого нашего родственника. <b>Если бы паче всякого чаяния</b> матушка родила дочь, то батюшка объявил бы куда следовало о смерти неявившегося сержанта, и дело тем бы и кончилось.</p>`;
+const GLYPHS = 'Ёё Йй Щщ Жж Фф Ыы Ъъ 0123456789 «» — … №';
+const grid = document.getElementById('grid');
+for (const [name, kind, why] of FONTS) {
+  const tags = kind.split(' ').map(k => k === 'free' ? '<span class="tag free">TTF бесплатно</span>' : k === 'mac' ? '<span class="tag mac">macOS</span>' : '<span class="tag now">сейчас</span>').join('');
+  const card = document.createElement('section');
+  card.className = 'card';
+  card.innerHTML = `<div class="meta"><b>${name}</b>${tags}<div class="why">${why}</div><div class="gl" style="font-family:'${name}', serif">${GLYPHS}</div><div class="warn" hidden>Шрифт не загрузился, показан запасной</div></div><div class="screen" lang="ru" style="font-family:'${name}', serif">${TEXT}</div>`;
+  grid.appendChild(card);
+  document.fonts.load(`16px "${name}"`, 'Ж').then(() => {
+    if (!document.fonts.check(`16px "${name}"`, 'Ж')) card.querySelector('.warn').hidden = false;
+  });
+}
+const root = document.documentElement.style;
+const bind = (id, prop, unit) => {
+  const el = document.getElementById(id), out = document.getElementById(id + 'Out');
+  el.addEventListener('input', () => { root.setProperty(prop, el.value + unit); out.textContent = el.value + (unit ? ' ' + unit : ''); });
+};
+bind('size', '--size', 'px');
+bind('lh', '--lh', '');
+</script>
+</body>
+</html>

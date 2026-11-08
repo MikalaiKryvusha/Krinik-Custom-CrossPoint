@@ -1,0 +1,68 @@
+Running main() from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ChapterAnchorPageTest.*
+[==========] Running 16 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 16 tests from ChapterAnchorPageTest
+[ RUN      ] ChapterAnchorPageTest.AnchorStaysWhenParagraphStartsOnThePage
+[       OK ] ChapterAnchorPageTest.AnchorStaysWhenParagraphStartsOnThePage (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorFollowsFirstLineThatDoesNotFit
+[       OK ] ChapterAnchorPageTest.AnchorFollowsFirstLineThatDoesNotFit (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorFollowsLoneFirstLineCarriedByOrphanRule
+[       OK ] ChapterAnchorPageTest.AnchorFollowsLoneFirstLineCarriedByOrphanRule (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorFollowsTwoLineParagraphMovedWhole
+[       OK ] ChapterAnchorPageTest.AnchorFollowsTwoLineParagraphMovedWhole (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorStaysWhenOnlyTheParagraphTailMoves
+[       OK ] ChapterAnchorPageTest.AnchorStaysWhenOnlyTheParagraphTailMoves (0 ms)
+[ RUN      ] ChapterAnchorPageTest.ConsecutiveAnchoredNotesEachLandOnTheirFirstLine
+[       OK ] ChapterAnchorPageTest.ConsecutiveAnchoredNotesEachLandOnTheirFirstLine (0 ms)
+[ RUN      ] ChapterAnchorPageTest.InlineAnchorStaysWithItsParagraphBeforePageBreak
+[       OK ] ChapterAnchorPageTest.InlineAnchorStaysWithItsParagraphBeforePageBreak (0 ms)
+[ RUN      ] ChapterAnchorPageTest.PendingAnchorCountsTowardChapterLimit
+[       OK ] ChapterAnchorPageTest.PendingAnchorCountsTowardChapterLimit (0 ms)
+[ RUN      ] ChapterAnchorPageTest.EmptyTrailingTableKeepsItsAnchor
+[       OK ] ChapterAnchorPageTest.EmptyTrailingTableKeepsItsAnchor (0 ms)
+[ RUN      ] ChapterAnchorPageTest.HeadingAnchorFollowsHeadingCarriedWithNextParagraph
+[       OK ] ChapterAnchorPageTest.HeadingAnchorFollowsHeadingCarriedWithNextParagraph (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorFollowsTwoCarriedLinesOfItsParagraph
+[       OK ] ChapterAnchorPageTest.AnchorFollowsTwoCarriedLinesOfItsParagraph (0 ms)
+[ RUN      ] ChapterAnchorPageTest.InlineAnchorBeforeAnAnchoredBlockStaysWithItsText
+[       OK ] ChapterAnchorPageTest.InlineAnchorBeforeAnAnchoredBlockStaysWithItsText (0 ms)
+[ RUN      ] ChapterAnchorPageTest.TwoInlineAnchorsStayWithTheFirstLineOfALongParagraph
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2476: Failure
+Expected equality of these values:
+  anchorPage("early")
+    Which is: (1)
+  pageOfWord("TARGET")
+    Which is: (0)
+
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2477: Failure
+Expected equality of these values:
+  anchorPage("later")
+    Which is: (1)
+  pageOfWord("TARGET")
+    Which is: (0)
+
+[  FAILED  ] ChapterAnchorPageTest.TwoInlineAnchorsStayWithTheFirstLineOfALongParagraph (0 ms)
+[ RUN      ] ChapterAnchorPageTest.InlineAnchorAtThePageBoundaryFollowsTheNextText
+[       OK ] ChapterAnchorPageTest.InlineAnchorAtThePageBoundaryFollowsTheNextText (0 ms)
+[ RUN      ] ChapterAnchorPageTest.InlineAnchorFollowsItsHeadingToTheNextPage
+[       OK ] ChapterAnchorPageTest.InlineAnchorFollowsItsHeadingToTheNextPage (0 ms)
+[ RUN      ] ChapterAnchorPageTest.InlineAnchorSurvivesTheSoftFlushOfALongParagraph
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2515: Failure
+Expected equality of these values:
+  anchorPage("soft")
+    Which is: (24)
+  pageOfWord("TARGET")
+    Which is: (12)
+
+[  FAILED  ] ChapterAnchorPageTest.InlineAnchorSurvivesTheSoftFlushOfALongParagraph (0 ms)
+[----------] 16 tests from ChapterAnchorPageTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 14 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] ChapterAnchorPageTest.TwoInlineAnchorsStayWithTheFirstLineOfALongParagraph
+[  FAILED  ] ChapterAnchorPageTest.InlineAnchorSurvivesTheSoftFlushOfALongParagraph
+
+ 2 FAILED TESTS

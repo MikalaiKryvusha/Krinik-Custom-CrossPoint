@@ -1,0 +1,27 @@
+{
+  "version": "cp-2.0.0-krinik-1.1.1-debug3",
+  "image": "/Users/kryvusha/Xteink/firmware-builds/cp-2.0.0-krinik-1.1.1-debug3.bin",
+  "size_bytes": 5421456,
+  "sha256": "90f3e6ab37b7b3f4c54f4d175f99d4949da16547363017fb7b4f0a9a534fc08e",
+  "firmware_base": "2ccdbe383b094133c535e5a033412dd371f75189",
+  "sdk_base": "40ce5c37c163938f09c095623f3ca6ccc924cf7d",
+  "source_state": "uncommitted exact delta from before/ in candidate.diff; full final patches saved",
+  "build_env": "x4pro-krinik-debug",
+  "build_result": "SUCCESS 173.19 seconds",
+  "memory": [
+    "  Flash: 411,154 B strings (deduped)  +  48,230 B offset tables  =  459,384 B",
+    "RAM:   [===       ]  34.3% (used 112380 bytes from 327680 bytes)",
+    "Flash: [========  ]  82.6% (used 5415702 bytes from 6553600 bytes)"
+  ],
+  "host_tests": "936/936 PASS; actual HAL+SDK and SDK suites PASS",
+  "review": "VERIFIED WITH CAVEATS; no code findings; device checks pending",
+  "hardware_tested": false,
+  "flashed": false,
+  "copied_to_card": true,
+  "battery_log_interval_seconds": 60,
+  "precise_temperature_default": true,
+  "dither_max_brightness_percent": 10,
+  "version_check": "CROSSPOINT_VERSION present twice, debug2 absent; Russian label present",
+  "app_descriptor": "Prebuilt Arduino metadata ee57070/arduino-lib-builder matches old debug2; not the displayed firmware version",
+  "card_delivery": "card-delivery.json"
+}

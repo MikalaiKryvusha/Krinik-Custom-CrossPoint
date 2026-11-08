@@ -1,0 +1,756 @@
+[
+  {
+    "key": "sleepScreen",
+    "name": "Экран сна",
+    "category": "Экран",
+    "type": "enum",
+    "value": 2,
+    "options": [
+      "Тёмный",
+      "Светлый",
+      "Свой",
+      "Обложка",
+      "Обложка + Свой",
+      "Нет",
+      "Быстрое возобновление",
+      "Прозрачный",
+      "Cover + Transparent"
+    ]
+  },
+  {
+    "key": "sleepScreenCoverMode",
+    "name": "Режим обложки сна",
+    "category": "Экран",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Вписать",
+      "Обрезать"
+    ]
+  },
+  {
+    "key": "sleepScreenCoverFilter",
+    "name": "Фильтр экрана сна",
+    "category": "Экран",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Нет",
+      "Контраст",
+      "Инверсия"
+    ]
+  },
+  {
+    "key": "quickResumeSleepScreen",
+    "name": "Возобновление по таймауту",
+    "category": "Экран",
+    "type": "toggle",
+    "value": 0
+  },
+  {
+    "key": "hideBatteryPercentage",
+    "name": "Скрыть % батареи",
+    "category": "Экран",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Никогда",
+      "В режиме чтения",
+      "Всегда"
+    ]
+  },
+  {
+    "key": "refreshFrequency",
+    "name": "Частота обновления",
+    "category": "Экран",
+    "type": "enum",
+    "value": 4,
+    "options": [
+      "1 стр.",
+      "5 стр.",
+      "10 стр.",
+      "15 стр.",
+      "30 стр.",
+      "Никогда"
+    ]
+  },
+  {
+    "key": "uiTheme",
+    "name": "Тема интерфейса",
+    "category": "Экран",
+    "type": "enum",
+    "value": 1,
+    "options": [
+      "Классическая",
+      "Lyra",
+      "Lyra Extended",
+      "RoundedRaff",
+      "Сетка обложек"
+    ]
+  },
+  {
+    "key": "frontlightRestoreOnWake",
+    "name": "Подсветка при пробуждении",
+    "category": "Экран",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "screenInverted",
+    "name": "Ночной режим",
+    "category": "Экран",
+    "type": "toggle",
+    "value": 0
+  },
+  {
+    "key": "fontFamily",
+    "name": "Шрифт чтения",
+    "category": "Чтение",
+    "type": "enum",
+    "value": 1,
+    "options": [
+      "Noto Sans",
+      "Literata",
+      "Merriweather",
+      "NotoSans",
+      "Roboto"
+    ]
+  },
+  {
+    "key": "fontSize",
+    "name": "Размер шрифта",
+    "category": "Чтение",
+    "type": "enum",
+    "value": 8,
+    "options": [
+      "8 pt",
+      "9 pt",
+      "10 pt",
+      "11 pt",
+      "12 pt",
+      "13 pt",
+      "14 pt",
+      "15 pt",
+      "16 pt",
+      "17 pt",
+      "18 pt",
+      "19 pt",
+      "20 pt",
+      "21 pt",
+      "22 pt"
+    ]
+  },
+  {
+    "key": "lineHeight",
+    "name": "Межстрочный интервал",
+    "category": "Чтение",
+    "type": "enum",
+    "value": 1,
+    "options": [
+      "0%",
+      "+10%",
+      "+20% (Default)",
+      "+30%",
+      "+45%",
+      "+60%",
+      "+75%"
+    ]
+  },
+  {
+    "key": "wordSpacing",
+    "name": "Межсловный интервал",
+    "category": "Чтение",
+    "type": "value",
+    "value": 100,
+    "min": 50,
+    "max": 200,
+    "step": 25
+  },
+  {
+    "key": "characterSpacing",
+    "name": "Межбуквенный интервал",
+    "category": "Чтение",
+    "type": "enum",
+    "value": 2,
+    "options": [
+      "-2 px",
+      "-1 px",
+      "0 px",
+      "+1 px",
+      "+2 px"
+    ]
+  },
+  {
+    "key": "screenMargin",
+    "name": "Поля",
+    "category": "Чтение",
+    "type": "value",
+    "value": 5,
+    "min": 5,
+    "max": 40,
+    "step": 5
+  },
+  {
+    "key": "paragraphAlignment",
+    "name": "Выравнивание абзаца",
+    "category": "Чтение",
+    "type": "enum",
+    "value": 4,
+    "options": [
+      "По ширине",
+      "По левому краю",
+      "По центру",
+      "По правому краю",
+      "Стиль книги"
+    ]
+  },
+  {
+    "key": "embeddedStyle",
+    "name": "Встроенный стиль",
+    "category": "Чтение",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "focusReadingEnabled",
+    "name": "Фокусное чтение",
+    "category": "Чтение",
+    "type": "toggle",
+    "value": 0
+  },
+  {
+    "key": "hyphenationEnabled",
+    "name": "Перенос слов",
+    "category": "Чтение",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "orientation",
+    "name": "Ориентация чтения",
+    "category": "Чтение",
+    "type": "enum",
+    "value": 3,
+    "options": [
+      "Книжная",
+      "Альбомная",
+      "Книжная 180°",
+      "Альбомная 180°"
+    ]
+  },
+  {
+    "key": "extraParagraphSpacing",
+    "name": "Доп. интервал абзаца",
+    "category": "Чтение",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "paragraphIndentSpaces",
+    "name": "Отступ абзаца",
+    "category": "Чтение",
+    "type": "value",
+    "value": 5,
+    "min": 0,
+    "max": 5,
+    "step": 1
+  },
+  {
+    "key": "textAntiAliasing",
+    "name": "Сглаживание текста",
+    "category": "Чтение",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "imageRendering",
+    "name": "Изображения",
+    "category": "Чтение",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Показать",
+      "Заглушки",
+      "Скрыть",
+      "Black & White"
+    ]
+  },
+  {
+    "key": "readerMenuStyle",
+    "name": "Стиль меню чтения",
+    "category": "Чтение",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Список",
+      "Панель"
+    ]
+  },
+  {
+    "key": "sideButtonLayout",
+    "name": "Боковые кнопки",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Назад/Вперёд",
+      "Вперёд/Назад",
+      "Выключено",
+      "Обе вперёд",
+      "Обе назад"
+    ]
+  },
+  {
+    "key": "touchReaderControls",
+    "name": "Сенсорное управление чтением",
+    "category": "Кнопки",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "pageTurnGesture",
+    "name": "Следующая страница",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Тап и свайп",
+      "Только тап",
+      "Только свайп",
+      "Обратный тап",
+      "Выключено"
+    ]
+  },
+  {
+    "key": "previousPageGesture",
+    "name": "Предыдущая страница",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Тап и свайп",
+      "Только тап",
+      "Только свайп",
+      "Обратный тап",
+      "Выключено"
+    ]
+  },
+  {
+    "key": "tapForReaderMenu",
+    "name": "Открывать меню",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 1,
+    "options": [
+      "ВЫКЛ",
+      "Тап",
+      "Свайп вверх"
+    ]
+  },
+  {
+    "key": "longPressButtonBehavior",
+    "name": "Долгое нажатие",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 2,
+    "options": [
+      "Ничего",
+      "Пропуск главы",
+      "Изменить ориентацию"
+    ]
+  },
+  {
+    "key": "doubleClickPwrLight",
+    "name": "Двойной клик питания: подсветка",
+    "category": "Кнопки",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "shortPwrBtn",
+    "name": "Короткое нажатие PWR",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 1,
+    "options": [
+      "Игнорировать",
+      "Сон",
+      "Перелистывание",
+      "Обновить экран",
+      "Ссылки и примечания",
+      "Подтвердить"
+    ]
+  },
+  {
+    "key": "pwrBtnFootnoteBack",
+    "name": "Быстрый возврат из ссылок",
+    "category": "Кнопки",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "sleepTimeoutMinutes",
+    "name": "Сон через",
+    "category": "Система",
+    "type": "value",
+    "value": 10,
+    "min": 1,
+    "max": 31,
+    "step": 1
+  },
+  {
+    "key": "showHiddenFiles",
+    "name": "Показать скрытые файлы",
+    "category": "Система",
+    "type": "toggle",
+    "value": 0
+  },
+  {
+    "key": "libraryUseMetadata",
+    "name": "Использовать метаданные книг",
+    "category": "Система",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "removeReadBooksFromRecents",
+    "name": "Убирать прочитанные из недавних",
+    "category": "Система",
+    "type": "toggle",
+    "value": 0
+  },
+  {
+    "key": "moveFinishedToReadFolder",
+    "name": "Прочитанные — в папку Read",
+    "category": "Система",
+    "type": "toggle",
+    "value": 0
+  },
+  {
+    "key": "opdsDownloadFolder",
+    "name": "Папка загрузок",
+    "category": "Нет",
+    "type": "string",
+    "value": ""
+  },
+  {
+    "key": "opdsFilenameFormat",
+    "name": "Формат имени файла",
+    "category": "Нет",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Автор - Название",
+      "Название - Автор",
+      "Название"
+    ]
+  },
+  {
+    "key": "frontlightBrightness",
+    "name": "Яркость",
+    "category": "Нет",
+    "type": "value",
+    "value": 57,
+    "min": 0,
+    "max": 100,
+    "step": 5
+  },
+  {
+    "key": "frontlightWarmth",
+    "name": "Теплота",
+    "category": "Нет",
+    "type": "value",
+    "value": 80,
+    "min": 0,
+    "max": 100,
+    "step": 5
+  },
+  {
+    "key": "frontlightOn",
+    "name": "Подсветка",
+    "category": "Нет",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "koUsername",
+    "name": "Имя пользователя CrossPoint",
+    "category": "CrossPoint Sync",
+    "type": "string",
+    "value": ""
+  },
+  {
+    "key": "koPassword",
+    "name": "Пароль CrossPoint",
+    "category": "CrossPoint Sync",
+    "type": "string",
+    "value": null,
+    "hasPassword": false
+  },
+  {
+    "key": "koServerUrl",
+    "name": "URL сервера синхронизации",
+    "category": "CrossPoint Sync",
+    "type": "string",
+    "value": ""
+  },
+  {
+    "key": "koHeader1Name",
+    "name": "Имя заголовка KOReader 1",
+    "category": "CrossPoint Sync",
+    "type": "string",
+    "value": ""
+  },
+  {
+    "key": "koHeader1Value",
+    "name": "Значение заголовка KOReader 1",
+    "category": "CrossPoint Sync",
+    "type": "string",
+    "value": null,
+    "hasPassword": false
+  },
+  {
+    "key": "koHeader2Name",
+    "name": "Имя заголовка KOReader 2",
+    "category": "CrossPoint Sync",
+    "type": "string",
+    "value": ""
+  },
+  {
+    "key": "koHeader2Value",
+    "name": "Значение заголовка KOReader 2",
+    "category": "CrossPoint Sync",
+    "type": "string",
+    "value": null,
+    "hasPassword": false
+  },
+  {
+    "key": "koServerType",
+    "name": "Тип сервера",
+    "category": "CrossPoint Sync",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "CrossPoint",
+      "KoSync",
+      "Другое"
+    ]
+  },
+  {
+    "key": "koMatchMethod",
+    "name": "Сопоставление",
+    "category": "CrossPoint Sync",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Имя файла",
+      "Бинарный"
+    ]
+  },
+  {
+    "key": "koSendMetadata",
+    "name": "Отправлять метаданные",
+    "category": "CrossPoint Sync",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "koSyncBehavior",
+    "name": "Режим синхронизации",
+    "category": "CrossPoint Sync",
+    "type": "enum",
+    "value": 1,
+    "options": [
+      "Спрашивать",
+      "Умная"
+    ]
+  },
+  {
+    "key": "koSyncClippings",
+    "name": "Синхронизировать отрывки",
+    "category": "CrossPoint Sync",
+    "type": "toggle",
+    "value": 0
+  },
+  {
+    "key": "statusBarChapterPageCount",
+    "name": "Количество страниц главы",
+    "category": "Настройка строки состояния",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "statusBarBookProgressPercentage",
+    "name": "% прочтения книги",
+    "category": "Настройка строки состояния",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "statusBarProgressBar",
+    "name": "Полоса прогресса",
+    "category": "Настройка строки состояния",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Книга",
+      "Глава",
+      "Скрыть"
+    ]
+  },
+  {
+    "key": "statusBarProgressBarThickness",
+    "name": "Толщина индикатора прогресса",
+    "category": "Настройка строки состояния",
+    "type": "enum",
+    "value": 1,
+    "options": [
+      "Тонкий",
+      "Средний",
+      "Толстый"
+    ]
+  },
+  {
+    "key": "statusBarTitle",
+    "name": "Заголовок",
+    "category": "Настройка строки состояния",
+    "type": "enum",
+    "value": 1,
+    "options": [
+      "Книга",
+      "Глава",
+      "Скрыть"
+    ]
+  },
+  {
+    "key": "statusBarBattery",
+    "name": "Батарея",
+    "category": "Настройка строки состояния",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "xtcStatusBarMode",
+    "name": "Строка состояния XTC",
+    "category": "Настройка строки состояния",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Скрыть",
+      "Низ",
+      "Верх"
+    ]
+  },
+  {
+    "key": "statusBarClock",
+    "name": "Часы",
+    "category": "Настройка строки состояния",
+    "type": "enum",
+    "value": 2,
+    "options": [
+      "Скрыть",
+      "Вправо",
+      "Влево"
+    ]
+  },
+  {
+    "key": "clockFormat",
+    "name": "Формат времени",
+    "category": "Настройка строки состояния",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "24-часовой",
+      "12-часовой"
+    ]
+  },
+  {
+    "key": "clockDst",
+    "name": "Летнее время",
+    "category": "Настройка строки состояния",
+    "type": "enum",
+    "value": 2,
+    "options": [
+      "Авто",
+      "ВКЛ",
+      "ВЫКЛ"
+    ]
+  },
+  {
+    "key": "clockShowHeader",
+    "name": "Показывать в заголовке",
+    "category": "Настройка строки состояния",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "clockHasBeenSynced",
+    "name": "Выполнено",
+    "category": "Настройка строки состояния",
+    "type": "toggle",
+    "value": 1
+  },
+  {
+    "key": "homeButtonTapAction",
+    "name": "Нажатие",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 0,
+    "options": [
+      "Домой",
+      "Игнорировать",
+      "Перелистывание",
+      "Обновить экран",
+      "Ссылки и примечания",
+      "Подтвердить",
+      "CrossPoint Sync",
+      "Закладка",
+      "Словарь",
+      "Меню",
+      "Вкл./выкл. подсветку",
+      "Создать отрывок"
+    ]
+  },
+  {
+    "key": "homeButtonDoubleTapAction",
+    "name": "Двойное нажатие",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 10,
+    "options": [
+      "Домой",
+      "Игнорировать",
+      "Перелистывание",
+      "Обновить экран",
+      "Ссылки и примечания",
+      "Подтвердить",
+      "CrossPoint Sync",
+      "Закладка",
+      "Словарь",
+      "Меню",
+      "Вкл./выкл. подсветку",
+      "Создать отрывок"
+    ]
+  },
+  {
+    "key": "homeButtonLongPressAction",
+    "name": "Долгое нажатие",
+    "category": "Кнопки",
+    "type": "enum",
+    "value": 9,
+    "options": [
+      "Домой",
+      "Игнорировать",
+      "Перелистывание",
+      "Обновить экран",
+      "Ссылки и примечания",
+      "Подтвердить",
+      "CrossPoint Sync",
+      "Закладка",
+      "Словарь",
+      "Меню",
+      "Вкл./выкл. подсветку",
+      "Создать отрывок"
+    ]
+  }
+]

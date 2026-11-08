@@ -1,0 +1,162 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 21:13
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[261] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[261] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[261] [DBG] [SDREG] Fonts directory not found: /fonts
+[261] [DBG] [SDREG] Discovery complete: 0 families
+[261] [DBG] [SDFS] SD font system ready (0 families discovered)
+[261] [DBG] [MAIN] Fonts setup
+[261] [DBG] [ACT] Entering activity: Boot
+[262] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[295] [DBG] [ACT] Exiting activity: Boot
+[295] [DBG] [ACT] Entering activity: Home
+[297] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[310] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6090] [DBG] [ACT] Exiting activity: Home
+[6091] [DBG] [ACT] Entering activity: FileBrowser
+[6094] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[9100] [DBG] [GFX] Time = 7 ms from clearScreen to displayBuffer
+[10009] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10009] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[12091] [DBG] [ACT] Exiting activity: FileBrowser
+[12091] [DBG] [ACT] Entering activity: EpubReader
+[12091] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[12091] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[12094] [DBG] [GFX] Time = 3001 ms from clearScreen to displayBuffer
+[12108] [DBG] [EBP] Loading ePub: /Книги/Ричард Докинз. Эгоистичный ген.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.crosspoint/epub_16224160833964083072/book.bin (flags=0x0 errno=2 No such file or directory)
+[12108] [DBG] [EBP] Cache not found, building spine/TOC cache
+[12108] [DBG] [BMC] Entering write mode
+[12108] [DBG] [BMC] Beginning content opf pass
+[12110] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[12110] [DBG] [EBP] Parsing content.opf: content.opf
+[12114] [DBG] [COF] Using fast index for 94 manifest items
+[12115] [DBG] [COF] Entering guide state.
+[12115] [DBG] [COF] Found cover reference in guide: titlepage.xhtml
+[12115] [DBG] [ZIP] Decompressed 2343 bytes into 13023 bytes
+[12115] [DBG] [EBP] Successfully parsed content.opf
+[12117] [DBG] [EBP] OPF pass completed in 9 ms
+[12117] [DBG] [BMC] Beginning toc pass
+[12117] [DBG] [EBP] Falling back to NCX TOC
+[12117] [DBG] [EBP] Parsing toc ncx file: toc.ncx
+[12130] [DBG] [ZIP] Decompressed 3194 bytes into 15794 bytes
+[12130] [DBG] [EBP] Parsed TOC items
+[12130] [DBG] [EBP] TOC pass completed in 13 ms
+[12130] [DBG] [BMC] Wrote 82 spine, 80 TOC entries
+[12131] [DBG] [BMC] Warning: Could not find TOC entry for spine item 0: titlepage.xhtml, using title from last section
+[12131] [DBG] [BMC] Warning: Could not find TOC entry for spine item 1: index_split_000.xhtml, using title from last section
+[12136] [DBG] [BMC] Successfully built book.bin
+[12136] [DBG] [EBP] buildBookBin completed in 6 ms
+[12136] [DBG] [EBP] Total indexing completed in 28 ms
+[12136] [DBG] [EBP] CSS files to parse: 2
+[12136] [DBG] [EBP] Parsing CSS file: page_styles.css
+[12137] [DBG] [ZIP] Decompressed 42 bytes into 58 bytes
+[12137] [DBG] [CSS] Parsed 0 rules from 58 bytes
+[12137] [DBG] [EBP] Parsing CSS file: stylesheet.css
+[12137] [DBG] [ZIP] Decompressed 500 bytes into 2187 bytes
+[12138] [DBG] [CSS] Parsed 19 rules from 2187 bytes
+[12138] [DBG] [CSS] Saved 19 rules to complete cache
+[12138] [DBG] [EBP] Loaded 19 CSS style rules from 2 files (0 identical duplicates skipped, complete)
+[12138] [DBG] [BMC] Loaded cache data: 82 spine, 80 TOC entries
+[12138] [DBG] [EBP] Loaded ePub: /Книги/Ричард Докинз. Эгоистичный ген.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.crosspoint/epub_16224160833964083072/progress.bin (flags=0x0 errno=2 No such file or directory)
+[12138] [DBG] [EBP] Core Metadata: cover(24)=fb2_cover_calibre_mi.jpg, textReference(0)=
+[12138] [DBG] [ERS] Loading file: titlepage.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.crosspoint/epub_16224160833964083072/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[12138] [DBG] [ERS] Cache not found, building...
+[12138] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[12139] [DBG] [ZIP] Decompressed 418 bytes into 813 bytes
+[12139] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_16224160833964083072/html/.tmp_0.html (813 bytes)
+[12139] [DBG] [CSS] Loaded 19 rules from complete cache
+[12139] [DBG] [EHP] Found image: src=fb2_cover_calibre_mi.jpg
+[12140] [DBG] [EHP] Image dimensions: 570x841
+[12140] [DBG] [EHP] Display size: 301x445 (scale 0.53)
+[12140] [DBG] [EHP] Time to parse and build pages: 1 ms
+[12140] [DBG] [SCT] Page 0 processed
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.crosspoint/epub_16224160833964083072/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[12140] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[12143] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.crosspoint/epub_16224160833964083072/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[12143] [DBG] [IMG] Lazy-extracting fb2_cover_calibre_mi.jpg -> /.crosspoint/epub_16224160833964083072/img_0_0.jpg
+[12144] [DBG] [ZIP] Decompressed 318998 bytes into 319190 bytes
+[12144] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_16224160833964083072/img_0_0.jpg
+[12144] [DBG] [IMG] Using JPEG decoder
+[12144] [DBG] [JPG] Decoding JPEG: /.crosspoint/epub_16224160833964083072/img_0_0.jpg
+[12169] [DBG] [JPG] JPEG 570x841 -> 301x445 (scale 0.53, jpegScale 1/1, fineScale 0.53)
+[12169] [DBG] [IMG] Cache stream started: /.crosspoint/epub_16224160833964083072/img_0_0.pxc (301x445, band 16 rows)
+[12176] [DBG] [JPG] JPEG decoding complete - render time: 7 ms
+[12176] [DBG] [IMG] Cache written: /.crosspoint/epub_16224160833964083072/img_0_0.pxc (301x445, 33824 bytes)
+[12178] [DBG] [IMG] Decode successful
+[12178] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[12180] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12180] [DBG] [IMG] Loading from cache: /.crosspoint/epub_16224160833964083072/img_0_0.pxc (301x445)
+[12180] [DBG] [IMG] Cache render complete (payload now in RAM)
+[12180] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12180] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12180] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12181] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12181] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12181] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12182] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12182] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12182] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12183] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12183] [DBG] [IMG] Rendering image at 252,8: /.crosspoint/epub_16224160833964083072/img_0_0.jpg (301x445)
+[12188] [DBG] [ERS] Page render (tiled): prewarm=0ms bw_render=38ms display=2ms gray_lsb=1ms gray_msb=2ms gray_display=5ms cleanup=0ms total=48ms
+[12188] [DBG] [ERS] Rendered page in 48ms
+[12188] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[20036] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20036] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[30067] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30067] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[40111] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[40111] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr2_after/shots/book.bmp
+[50141] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[50141] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[50535] [DBG] [ACT] Exiting activity: EpubReader
+[50535] [INF] [MEM] reader exit: free=1048576 max_block=1048576
+[50536] [DBG] [ACT] Entering activity: Home
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr2_after/sd/.crosspoint/epub_16224160833964083072/thumb_226.bmp (flags=0x0 errno=2 No such file or directory)
+[50537] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[50600] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[50604] [DBG] [EBP] Loading ePub: /Книги/Ричард Докинз. Эгоистичный ген.epub
+[50605] [DBG] [BMC] Loaded cache data: 82 spine, 80 TOC entries
+[50605] [DBG] [EBP] Loaded ePub: /Книги/Ричард Докинз. Эгоистичный ген.epub
+[50605] [DBG] [GFX] Time = 6 ms from clearScreen to displayBuffer
+[50608] [DBG] [GFX] Time = 9 ms from clearScreen to displayBuffer
+[50612] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[50613] [DBG] [ZIP] Decompressed 318998 bytes into 319190 bytes
+[50614] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 135x226)
+[50641] [DBG] [JPG] JPEG dimensions: 570x841
+[50641] [DBG] [JPG] Scaling source 570x841 (decode grid 570x841) -> 153x226 (target 135x226)
+[50744] [DBG] [JPG] Successfully converted JPEG to BMP
+[50747] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[50806] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr2_after/shots/home_light.bmp
+[58322] [DBG] [ACT] Pushed to activity stack, new size = 1
+[58322] [DBG] [ACT] Entering activity: FrontlightPanel
+[58325] [DBG] [GFX] Time = 7522 ms from clearScreen to displayBuffer
+[60152] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[60152] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[62094] [DBG] [GFX] Time = 11291 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr2_after/shots/cc.bmp
+[68090] [DBG] [ACT] Exiting activity: FrontlightPanel
+[68090] [DBG] [ACT] Popped from activity stack, new size = 0
+[68095] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[70156] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[70157] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr2_after/shots/home_dark.bmp
+[80188] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[80189] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes

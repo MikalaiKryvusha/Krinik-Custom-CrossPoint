@@ -1,0 +1,55 @@
+{
+  "requirements": {
+    "upstream_error": "Error. without modal; preserve known capacity",
+    "krinik_error": "Ошибка. without modal; preserve extra About fields",
+    "sleep": "continue sequence through deep sleep when SD cursor writes fail; cold reset may resume disk cursor",
+    "scope": "update existing PRs 4328,4331,4332; carry same fixes into separate krinik-1.0.1 candidate preserving all extra features"
+  },
+  "candidates": {
+    "epub": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/epub",
+      "base": "b3f25945e235f79a2222139284dd2982f8913006",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/epub-candidate.patch",
+      "sha256": "6eb8f9a3b5b0297eae36447a83328033f23e74c900671c1d43ef17797a331fe5"
+    },
+    "about": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/about",
+      "base": "edad8db1e9db501c4139b2c95174d36df73734c3",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/about-candidate.patch",
+      "sha256": "6d7c9e17ba9f8d7142bb4d5e95f4fea9779032f1e24224e517e56f470d8dce99"
+    },
+    "sleep": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/sleep",
+      "base": "4a5ac6031b9b03ea951e03037801bf89428f8227",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/sleep-candidate.patch",
+      "sha256": "0f6f5402b8cdc80093e84629d089586617a89f77799891dbc3e518584c46439f"
+    },
+    "krinik": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/krinik",
+      "base": "a955a572807950011502b0297933846a2472a744",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/krinik-candidate.patch",
+      "sha256": "2b31c847b83ac90712049a54d54f2e7499396c1cde2e250f85a064b5c6faf1cd"
+    },
+    "sdk": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/about/freeink-sdk",
+      "base": "5e94fe7480f019c89fbf691aef87523eb1b46704",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/sdk-candidate.patch",
+      "sha256": "d6b04323b566c2b442678e651075ccc1f459030bf6a99af86f356afabb3224fb"
+    },
+    "krinik-sdk": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/krinik/freeink-sdk",
+      "base": "4feaf66d2c54185239849d9fc39697d9797f731a",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/krinik-sdk-candidate.patch",
+      "sha256": "5377fea8397cb32985200ac48e4b7b3e48d0cde10b3efab2c7e08de4e800ab98"
+    }
+  },
+  "checks": {
+    "epub": "905 host tests passed: epub-final-host.log",
+    "krinik": "910 host tests passed: krinik-final-host.log",
+    "sdk": "SDK production code compiled and stream+usage tests passed: sdk-final-host.log",
+    "krinik-sdk": "SDK production code compiled and tests passed: krinik-sdk-final-host.log",
+    "sleep": "5 tests passed: sleep-final-host.log",
+    "format": "bin/clang-format-fix -g passed for all firmware worktrees",
+    "firmware": "Final firmware builds follow independent review; no device testing claimed"
+  }
+}

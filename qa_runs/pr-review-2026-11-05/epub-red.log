@@ -1,0 +1,59 @@
+Running main() from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ChapterAnchorPageTest.*
+[==========] Running 11 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 11 tests from ChapterAnchorPageTest
+[ RUN      ] ChapterAnchorPageTest.AnchorStaysWhenParagraphStartsOnThePage
+[       OK ] ChapterAnchorPageTest.AnchorStaysWhenParagraphStartsOnThePage (1 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorFollowsFirstLineThatDoesNotFit
+[       OK ] ChapterAnchorPageTest.AnchorFollowsFirstLineThatDoesNotFit (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorFollowsLoneFirstLineCarriedByOrphanRule
+[       OK ] ChapterAnchorPageTest.AnchorFollowsLoneFirstLineCarriedByOrphanRule (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorFollowsTwoLineParagraphMovedWhole
+[       OK ] ChapterAnchorPageTest.AnchorFollowsTwoLineParagraphMovedWhole (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorStaysWhenOnlyTheParagraphTailMoves
+[       OK ] ChapterAnchorPageTest.AnchorStaysWhenOnlyTheParagraphTailMoves (0 ms)
+[ RUN      ] ChapterAnchorPageTest.ConsecutiveAnchoredNotesEachLandOnTheirFirstLine
+[       OK ] ChapterAnchorPageTest.ConsecutiveAnchoredNotesEachLandOnTheirFirstLine (0 ms)
+[ RUN      ] ChapterAnchorPageTest.InlineAnchorStaysWithItsParagraphBeforePageBreak
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2383: Failure
+Expected equality of these values:
+  anchorPage("inline-target")
+    Which is: (1)
+  std::optional<uint16_t>(0)
+    Which is: (0)
+
+[  FAILED  ] ChapterAnchorPageTest.InlineAnchorStaysWithItsParagraphBeforePageBreak (0 ms)
+[ RUN      ] ChapterAnchorPageTest.PendingAnchorCountsTowardChapterLimit
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2394: Failure
+Expected equality of these values:
+  parser.getAnchors().size()
+    Which is: 1025
+  1024u
+    Which is: 1024
+
+[  FAILED  ] ChapterAnchorPageTest.PendingAnchorCountsTowardChapterLimit (0 ms)
+[ RUN      ] ChapterAnchorPageTest.EmptyTrailingTableKeepsItsAnchor
+[       OK ] ChapterAnchorPageTest.EmptyTrailingTableKeepsItsAnchor (0 ms)
+[ RUN      ] ChapterAnchorPageTest.HeadingAnchorFollowsHeadingCarriedWithNextParagraph
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp:2413: Failure
+Expected equality of these values:
+  anchorPage("heading")
+    Which is: (0)
+  std::optional<uint16_t>(1)
+    Which is: (1)
+
+[  FAILED  ] ChapterAnchorPageTest.HeadingAnchorFollowsHeadingCarriedWithNextParagraph (0 ms)
+[ RUN      ] ChapterAnchorPageTest.AnchorFollowsTwoCarriedLinesOfItsParagraph
+[       OK ] ChapterAnchorPageTest.AnchorFollowsTwoCarriedLinesOfItsParagraph (0 ms)
+[----------] 11 tests from ChapterAnchorPageTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 8 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] ChapterAnchorPageTest.InlineAnchorStaysWithItsParagraphBeforePageBreak
+[  FAILED  ] ChapterAnchorPageTest.PendingAnchorCountsTowardChapterLimit
+[  FAILED  ] ChapterAnchorPageTest.HeadingAnchorFollowsHeadingCarriedWithNextParagraph
+
+ 3 FAILED TESTS

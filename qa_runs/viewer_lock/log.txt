@@ -1,0 +1,84 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_lock/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_lock/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_lock/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 17:28
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[220] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_lock/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[220] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_lock/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[220] [DBG] [SDREG] Fonts directory not found: /fonts
+[220] [DBG] [SDREG] Discovery complete: 0 families
+[220] [DBG] [SDFS] SD font system ready (0 families discovered)
+[220] [DBG] [MAIN] Fonts setup
+[220] [DBG] [ACT] Entering activity: Boot
+[220] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[515] [DBG] [ACT] Exiting activity: Boot
+[515] [DBG] [ACT] Entering activity: Home
+[521] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[798] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2584] [DBG] [ACT] Exiting activity: Home
+[2584] [DBG] [ACT] Entering activity: FileBrowser
+[2587] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5587] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[8582] [DBG] [ACT] Exiting activity: FileBrowser
+[8582] [DBG] [ACT] Entering activity: BmpViewer
+[8582] [DBG] [CRV] Panel curve loaded: be170a3a
+[8583] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[8619] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[8619] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[8628] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[8628] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[9641] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[9641] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[9646] [DBG] [LOOP] New max loop duration: 1064 ms (activity: 1064 ms)
+[10012] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10012] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[16088] [DBG] [BMP] Input: button prev
+[16088] [DBG] [BMP] Show 6/6: /sleep/oblivion_6.bmp
+[16132] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[16132] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[16144] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[16144] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[17166] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[17166] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[17176] [DBG] [LOOP] New max loop duration: 1089 ms (activity: 1088 ms)
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/viewer_lock/shots/v1.bmp
+[20047] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20047] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[20084] [DBG] [BMP] Input: button prev
+[20085] [DBG] [BMP] Show 5/6: /sleep/oblivion_5.bmp
+[20124] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[20124] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[20136] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[20136] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[21155] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[21155] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[22320] [DBG] [ACT] Pushed to activity stack, new size = 1
+[22320] [DBG] [ACT] Entering activity: FrontlightPanel
+[22321] [DBG] [GFX] Time = 1166 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/viewer_lock/shots/sheet.bmp
+[26386] [DBG] [ACT] Exiting activity: FrontlightPanel
+[26386] [DBG] [ACT] Popped from activity stack, new size = 0
+[26398] [DBG] [BMP] Show 5/6: /sleep/oblivion_5.bmp
+[26406] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[26406] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[26419] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[26419] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[27433] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[27433] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[30065] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30065] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/viewer_lock/shots/after_close.bmp
+[33085] [DBG] [ACT] Exiting activity: BmpViewer
+[33086] [DBG] [CLN] Short clean: HALF scrub to white
+[33086] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[34101] [DBG] [ACT] Entering activity: FileBrowser
+[34103] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/viewer_lock/shots/menu.bmp

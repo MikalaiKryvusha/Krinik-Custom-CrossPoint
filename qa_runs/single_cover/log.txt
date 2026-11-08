@@ -1,0 +1,89 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/single_cover/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/single_cover/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/single_cover/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[1] [DBG] [CPS] Resaving settings to update format
+[1] [DBG] [CPS] Settings loaded from file
+[2] [DBG] [UI] Using Lyra theme
+[2] [INF] [CLK] RTC clock read: 2026-11-04 18:12
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[2] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[298] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/single_cover/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[298] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/single_cover/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[298] [DBG] [SDREG] Fonts directory not found: /fonts
+[298] [DBG] [SDREG] Discovery complete: 0 families
+[298] [DBG] [SDFS] SD font system ready (0 families discovered)
+[298] [DBG] [MAIN] Fonts setup
+[298] [DBG] [ACT] Entering activity: Boot
+[299] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[336] [DBG] [ACT] Exiting activity: Boot
+[336] [DBG] [ACT] Entering activity: Home
+[336] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[350] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2581] [DBG] [ACT] Exiting activity: Home
+[2581] [DBG] [ACT] Entering activity: FileBrowser
+[2584] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5592] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[8585] [DBG] [ACT] Exiting activity: FileBrowser
+[8585] [DBG] [ACT] Entering activity: BmpViewer
+[8587] [DBG] [CRV] Panel curve loaded: be170a3a
+[8588] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/single_cover/sd/.crosspoint/view_cache.idx (flags=0x0 errno=2 No such file or directory)
+[8633] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[8633] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[8643] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[8643] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[8657] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[8657] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[8661] [DBG] [LOOP] New max loop duration: 77 ms (activity: 77 ms)
+[10005] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10005] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[11082] [DBG] [ACT] Pushed to activity stack, new size = 1
+[11082] [DBG] [ACT] Entering activity: Confirmation
+[11083] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[12502] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[13586] [DBG] [ACT] Exiting activity: Confirmation
+[13586] [DBG] [ACT] Popped from activity stack, new size = 0
+[13586] [DBG] [ACT] Handling result for popped activity
+[13587] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[13603] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[14609] [DBG] [ACT] Entering activity: BmpViewer
+[14609] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/single_cover/shots/popup.bmp
+[14687] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[14687] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14693] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[14693] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14704] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[14704] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14708] [DBG] [LOOP] New max loop duration: 1122 ms (activity: 1122 ms)
+[19081] [DBG] [BMP] Input: button prev
+[19081] [DBG] [BMP] Show 6/6: /sleep/oblivion_6.bmp
+[19125] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[19125] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[19137] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[19137] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[19152] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[19152] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[20013] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20013] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[23339] [DBG] [MAIN] Power button held 306ms, sleeping
+[23340] [DBG] [ACT] Exiting activity: BmpViewer
+[23340] [DBG] [ACT] Entering activity: Sleep
+[23340] [DBG] [SLP] Loading: /sleep.bmp
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/single_cover/sd/.crosspoint/sleep_cache.idx (flags=0x0 errno=2 No such file or directory)
+[23376] [DBG] [SLP] bitmap 288 x 480, screen 800 x 480
+[23376] [DBG] [SLP] drawing to 256 x 0
+[23376] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[23376] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[23385] [DBG] [CLN] Short clean: HALF scrub to white
+[23385] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[23393] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[23393] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[23402] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[23402] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[23418] [DBG] [MAIN] Entering deep sleep
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/single_cover/shots/sleep.bmp

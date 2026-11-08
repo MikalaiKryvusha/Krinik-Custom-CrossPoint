@@ -1,0 +1,21 @@
+{
+  "branch": "pr/screen-clean-menu",
+  "commit": "ea0a3625",
+  "base": "bb93a462",
+  "judge": "VERIFIED WITH CAVEATS; documentation P3 fixed; no remaining findings",
+  "builds": {
+    "default": "SUCCESS",
+    "x4pro-gh_release": "SUCCESS",
+    "simulator_x4_pro": "SUCCESS with native-only HalDisplay shim"
+  },
+  "observation": {
+    "languages": [
+      "EN",
+      "RU"
+    ],
+    "path": "Home → Settings → Display → Screen Cleaning → Refresh popup → Back chain to Home",
+    "persistence": "refreshFrequency 3 (15 pages) → 0 (1 page), saved to JSON"
+  },
+  "sdk_changed": false,
+  "published": false
+}

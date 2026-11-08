@@ -1,0 +1,1 @@
+1: shade first frame: overGray=0 clean=0 bottom=361

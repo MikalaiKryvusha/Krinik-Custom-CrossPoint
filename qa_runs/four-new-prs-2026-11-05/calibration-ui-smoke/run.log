@@ -1,0 +1,186 @@
+[0] [DBG] [UI] Using Lyra theme
+[54] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[70] [DBG] [CPS] Resaving settings to update format
+[70] [DBG] [CPS] Settings loaded from file
+[74] [DBG] [UI] Using Classic theme
+[77] [INF] [CLK] RTC clock read: 2026-11-05 18:20
+[SIM] Frontlight: off, brightness=60%, warmth=50%
+[78] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[99] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[100] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[100] [DBG] [SDREG] Fonts directory not found: /fonts
+[102] [DBG] [SDREG] Discovery complete: 0 families
+[102] [DBG] [SDFS] SD font system ready (0 families discovered)
+[102] [DBG] [MAIN] Fonts setup
+[104] [DBG] [ACT] Entering activity: Boot
+[112] [DBG] [GFX] Time = 8 ms from clearScreen to displayBuffer
+[120] [DBG] [ACT] Exiting activity: Boot
+[122] [DBG] [ACT] Entering activity: Home
+[128] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[149] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1587] [DBG] [ACT] Exiting activity: Home
+[1587] [DBG] [ACT] Entering activity: SettingsList
+[1588] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2586] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2586] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2587] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2587] [DBG] [DREG] No /.dictionaries directory on SD card
+[2590] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[3592] [DBG] [ACT] Pushed to activity stack, new size = 2
+[3592] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[3592] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[3592] [DBG] [DREG] No /.dictionaries directory on SD card
+[3600] [DBG] [GFX] Time = 8 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/shots/calibration.bmp
+[4608] [DBG] [ACT] Exiting activity: Settings
+[4608] [DBG] [ACT] Exiting activity: Settings
+[4608] [DBG] [ACT] Exiting activity: SettingsList
+[4608] [DBG] [UI] Using Classic theme
+[4608] [DBG] [ACT] Entering activity: BmpViewer
+[4608] [DBG] [GFX] Time = 1016 ms from clearScreen to displayBuffer
+[4613] [DBG] [GFX] Time = 1021 ms from clearScreen to displayBuffer
+[4672] [DBG] [GFX] Time = 1080 ms from clearScreen to displayBuffer
+[4677] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4677] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4697] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4697] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4709] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4709] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4727] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[4727] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4734] [DBG] [LOOP] New max loop duration: 152 ms (activity: 152 ms)
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/shots/pictures-card.bmp
+[7123] [DBG] [ACT] Exiting activity: BmpViewer
+[7123] [DBG] [ACT] Entering activity: SettingsList
+[7123] [DBG] [ACT] Pushed to activity stack, new size = 1
+[7123] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[7123] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[7123] [DBG] [DREG] No /.dictionaries directory on SD card
+[7123] [DBG] [ACT] Pushed to activity stack, new size = 2
+[7124] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[7124] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[7124] [DBG] [DREG] No /.dictionaries directory on SD card
+[7126] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/shots/back-pictures.bmp
+[8640] [DBG] [ACT] Exiting activity: Settings
+[8640] [DBG] [ACT] Exiting activity: Settings
+[8640] [DBG] [ACT] Exiting activity: SettingsList
+[8640] [DBG] [UI] Using Classic theme
+[8640] [DBG] [ACT] Entering activity: EpubReader
+[8640] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[8640] [DBG] [GFX] Time = 1516 ms from clearScreen to displayBuffer
+[8645] [DBG] [EBP] Loading ePub: /.crosspoint/calibration/books_card_v1.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.crosspoint/epub_17237363056044662373/book.bin (flags=0x0 errno=2 No such file or directory)
+[8645] [DBG] [EBP] Cache not found, building spine/TOC cache
+[8645] [DBG] [BMC] Entering write mode
+[8645] [DBG] [BMC] Beginning content opf pass
+[8646] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[8647] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[8647] [DBG] [COF] Using fast index for 3 manifest items
+[8647] [DBG] [EBP] Successfully parsed content.opf
+[8647] [DBG] [EBP] OPF pass completed in 2 ms
+[8647] [DBG] [BMC] Beginning toc pass
+[8647] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[8647] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[8647] [DBG] [NAV] Found nav toc element
+[8647] [DBG] [NAV] Finished parsing nav toc
+[8647] [DBG] [EBP] Parsed TOC nav items
+[8647] [DBG] [EBP] TOC pass completed in 0 ms
+[8647] [DBG] [BMC] Wrote 1 spine, 1 TOC entries
+[8648] [DBG] [BMC] Successfully built book.bin
+[8648] [DBG] [EBP] buildBookBin completed in 1 ms
+[8648] [DBG] [EBP] Total indexing completed in 3 ms
+[8648] [DBG] [EBP] No CSS files to parse, but CssParser created for inline styles
+[8648] [DBG] [EBP] CSS files to parse: 0
+[8648] [DBG] [CSS] Saved 0 rules to complete cache
+[8648] [DBG] [EBP] Loaded 0 CSS style rules from 0 files (0 identical duplicates skipped, complete)
+[8648] [DBG] [BMC] Loaded cache data: 1 spine, 1 TOC entries
+[8648] [DBG] [EBP] Loaded ePub: /.crosspoint/calibration/books_card_v1.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.crosspoint/epub_17237363056044662373/progress.bin (flags=0x0 errno=2 No such file or directory)
+[8648] [DBG] [EBP] Core Metadata: cover(0)=, textReference(0)=
+[8649] [DBG] [ERS] Loading file: OEBPS/card.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.crosspoint/epub_17237363056044662373/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[8649] [DBG] [ERS] Cache not found, building...
+[8649] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[8649] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_17237363056044662373/html/.tmp_0.html (252 bytes)
+[8649] [DBG] [CSS] Loaded 0 rules from complete cache
+[8650] [DBG] [EHP] Found image: src=card.png
+[8650] [DBG] [EHP] Image dimensions: 480x800
+[8650] [DBG] [EHP] Display size from CSS width: 458x764
+[8650] [DBG] [EHP] Time to parse and build pages: 0 ms
+[8650] [DBG] [SCT] Page 0 processed
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.crosspoint/epub_17237363056044662373/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[8651] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[8652] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.crosspoint/epub_17237363056044662373/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[8652] [DBG] [IMG] Lazy-extracting OEBPS/card.png -> /.crosspoint/epub_17237363056044662373/img_0_0.png
+[8654] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_17237363056044662373/img_0_0.png
+[8654] [DBG] [IMG] Using PNG decoder
+[8654] [DBG] [PNG] Decoding PNG: /.crosspoint/epub_17237363056044662373/img_0_0.png
+[8658] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 458x764 (scale 0.95), type: 6, bpp: 8
+[8658] [DBG] [IMG] Cache stream started: /.crosspoint/epub_17237363056044662373/img_0_0.pxc (458x764, band 16 rows)
+[8670] [DBG] [PNG] PNG decoding complete - render time: 12 ms
+[8670] [DBG] [IMG] Cache written: /.crosspoint/epub_17237363056044662373/img_0_0.pxc (458x764, 87864 bytes)
+[8676] [DBG] [IMG] Decode successful
+[8676] [DBG] [GFX] Time = 24 ms from clearScreen to displayBuffer
+[8678] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8678] [DBG] [IMG] Loading from cache: /.crosspoint/epub_17237363056044662373/img_0_0.pxc (458x764)
+[8678] [DBG] [IMG] Cache render complete (payload now in RAM)
+[8678] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8679] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8679] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8680] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8680] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8681] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8681] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8682] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8682] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8683] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8683] [DBG] [IMG] Rendering image at 11,14: /.crosspoint/epub_17237363056044662373/img_0_0.png (458x764)
+[8688] [DBG] [ERS] Page render (tiled): prewarm=1ms bw_render=25ms display=2ms gray_lsb=3ms gray_msb=3ms gray_display=4ms cleanup=0ms total=38ms
+[8688] [DBG] [ERS] Rendered page in 38ms
+[8689] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[10009] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10009] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/shots/books-card.bmp
+[11629] [DBG] [ACT] Exiting activity: EpubReader
+[11629] [INF] [MEM] reader exit: free=1048576 max_block=1048576
+[11629] [DBG] [ACT] Entering activity: SettingsList
+[11629] [DBG] [ACT] Pushed to activity stack, new size = 1
+[11629] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[11629] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[11629] [DBG] [DREG] No /.dictionaries directory on SD card
+[11629] [DBG] [ACT] Pushed to activity stack, new size = 2
+[11629] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[11629] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[11629] [DBG] [DREG] No /.dictionaries directory on SD card
+[11632] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/shots/back-books.bmp
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[13094] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[13094] [DBG] [DREG] No /.dictionaries directory on SD card
+[13096] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[14086] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[14086] [DBG] [DREG] No /.dictionaries directory on SD card
+[14088] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-ui-smoke/shots/checkboxes.bmp

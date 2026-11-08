@@ -1,0 +1,10 @@
+{
+  "version": "cp-2.0.0-krinik-1.1.1-debug4",
+  "bytes": 5421456,
+  "sha256": "a1422bbb780eba9b6bd04f6d31206194f60589b15fdbb0f394e51988312faba0",
+  "build_env": "x4pro-krinik-debug",
+  "battery_log_interval_seconds": 1200,
+  "charge_events_min_seconds": 10,
+  "hardware_tested": false,
+  "installed": false
+}

@@ -1,0 +1,226 @@
+[
+  {
+    "card": "pictures",
+    "orientation": 0,
+    "screenshots": 51,
+    "return_content_states": 2,
+    "no_intermediate_frames": true,
+    "return_size": [
+      480,
+      800
+    ],
+    "headless": true,
+    "route_before_first_draw": [
+      "[2131] [DBG] [ACT] Entering activity: SettingsList",
+      "[2131] [DBG] [ACT] Pushed to activity stack, new size = 1",
+      "[2131] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-0/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2131] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-0/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2131] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2131] [DBG] [ACT] Pushed to activity stack, new size = 2",
+      "[2131] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-0/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2131] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-0/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2131] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2133] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer"
+    ]
+  },
+  {
+    "card": "pictures",
+    "orientation": 1,
+    "screenshots": 51,
+    "return_content_states": 2,
+    "no_intermediate_frames": true,
+    "return_size": [
+      480,
+      800
+    ],
+    "headless": true,
+    "route_before_first_draw": [
+      "[2159] [DBG] [ACT] Entering activity: SettingsList",
+      "[2159] [DBG] [ACT] Pushed to activity stack, new size = 1",
+      "[2159] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-1/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2159] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-1/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2159] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2159] [DBG] [ACT] Pushed to activity stack, new size = 2",
+      "[2159] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-1/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2159] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-1/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2159] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2161] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer"
+    ]
+  },
+  {
+    "card": "pictures",
+    "orientation": 2,
+    "screenshots": 51,
+    "return_content_states": 2,
+    "no_intermediate_frames": true,
+    "return_size": [
+      480,
+      800
+    ],
+    "headless": true,
+    "route_before_first_draw": [
+      "[2144] [DBG] [ACT] Entering activity: SettingsList",
+      "[2144] [DBG] [ACT] Pushed to activity stack, new size = 1",
+      "[2144] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2144] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2144] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2144] [DBG] [ACT] Pushed to activity stack, new size = 2",
+      "[2144] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2144] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2144] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2152] [DBG] [GFX] Time = 8 ms from clearScreen to displayBuffer"
+    ]
+  },
+  {
+    "card": "pictures",
+    "orientation": 3,
+    "screenshots": 51,
+    "return_content_states": 2,
+    "no_intermediate_frames": true,
+    "return_size": [
+      480,
+      800
+    ],
+    "headless": true,
+    "route_before_first_draw": [
+      "[2127] [DBG] [ACT] Entering activity: SettingsList",
+      "[2127] [DBG] [ACT] Pushed to activity stack, new size = 1",
+      "[2127] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2128] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2128] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2128] [DBG] [ACT] Pushed to activity stack, new size = 2",
+      "[2128] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2128] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-pictures-3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2128] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2137] [DBG] [GFX] Time = 9 ms from clearScreen to displayBuffer"
+    ]
+  },
+  {
+    "card": "books",
+    "orientation": 0,
+    "screenshots": 51,
+    "return_content_states": 2,
+    "no_intermediate_frames": true,
+    "return_size": [
+      480,
+      800
+    ],
+    "headless": true,
+    "route_before_first_draw": [
+      "[2155] [DBG] [ACT] Entering activity: SettingsList",
+      "[2155] [DBG] [ACT] Pushed to activity stack, new size = 1",
+      "[2155] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-0/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2155] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-0/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2155] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2156] [DBG] [ACT] Pushed to activity stack, new size = 2",
+      "[2156] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-0/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2156] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-0/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2156] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2164] [DBG] [GFX] Time = 8 ms from clearScreen to displayBuffer"
+    ]
+  },
+  {
+    "card": "books",
+    "orientation": 1,
+    "screenshots": 51,
+    "return_content_states": 2,
+    "no_intermediate_frames": true,
+    "return_size": [
+      480,
+      800
+    ],
+    "headless": true,
+    "route_before_first_draw": [
+      "[2144] [DBG] [ACT] Entering activity: SettingsList",
+      "[2144] [DBG] [ACT] Pushed to activity stack, new size = 1",
+      "[2144] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-1/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2144] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-1/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2144] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2145] [DBG] [ACT] Pushed to activity stack, new size = 2",
+      "[2145] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-1/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2145] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-1/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2145] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2152] [DBG] [GFX] Time = 7 ms from clearScreen to displayBuffer"
+    ]
+  },
+  {
+    "card": "books",
+    "orientation": 2,
+    "screenshots": 51,
+    "return_content_states": 2,
+    "no_intermediate_frames": true,
+    "return_size": [
+      480,
+      800
+    ],
+    "headless": true,
+    "route_before_first_draw": [
+      "[2136] [DBG] [ACT] Entering activity: SettingsList",
+      "[2136] [DBG] [ACT] Pushed to activity stack, new size = 1",
+      "[2136] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2136] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2136] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2137] [DBG] [ACT] Pushed to activity stack, new size = 2",
+      "[2137] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2137] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2137] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2140] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer"
+    ]
+  },
+  {
+    "card": "books",
+    "orientation": 3,
+    "screenshots": 51,
+    "return_content_states": 2,
+    "no_intermediate_frames": true,
+    "return_size": [
+      480,
+      800
+    ],
+    "headless": true,
+    "route_before_first_draw": [
+      "[2172] [DBG] [ACT] Entering activity: SettingsList",
+      "[2172] [DBG] [ACT] Pushed to activity stack, new size = 1",
+      "[2172] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2172] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2172] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2172] [DBG] [ACT] Pushed to activity stack, new size = 2",
+      "[2172] [DBG] [ACT] Entering activity: Settings",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2172] [DBG] [DREG] No /dictionaries directory on SD card",
+      "[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)",
+      "[2172] [DBG] [DREG] No /.dictionaries directory on SD card",
+      "[2180] [DBG] [GFX] Time = 7 ms from clearScreen to displayBuffer"
+    ]
+  }
+]

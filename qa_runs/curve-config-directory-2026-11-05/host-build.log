@@ -1,0 +1,6 @@
+[ 33%] Built target gtest
+[ 66%] Built target gtest_main
+[ 66%] Building CXX object panel_curve/CMakeFiles/PanelCurveTest.dir/PanelCurveTest.cpp.o
+[100%] Building CXX object panel_curve/CMakeFiles/PanelCurveTest.dir/Users/kryvusha/Xteink/pr-fixes/krinik/src/util/PanelCurve.cpp.o
+[100%] Linking CXX executable PanelCurveTest
+[100%] Built target PanelCurveTest

@@ -1,0 +1,149 @@
+{
+  "author": {
+    "id": "MDQ6VXNlcjU5NTg3NTA5",
+    "is_bot": false,
+    "login": "MikalaiKryvusha",
+    "name": "Mikalai Kryvusha"
+  },
+  "baseRefName": "develop",
+  "body": "## Summary\n\n* **Goal:** the same gray looks different on an e-ink panel than intended, and differently in pictures and in book images. Let a reader correct both for their own panel.\n* **What changes:** **Display → Screen Calibration** with a pictures target and a books target, and two checkboxes that apply optional tone curves from the SD card: `/.crosspoint/panel_curve.txt` and `/.crosspoint/panel_curve_book.txt`. [KEINKT Calibrator](https://mikalaikryvusha.github.io/KEINKT/calibrator/) builds the curves from phone photos of the targets.\n  * Both checkboxes default to Off; a checkbox reloads its curve at once. A missing or invalid file leaves tones unchanged. No curve measured on someone else's panel is built in.\n  * Back from a target returns to the calibration menu; the targets do not replace the resumed book or enter Recent books.\n\n| Screen Calibration | Pictures target | Books target |\n| --- | --- | --- |\n| ![Calibration menu](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/calibration-calibration-en.webp) | ![Pictures](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/calibration-pictures-card-en.webp) | ![Books](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/calibration-books-card-en.webp) |\n\n![Photo measurements on my X4 Pro](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/calibration-accuracy-x4pro-en.png)\n\n| Pictures: before | Pictures: with curve |\n| --- | --- |\n| ![before](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/pictures-before-framed.jpg) | ![after](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/pictures-after-framed.jpg) |\n\n| Books: before | Books: with curve |\n| --- | --- |\n| ![before](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/books-before-framed.jpg) | ![after](https://raw.githubusercontent.com/MikalaiKryvusha/crosspoint-reader/pr-assets/08-calibration/books-after-framed.jpg) |\n\n*Real photos of one X4 Pro, cropped to keep the screen and device bezel, without tone edits. Light and exposure vary between photos; the graph uses the measured, normalized response.*\n\n### From a phone photo to a tone curve\n\n```mermaid\nflowchart LR\n    A[\"Open a calibration target on the reader\"] --> B[\"Photograph the real screen\"]\n    B --> C[\"Measure the target with KEINKT Calibrator\"]\n    C --> D[\"Save the corresponding curve to the SD card\"]\n    D --> E[\"Enable calibration for pictures or book images\"]\n```\n\n## Scope Check\n\n- [x] I have read SCOPE.md and ROADMAP.md.\n- [x] This PR is **not** a new built-in theme.\n- [x] This PR is **not** a new external network connector.\n- [x] This PR is **not** an interactive app, writing tool, RSS/news/browser, media playback, or PDF feature.\n- [x] The stock firmware does not already handle this well, **and** no other popular CrossPoint fork already does.\n- [x] This PR does not touch `freeink-sdk/`, `lib/hal/`, the bootloader, OTA, or recovery code.\n\n## Additional Context\n\n* This branch is independent of #4375 and #4376 on the current `develop`. They touch some of the same settings and viewer files, so integration will need reconciliation if those merge first.\n\n* On branch commit `e72706b7`, 912 host tests passed and `default` and `x4pro-gh_release` builds passed. Simulator: Back from both targets in all four orientations; a small BMP keeps its size with calibration Off and On.\n* The same feature runs on my X4 Pro build; this upstream port itself has not been flashed yet.\n\n---\n\n### AI Usage\n\nDid you use AI tools to help write this code? _**YES**_\n",
+  "headRefName": "pr/screen-calibration",
+  "headRefOid": "e72706b7544ddfdac7bd58bf23ed484b6a4f1524",
+  "mergeable": "MERGEABLE",
+  "number": 4377,
+  "state": "OPEN",
+  "statusCheckRollup": [
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:12:55Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600790",
+      "name": "clang-format",
+      "startedAt": "2026-11-07T20:12:19Z",
+      "status": "COMPLETED",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "2026-11-07T20:12:32Z",
+      "conclusion": "SUCCESS",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914487/job/128515600360",
+      "name": "Title Check",
+      "startedAt": "2026-11-07T20:12:20Z",
+      "status": "COMPLETED",
+      "workflowName": "PR Formatting"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600528",
+      "name": "cppcheck",
+      "startedAt": "2026-11-07T20:12:19Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600776",
+      "name": "Build default",
+      "startedAt": "2026-11-07T20:12:20Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600787",
+      "name": "Build sticky",
+      "startedAt": "2026-11-07T20:12:19Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600732",
+      "name": "Build x4pro",
+      "startedAt": "2026-11-07T20:12:19Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600693",
+      "name": "Build x4c",
+      "startedAt": "2026-11-07T20:12:20Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600737",
+      "name": "Build papermono",
+      "startedAt": "2026-11-07T20:12:20Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600711",
+      "name": "Build metalio_eink4",
+      "startedAt": "2026-11-07T20:12:20Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600835",
+      "name": "Build eego_a4",
+      "startedAt": "2026-11-07T20:12:20Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600759",
+      "name": "Build picco",
+      "startedAt": "2026-11-07T20:12:19Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/42409914853/job/128515600661",
+      "name": "unit-tests",
+      "startedAt": "2026-11-07T20:12:19Z",
+      "status": "IN_PROGRESS",
+      "workflowName": "CI (build)"
+    },
+    {
+      "__typename": "CheckRun",
+      "completedAt": "0001-01-01T00:00:00Z",
+      "conclusion": "",
+      "detailsUrl": "https://app.coderabbit.ai/change-stack/crosspoint-reader/crosspoint-reader/pull/4377",
+      "name": "CodeRabbit",
+      "startedAt": "2026-11-07T20:12:36Z",
+      "status": "IN_PROGRESS",
+      "workflowName": ""
+    }
+  ],
+  "title": "feat: calibrate picture and book image tones",
+  "url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4377"
+}

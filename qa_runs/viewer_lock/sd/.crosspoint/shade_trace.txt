@@ -1,0 +1,2 @@
+1: shade over gray: rect h=377 result=10 (0 driven)
+2: viewer onExit: imageOnGlass=1 sleep=0

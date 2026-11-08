@@ -1,0 +1,174 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-05 21:15
+[SIM] Frontlight: on, brightness=100%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[6] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[6] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[6] [DBG] [SDREG] Fonts directory not found: /fonts
+[6] [DBG] [SDREG] Discovery complete: 0 families
+[6] [DBG] [SDFS] SD font family not found on card: Literata (clearing)
+[8] [DBG] [SDFS] SD font system ready (0 families discovered)
+[8] [DBG] [MAIN] Fonts setup
+[8] [DBG] [ACT] Entering activity: Boot
+[8] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[19] [DBG] [ACT] Exiting activity: Boot
+[19] [DBG] [ACT] Entering activity: EpubReader
+[19] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[19] [DBG] [GFX] Time = 11 ms from clearScreen to displayBuffer
+[23] [DBG] [EBP] Loading ePub: /.crosspoint/calibration/books_card_v1.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.crosspoint/epub_17237363056044662373/book.bin (flags=0x0 errno=2 No such file or directory)
+[23] [DBG] [EBP] Cache not found, building spine/TOC cache
+[24] [DBG] [BMC] Entering write mode
+[24] [DBG] [BMC] Beginning content opf pass
+[24] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[24] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[24] [DBG] [COF] Using fast index for 3 manifest items
+[24] [DBG] [EBP] Successfully parsed content.opf
+[24] [DBG] [EBP] OPF pass completed in 0 ms
+[24] [DBG] [BMC] Beginning toc pass
+[24] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[24] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[24] [DBG] [NAV] Found nav toc element
+[24] [DBG] [NAV] Finished parsing nav toc
+[25] [DBG] [EBP] Parsed TOC nav items
+[25] [DBG] [EBP] TOC pass completed in 1 ms
+[25] [DBG] [BMC] Wrote 1 spine, 1 TOC entries
+[25] [DBG] [BMC] Successfully built book.bin
+[25] [DBG] [EBP] buildBookBin completed in 0 ms
+[25] [DBG] [EBP] Total indexing completed in 1 ms
+[25] [DBG] [EBP] No CSS files to parse, but CssParser created for inline styles
+[25] [DBG] [EBP] CSS files to parse: 0
+[25] [DBG] [CSS] Saved 0 rules to complete cache
+[25] [DBG] [EBP] Loaded 0 CSS style rules from 0 files (0 identical duplicates skipped, complete)
+[25] [DBG] [BMC] Loaded cache data: 1 spine, 1 TOC entries
+[25] [DBG] [EBP] Loaded ePub: /.crosspoint/calibration/books_card_v1.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.crosspoint/epub_17237363056044662373/progress.bin (flags=0x0 errno=2 No such file or directory)
+[25] [DBG] [EBP] Core Metadata: cover(0)=, textReference(0)=
+[25] [DBG] [ERS] Loading file: OEBPS/card.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.crosspoint/epub_17237363056044662373/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[25] [DBG] [ERS] Cache not found, building...
+[25] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[26] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_17237363056044662373/html/.tmp_0.html (274 bytes)
+[27] [DBG] [CSS] Loaded 0 rules from complete cache
+[27] [DBG] [EHP] Found image: src=card.png
+[28] [DBG] [EHP] Image dimensions: 480x800
+[28] [DBG] [EHP] Display size from CSS width: 455x759
+[28] [DBG] [EHP] Time to parse and build pages: 1 ms
+[28] [DBG] [SCT] Page 0 processed
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.crosspoint/epub_17237363056044662373/img_0_0_k90a458c5.pxc (flags=0x0 errno=2 No such file or directory)
+[29] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[30] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.crosspoint/epub_17237363056044662373/img_0_0_k90a458c5.pxc (flags=0x0 errno=2 No such file or directory)
+[30] [DBG] [IMG] Lazy-extracting OEBPS/card.png -> /.crosspoint/epub_17237363056044662373/img_0_0.png
+[31] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_17237363056044662373/img_0_0.png
+[31] [DBG] [IMG] Using PNG decoder
+[31] [DBG] [PNG] Decoding PNG: /.crosspoint/epub_17237363056044662373/img_0_0.png
+[35] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 455x759 (scale 0.95), type: 6, bpp: 8
+[35] [DBG] [IMG] Cache stream started: /.crosspoint/epub_17237363056044662373/img_0_0_k90a458c5.pxc (455x759, band 16 rows)
+[57] [DBG] [PNG] PNG decoding complete - render time: 22 ms
+[57] [DBG] [IMG] Cache written: /.crosspoint/epub_17237363056044662373/img_0_0_k90a458c5.pxc (455x759, 86530 bytes)
+[64] [DBG] [IMG] Decode successful
+[65] [DBG] [GFX] Time = 35 ms from clearScreen to displayBuffer
+[70] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[70] [DBG] [IMG] Loading from cache: /.crosspoint/epub_17237363056044662373/img_0_0_k90a458c5.pxc (455x759)
+[71] [DBG] [IMG] Cache render complete (payload now in RAM)
+[71] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[71] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[72] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[72] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[74] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[75] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[77] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[79] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[81] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[83] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[83] [DBG] [IMG] Rendering image at 12,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (455x759)
+[88] [DBG] [ERS] Page render (tiled): prewarm=0ms bw_render=37ms display=5ms gray_lsb=5ms gray_msb=9ms gray_display=4ms cleanup=0ms total=60ms
+[88] [DBG] [ERS] Rendered page in 60ms
+[89] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/card.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2050.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2060.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2070.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2080.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2090.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2100.bmp
+[2135] [DBG] [ACT] Exiting activity: EpubReader
+[2136] [INF] [MEM] reader exit: free=1048576 max_block=1048576
+[2136] [DBG] [ACT] Entering activity: SettingsList
+[2136] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2136] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2136] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2136] [DBG] [DREG] No /.dictionaries directory on SD card
+[2137] [DBG] [ACT] Pushed to activity stack, new size = 2
+[2137] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2137] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2137] [DBG] [DREG] No /.dictionaries directory on SD card
+[2140] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2110.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2120.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2130.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2140.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2150.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2160.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2170.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2180.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2190.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2200.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2210.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2220.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2230.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2240.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2250.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2260.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2270.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2280.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2290.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2300.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2310.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2320.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2330.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2340.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2350.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2360.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2370.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2380.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2390.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2400.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2410.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2420.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2430.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2440.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2450.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2460.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2470.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2480.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2490.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/transition-2500.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/calibration.bmp
+[3131] [DBG] [ACT] Exiting activity: Settings
+[3131] [DBG] [ACT] Popped from activity stack, new size = 1
+[3131] [DBG] [ACT] Handling result for popped activity
+[3135] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/display.bmp
+[4131] [DBG] [ACT] Exiting activity: Settings
+[4131] [DBG] [ACT] Popped from activity stack, new size = 0
+[4131] [DBG] [ACT] Handling result for popped activity
+[4133] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/settings.bmp
+[5134] [DBG] [ACT] Exiting activity: SettingsList
+[5134] [DBG] [UI] Using Lyra theme
+[5134] [DBG] [ACT] Entering activity: Home
+[5135] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5155] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/four-new-prs-2026-11-05/calibration-nav-final/navigation-books-2/shots/home.bmp

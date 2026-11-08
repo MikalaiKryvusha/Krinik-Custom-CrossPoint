@@ -1,0 +1,81 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_rot2/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_rot2/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_rot2/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 13:13
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[627] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_rot2/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[627] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_rot2/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[627] [DBG] [SDREG] Fonts directory not found: /fonts
+[627] [DBG] [SDREG] Discovery complete: 0 families
+[627] [DBG] [SDFS] SD font system ready (0 families discovered)
+[627] [DBG] [MAIN] Fonts setup
+[627] [DBG] [ACT] Entering activity: Boot
+[627] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[669] [DBG] [ACT] Exiting activity: Boot
+[669] [DBG] [ACT] Entering activity: Home
+[670] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[754] [DBG] [LOOP] New max loop duration: 72 ms (activity: 0 ms)
+[754] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2582] [DBG] [ACT] Exiting activity: Home
+[2582] [DBG] [ACT] Entering activity: FileBrowser
+[2586] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[4586] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[6090] [DBG] [ACT] Exiting activity: FileBrowser
+[6090] [DBG] [ACT] Entering activity: BmpViewer
+[6091] [DBG] [CRV] Panel curve loaded: be170a3a
+[6091] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[6137] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[6137] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6147] [DBG] [GFX] Cropping 800x480 by 0x0 pix, is bottom-up
+[6147] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6165] [DBG] [GFX] Cropping 800x480 by 0x0 pix, is bottom-up
+[6165] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6187] [DBG] [GFX] Cropping 800x480 by 0x0 pix, is bottom-up
+[6187] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6198] [DBG] [LOOP] New max loop duration: 108 ms (activity: 108 ms)
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_rot2/shots/1_open.bmp
+[10006] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10006] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10514] [DBG] [BMP] Input: long tap -> rotate
+[10514] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[10527] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[10527] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[10534] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[10534] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10539] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[10539] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10549] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[10549] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_rot2/shots/2_rotated.bmp
+[15254] [DBG] [BMP] Input: touch next
+[15254] [DBG] [BMP] Show 2/6: /sleep/oblivion_2.bmp
+[15280] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[15280] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[15291] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[15291] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[15299] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[15299] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[15314] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[15314] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_rot2/shots/3_next_kept_turn.bmp
+[20016] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20016] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[20260] [DBG] [BMP] Input: touch prev
+[20261] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[20261] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[20261] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[20277] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[20277] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[20289] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[20289] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[20307] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is bottom-up
+[20307] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_rot2/shots/4_prev.bmp

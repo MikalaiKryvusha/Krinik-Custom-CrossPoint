@@ -1,0 +1,49 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[1] [DBG] [CPS] Resaving settings to update format
+[1] [DBG] [CPS] Settings loaded from file
+[2] [DBG] [UI] Using Lyra theme
+[2] [INF] [CLK] RTC clock read: 2026-11-05 09:21
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[2] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[275] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[276] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[276] [DBG] [SDREG] Fonts directory not found: /fonts
+[276] [DBG] [SDREG] Discovery complete: 0 families
+[276] [DBG] [SDFS] SD font system ready (0 families discovered)
+[276] [DBG] [MAIN] Fonts setup
+[276] [DBG] [ACT] Entering activity: Boot
+[276] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[301] [DBG] [ACT] Exiting activity: Boot
+[301] [DBG] [ACT] Entering activity: Home
+[304] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[315] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2082] [DBG] [ACT] Exiting activity: Home
+[2082] [DBG] [ACT] Entering activity: SettingsList
+[2083] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[3087] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3087] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[3088] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[3088] [DBG] [DREG] No /.dictionaries directory on SD card
+[3090] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[5309] [DBG] [LIST] Settings swipe delta=10 count=15
+[5315] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[7311] [DBG] [LIST] Settings swipe delta=10 count=15
+[7316] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[9092] [DBG] [ACT] Pushed to activity stack, new size = 2
+[9092] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[9092] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/cal_menu/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[9092] [DBG] [DREG] No /.dictionaries directory on SD card
+[9095] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[10005] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10005] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/cal_menu/shots/sub.bmp

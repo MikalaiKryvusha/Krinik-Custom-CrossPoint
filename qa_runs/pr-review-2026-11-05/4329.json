@@ -1,0 +1,167 @@
+{
+  "data": {
+    "repository": {
+      "pullRequest": {
+        "number": 4329,
+        "title": "fix(home): recent-book cover stays positive after a theme switch",
+        "url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4329",
+        "state": "OPEN",
+        "isDraft": false,
+        "mergedAt": null,
+        "mergeable": "MERGEABLE",
+        "mergeStateStatus": "BLOCKED",
+        "reviewDecision": "REVIEW_REQUIRED",
+        "headRefName": "pr/home-cover-theme-switch",
+        "headRefOid": "3328142edab5d2e2673cdec3a6f60fb9f1ab9f37",
+        "baseRefName": "develop",
+        "author": {
+          "login": "MikalaiKryvusha"
+        },
+        "comments": {
+          "nodes": [
+            {
+              "author": {
+                "login": "coderabbitai"
+              },
+              "body": "<!-- coderabbit-ai-generated:v1 -->\n\n<!-- This is an auto-generated comment: summarize by coderabbit.ai -->\n<!-- review_stack_entry_start -->\n\n<a href=\"https://app.coderabbit.ai/change-stack/crosspoint-reader/crosspoint-reader/pull/4329?scope=ghh_OusAJGA4HG8ljoOV0wJvVx8NmnZIjc2DdjmxOu0xZWA&amp;cs_source=review_comment\"><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-stack-buttons-v1/explain-change-dark.svg\"><source media=\"(prefers-color-scheme: light)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-stack-buttons-v1/explain-change.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-stack-buttons-v1/explain-change.svg\" alt=\"Explain Change →\" height=\"32\"></picture></a>\n\n<!-- review_stack_entry_end -->\n<!-- recent_review_status_start -->\n\nNo actionable comments were generated in the recent review.\n\n<!-- recent_review_status_end -->\n<!-- walkthrough_start -->\n\n<details>\n<summary><strong>Walkthrough</strong></summary>\n<dl>\n<dd>\n\nHomeActivity now records the display inversion state with each stored cover snapshot. Before restoring a snapshot, it discards the snapshot and marks the cover for redraw if the current inversion state differs from the recorded state.\n\n**Changes: Cover snapshot inversion tracking**\n\n|Layer / File(s)|Summary|\n|:---|:---|\n|**Record and validate snapshot inversion state** <br> `src/activities/home/HomeActivity.h`, `src/activities/home/HomeActivity.cpp`|HomeActivity records the inversion state when storing a cover snapshot. Before restoring it, HomeActivity discards the snapshot and marks the cover as not rendered if the current inversion state differs.|\n\n<!-- change_assessment_start -->\n**Estimated code review effort:** 2 (Simple) | ~10 minutes\n\n<!-- change_assessment_commit:\"3328142edab5d2e2673cdec3a6f60fb9f1ab9f37\" -->\n<!-- change_assessment_priority:{\"version\":1,\"urgency\":\"p3\",\"manual\":false} -->\n**Change:** Bug fix\n<!-- change_assessment_end -->\n\n**Suggested reviewers:** `uri-tauber`\n\n</dd>\n</dl>\n</details>\n\n<!-- walkthrough_end -->\n<details>\n<summary><strong>Merge Risk:</strong> <strong><picture><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/risk-unassessed-16.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Minimal</strong> · up to <code>33281</code></summary>\n<dl>\n<dd>\n\n<!-- final_review_risk_start -->\n<!-- final_review_risk_label\n**Merge Risk:** **⚪ Minimal** · up to `33281`\n-->\n<!-- final_review_risk_coverage:{\"sourceCommitId\":\"3328142edab5d2e2673cdec3a6f60fb9f1ab9f37\",\"coveredCommitId\":\"3328142edab5d2e2673cdec3a6f60fb9f1ab9f37\",\"kind\":\"reviewed\"} -->\n\nThe change prevents reuse of a cover snapshot captured with a different display polarity. No actionable merge-blocking risk is identified; merge after normal checks pass.\n<!-- final_review_risk_end -->\n\n</dd>\n</dl>\n</details>\n<!-- pre_merge_checks_walkthrough_start -->\n\n<details>\n<summary><strong>Pre-merge checks: <sup><picture><img src=\"https://storage.googleapis.com/coderabbit_public_assets/pre-merge-checks-counter-passed-14-v2.svg\" width=\"14\" height=\"14\" align=\"middle\" alt=\"Passed\" title=\"Passed\"></picture></sup> 4</strong></summary>\n<dl>\n<dd>\n\n|         Check name         |                                             Status                                             | Explanation                                                                                                                                                                                               |\n| :------------------------ | :--------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n|         Title check        | ![Passed](https://storage.googleapis.com/coderabbit_public_assets/pre-merge-checks-passed.svg) | The title names the main change: the recent-book cover on Home stays positive after a theme switch. The raw summary shows the change records the cover snapshot's inversion state and redraws the cover … |\n|      Description check     | ![Passed](https://storage.googleapis.com/coderabbit_public_assets/pre-merge-checks-passed.svg) | The description states the goal (the recent-book cover stays positive after switching between light and dark themes) and explains the mechanism: the framebuffer snapshot records its output polarity, a… |\n|     Linked Issues check    | ![Passed](https://storage.googleapis.com/coderabbit_public_assets/pre-merge-checks-passed.svg) | Check skipped because no linked issues were found for this pull request.                                                                                                                                  |\n| Out of Scope Changes check | ![Passed](https://storage.googleapis.com/coderabbit_public_assets/pre-merge-checks-passed.svg) | Check skipped because no linked issues were found for this pull request.                                                                                                                                  |\n\n<details>\n<summary><strong>Full details: Title check</strong></summary>\n<dl>\n<dd>\n\n**Explanation**\n\nThe title names the main change: the recent-book cover on Home stays positive after a theme switch. The raw summary shows the change records the cover snapshot's inversion state and redraws the cover on mismatch, which fits the title's fix. The title is specific and concise, and it uses the conventional fix(home) prefix.\n\n</dd>\n</dl>\n</details>\n\n<details>\n<summary><strong>Full details: Description check</strong></summary>\n<dl>\n<dd>\n\n**Explanation**\n\nThe description states the goal (the recent-book cover stays positive after switching between light and dark themes) and explains the mechanism: the framebuffer snapshot records its output polarity, and a mismatch drops it so the cover is redrawn. This matches the HomeActivity.cpp and HomeActivity.h changes in the raw summary. It also includes a screenshot, verification notes, and an AI-usage disclosure.\n\n</dd>\n</dl>\n</details>\n\n</dd>\n</dl>\n</details>\n\n<!-- pre_merge_checks_walkthrough_end -->\n<!-- autopilot:start -->\n- [ ] <!-- {\"checkboxId\":\"2708ad07-9f24-4260-9c11-7dc76a49f2e3\"} --> <strong title=\"Keep fixing CodeRabbit findings and required CI, and resolving merge conflicts\">Autofix</strong> · Keep fixing CodeRabbit findings and required CI, and resolving merge conflicts\n<!-- autopilot:end -->\n<!-- tips_start -->\n\n\n\nThanks for using [CodeRabbit](https://coderabbit.ai?utm_source=oss&utm_medium=github&utm_campaign=crosspoint-reader/crosspoint-reader&utm_content=4329)! It's free for OSS, and your support helps us grow. If you like it, consider giving us a shout-out.\n\n<details>\n<summary><strong>Share</strong></summary>\n<dl>\n<dd>\n\n- [X](https://twitter.com/intent/tweet?text=I%20just%20used%20%40coderabbitai%20for%20my%20code%20review%2C%20and%20it%27s%20fantastic%21%20It%27s%20free%20for%20OSS%20and%20offers%20a%20free%20trial%20for%20the%20proprietary%20code.%20Check%20it%20out%3A&url=https%3A//coderabbit.ai)\n- [Mastodon](https://mastodon.social/share?text=I%20just%20used%20%40coderabbitai%20for%20my%20code%20review%2C%20and%20it%27s%20fantastic%21%20It%27s%20free%20for%20OSS%20and%20offers%20a%20free%20trial%20for%20the%20proprietary%20code.%20Check%20it%20out%3A%20https%3A%2F%2Fcoderabbit.ai)\n- [Reddit](https://www.reddit.com/submit?title=Great%20tool%20for%20code%20review%20-%20CodeRabbit&text=I%20just%20used%20CodeRabbit%20for%20my%20code%20review%2C%20and%20it%27s%20fantastic%21%20It%27s%20free%20for%20OSS%20and%20offers%20a%20free%20trial%20for%20proprietary%20code.%20Check%20it%20out%3A%20https%3A//coderabbit.ai)\n- [LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcoderabbit.ai&mini=true&title=Great%20tool%20for%20code%20review%20-%20CodeRabbit&summary=I%20just%20used%20CodeRabbit%20for%20my%20code%20review%2C%20and%20it%27s%20fantastic%21%20It%27s%20free%20for%20OSS%20and%20offers%20a%20free%20trial%20for%20proprietary%20code)\n\n</dd>\n</dl>\n</details>\n\n<!-- tips_end -->\n<!-- recent_review_start -->\n\n<h6>\n<details>\n<summary><strong><picture><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/info.svg\" width=\"12\" height=\"12\" align=\"absmiddle\" alt=\"\"></picture> Recent review info</strong></summary>\n<dl>\n<dd>\n\n<!-- review_info_content -->\n<details>\n<summary><strong><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/cog-dark.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/cog.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Run configuration</strong></summary>\n<dl>\n<dd>\n\n- **Source mode**: Auto\n- **Repository**: Unavailable\n- **Branch**: Unavailable\n- **File**: No configuration file from this repository applied\n- **Commit**: Unavailable\n- **Layers**: Organization UI\n- **Review profile**: CHILL\n- **Plan**: Advanced\n- **Run ID**: `bc363398-8247-45c3-abc8-f4fe6c2f4b7f`\n\n</dd>\n</dl>\n</details>\n\n<details>\n<summary><strong><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/git-commit-horizontal-dark.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/git-commit-horizontal.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Commits</strong></summary>\n<dl>\n<dd>\n\nReviewing files that changed from the base of the PR and between 8503b7fb4db191bd9366f51026a0553685bd51de and 3328142edab5d2e2673cdec3a6f60fb9f1ab9f37.\n\n</dd>\n</dl>\n</details>\n\n<details>\n<summary><strong><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/file-plus-corner-dark.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/file-plus-corner.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Files selected for processing: 2</strong></summary>\n<dl>\n<dd>\n\n* `src/activities/home/HomeActivity.cpp`\n* `src/activities/home/HomeActivity.h`\n\n</dd>\n</dl>\n</details>\n\n**Included review availability:** This review used your included allowance. Your plan provides up to 8 included reviews per hour; 6 remain after this review.\n\n</dd>\n</dl>\n</details>\n\n\n<!-- review_details_start -->\n\n<details>\n<summary><strong><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/review-details-dark.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/review-details.svg\" width=\"12\" height=\"12\" align=\"absmiddle\" alt=\"\"></picture> Recent review details</strong></summary>\n<dl>\n<dd>\n\n<details>\n<summary><strong><picture><source media=\"(prefers-color-scheme: dark)\" srcset=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/clock-alert-dark.svg\"><img src=\"https://storage.googleapis.com/coderabbit_public_assets/review-comment-icons-v1/clock-alert.svg\" width=\"16\" height=\"16\" align=\"absmiddle\" alt=\"\"></picture> Context from checks skipped due to timeout: 11</strong></summary>\n<dl>\n<dd>\n\n* GitHub Check: CodeRabbit\n* GitHub Check: Build default\n* GitHub Check: Build eego_a4\n* GitHub Check: Build x4pro\n* GitHub Check: Build picco\n* GitHub Check: Build sticky\n* GitHub Check: Build metalio_eink4\n* GitHub Check: Build papermono\n* GitHub Check: Build x4c\n* GitHub Check: cppcheck\n* GitHub Check: unit-tests\n\n</dd>\n</dl>\n</details>\n\n</dd>\n</dl>\n</details>\n\n<!-- review_details_end -->\n</h6>\n\n<!-- recent_review_end -->",
+              "url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4329#issuecomment-6642417152",
+              "createdAt": "2026-11-04T21:21:02Z"
+            },
+            {
+              "author": {
+                "login": "github-actions"
+              },
+              "body": "<!-- pr-firmware-artifacts -->\n### Firmware builds\n\nAutomatically generated for the latest commit of this PR (`3328142`).\n\n- [X3 / X4 (`firmware.bin`)](https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/artifacts/13364094394)\n- [Sticky (`firmware-sticky.bin`)](https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/artifacts/13364334945)\n- [X4 Pro (`firmware-x4pro.bin`)](https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/artifacts/13364673230)\n- [X4 Classic (`firmware-x4c.bin`)](https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/artifacts/13364736864)\n- [Paper Mono (`firmware-papermono.bin`)](https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/artifacts/13363434642)\n- [MetalIO EInk4 (`firmware-metalio_eink4.bin`)](https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/artifacts/13365725300)\n- [EEGO A4 (`firmware-eego_a4.bin`)](https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/artifacts/13364567382)\n- [BOOX Picco (`firmware-picco.bin`)](https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/artifacts/13365196595)\n\nDownload the file for your device, extract the `.bin` from the ZIP, then flash it with [CrossPoint Reader Flash Tools](https://crosspointreader.com/#flash-tools). **Make sure you use the correct firmware file for your device.**",
+              "url": "https://github.com/crosspoint-reader/crosspoint-reader/pull/4329#issuecomment-6642694576",
+              "createdAt": "2026-11-04T21:34:43Z"
+            }
+          ]
+        },
+        "reviews": {
+          "nodes": []
+        },
+        "reviewThreads": {
+          "pageInfo": {
+            "hasNextPage": false,
+            "endCursor": null
+          },
+          "nodes": []
+        },
+        "commits": {
+          "nodes": [
+            {
+              "commit": {
+                "oid": "3328142edab5d2e2673cdec3a6f60fb9f1ab9f37",
+                "statusCheckRollup": {
+                  "state": "SUCCESS",
+                  "contexts": {
+                    "nodes": [
+                      {
+                        "__typename": "CheckRun",
+                        "name": "clang-format",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872965473"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Title Check",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915221769/job/126872965505"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "cppcheck",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872965606"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Build default",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872966299"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Build sticky",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872966116"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Build x4pro",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872966219"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Build x4c",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872965639"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Build papermono",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872965967"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Build metalio_eink4",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872966012"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Build eego_a4",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872966245"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Build picco",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872966154"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "unit-tests",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126872965036"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "Test Status",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://github.com/crosspoint-reader/crosspoint-reader/actions/runs/41915222309/job/126880257528"
+                      },
+                      {
+                        "__typename": "CheckRun",
+                        "name": "CodeRabbit",
+                        "status": "COMPLETED",
+                        "conclusion": "SUCCESS",
+                        "detailsUrl": "https://app.coderabbit.ai/change-stack/crosspoint-reader/crosspoint-reader/pull/4329?scope=ghh_OusAJGA4HG8ljoOV0wJvVx8NmnZIjc2DdjmxOu0xZWA"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

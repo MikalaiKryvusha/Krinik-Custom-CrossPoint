@@ -1,0 +1,1062 @@
+diff --git a/lib/I18n/translations/arabic.yaml b/lib/I18n/translations/arabic.yaml
+index e30680f7..ca4ef58b 100644
+--- a/lib/I18n/translations/arabic.yaml
++++ b/lib/I18n/translations/arabic.yaml
+@@ -453,3 +453,6 @@ STR_FIRMWARE_WRITE_FAILED: "فشلت كتابة البرنامج الثابت"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "لا تطفئ الجهاز!"
+ STR_RECOVERY_MODE: "وضع الاستعادة"
+ STR_RECOVERY_MODE_HINT: "ضع الملف firmware.bin في المجلد الرئيسي لبطاقة SD ثم اختره"
++
++STR_FLASHLIGHT: "مصباح يدوي"
++STR_FLASHLIGHT_EXIT: "خروج"
+diff --git a/lib/I18n/translations/azerbaijani.yaml b/lib/I18n/translations/azerbaijani.yaml
+index ede95b10..3059119f 100644
+--- a/lib/I18n/translations/azerbaijani.yaml
++++ b/lib/I18n/translations/azerbaijani.yaml
+@@ -648,3 +648,6 @@ STR_BT_HOLD: "basıb saxla"
+ STR_BT_MAPPING_CLEARED: "Düymə təyinatı silindi"
+ STR_DELETE_ITEM_CONFIRM: "Silinsin?"
+ STR_SET_SLEEP_COVER_CONFIRM: "Yuxu örtüyü təyin edilsin?"
++
++STR_FLASHLIGHT: "Fənər"
++STR_FLASHLIGHT_EXIT: "Çıxış"
+diff --git a/lib/I18n/translations/belarusian.yaml b/lib/I18n/translations/belarusian.yaml
+index 3dcde1f9..7efbd4eb 100644
+--- a/lib/I18n/translations/belarusian.yaml
++++ b/lib/I18n/translations/belarusian.yaml
+@@ -443,3 +443,6 @@ STR_RECOVERY_MODE: "Рэжым аднаўлення"
+ STR_RECOVERY_MODE_HINT: "Змясціце firmware.bin у корань SD-карты і абярыце яго"
+ STR_ADD_HIDDEN_NETWORK: "Дадаць схаваную сетку..."
+ STR_ENTER_WIFI_SSID: "Увядзіце назву сеткі (SSID)"
++
++STR_FLASHLIGHT: "Ліхтарык"
++STR_FLASHLIGHT_EXIT: "Выхад"
+diff --git a/lib/I18n/translations/bosnian.yaml b/lib/I18n/translations/bosnian.yaml
+index e2fbba0a..a2f0c247 100644
+--- a/lib/I18n/translations/bosnian.yaml
++++ b/lib/I18n/translations/bosnian.yaml
+@@ -442,3 +442,6 @@ STR_FIRMWARE_WRITE_FAILED: "Upisivanje firmvera nije uspjelo"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "Ne isključuj napajanje!"
+ STR_RECOVERY_MODE: "Način oporavka"
+ STR_RECOVERY_MODE_HINT: "Stavi firmware.bin u korijenski direktorij SD kartice i odaberi ga"
++
++STR_FLASHLIGHT: "Svjetiljka"
++STR_FLASHLIGHT_EXIT: "Izlaz"
+diff --git a/lib/I18n/translations/bulgarian.yaml b/lib/I18n/translations/bulgarian.yaml
+index 8f084d19..054ee178 100644
+--- a/lib/I18n/translations/bulgarian.yaml
++++ b/lib/I18n/translations/bulgarian.yaml
+@@ -426,3 +426,6 @@ STR_FIRMWARE_WRITE_FAILED: "Неуспешен запис на фърмуера"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "Не изключвай захранването!"
+ STR_RECOVERY_MODE: "Режим за възстановяване"
+ STR_RECOVERY_MODE_HINT: "Постави firmware.bin в основната директория на SD картата и го избери"
++
++STR_FLASHLIGHT: "Фенерче"
++STR_FLASHLIGHT_EXIT: "Изход"
+diff --git a/lib/I18n/translations/catalan.yaml b/lib/I18n/translations/catalan.yaml
+index 7640f1df..fda7f29b 100644
+--- a/lib/I18n/translations/catalan.yaml
++++ b/lib/I18n/translations/catalan.yaml
+@@ -660,3 +660,6 @@ STR_KOREADER_CUSTOM_HEADER_1_NAME: "Nom de la capçalera personalitzada 1 del KO
+ STR_KOREADER_CUSTOM_HEADER_1_VALUE: "Valor de la capçalera personalitzada 1 del KOReader"
+ STR_KOREADER_CUSTOM_HEADER_2_NAME: "Nom de la capçalera personalitzada 2 del KOReader"
+ STR_KOREADER_CUSTOM_HEADER_2_VALUE: "Valor de la capçalera personalitzada 2 del KOReader"
++
++STR_FLASHLIGHT: "Llanterna"
++STR_FLASHLIGHT_EXIT: "Surt"
+diff --git a/lib/I18n/translations/czech.yaml b/lib/I18n/translations/czech.yaml
+index eaa76795..e9de6fe2 100644
+--- a/lib/I18n/translations/czech.yaml
++++ b/lib/I18n/translations/czech.yaml
+@@ -445,3 +445,6 @@ STR_UPDATE_AVAILABLE: "Aktualizace"
+ STR_USERNAME_TAKEN: "Uživatelské jméno je již zaregistrováno"
+ STR_VALIDATING_FIRMWARE: "Ověřování firmwaru..."
+ STR_XTC_STATUS_BAR: "Stavový řádek XTC"
++
++STR_FLASHLIGHT: "Svítilna"
++STR_FLASHLIGHT_EXIT: "Konec"
+diff --git a/lib/I18n/translations/danish.yaml b/lib/I18n/translations/danish.yaml
+index 38e77c01..b503d0af 100644
+--- a/lib/I18n/translations/danish.yaml
++++ b/lib/I18n/translations/danish.yaml
+@@ -332,3 +332,6 @@ STR_AUTO_TURN_PAGES_PER_MIN: "Automatisk vending (sider per minut)"
+ STR_TILT_PAGE_TURN: "Vip for at vende side"
+ STR_ADD_HIDDEN_NETWORK: "Tilføj skjult netværk..."
+ STR_ENTER_WIFI_SSID: "Indtast netværksnavn (SSID)"
++
++STR_FLASHLIGHT: "Lommelygte"
++STR_FLASHLIGHT_EXIT: "Afslut"
+diff --git a/lib/I18n/translations/dutch.yaml b/lib/I18n/translations/dutch.yaml
+index aebc92a6..f16a1ccc 100644
+--- a/lib/I18n/translations/dutch.yaml
++++ b/lib/I18n/translations/dutch.yaml
+@@ -332,3 +332,6 @@ STR_AUTO_TURN_PAGES_PER_MIN: "Autom. omslaan (pagina's per minuut)"
+ STR_TILT_PAGE_TURN: "Kantel om te bladeren"
+ STR_ADD_HIDDEN_NETWORK: "Verborgen netwerk toevoegen..."
+ STR_ENTER_WIFI_SSID: "Voer netwerknaam in (SSID)"
++
++STR_FLASHLIGHT: "Zaklamp"
++STR_FLASHLIGHT_EXIT: "Sluit"
+diff --git a/lib/I18n/translations/english.yaml b/lib/I18n/translations/english.yaml
+index fddd238c..2d8d913b 100644
+--- a/lib/I18n/translations/english.yaml
++++ b/lib/I18n/translations/english.yaml
+@@ -665,3 +665,6 @@ STR_BT_HOLD: "hold"
+ STR_BT_MAPPING_CLEARED: "Mapping cleared"
+ STR_DELETE_ITEM_CONFIRM: "Delete?"
+ STR_SET_SLEEP_COVER_CONFIRM: "Set Sleep Cover?"
++
++STR_FLASHLIGHT: "Flashlight"
++STR_FLASHLIGHT_EXIT: "Exit"
+diff --git a/lib/I18n/translations/finnish.yaml b/lib/I18n/translations/finnish.yaml
+index 0f10c190..d9f45d49 100644
+--- a/lib/I18n/translations/finnish.yaml
++++ b/lib/I18n/translations/finnish.yaml
+@@ -304,3 +304,6 @@ STR_ADD_HIDDEN_NETWORK: "Lisää piilotettu verkko..."
+ STR_ENTER_WIFI_SSID: "Anna verkon nimi (SSID)"
+ STR_FOOTNOTES: "Linkit ja alaviitteet"
+ STR_PWR_BTN_FOOTNOTE_BACK: "Pikapaluu linkeistä"
++
++STR_FLASHLIGHT: "Taskulamppu"
++STR_FLASHLIGHT_EXIT: "Poistu"
+diff --git a/lib/I18n/translations/french.yaml b/lib/I18n/translations/french.yaml
+index 0071aa1a..9daae198 100644
+--- a/lib/I18n/translations/french.yaml
++++ b/lib/I18n/translations/french.yaml
+@@ -503,3 +503,6 @@ STR_HOME_BUTTON_TAP: "Appui simple"
+ STR_HOME_BUTTON_DOUBLE_TAP: "Double appui"
+ STR_HOME_BUTTON_LONG_PRESS: "Appui long"
+ STR_TOGGLE_FRONTLIGHT: "Basculer l'éclairage"
++
++STR_FLASHLIGHT: "Lampe torche"
++STR_FLASHLIGHT_EXIT: "Quitter"
+diff --git a/lib/I18n/translations/german.yaml b/lib/I18n/translations/german.yaml
+index 8c73ee7f..80cadfcd 100644
+--- a/lib/I18n/translations/german.yaml
++++ b/lib/I18n/translations/german.yaml
+@@ -638,3 +638,6 @@ STR_BT_CONNECTED_TO: "Verbunden mit %s"
+ STR_BT_LOW_MEMORY: "Bluetooth: zu wenig Speicher"
+ STR_BT_HOLD: "halten"
+ STR_BT_MAPPING_CLEARED: "Belegung gelöscht"
++
++STR_FLASHLIGHT: "Taschenlampe"
++STR_FLASHLIGHT_EXIT: "Verlassen"
+diff --git a/lib/I18n/translations/hebrew.yaml b/lib/I18n/translations/hebrew.yaml
+index afae1f04..6123b283 100644
+--- a/lib/I18n/translations/hebrew.yaml
++++ b/lib/I18n/translations/hebrew.yaml
+@@ -670,3 +670,6 @@ STR_BT_CONNECTED_TO: "מחובר ל-%s"
+ STR_BT_LOW_MEMORY: "Bluetooth: אין מספיק זיכרון"
+ STR_BT_HOLD: "ארוכה"
+ STR_BT_MAPPING_CLEARED: "המיפוי נמחק"
++
++STR_FLASHLIGHT: "פנס"
++STR_FLASHLIGHT_EXIT: "יציאה"
+diff --git a/lib/I18n/translations/hungarian.yaml b/lib/I18n/translations/hungarian.yaml
+index 92d45d4f..1e632751 100644
+--- a/lib/I18n/translations/hungarian.yaml
++++ b/lib/I18n/translations/hungarian.yaml
+@@ -443,3 +443,6 @@ STR_FIRMWARE_WRITE_FAILED: "A firmware írása sikertelen"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "Ne kapcsold ki!"
+ STR_RECOVERY_MODE: "Helyreállítási mód"
+ STR_RECOVERY_MODE_HINT: "Helyezd a firmware.bin fájlt az SD-kártya gyökerébe, majd válaszd ki"
++
++STR_FLASHLIGHT: "Zseblámpa"
++STR_FLASHLIGHT_EXIT: "Kilépés"
+diff --git a/lib/I18n/translations/indonesia.yaml b/lib/I18n/translations/indonesia.yaml
+index 713033ad..98596059 100644
+--- a/lib/I18n/translations/indonesia.yaml
++++ b/lib/I18n/translations/indonesia.yaml
+@@ -443,3 +443,6 @@ STR_FIRMWARE_WRITE_FAILED: "Penulisan firmware gagal"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "Jangan matikan daya!"
+ STR_RECOVERY_MODE: "Mode Pemulihan"
+ STR_RECOVERY_MODE_HINT: "Tempatkan firmware.bin di akar kartu SD lalu pilih"
++
++STR_FLASHLIGHT: "Senter"
++STR_FLASHLIGHT_EXIT: "Keluar"
+diff --git a/lib/I18n/translations/italian.yaml b/lib/I18n/translations/italian.yaml
+index b775b809..2f4ff30b 100644
+--- a/lib/I18n/translations/italian.yaml
++++ b/lib/I18n/translations/italian.yaml
+@@ -660,3 +660,6 @@ STR_WIFI_NETWORKS: "Reti Wi-Fi"
+ STR_WORD_SPACING: "Spaziatura parole"
+ STR_XTC_STATUS_BAR: "Barra di stato XTC"
+ STR_YES: "Sì"
++
++STR_FLASHLIGHT: "Torcia"
++STR_FLASHLIGHT_EXIT: "Esci"
+diff --git a/lib/I18n/translations/kazakh.yaml b/lib/I18n/translations/kazakh.yaml
+index 5ad1f662..03ac4e66 100644
+--- a/lib/I18n/translations/kazakh.yaml
++++ b/lib/I18n/translations/kazakh.yaml
+@@ -445,3 +445,6 @@ STR_FIRMWARE_WRITE_FAILED: "Микробағдарламаны жазу сәтс
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "Қуатты өшірмеңіз!"
+ STR_RECOVERY_MODE: "Қалпына келтіру режимі"
+ STR_RECOVERY_MODE_HINT: "firmware.bin файлын SD картаның түбірлік қалтасына салып, оны таңдаңыз"
++
++STR_FLASHLIGHT: "Қолшам"
++STR_FLASHLIGHT_EXIT: "Шығу"
+diff --git a/lib/I18n/translations/lithuanian.yaml b/lib/I18n/translations/lithuanian.yaml
+index ea16b0a3..adc629b5 100644
+--- a/lib/I18n/translations/lithuanian.yaml
++++ b/lib/I18n/translations/lithuanian.yaml
+@@ -443,3 +443,6 @@ STR_FIRMWARE_WRITE_FAILED: "Įrašymo klaida"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "NEIŠJUNKITE ĮRENGINIO!"
+ STR_RECOVERY_MODE: "Atkūrimo režimas"
+ STR_RECOVERY_MODE_HINT: "Įkelkite firmware.bin į SD kortelės šaknį ir pasirinkite"
++
++STR_FLASHLIGHT: "Žibintuvėlis"
++STR_FLASHLIGHT_EXIT: "Išeiti"
+diff --git a/lib/I18n/translations/norwegian.yaml b/lib/I18n/translations/norwegian.yaml
+index 5cc142f7..0ddb0dd7 100644
+--- a/lib/I18n/translations/norwegian.yaml
++++ b/lib/I18n/translations/norwegian.yaml
+@@ -445,3 +445,6 @@ STR_FIRMWARE_WRITE_FAILED: "Skriving av fastvare mislyktes"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "Ikke slå av!"
+ STR_RECOVERY_MODE: "Gjenopprettingsmodus"
+ STR_RECOVERY_MODE_HINT: "Legg firmware.bin i roten av SD-kortet og velg den"
++
++STR_FLASHLIGHT: "Lommelykt"
++STR_FLASHLIGHT_EXIT: "Avslutt"
+diff --git a/lib/I18n/translations/orangutan.yaml b/lib/I18n/translations/orangutan.yaml
+index f15e471c..93a11c65 100644
+--- a/lib/I18n/translations/orangutan.yaml
++++ b/lib/I18n/translations/orangutan.yaml
+@@ -339,3 +339,6 @@ STR_TILT_PAGE_TURN: "Oook OOK"
+ STR_SD_FIRMWARE_UPDATE: "SD Oooook Ooook Ooooook"
+ STR_STEP_HINT_FRONT: "Ooook Ooooook:"
+ STR_STEP_HINT_SIDE: "OOK Oook:"
++
++STR_FLASHLIGHT: "Flashlight"
++STR_FLASHLIGHT_EXIT: "OOk"
+diff --git a/lib/I18n/translations/persian.yaml b/lib/I18n/translations/persian.yaml
+index 79447688..dc1d469b 100644
+--- a/lib/I18n/translations/persian.yaml
++++ b/lib/I18n/translations/persian.yaml
+@@ -456,3 +456,6 @@ STR_FIRMWARE_WRITE_FAILED: "خطا در نصب Firmware"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "دستگاه را خاموش نکنید!"
+ STR_RECOVERY_MODE: "حالت بازیابی"
+ STR_RECOVERY_MODE_HINT: "فایل firmware.bin را در پوشه‌ی اصلی کارت حافظه قرار دهید و انتخابش کنید"
++
++STR_FLASHLIGHT: "چراغ‌قوه"
++STR_FLASHLIGHT_EXIT: "خروج"
+diff --git a/lib/I18n/translations/polish.yaml b/lib/I18n/translations/polish.yaml
+index 413f1d03..b46e6980 100644
+--- a/lib/I18n/translations/polish.yaml
++++ b/lib/I18n/translations/polish.yaml
+@@ -556,3 +556,6 @@ STR_SPACING_125_PERCENT: "125%"
+ STR_SPACING_150_PERCENT: "150%"
+ STR_SPACING_175_PERCENT: "175%"
+ STR_SPACING_200_PERCENT: "200%"
++
++STR_FLASHLIGHT: "Latarka"
++STR_FLASHLIGHT_EXIT: "Wyjdź"
+diff --git a/lib/I18n/translations/portuguese-BR.yaml b/lib/I18n/translations/portuguese-BR.yaml
+index 0c4bd985..aa5b7660 100644
+--- a/lib/I18n/translations/portuguese-BR.yaml
++++ b/lib/I18n/translations/portuguese-BR.yaml
+@@ -527,3 +527,6 @@ STR_SPACING_125_PERCENT: "125%"
+ STR_SPACING_150_PERCENT: "150%"
+ STR_SPACING_175_PERCENT: "175%"
+ STR_SPACING_200_PERCENT: "200%"
++
++STR_FLASHLIGHT: "Lanterna"
++STR_FLASHLIGHT_EXIT: "Sair"
+diff --git a/lib/I18n/translations/portuguese-PT.yaml b/lib/I18n/translations/portuguese-PT.yaml
+index 805c9997..89fe779f 100644
+--- a/lib/I18n/translations/portuguese-PT.yaml
++++ b/lib/I18n/translations/portuguese-PT.yaml
+@@ -527,3 +527,6 @@ STR_SPACING_125_PERCENT: "125%"
+ STR_SPACING_150_PERCENT: "150%"
+ STR_SPACING_175_PERCENT: "175%"
+ STR_SPACING_200_PERCENT: "200%"
++
++STR_FLASHLIGHT: "Lanterna"
++STR_FLASHLIGHT_EXIT: "Sair"
+diff --git a/lib/I18n/translations/romanian.yaml b/lib/I18n/translations/romanian.yaml
+index 62fc34c9..70b47829 100644
+--- a/lib/I18n/translations/romanian.yaml
++++ b/lib/I18n/translations/romanian.yaml
+@@ -332,3 +332,6 @@ STR_AUTO_TURN_PAGES_PER_MIN: "Pagini pe minut"
+ STR_TILT_PAGE_TURN: "Întoarcere pagină prin înclinare"
+ STR_ADD_HIDDEN_NETWORK: "Adaugă rețea ascunsă..."
+ STR_ENTER_WIFI_SSID: "Introduceți numele rețelei (SSID)"
++
++STR_FLASHLIGHT: "Lanternă"
++STR_FLASHLIGHT_EXIT: "Ieşire"
+diff --git a/lib/I18n/translations/russian.yaml b/lib/I18n/translations/russian.yaml
+index ba103853..16b1a2cc 100644
+--- a/lib/I18n/translations/russian.yaml
++++ b/lib/I18n/translations/russian.yaml
+@@ -638,3 +638,6 @@ STR_BT_CONNECTED_TO: "Подключено: %s"
+ STR_BT_LOW_MEMORY: "Bluetooth: недостаточно памяти"
+ STR_BT_HOLD: "удерж."
+ STR_BT_MAPPING_CLEARED: "Назначение сброшено"
++
++STR_FLASHLIGHT: "Фонарик"
++STR_FLASHLIGHT_EXIT: "Выход"
+diff --git a/lib/I18n/translations/slovak.yaml b/lib/I18n/translations/slovak.yaml
+index 3cde7a9e..1e154b26 100644
+--- a/lib/I18n/translations/slovak.yaml
++++ b/lib/I18n/translations/slovak.yaml
+@@ -443,3 +443,6 @@ STR_FIRMWARE_WRITE_FAILED: "Zápis firmvéru zlyhal"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "Nevypínajte zariadenie!"
+ STR_RECOVERY_MODE: "Režim obnovenia"
+ STR_RECOVERY_MODE_HINT: "Umiestnite firmware.bin do koreňového adresára SD karty a vyberte ho"
++
++STR_FLASHLIGHT: "Baterka"
++STR_FLASHLIGHT_EXIT: "Koniec"
+diff --git a/lib/I18n/translations/slovenian.yaml b/lib/I18n/translations/slovenian.yaml
+index e166062e..8f1c6da3 100644
+--- a/lib/I18n/translations/slovenian.yaml
++++ b/lib/I18n/translations/slovenian.yaml
+@@ -443,3 +443,6 @@ STR_FIRMWARE_WRITE_FAILED: "Zapisovanje vdelane programske opreme ni uspelo"
+ STR_FIRMWARE_UPDATE_DO_NOT_POWER_OFF: "Ne izklapljaj naprave!"
+ STR_RECOVERY_MODE: "Obnovitveni način"
+ STR_RECOVERY_MODE_HINT: "Postavi firmware.bin v koren kartice SD in ga izberi"
++
++STR_FLASHLIGHT: "Svetilka"
++STR_FLASHLIGHT_EXIT: "Izhod"
+diff --git a/lib/I18n/translations/spanish.yaml b/lib/I18n/translations/spanish.yaml
+index 215e8fec..0d3e3716 100644
+--- a/lib/I18n/translations/spanish.yaml
++++ b/lib/I18n/translations/spanish.yaml
+@@ -660,3 +660,6 @@ STR_KOREADER_CUSTOM_HEADER_1_NAME: "Nombre de la cabecera personalizada 1 de KOR
+ STR_KOREADER_CUSTOM_HEADER_1_VALUE: "Valor de la cabecera personalizada 1 de KOReader"
+ STR_KOREADER_CUSTOM_HEADER_2_NAME: "Nombre de la cabecera personalizada 2 de KOReader"
+ STR_KOREADER_CUSTOM_HEADER_2_VALUE: "Valor de la cabecera personalizada 2 de KOReader"
++
++STR_FLASHLIGHT: "Linterna"
++STR_FLASHLIGHT_EXIT: "Salir"
+diff --git a/lib/I18n/translations/swedish.yaml b/lib/I18n/translations/swedish.yaml
+index 6214df96..efdef9a4 100644
+--- a/lib/I18n/translations/swedish.yaml
++++ b/lib/I18n/translations/swedish.yaml
+@@ -647,3 +647,6 @@ STR_BT_HOLD: "håll ned"
+ STR_BT_MAPPING_CLEARED: "Konfiguration borttagen"
+ STR_DELETE_ITEM_CONFIRM: "Ta bort?"
+ STR_SET_SLEEP_COVER_CONFIRM: "Aktivera viloläge via fodral?"
++
++STR_FLASHLIGHT: "Ficklampa"
++STR_FLASHLIGHT_EXIT: "Avsluta"
+diff --git a/lib/I18n/translations/turkish.yaml b/lib/I18n/translations/turkish.yaml
+index 86b24997..189ab031 100644
+--- a/lib/I18n/translations/turkish.yaml
++++ b/lib/I18n/translations/turkish.yaml
+@@ -446,3 +446,6 @@ STR_UPDATE_ALL: "Tümünü Güncelle"
+ STR_UPDATE_AVAILABLE: "Güncelle"
+ STR_VALIDATING_FIRMWARE: "Firmware doğrulanıyor..."
+ STR_XTC_STATUS_BAR: "XTC Durum Çubuğu"
++
++STR_FLASHLIGHT: "El feneri"
++STR_FLASHLIGHT_EXIT: "Çıkış"
+diff --git a/lib/I18n/translations/ukrainian.yaml b/lib/I18n/translations/ukrainian.yaml
+index a30ba295..f7048898 100644
+--- a/lib/I18n/translations/ukrainian.yaml
++++ b/lib/I18n/translations/ukrainian.yaml
+@@ -445,3 +445,6 @@ STR_RECOVERY_MODE: "Режим відновлення"
+ STR_RECOVERY_MODE_HINT: "Помістіть firmware.bin у корінь SD-карти та виберіть його"
+ STR_ADD_HIDDEN_NETWORK: "Додати приховану мережу..."
+ STR_ENTER_WIFI_SSID: "Введіть назву мережі (SSID)"
++
++STR_FLASHLIGHT: "Ліхтарик"
++STR_FLASHLIGHT_EXIT: "Вихід"
+diff --git a/lib/I18n/translations/valencian.yaml b/lib/I18n/translations/valencian.yaml
+index 65db2fde..a88df139 100644
+--- a/lib/I18n/translations/valencian.yaml
++++ b/lib/I18n/translations/valencian.yaml
+@@ -660,3 +660,6 @@ STR_KOREADER_CUSTOM_HEADER_1_NAME: "Nom de la capçalera personalitzada 1 del KO
+ STR_KOREADER_CUSTOM_HEADER_1_VALUE: "Valor de la capçalera personalitzada 1 del KOReader"
+ STR_KOREADER_CUSTOM_HEADER_2_NAME: "Nom de la capçalera personalitzada 2 del KOReader"
+ STR_KOREADER_CUSTOM_HEADER_2_VALUE: "Valor de la capçalera personalitzada 2 del KOReader"
++
++STR_FLASHLIGHT: "Llanterna"
++STR_FLASHLIGHT_EXIT: "Ix"
+diff --git a/lib/I18n/translations/vietnamese.yaml b/lib/I18n/translations/vietnamese.yaml
+index b566ee63..89f752f4 100644
+--- a/lib/I18n/translations/vietnamese.yaml
++++ b/lib/I18n/translations/vietnamese.yaml
+@@ -664,3 +664,6 @@ STR_BT_HOLD: "giữ"
+ STR_BT_MAPPING_CLEARED: "Đã xóa ánh xạ nút"
+ STR_DELETE_ITEM_CONFIRM: "Xóa?"
+ STR_SET_SLEEP_COVER_CONFIRM: "Đặt làm ảnh màn hình ngủ?"
++
++STR_FLASHLIGHT: "Đèn pin"
++STR_FLASHLIGHT_EXIT: "Thoát"
+diff --git a/lib/hal/HalFrontlight.cpp b/lib/hal/HalFrontlight.cpp
+index 03bca1c5..ffbb5292 100644
+--- a/lib/hal/HalFrontlight.cpp
++++ b/lib/hal/HalFrontlight.cpp
+@@ -35,3 +35,9 @@ void HalFrontlight::setOn(const bool on) {
+   lit = on;
+   manager.setBrightness(lit ? lastBrightness : 0);
+ }
++
++void HalFrontlight::setOutputLevel(const uint8_t level) {
++  if (manager.present()) manager.setBrightnessLevel(level);
++}
++
++void HalFrontlight::restoreOutput() { manager.setBrightness(lit ? lastBrightness : 0); }
+diff --git a/lib/hal/HalFrontlight.h b/lib/hal/HalFrontlight.h
+index 424c34e7..3ca46a3f 100644
+--- a/lib/hal/HalFrontlight.h
++++ b/lib/hal/HalFrontlight.h
+@@ -16,6 +16,9 @@ class HalFrontlight {
+   void setBrightness(uint8_t percent);
+   void setWarmth(uint8_t warmPercent);
+   void setOn(bool on);
++  // Temporary perceptual output (0..255), without changing the saved brightness/on state.
++  void setOutputLevel(uint8_t level);
++  void restoreOutput();
+ 
+   uint8_t brightness() const { return lastBrightness; }
+   uint8_t warmth() const { return manager.colorTemperature(); }
+diff --git a/src/activities/ActivityManager.cpp b/src/activities/ActivityManager.cpp
+index 240f5034..8ccc6ee8 100644
+--- a/src/activities/ActivityManager.cpp
++++ b/src/activities/ActivityManager.cpp
+@@ -5,6 +5,7 @@
+ #include <FontCacheManager.h>
+ #include <FsHelpers.h>
+ #include <HalDisplay.h>
++#include <HalFrontlight.h>
+ #include <HalPowerManager.h>
+ #include <Memory.h>
+ #include <VectorFontSupport.h>
+@@ -31,6 +32,7 @@
+ #include "settings/OpdsServerListActivity.h"
+ #include "settings/SettingsListActivity.h"
+ #include "util/BmpViewerActivity.h"
++#include "util/FlashlightActivity.h"
+ #include "util/FrontlightPanelActivity.h"
+ #include "util/FullScreenMessageActivity.h"
+ 
+@@ -293,6 +295,10 @@ void ActivityManager::goToUsbDrive() {
+ #endif
+ }
+ 
++void ActivityManager::goToFlashlight() {
++  if (Frontlight.present()) replaceActivity(std::make_unique<FlashlightActivity>(renderer, mappedInput));
++}
++
+ void ActivityManager::goToSettings(const SettingsSection openSection) {
+   replaceActivity(std::make_unique<SettingsListActivity>(renderer, mappedInput, openSection));
+ }
+@@ -371,6 +377,8 @@ void ActivityManager::goHome(HomeMenuItem initialMenuItem, bool cleanInitialRefr
+       initialMenuItem = HomeMenuItem::FILE_TRANSFER;
+     } else if (activityName == "Settings" || activityName == "SettingsList") {
+       initialMenuItem = HomeMenuItem::SETTINGS_MENU;
++    } else if (activityName == "Flashlight") {
++      initialMenuItem = HomeMenuItem::FLASHLIGHT;
+     }
+   }
+   replaceActivity(std::make_unique<HomeActivity>(renderer, mappedInput, initialMenuItem, cleanInitialRefresh));
+diff --git a/src/activities/ActivityManager.h b/src/activities/ActivityManager.h
+index e91cf261..8ea32c18 100644
+--- a/src/activities/ActivityManager.h
++++ b/src/activities/ActivityManager.h
+@@ -18,7 +18,7 @@
+ class Activity;    // forward declaration
+ class RenderLock;  // forward declaration
+ 
+-enum class HomeMenuItem { NONE, FILE_BROWSER, LIBRARY, OPDS_BROWSER, FILE_TRANSFER, SETTINGS_MENU };
++enum class HomeMenuItem { NONE, FILE_BROWSER, LIBRARY, OPDS_BROWSER, FILE_TRANSFER, SETTINGS_MENU, FLASHLIGHT };
+ 
+ /**
+  * ActivityManager
+@@ -88,6 +88,7 @@ class ActivityManager {
+   void goToJoinNetwork();  // File Transfer straight into Join Network (post heap-defrag reboot)
+   void goToUsbDrive();
+   // openSection jumps straight into one group (End = the section list).
++  void goToFlashlight();
+   void goToSettings(SettingsSection openSection = SettingsSection::End);
+   void goToFileBrowser(std::string path = {});
+   void goToLibrary();
+diff --git a/src/activities/home/HomeActivity.cpp b/src/activities/home/HomeActivity.cpp
+index dd2386c0..367c6d65 100644
+--- a/src/activities/home/HomeActivity.cpp
++++ b/src/activities/home/HomeActivity.cpp
+@@ -5,6 +5,7 @@
+ #include <FsHelpers.h>
+ #include <GfxRenderer.h>
+ #include <HalDisplay.h>
++#include <HalFrontlight.h>
+ #include <HalStorage.h>
+ #include <I18n.h>
+ #include <LibraryBuilder.h>
+@@ -27,7 +28,7 @@
+ #include "fontIds.h"
+ 
+ int HomeActivity::getMenuItemCount() const {
+-  int count = 4;  // File Browser, Library, File transfer, Settings
++  int count = 4 + (Frontlight.present() ? 1 : 0);  // Base actions and an optional flashlight
+   if (!recentBooks.empty()) {
+     count += recentBooks.size();
+   }
+@@ -246,11 +247,13 @@ void HomeActivity::onEnter() {
+   if (coverGridUi) {
+     fillCoverGridFromLibrary();
+     resolveGridCoverPaths();
+-    coverGridUi->begin(recentBooks, hasLibrarySlot(), hasContinueReading);
++    coverGridUi->begin(recentBooks, hasLibrarySlot(), hasContinueReading, Frontlight.present());
+   }
+ 
+   const auto base = static_cast<int>(recentBooks.size());
+-  selectorIndex = initialMenuItem == HomeMenuItem::NONE ? 0 : base + menuItemToIndex(initialMenuItem, hasLibrarySlot());
++  selectorIndex = initialMenuItem == HomeMenuItem::NONE
++                      ? 0
++                      : base + menuItemToIndex(initialMenuItem, hasLibrarySlot(), Frontlight.present());
+ 
+   // Trigger first update
+   requestUpdate();
+@@ -311,7 +314,7 @@ void HomeActivity::loop() {
+       return;
+     }
+     const int menuIndex = selectorIndex - static_cast<int>(recentBooks.size());
+-    switch (indexToMenuItem(menuIndex, hasLibrarySlot())) {
++    switch (indexToMenuItem(menuIndex, hasLibrarySlot(), Frontlight.present())) {
+       case HomeMenuItem::FILE_BROWSER:
+         onFileBrowserOpen();
+         break;
+@@ -327,6 +330,9 @@ void HomeActivity::loop() {
+       case HomeMenuItem::SETTINGS_MENU:
+         onSettingsOpen();
+         break;
++      case HomeMenuItem::FLASHLIGHT:
++        activityManager.goToFlashlight();
++        break;
+       default:
+         break;
+     }
+@@ -524,9 +530,18 @@ void HomeActivity::render(RenderLock&&) {
+                           std::bind(&HomeActivity::storeCoverBuffer, this));
+ 
+   // Build menu items dynamically
+-  std::vector<const char*> menuItems = {tr(STR_BROWSE_FILES), tr(STR_LIBRARY), tr(STR_FILE_TRANSFER),
+-                                        tr(STR_SETTINGS_TITLE)};
+-  std::vector<UIIcon> menuIcons = {Folder, Library, Transfer, Settings};
++  std::vector<const char*> menuItems;
++  std::vector<UIIcon> menuIcons;
++  menuItems.reserve(6);  // Four base actions, optional library service and flashlight.
++  menuIcons.reserve(6);
++  for (const auto label : {STR_BROWSE_FILES, STR_LIBRARY, STR_FILE_TRANSFER, STR_SETTINGS_TITLE}) {
++    menuItems.push_back(tr(label));
++  }
++  for (const auto icon : {Folder, Library, Transfer, Settings}) menuIcons.push_back(icon);
++  if (Frontlight.present()) {
++    menuItems.push_back(tr(STR_FLASHLIGHT));
++    menuIcons.push_back(Flashlight);
++  }
+ 
+   if (hasLibrarySlot()) {
+     menuItems.insert(menuItems.begin() + 2, hasPlugins ? tr(STR_PLUGINS) : tr(STR_OPDS_BROWSER));
+diff --git a/src/activities/home/HomeActivity.h b/src/activities/home/HomeActivity.h
+index 181c8291..45967982 100644
+--- a/src/activities/home/HomeActivity.h
++++ b/src/activities/home/HomeActivity.h
+@@ -39,7 +39,7 @@ class HomeActivity final : public Activity {
+   const bool cleanInitialRefresh;
+ 
+   // Convert HomeMenuItem to menu index (used in onEnter)
+-  static int menuItemToIndex(HomeMenuItem item, bool hasOpdsUrl) {
++  static int menuItemToIndex(HomeMenuItem item, bool hasOpdsUrl, bool hasFlashlight) {
+     int i = 0;
+     if (item == HomeMenuItem::FILE_BROWSER) return i;
+     ++i;
+@@ -50,17 +50,20 @@ class HomeActivity final : public Activity {
+     if (item == HomeMenuItem::FILE_TRANSFER) return i;
+     ++i;
+     if (item == HomeMenuItem::SETTINGS_MENU) return i;
++    ++i;
++    if (hasFlashlight && item == HomeMenuItem::FLASHLIGHT) return i;
+     return 0;
+   }
+ 
+   // Convert menu index to HomeMenuItem (used in loop)
+-  static HomeMenuItem indexToMenuItem(int idx, bool hasOpdsUrl) {
++  static HomeMenuItem indexToMenuItem(int idx, bool hasOpdsUrl, bool hasFlashlight) {
+     int i = 0;
+     if (idx == i++) return HomeMenuItem::FILE_BROWSER;
+     if (idx == i++) return HomeMenuItem::LIBRARY;
+     if (hasOpdsUrl && idx == i++) return HomeMenuItem::OPDS_BROWSER;
+     if (idx == i++) return HomeMenuItem::FILE_TRANSFER;
+-    if (idx == i) return HomeMenuItem::SETTINGS_MENU;
++    if (idx == i++) return HomeMenuItem::SETTINGS_MENU;
++    if (hasFlashlight && idx == i) return HomeMenuItem::FLASHLIGHT;
+     return HomeMenuItem::NONE;
+   }
+   void onRecentBookSelected(const std::string& path);
+diff --git a/src/activities/util/FlashlightActivity.cpp b/src/activities/util/FlashlightActivity.cpp
+new file mode 100644
+index 00000000..1d667b97
+--- /dev/null
++++ b/src/activities/util/FlashlightActivity.cpp
+@@ -0,0 +1,44 @@
++#include "FlashlightActivity.h"
++
++#include <GfxRenderer.h>
++#include <HalFrontlight.h>
++
++#include "CrossPointSettings.h"
++#include "MappedInputManager.h"
++#include "activities/ActivityManager.h"
++#include "components/UITheme.h"
++
++void FlashlightActivity::onEnter() {
++  Activity::onEnter();
++#ifndef SIMULATOR
++  Frontlight.setOutputLevel(255);
++#endif
++  requestUpdate();
++}
++
++void FlashlightActivity::onExit() {
++#ifndef SIMULATOR
++  Frontlight.restoreOutput();
++#endif
++  Activity::onExit();
++}
++
++void FlashlightActivity::render(RenderLock&&) {
++  // Keep the page white in either UI polarity; the header supplies the shared Back target.
++  const auto& metrics = UITheme::getInstance().getMetrics();
++  renderer.clearScreen(0xFF);
++  GUI.drawHeader(renderer, Rect{0, metrics.topPadding, renderer.getScreenWidth(), metrics.headerHeight},
++                 tr(STR_FLASHLIGHT_EXIT));
++  // The render task applies night-mode polarity globally.
++  if (SETTINGS.screenInverted) renderer.invertScreen();
++  renderer.displayBuffer(HalDisplay::HALF_REFRESH);
++}
++
++void FlashlightActivity::loop() {
++  int x = 0;
++  int y = 0;
++  if (mappedInput.wasScreenTapped(x, y) || mappedInput.wasReleased(MappedInputManager::Button::Back) ||
++      mappedInput.wasReleased(MappedInputManager::Button::Confirm)) {
++    activityManager.goHome(HomeMenuItem::FLASHLIGHT);
++  }
++}
+diff --git a/src/activities/util/FlashlightActivity.h b/src/activities/util/FlashlightActivity.h
+new file mode 100644
+index 00000000..59fdeac9
+--- /dev/null
++++ b/src/activities/util/FlashlightActivity.h
+@@ -0,0 +1,14 @@
++#pragma once
++
++#include "activities/Activity.h"
++
++// Temporary white screen and full frontlight output. Exit restores the saved light state.
++class FlashlightActivity final : public Activity {
++ public:
++  explicit FlashlightActivity(GfxRenderer& renderer, MappedInputManager& mappedInput)
++      : Activity("Flashlight", renderer, mappedInput) {}
++  void onEnter() override;
++  void onExit() override;
++  void loop() override;
++  void render(RenderLock&& lock) override;
++};
+diff --git a/src/components/CoverGridHomeUi.cpp b/src/components/CoverGridHomeUi.cpp
+index 355ad43f..20ab0f1f 100644
+--- a/src/components/CoverGridHomeUi.cpp
++++ b/src/components/CoverGridHomeUi.cpp
+@@ -12,6 +12,7 @@
+ #include "UITheme.h"
+ #include "icons/blocks.h"
+ #include "icons/book.h"
++#include "icons/flashlight.h"
+ #include "icons/folder.h"
+ #include "icons/library.h"
+ #include "icons/settings2.h"
+@@ -30,10 +31,11 @@ constexpr int COVER_ROW_EXTRA_HEIGHT = 8;
+ CoverGridHomeUi::CoverGridHomeUi(GfxRenderer& renderer)
+     : UiAppHost(renderer), coverCache(renderer), renderer(renderer) {}
+ 
+-void CoverGridHomeUi::begin(const std::vector<RecentBook>& recent, bool opds, bool continuing) {
++void CoverGridHomeUi::begin(const std::vector<RecentBook>& recent, bool opds, bool continuing, bool flashlight) {
+   books = &recent;
+   hasOpds = opds;
+   hasContinueReading = continuing;
++  hasFlashlight = flashlight;
+   if (!recent.empty()) coverCache.begin();
+   resetUi();
+   app.on(SELECT, &CoverGridHomeUi::onAction, this);
+@@ -283,9 +285,11 @@ void CoverGridHomeUi::drawGrid(UiScreen& screen) {
+ }
+ 
+ void CoverGridHomeUi::drawTabs(UiScreen& screen, fui::Rect rect) {
+-  static constexpr const uint8_t* ICONS[] = {FolderIcon, LibraryIcon, BlocksIcon, TransferIcon, Settings2Icon};
++  static constexpr const uint8_t* ICONS[] = {FolderIcon,   LibraryIcon,   BlocksIcon,
++                                             TransferIcon, Settings2Icon, FlashlightIcon};
+   int count = 0;
+-  for (int i = 0; i < 5; ++i) {
++  for (int i = 0; i < 6; ++i) {
++    if (i == 5 && !hasFlashlight) continue;
+     if (i == 2 && !hasOpds) continue;
+     auto& tab = tabItems[count];
+     tab.value = books->size() + count;
+diff --git a/src/components/CoverGridHomeUi.h b/src/components/CoverGridHomeUi.h
+index 181e0acb..da9a93c5 100644
+--- a/src/components/CoverGridHomeUi.h
++++ b/src/components/CoverGridHomeUi.h
+@@ -19,7 +19,7 @@ class CoverGridHomeUi final : public UiAppHost {
+   static constexpr int MAX_BOOKS = 1 + GRID_COLUMNS * GRID_ROWS;
+   static_assert(MAX_BOOKS <= HomeCoverCache::MAX_COVERS);
+   explicit CoverGridHomeUi(GfxRenderer& renderer);
+-  void begin(const std::vector<RecentBook>& books, bool hasOpds, bool hasContinueReading);
++  void begin(const std::vector<RecentBook>& books, bool hasOpds, bool hasContinueReading, bool hasFlashlight);
+   void refreshCoverPaths();
+   void setSelection(int selection) { selected = selection; }
+   int selectedAction(const MappedInputManager& input);
+@@ -54,11 +54,12 @@ class CoverGridHomeUi final : public UiAppHost {
+   int progress = -1;
+   bool hasOpds = false;
+   bool hasContinueReading = false;
++  bool hasFlashlight = false;
+   char progressText[12]{};
+   // Component styles and interaction tables stay off the render task's stack.
+   freeink::ui::BookCardProps card;
+   freeink::ui::CoverGridProps grid;
+   freeink::ui::Rect gridBounds{};
+   freeink::ui::TabBarProps tabs;
+-  std::array<freeink::ui::TabItem, 5> tabItems;
++  std::array<freeink::ui::TabItem, 6> tabItems;
+ };
+diff --git a/src/components/icons/flashlight.h b/src/components/icons/flashlight.h
+new file mode 100644
+index 00000000..65dc57e8
+--- /dev/null
++++ b/src/components/icons/flashlight.h
+@@ -0,0 +1,13 @@
++#pragma once
++#include <cstdint>
++
++// size: 32x32 — flashlight (stored rotated 90° CCW: drawn rotated into the portrait UI) outline
++static const uint8_t FlashlightIcon[] = {
++    0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFE, 0x3F, 0xFF,
++    0xFF, 0xDE, 0x1F, 0xFF, 0xFF, 0xCE, 0x4F, 0xFF, 0xFF, 0xE6, 0x67, 0xFF, 0xFF, 0xF6, 0x73, 0xFF, 0xFF, 0xFE, 0x78,
++    0xFF, 0xFF, 0xFE, 0x7C, 0x00, 0x03, 0xFE, 0x7C, 0x00, 0x03, 0xFE, 0x7C, 0x00, 0x03, 0xFE, 0x7C, 0xFF, 0xF3, 0xFE,
++    0x7C, 0xC3, 0xF3, 0x86, 0x7C, 0xC3, 0xF3, 0x86, 0x7C, 0xC3, 0xF3, 0xFE, 0x7C, 0xC3, 0xF3, 0xFE, 0x7C, 0xFF, 0xF3,
++    0xFE, 0x7C, 0x00, 0x03, 0xFE, 0x7C, 0x00, 0x03, 0xFE, 0x7C, 0x00, 0x03, 0xFE, 0x78, 0xFF, 0xFF, 0xF6, 0x73, 0xFF,
++    0xFF, 0xE6, 0x67, 0xFF, 0xFF, 0xCE, 0x4F, 0xFF, 0xFF, 0xDE, 0x1F, 0xFF, 0xFF, 0xFE, 0x3F, 0xFF, 0xFF, 0xFF, 0xFF,
++    0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
++};
+diff --git a/src/components/themes/BaseTheme.h b/src/components/themes/BaseTheme.h
+index 15d060b5..9f86db35 100644
+--- a/src/components/themes/BaseTheme.h
++++ b/src/components/themes/BaseTheme.h
+@@ -147,7 +147,8 @@ enum UIIcon {
+   Hotspot,
+   Bookmark,
+   Usb,
+-  Blocks
++  Blocks,
++  Flashlight
+ };
+ 
+ // Default theme implementation (Classic Theme)
+diff --git a/src/components/themes/lyra/LyraTheme.cpp b/src/components/themes/lyra/LyraTheme.cpp
+index 3db995c6..cd5a043f 100644
+--- a/src/components/themes/lyra/LyraTheme.cpp
++++ b/src/components/themes/lyra/LyraTheme.cpp
+@@ -17,6 +17,7 @@
+ #include "components/icons/book.h"
+ #include "components/icons/bookmark.h"
+ #include "components/icons/cover.h"
++#include "components/icons/flashlight.h"
+ #include "components/icons/folder.h"
+ #include "components/icons/hotspot.h"
+ #include "components/icons/library.h"
+@@ -60,6 +61,8 @@ const uint8_t* iconForName(UIIcon icon) {
+       return BookmarkIcon;
+     case UIIcon::Blocks:
+       return BlocksIcon;
++    case UIIcon::Flashlight:
++      return FlashlightIcon;
+     default:
+       return nullptr;
+   }
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index 744ca153..a2f69d88 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -109,6 +109,8 @@ add_subdirectory(ble_remote_turn_gate)
+ 
+ add_subdirectory(${REPO_ROOT}/lib/BlePageTurner/test BlePageTurnerTests)
+ 
++add_test(NAME flashlight COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_flashlight.py)
++
+ add_test(NAME selection_buttons COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_selection_buttons.py)
+ add_test(NAME button_remap_release COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_button_remap_release.py)
+ add_test(NAME list_viewport COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_list_viewport.py)
+@@ -116,3 +118,4 @@ add_test(NAME clipping_highlight_planes COMMAND ${Python3_EXECUTABLE} ${CMAKE_CU
+ add_test(NAME clipping_selection_text COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_clipping_selection_text.py)
+ 
+ add_test(NAME recursive_dictionary COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_recursive_dictionary.py)
++add_test(NAME flashlight_menu COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_flashlight_menu.py)
+diff --git a/test/flashlight/FlashlightTest.cpp b/test/flashlight/FlashlightTest.cpp
+new file mode 100644
+index 00000000..ac1dec51
+--- /dev/null
++++ b/test/flashlight/FlashlightTest.cpp
+@@ -0,0 +1,53 @@
++#include <CrossPointSettings.h>
++#include <HalFrontlight.h>
++#include <activities/ActivityManager.h>
++#include <components/UITheme.h>
++
++#include <cassert>
++#include <cstdio>
++#include <initializer_list>
++
++#include "activities/util/FlashlightActivity.h"
++
++int main() {
++  GfxRenderer renderer;
++  MappedInputManager input;
++  auto& light = Frontlight;
++  for (bool on : {false, true})
++    for (unsigned brightness : {0u, 1u, 5u, 50u, 100u})
++      for (unsigned warmth : {0u, 50u, 100u}) {
++        light.begin(brightness, warmth, on);
++        FlashlightActivity activity(renderer, input);
++        activity.onEnter();
++        assert(physicalOutput == 100 && rawLevel == 255);
++        assert(light.brightness() == brightness && light.isOn() == on && light.warmth() == warmth);
++        for (bool dark : {false, true})
++          for (int width : {480, 800}) {
++            SETTINGS.screenInverted = dark;
++            panelInverted = dark;
++            panelWidth = width;
++            activity.render(RenderLock{});
++            assert(shownValue == 255 && lastHeader.width == width && lastLabel == "Exit");
++          }
++        const auto count = activityManager.homes;
++        activity.loop();
++        assert(activityManager.homes == count);
++        input.tapped = true;
++        activity.loop();
++        input.tapped = false;
++        assert(activityManager.homes == count + 1 && activityManager.selected == HomeMenuItem::FLASHLIGHT);
++        input.back = true;
++        activity.loop();
++        input.back = false;
++        input.confirm = true;
++        activity.loop();
++        input.confirm = false;
++        assert(activityManager.homes == count + 3);
++        activity.onExit();
++        assert(physicalOutput == (on ? static_cast<int>(brightness) : 0));
++        assert(light.brightness() == brightness && light.isOn() == on && light.warmth() == warmth);
++      }
++  std::puts(
++      "Flashlight real activity+HAL: temporary output, saved state, dark/light display, oriented width and exit inputs "
++      "passed");
++}
+diff --git a/test/flashlight/stubs/CrossPointSettings.h b/test/flashlight/stubs/CrossPointSettings.h
+new file mode 100644
+index 00000000..3ad985c7
+--- /dev/null
++++ b/test/flashlight/stubs/CrossPointSettings.h
+@@ -0,0 +1,5 @@
++#pragma once
++struct Settings {
++  bool screenInverted = false;
++};
++inline Settings SETTINGS;
+diff --git a/test/flashlight/stubs/FrontlightManager.h b/test/flashlight/stubs/FrontlightManager.h
+new file mode 100644
+index 00000000..90e94de1
+--- /dev/null
++++ b/test/flashlight/stubs/FrontlightManager.h
+@@ -0,0 +1,19 @@
++#pragma once
++#include <cstdint>
++inline int physicalOutput = 0, rawLevel = 0, physicalWarmth = 50;
++class FrontlightManager {
++ public:
++  void begin() {}
++  bool present() const { return true; }
++  bool hasColorTemperature() const { return true; }
++  void setBrightness(uint8_t p) {
++    physicalOutput = p;
++    rawLevel = -1;
++  }
++  void setBrightnessLevel(uint8_t p) {
++    rawLevel = p;
++    physicalOutput = p ? 100 : 0;
++  }
++  void setColorTemperature(uint8_t p) { physicalWarmth = p; }
++  uint8_t colorTemperature() const { return physicalWarmth; }
++};
+diff --git a/test/flashlight/stubs/GfxRenderer.h b/test/flashlight/stubs/GfxRenderer.h
+new file mode 100644
+index 00000000..b6b569a0
+--- /dev/null
++++ b/test/flashlight/stubs/GfxRenderer.h
+@@ -0,0 +1,15 @@
++#pragma once
++#include <cstdint>
++inline int panelWidth = 480, clearValue = 0, shownValue = 0;
++inline bool panelInverted = false;
++class RenderLock {};
++class GfxRenderer {
++ public:
++  void clearScreen(uint8_t p) { clearValue = p; }
++  void invertScreen() { clearValue ^= 255; }
++  int getScreenWidth() const { return panelWidth; }
++  void displayBuffer(int) { shownValue = clearValue ^ (panelInverted ? 255 : 0); }
++};
++struct HalDisplay {
++  static constexpr int HALF_REFRESH = 1;
++};
+diff --git a/test/flashlight/stubs/Logging.h b/test/flashlight/stubs/Logging.h
+new file mode 100644
+index 00000000..fd317950
+--- /dev/null
++++ b/test/flashlight/stubs/Logging.h
+@@ -0,0 +1,2 @@
++#pragma once
++#define LOG_INF(...) ((void)0)
+diff --git a/test/flashlight/stubs/MappedInputManager.h b/test/flashlight/stubs/MappedInputManager.h
+new file mode 100644
+index 00000000..0df0afac
+--- /dev/null
++++ b/test/flashlight/stubs/MappedInputManager.h
+@@ -0,0 +1,8 @@
++#pragma once
++class MappedInputManager {
++ public:
++  enum class Button { Back, Confirm };
++  bool tapped = false, back = false, confirm = false;
++  bool wasScreenTapped(int&, int&) const { return tapped; }
++  bool wasReleased(Button b) const { return b == Button::Back ? back : confirm; }
++};
+diff --git a/test/flashlight/stubs/activities/Activity.h b/test/flashlight/stubs/activities/Activity.h
+new file mode 100644
+index 00000000..6d30530a
+--- /dev/null
++++ b/test/flashlight/stubs/activities/Activity.h
+@@ -0,0 +1,17 @@
++#pragma once
++#include <GfxRenderer.h>
++#include <MappedInputManager.h>
++class Activity {
++ public:
++  Activity(const char*, GfxRenderer& r, MappedInputManager& i) : renderer(r), mappedInput(i) {}
++  virtual ~Activity() = default;
++  virtual void onEnter() {}
++  virtual void onExit() {}
++  virtual void loop() {}
++  virtual void render(RenderLock&&) {}
++  void requestUpdate() {}
++
++ protected:
++  GfxRenderer& renderer;
++  MappedInputManager& mappedInput;
++};
+diff --git a/test/flashlight/stubs/activities/ActivityManager.h b/test/flashlight/stubs/activities/ActivityManager.h
+new file mode 100644
+index 00000000..5076a498
+--- /dev/null
++++ b/test/flashlight/stubs/activities/ActivityManager.h
+@@ -0,0 +1,11 @@
++#pragma once
++enum class HomeMenuItem { NONE, FLASHLIGHT };
++struct ActivityManager {
++  unsigned homes = 0;
++  HomeMenuItem selected = HomeMenuItem::NONE;
++  void goHome(HomeMenuItem m) {
++    ++homes;
++    selected = m;
++  }
++};
++inline ActivityManager activityManager;
+diff --git a/test/flashlight/stubs/components/UITheme.h b/test/flashlight/stubs/components/UITheme.h
+new file mode 100644
+index 00000000..48e860c2
+--- /dev/null
++++ b/test/flashlight/stubs/components/UITheme.h
+@@ -0,0 +1,31 @@
++#pragma once
++#include <GfxRenderer.h>
++
++#include <string>
++struct Rect {
++  int x, y, width, height;
++};
++struct Metrics {
++  int topPadding = 5, headerHeight = 84;
++};
++struct UITheme {
++  static UITheme& getInstance() {
++    static UITheme t;
++    return t;
++  }
++  const Metrics& getMetrics() const {
++    static Metrics m;
++    return m;
++  }
++};
++inline Rect lastHeader{};
++inline std::string lastLabel;
++struct Gui {
++  void drawHeader(GfxRenderer&, Rect r, const char* label) {
++    lastHeader = r;
++    lastLabel = label;
++  }
++};
++inline Gui GUI;
++constexpr int STR_FLASHLIGHT_EXIT = 0;
++inline const char* tr(int) { return "Exit"; }
+diff --git a/test/test_flashlight.py b/test/test_flashlight.py
+new file mode 100644
+index 00000000..82f4fded
+--- /dev/null
++++ b/test/test_flashlight.py
+@@ -0,0 +1,11 @@
++#!/usr/bin/env python3
++"""Exercise production flashlight activity/HAL with host peripheral and UI adapters."""
++from pathlib import Path
++import subprocess
++import tempfile
++root=Path(__file__).resolve().parents[1]
++case=root/'test/flashlight'
++with tempfile.TemporaryDirectory(prefix='flashlight-') as temp:
++ binary=Path(temp)/'test'
++ subprocess.run(['c++','-std=c++17','-Wall','-Wextra','-Werror','-I',str(case/'stubs'),'-I',str(root/'lib/hal'),'-I',str(root/'src'),str(case/'FlashlightTest.cpp'),str(root/'src/activities/util/FlashlightActivity.cpp'),str(root/'lib/hal/HalFrontlight.cpp'),'-o',str(binary)],check=True)
++ subprocess.run([str(binary)],check=True)
+diff --git a/test/test_flashlight_menu.py b/test/test_flashlight_menu.py
+new file mode 100644
+index 00000000..f7880110
+--- /dev/null
++++ b/test/test_flashlight_menu.py
+@@ -0,0 +1,28 @@
++#!/usr/bin/env python3
++"""Compile the production Home index mapping and verify optional service/light rows."""
++from pathlib import Path
++import re,subprocess,tempfile
++root=Path(__file__).resolve().parents[1]
++home=(root/'src/activities/home/HomeActivity.h').read_text()
++manager=(root/'src/activities/ActivityManager.h').read_text()
++enum=re.search(r'enum class HomeMenuItem\s*\{[^}]*\};',manager).group()
++functions='\n'.join(re.search(r'  static (?:int|HomeMenuItem) '+name+r'\([\s\S]*?^  }',home,re.M).group() for name in ['menuItemToIndex','indexToMenuItem'])
++main=r'''
++int main() {
++ for(bool service:{false,true}) for(bool light:{false,true}) {
++  std::vector<HomeMenuItem> expected={HomeMenuItem::FILE_BROWSER,HomeMenuItem::LIBRARY};
++  if(service) expected.push_back(HomeMenuItem::OPDS_BROWSER);
++  expected.push_back(HomeMenuItem::FILE_TRANSFER);expected.push_back(HomeMenuItem::SETTINGS_MENU);
++  if(light) expected.push_back(HomeMenuItem::FLASHLIGHT);
++  for(unsigned i=0;i<expected.size();++i){assert(menuItemToIndex(expected[i],service,light)==static_cast<int>(i));assert(indexToMenuItem(i,service,light)==expected[i]);}
++  assert(indexToMenuItem(expected.size(),service,light)==HomeMenuItem::NONE);
++  if(!light) assert(menuItemToIndex(HomeMenuItem::FLASHLIGHT,service,light)==0);
++ }
++ std::puts("Production Home mapping: all optional service/flashlight combinations passed");
++}
++'''
++with tempfile.TemporaryDirectory(prefix='flashlight-menu-') as tmp:
++ source=Path(tmp)/'test.cpp';binary=Path(tmp)/'test'
++ source.write_text('#include <cassert>\n#include <cstdio>\n#include <vector>\n'+enum+'\n'+functions+main)
++ subprocess.run(['c++','-std=c++17','-Wall','-Wextra','-Werror',str(source),'-o',str(binary)],check=True)
++ subprocess.run([str(binary)],check=True)

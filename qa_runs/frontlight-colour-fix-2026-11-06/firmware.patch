@@ -1,0 +1,525 @@
+diff --git a/freeink-sdk b/freeink-sdk
+--- a/freeink-sdk
++++ b/freeink-sdk
+@@ -1 +1 @@
+-Subproject commit f75cf9596733088324beda6fd92a4ab08fedb17b
++Subproject commit f75cf9596733088324beda6fd92a4ab08fedb17b-dirty
+diff --git a/lib/hal/HalFrontlight.cpp b/lib/hal/HalFrontlight.cpp
+index 9b725d1c..d9710773 100644
+--- a/lib/hal/HalFrontlight.cpp
++++ b/lib/hal/HalFrontlight.cpp
+@@ -10,9 +10,7 @@ HalFrontlight HalFrontlight::instance;
+ 
+ namespace {
+ #if FREEINK_FRONTLIGHT_DITHER
+-// 4 kHz: each step writes the floor or the next duty in proportion to the fraction, so a fade at the dim end
+-// (a few LSB) passes through in-between brightnesses instead of whole-LSB jumps. Fast enough that even a small
+-// fraction's extra-LSB pulses repeat above the eye's flicker limit.
++// 4 kHz sampling of the two channel accumulators. Rare fractional pulses can repeat more slowly than this timer.
+ constexpr uint64_t kRampStepUs = 250;
+ #else
+ constexpr uint64_t kRampStepUs = 20000;  // one LEDC write per step
+@@ -88,6 +86,7 @@ void HalFrontlight::begin(const uint8_t brightness, const uint8_t warmth, const
+     outLevel = lit ? levelFor(lastBrightness) : 0;
+     outDutyF = lit ? percentDutyF(lastBrightness) : 0.0f;
+   }
++  updateDitherTimerLocked();
+   LOG_INF("LIGHT", "Frontlight up: %u%% warm=%u%% %s", lastBrightness, manager.colorTemperature(), lit ? "on" : "off");
+ }
+ 
+@@ -99,12 +98,14 @@ void HalFrontlight::setBrightness(const uint8_t percent) {
+     manager.setBrightness(lastBrightness);
+     outLevel = levelFor(lastBrightness);
+     outDutyF = percentDutyF(lastBrightness);
++    updateDitherTimerLocked();
+   }
+ }
+ 
+ void HalFrontlight::setWarmth(const uint8_t warmPercent) {
+   Guard guard(mutex);
+   manager.setColorTemperature(warmPercent > 100 ? 100 : warmPercent);
++  updateDitherTimerLocked();
+ }
+ 
+ uint8_t HalFrontlight::levelFor(const uint8_t percent) {
+@@ -133,6 +134,7 @@ void HalFrontlight::setOutputLevel(const uint8_t level) {
+   manager.setBrightnessLevel(level);
+   outLevel = level;
+   outDutyF = levelDuty(level);
++  updateDitherTimerLocked();
+ }
+ 
+ void HalFrontlight::rampOutputTo(const uint8_t level) {
+@@ -146,6 +148,7 @@ void HalFrontlight::rampOutputTo(const uint8_t level) {
+   manager.setBrightnessLevel(level);
+   outLevel = level;
+   outDutyF = levelDuty(level);
++  updateDitherTimerLocked();
+ }
+ 
+ void HalFrontlight::restoreOutput(const bool smooth) {
+@@ -159,6 +162,7 @@ void HalFrontlight::restoreOutput(const bool smooth) {
+   manager.setBrightness(lit ? lastBrightness : 0);
+   outLevel = lit ? levelFor(lastBrightness) : 0;
+   outDutyF = lit ? percentDutyF(lastBrightness) : 0.0f;
++  updateDitherTimerLocked();
+ }
+ 
+ void HalFrontlight::prepareForDeepSleep() {
+@@ -178,6 +182,7 @@ void HalFrontlight::setOn(const bool on) {
+   manager.setBrightness(lit ? lastBrightness : 0);
+   outLevel = lit ? levelFor(lastBrightness) : 0;
+   outDutyF = lit ? percentDutyF(lastBrightness) : 0.0f;
++  updateDitherTimerLocked();
+ }
+ 
+ void HalFrontlight::startRampLocked(const uint8_t toLevel, const int16_t finalPercent) {
+@@ -188,10 +193,10 @@ void HalFrontlight::startRampLocked(const uint8_t toLevel, const int16_t finalPe
+   rampToDutyF = finalPercent >= 0 ? percentDutyF(static_cast<uint8_t>(finalPercent)) : levelDuty(toLevel);
+   rampFinalPercent = finalPercent;
+   rampStartUs = esp_timer_get_time();
+-  ditherAcc = 0.0f;
+   ramping = true;
+   esp_timer_stop(timer);  // not running → ESP_ERR_INVALID_STATE, harmless
+-  if (esp_timer_start_periodic(timer, kRampStepUs) != ESP_OK) {
++  timerRunning = esp_timer_start_periodic(timer, kRampStepUs) == ESP_OK;
++  if (!timerRunning) {
+     ramping = false;  // no timer: switch at once, as on other boards
+     if (finalPercent >= 0) {
+       manager.setBrightness(static_cast<uint8_t>(finalPercent));
+@@ -204,15 +209,35 @@ void HalFrontlight::startRampLocked(const uint8_t toLevel, const int16_t finalPe
+ }
+ 
+ void HalFrontlight::cancelRampLocked() {
+-  if (!ramping) return;
+   ramping = false;
+-  esp_timer_stop(static_cast<esp_timer_handle_t>(rampTimer));
++  if (timerRunning) {
++    esp_timer_stop(static_cast<esp_timer_handle_t>(rampTimer));
++    timerRunning = false;
++  }
++}
++
++void HalFrontlight::updateDitherTimerLocked() {
++#if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
++  if (rampTimer == nullptr || ramping) return;
++  if (!manager.needsPwmDither()) {
++    cancelRampLocked();
++  } else if (!timerRunning) {
++    timerRunning = esp_timer_start_periodic(static_cast<esp_timer_handle_t>(rampTimer), kRampStepUs) == ESP_OK;
++  }
++#endif
+ }
+ 
+ void HalFrontlight::rampTick(void* self) {
+   auto& light = *static_cast<HalFrontlight*>(self);
+   Guard guard(light.mutex);
+-  if (!light.ramping) return;  // cancelled while this tick waited for the lock
++  if (!light.timerRunning) return;  // cancelled or parked while this tick waited for the lock
++  if (!light.ramping) {
++#if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
++    light.manager.setTotalDuty(light.outDutyF);
++    light.updateDitherTimerLocked();
++#endif
++    return;
++  }
+   const int64_t t = esp_timer_get_time() - light.rampStartUs;
+   if (t >= light.rampUs || light.rampUs <= 0) {
+     light.cancelRampLocked();
+@@ -224,14 +249,13 @@ void HalFrontlight::rampTick(void* self) {
+     }
+     light.outLevel = light.rampTo;
+     light.outDutyF = light.rampToDutyF;
++    light.updateDitherTimerLocked();
+     return;
+   }
+   const int from = light.rampFrom;
+   const int to = light.rampTo;
+ #if FREEINK_FRONTLIGHT_DITHER
+-  // From the exact duty on the LEDs to the exact target duty, linear in sqrt(duty) — the same eased path as the
+-  // 8-bit level ramp, without its rounding — and the LSB fraction carried as an error-diffusion accumulator, so
+-  // a fade at any brightness, including a few LSB at the dim end, passes through in-between brightnesses.
++  // Preserve the fractional total until the SDK mixes and quantizes the two channels.
+   (void)from;
+   (void)to;
+   const float k = static_cast<float>(t) / static_cast<float>(light.rampUs);
+@@ -239,13 +263,7 @@ void HalFrontlight::rampTick(void* self) {
+   const float s1 = sqrtf(light.rampToDutyF);
+   const float sNow = s0 + (s1 - s0) * k;
+   const float dutyF = sNow * sNow;
+-  auto duty = static_cast<uint32_t>(dutyF);
+-  light.ditherAcc += dutyF - static_cast<float>(duty);
+-  if (light.ditherAcc >= 1.0f) {
+-    light.ditherAcc -= 1.0f;
+-    ++duty;
+-  }
+-  light.manager.setTotalDuty(duty);
++  light.manager.setTotalDuty(dutyF);
+   light.outDutyF = dutyF;
+   light.outLevel = static_cast<uint8_t>(light.rampFrom + (light.rampTo - light.rampFrom) * k + 0.5f);
+ #else
+diff --git a/lib/hal/HalFrontlight.h b/lib/hal/HalFrontlight.h
+index 637c126a..a56fe83c 100644
+--- a/lib/hal/HalFrontlight.h
++++ b/lib/hal/HalFrontlight.h
+@@ -15,9 +15,9 @@ class HalFrontlight {
+ 
+   void setBrightness(uint8_t percent);
+   void setWarmth(uint8_t warmPercent);
+-  // On X4 Pro the switch is a ramp (setRampMs) on the perceptual curve (Nikolai 04.11.2026: «плавной ШИМ анимацией»), and
+-  // so is the light coming on at boot/wake (begin): stepped every 20 ms by an esp_timer in its own task — the caller
+-  // (boot, the control center, the power-button toggle) never waits for it. Other boards switch at once, as before.
++  // On X4 Pro the switch is a ramp (setRampMs) on the perceptual curve (Nikolai 04.11.2026: «плавной ШИМ анимацией»),
++  // and so is the light coming on at boot/wake (begin): driven by an esp_timer task — the caller (boot, the control
++  // center, the power-button toggle) never waits for it. Other boards switch at once, as before.
+   void setOn(bool on);
+   // Ramp length in ms (Settings → Display → «Плавная подсветка»); 0 = switch at once.
+   void setRampMs(uint32_t ms) { rampUs = static_cast<int64_t>(ms) * 1000; }
+@@ -55,6 +55,7 @@ class HalFrontlight {
+   // finalPercent ≥ 0: the ramp ends exactly on that percent (SDK percent curve); −1: it ends on the level itself.
+   void startRampLocked(uint8_t toLevel, int16_t finalPercent);
+   void cancelRampLocked();
++  void updateDitherTimerLocked();
+   void* rampTimer = nullptr;  // esp_timer_handle_t, created in begin() on X4 Pro
+   void* mutex = nullptr;      // SemaphoreHandle_t
+   int64_t rampStartUs = 0;
+@@ -63,8 +64,8 @@ class HalFrontlight {
+   uint8_t rampTo = 0;
+   uint8_t outLevel = 0;  // the level on the LEDs now (8-bit perceptual), for a ramp or fade to start from
+   bool ramping = false;
++  bool timerRunning = false;
+   int16_t rampFinalPercent = -1;
+-  float ditherAcc = 0.0f;      // FREEINK_FRONTLIGHT_DITHER: the LSB fraction carried between 1 kHz fade steps
+   float outDutyF = 0.0f;       // the exact total duty on the LEDs now: a fade starts from it, no jump
+   float rampFromDutyF = 0.0f;  // the ramp's exact duty endpoints (FREEINK_FRONTLIGHT_DITHER)
+   float rampToDutyF = 0.0f;
+diff --git a/platformio.ini b/platformio.ini
+index 8474f99e..4c06e386 100644
+--- a/platformio.ini
++++ b/platformio.ini
+@@ -783,7 +783,7 @@ build_flags =
+   -DLOG_LEVEL=1
+   -DUSE_BLOCK_DEVICE_INTERFACE=1
+ 
+-; Diagnostic build 1.1.1-debug: 11-bit frontlight PWM at 39062 Hz (80 MHz / 2048), logarithmic brightness scale, battery log.
++; Diagnostic build debug2: per-channel fractional frontlight duties, logarithmic brightness scale, battery log.
+ [env:x4pro-krinik-debug]
+ extends = env:x4pro-krinik
+ build_flags =
+@@ -793,7 +793,7 @@ build_flags =
+   -DBOARD_HAS_PSRAM
+   -DUSB_PRODUCT=\"CrossPoint_X4_Pro\"
+   -DUSB_MANUFACTURER=\"CrossPoint\"
+-  -DCROSSPOINT_VERSION=\"cp-${crosspoint.version}-krinik-${krinik.version}-debug\"
++  -DCROSSPOINT_VERSION=\"cp-${crosspoint.version}-krinik-${krinik.version}-debug2\"
+   -DENABLE_SERIAL_LOG
+   -DLOG_LEVEL=1
+   -DUSE_BLOCK_DEVICE_INTERFACE=1
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index 1651d614..26c6d95a 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -118,3 +118,5 @@ add_test(NAME recursive_dictionary COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT
+ add_subdirectory(sleep_image_cursor)
+ add_subdirectory(calibration_card)
+ add_subdirectory(panel_curve)
++
++add_test(NAME frontlight_dither COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_frontlight_dither.py)
+diff --git a/test/frontlight_dither/FrontlightDitherTest.cpp b/test/frontlight_dither/FrontlightDitherTest.cpp
+new file mode 100644
+index 00000000..4cafd35e
+--- /dev/null
++++ b/test/frontlight_dither/FrontlightDitherTest.cpp
+@@ -0,0 +1,165 @@
++#include <HalFrontlight.h>
++#include <esp_timer.h>
++
++#include <cassert>
++#include <cmath>
++#include <cstdio>
++
++namespace {
++#if FREEINK_DEVICE_X4PRO
++void tick() {
++  assert(fakeTimer.active);
++  fakeTimeUs += fakeTimer.period;
++  fakeTimer.args.callback(fakeTimer.args.arg);
++  assert(pwm[0] <= 2047 && pwm[1] <= 2047);
++}
++#if FREEINK_FRONTLIGHT_DITHER
++void neutralTicks(unsigned count) {
++  for (unsigned i = 0; i < count; ++i) {
++    tick();
++    assert(pwm[0] == pwm[1]);
++  }
++}
++void mean(unsigned samples, double cool, double warm) {
++  uint64_t c = 0, w = 0;
++  for (unsigned i = 0; i < samples; ++i) {
++    tick();
++    c += pwm[0];
++    w += pwm[1];
++  }
++  assert(std::abs(static_cast<double>(c) - samples * cool) < 1.1);
++  assert(std::abs(static_cast<double>(w) - samples * warm) < 1.1);
++}
++#endif
++#endif
++}  // namespace
++
++int main() {
++  auto& light = Frontlight;
++  light.setRampMs(0);
++#if !FREEINK_DEVICE_X4PRO
++  light.begin(5, 50, true);
++  assert(!light.present() && !fakeTimer.active && pwmWrites == 0);
++  light.setOn(false);
++  light.prepareForDeepSleep();
++  assert(pwmWrites == 0);
++  std::puts("C3/no frontlight: no PWM writes or timer created");
++#elif !FREEINK_FRONTLIGHT_DITHER
++  light.begin(5, 50, true);
++  const auto total = FrontlightManager::percentDuty(5, 2047);
++  assert(!fakeTimer.active && pwm[1] == (total * 50 + 50) / 100 && pwm[0] + pwm[1] == total);
++  light.setOn(false);
++  assert(pwm[0] == 0 && pwm[1] == 0);
++  light.setRampMs(200);
++  light.setOn(true);
++  for (unsigned i = 0; i < 10; ++i) tick();
++  assert(!fakeTimer.active && pwm[0] + pwm[1] == total);
++  light.prepareForDeepSleep();
++  assert(!fakeTimer.active && pwmDetached[0] && pwmDetached[1]);
++  std::puts("Non-dither X4 Pro: original channel rounding, 20ms fade and sleep preserved");
++#else
++  light.begin(5, 50, true);
++  assert(fakeTimer.active && fakeTimer.period == 250);
++  mean(4000, 2.5, 2.5);
++  neutralTicks(100);
++
++  light.setBrightness(6);
++  assert(!fakeTimer.active && pwm[0] == 3 && pwm[1] == 3);
++  light.setBrightness(7);
++  assert(fakeTimer.active);
++  mean(4000, 3.5, 3.5);
++  light.setWarmth(0);
++  assert(!fakeTimer.active && pwm[0] == 7 && pwm[1] == 0);
++  light.setWarmth(100);
++  assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 7);
++  light.setWarmth(30);
++  assert(fakeTimer.active);
++  mean(4000, 4.9, 2.1);
++
++  light.setOn(false);
++  assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 0);
++  const auto writes = pwmWrites;
++  fakeTimer.args.callback(fakeTimer.args.arg);  // cancelled callback already queued before off
++  assert(pwmWrites == writes);
++  light.setBrightness(5);
++  light.setWarmth(50);
++  assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 0);
++
++  light.setRampMs(200);
++  light.setOn(true);
++  neutralTicks(800);  // fade completes, fractional steady mix must continue
++  assert(fakeTimer.active);
++  mean(4000, 2.5, 2.5);
++  light.setOn(false);
++  neutralTicks(200);
++  const auto beforeReverse = pwm[0];
++  light.setOn(true);
++  tick();
++  assert(pwm[0] == pwm[1] && pwm[0] <= beforeReverse + 1);
++  neutralTicks(800);
++
++  light.rampOutputTo(0);
++  for (unsigned i = 0; i < 800 && fakeTimer.active; ++i) {
++    tick();
++    assert(pwm[0] == pwm[1]);
++  }
++  assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 0);
++  light.restoreOutput(true);
++  neutralTicks(800);
++  assert(fakeTimer.active);
++  light.prepareForDeepSleep();
++  assert(!fakeTimer.active && pwmDetached[0] && pwmDetached[1]);
++  const auto parkedWrites = pwmWrites;
++  fakeTimer.args.callback(fakeTimer.args.arg);
++  assert(pwmWrites == parkedWrites && pwm[0] == 0 && pwm[1] == 0);
++
++  light.begin(5, 50, true);
++  neutralTicks(800);
++  light.setRampMs(0);
++  light.setWarmth(0);
++  light.setBrightness(100);
++  assert(!fakeTimer.active && pwm[0] == 2047 && pwm[1] == 0);
++  light.setWarmth(100);
++  assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 2047);
++
++  light.setBrightness(5);
++  light.setWarmth(50);
++  light.setRampMs(200);
++  failTimerStart = true;
++  light.setOn(false);
++  assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 0);
++  light.setOn(true);
++  assert(light.isOn() && !fakeTimer.active && pwm[0] == pwm[1]);
++  failTimerStart = false;
++  light.setBrightness(5);
++  assert(fakeTimer.active);
++  mean(4000, 2.5, 2.5);
++  // Sweep the production percent curve, including levels far above the original 5/6/7% report.
++  light.setRampMs(0);
++  for (unsigned brightness = 1; brightness <= 100; ++brightness) {
++    light.setBrightness(brightness);
++    const auto total = FrontlightManager::percentDuty(brightness, 2047);
++    for (unsigned warmth = 0; warmth <= 100; ++warmth) {
++      light.setWarmth(warmth);
++      uint64_t c = 0, w = 0;
++      for (unsigned i = 0; i < 400; ++i) {
++        if (fakeTimer.active) tick();
++        assert(pwm[0] <= 2047 && pwm[1] <= 2047);
++        if (warmth == 50) assert(pwm[0] == pwm[1]);
++        if (warmth == 0) assert(pwm[1] == 0);
++        if (warmth == 100) assert(pwm[0] == 0);
++        c += pwm[0];
++        w += pwm[1];
++      }
++      assert(std::abs(static_cast<double>(c) - 400.0 * total * (100 - warmth) / 100) < 1.1);
++      assert(std::abs(static_cast<double>(w) - 400.0 * total * warmth / 100) < 1.1);
++    }
++  }
++  light.setRampMs(0);
++  light.setOn(false);
++  assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 0);
++  std::puts(
++      "Real HAL+SDK: 5/6/7% mix, fade/reversal, endpoints, steady timer, off/sleep/queued callback and timer failure "
++      "passed");
++#endif
++}
+diff --git a/test/frontlight_dither/stubs/Arduino.h b/test/frontlight_dither/stubs/Arduino.h
+new file mode 100644
+index 00000000..1f90da04
+--- /dev/null
++++ b/test/frontlight_dither/stubs/Arduino.h
+@@ -0,0 +1,23 @@
++#pragma once
++#include <cstddef>
++#include <cstdint>
++#include <initializer_list>
++inline unsigned long fakeNow = 0;
++inline unsigned long millis() { return fakeNow; }
++inline void delay(unsigned long ms) { fakeNow += ms; }
++inline uint32_t pwm[2] = {};
++inline unsigned pwmWrites = 0;
++inline bool pwmDetached[2] = {};
++inline void ledcSetup(uint8_t, uint32_t, uint8_t) {}
++inline void ledcAttachPin(int8_t, uint8_t ch) { pwmDetached[ch] = false; }
++inline void ledcDetachPin(int8_t gpio) { pwmDetached[gpio == 9 ? 1 : 0] = true; }
++inline void ledcWrite(uint8_t ch, uint32_t duty) {
++  pwm[ch] = duty;
++  ++pwmWrites;
++}
++constexpr int HIGH = 1, LOW = 0, OUTPUT = 3;
++inline int Serial = 0;
++inline void pinMode(int, int) {}
++inline void digitalWrite(int pin, int level) {
++  if (pin == 8 || pin == 9) pwm[pin == 9 ? 1 : 0] = level;
++}
+diff --git a/test/frontlight_dither/stubs/esp_timer.h b/test/frontlight_dither/stubs/esp_timer.h
+new file mode 100644
+index 00000000..276346a5
+--- /dev/null
++++ b/test/frontlight_dither/stubs/esp_timer.h
+@@ -0,0 +1,36 @@
++#pragma once
++#include <cstdint>
++using esp_err_t = int;
++constexpr int ESP_OK = 0, ESP_FAIL = -1, ESP_TIMER_TASK = 0;
++struct esp_timer_create_args_t {
++  void (*callback)(void*);
++  void* arg;
++  int dispatch_method;
++  const char* name;
++};
++struct FakeTimer {
++  esp_timer_create_args_t args{};
++  bool active = false;
++  uint64_t period = 0;
++};
++using esp_timer_handle_t = FakeTimer*;
++inline FakeTimer fakeTimer;
++inline int64_t fakeTimeUs = 0;
++inline bool failTimerStart = false;
++inline int esp_timer_create(const esp_timer_create_args_t* a, esp_timer_handle_t* out) {
++  fakeTimer.args = *a;
++  *out = &fakeTimer;
++  return ESP_OK;
++}
++inline int esp_timer_start_periodic(esp_timer_handle_t t, uint64_t us) {
++  if (failTimerStart) return ESP_FAIL;
++  t->period = us;
++  t->active = true;
++  return ESP_OK;
++}
++inline int esp_timer_stop(esp_timer_handle_t t) {
++  if (!t) return ESP_FAIL;
++  t->active = false;
++  return ESP_OK;
++}
++inline int64_t esp_timer_get_time() { return fakeTimeUs; }
+diff --git a/test/frontlight_dither/stubs/freertos/FreeRTOS.h b/test/frontlight_dither/stubs/freertos/FreeRTOS.h
+new file mode 100644
+index 00000000..a720a408
+--- /dev/null
++++ b/test/frontlight_dither/stubs/freertos/FreeRTOS.h
+@@ -0,0 +1,2 @@
++#pragma once
++constexpr int portMAX_DELAY = 0, pdTRUE = 1;
+diff --git a/test/frontlight_dither/stubs/freertos/semphr.h b/test/frontlight_dither/stubs/freertos/semphr.h
+new file mode 100644
+index 00000000..d623d390
+--- /dev/null
++++ b/test/frontlight_dither/stubs/freertos/semphr.h
+@@ -0,0 +1,8 @@
++#pragma once
++using SemaphoreHandle_t = void*;
++inline void* xSemaphoreCreateMutex() {
++  static int mutex;
++  return &mutex;
++}
++inline int xSemaphoreTake(void*, int) { return 1; }
++inline void xSemaphoreGive(void*) {}
+diff --git a/test/test_frontlight_dither.py b/test/test_frontlight_dither.py
+new file mode 100644
+index 00000000..6be3f23c
+--- /dev/null
++++ b/test/test_frontlight_dither.py
+@@ -0,0 +1,28 @@
++#!/usr/bin/env python3
++"""Compile the real frontlight HAL and SDK with host PWM/timer adapters."""
++from pathlib import Path
++import subprocess
++import tempfile
++
++root = Path(__file__).resolve().parents[1]
++case = root / "test/frontlight_dither"
++sdk = root / "freeink-sdk/libs/hardware"
++with tempfile.TemporaryDirectory(prefix="frontlight-dither-") as temp:
++    binary = Path(temp) / "frontlight-test"
++    command = ["c++", "-std=c++17", "-Wall", "-Wextra", "-Werror",
++               "-DFREEINK_FRONTLIGHT_LOG_CURVE=1", "-DFREEINK_X4PRO_FRONTLIGHT_BITS=11",
++               "-DFREEINK_X4PRO_FRONTLIGHT_HZ=39062"]
++    for include in [case / "stubs", sdk / "FrontlightManager/test/host/stubs",
++                    root / "lib/hal", sdk / "FrontlightManager/include",
++                    sdk / "BoardConfig/include"]:
++        command += ["-I", str(include)]
++    command += [str(case / "FrontlightDitherTest.cpp"),
++                str(root / "lib/hal/HalFrontlight.cpp"),
++                str(sdk / "FrontlightManager/src/FrontlightManager.cpp"), "-o", str(binary)]
++    for board, dither in [("X4PRO", 1), ("X4PRO", 0), ("X4", 0)]:
++        flags = [f"-DFREEINK_DEVICE_{board}=1", f"-DFREEINK_FRONTLIGHT_DITHER={dither}"]
++        if board == "X4":
++            # Clang diagnoses pre-existing SDK fields compiled out with FREEINK_CAP_FRONTLIGHT=0.
++            flags += ["-Wno-unused-private-field"]
++        subprocess.run(command + flags, check=True)
++        subprocess.run([str(binary)], check=True)

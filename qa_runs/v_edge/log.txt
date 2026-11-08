@@ -1,0 +1,70 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_edge/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_edge/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_edge/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 13:00
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[248] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_edge/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[248] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_edge/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[248] [DBG] [SDREG] Fonts directory not found: /fonts
+[248] [DBG] [SDREG] Discovery complete: 0 families
+[248] [DBG] [SDFS] SD font system ready (0 families discovered)
+[248] [DBG] [MAIN] Fonts setup
+[248] [DBG] [ACT] Entering activity: Boot
+[249] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[272] [DBG] [ACT] Exiting activity: Boot
+[272] [DBG] [ACT] Entering activity: Home
+[272] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[286] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2591] [DBG] [ACT] Exiting activity: Home
+[2591] [DBG] [ACT] Entering activity: FileBrowser
+[2593] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[4591] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[6082] [DBG] [ACT] Exiting activity: FileBrowser
+[6082] [DBG] [ACT] Entering activity: BmpViewer
+[6082] [DBG] [CRV] Panel curve loaded: be170a3a
+[6083] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[6115] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[6115] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6142] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[6142] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6150] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[6150] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6166] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[6166] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6171] [DBG] [LOOP] New max loop duration: 90 ms (activity: 90 ms)
+[10004] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10004] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10250] [DBG] [BMP] Input: touch prev
+[10250] [DBG] [BMP] Show 6/6: /sleep/oblivion_6.bmp
+[10283] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[10283] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[10291] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[10291] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10301] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[10301] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10318] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[10318] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14251] [DBG] [BMP] Input: touch prev
+[14251] [DBG] [BMP] Show 5/6: /sleep/oblivion_5.bmp
+[14280] [DBG] [CLN] Clean to white (FULL) before absolute gray
+[14280] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[14287] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[14287] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14296] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[14296] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[14308] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[14308] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[18084] [DBG] [ACT] Exiting activity: BmpViewer
+[18084] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[18098] [DBG] [ACT] Entering activity: FileBrowser
+[18100] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[20015] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20015] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes

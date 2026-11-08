@@ -1,0 +1,43 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[0] [DBG] [CPS] Settings loaded from file
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 10:03
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[176] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/2f_bad_files_v2/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[176] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/2f_bad_files_v2/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[176] [DBG] [SDREG] Fonts directory not found: /fonts
+[176] [DBG] [SDREG] Discovery complete: 0 families
+[176] [DBG] [SDFS] SD font system ready (0 families discovered)
+[176] [DBG] [MAIN] Fonts setup
+[176] [DBG] [ACT] Entering activity: Boot
+[176] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[181] [DBG] [ACT] Exiting activity: Boot
+[181] [DBG] [ACT] Entering activity: Home
+[181] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[195] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2808] [DBG] [MAIN] Power button held 308ms, sleeping
+[2809] [DBG] [ACT] Exiting activity: Home
+[2809] [DBG] [ACT] Entering activity: Sleep
+[2809] [DBG] [GFX] Time = 2614 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/2f_bad_files_v2/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[2817] [DBG] [SLP] Skipping invalid sleep image: garbage.bmp
+[2817] [DBG] [SLP] Skipping unsupported sleep image: notes.txt
+[2817] [DBG] [SLP] Skipping invalid sleep image: truncated.bmp
+[2817] [DBG] [SLP] Skipping unsupported sleep image: pic.png
+[2919] [DBG] [SLP] Loading: /sleep/oblivion_2.bmp
+[2919] [DBG] [CRV] Panel curve loaded: be170a3a
+[2978] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[2978] [DBG] [SLP] drawing to 0 x 0
+[2978] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2978] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2996] [DBG] [SLP] Clean to white (FULL) before absolute gray
+[2996] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3008] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3008] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3025] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[3025] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3045] [DBG] [MAIN] Entering deep sleep

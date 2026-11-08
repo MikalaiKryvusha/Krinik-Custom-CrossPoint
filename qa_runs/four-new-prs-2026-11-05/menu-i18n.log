@@ -1,0 +1,46 @@
+Language              Code  BCP47        Own  Fallback  Unused  Data (B)
+--------------------  ----  -----------  ---  --------  ------  --------
+English               EN    en           659  0         17      11305   
+العربية               AR    ar           449  210       8       13537   
+Azərbaycanca          AZ    az           640  19        17      14468   
+Беларуская            BE    be           440  219       8       15273   
+Български             BG    bg           423  236       8       15313   
+Bosanski              BS    bs           440  219       8       9049    
+Català                CA    ca           656  3         17      14533   
+Valencià              CAV   ca-valencia  656  3         17      14509   
+Čeština               CS    cs           440  219       8       9476    
+Dansk                 DA    da           329  330       7       5682    
+Deutsch               DE    de           631  28        17      12501   
+Español               ES    es           656  3         17      13871   
+فارسی                 FA    fa           452  207       9       14520   
+Suomi                 FI    fi           301  358       5       5816    
+Français              FR    fr           497  162       12      9781    
+עברית                 HE    he           656  3         17      17365   
+Magyar                HU    hu           440  219       8       9952    
+Bahasa Indonesia      ID    id           440  219       8       8446    
+Italiano              IT    it           656  3         17      13138   
+Қазақша               KK    kk           440  219       8       15428   
+Lietuvių              LT    lt           440  219       8       7882    
+Norsk bokmål          NB    nb           440  219       8       8045    
+Nederlands            NL    nl           329  330       7       5754    
+Orangutan             OOK   ook          333  326       4       2627    
+Polski                PL    pl           550  109       12      11424   
+Português (Brasil)    PT    pt-BR        522  137       12      10159   
+Português (Portugal)  P2    pt-PT        522  137       12      10922   
+Română                RO    ro           329  330       7       6491    
+Русский               RU    ru           637  22        17      21302   
+Slovenčina            SK    sk           440  219       8       9609    
+Slovenščina           SI    sl           440  219       8       8992    
+Svenska               SV    sv           639  20        0       12670   
+Türkçe                TR    tr           441  218       8       9014    
+Українська            UK    uk           442  217       8       15652   
+Tiếng Việt            VI    vi           656  3         17      15762   
+
+  Total: 659  |  Used in code: 642  |  Never used: 17
+  Flash: 400,268 B strings (deduped)  +  46,130 B offset tables  =  446,398 B
+
+
+Code generation complete!
+  Languages: 35
+  String keys: 659
+  Unused keys: 17 (pass --strip-unused to remove them)

@@ -1,0 +1,104 @@
+[0] [DBG] [UI] Using Lyra theme
+[4] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[6] [DBG] [CPS] Resaving settings to update format
+[6] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[7] [INF] [CLK] RTC clock read: 2026-11-04 11:46
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[7] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[222] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[222] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[222] [DBG] [SDREG] Fonts directory not found: /fonts
+[222] [DBG] [SDREG] Discovery complete: 0 families
+[222] [DBG] [SDFS] SD font system ready (0 families discovered)
+[222] [DBG] [MAIN] Fonts setup
+[223] [DBG] [ACT] Entering activity: Boot
+[225] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[249] [DBG] [ACT] Exiting activity: Boot
+[249] [DBG] [ACT] Entering activity: Home
+[250] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[266] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2501] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[3286] [DBG] [ACT] Exiting activity: Home
+[3286] [DBG] [ACT] Entering activity: Library
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[3288] [DBG] [GFX] Time = 788 ms from clearScreen to displayBuffer
+[3295] [DBG] [LIBIDX] phase prepare/prior: 2ms
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.crosspoint/epub_6356251370301420133/book.bin (flags=0x0 errno=2 No such file or directory)
+[3298] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[3298] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[3298] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.crosspoint/epub_1904033327718914090/book.bin (flags=0x0 errno=2 No such file or directory)
+[3300] [DBG] [ZIP] Decompressed 169 bytes into 240 bytes
+[3300] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[3300] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.crosspoint/epub_5112959142090641435/book.bin (flags=0x0 errno=2 No such file or directory)
+[3301] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[3301] [DBG] [EBP] Parsing content.opf: content.opf
+[3302] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.crosspoint/epub_3326978849599308136/book.bin (flags=0x0 errno=2 No such file or directory)
+[3303] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[3303] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[3304] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.crosspoint/epub_16224160833964083072/book.bin (flags=0x0 errno=2 No such file or directory)
+[3304] [DBG] [ZIP] Decompressed 154 bytes into 244 bytes
+[3304] [DBG] [EBP] Parsing content.opf: content.opf
+[3305] [DBG] [EBP] Successfully parsed package metadata
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.crosspoint/epub_17215692838832747456/book.bin (flags=0x0 errno=2 No such file or directory)
+[3306] [DBG] [ZIP] Decompressed 166 bytes into 242 bytes
+[3306] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[3306] [DBG] [EBP] Successfully parsed package metadata
+[3306] [DBG] [LIBIDX] phase walk/metadata/stage: 11ms
+[3307] [DBG] [LIBIDX] phase reconcile: 1ms
+[3307] [DBG] [LIBIDX] title sort alloc: 84 bytes, heap 1048576, max block 1048576
+[3309] [DBG] [LIBIDX] phase title order: 2ms
+[3309] [DBG] [LIBIDX] author sort alloc: 84 bytes, heap 1048576, max block 1048576
+[3320] [DBG] [LIBIDX] phase author/orders/emit: 11ms
+[3320] [INF] [LIBIDX] built: 6 books, 2 folders, 6 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 27ms
+[3320] [INF] [LIB] reconciled: 0 unchanged, 6 added, 0 renamed, 0 removed, 6 enriched (0 dup, 0 unreadable)
+[3323] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[3323] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[3323] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[3328] [DBG] [LIB] page tab=0 top=0 full=6 loaded=6 body=160..774 next=-1 title=<none>
+[3328] [DBG] [LIB] page first=0 title=Трагедии. Сонеты
+[3328] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[5592] [DBG] [LIB] page tab=1 top=0 full=5 loaded=6 body=160..774 next=5 title=Эгоистичный ген
+[5592] [DBG] [LIB] page first=0 title=Калибровка
+[5592] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_regr/shots/book.bmp
+[9052] [DBG] [LIB] page tab=1 top=0 full=5 loaded=6 body=160..774 next=5 title=Эгоистичный ген
+[9053] [DBG] [LIB] page first=0 title=Калибровка
+[9053] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[10001] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10001] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10003] [DBG] [LIB] page tab=1 top=0 full=5 loaded=6 body=160..774 next=5 title=Эгоистичный ген
+[10003] [DBG] [LIB] page first=0 title=Калибровка
+[10003] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_regr/shots/page.bmp
+[12310] [DBG] [MAIN] Power button held 307ms, sleeping
+[12312] [DBG] [ACT] Exiting activity: Library
+[12312] [DBG] [ACT] Entering activity: Sleep
+[12312] [DBG] [GFX] Time = 2311 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_regr/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[12426] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[12427] [DBG] [CRV] Panel curve loaded: be170a3a
+[12481] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[12481] [DBG] [SLP] drawing to 0 x 0
+[12481] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[12481] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[12499] [DBG] [CLN] Deep clean: 2 black/white cycles
+[12499] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[12502] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[12511] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[12519] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[12536] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[12536] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[12553] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[12554] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[12574] [DBG] [MAIN] Entering deep sleep
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_regr/shots/sleep.bmp

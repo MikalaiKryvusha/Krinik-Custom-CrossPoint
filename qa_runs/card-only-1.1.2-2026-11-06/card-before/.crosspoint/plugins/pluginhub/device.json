@@ -1,0 +1,39 @@
+{
+  "title": "Plugin Hub",
+  "description": "Discover, install, and update CrossPoint plugins.",
+  "browse": {
+    "format": "json",
+    "url": "https://raw.githubusercontent.com/crosspoint-reader/crosspoint-plugin-hub/main/catalog.json",
+    "items": "plugins",
+    "page_size": 16,
+    "fields": {
+      "title": "title",
+      "author": "description",
+      "id": "name",
+      "version": "version",
+      "description": "description",
+      "detail_author": "author",
+      "repository": "repository",
+      "details_url": "details.url",
+      "details_format": "details.format"
+    },
+    "lists_url": "https://raw.githubusercontent.com/crosspoint-reader/crosspoint-plugin-hub/main/catalog-lists.json",
+    "capability_lists_url": "https://raw.githubusercontent.com/crosspoint-reader/crosspoint-plugin-hub/main/catalog-lists-capabilities.json",
+    "compatibility": {
+      "firmware_family": "compatibility.firmware_family",
+      "plugin_api_min": "compatibility.plugin_api_min",
+      "requires": "compatibility.requires",
+      "advisory": "compatibility.advisory"
+    }
+  },
+  "download": {
+    "dest_dir": "/.crosspoint/plugins",
+    "bundle": {
+      "base": "base",
+      "files": "files",
+      "subdir": "{id}"
+    }
+  },
+  "version": "0.1.13"
+}
+

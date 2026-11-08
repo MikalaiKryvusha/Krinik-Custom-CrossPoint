@@ -1,0 +1,2432 @@
+diff --git a/README.md b/README.md
+index 472b12bb..bae43654 100644
+--- a/README.md
++++ b/README.md
+@@ -5,6 +5,10 @@
+ Готовая прошивка и руководство — на странице [Releases](../../releases) (последний — `krinik-1.0.0`).
+ Оригинальный README апстрима — ниже, после этого раздела.
+ 
++> *Проект посвящён моей маме — Кривуше Софии Фадеевне, очень большому читателю-книголюбу, которая привила мне любовь к чтению книг.*
++>
++> *Dedicated to my mother, Sofia Fadeevna Kryvusha — a great reader and lover of books, who gave me my love of reading.*
++
+ ## Что изменено
+ 
+ ### Чтение
+@@ -17,13 +21,15 @@
+ ### Экран: призраки на сером
+ На X4 Pro серая картинка проявляет то, что было на экране за секунды–минуты до неё (остаточный заряд). Очистка перед
+ серым это не снимает, время — снимает. Поэтому:
+-- **Перерисовка картинок**: фото во вьювере через 2 минуты один раз перерисовывается — уходит след меню и прошлого фото.
+-- **Перерисовка заставки сна**: через 5 минут после засыпания читалка сама (без подсветки) перерисовывает свою
+-  заставку и снова засыпает; кнопка в эти 5 минут будит как обычно; при заряде ниже 15 % не включается.
++- **Обновлять картинки**: фото во вьювере через 1 / 2 / 5 минут (по умолчанию 2) один раз перерисовывается — уходит
++  след меню и прошлого фото.
++- **Обновлять заставку**: через 1 / 2 / 5 минут (по умолчанию 5) после засыпания читалка сама (без подсветки)
++  перерисовывает свою заставку и снова засыпает; кнопка в это время будит как обычно; при заряде ниже 15 % не включается.
+ - Нет чёрной линии под заголовками меню и попапа «Засыпание» — меньше следов на сером.
+ - Перед заставкой сна — белый лист, перед серым фото — стёртый буфер (без резкой ч/б копии и «выгоревшей» заставки).
+-- Опции раздела «Экран» (блок внизу, рядом со стоковой «Частотой обновления»): «Очищать главный экран»,
+-  «Перерисовка заставки сна», «Перерисовка картинок», «Очищать после шторки», «Перерисовка меню».
++- «Экран → Настройки очисток экрана» — все очистки и перерисовки на одном экране с пояснением: «Очищать каждые»
++  (стоковая «Частота обновления»), «Очищать домашний экран», «Очищать после шторки»,
++  «Обновлять заставку», «Обновлять картинки» (ВЫКЛ / через 1 / 2 / 5 мин).
+ - Обложка недавней книги на главном не уходит в негатив после смены темы; шторка над фото выезжает в своей теме.
+ 
+ ### Сон и заставки
+@@ -48,7 +54,7 @@
+ ### Вьювер картинок (BMP / JPG / PNG)
+ - Серое через кривую панели, разовая конвертация в кэш, листание по кругу.
+ - Жесты как в книге: общий выключатель тача (тач выкл — только кнопки), тап/свайп по направлениям, раскладка кнопок;
+-  свайп от левого края не выходит из фото.
++  свайп вправо, начатый в левой четверти экрана, — «Назад» в «Обзор файлов»; начатый правее — листает.
+ - Долгий тап поворачивает фото; ориентация общая с книгой.
+ - «На экран сна» записывает картинку в `/sleep.bmp` и включает «Одну картинку»; JPEG готовится по форме фото.
+ 
+diff --git a/USER_GUIDE.md b/USER_GUIDE.md
+index c0c10fe6..a0634377 100644
+--- a/USER_GUIDE.md
++++ b/USER_GUIDE.md
+@@ -249,7 +249,9 @@ Settings are grouped into **System**, **Display**, **Reader**, **Controls**, **L
+   - "In Reader" - Show battery percentage everywhere except in reading mode
+   - "Always" - Always hide battery percentage
+ 
+-- **Refresh Frequency**: Set how often the screen does a full refresh while reading to reduce ghosting; options are every 1, 5, 10, 15, or 30 pages.
++- **Screen Cleaning**: A sub-screen with every screen clean and refresh option:
++
++  - **Refresh Frequency**: Set how often the screen does a full refresh while reading to reduce ghosting; options are every 1, 5, 10, 15, or 30 pages.
+ 
+ - **UI Theme**: Set which UI theme to use:
+   
+diff --git a/freeink-sdk b/freeink-sdk
+--- a/freeink-sdk
++++ b/freeink-sdk
+@@ -1 +1 @@
+-Subproject commit 4feaf66d2c54185239849d9fc39697d9797f731a
++Subproject commit 4feaf66d2c54185239849d9fc39697d9797f731a-dirty
+diff --git a/lib/Epub/Epub/Section.cpp b/lib/Epub/Epub/Section.cpp
+index 583f65ad..bc28881a 100644
+--- a/lib/Epub/Epub/Section.cpp
++++ b/lib/Epub/Epub/Section.cpp
+@@ -81,7 +81,8 @@ namespace {
+ // v71: Focus split offsets follow the visual run order for RTL words.
+ // v72: Make ruby rendering closer to how Chromium renders ruby by default.
+ // v73: TrueType vector fonts load and advance .notdef for missing glyphs.
+-constexpr uint8_t SECTION_FILE_VERSION = 73;
++// v74: Place anchors on their target lines and carry them with headings/paragraphs.
++constexpr uint8_t SECTION_FILE_VERSION = 74;
+ // Written into the version field while a build is in progress; patched to
+ // SECTION_FILE_VERSION only when the build is finalized. An abandoned /
+ // crash-interrupted .bin therefore carries version 0, which loadSectionFile rejects
+diff --git a/lib/Epub/Epub/blocks/ImageBlock.cpp b/lib/Epub/Epub/blocks/ImageBlock.cpp
+index 343f80ca..591fda68 100644
+--- a/lib/Epub/Epub/blocks/ImageBlock.cpp
++++ b/lib/Epub/Epub/blocks/ImageBlock.cpp
+@@ -6,6 +6,7 @@
+ #include <Memory.h>
+ #include <Serialization.h>
+ 
++#include <cstdio>
+ #include <cstdlib>
+ #include <cstring>
+ #include <new>
+@@ -31,13 +32,18 @@ void ImageBlock::setExtractor(void* ctx, ExtractFn fn) {
+ 
+ namespace {
+ 
++const uint8_t* bookToneCurve = nullptr;
++uint32_t bookToneHash = 0;
++
+ std::string getCachePath(const std::string& imagePath) {
+-  // Replace extension with .pxc (pixel cache)
++  // Replace extension with .pxc (pixel cache); with a tone curve, «_k<hash>» before it.
++  char suffix[16] = "";
++  if (bookToneCurve) snprintf(suffix, sizeof(suffix), "_k%08x", static_cast<unsigned>(bookToneHash));
+   size_t dotPos = imagePath.rfind('.');
+   if (dotPos != std::string::npos) {
+-    return imagePath.substr(0, dotPos) + ".pxc";
++    return imagePath.substr(0, dotPos) + suffix + ".pxc";
+   }
+-  return imagePath + ".pxc";
++  return imagePath + suffix + ".pxc";
+ }
+ 
+ bool readValidCacheHeader(HalFile& cacheFile, const int expectedWidth, const int expectedHeight, uint16_t& cachedWidth,
+@@ -392,6 +398,7 @@ void ImageBlock::render(GfxRenderer& renderer, const int x, const int y) {
+   config.performanceMode = false;
+   config.useExactDimensions = true;  // Use pre-calculated dimensions to avoid rounding mismatches
+   config.cachePath = cachePath;      // Enable caching during decode
++  config.toneCurve = bookToneCurve;  // Display → Screen calibration → «Калибровка книг»; nullptr — stock
+ 
+   ImageToFramebufferDecoder* decoder = ImageDecoderFactory::getDecoder(imagePath);
+   if (!decoder) {
+@@ -433,3 +440,8 @@ std::unique_ptr<ImageBlock> ImageBlock::deserialize(HalFile& file) {
+   serialization::readPod(file, h);
+   return std::unique_ptr<ImageBlock>(new (std::nothrow) ImageBlock(path, src, w, h));
+ }
++
++void ImageBlock::setToneCurve(const uint8_t* curve, const uint32_t hash) {
++  bookToneCurve = curve;
++  bookToneHash = curve ? hash : 0;
++}
+diff --git a/lib/Epub/Epub/blocks/ImageBlock.h b/lib/Epub/Epub/blocks/ImageBlock.h
+index fef906e7..806d17d5 100644
+--- a/lib/Epub/Epub/blocks/ImageBlock.h
++++ b/lib/Epub/Epub/blocks/ImageBlock.h
+@@ -8,6 +8,11 @@
+ 
+ class ImageBlock final : public Block {
+  public:
++  // Tone curve for images inside books (Display → Screen calibration → «Калибровка книг»): set by the app before a book
++  // opens; nullptr — none (stock). The table must outlive the book. Cached pixels carry the curve's hash in their name,
++  // so a changed curve decodes the images again.
++  static void setToneCurve(const uint8_t* curve, uint32_t hash);
++
+   ImageBlock(const std::string& imagePath, const std::string& srcPath, int16_t width, int16_t height);
+   ~ImageBlock() override = default;
+ 
+diff --git a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
+index 94400273..ee2885bb 100644
+--- a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
++++ b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
+@@ -341,19 +341,31 @@ void ChapterHtmlSlimParser::flushPendingAnchor() {
+     }
+   }
+ 
+-  // The page is fixed when the block places its first content (placeUnplacedAnchors).
+   unplacedAnchorIds.push_back(std::move(pendingAnchorId));
+   pendingAnchorId.clear();
+ }
+ 
++void ChapterHtmlSlimParser::placeInlineAnchors(const uint32_t endOffset, const bool remaining) {
++  while (!inlineAnchorIds.empty() && (remaining || inlineAnchorIds.front().second < endOffset)) {
++    anchorData.push_back({std::move(inlineAnchorIds.front().first), static_cast<uint16_t>(completedPageCount)});
++    inlineAnchorIds.pop_front();
++  }
++}
++
++void ChapterHtmlSlimParser::placeTrailingInlineAnchors() {
++  const size_t before = anchorData.size();
++  placeInlineAnchors(0, true);
++  if (anchorData.size() != before && recentLineCount > 0 && currentPage && !currentPage->elements.empty() &&
++      currentPage->elements.back()->getTag() == TAG_PageLine) {
++    recentLineAnchors[recentLineCount - 1].second = anchorData.size();
++  }
++}
++
+ void ChapterHtmlSlimParser::placeUnplacedAnchors() {
+   if (unplacedAnchorIds.empty()) return;
+-  anchorParagraphBegin = anchorData.size();
+   for (auto& id : unplacedAnchorIds) {
+     anchorData.push_back({std::move(id), static_cast<uint16_t>(completedPageCount)});
+   }
+-  anchorParagraphEnd = anchorData.size();
+-  anchorParagraph = layoutParagraph;
+   unplacedAnchorIds.clear();
+ }
+ 
+@@ -370,8 +382,11 @@ void ChapterHtmlSlimParser::emitCurrentPage() {
+   paragraphLinesOnPage = 0;
+ }
+ 
+-void ChapterHtmlSlimParser::noteContent(const int top, const int bottom) {
+-  placeUnplacedAnchors();
++void ChapterHtmlSlimParser::noteContent(const int top, const int bottom, const bool recordAnchors) {
++  if (recordAnchors) {
++    placeUnplacedAnchors();
++    if (!layoutParagraph) placeInlineAnchors(0, true);
++  }
+   for (BoxScope& box : boxScopes) {
+     if (box.top < 0) box.top = static_cast<int16_t>(top);
+     box.bottom = static_cast<int16_t>(std::max<int>(box.bottom, bottom));
+@@ -819,7 +834,6 @@ void ChapterHtmlSlimParser::startNewTextBlock(const BlockStyle& blockStyle, cons
+     makePages(true, paragraphEnd);
+     if (stopRequested) return;
+   }
+-  anchorParagraph = nullptr;
+   // If the pending anchor is a TOC chapter boundary, force a page break after the previous
+   // block is flushed so the chapter starts on a fresh page.
+   flushPendingAnchor();
+@@ -1408,7 +1422,9 @@ void XMLCALL ChapterHtmlSlimParser::startElement(void* userData, const XML_Char*
+         const bool isTocAnchor =
+             std::find(self->tocAnchors.begin(), self->tocAnchors.end(), idValue) != self->tocAnchors.end();
+         if (isTocAnchor || (!isNonNavigableInlineElement(name) &&
+-                            self->anchorData.size() + self->unplacedAnchorIds.size() < MAX_ANCHORS_PER_CHAPTER)) {
++                            self->anchorData.size() + self->unplacedAnchorIds.size() + self->inlineAnchorIds.size() +
++                                    (self->pendingAnchorId.empty() ? 0 : 1) <
++                                MAX_ANCHORS_PER_CHAPTER)) {
+           // Flush a displaced anchor before overwriting. Consecutive non-block elements
+           // (e.g. <aside id="fn1">text</aside><aside id="fn2">) with no intervening block
+           // never trigger startNewTextBlock, so fn1 gets silently overwritten. That leaves
+@@ -1417,7 +1433,15 @@ void XMLCALL ChapterHtmlSlimParser::startElement(void* userData, const XML_Char*
+           if (!self->pendingAnchorId.empty()) {
+             self->flushPendingAnchor();
+           }
+-          self->pendingAnchorId = idValue;
++          const bool inText =
++              !isTocAnchor && self->tableDepth == 0 && !isHeaderOrBlock(name) && !isTableStructuralTag(name) &&
++              !matches(name, IMAGE_TAGS, std::size(IMAGE_TAGS)) &&
++              ((self->currentTextBlock && !self->currentTextBlock->isEmpty()) || self->partWordBufferIndex > 0);
++          if (inText) {
++            self->inlineAnchorIds.push_back({idValue, self->visibleTextOffset});
++          } else {
++            self->pendingAnchorId = idValue;
++          }
+         }
+       } else if (strcmp(atts[i], "dir") == 0) {
+         dirAttr = atts[i + 1];
+@@ -2815,6 +2839,7 @@ void XMLCALL ChapterHtmlSlimParser::endElement(void* userData, const XML_Char* n
+       // from inheriting the closed block style (e.g. alignment or margins).
+       // Vertical margins and paddings are stripped
+       self->startNewTextBlock(self->blockStyleStack.back().withoutTop().withoutBottom());
++      self->placeTrailingInlineAnchors();
+       self->updateEffectiveInlineStyle();
+       if (!self->boxScopes.empty() && self->boxScopes.back().depth == self->depth) self->closeBoxScope();
+       // Set after the closing element's own text was laid out above.
+@@ -2995,6 +3020,7 @@ bool ChapterHtmlSlimParser::finishParse() {
+       LOG_ERR("EHP", "Text layout dropped content (OOM); failing section build");
+       return false;
+     }
++    placeTrailingInlineAnchors();
+     // Anchors of a block that placed nothing land on the last page.
+     placeUnplacedAnchors();
+     if (!pendingAnchorId.empty()) {
+@@ -3099,12 +3125,6 @@ bool ChapterHtmlSlimParser::canCarry(const size_t carry) const {
+ // link areas to the top of the next page with their spacing intact.
+ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const size_t paragraphLines,
+                                                    const uint32_t visibleOffset) {
+-  // Every line of the anchored paragraph on this page moves, and the paragraph starts here:
+-  // its anchors follow its first line to the next page.
+-  const bool carriesAnchorParagraphStart =
+-      anchorParagraph && anchorParagraph == layoutParagraph && anchorParagraphEnd > anchorParagraphBegin &&
+-      anchorParagraphEnd <= anchorData.size() && paragraphLines > 0 && paragraphLines == paragraphLinesOnPage &&
+-      anchorData[anchorParagraphBegin].second == completedPageCount;
+   auto nextPage = makeUniqueNoThrow<Page>();
+   if (!nextPage) {
+     LOG_ERR("EHP", "OOM: Page (%zu bytes)", sizeof(Page));
+@@ -3113,6 +3133,7 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+   }
+   std::unique_ptr<PageElement> carried[MAX_CARRIED_LINES];
+   uint32_t carriedOffsets[MAX_CARRIED_LINES] = {};
++  std::pair<size_t, size_t> carriedAnchors[MAX_CARRIED_LINES] = {};
+   std::vector<PageLink> carriedLinks;
+   int16_t carriedTop = 0;
+   const int16_t carriedBottom = currentPageNextY;
+@@ -3120,6 +3141,7 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+     carried[carry - 1 - i] = std::move(currentPage->elements.back());
+     currentPage->elements.pop_back();
+     carriedOffsets[carry - 1 - i] = recentLineOffsets[recentLineCount - 1 - i];
++    carriedAnchors[carry - 1 - i] = recentLineAnchors[recentLineCount - 1 - i];
+   }
+   if (carry > 0) {
+     carriedTop = carried[0]->yPos;
+@@ -3151,11 +3173,6 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+   setCurrentPageVisibleOffset(visibleOffset);
+   emitCurrentPage();
+   completedPageCount++;
+-  if (carriesAnchorParagraphStart) {
+-    for (size_t i = anchorParagraphBegin; i < anchorParagraphEnd; ++i) {
+-      anchorData[i].second = static_cast<uint16_t>(completedPageCount);
+-    }
+-  }
+   if (stopRequested) return;
+   currentPage = std::move(nextPage);
+   currentPageNextY = 0;
+@@ -3165,11 +3182,15 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+     carried[i]->yPos = static_cast<int16_t>(carried[i]->yPos - carriedTop);
+     setCurrentPageVisibleOffset(carriedOffsets[i]);
+     currentPage->elements.push_back(std::move(carried[i]));
+-    recentLineOffsets[recentLineCount++] = carriedOffsets[i];
++    recentLineOffsets[recentLineCount] = carriedOffsets[i];
++    recentLineAnchors[recentLineCount++] = carriedAnchors[i];
++    for (size_t anchor = carriedAnchors[i].first; anchor < carriedAnchors[i].second; ++anchor) {
++      anchorData[anchor].second = static_cast<uint16_t>(completedPageCount);
++    }
+   }
+   if (carry > 0) {
+     currentPageNextY = static_cast<int16_t>(carriedBottom - carriedTop);
+-    noteContent(0, currentPageNextY);
++    noteContent(0, currentPageNextY, false);
+   }
+   for (const PageLink& link : carriedLinks) {
+     currentPage->addLink(link.href, link.x, static_cast<int16_t>(link.y - carriedTop), link.width, link.height);
+@@ -3220,19 +3241,30 @@ void ChapterHtmlSlimParser::addLineToPage(std::unique_ptr<TextBlock> line, const
+       LOG_DBG("EHP", "Dropped page link: %.48s", link.href);
+     }
+   }
++  uint32_t lineEndOffset = visibleOffset;
++  if (!inlineAnchorIds.empty()) {
++    for (uint16_t i = 0; i < line->wordCount(); ++i) {
++      lineEndOffset = std::max(lineEndOffset, line->wordSourceRange(i).end);
++    }
++  }
+   auto pageLine = makeUniqueNoThrow<PageLine>(std::move(line), xOffset, currentPageNextY);
+   if (!pageLine) {
+     LOG_ERR("EHP", "OOM: PageLine");
+     return;
+   }
+   currentPage->elements.push_back(std::move(pageLine));
++  const size_t lineAnchorBegin = anchorData.size();
+   noteContent(currentPageNextY, currentPageNextY + contentHeight);
++  placeInlineAnchors(lineEndOffset);
++  const size_t lineAnchorEnd = anchorData.size();
+   currentPageNextY += lineHeight;
+   if (layoutParagraph && paragraphLinesOnPage < UINT8_MAX) paragraphLinesOnPage++;
+   if (recentLineCount == MAX_CARRIED_LINES) {
+     memmove(recentLineOffsets, recentLineOffsets + 1, sizeof(recentLineOffsets[0]) * (MAX_CARRIED_LINES - 1));
++    std::move(recentLineAnchors + 1, recentLineAnchors + MAX_CARRIED_LINES, recentLineAnchors);
+     recentLineCount--;
+   }
++  recentLineAnchors[recentLineCount] = {lineAnchorBegin, lineAnchorEnd};
+   recentLineOffsets[recentLineCount++] = visibleOffset;
+ }
+ 
+diff --git a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
+index d8e88b32..23f68dce 100644
+--- a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
++++ b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
+@@ -143,6 +143,8 @@ class ChapterHtmlSlimParser {
+   uint8_t paragraphLinesOnPage = 0;
+   uint8_t keepWithNextLines = 0;                       // trailing heading lines on this page
+   uint32_t recentLineOffsets[MAX_CARRIED_LINES] = {};  // visible offsets of this page's last lines, newest last
++  // Anchor ranges follow the same six trailing lines when pagination carries them.
++  std::pair<size_t, size_t> recentLineAnchors[MAX_CARRIED_LINES] = {};
+   uint8_t recentLineCount = 0;
+   size_t linesToCarry(size_t& paragraphLines) const;
+   size_t keepWithNextCarry() const;
+@@ -201,16 +203,13 @@ class ChapterHtmlSlimParser {
+   // anchors needs ~28 KB contiguous, and a failed allocation aborts).
+   int completedPageCount = 0;
+   std::deque<std::pair<std::string, uint16_t>> anchorData;
+-  std::string pendingAnchorId;          // deferred until after previous text block is flushed
++  std::string pendingAnchorId;  // deferred until after previous text block is flushed
++  // Inline targets wait for the line containing their visible-text offset.
++  std::deque<std::pair<std::string, uint32_t>> inlineAnchorIds;
+   // Anchors whose block has started but placed nothing yet. Their page is the page of the block's
+   // first content, which can differ from the page open at block start: the first line may not fit,
+   // or the orphan rule may move it to the next page.
+   std::vector<std::string> unplacedAnchorIds;
+-  // anchorData range of the paragraph whose first line the anchors point at; a page break that
+-  // carries every line of that paragraph moves them along.
+-  const ParsedText* anchorParagraph = nullptr;
+-  size_t anchorParagraphBegin = 0;
+-  size_t anchorParagraphEnd = 0;
+   std::vector<std::string> tocAnchors;  // the list of anchors that are TOC chapter boundaries
+   uint16_t xpathParagraphIndex = 0;
+   uint16_t xpathListItemIndex = 0;
+@@ -253,10 +252,12 @@ class ChapterHtmlSlimParser {
+   void updateEffectiveInlineStyle();
+   void startNewTextBlock(const BlockStyle& blockStyle, bool paragraphEnd = true);
+   void flushPendingAnchor();
++  void placeInlineAnchors(uint32_t endOffset, bool remaining = false);
++  void placeTrailingInlineAnchors();
+   void placeUnplacedAnchors();
+   void completeCurrentPage();
+   void emitCurrentPage();
+-  void noteContent(int top, int bottom);
++  void noteContent(int top, int bottom, bool recordAnchors = true);
+   int lastLineGlyphBottom() const;
+   void openBoxScope(BlockStyle& ownStyle, const CssStyle& cssStyle);
+   void closeBoxScope();
+diff --git a/lib/I18n/translations/english.yaml b/lib/I18n/translations/english.yaml
+index b1f0bdd0..02beda1b 100644
+--- a/lib/I18n/translations/english.yaml
++++ b/lib/I18n/translations/english.yaml
+@@ -249,9 +249,19 @@ STR_MS_500: "500 ms"
+ STR_MS_1000: "1000 ms"
+ STR_HOME_FULL_REFRESH: "Clean Home Screen"
+ STR_SHEET_CLOSE_CLEAN: "Clean After Control Center"
+-STR_SLEEP_SETTLED_REDRAW: "Redraw Sleep Screen"
+-STR_IMAGE_SETTLED_REDRAW: "Redraw Images"
+-STR_MENU_EXIT_CLEAN: "Redraw Menus"
++STR_SLEEP_SETTLED_REDRAW: "Refresh Sleep Screen"
++STR_IMAGE_SETTLED_REDRAW: "Refresh Images"
++STR_SCREEN_CLEAN_SETTINGS: "Screen Cleaning"
++STR_SCREEN_CLEAN_NOTE: "Screen cleans run from time to time and remove traces and halos of previous screens."
++STR_AFTER_1_MIN: "after 1 min"
++STR_AFTER_2_MIN: "after 2 min"
++STR_AFTER_5_MIN: "after 5 min"
++STR_PANEL_CALIBRATION: "Screen Calibration"
++STR_CAL_PICTURES_SCREEN: "Pictures Calibration Screen"
++STR_CAL_BOOKS_SCREEN: "Books Calibration Screen"
++STR_PANEL_CAL_PICTURES: "Pictures Calibration"
++STR_PANEL_CAL_BOOKS: "Books Calibration"
++STR_PANEL_CAL_NOTE: "Photograph a calibration screen and compute the correction in KEINKT Calibrator. Checkbox off: the screen as it is (measure); on: with your correction (check)."
+ STR_NEVER: "Never"
+ STR_IN_READER: "In Reader"
+ STR_ALWAYS: "Always"
+diff --git a/lib/I18n/translations/russian.yaml b/lib/I18n/translations/russian.yaml
+index 63f0ac56..7bc3fb28 100644
+--- a/lib/I18n/translations/russian.yaml
++++ b/lib/I18n/translations/russian.yaml
+@@ -168,7 +168,7 @@ STR_LIBRARY_REBUILD_DONE: "Индекс библиотеки перестрое
+ STR_LIBRARY_REBUILD_FAILED: "Не удалось перестроить индекс"
+ STR_REMOVE_READ_FROM_RECENTS: "Скрывать прочитанные"
+ STR_MOVE_FINISHED_TO_READ: "Прочитанные в Read"
+-STR_REFRESH_FREQ: "Частота обновления"
++STR_REFRESH_FREQ: "Очищать каждые"
+ STR_KOREADER_SYNC: "CrossPoint Sync"
+ STR_CHECK_UPDATES: "Проверить обновление"
+ STR_LANGUAGE: "Язык"
+@@ -240,11 +240,21 @@ STR_LIGHT_RAMP: "Плавная подсветка"
+ STR_MS_200: "200 мс"
+ STR_MS_500: "500 мс"
+ STR_MS_1000: "1000 мс"
+-STR_HOME_FULL_REFRESH: "Очищать главный экран"
++STR_HOME_FULL_REFRESH: "Очищать домашний экран"
+ STR_SHEET_CLOSE_CLEAN: "Очищать после шторки"
+-STR_SLEEP_SETTLED_REDRAW: "Перерисовка заставки сна"
+-STR_IMAGE_SETTLED_REDRAW: "Перерисовка картинок"
+-STR_MENU_EXIT_CLEAN: "Перерисовка меню"
++STR_SLEEP_SETTLED_REDRAW: "Обновлять заставку"
++STR_IMAGE_SETTLED_REDRAW: "Обновлять картинки"
++STR_SCREEN_CLEAN_SETTINGS: "Настройки очисток экрана"
++STR_SCREEN_CLEAN_NOTE: "Очистки экрана выполняются периодически, помогают убрать следы и ореолы прошлых экранов."
++STR_AFTER_1_MIN: "через 1 мин"
++STR_AFTER_2_MIN: "через 2 мин"
++STR_AFTER_5_MIN: "через 5 мин"
++STR_PANEL_CALIBRATION: "Калибровка экрана"
++STR_CAL_PICTURES_SCREEN: "Калибровочный экран картинок"
++STR_CAL_BOOKS_SCREEN: "Калибровочный экран книг"
++STR_PANEL_CAL_PICTURES: "Калибровка картинок"
++STR_PANEL_CAL_BOOKS: "Калибровка книг"
++STR_PANEL_CAL_NOTE: "Сфотографируйте калибровочный экран и рассчитайте поправку в KEINKT Calibrator. Галочка снята — экран показан как есть (замер), стоит — с поправкой (проверка)."
+ STR_NEVER: "Никогда"
+ STR_IN_READER: "В режиме чтения"
+ STR_ALWAYS: "Всегда"
+diff --git a/lib/hal/HalStorage.cpp b/lib/hal/HalStorage.cpp
+index cd2ff733..17924f52 100644
+--- a/lib/hal/HalStorage.cpp
++++ b/lib/hal/HalStorage.cpp
+@@ -61,7 +61,6 @@ bool HalStorage::begin() {
+ 
+ bool HalStorage::ready() const { return SDCard.ready(); }
+ 
+-
+ // For the rest of the methods, we acquire the mutex to ensure thread safety
+ 
+ class HalStorage::StorageLock {
+@@ -149,7 +148,7 @@ UsbDriveState HalStorage::usbDriveState() const {
+   return SDCard.method(__VA_ARGS__);
+ 
+ uint64_t HalStorage::sdTotalBytes() { HAL_STORAGE_WRAPPED_CALL(sdTotalBytes); }
+-uint64_t HalStorage::sdUsedBytes() { HAL_STORAGE_WRAPPED_CALL(sdUsedBytes); }
++bool HalStorage::sdUsedBytes(uint64_t& usedBytes) { HAL_STORAGE_WRAPPED_CALL(sdUsedBytes, usedBytes); }
+ uint8_t HalStorage::sdFatType() { HAL_STORAGE_WRAPPED_CALL(sdFatType); }
+ 
+ std::vector<String> HalStorage::listFiles(const char* path, int maxFiles) {
+diff --git a/lib/hal/HalStorage.h b/lib/hal/HalStorage.h
+index 88b5c4d6..0b1288ec 100644
+--- a/lib/hal/HalStorage.h
++++ b/lib/hal/HalStorage.h
+@@ -26,7 +26,7 @@ class HalStorage {
+   bool ready() const;
+   // Card capacity, used space (cached ~20 s; the first call scans the FAT) and FAT type (16, 32, 64 = exFAT).
+   uint64_t sdTotalBytes();
+-  uint64_t sdUsedBytes();
++  bool sdUsedBytes(uint64_t& usedBytes);
+   uint8_t sdFatType();
+   // Stop the SD card for deep sleep: unmount, stop the SDMMC host, and release
+   // the bus pads (no-op on SPI boards). Call only after all file users have
+diff --git a/qa/DISPLAY_KNOWLEDGE.md b/qa/DISPLAY_KNOWLEDGE.md
+index fa65c7bc..97f92482 100644
+--- a/qa/DISPLAY_KNOWLEDGE.md
++++ b/qa/DISPLAY_KNOWLEDGE.md
+@@ -139,11 +139,13 @@
+     - Кнопка до 5 минут — обычное пробуждение, таймер пропадает. Случайное касание, не прошедшее проверку
+       удержания, взводит таймер заново.
+     - Карта не читается — сразу обратно в сон.
+-- **Настройки → Экран** (описаны в РУКОВОДСТВЕ):
+-  - «Перерисовка заставки сна» (вкл);
+-  - «Перерисовка картинок» (вкл);
++- **Настройки → Экран → Настройки очисток экрана** (05.11.2026; описаны в РУКОВОДСТВЕ):
++  - «Обновлять заставку»: ВЫКЛ / через 1 / 2 / 5 мин (5; ключ `sleepRedrawDelay`, старый вкл/выкл → 5 мин / ВЫКЛ);
++  - «Обновлять картинки»: ВЫКЛ / через 1 / 2 / 5 мин (2; ключ `imageRedrawDelay`, старый вкл/выкл → 2 мин / ВЫКЛ);
+   - «Очищать после шторки» (выкл);
+-  - «Перерисовка меню»: очистка при выходе из картинки в меню (вкл).
++  - выход из картинки без очистки: драйвер UC8279 гонит первый ч/б кадр после серого своим переходом
++    (`transitionGrayscaleBase`), опция «Очищать после картинок» убрана 05.11 (Николай: меню и так чистое);
++  - «Очищать домашний экран», «Очищать каждые» (стоковая «Частота обновления»).
+ - **Шторка:**
+   - после переключения темы её нельзя закрыть, пока она не перерисовалась в новой теме (`std::atomic<bool>
+     themeApplying`);
+diff --git a/src/CrossPointSettings.cpp b/src/CrossPointSettings.cpp
+index 56d612c6..d05d8a59 100644
+--- a/src/CrossPointSettings.cpp
++++ b/src/CrossPointSettings.cpp
+@@ -232,6 +232,16 @@ bool CrossPointSettings::fromJson(JsonVariantConst doc) {
+     lineSpacing = legacyValue + 1 < LINE_COMPRESSION_COUNT ? static_cast<uint8_t>(legacyValue + 1) : LINE_SPACING_120;
+     needsResave = true;
+   }
++  // Settled redraws were on/off under "sleepSettledRedraw"/"imageSettledRedraw" with fixed 5 / 2 min delays; now a
++  // delay picker under new keys (Nikolai 05.11.2026). On keeps the old delay, off stays off.
++  if (doc["sleepRedrawDelay"].isNull() && doc["sleepSettledRedraw"].is<uint8_t>()) {
++    sleepSettledRedraw = doc["sleepSettledRedraw"].as<uint8_t>() ? REDRAW_5_MIN : REDRAW_OFF;
++    needsResave = true;
++  }
++  if (doc["imageRedrawDelay"].isNull() && doc["imageSettledRedraw"].is<uint8_t>()) {
++    imageSettledRedraw = doc["imageSettledRedraw"].as<uint8_t>() ? REDRAW_2_MIN : REDRAW_OFF;
++    needsResave = true;
++  }
+   // Front button remap — managed by RemapFrontButtons sub-activity, not in SettingsList.
+   frontButtonBack = clamp(doc["frontButtonBack"] | (uint8_t)FRONT_HW_BACK, FRONT_BUTTON_HARDWARE_COUNT, FRONT_HW_BACK);
+   frontButtonConfirm =
+diff --git a/src/CrossPointSettings.h b/src/CrossPointSettings.h
+index 1c62e555..a0aaf16a 100644
+--- a/src/CrossPointSettings.h
++++ b/src/CrossPointSettings.h
+@@ -273,12 +273,16 @@ class CrossPointSettings : public PersistableStore<CrossPointSettings> {
+   // Krinik: a short clean every time the control center closes over the menus («Clean After Control Center»).
+   // Off by default (Nikolai 04.11.2026).
+   uint8_t sheetCloseClean = 0;
+-  // Krinik: a short clean when leaving a viewer image for the menus («Redraw Menus»).
+-  uint8_t menuExitClean = 1;
+   // Krinik (X4 Pro, 04.11.2026): settled redraws — the gray image is repainted once with a short clean after the
+-  // remnant charge of the frames drawn before it has drained: the sleep image 5 min after sleep, a viewer image 2 min
+-  // after it opened.
+-  uint8_t sleepSettledRedraw = 1;
++  // remnant charge of the frames drawn before it has drained. Off or a delay (Nikolai 05.11.2026): the sleep image
++  // («Обновлять заставку», 5 min by default) and a viewer image («Обновлять картинки», 2 min by default). Saved under
++  // new keys; the old on/off keys migrate to the old fixed delays (CrossPointSettings.cpp).
++  enum REDRAW_DELAY { REDRAW_OFF = 0, REDRAW_1_MIN, REDRAW_2_MIN, REDRAW_5_MIN, REDRAW_DELAY_COUNT };
++  static uint32_t redrawDelayMinutes(const uint8_t value) {
++    static constexpr uint32_t kMinutes[] = {0, 1, 2, 5};
++    return kMinutes[value < REDRAW_DELAY_COUNT ? value : 0];
++  }
++  uint8_t sleepSettledRedraw = REDRAW_5_MIN;
+   // Krinik (Nikolai 04.11.2026): how long the frontlight stays on over the fresh sleep image before the reader sleeps
+   // (index into Off / 2 s / 5 s / 10 s; a power-button press in that window wakes the reader).
+   enum SLEEP_LIGHT_LINGER { SLEEP_LIGHT_OFF = 0, SLEEP_LIGHT_2S, SLEEP_LIGHT_5S, SLEEP_LIGHT_10S, SLEEP_LIGHT_COUNT };
+@@ -290,7 +294,13 @@ class CrossPointSettings : public PersistableStore<CrossPointSettings> {
+     static constexpr uint32_t kMs[] = {0, 200, 500, 1000};
+     return kMs[lightRamp < LIGHT_RAMP_COUNT ? lightRamp : 0];
+   }
+-  uint8_t imageSettledRedraw = 1;
++  uint8_t imageSettledRedraw = REDRAW_2_MIN;
++  // Display → «Калибровка экрана» (Nikolai 05.11.2026): apply the pictures curve (viewer, own sleep images) — on, as
++  // before; apply the books curve (images inside EPUBs) — off: books whose images were prepared for the screen already
++  // would be corrected twice. Off also makes the calibration screens show the panel's own response
++  // (src/util/PanelCurve).
++  uint8_t panelCalPictures = 1;
++  uint8_t panelCalBooks = 0;
+   // Sleep screen cover filter
+   uint8_t sleepScreenCoverFilter = NO_FILTER;
+   // Status bar settings
+diff --git a/src/SettingsList.cpp b/src/SettingsList.cpp
+index 86729df9..4dd4f4d7 100644
+--- a/src/SettingsList.cpp
++++ b/src/SettingsList.cpp
+@@ -41,15 +41,14 @@ void forEachBaseSetting(SettingVisitor visit, void* context) {
+       "sleepTimeoutMinutes", StrId::STR_CAT_SYSTEM));
+   emit(SettingInfo::Enum(StrId::STR_SLEEP_COVER_MODE, &CrossPointSettings::sleepScreenCoverMode,
+                          {StrId::STR_FIT, StrId::STR_CROP}, "sleepScreenCoverMode", StrId::STR_CAT_DISPLAY));
+-  emit(SettingInfo::Enum(StrId::STR_SLEEP_IMAGE_ORDER, &CrossPointSettings::sleepImageOrder,
+-                         {StrId::STR_SLEEP_ORDER_RANDOM, StrId::STR_SLEEP_ORDER_SEQUENTIAL, StrId::STR_SLEEP_ORDER_SINGLE},
+-                         "sleepImageOrder",
+-                         StrId::STR_CAT_DISPLAY));
+   emit(SettingInfo::Enum(
+-      StrId::STR_SLEEP_ORIENTATION, &CrossPointSettings::sleepOrientation,
+-      {StrId::STR_PORTRAIT, StrId::STR_LANDSCAPE_CW, StrId::STR_ORIENTATION_INVERTED, StrId::STR_LANDSCAPE_CCW,
+-       StrId::STR_SLEEP_ORIENTATION_BY_IMAGE},
+-      "sleepOrientation", StrId::STR_CAT_DISPLAY));
++      StrId::STR_SLEEP_IMAGE_ORDER, &CrossPointSettings::sleepImageOrder,
++      {StrId::STR_SLEEP_ORDER_RANDOM, StrId::STR_SLEEP_ORDER_SEQUENTIAL, StrId::STR_SLEEP_ORDER_SINGLE},
++      "sleepImageOrder", StrId::STR_CAT_DISPLAY));
++  emit(SettingInfo::Enum(StrId::STR_SLEEP_ORIENTATION, &CrossPointSettings::sleepOrientation,
++                         {StrId::STR_PORTRAIT, StrId::STR_LANDSCAPE_CW, StrId::STR_ORIENTATION_INVERTED,
++                          StrId::STR_LANDSCAPE_CCW, StrId::STR_SLEEP_ORIENTATION_BY_IMAGE},
++                         "sleepOrientation", StrId::STR_CAT_DISPLAY));
+   emit(SettingInfo::Enum(StrId::STR_SLEEP_LIGHT_LINGER, &CrossPointSettings::sleepLightLinger,
+                          {StrId::STR_STATE_OFF, StrId::STR_SECONDS_2, StrId::STR_SECONDS_5, StrId::STR_SECONDS_10},
+                          "sleepLightLinger", StrId::STR_CAT_DISPLAY));
+@@ -82,16 +81,23 @@ void forEachBaseSetting(SettingVisitor visit, void* context) {
+                          {StrId::STR_PAGES_1, StrId::STR_PAGES_5, StrId::STR_PAGES_10, StrId::STR_PAGES_15,
+                           StrId::STR_PAGES_30, StrId::STR_NEVER},
+                          "refreshFrequency", StrId::STR_CAT_DISPLAY));
++  // Device: Display → «Настройки очисток экрана» (SettingsSection::ScreenClean, Nikolai 05.11.2026), in this order.
+   emit(SettingInfo::Enum(StrId::STR_HOME_FULL_REFRESH, &CrossPointSettings::homeFullRefresh,
+                          {StrId::STR_STATE_OFF, StrId::STR_STATE_ON}, "homeFullRefresh", StrId::STR_CAT_DISPLAY));
+-  emit(SettingInfo::Enum(StrId::STR_SLEEP_SETTLED_REDRAW, &CrossPointSettings::sleepSettledRedraw,
+-                         {StrId::STR_STATE_OFF, StrId::STR_STATE_ON}, "sleepSettledRedraw", StrId::STR_CAT_DISPLAY));
+-  emit(SettingInfo::Enum(StrId::STR_IMAGE_SETTLED_REDRAW, &CrossPointSettings::imageSettledRedraw,
+-                         {StrId::STR_STATE_OFF, StrId::STR_STATE_ON}, "imageSettledRedraw", StrId::STR_CAT_DISPLAY));
+   emit(SettingInfo::Enum(StrId::STR_SHEET_CLOSE_CLEAN, &CrossPointSettings::sheetCloseClean,
+                          {StrId::STR_STATE_OFF, StrId::STR_STATE_ON}, "sheetCloseClean", StrId::STR_CAT_DISPLAY));
+-  emit(SettingInfo::Enum(StrId::STR_MENU_EXIT_CLEAN, &CrossPointSettings::menuExitClean,
+-                         {StrId::STR_STATE_OFF, StrId::STR_STATE_ON}, "menuExitClean", StrId::STR_CAT_DISPLAY));
++  // Device: Display → «Калибровка экрана» (SettingsSection::ScreenCalibration).
++  emit(SettingInfo::Toggle(StrId::STR_PANEL_CAL_PICTURES, &CrossPointSettings::panelCalPictures, "panelCalPictures",
++                           StrId::STR_CAT_DISPLAY));
++  emit(SettingInfo::Toggle(StrId::STR_PANEL_CAL_BOOKS, &CrossPointSettings::panelCalBooks, "panelCalBooks",
++                           StrId::STR_CAT_DISPLAY));
++  // Delays, index = CrossPointSettings::REDRAW_DELAY; new keys, the old on/off ones migrate in fromJson().
++  emit(SettingInfo::Enum(StrId::STR_SLEEP_SETTLED_REDRAW, &CrossPointSettings::sleepSettledRedraw,
++                         {StrId::STR_STATE_OFF, StrId::STR_AFTER_1_MIN, StrId::STR_AFTER_2_MIN, StrId::STR_AFTER_5_MIN},
++                         "sleepRedrawDelay", StrId::STR_CAT_DISPLAY));
++  emit(SettingInfo::Enum(StrId::STR_IMAGE_SETTLED_REDRAW, &CrossPointSettings::imageSettledRedraw,
++                         {StrId::STR_STATE_OFF, StrId::STR_AFTER_1_MIN, StrId::STR_AFTER_2_MIN, StrId::STR_AFTER_5_MIN},
++                         "imageRedrawDelay", StrId::STR_CAT_DISPLAY));
+ 
+   // --- Reader ---
+   // Built-in font-family entry. Replaced per-call with a registry-aware
+diff --git a/src/activities/ActivityManager.cpp b/src/activities/ActivityManager.cpp
+index 1065455d..cb5cf056 100644
+--- a/src/activities/ActivityManager.cpp
++++ b/src/activities/ActivityManager.cpp
+@@ -2,6 +2,7 @@
+ 
+ #include <BlePageTurner.h>
+ #include <BoardConfig.h>
++#include <Epub/blocks/ImageBlock.h>
+ #include <FontCacheManager.h>
+ #include <FsHelpers.h>
+ #include <HalDisplay.h>
+@@ -32,6 +33,7 @@
+ #include "settings/SettingsListActivity.h"
+ #include "util/BmpViewerActivity.h"
+ #include "util/FlashlightActivity.h"
++#include "util/PanelCurve.h"
+ #if KRINIK_MAMA
+ #include "util/MamaActivity.h"
+ #endif
+@@ -297,9 +299,7 @@ void ActivityManager::goToUsbDrive() {
+ #endif
+ }
+ 
+-void ActivityManager::goToFlashlight() {
+-  replaceActivity(std::make_unique<FlashlightActivity>(renderer, mappedInput));
+-}
++void ActivityManager::goToFlashlight() { replaceActivity(std::make_unique<FlashlightActivity>(renderer, mappedInput)); }
+ #if KRINIK_MAMA
+ void ActivityManager::goToMama() { replaceActivity(std::make_unique<MamaActivity>(renderer, mappedInput)); }
+ #endif
+@@ -351,6 +351,10 @@ void ActivityManager::goToReader(std::string path, const bool allowFastInitialRe
+     return;
+   }
+ 
++  // Display → Screen calibration → «Калибровка книг»: the curve images inside this book are decoded through.
++  uint32_t bookCurveHash = 0;
++  const uint8_t* bookCurve = panelcurve::bookCurve(bookCurveHash);
++  ImageBlock::setToneCurve(bookCurve, bookCurveHash);
+   auto activity = ReaderActivity::create(renderer, mappedInput, std::move(path), allowFastInitialRefresh);
+   if (activity) {
+     replaceActivity(std::move(activity));
+diff --git a/src/activities/boot_sleep/SleepActivity.cpp b/src/activities/boot_sleep/SleepActivity.cpp
+index 70749bb2..06b6ac22 100644
+--- a/src/activities/boot_sleep/SleepActivity.cpp
++++ b/src/activities/boot_sleep/SleepActivity.cpp
+@@ -1,5 +1,10 @@
+ #include "SleepActivity.h"
+ 
++#include "SleepImageCursor.h"
++#ifndef SIMULATOR
++#include <esp_attr.h>
++#endif
++
+ #include <BitmapHelpers.h>
+ #include <BmpToBmpConverter.h>
+ #include <Epub.h>
+@@ -57,7 +62,7 @@ void cleanBeforeAbsoluteGray(GfxRenderer& renderer) {
+ // Before a full-screen absolute/direct gray sleep image: a white sheet first. On the X4 Pro the gray waveform started
+ // straight over the menu or page showed the image in a harsh burnt-out contrast before it settled to gray
+ // (04.11.2026); from white it does not. The sleep moment tolerates the one flash; the ghost of what was on screen
+-// before is the settled redraw's job (5 minutes later).
++// before is the settled redraw's job («Обновлять заставку» minutes later).
+ void cleanToWhiteBeforeAbsoluteGray(GfxRenderer& renderer) {
+ #if FREEINK_DEVICE_X4PRO
+   deepclean::shortClean(renderer);
+@@ -529,6 +534,21 @@ bool findNextValidSleepImage(HalFile& dir, const SleepRecentKind recentKind, cha
+ // path order across both sleep directories, wrapping to the first. The folders are rescanned on
+ // every sleep, so added and removed images take effect at once. One pass, no name list in RAM.
+ constexpr char SLEEP_LAST_SHOWN_PATH[] = "/.crosspoint/sleep_last.txt";
++#ifdef SIMULATOR
++SleepImageCursor unsavedSleepCursor{};
++#else
++RTC_DATA_ATTR SleepImageCursor unsavedSleepCursor{};
++#endif
++static_assert(MAX_SLEEP_FILE_NAME_LEN + 32 <= SleepImageCursor::PATH_CAPACITY);
++
++void saveSleepImageCursor(const std::string& selectedPath) {
++  Storage.mkdir("/.crosspoint");
++  const bool saved = Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()));
++  if (!saved) LOG_ERR("SLP", "Failed to save last sleep image");
++  if (!unsavedSleepCursor.record(selectedPath, saved)) {
++    LOG_ERR("SLP", "Sleep image path exceeds retained cursor capacity");
++  }
++}
+ 
+ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirPath, std::string& selectedPath) {
+   auto name = makeUniqueNoThrow<char[]>(MAX_SLEEP_FILE_NAME_LEN);
+@@ -541,6 +561,7 @@ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirP
+     Storage.readFileToString("SLP", SLEEP_LAST_SHOWN_PATH, MAX_SLEEP_FILE_NAME_LEN + 32, lastShown);
+   }
+ 
++  const char* cursor = unsavedSleepCursor.lastShown(lastShown.c_str());
+   std::string first;
+   std::string next;
+   std::string path;
+@@ -552,16 +573,13 @@ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirP
+       path += '/';
+       path += name.get();
+       if (first.empty() || path < first) first = path;
+-      if (path > lastShown && (next.empty() || path < next)) next = path;
++      if (path > cursor && (next.empty() || path < next)) next = path;
+     }
+   }
+   if (first.empty()) return false;
+ 
+   selectedPath = next.empty() ? first : next;
+-  Storage.mkdir("/.crosspoint");
+-  if (!Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()))) {
+-    LOG_ERR("SLP", "Failed to save last sleep image");
+-  }
++  saveSleepImageCursor(selectedPath);
+   return true;
+ }
+ 
+@@ -578,6 +596,7 @@ bool selectSleepFileAtRandom(const char* firstDirPath, const char* secondDirPath
+     Storage.readFileToString("SLP", SLEEP_LAST_SHOWN_PATH, MAX_SLEEP_FILE_NAME_LEN + 32, lastShown);
+   }
+ 
++  const char* cursor = unsavedSleepCursor.lastShown(lastShown.c_str());
+   std::string path;
+   uint32_t count = 0;
+   bool lastPresent = false;
+@@ -589,7 +608,7 @@ bool selectSleepFileAtRandom(const char* firstDirPath, const char* secondDirPath
+       path = dirPath;
+       path += '/';
+       path += name.get();
+-      if (path == lastShown) lastPresent = true;
++      if (path == cursor) lastPresent = true;
+     }
+   }
+   if (count == 0) return false;
+@@ -603,11 +622,10 @@ bool selectSleepFileAtRandom(const char* firstDirPath, const char* secondDirPath
+       path = dirPath;
+       path += '/';
+       path += name.get();
+-      if (skipLast && path == lastShown) continue;
++      if (skipLast && path == cursor) continue;
+       if (target-- != 0) continue;
+       selectedPath = path;
+-      Storage.mkdir("/.crosspoint");
+-      Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()));
++      saveSleepImageCursor(selectedPath);
+       return true;
+     }
+   }
+diff --git a/src/activities/boot_sleep/SleepActivity.h b/src/activities/boot_sleep/SleepActivity.h
+index 98281901..7dc4550f 100644
+--- a/src/activities/boot_sleep/SleepActivity.h
++++ b/src/activities/boot_sleep/SleepActivity.h
+@@ -14,7 +14,8 @@ class SleepActivity final : public Activity {
+ 
+   // The own sleep image this sleep drew (Custom, or Cover + Custom's fallback); empty when it drew none.
+   static const std::string& lastCustomImagePath();
+-  // Settled redraw (main.cpp, the 5-minute timer boot): a short clean, then the own sleep image at `path` again.
++  // Settled redraw (main.cpp, the «Обновлять заставку» timer boot): a short clean, then the own sleep image at `path`
++  // again.
+   static bool redrawCustomImage(GfxRenderer& renderer, MappedInputManager& mappedInput, const std::string& path);
+ 
+  private:
+diff --git a/src/activities/boot_sleep/SleepImageCursor.h b/src/activities/boot_sleep/SleepImageCursor.h
+new file mode 100644
+index 00000000..2a80b2f5
+--- /dev/null
++++ b/src/activities/boot_sleep/SleepImageCursor.h
+@@ -0,0 +1,27 @@
++#pragma once
++
++#include <cstring>
++#include <string_view>
++
++// Only unsaved positions override the card. RTC_DATA_ATTR storage keeps this
++// state through deep sleep; a cold boot or a software reset (the bootloader reloads .rtc.data) starts with the on-card
++// cursor again.
++struct SleepImageCursor {
++  static constexpr size_t PATH_CAPACITY = 288;
++
++  const char* lastShown(const char* savedPath) const { return pending ? path : savedPath; }
++
++  bool record(const std::string_view shownPath, const bool saved) {
++    pending = false;
++    if (saved) return true;
++    if (shownPath.empty() || shownPath.size() >= sizeof(path)) return false;
++    std::memcpy(path, shownPath.data(), shownPath.size());
++    path[shownPath.size()] = '\0';
++    pending = true;
++    return true;
++  }
++
++ private:
++  char path[PATH_CAPACITY] = {};
++  bool pending = false;
++};
+diff --git a/src/activities/reader/EpubReaderActivity.cpp b/src/activities/reader/EpubReaderActivity.cpp
+index df5e5dbe..b784adbe 100644
+--- a/src/activities/reader/EpubReaderActivity.cpp
++++ b/src/activities/reader/EpubReaderActivity.cpp
+@@ -59,6 +59,7 @@
+ #include "fontIds.h"
+ #include "util/BookmarkUtil.h"
+ #include "util/ButtonNavigator.h"
++#include "util/CalibrationCard.h"
+ #include "util/ScreenshotUtil.h"
+ 
+ namespace {
+@@ -732,7 +733,7 @@ void EpubReaderActivity::loop() {
+   const bool atEndOfBook = currentSpineIndex > 0 && currentSpineIndex >= epub->getSpineItemsCount();
+   clearEndOfBookOptionsIfNeeded();
+ 
+-  if (SETTINGS.removeReadBooksFromRecents) {
++  if (SETTINGS.removeReadBooksFromRecents && !calibcard::isCalibrationPath(epub->getPath())) {
+     if (atEndOfBook && !recentsEntryRemoved) {
+       recentsEntryRemoved = RECENT_BOOKS.removeByPath(epub->getPath());
+     } else if (!atEndOfBook && recentsEntryRemoved) {
+diff --git a/src/activities/reader/ReaderActivity.cpp b/src/activities/reader/ReaderActivity.cpp
+index 12584d16..afd562de 100644
+--- a/src/activities/reader/ReaderActivity.cpp
++++ b/src/activities/reader/ReaderActivity.cpp
+@@ -18,6 +18,7 @@
+ #include "RecentBooksStore.h"
+ #include "SdCardFontSystem.h"
+ #include "XtcReaderActivity.h"
++#include "util/CalibrationCard.h"
+ #include "util/PluginEvents.h"
+ 
+ ReaderActivity::ReaderActivity(const char* name, GfxRenderer& renderer, MappedInputManager& mappedInput,
+@@ -87,6 +88,8 @@ void ReaderActivity::onEnter() {
+ void ReaderActivity::rememberBookOnceRendered() {
+   if (bookRemembered || !pageRendered.load(std::memory_order_acquire)) return;
+   bookRemembered = true;
++  // The books calibration card (Display → Screen calibration) is not a book: no Recent books, no reopening at boot.
++  if (calibcard::isCalibrationPath(bookPath)) return;
+   APP_STATE.openEpubPath = bookPath;
+   APP_STATE.saveToFile();
+   RECENT_BOOKS.addBook(bookPath, getBookTitle(), getBookAuthor(), getBookThumbBmpPath());
+diff --git a/src/activities/reader/ReaderUtils.h b/src/activities/reader/ReaderUtils.h
+index 95b8fb09..2c7b7c91 100644
+--- a/src/activities/reader/ReaderUtils.h
++++ b/src/activities/reader/ReaderUtils.h
+@@ -12,6 +12,7 @@
+ #include "HapticFeedback.h"
+ #include "MappedInputManager.h"
+ #include "activities/ActivityManager.h"
++#include "util/CalibrationCard.h"
+ 
+ namespace ReaderUtils {
+ 
+@@ -270,6 +271,11 @@ inline bool handleBackNavigation(const MappedInputManager& mappedInput, Activity
+                              mappedInput.wasReleased(MappedInputManager::Button::Back);
+   if (!backTriggered) return false;
+ 
++  // From the books calibration card back to Settings → Display, where it was opened.
++  if (filePath && calibcard::isCalibrationPath(filePath)) {
++    activityManager.goToSettings(SettingsSection::Display);
++    return true;
++  }
+   const bool longPress = mappedInput.getHeldTime() >= GO_BACK_OR_HOME_MS;
+   if (longPress != SETTINGS.backShortToFileBrowser) {
+     activityManager.goToFileBrowser(filePath);
+diff --git a/src/activities/settings/AboutActivity.cpp b/src/activities/settings/AboutActivity.cpp
+index aa3dcbe4..6b35cd8b 100644
+--- a/src/activities/settings/AboutActivity.cpp
++++ b/src/activities/settings/AboutActivity.cpp
+@@ -172,22 +172,29 @@ void AboutActivity::onEnter() {
+   std::error_code spaceError;
+   const auto space = std::filesystem::space(simSd && *simSd ? simSd : "./fs_", spaceError);
+   const uint64_t sdTotal = spaceError ? 0 : space.capacity;
+-  const auto sdUsedBytes = [&] { return spaceError ? 0 : space.capacity - space.available; };
++  const auto sdUsedBytes = [&](uint64_t& used) {
++    used = spaceError ? 0 : space.capacity - space.available;
++    return !spaceError;
++  };
+   const auto sdFatType = [] { return static_cast<uint8_t>(0); };
+ #else
+   const uint64_t sdTotal = Storage.sdTotalBytes();
+-  const auto sdUsedBytes = [] { return Storage.sdUsedBytes(); };
++  const auto sdUsedBytes = [](uint64_t& used) { return Storage.sdUsedBytes(used); };
+   const auto sdFatType = [] { return Storage.sdFatType(); };
+ #endif
+   if (sdTotal == 0) {
+     rowValues_[ITEM_SD_SIZE] = "нет карты";
+     rowValues_[ITEM_SD_FS] = rowValues_[ITEM_SD_USED] = rowValues_[ITEM_SD_FREE] = "—";
+   } else {
+-    const uint64_t sdUsed = sdUsedBytes();
+     rowValues_[ITEM_SD_SIZE] = formatBytes(sdTotal);
+     rowValues_[ITEM_SD_FS] = fatTypeName(sdFatType());
+-    rowValues_[ITEM_SD_USED] = formatBytes(sdUsed);
+-    rowValues_[ITEM_SD_FREE] = formatBytes(sdUsed <= sdTotal ? sdTotal - sdUsed : 0);
++    uint64_t sdUsed = 0;
++    if (sdUsedBytes(sdUsed)) {
++      rowValues_[ITEM_SD_USED] = formatBytes(sdUsed);
++      rowValues_[ITEM_SD_FREE] = formatBytes(sdUsed <= sdTotal ? sdTotal - sdUsed : 0);
++    } else {
++      rowValues_[ITEM_SD_USED] = rowValues_[ITEM_SD_FREE] = "Ошибка.";
++    }
+   }
+ }
+ 
+diff --git a/src/activities/settings/SettingsActivity.cpp b/src/activities/settings/SettingsActivity.cpp
+index f5359505..3e2b986e 100644
+--- a/src/activities/settings/SettingsActivity.cpp
++++ b/src/activities/settings/SettingsActivity.cpp
+@@ -27,7 +27,6 @@
+ #include "MappedInputManager.h"
+ #include "OpdsServerListActivity.h"
+ #include "OtaUpdateActivity.h"
+-#include "activities/util/ConfirmationActivity.h"
+ #include "SdCardFontSystem.h"
+ #include "SdFirmwareUpdateActivity.h"
+ #include "SettingsList.h"
+@@ -35,11 +34,13 @@
+ #include "StatusBarSettingsActivity.h"
+ #include "TextSettingsActivity.h"
+ #include "activities/network/WifiSelectionActivity.h"
++#include "activities/util/ConfirmationActivity.h"
+ #include "activities/util/IntervalSelectionActivity.h"
+ #include "components/UITheme.h"
+ #include "components/UIThemeTokens.h"
+ #include "components/UiAppHelpers.h"
+ #include "fontIds.h"
++#include "util/CalibrationCard.h"
+ #include "util/PluginEvents.h"
+ 
+ namespace fui = freeink::ui;
+@@ -74,6 +75,19 @@ SettingsSection sectionFor(const SettingInfo& setting) {
+     return SettingsSection::Library;
+   }
+   if (setting.valuePtr == &CrossPointSettings::sleepTimeoutMinutes) return SettingsSection::Display;
++  // Display → «Настройки очисток экрана» (Nikolai 05.11.2026): every clean / refresh / redraw setting, stock ones too.
++  if (setting.valuePtr == &CrossPointSettings::refreshFrequency ||
++      setting.valuePtr == &CrossPointSettings::homeFullRefresh ||
++      setting.valuePtr == &CrossPointSettings::sheetCloseClean ||
++      setting.valuePtr == &CrossPointSettings::sleepSettledRedraw ||
++      setting.valuePtr == &CrossPointSettings::imageSettledRedraw ||
++      setting.valuePtr == &CrossPointSettings::fadingFix) {
++    return SettingsSection::ScreenClean;
++  }
++  if (setting.valuePtr == &CrossPointSettings::panelCalPictures ||
++      setting.valuePtr == &CrossPointSettings::panelCalBooks) {
++    return SettingsSection::ScreenCalibration;
++  }
+   if (setting.category == StrId::STR_CAT_DISPLAY) return SettingsSection::Display;
+   if (setting.category == StrId::STR_CAT_READER) return SettingsSection::Reader;
+   if (setting.category == StrId::STR_CAT_CONTROLS) return SettingsSection::Controls;
+@@ -123,11 +137,18 @@ void SettingsActivity::rebuildSettings() {
+     addAction(SettingsSection::Controls, StrId::STR_REMAP_FRONT_BUTTONS, SettingAction::RemapFrontButtons);
+   }
+ 
++  // Display → «Калибровка экрана»: the two calibration screens above its two checkboxes (Nikolai 05.11.2026).
++  addAction(SettingsSection::ScreenCalibration, StrId::STR_CAL_PICTURES_SCREEN,
++            SettingAction::CalibrationPicturesScreen);
++  addAction(SettingsSection::ScreenCalibration, StrId::STR_CAL_BOOKS_SCREEN, SettingAction::CalibrationBooksScreen);
++
+   for (auto& setting : all) {
+     if (sectionFor(setting) != section || !showOnDevice(setting)) continue;
+     settings.push_back(std::move(setting));
+   }
+ 
++  addAction(SettingsSection::Display, StrId::STR_SCREEN_CLEAN_SETTINGS, SettingAction::ScreenCleanSettings);
++  addAction(SettingsSection::Display, StrId::STR_PANEL_CALIBRATION, SettingAction::ScreenCalibrationSettings);
+   addAction(SettingsSection::Reader, StrId::STR_CUSTOMISE_STATUS_BAR, SettingAction::CustomiseStatusBar);
+   addAction(SettingsSection::Reader, StrId::STR_CLEAR_READING_CACHE, SettingAction::ClearCache);
+ 
+@@ -190,6 +211,8 @@ void SettingsActivity::rebuildRowItems() {
+ }
+ 
+ const char* SettingsActivity::headerTitle() const {
++  if (section == SettingsSection::ScreenClean) return tr(STR_SCREEN_CLEAN_SETTINGS);
++  if (section == SettingsSection::ScreenCalibration) return tr(STR_PANEL_CALIBRATION);
+   return I18N.get(SETTINGS_SECTION_TITLES[static_cast<size_t>(section)]);
+ }
+ 
+@@ -291,6 +314,40 @@ void SettingsActivity::toggleSelectedSetting() {
+     auto resultHandler = [this](const ActivityResult&) { SETTINGS.saveToFile(); };
+ 
+     switch (setting.action) {
++      case SettingAction::ScreenCleanSettings: {
++        auto activity = makeUniqueNoThrow<SettingsActivity>(renderer, mappedInput, SettingsSection::ScreenClean);
++        if (!activity) {
++          LOG_ERR("SETTINGS", "OOM: screen clean settings");
++          return;
++        }
++        startActivityForResult(std::move(activity), [this](const ActivityResult&) { requestUpdate(); });
++        return;
++      }
++      case SettingAction::ScreenCalibrationSettings: {
++        auto activity = makeUniqueNoThrow<SettingsActivity>(renderer, mappedInput, SettingsSection::ScreenCalibration);
++        if (!activity) {
++          LOG_ERR("SETTINGS", "OOM: screen calibration settings");
++          return;
++        }
++        startActivityForResult(std::move(activity), [this](const ActivityResult&) { requestUpdate(); });
++        return;
++      }
++      case SettingAction::CalibrationPicturesScreen:
++      case SettingAction::CalibrationBooksScreen: {
++        // The card is written once (a few hundred KB) and opened like any image / book; Back returns to Settings.
++        std::string path;
++        const bool landscape = SETTINGS.orientation == CrossPointSettings::LANDSCAPE_CW ||
++                               SETTINGS.orientation == CrossPointSettings::LANDSCAPE_CCW;
++        const bool ok = setting.action == SettingAction::CalibrationPicturesScreen
++                            ? calibcard::picturesCard(landscape, path)
++                            : calibcard::booksCard(path);
++        if (!ok) {
++          LOG_ERR("SETTINGS", "Calibration card not written");
++          return;
++        }
++        activityManager.goToReader(path);
++        return;
++      }
+       case SettingAction::HomeButton: {
+         // Activities must outlive this call and are owned by the activity stack.
+         auto activity = makeUniqueNoThrow<HomeButtonSettingsActivity>(renderer, mappedInput);
+@@ -528,6 +585,19 @@ void SettingsActivity::buildScreen(UiScreen& screen) {
+                                                 static_cast<int16_t>(metrics.buttonHintsHeight), 0});
+   screen.spacer(static_cast<int16_t>(metrics.verticalSpacing));
+ 
++  // What this sub-screen is for, above its rows (Nikolai 05.11.2026).
++  if (section == SettingsSection::ScreenClean || section == SettingsSection::ScreenCalibration) {
++    auto noteStyle = screen.theme().smallText;
++    noteStyle.maxLines = 6;
++    const char* note = section == SettingsSection::ScreenClean ? tr(STR_SCREEN_CLEAN_NOTE) : tr(STR_PANEL_CAL_NOTE);
++    const int16_t side = static_cast<int16_t>(metrics.contentSidePadding);
++    const int16_t noteW = static_cast<int16_t>(screen.body().width - 2 * side);
++    const int16_t noteH = fui::measureWrappedText(screen.target(), note, noteStyle, noteW).height;
++    screen.target().text(
++        screen.takeTop(noteH, static_cast<int16_t>(metrics.verticalSpacing)).inset(fui::Insets{0, side, 0, side}), note,
++        noteStyle);
++  }
++
+   // rowItems_ (label/actionValue) was built by rebuildRowItems(); only the
+   // live value text needs refreshing here, by assigning into the existing
+   // rowValues_ strings (no vector growth).
+diff --git a/src/activities/settings/SettingsActivity.h b/src/activities/settings/SettingsActivity.h
+index 56b6b5ca..e605ea0f 100644
+--- a/src/activities/settings/SettingsActivity.h
++++ b/src/activities/settings/SettingsActivity.h
+@@ -15,6 +15,10 @@ enum class SettingType { TOGGLE, ENUM, ACTION, VALUE, STRING };
+ 
+ enum class SettingAction {
+   None,
++  ScreenCleanSettings,
++  ScreenCalibrationSettings,
++  CalibrationPicturesScreen,
++  CalibrationBooksScreen,
+   RemapFrontButtons,
+   CustomiseStatusBar,
+   ClockSettings,
+diff --git a/src/activities/settings/SettingsListActivity.cpp b/src/activities/settings/SettingsListActivity.cpp
+index 3d192202..077f88da 100644
+--- a/src/activities/settings/SettingsListActivity.cpp
++++ b/src/activities/settings/SettingsListActivity.cpp
+@@ -36,7 +36,8 @@ void SettingsListActivity::onExit() {
+ }
+ 
+ void SettingsListActivity::loop() {
+-  if (pendingSection != SettingsSection::End) {
++  // Only top-level groups open here; End and the sub-screens past it (ScreenClean) mean «none».
++  if (pendingSection < SettingsSection::End) {
+     const SettingsSection section = pendingSection;
+     pendingSection = SettingsSection::End;
+     openSection(section);
+diff --git a/src/activities/settings/SettingsSection.h b/src/activities/settings/SettingsSection.h
+index b7035398..e72df0a7 100644
+--- a/src/activities/settings/SettingsSection.h
++++ b/src/activities/settings/SettingsSection.h
+@@ -7,7 +7,19 @@
+ 
+ // Top-level groups on the Settings screen, in display order. End doubles as
+ // "no section" where one is optional.
+-enum class SettingsSection : uint8_t { General, Display, Reader, Controls, Library, Network, End };
++// ScreenClean and ScreenCalibration sit past End: not top-level groups, they are sub-screens of Display («Настройки
++// очисток экрана», «Калибровка экрана», Nikolai 05.11.2026) and never index SETTINGS_SECTION_TITLES.
++enum class SettingsSection : uint8_t {
++  General,
++  Display,
++  Reader,
++  Controls,
++  Library,
++  Network,
++  End,
++  ScreenClean,
++  ScreenCalibration
++};
+ 
+ inline constexpr size_t SETTINGS_SECTION_COUNT = static_cast<size_t>(SettingsSection::End);
+ 
+diff --git a/src/activities/util/BmpViewerActivity.cpp b/src/activities/util/BmpViewerActivity.cpp
+index 736effae..29f7cfee 100644
+--- a/src/activities/util/BmpViewerActivity.cpp
++++ b/src/activities/util/BmpViewerActivity.cpp
+@@ -19,6 +19,7 @@
+ #include "components/UITheme.h"
+ #include "fontIds.h"
+ #include "util/CacheLimit.h"
++#include "util/CalibrationCard.h"
+ #include "util/DeepClean.h"
+ #include "util/GrayGlass.h"
+ #include "util/PanelCurve.h"
+@@ -184,6 +185,7 @@ bool BmpViewerActivity::prepareCache(std::string& outPath) {
+   if (!Storage.openFileForRead("BMP", filePath, source)) return false;
+   const int screenW = renderer.getScreenWidth();
+   const int screenH = renderer.getScreenHeight();
++  const uint8_t* tone = curve;
+   const std::string key = filePath + '|' + std::to_string(source.size()) + '|' +
+                           std::to_string(source.modificationTime()) + '|' + std::to_string(screenW) + 'x' +
+                           std::to_string(screenH) + "|k" + std::to_string(curveHash) + '|' + VIEW_CACHE_VERSION;
+@@ -206,8 +208,8 @@ bool BmpViewerActivity::prepareCache(std::string& outPath) {
+     if (!Storage.openFileForRead("BMP", filePath, source)) return false;
+     HalFile out;
+     ok = Storage.openFileForWrite("BMP", tmpPath, out) &&
+-         BmpToBmpConverter::bmpFileToBmpStream(source, out, /*crop=*/false, /*originalThresholds=*/false, curve,
+-                                               screenW, screenH);
++         BmpToBmpConverter::bmpFileToBmpStream(source, out, /*crop=*/false, /*originalThresholds=*/false, tone, screenW,
++                                               screenH);
+     if (out.isOpen()) ok = out.close() && ok;
+   } else {
+     source.close();
+@@ -220,7 +222,7 @@ bool BmpViewerActivity::prepareCache(std::string& outPath) {
+     if (!decoder.getDimensions(filePath, dimensions) || dimensions.width <= 0 || dimensions.height <= 0) return false;
+     auto config = fitImage(dimensions, renderer, /*enlarge=*/true);
+     config.cachePath = VIEW_TMP_PXC;
+-    config.toneCurve = curve;
++    config.toneCurve = tone;
+     Storage.remove(VIEW_TMP_PXC);
+     // The decoder also draws into the framebuffer; the image on screen is untouched until the next refresh.
+     ok = decoder.decodeToFramebuffer(filePath, renderer, config) &&
+@@ -405,9 +407,9 @@ void BmpViewerActivity::onExit() {
+     return;
+   }
+   grayglass::imageOnGlass = false;
+-  // Settings → Display → «Перерисовка меню» (on by default): a short clean before the menus, so the photo leaves no
+-  // trace on them.
+-  if (SETTINGS.menuExitClean) deepclean::shortClean(renderer);
++  // No clean here: the UC8279 driver runs the first B/W frame after a gray image through its own gray → B/W transition
++  // (transitionGrayscaleBase, every pixel driven, no flash). An extra clean was a second flash over a clean menu
++  // (Nikolai on the reader, 05.11.2026); the «Очищать после картинок» option is gone with it.
+ }
+ 
+ void BmpViewerActivity::openSibling(const int delta) {
+@@ -591,22 +593,28 @@ void BmpViewerActivity::loop() {
+ 
+ #if FREEINK_DEVICE_X4PRO
+   // Settled redraw (X4 Pro, Nikolai 04.11.2026): whatever was drawn seconds before the gray image (the file
+-  // browser's header line) prints into it and drains in minutes. Two minutes after the paint, repaint it once — its
+-  // own path cleans to white first (the driver's base pass) — and the image comes back band-free.
+-  if (SETTINGS.imageSettledRedraw && settledRedrawPending && grayglass::imageOnGlass &&
+-      millis() - paintedAtMs >= 120000UL) {
+-    LOG_DBG("BMP", "Settled redraw after 2 min");
++  // browser's header line) prints into it and drains in minutes. «Обновлять картинки» minutes after the paint (1 / 2 /
++  // 5, Nikolai 05.11.2026; off = 0, never), repaint it once — its own path cleans to white first (the driver's base
++  // pass) — and the image comes back band-free.
++  const uint32_t settleMs = CrossPointSettings::redrawDelayMinutes(SETTINGS.imageSettledRedraw) * 60000UL;
++  if (settleMs > 0 && settledRedrawPending && grayglass::imageOnGlass && millis() - paintedAtMs >= settleMs) {
++    LOG_DBG("BMP", "Settled redraw after %u ms", static_cast<unsigned>(settleMs));
+     showCurrent();
+     settledRedrawPending = false;
+     return;
+   }
+ #endif
+ 
+-  // As on the book reading surface: no left-edge swipe-to-exit here — in swipe mode a right swipe pages back. The
+-  // physical Back button exits; the Home gesture/key stays available.
+-  if (!mappedInput.wasBackGesture() && mappedInput.wasReleased(MappedInputManager::Button::Back)) {
++  // Back = a left-to-right swipe that starts in the left quarter of the screen (X4 Pro has no physical Back button), as
++  // in stock. Checked before the touch page turns; swipes starting further right page (Nikolai 05.11.2026).
++  if (mappedInput.wasReleased(MappedInputManager::Button::Back)) {
+     renderer.setOrientation(savedOrientation);
+-    activityManager.goToFileBrowser(filePath);
++    // From the pictures calibration card back to Settings → Display, where it was opened.
++    if (calibcard::isCalibrationPath(filePath)) {
++      activityManager.goToSettings(SettingsSection::Display);
++    } else {
++      activityManager.goToFileBrowser(filePath);
++    }
+     return;
+   }
+ 
+diff --git a/src/activities/util/BmpViewerActivity.h b/src/activities/util/BmpViewerActivity.h
+index c79b9a76..72ed4b66 100644
+--- a/src/activities/util/BmpViewerActivity.h
++++ b/src/activities/util/BmpViewerActivity.h
+@@ -15,8 +15,8 @@ class Bitmap;
+ // Image viewer (BMP, JPEG, PNG). Every image is shown in gray through the panel tone curve: it is prepared once into
+ // a screen-ready 2-bit BMP cache (/.crosspoint/view_*.bmp) while the previous image stays on screen, then the panel
+ // gets the gray image painted from the cache (its base pass cleans to white first; a settled repaint follows after
+-// 2 minutes, Settings → Display → «Перерисовка картинок»). Prev/next by buttons, swipes and side taps, wrapping
+-// around the folder; a long tap rotates the view by 90°. The curve is loaded once and kept in RAM while open.
++// «Обновлять картинки» minutes, Settings → Display → Screen Cleaning). Prev/next by buttons, swipes and side taps,
++// wrapping around the folder; a long tap rotates the view by 90°. The curve is loaded once and kept in RAM while open.
+ class BmpViewerActivity final : public Activity {
+  public:
+   BmpViewerActivity(GfxRenderer& renderer, MappedInputManager& mappedInput, std::string filePath);
+@@ -50,10 +50,11 @@ class BmpViewerActivity final : public Activity {
+   uint32_t curveHash = 0;
+   bool curveReady = false;
+   bool orientationSaved = false;
+-  bool goingToSleep = false;  // set before the sleep screen replaces the viewer
+-  int viewTurns = 0;          // long-tap quarter turns, clockwise
+-  uint32_t paintedVisit = 0;  // screen visit of the last paint; a newer one means a sheet covered the image
+-  unsigned long paintedAtMs = 0;      // when the current image was painted
+-  bool settledRedrawPending = false;  // one clean repaint after the remnant drains (2 min), then none until next paint
++  bool goingToSleep = false;      // set before the sleep screen replaces the viewer
++  int viewTurns = 0;              // long-tap quarter turns, clockwise
++  uint32_t paintedVisit = 0;      // screen visit of the last paint; a newer one means a sheet covered the image
++  unsigned long paintedAtMs = 0;  // when the current image was painted
++  bool settledRedrawPending =
++      false;  // one clean repaint after the remnant drains (the setting's delay), then none until next paint
+   GfxRenderer::Orientation savedOrientation = GfxRenderer::Orientation::Portrait;
+ };
+diff --git a/src/main.cpp b/src/main.cpp
+index c174de54..ed5ff927 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -157,8 +157,8 @@ enum class BootResume : uint8_t {
+ // the current activity. WiFi activities call silentRestart() in onExit() to
+ // clear heap fragmentation on the way out, but deep sleep is a full chip reset
+ // on wake and already clears the heap, so rebooting here would just power the
+-// device back up against the user's sleep gesture. Cleared only by a sleep cancelled in the light linger (enterDeepSleep
+-// returns then); otherwise startDeepSleep() does not return and a set latch ends at the wakeup reset.
++// device back up against the user's sleep gesture. Cleared only by a sleep cancelled in the light linger
++// (enterDeepSleep returns then); otherwise startDeepSleep() does not return and a set latch ends at the wakeup reset.
+ static bool deepSleepInProgress = false;
+ 
+ // A silent restart is internal maintenance, so the light must come back exactly
+@@ -477,12 +477,16 @@ static bool holdSleepWhileUsbPowered() {
+ #endif
+ 
+ #if FREEINK_DEVICE_X4PRO && !defined(SIMULATOR)
+-// Settled sleep redraw (Krinik, 04.11.2026; Settings → Display → «Redraw Sleep Screen»): frames drawn seconds before
+-// the gray sleep image print into it and drain in minutes. The reader goes to its ordinary deep sleep with one extra
+-// wake source: a timer 5 minutes out. The power button wakes it the usual way; the timer boots a short path in setup()
+-// that repaints the same own image with a short clean and sleeps again, button only. The image path rides in RTC slow
+-// memory (kept through deep sleep, cleared on power loss).
+-static constexpr uint64_t SLEEP_SETTLE_US = 5ULL * 60 * 1000 * 1000;
++// Settled sleep redraw (Krinik, 04.11.2026; Settings → Display → Screen Cleaning → «Обновлять заставку»): frames drawn
++// seconds before the gray sleep image print into it and drain in minutes. The reader goes to its ordinary deep sleep
++// with one extra wake source: a timer 1 / 2 / 5 minutes out (the setting, Nikolai 05.11.2026). The power button wakes
++// it the usual way; the timer boots a short path in setup() that repaints the same own image with a short clean and
++// sleeps again, button only. The image path rides in RTC slow memory (kept through deep sleep, cleared on power loss).
++// 0 when the setting is off: callers never arm a zero timer (it would wake the reader at once, in a loop).
++static uint64_t sleepSettleUs() {
++  return static_cast<uint64_t>(CrossPointSettings::redrawDelayMinutes(SETTINGS.sleepSettledRedraw)) * 60ULL * 1000 *
++         1000;
++}
+ RTC_DATA_ATTR char sleepRedrawPath[192];
+ // This boot came from a panic: no unattended timer redraw on the next sleep (no sleep → panic → awake cycle).
+ static bool bootWasPanic = false;
+@@ -546,12 +550,14 @@ void enterDeepSleep(bool fromTimeout = false) {
+   const std::string& drawnPath = SleepActivity::lastCustomImagePath();
+   sleepRedrawPath[0] = '\0';
+   // Not on a nearly empty battery: the redraw wakes the reader unasked (review 04.11.2026).
+-  if (SETTINGS.sleepSettledRedraw && !isQuickResumeSleep && !drawnPath.empty() &&
+-      powerManager.getBatteryPercentage() >= 15 && !bootWasPanic &&
+-      drawnPath.size() < sizeof(sleepRedrawPath)) {
++  const uint64_t settleUs = sleepSettleUs();
++  if (settleUs > 0 && !isQuickResumeSleep && !drawnPath.empty() && powerManager.getBatteryPercentage() >= 15 &&
++      !bootWasPanic && drawnPath.size() < sizeof(sleepRedrawPath)) {
+     memcpy(sleepRedrawPath, drawnPath.c_str(), drawnPath.size() + 1);
+-    esp_sleep_enable_timer_wakeup(SLEEP_SETTLE_US);
+-    LOG_DBG("MAIN", "Sleep redraw armed in 5 min: %s", sleepRedrawPath);
++    esp_sleep_enable_timer_wakeup(settleUs);
++    LOG_DBG("MAIN", "Sleep redraw armed in %u min: %s",
++            static_cast<unsigned>(CrossPointSettings::redrawDelayMinutes(SETTINGS.sleepSettledRedraw)),
++            sleepRedrawPath);
+   }
+ 
+   // The light lingers over the fresh sleep image before it goes dark (Nikolai 04.11.2026: «успеть в темноте
+@@ -577,8 +583,8 @@ void enterDeepSleep(bool fromTimeout = false) {
+     // from the current brightness to dark on the SDK's perceptual level curve (gamma 2), one step per 20 ms sample. The
+     // fade length is Settings → Display → «Плавная подсветка» like every light animation (0 = goes dark at the end of
+     // the window). A press during the fade still wakes the reader.
+-    const unsigned long fadeMs = SETTINGS.getLightRampMs();       // ≤ 1000 ms
+-    const unsigned long fadeStart = lingerMs - fadeMs;            // every linger value is ≥ 2 s
++    const unsigned long fadeMs = SETTINGS.getLightRampMs();  // ≤ 1000 ms
++    const unsigned long fadeStart = lingerMs - fadeMs;       // every linger value is ≥ 2 s
+     uint8_t fromLevel = 0;  // taken when the fade starts: an on-ramp may still be running during the hold
+     bool fading = false;
+     const unsigned long start = millis();
+@@ -588,7 +594,8 @@ void enterDeepSleep(bool fromTimeout = false) {
+       if (elapsed >= fadeStart) {
+         if (!fading) fromLevel = Frontlight.currentOutputLevel();
+         fading = true;
+-        const unsigned long left = lingerMs - elapsed;  // 1..fadeMs (fadeMs > 0: elapsed < lingerMs = fadeStart + fadeMs)
++        const unsigned long left =
++            lingerMs - elapsed;  // 1..fadeMs (fadeMs > 0: elapsed < lingerMs = fadeStart + fadeMs)
+         Frontlight.setOutputLevel(static_cast<uint8_t>((fromLevel * left + fadeMs / 2) / fadeMs));
+       }
+       const bool down = pin >= 0 && digitalRead(pin) == pressed;
+@@ -631,7 +638,8 @@ void enterDeepSleep(bool fromTimeout = false) {
+     if (APP_STATE.lastSleepFromReader && !APP_STATE.openEpubPath.empty()) {
+       activityManager.goToReader(APP_STATE.openEpubPath);
+     } else {
+-      // A clean first paint over the sleep image, as setup() asks on a wake (needsWakeRefresh); Quick Resume wakes fast.
++      // A clean first paint over the sleep image, as setup() asks on a wake (needsWakeRefresh); Quick Resume wakes
++      // fast.
+       activityManager.goHome(HomeMenuItem::NONE, !isQuickResumeSleep);
+     }
+     return;
+@@ -741,9 +749,10 @@ void setup() {
+ 
+   auto wakeupReason = gpio.getWakeupReason();
+ #if FREEINK_DEVICE_X4PRO && !defined(SIMULATOR)
+-  // The settled sleep redraw's 5-minute timer fired (armed by enterDeepSleep(), path in RTC memory). getWakeupReason()
++  // The settled sleep redraw's timer fired (armed by enterDeepSleep(), path in RTC memory). getWakeupReason()
+   // reports this boot as Other; it is handled below, before anything else draws.
+-  const bool timerWake = esp_reset_reason() == ESP_RST_DEEPSLEEP && esp_sleep_get_wakeup_cause() == ESP_SLEEP_WAKEUP_TIMER;
++  const bool timerWake =
++      esp_reset_reason() == ESP_RST_DEEPSLEEP && esp_sleep_get_wakeup_cause() == ESP_SLEEP_WAKEUP_TIMER;
+   const bool settledRedrawWake = timerWake && sleepRedrawPath[0] != '\0';
+ #endif
+   // Sample the wake hold now — a click wake is released within milliseconds of
+@@ -751,8 +760,7 @@ void setup() {
+   // click-to-wake is a setting, and an X4 battery power-off cuts all power, so
+   // only SD state survives to the next boot.
+   // The Metalio boots after the button is released, so it skips the check.
+-  const bool wakeHoldVerified = wakeupReason != HalGPIO::WakeupReason::PowerButton ||
+-                                BoardConfig::isMetalioEInk4() ||
++  const bool wakeHoldVerified = wakeupReason != HalGPIO::WakeupReason::PowerButton || BoardConfig::isMetalioEInk4() ||
+                                 gpio.verifyPowerButtonWakeup();
+ 
+   // X4 Pro and X4 Classic both map BTN_UP to GPIO0 — an ESP32-S3 boot strap — so
+@@ -821,7 +829,7 @@ void setup() {
+     if (pin >= 0) {
+       attachInterrupt(pin, onSettledRedrawPress, BoardConfig::ACTIVE.input.powerActiveHigh ? RISING : FALLING);
+     }
+-    setupDisplayAndFonts(/*seamless=*/true);  // keep the sleep image on the panel until the repaint
++    setupDisplayAndFonts(/*seamless=*/true);                     // keep the sleep image on the panel until the repaint
+     I18N.setLanguage(static_cast<Language>(SETTINGS.language));  // the default-screen fallback draws text
+     SleepActivity::redrawCustomImage(renderer, mappedInputManager, path);
+     if (pin >= 0) detachInterrupt(pin);
+@@ -891,8 +899,9 @@ void setup() {
+           !(FREEINK_DEVICE_PICCO && gpio.isUsbConnected())) {
+         LOG_DBG("MAIN", "Power-button wake not held through verification, sleeping");
+ #if FREEINK_DEVICE_X4PRO && !defined(SIMULATOR)
+-        // A brushed button before the 5 minutes ran out: keep the settled sleep redraw (full 5 minutes again).
+-        if (sleepRedrawPath[0] != '\0') esp_sleep_enable_timer_wakeup(SLEEP_SETTLE_US);
++        // A brushed button before the delay ran out: keep the settled sleep redraw (the full delay again). SETTINGS is
++        // loaded by now; a delay of 0 (setting off since, e.g. edited on the card) arms nothing.
++        if (sleepRedrawPath[0] != '\0' && sleepSettleUs() > 0) esp_sleep_enable_timer_wakeup(sleepSettleUs());
+ #endif
+         Storage.prepareForDeepSleep();
+         powerManager.startDeepSleep(gpio);
+diff --git a/src/util/CalibrationCard.cpp b/src/util/CalibrationCard.cpp
+new file mode 100644
+index 00000000..91a4a277
+--- /dev/null
++++ b/src/util/CalibrationCard.cpp
+@@ -0,0 +1,251 @@
++#include "CalibrationCard.h"
++
++#include <cstring>
++
++// Pure part: the card, PNG and EPUB bytes (no SD access; host-tested in test/calibration_card).
++namespace calibcard {
++namespace {
++// The layout of the KEINKT Calibrator page (calibrator/index.html, CORE): keep both in step.
++constexpr int F = 56, HOLE = 24, FM = 12;
++constexpr int COLS = 5, ROWS = 7, CELL = 72, GAP = 12;
++constexpr int GX = (W - (COLS * CELL + (COLS - 1) * GAP)) / 2;  // 36
++constexpr int GY = (H - (ROWS * CELL + (ROWS - 1) * GAP)) / 2;  // 112
++constexpr int LEVELS = 33;
++constexpr int FID[4][2] = {{FM + F / 2, FM + F / 2}, {W - FM - F / 2, FM + F / 2}, {W - FM - F / 2, H - FM - F / 2},
++                           {FM + F / 2, H - FM - F / 2}};
++
++void put16le(Sink& out, uint16_t v) {
++  const uint8_t b[2] = {static_cast<uint8_t>(v), static_cast<uint8_t>(v >> 8)};
++  out.put(b, 2);
++}
++void put32le(Sink& out, uint32_t v) {
++  const uint8_t b[4] = {static_cast<uint8_t>(v), static_cast<uint8_t>(v >> 8), static_cast<uint8_t>(v >> 16),
++                        static_cast<uint8_t>(v >> 24)};
++  out.put(b, 4);
++}
++void put32be(Sink& out, uint32_t v) {
++  const uint8_t b[4] = {static_cast<uint8_t>(v >> 24), static_cast<uint8_t>(v >> 16), static_cast<uint8_t>(v >> 8),
++                        static_cast<uint8_t>(v)};
++  out.put(b, 4);
++}
++void putStr(Sink& out, const char* s) { out.put(reinterpret_cast<const uint8_t*>(s), strlen(s)); }
++
++// Counts bytes and their CRC: the ZIP local header needs both before the data.
++struct CrcSink final : Sink {
++  uint32_t crc = 0;
++  uint32_t size = 0;
++  void put(const uint8_t* data, size_t n) override {
++    crc = crc32(crc, data, n);
++    size += static_cast<uint32_t>(n);
++  }
++};
++
++// One PNG chunk: length, type, data, CRC over type + data.
++struct Chunk {
++  Sink& out;
++  uint32_t crc;
++  Chunk(Sink& o, uint32_t length, const char* type) : out(o) {
++    put32be(out, length);
++    out.put(reinterpret_cast<const uint8_t*>(type), 4);
++    crc = crc32(0, reinterpret_cast<const uint8_t*>(type), 4);
++  }
++  void put(const uint8_t* data, size_t n) {
++    out.put(data, n);
++    crc = crc32(crc, data, n);
++  }
++  void end() { put32be(out, crc); }
++};
++}  // namespace
++
++uint8_t pixel(const int x, const int y, const bool books) {
++  if (x < 0 || y < 0 || x >= W || y >= H) return 255;
++  for (const auto& f : FID) {
++    const int dx = x - f[0], dy = y - f[1];
++    if (dx >= -F / 2 && dx < F / 2 && dy >= -F / 2 && dy < F / 2) {
++      const bool hole = dx >= -HOLE / 2 && dx < HOLE / 2 && dy >= -HOLE / 2 && dy < HOLE / 2;
++      return hole ? 255 : 0;
++    }
++  }
++  const int cx = x - GX, cy = y - GY;
++  if (cx < 0 || cy < 0) return 255;
++  const int col = cx / (CELL + GAP), row = cy / (CELL + GAP);
++  if (col >= COLS || row >= ROWS || cx % (CELL + GAP) >= CELL || cy % (CELL + GAP) >= CELL) return 255;
++  const int i = row * COLS + col;
++  if (i < LEVELS) return static_cast<uint8_t>((2 * i * 255 + 32) / 64);  // round(i·255/32), as the page
++  return (books && i == COLS * ROWS - 1) ? 0 : 255;
++}
++
++uint32_t crc32(uint32_t crc, const uint8_t* data, const size_t size) {
++  static constexpr uint32_t T[16] = {0x00000000, 0x1DB71064, 0x3B6E20C8, 0x26D930AC, 0x76DC4190, 0x6B6B51F4,
++                                     0x4DB26158, 0x5005713C, 0xEDB88320, 0xF00F9344, 0xD6D6A3E8, 0xCB61B38C,
++                                     0x9B64C2B0, 0x86D3D2D4, 0xA00AE278, 0xBDBDF21C};
++  crc = ~crc;
++  for (size_t i = 0; i < size; ++i) {
++    crc ^= data[i];
++    crc = (crc >> 4) ^ T[crc & 15];
++    crc = (crc >> 4) ^ T[crc & 15];
++  }
++  return ~crc;
++}
++
++void writePng(Sink& out, const bool books) {
++  static constexpr uint8_t SIG[8] = {0x89, 'P', 'N', 'G', '\r', '\n', 0x1A, '\n'};
++  out.put(SIG, 8);
++  {
++    Chunk c(out, 13, "IHDR");
++    const uint8_t ihdr[13] = {0, 0, W >> 8, W & 0xFF, 0, 0, H >> 8, H & 0xFF, 8, 0, 0, 0, 0};  // 8-bit gray
++    c.put(ihdr, 13);
++    c.end();
++  }
++  constexpr uint32_t ROW = W + 1;  // filter byte + pixels
++  constexpr uint32_t RAW = ROW * H;
++  constexpr uint32_t BLOCK = 65535;
++  constexpr uint32_t BLOCKS = (RAW + BLOCK - 1) / BLOCK;
++  Chunk c(out, 2 + BLOCKS * 5 + RAW + 4, "IDAT");
++  static constexpr uint8_t ZHDR[2] = {0x78, 0x01};
++  c.put(ZHDR, 2);
++  uint32_t a = 1, b = 0;  // Adler-32 of the raw rows
++  uint8_t buf[256];
++  uint32_t pos = 0;
++  while (pos < RAW) {
++    const uint32_t len = RAW - pos < BLOCK ? RAW - pos : BLOCK;
++    const uint8_t hdr[5] = {static_cast<uint8_t>(pos + len == RAW ? 1 : 0), static_cast<uint8_t>(len),
++                            static_cast<uint8_t>(len >> 8), static_cast<uint8_t>(~len),
++                            static_cast<uint8_t>(~len >> 8)};
++    c.put(hdr, 5);
++    for (uint32_t done = 0; done < len;) {
++      const uint32_t n = len - done < sizeof(buf) ? len - done : sizeof(buf);
++      for (uint32_t k = 0; k < n; ++k) {
++        const uint32_t idx = pos + done + k, row = idx / ROW, col = idx % ROW;
++        buf[k] = col == 0 ? 0 : pixel(static_cast<int>(col - 1), static_cast<int>(row), books);
++        a = (a + buf[k]) % 65521;
++        b = (b + a) % 65521;
++      }
++      c.put(buf, n);
++      done += n;
++    }
++    pos += len;
++  }
++  uint8_t adler[4] = {static_cast<uint8_t>(b >> 8), static_cast<uint8_t>(b), static_cast<uint8_t>(a >> 8),
++                      static_cast<uint8_t>(a)};
++  c.put(adler, 4);
++  c.end();
++  Chunk e(out, 0, "IEND");
++  e.end();
++}
++
++void writeEpub(Sink& out, const std::string& title) {
++  std::string t;
++  for (const char ch : title) {
++    if (ch == '&') t += "&amp;";
++    else if (ch == '<') t += "&lt;";
++    else if (ch == '>') t += "&gt;";
++    else t += ch;
++  }
++  const std::string container =
++      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<container version=\"1.0\" "
++      "xmlns=\"urn:oasis:names:tc:opendocument:xmlns:container\"><rootfiles><rootfile full-path=\"OEBPS/content.opf\" "
++      "media-type=\"application/oebps-package+xml\"/></rootfiles></container>\n";
++  const std::string opf =
++      "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<package xmlns=\"http://www.idpf.org/2007/opf\" version=\"3.0\" "
++      "unique-identifier=\"uid\"><metadata xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><dc:identifier "
++      "id=\"uid\">urn:uuid:4b1f6c2e-9d0a-4f3e-8c51-keinkt-books-card</dc:identifier><dc:title>" +
++      t +
++      "</dc:title><dc:language>en</dc:language><meta property=\"dcterms:modified\">2026-11-05T00:00:00Z</meta>"
++      "</metadata><manifest><item id=\"nav\" href=\"nav.xhtml\" media-type=\"application/xhtml+xml\" "
++      "properties=\"nav\"/><item id=\"p1\" href=\"card.xhtml\" media-type=\"application/xhtml+xml\"/><item id=\"i1\" "
++      "href=\"card.png\" media-type=\"image/png\"/></manifest><spine><itemref idref=\"p1\"/></spine></package>\n";
++  const std::string nav =
++      "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\" "
++      "xmlns:epub=\"http://www.idpf.org/2007/ops\"><head><meta charset=\"utf-8\"/><title>" +
++      t + "</title></head><body><nav epub:type=\"toc\"><ol><li><a href=\"card.xhtml\">" + t +
++      "</a></li></ol></nav></body></html>\n";
++  const std::string page =
++      "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\">"
++      "<head><meta charset=\"utf-8\"/><title>" +
++      t + "</title></head><body><div><img src=\"card.png\" alt=\"\" style=\"width:100%\"/></div></body></html>\n";
++
++  struct Entry {
++    const char* name;
++    const std::string* text;  // nullptr: the PNG
++    uint32_t crc = 0, size = 0, offset = 0;
++  };
++  Entry entries[] = {{"mimetype", nullptr}, {"META-INF/container.xml", &container}, {"OEBPS/content.opf", &opf},
++                     {"OEBPS/nav.xhtml", &nav}, {"OEBPS/card.xhtml", &page}, {"OEBPS/card.png", nullptr}};
++  static const std::string MIMETYPE = "application/epub+zip";
++  entries[0].text = &MIMETYPE;
++
++  CrcSink png;
++  writePng(png, /*books=*/true);
++
++  struct Counter final : Sink {
++    Sink& out;
++    uint32_t pos = 0;
++    explicit Counter(Sink& o) : out(o) {}
++    void put(const uint8_t* d, size_t n) override {
++      out.put(d, n);
++      pos += static_cast<uint32_t>(n);
++    }
++  } w(out);
++
++  for (auto& e : entries) {
++    if (e.text) {
++      e.crc = crc32(0, reinterpret_cast<const uint8_t*>(e.text->data()), e.text->size());
++      e.size = static_cast<uint32_t>(e.text->size());
++    } else {
++      e.crc = png.crc;
++      e.size = png.size;
++    }
++    e.offset = w.pos;
++    put32le(w, 0x04034b50);
++    put16le(w, 20);
++    put16le(w, 0);       // flags
++    put16le(w, 0);       // STORE
++    put16le(w, 0);       // time
++    put16le(w, 0x0021);  // 1980-01-01
++    put32le(w, e.crc);
++    put32le(w, e.size);
++    put32le(w, e.size);
++    put16le(w, static_cast<uint16_t>(strlen(e.name)));
++    put16le(w, 0);
++    putStr(w, e.name);
++    if (e.text) {
++      w.put(reinterpret_cast<const uint8_t*>(e.text->data()), e.text->size());
++    } else {
++      writePng(w, /*books=*/true);
++    }
++  }
++  const uint32_t cdStart = w.pos;
++  for (const auto& e : entries) {
++    put32le(w, 0x02014b50);
++    put16le(w, 20);
++    put16le(w, 20);
++    put16le(w, 0);
++    put16le(w, 0);
++    put16le(w, 0);
++    put16le(w, 0x0021);
++    put32le(w, e.crc);
++    put32le(w, e.size);
++    put32le(w, e.size);
++    put16le(w, static_cast<uint16_t>(strlen(e.name)));
++    put16le(w, 0);
++    put16le(w, 0);
++    put16le(w, 0);
++    put16le(w, 0);
++    put32le(w, 0);
++    put32le(w, e.offset);
++    putStr(w, e.name);
++  }
++  const uint32_t cdSize = w.pos - cdStart;
++  constexpr uint16_t N = sizeof(entries) / sizeof(entries[0]);
++  put32le(w, 0x06054b50);
++  put16le(w, 0);
++  put16le(w, 0);
++  put16le(w, N);
++  put16le(w, N);
++  put32le(w, cdSize);
++  put32le(w, cdStart);
++  put16le(w, 0);
++}
++
++}  // namespace calibcard
+diff --git a/src/util/CalibrationCard.h b/src/util/CalibrationCard.h
+new file mode 100644
+index 00000000..08db290c
+--- /dev/null
++++ b/src/util/CalibrationCard.h
+@@ -0,0 +1,38 @@
++#pragma once
++
++#include <cstddef>
++#include <cstdint>
++#include <string>
++
++// The screen calibration card (Display → Screen calibration, Nikolai 05.11.2026): 33 gray steps from black to white, four
++// corner marks and two paper cells, the layout the KEINKT Calibrator page measures (calibrator/index.html, renderCard).
++// The pictures card is a BMP opened in the image viewer; the books card is a one-page EPUB, so the reader draws it the
++// way it draws images inside books. Both are drawn through the current curve: with the checkbox off they show the
++// panel's own response (calibrate), with it on the corrected one (check).
++namespace calibcard {
++constexpr int W = 480;
++constexpr int H = 800;
++constexpr char DIR[] = "/.crosspoint/calibration";
++
++// Card tone at (x, y) of the portrait card. `books`: the last cell is black instead of paper — the page tells the cards
++// apart by it.
++uint8_t pixel(int x, int y, bool books);
++
++// Writes the card (if missing) and returns its path: the pictures BMP in the reading orientation's shape, the books EPUB.
++bool picturesCard(bool landscape, std::string& path);
++bool booksCard(std::string& path);
++
++// A file under DIR: viewers and the reader return to Settings from it, and it never enters Recent books.
++bool isCalibrationPath(const std::string& path);
++
++// Byte sinks for the writers (a file, or a CRC pass before the ZIP entry header). Public for the host test.
++struct Sink {
++  virtual void put(const uint8_t* data, size_t size) = 0;
++  virtual ~Sink() = default;
++};
++uint32_t crc32(uint32_t crc, const uint8_t* data, size_t size);
++// 8-bit grayscale PNG of the portrait card, stored (uncompressed) deflate blocks.
++void writePng(Sink& out, bool books);
++// The one-page EPUB (STORE ZIP) holding writePng(books = true); `title` is the book title.
++void writeEpub(Sink& out, const std::string& title);
++}  // namespace calibcard
+diff --git a/src/util/CalibrationCardStorage.cpp b/src/util/CalibrationCardStorage.cpp
+new file mode 100644
+index 00000000..74b04eb7
+--- /dev/null
++++ b/src/util/CalibrationCardStorage.cpp
+@@ -0,0 +1,91 @@
++#include <HalStorage.h>
++#include <I18n.h>
++#include <Logging.h>
++
++#include "CalibrationCard.h"
++
++// SD part of the calibration card: written once into DIR, reused afterwards (the viewer and the EPUB caches key on it).
++namespace calibcard {
++namespace {
++constexpr char PICTURES_PORTRAIT[] = "/.crosspoint/calibration/pictures_portrait.bmp";
++constexpr char PICTURES_LANDSCAPE[] = "/.crosspoint/calibration/pictures_landscape.bmp";
++constexpr char BOOKS[] = "/.crosspoint/calibration/books_card.epub";
++
++struct FileSink final : Sink {
++  HalFile& file;
++  bool ok = true;
++  explicit FileSink(HalFile& f) : file(f) {}
++  void put(const uint8_t* data, const size_t n) override {
++    if (ok && file.write(data, n) != n) ok = false;
++  }
++};
++
++// Writes through a temporary file and renames it in place, so a half-written card never stays behind.
++template <typename Fn>
++bool writeFile(const char* path, Fn&& fill) {
++  if (!Storage.ensureDirectoryExists(DIR)) return false;
++  const std::string tmp = std::string(path) + ".tmp";
++  Storage.remove(tmp.c_str());
++  HalFile file;
++  if (!Storage.openFileForWrite("CAL", tmp, file)) return false;
++  FileSink sink(file);
++  fill(sink);
++  const bool closed = file.close();
++  if (!sink.ok || !closed || !Storage.rename(tmp.c_str(), path)) {
++    LOG_ERR("CAL", "Writing %s failed", path);
++    Storage.remove(tmp.c_str());
++    return false;
++  }
++  return true;
++}
++
++// 24-bit BMP, bottom-up; landscape = the portrait card turned 90° (the calibrator page finds any rotation).
++void writeBmp(Sink& out, const bool landscape) {
++  const int w = landscape ? H : W, h = landscape ? W : H;
++  const uint32_t row = static_cast<uint32_t>(w) * 3, size = 54 + row * static_cast<uint32_t>(h);
++  uint8_t hdr[54] = {'B', 'M'};
++  auto le32 = [&](int at, uint32_t v) {
++    for (int k = 0; k < 4; ++k) hdr[at + k] = static_cast<uint8_t>(v >> (8 * k));
++  };
++  le32(2, size);
++  le32(10, 54);
++  le32(14, 40);
++  le32(18, static_cast<uint32_t>(w));
++  le32(22, static_cast<uint32_t>(h));
++  hdr[26] = 1;
++  hdr[28] = 24;
++  le32(34, row * static_cast<uint32_t>(h));
++  le32(38, 2835);
++  le32(42, 2835);
++  out.put(hdr, sizeof(hdr));
++  static uint8_t line[H * 3];  // the widest row; static: 2.4 KB off the task stack
++  for (int y = h - 1; y >= 0; --y) {
++    for (int x = 0; x < w; ++x) {
++      const uint8_t v = landscape ? pixel(y, H - 1 - x, false) : pixel(x, y, false);
++      line[x * 3] = line[x * 3 + 1] = line[x * 3 + 2] = v;
++    }
++    out.put(line, row);
++  }
++}
++}  // namespace
++
++bool picturesCard(const bool landscape, std::string& path) {
++  path = landscape ? PICTURES_LANDSCAPE : PICTURES_PORTRAIT;
++  // One card in the folder: the viewer pages through its siblings.
++  Storage.remove(landscape ? PICTURES_PORTRAIT : PICTURES_LANDSCAPE);
++  if (Storage.exists(path.c_str())) return true;
++  return writeFile(path.c_str(), [&](Sink& s) { writeBmp(s, landscape); });
++}
++
++bool booksCard(std::string& path) {
++  path = BOOKS;
++  if (Storage.exists(BOOKS)) return true;
++  const std::string title = tr(STR_CAL_BOOKS_SCREEN);
++  return writeFile(BOOKS, [&](Sink& s) { writeEpub(s, title); });
++}
++
++bool isCalibrationPath(const std::string& path) {
++  static constexpr char PREFIX[] = "/.crosspoint/calibration/";
++  return path.compare(0, sizeof(PREFIX) - 1, PREFIX) == 0;
++}
++}  // namespace calibcard
+diff --git a/src/util/DeepClean.h b/src/util/DeepClean.h
+index 33466531..f1699445 100644
+--- a/src/util/DeepClean.h
++++ b/src/util/DeepClean.h
+@@ -4,8 +4,8 @@ class GfxRenderer;
+ 
+ // X4 Pro gray ghosts are remnant voltage of frames drawn seconds before a gray image; it drains in minutes, and a
+ // clean right before the gray does not remove it (research/gray_stripe.md, 04.11.2026) — the settled redraws do
+-// (viewer image after 2 min, sleep image after 5 min). This short clean serves the white sheet before the sleep image
+-// and the optional cleans (sheet close, leaving a viewer image for the menus).
++// («Обновлять картинки» / «Обновлять заставку»: 1 / 2 / 5 min). This short clean serves the white sheet before the
++// sleep image and the optional cleans (sheet close, leaving a viewer image for the menus).
+ namespace deepclean {
+ // One HALF to white (on screen it flashes black, then white); in night mode the output inversion makes it black.
+ // Leaves the framebuffer white. No-op on other boards.
+diff --git a/src/util/PanelCurve.cpp b/src/util/PanelCurve.cpp
+index b7589194..64e45d35 100644
+--- a/src/util/PanelCurve.cpp
++++ b/src/util/PanelCurve.cpp
+@@ -5,26 +5,24 @@
+ 
+ #include <string>
+ 
++#include "CrossPointSettings.h"
++
+ namespace panelcurve {
+ namespace {
+ // Inverse of this X4 Pro's measured sleep-screen response (tools/sleep_image.py PANEL_RESPONSE, 03.11.2026).
+ constexpr uint8_t BUILT_IN[256] = {
+-    0, 2, 3, 5, 7, 8, 10, 12, 13, 14, 14, 15, 15, 16, 17, 17,
+-    18, 19, 19, 20, 20, 21, 22, 22, 23, 24, 24, 25, 25, 26, 26, 26,
+-    26, 26, 27, 27, 27, 27, 27, 27, 28, 28, 28, 28, 28, 29, 29, 29,
+-    29, 29, 29, 30, 30, 30, 30, 30, 30, 31, 31, 31, 31, 31, 32, 32,
+-    32, 32, 32, 32, 33, 33, 33, 33, 33, 34, 34, 34, 34, 34, 34, 35,
+-    35, 35, 35, 35, 35, 36, 36, 36, 36, 36, 37, 37, 37, 37, 37, 37,
+-    38, 38, 38, 38, 39, 40, 40, 41, 42, 43, 44, 45, 45, 46, 47, 48,
+-    49, 50, 50, 51, 52, 52, 53, 53, 54, 54, 55, 56, 56, 57, 57, 58,
+-    58, 59, 59, 60, 61, 61, 62, 62, 63, 63, 64, 64, 65, 65, 65, 66,
+-    66, 67, 67, 67, 68, 68, 68, 69, 69, 70, 70, 70, 71, 71, 72, 72,
+-    72, 73, 73, 73, 74, 74, 75, 75, 75, 76, 76, 77, 77, 77, 78, 78,
+-    78, 79, 79, 80, 80, 80, 81, 81, 82, 82, 82, 83, 83, 83, 84, 84,
+-    85, 85, 85, 86, 86, 87, 87, 87, 88, 88, 88, 89, 89, 93, 98, 102,
+-    106, 110, 114, 118, 123, 127, 131, 135, 139, 143, 148, 152, 154, 155, 156, 157,
+-    158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 171, 172, 173, 174,
+-    176, 177, 178, 180, 181, 183, 185, 186, 188, 190, 192, 195, 198, 201, 204, 217,
++    0,   2,   3,   5,   7,   8,   10,  12,  13,  14,  14,  15,  15,  16,  17,  17,  18,  19,  19,  20,  20,  21,
++    22,  22,  23,  24,  24,  25,  25,  26,  26,  26,  26,  26,  27,  27,  27,  27,  27,  27,  28,  28,  28,  28,
++    28,  29,  29,  29,  29,  29,  29,  30,  30,  30,  30,  30,  30,  31,  31,  31,  31,  31,  32,  32,  32,  32,
++    32,  32,  33,  33,  33,  33,  33,  34,  34,  34,  34,  34,  34,  35,  35,  35,  35,  35,  35,  36,  36,  36,
++    36,  36,  37,  37,  37,  37,  37,  37,  38,  38,  38,  38,  39,  40,  40,  41,  42,  43,  44,  45,  45,  46,
++    47,  48,  49,  50,  50,  51,  52,  52,  53,  53,  54,  54,  55,  56,  56,  57,  57,  58,  58,  59,  59,  60,
++    61,  61,  62,  62,  63,  63,  64,  64,  65,  65,  65,  66,  66,  67,  67,  67,  68,  68,  68,  69,  69,  70,
++    70,  70,  71,  71,  72,  72,  72,  73,  73,  73,  74,  74,  75,  75,  75,  76,  76,  77,  77,  77,  78,  78,
++    78,  79,  79,  80,  80,  80,  81,  81,  82,  82,  82,  83,  83,  83,  84,  84,  85,  85,  85,  86,  86,  87,
++    87,  87,  88,  88,  88,  89,  89,  93,  98,  102, 106, 110, 114, 118, 123, 127, 131, 135, 139, 143, 148, 152,
++    154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 171, 172, 173, 174, 176, 177,
++    178, 180, 181, 183, 185, 186, 188, 190, 192, 195, 198, 201, 204, 217,
+ };
+ 
+ uint32_t fnv1a(const uint8_t* data) {
+@@ -33,19 +31,49 @@ uint32_t fnv1a(const uint8_t* data) {
+   return h;
+ }
+ 
+-bool useBuiltIn(uint8_t table[256], uint32_t& hash) {
+-  for (int i = 0; i < 256; ++i) table[i] = BUILT_IN[i];
+-  hash = fnv1a(BUILT_IN);
+-  LOG_DBG("CRV", "Built-in panel curve: %08x", static_cast<unsigned>(hash));
+-  return true;
++// Inverse of this X4 Pro's measured response for images inside books (tools/sleep_image.py BOOK_RESPONSE, 03.11.2026;
++// the same table as `sleep_image.py --book`).
++constexpr uint8_t BOOK_BUILT_IN[256] = {
++    0,   8,   16,  24,  32,  38,  39,  40,  41,  41,  42,  43,  44,  45,  45,  46,  47,  48,  49,  49,  50,  51,
++    52,  52,  53,  54,  54,  55,  56,  56,  57,  58,  59,  59,  60,  61,  61,  62,  63,  63,  64,  65,  66,  67,
++    68,  69,  69,  70,  71,  72,  73,  74,  75,  76,  76,  77,  78,  78,  79,  80,  81,  81,  82,  83,  83,  84,
++    85,  85,  86,  87,  87,  88,  89,  89,  90,  91,  91,  92,  92,  93,  94,  94,  95,  96,  96,  97,  98,  98,
++    99,  100, 100, 101, 101, 102, 103, 104, 105, 106, 106, 107, 108, 109, 110, 111, 111, 112, 113, 114, 115, 115,
++    116, 117, 117, 118, 119, 119, 120, 121, 121, 122, 123, 123, 124, 125, 125, 126, 127, 127, 129, 133, 136, 140,
++    141, 141, 142, 142, 142, 143, 143, 144, 144, 145, 145, 145, 146, 146, 147, 147, 148, 148, 149, 149, 149, 150,
++    150, 151, 151, 152, 152, 152, 153, 153, 154, 154, 155, 155, 155, 156, 156, 157, 157, 158, 158, 158, 159, 159,
++    160, 160, 161, 161, 161, 162, 162, 163, 163, 163, 164, 164, 165, 165, 166, 166, 167, 167, 168, 168, 169, 170,
++    170, 171, 171, 172, 173, 173, 174, 174, 175, 175, 176, 177, 177, 178, 178, 180, 181, 183, 184, 186, 187, 189,
++    190, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 206, 207, 208, 209, 210, 211, 212, 214,
++    215, 216, 217, 219, 221, 222, 224, 226, 228, 230, 233, 236, 239, 242};
++
++constexpr uint8_t IDENTITY[256] = {
++#define R16(b) \
++  b, b + 1, b + 2, b + 3, b + 4, b + 5, b + 6, b + 7, b + 8, b + 9, b + 10, b + 11, b + 12, b + 13, b + 14, b + 15
++    R16(0),   R16(16),  R16(32),  R16(48),  R16(64),  R16(80),  R16(96),  R16(112),
++    R16(128), R16(144), R16(160), R16(176), R16(192), R16(208), R16(224), R16(240),
++#undef R16
++};
++
++struct Source {
++  const char* rootPath;
++  const char* hiddenPath;
++  const uint8_t* builtIn;
++};
++constexpr Source PICTURES{ROOT_PATH, PATH, BUILT_IN};
++constexpr Source BOOKS{BOOK_ROOT_PATH, BOOK_PATH, BOOK_BUILT_IN};
++
++void useBuiltIn(const Source& src, uint8_t table[256], uint32_t& hash) {
++  for (int i = 0; i < 256; ++i) table[i] = src.builtIn[i];
++  hash = fnv1a(src.builtIn);
++  LOG_DBG("CRV", "Built-in curve %s: %08x", src.rootPath, static_cast<unsigned>(hash));
+ }
+-}  // namespace
+ 
+-// Reads the file (or falls back to the built-in curve) into `table`.
+-static bool readFromCard(uint8_t table[256], uint32_t& hash) {
+-  if (!Storage.exists(PATH)) return useBuiltIn(table, hash);
++// Reads the card file (root first, then the hidden folder) or falls back to the built-in curve.
++void readFromCard(const Source& src, uint8_t table[256], uint32_t& hash) {
++  const char* path = Storage.exists(src.rootPath) ? src.rootPath : src.hiddenPath;
+   std::string text;
+-  if (!Storage.readFileToString("CRV", PATH, 4096, text)) return useBuiltIn(table, hash);
++  if (!Storage.exists(path) || !Storage.readFileToString("CRV", path, 4096, text)) return useBuiltIn(src, table, hash);
+ 
+   uint8_t parsed[256];
+   int count = 0;
+@@ -54,13 +82,13 @@ static bool readFromCard(uint8_t table[256], uint32_t& hash) {
+     if (c >= '0' && c <= '9') {
+       value = (value < 0 ? 0 : value * 10) + (c - '0');
+       if (value > 255) {
+-        LOG_ERR("CRV", "Value above 255 in %s", PATH);
+-        return useBuiltIn(table, hash);
++        LOG_ERR("CRV", "Value above 255 in %s", path);
++        return useBuiltIn(src, table, hash);
+       }
+     } else if (value >= 0) {
+       if (count == 256) {
+-        LOG_ERR("CRV", "More than 256 values in %s", PATH);
+-        return useBuiltIn(table, hash);
++        LOG_ERR("CRV", "More than 256 values in %s", path);
++        return useBuiltIn(src, table, hash);
+       }
+       parsed[count++] = static_cast<uint8_t>(value);
+       value = -1;
+@@ -68,29 +96,52 @@ static bool readFromCard(uint8_t table[256], uint32_t& hash) {
+   }
+   if (value >= 0 && count < 256) parsed[count++] = static_cast<uint8_t>(value);
+   if (count != 256) {
+-    LOG_ERR("CRV", "%s has %d values, expected 256", PATH, count);
+-    return useBuiltIn(table, hash);
++    LOG_ERR("CRV", "%s has %d values, expected 256", path, count);
++    return useBuiltIn(src, table, hash);
+   }
+-
+   for (int i = 0; i < 256; ++i) table[i] = parsed[i];
+-  const uint32_t h = fnv1a(parsed);
+-  hash = h;
+-  LOG_DBG("CRV", "Panel curve loaded: %08x", static_cast<unsigned>(h));
+-  return true;
++  hash = fnv1a(parsed);
++  LOG_DBG("CRV", "Curve loaded from %s: %08x", path, static_cast<unsigned>(hash));
+ }
+ 
+-// The curve is 256 bytes: read once after boot, then kept in RAM for every sleep image and viewer page.
++// Each curve is 256 bytes: read from the card once after boot, then kept in RAM. The checkboxes are read on every call,
++// so switching one takes effect at once.
++struct Cached {
++  uint8_t table[256];
++  uint32_t hash = 0;
++  bool ready = false;
++};
++const Cached& cached(const Source& src, Cached& slot) {
++  if (!slot.ready) {
++    readFromCard(src, slot.table, slot.hash);
++    slot.ready = true;
++  }
++  return slot;
++}
++Cached picturesSlot;
++Cached booksSlot;
++}  // namespace
++
+ bool load(uint8_t table[256], uint32_t& hash) {
+-  static uint8_t cached[256];
+-  static uint32_t cachedHash = 0;
+-  static bool ready = false;
+-  if (!ready) {
+-    readFromCard(cached, cachedHash);
+-    ready = true;
++  if (!SETTINGS.panelCalPictures) {
++    for (int i = 0; i < 256; ++i) table[i] = IDENTITY[i];
++    hash = fnv1a(IDENTITY);
++    return true;
+   }
+-  for (int i = 0; i < 256; ++i) table[i] = cached[i];
+-  hash = cachedHash;
++  const Cached& c = cached(PICTURES, picturesSlot);
++  for (int i = 0; i < 256; ++i) table[i] = c.table[i];
++  hash = c.hash;
+   return true;
+ }
+ 
++const uint8_t* bookCurve(uint32_t& hash) {
++  if (!SETTINGS.panelCalBooks) {
++    hash = 0;
++    return nullptr;
++  }
++  const Cached& c = cached(BOOKS, booksSlot);
++  hash = c.hash;
++  return c.table;
++}
++
+ }  // namespace panelcurve
+diff --git a/src/util/PanelCurve.h b/src/util/PanelCurve.h
+index 9a3af260..f9f8b0b3 100644
+--- a/src/util/PanelCurve.h
++++ b/src/util/PanelCurve.h
+@@ -1,16 +1,26 @@
+ #pragma once
+ 
+ #include <cstdint>
++#include <string>
+ 
+-// Tone curve for this panel, from the SD card: /.crosspoint/panel_curve.txt holds 256 integers 0..255
+-// (whitespace or comma separated) — wanted on-screen tone → value fed to the 4-gray ditherer, the
+-// inverse of the measured response. Lets images be prepared flat, as for a computer screen.
++// Tone curve for this panel, from the SD card: panel_curve.txt holds 256 integers 0..255 (whitespace or comma
++// separated) — wanted on-screen tone → value fed to the 4-gray ditherer, the inverse of the measured response. Lets
++// images be prepared flat, as for a computer screen. The calibration page (tools/panel-calibration) makes the file from
++// a photo of the calibration card.
+ namespace panelcurve {
++// The card root wins: a hidden folder is not shown by Finder / Explorer, the root is where users put files.
++constexpr char ROOT_PATH[] = "/panel_curve.txt";
+ constexpr char PATH[] = "/.crosspoint/panel_curve.txt";
+ 
+-// Loads the curve from the file, or the built-in one (this X4 Pro, measured 03.11.2026) when the file is
+-// missing or malformed. Always fills `table` and returns true; `hash` identifies the curve for cache keys.
+-// A file holding 0, 1, …, 255 switches the correction off.
+-// Read from the card once after boot and kept in RAM: a changed file takes effect after a reboot.
++constexpr char BOOK_ROOT_PATH[] = "/panel_curve_book.txt";
++constexpr char BOOK_PATH[] = "/.crosspoint/panel_curve_book.txt";
++
++// The pictures curve (viewer, own sleep images): with Display → Screen calibration → «Калибровка картинок» on, the
++// card file or the built-in one (this X4 Pro, measured 03.11.2026) when the file is missing or malformed; off — the
++// identity. Always fills `table` and returns true; `hash` identifies the curve for cache keys.
+ bool load(uint8_t table[256], uint32_t& hash);
++
++// The books curve (images inside EPUBs): with «Калибровка книг» on, panel_curve_book.txt or the built-in book curve;
++// off — nullptr (books draw as stock). The table lives as long as the program; `hash` is 0 when off.
++const uint8_t* bookCurve(uint32_t& hash);
+ }  // namespace panelcurve
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index e1fe1b37..d1384469 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -114,3 +114,6 @@ add_test(NAME clipping_highlight_planes COMMAND ${Python3_EXECUTABLE} ${CMAKE_CU
+ add_test(NAME clipping_selection_text COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_clipping_selection_text.py)
+ 
+ add_test(NAME recursive_dictionary COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_recursive_dictionary.py)
++
++add_subdirectory(sleep_image_cursor)
++add_subdirectory(calibration_card)
+diff --git a/test/calibration_card/CMakeLists.txt b/test/calibration_card/CMakeLists.txt
+new file mode 100644
+index 00000000..20ed1e03
+--- /dev/null
++++ b/test/calibration_card/CMakeLists.txt
+@@ -0,0 +1,4 @@
++add_executable(CalibrationCardTest CalibrationCardTest.cpp ${REPO_ROOT}/src/util/CalibrationCard.cpp)
++target_include_directories(CalibrationCardTest PRIVATE ${REPO_ROOT}/src/util)
++target_link_libraries(CalibrationCardTest PRIVATE crosspoint_test_common GTest::gtest_main)
++gtest_discover_tests(CalibrationCardTest)
+diff --git a/test/calibration_card/CalibrationCardTest.cpp b/test/calibration_card/CalibrationCardTest.cpp
+new file mode 100644
+index 00000000..61708ec8
+--- /dev/null
++++ b/test/calibration_card/CalibrationCardTest.cpp
+@@ -0,0 +1,127 @@
++#include <gtest/gtest.h>
++
++#include <cstring>
++#include <string>
++#include <vector>
++
++#include "CalibrationCard.h"
++
++namespace {
++struct Buf final : calibcard::Sink {
++  std::vector<uint8_t> v;
++  void put(const uint8_t* d, size_t n) override { v.insert(v.end(), d, d + n); }
++};
++uint32_t be32(const uint8_t* p) { return (uint32_t(p[0]) << 24) | (p[1] << 16) | (p[2] << 8) | p[3]; }
++uint32_t le32(const uint8_t* p) { return p[0] | (p[1] << 8) | (p[2] << 16) | (uint32_t(p[3]) << 24); }
++uint16_t le16(const uint8_t* p) { return uint16_t(p[0] | (p[1] << 8)); }
++}  // namespace
++
++// The layout of the KEINKT Calibrator page (calibrator/index.html, renderCard).
++TEST(CalibrationCard, LayoutMatchesThePage) {
++  using calibcard::pixel;
++  EXPECT_EQ(pixel(40, 40, false), 255);  // mark hole centre
++  EXPECT_EQ(pixel(14, 14, false), 0);    // mark ring
++  EXPECT_EQ(pixel(440, 760, false), 255);
++  EXPECT_EQ(pixel(36 + 36, 112 + 36, false), 0);                  // level 0
++  EXPECT_EQ(pixel(36 + 2 * 84 + 36, 112 + 3 * 84 + 36, false), 135);  // level 17: round(17·255/32 = 135.47)
++  EXPECT_EQ(pixel(36 + 16 % 5 * 84 + 36, 112 + 16 / 5 * 84 + 36, false), 128);  // level 16: 127.5 → 128, as Math.round
++  EXPECT_EQ(pixel(36 + 4 * 84 + 36, 112 + 6 * 84 + 36, false), 255);  // last cell: paper on the pictures card
++  EXPECT_EQ(pixel(36 + 4 * 84 + 36, 112 + 6 * 84 + 36, true), 0);     // black on the books card
++  EXPECT_EQ(pixel(36 + 72 + 6, 112 + 36, false), 255);                // the gap between cells
++}
++
++TEST(CalibrationCard, Crc32CheckValue) {
++  const char* s = "123456789";
++  EXPECT_EQ(calibcard::crc32(0, reinterpret_cast<const uint8_t*>(s), 9), 0xCBF43926u);
++}
++
++TEST(CalibrationCard, PngDecodesToTheCard) {
++  Buf b;
++  calibcard::writePng(b, true);
++  const auto& v = b.v;
++  ASSERT_GT(v.size(), 8u);
++  ASSERT_EQ(memcmp(v.data(), "\x89PNG\r\n\x1a\n", 8), 0);
++  size_t pos = 8;
++  std::vector<uint8_t> idat;
++  bool sawEnd = false;
++  while (pos + 12 <= v.size()) {
++    const uint32_t len = be32(&v[pos]);
++    const std::string type(reinterpret_cast<const char*>(&v[pos + 4]), 4);
++    ASSERT_LE(pos + 12 + len, v.size());
++    EXPECT_EQ(calibcard::crc32(0, &v[pos + 4], len + 4), be32(&v[pos + 8 + len])) << type;
++    if (type == "IHDR") {
++      EXPECT_EQ(be32(&v[pos + 8]), uint32_t(calibcard::W));
++      EXPECT_EQ(be32(&v[pos + 12]), uint32_t(calibcard::H));
++    }
++    if (type == "IDAT") idat.insert(idat.end(), &v[pos + 8], &v[pos + 8 + len]);
++    if (type == "IEND") sawEnd = true;
++    pos += 12 + len;
++  }
++  ASSERT_TRUE(sawEnd);
++  // zlib: header, stored blocks, Adler-32.
++  ASSERT_GE(idat.size(), 6u);
++  size_t p = 2;
++  std::vector<uint8_t> raw;
++  bool last = false;
++  while (!last) {
++    last = idat[p] & 1;
++    ASSERT_EQ(idat[p] & 6, 0);  // stored
++    const uint16_t len = le16(&idat[p + 1]), nlen = le16(&idat[p + 3]);
++    ASSERT_EQ(uint16_t(~len), nlen);
++    raw.insert(raw.end(), &idat[p + 5], &idat[p + 5 + len]);
++    p += 5 + len;
++  }
++  uint32_t a = 1, s = 0;
++  for (const uint8_t c : raw) {
++    a = (a + c) % 65521;
++    s = (s + a) % 65521;
++  }
++  EXPECT_EQ(be32(&idat[p]), (s << 16) | a);
++  ASSERT_EQ(raw.size(), size_t(calibcard::W + 1) * calibcard::H);
++  for (int y = 0; y < calibcard::H; ++y) {
++    ASSERT_EQ(raw[y * (calibcard::W + 1)], 0);
++    for (int x = 0; x < calibcard::W; ++x) ASSERT_EQ(raw[y * (calibcard::W + 1) + 1 + x], calibcard::pixel(x, y, true));
++  }
++}
++
++TEST(CalibrationCard, EpubIsAValidStoreZip) {
++  Buf b;
++  calibcard::writeEpub(b, "Books & <cards>");
++  const auto& v = b.v;
++  // End of central directory.
++  ASSERT_GE(v.size(), 22u);
++  const size_t eocd = v.size() - 22;
++  ASSERT_EQ(le32(&v[eocd]), 0x06054b50u);
++  const uint16_t n = le16(&v[eocd + 10]);
++  const uint32_t cdSize = le32(&v[eocd + 12]), cdStart = le32(&v[eocd + 16]);
++  EXPECT_EQ(n, 6);
++  EXPECT_EQ(cdStart + cdSize, eocd);
++  // mimetype first, stored, exact content (EPUB OCF).
++  ASSERT_EQ(le32(&v[0]), 0x04034b50u);
++  EXPECT_EQ(le16(&v[8]), 0);
++  EXPECT_EQ(std::string(reinterpret_cast<const char*>(&v[30]), 8), "mimetype");
++  EXPECT_EQ(std::string(reinterpret_cast<const char*>(&v[38]), 20), "application/epub+zip");
++  size_t c = cdStart;
++  bool sawPng = false, sawOpf = false;
++  for (int i = 0; i < n; ++i) {
++    ASSERT_EQ(le32(&v[c]), 0x02014b50u);
++    const uint32_t crc = le32(&v[c + 16]), size = le32(&v[c + 20]);
++    const uint16_t nameLen = le16(&v[c + 28]);
++    const uint32_t off = le32(&v[c + 42]);
++    const std::string name(reinterpret_cast<const char*>(&v[c + 46]), nameLen);
++    ASSERT_EQ(le32(&v[off]), 0x04034b50u) << name;
++    EXPECT_EQ(le32(&v[off + 14]), crc) << name;
++    const size_t data = off + 30 + le16(&v[off + 26]) + le16(&v[off + 28]);
++    ASSERT_LE(data + size, v.size());
++    EXPECT_EQ(calibcard::crc32(0, &v[data], size), crc) << name;
++    if (name == "OEBPS/card.png") sawPng = true;
++    if (name == "OEBPS/content.opf") {
++      sawOpf = true;
++      const std::string opf(reinterpret_cast<const char*>(&v[data]), size);
++      EXPECT_NE(opf.find("<dc:title>Books &amp; &lt;cards&gt;</dc:title>"), std::string::npos);
++    }
++    c += 46 + nameLen + le16(&v[c + 30]) + le16(&v[c + 32]);
++  }
++  EXPECT_TRUE(sawPng);
++  EXPECT_TRUE(sawOpf);
++}
+diff --git a/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp b/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
+index 26a0a687..6306df0a 100644
+--- a/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
++++ b/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
+@@ -1,4 +1,3 @@
+-#include <optional>
+ #include <Epub.h>
+ #include <Epub/Page.h>
+ #include <Epub/converters/ImageDimsProbe.h>
+@@ -10,6 +9,7 @@
+ #include <filesystem>
+ #include <functional>
+ #include <memory>
++#include <optional>
+ #include <set>
+ #include <sstream>
+ #include <string>
+@@ -2306,6 +2306,27 @@ TEST(TextDecorationPosition, UnderlineStaysBelowBaseline) {
+ // when that line does not fit or the orphan rule carries it on: the jump lands a page early.
+ class ChapterAnchorPageTest : public ChapterWidowOrphanTest {
+  protected:
++  void SetUp() override {
++    ChapterWidowOrphanTest::SetUp();
++    parser.insideBody = true;
++  }
++  std::optional<uint16_t> pageOfWord(const char* word) {
++    const auto contains = [&](const Page& page) {
++      for (const auto& element : page.elements) {
++        if (element->getTag() != TAG_PageLine) continue;
++        const auto& block = *static_cast<const PageLine&>(*element).getBlock();
++        for (uint16_t i = 0; i < block.wordCount(); ++i) {
++          if (std::strcmp(block.wordText(i), word) == 0) return true;
++        }
++      }
++      return false;
++    };
++    for (size_t i = 0; i < pages.size(); ++i) {
++      if (contains(*pages[i])) return static_cast<uint16_t>(i);
++    }
++    if (parser.currentPage && contains(*parser.currentPage)) return static_cast<uint16_t>(pages.size());
++    return std::nullopt;
++  }
+   void anchoredParagraph(const char* id, int wordCount) {
+     const XML_Char* attributes[] = {"id", id, nullptr};
+     ChapterHtmlSlimParser::startElement(&parser, "p", attributes);
+@@ -2368,3 +2389,156 @@ TEST_F(ChapterAnchorPageTest, ConsecutiveAnchoredNotesEachLandOnTheirFirstLine)
+   EXPECT_EQ(anchorPage("n3"), std::optional<uint16_t>(1));
+   EXPECT_EQ(anchorPage("n4"), std::optional<uint16_t>(1));
+ }
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorStaysWithItsParagraphBeforePageBreak) {
++  open("p", nullptr);
++  text(words(13 * 3));
++  const XML_Char* attributes[] = {"id", "inline-target", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("target");
++  close("a");
++  close("p");
++  open("p", "page-break-before: always");
++  text("next page");
++  close("p");
++  EXPECT_EQ(anchorPage("inline-target"), std::optional<uint16_t>(0));
++}
++
++TEST_F(ChapterAnchorPageTest, PendingAnchorCountsTowardChapterLimit) {
++  for (int i = 0; i < 1025; ++i) {
++    const auto id = "target-" + std::to_string(i);
++    const XML_Char* attributes[] = {"id", id.c_str(), nullptr};
++    ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++    close("a");
++  }
++  ASSERT_TRUE(parser.finishParse());
++  EXPECT_EQ(parser.getAnchors().size(), 1024u);
++}
++
++TEST_F(ChapterAnchorPageTest, EmptyTrailingTableKeepsItsAnchor) {
++  paragraph(13);
++  const XML_Char* attributes[] = {"id", "empty-table", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "table", attributes);
++  close("table");
++  ASSERT_TRUE(parser.finishParse());
++  EXPECT_EQ(anchorPage("empty-table"), std::optional<uint16_t>(0));
++}
++
++TEST_F(ChapterAnchorPageTest, HeadingAnchorFollowsHeadingCarriedWithNextParagraph) {
++  paragraph(13 * 4);
++  const XML_Char* attributes[] = {"id", "heading", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "h2", attributes);
++  text("Heading");
++  close("h2");
++  anchoredParagraph("body", 13 * 3);
++  EXPECT_EQ(anchorPage("heading"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("body"), std::optional<uint16_t>(1));
++}
++
++TEST_F(ChapterAnchorPageTest, AnchorFollowsTwoCarriedLinesOfItsParagraph) {
++  paragraph(13 * 3);
++  anchoredParagraph("n12", 13 * 3);
++  paragraph(1);
++  ASSERT_EQ(pages.size(), 1u);
++  EXPECT_EQ(linesOnPage(0), 3u);
++  EXPECT_EQ(anchorPage("n12"), std::optional<uint16_t>(1));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorBeforeAnAnchoredBlockStaysWithItsText) {
++  open("div", nullptr);
++  text(words(13 * 8));
++  const XML_Char* inlineAttributes[] = {"id", "inline", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", inlineAttributes);
++  text("target");
++  close("a");
++  const XML_Char* nextAttributes[] = {"id", "next", "style", "page-break-before: always", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "p", nextAttributes);
++  text("next");
++  close("p");
++  close("div");
++  EXPECT_EQ(anchorPage("inline"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("next"), std::optional<uint16_t>(2));
++}
++
++TEST_F(ChapterAnchorPageTest, TwoInlineAnchorsStayWithTheFirstLineOfALongParagraph) {
++  open("p", nullptr);
++  text("prefix ");
++  const XML_Char* early[] = {"id", "early", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", early);
++  close("a");
++  text("one ");
++  const XML_Char* later[] = {"id", "later", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", later);
++  close("a");
++  text("TARGET " + words(13 * 8));
++  close("p");
++  ASSERT_EQ(pageOfWord("TARGET"), std::optional<uint16_t>(0));
++  EXPECT_EQ(anchorPage("early"), pageOfWord("TARGET"));
++  EXPECT_EQ(anchorPage("later"), pageOfWord("TARGET"));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorAtThePageBoundaryFollowsTheNextText) {
++  open("p", nullptr);
++  text(words(13 * 5));
++  const XML_Char* attributes[] = {"id", "boundary", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("TARGET " + words(13 * 3));
++  close("a");
++  close("p");
++  ASSERT_EQ(pageOfWord("TARGET"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("boundary"), pageOfWord("TARGET"));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorFollowsItsHeadingToTheNextPage) {
++  paragraph(13 * 4);
++  open("h2", nullptr);
++  text("Heading ");
++  const XML_Char* attributes[] = {"id", "heading-inline", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("TARGET");
++  close("a");
++  close("h2");
++  paragraph(13 * 3);
++  ASSERT_EQ(pageOfWord("TARGET"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("heading-inline"), pageOfWord("TARGET"));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorSurvivesTheSoftFlushOfALongParagraph) {
++  open("p", nullptr);
++  text(words(13 * 60));
++  const XML_Char* attributes[] = {"id", "soft", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("TARGET " + words(13 * 60));
++  close("a");
++  close("p");
++  ASSERT_TRUE(pageOfWord("TARGET").has_value());
++  EXPECT_EQ(anchorPage("soft"), pageOfWord("TARGET"));
++}
++
++TEST_F(ChapterAnchorPageTest, EmptyInlineTargetAtParagraphEndStaysBeforeTheNextPage) {
++  open("p", nullptr);
++  text(words(13 * 3));
++  const XML_Char* attributes[] = {"id", "tail", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  close("a");
++  close("p");
++  open("p", "page-break-before: always");
++  text("next page");
++  close("p");
++  EXPECT_EQ(anchorPage("tail"), std::optional<uint16_t>(0));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineTargetBeforeAnImageFollowsTheImagePlaceholder) {
++  parser.imageRendering = 1;
++  open("p", nullptr);
++  text(words(13 * 5));
++  const XML_Char* anchor[] = {"id", "image", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", anchor);
++  close("a");
++  const XML_Char* image[] = {"src", "image.png", "alt", "placeholder", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "img", image);
++  close("img");
++  close("p");
++  ASSERT_EQ(pageOfWord("[Image:"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("image"), pageOfWord("[Image:"));
++}
+diff --git a/test/sleep_image_cursor/CMakeLists.txt b/test/sleep_image_cursor/CMakeLists.txt
+new file mode 100644
+index 00000000..ec8916dc
+--- /dev/null
++++ b/test/sleep_image_cursor/CMakeLists.txt
+@@ -0,0 +1,4 @@
++add_executable(SleepImageCursorTest SleepImageCursorTest.cpp)
++target_include_directories(SleepImageCursorTest PRIVATE ${REPO_ROOT}/src/activities/boot_sleep)
++target_link_libraries(SleepImageCursorTest PRIVATE crosspoint_test_common GTest::gtest_main)
++gtest_discover_tests(SleepImageCursorTest)
+diff --git a/test/sleep_image_cursor/SleepImageCursorTest.cpp b/test/sleep_image_cursor/SleepImageCursorTest.cpp
+new file mode 100644
+index 00000000..34870d93
+--- /dev/null
++++ b/test/sleep_image_cursor/SleepImageCursorTest.cpp
+@@ -0,0 +1,43 @@
++#include <gtest/gtest.h>
++
++#include "SleepImageCursor.h"
++
++TEST(SleepImageCursor, ColdBootUsesCardPosition) {
++  SleepImageCursor cursor{};
++  EXPECT_STREQ(cursor.lastShown("/.sleep/2.bmp"), "/.sleep/2.bmp");
++}
++
++TEST(SleepImageCursor, FailedSavesKeepAdvancingPastTheStaleCardPosition) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/1.bmp", false));
++  EXPECT_STREQ(cursor.lastShown(""), "/.sleep/1.bmp");
++  ASSERT_TRUE(cursor.record("/.sleep/2.bmp", false));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/2.bmp");
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", false));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/3.bmp");
++}
++
++TEST(SleepImageCursor, SuccessfulSaveReturnsAuthorityToTheCard) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/2.bmp", false));
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", true));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/3.bmp"), "/.sleep/3.bmp");
++  EXPECT_STREQ(cursor.lastShown("/.sleep/external.bmp"), "/.sleep/external.bmp");
++}
++
++TEST(SleepImageCursor, ResetDiscardsAnUnsavedPosition) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", false));
++  cursor = SleepImageCursor{};
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/1.bmp");
++}
++
++TEST(SleepImageCursor, BoundsAndTerminatesTheRetainedPath) {
++  SleepImageCursor cursor{};
++  const std::string longest(SleepImageCursor::PATH_CAPACITY - 1, 'x');
++  ASSERT_TRUE(cursor.record(longest, false));
++  EXPECT_STREQ(cursor.lastShown(""), longest.c_str());
++  EXPECT_FALSE(cursor.record(longest + "x", false));
++  EXPECT_STREQ(cursor.lastShown("saved"), "saved");
++  EXPECT_FALSE(cursor.record("", false));
++}

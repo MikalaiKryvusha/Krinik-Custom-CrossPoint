@@ -1,0 +1,23 @@
+{
+  "script": "1500:TAP:240,642;2500:TAP:240,200;3500:TAP:240,684;9500:QUIT",
+  "shots": [
+    [
+      2100,
+      "settings"
+    ],
+    [
+      3100,
+      "display"
+    ],
+    [
+      4100,
+      "cleaning"
+    ],
+    [
+      8100,
+      "cleaning-late"
+    ]
+  ],
+  "branch": "pr/screen-redraw-delay",
+  "sha": "d7cc4e83"
+}

@@ -1,0 +1,271 @@
+{
+  "groups": {
+    "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7": [
+      "calibration",
+      "transition-2110",
+      "transition-2120",
+      "transition-2130",
+      "transition-2140",
+      "transition-2150",
+      "transition-2160",
+      "transition-2170",
+      "transition-2180",
+      "transition-2190",
+      "transition-2200",
+      "transition-2210",
+      "transition-2220",
+      "transition-2230",
+      "transition-2240",
+      "transition-2250",
+      "transition-2260",
+      "transition-2270",
+      "transition-2280",
+      "transition-2290",
+      "transition-2300",
+      "transition-2310",
+      "transition-2320",
+      "transition-2330",
+      "transition-2340",
+      "transition-2350",
+      "transition-2360",
+      "transition-2370",
+      "transition-2380",
+      "transition-2390",
+      "transition-2400",
+      "transition-2410",
+      "transition-2420",
+      "transition-2430",
+      "transition-2440",
+      "transition-2450",
+      "transition-2460",
+      "transition-2470",
+      "transition-2480",
+      "transition-2490",
+      "transition-2500"
+    ],
+    "5e64c29c7c36a33a48ff46a5b554529697a8f4136f2983a88dda0a4e7f578e23": [
+      "card",
+      "transition-2050",
+      "transition-2060",
+      "transition-2070",
+      "transition-2080",
+      "transition-2090",
+      "transition-2100"
+    ],
+    "432f06a5e6e057f831bac5cabc411efc61b8710be7771df5ba6e12aac05dc80d": [
+      "display"
+    ],
+    "110aa6425b60b188c01aacd23a32b010021fc71f4c5e7e796e65c408c94a3542": [
+      "home"
+    ],
+    "9a8820decc17f30d4aea2e93a3b07da2d8338b1f7abedc5fb025a4aef7edd3e8": [
+      "settings"
+    ]
+  },
+  "frames": [
+    {
+      "name": "calibration",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "card",
+      "sha256": "5e64c29c7c36a33a48ff46a5b554529697a8f4136f2983a88dda0a4e7f578e23"
+    },
+    {
+      "name": "display",
+      "sha256": "432f06a5e6e057f831bac5cabc411efc61b8710be7771df5ba6e12aac05dc80d"
+    },
+    {
+      "name": "home",
+      "sha256": "110aa6425b60b188c01aacd23a32b010021fc71f4c5e7e796e65c408c94a3542"
+    },
+    {
+      "name": "settings",
+      "sha256": "9a8820decc17f30d4aea2e93a3b07da2d8338b1f7abedc5fb025a4aef7edd3e8"
+    },
+    {
+      "name": "transition-2050",
+      "sha256": "5e64c29c7c36a33a48ff46a5b554529697a8f4136f2983a88dda0a4e7f578e23"
+    },
+    {
+      "name": "transition-2060",
+      "sha256": "5e64c29c7c36a33a48ff46a5b554529697a8f4136f2983a88dda0a4e7f578e23"
+    },
+    {
+      "name": "transition-2070",
+      "sha256": "5e64c29c7c36a33a48ff46a5b554529697a8f4136f2983a88dda0a4e7f578e23"
+    },
+    {
+      "name": "transition-2080",
+      "sha256": "5e64c29c7c36a33a48ff46a5b554529697a8f4136f2983a88dda0a4e7f578e23"
+    },
+    {
+      "name": "transition-2090",
+      "sha256": "5e64c29c7c36a33a48ff46a5b554529697a8f4136f2983a88dda0a4e7f578e23"
+    },
+    {
+      "name": "transition-2100",
+      "sha256": "5e64c29c7c36a33a48ff46a5b554529697a8f4136f2983a88dda0a4e7f578e23"
+    },
+    {
+      "name": "transition-2110",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2120",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2130",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2140",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2150",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2160",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2170",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2180",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2190",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2200",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2210",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2220",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2230",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2240",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2250",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2260",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2270",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2280",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2290",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2300",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2310",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2320",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2330",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2340",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2350",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2360",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2370",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2380",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2390",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2400",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2410",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2420",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2430",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2440",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2450",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2460",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2470",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2480",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2490",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    },
+    {
+      "name": "transition-2500",
+      "sha256": "050e0a066cc15a822f75fec7d79bd0ab4ec89b8278ef704bdcf6e193fbeb3ee7"
+    }
+  ]
+}

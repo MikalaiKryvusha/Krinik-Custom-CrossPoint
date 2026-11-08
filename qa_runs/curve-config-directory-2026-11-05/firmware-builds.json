@@ -1,0 +1,10 @@
+[
+  {
+    "target": "default",
+    "exit_code": 0,
+    "binary": "/Users/kryvusha/Xteink/qa_runs/curve-config-directory-2026-11-05/firmware/curve-config-default.bin",
+    "sha256": "15a6ad69dfc40071d0051b4f2fbcd0c09594d13a47c45920e9f79c5cce17fd38",
+    "elf_sha256": "9c9d6a7b39bfd05aadccda79f79b83bd6657236d22232fe80e2ff802fc3a9c65",
+    "source_diff_sha256": "21f27f0bb506ad1f930445034c00e307f740a68bf43632579037d39a223a5b96"
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-05 16:46 +03:00",
+  "firmware_release": "1.1.0",
+  "installed_firmware": "1.1.0",
+  "candidate": "1.1.1",
+  "candidate_branch": "fix/krinik-1.1.1",
+  "host_passed": 935,
+  "navigation_cases_passed": 8,
+  "judge": "VERIFIED WITH CAVEATS",
+  "final_embedded_build_pending": true,
+  "release_pending": true,
+  "flash_pending": true,
+  "new_prs_pending": 4,
+  "updated_old_prs": [
+    4328,
+    4331,
+    4332
+  ]
+}

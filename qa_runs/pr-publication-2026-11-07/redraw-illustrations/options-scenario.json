@@ -1,0 +1,21 @@
+{
+  "script": "1500:TAP:240,642;2500:TAP:240,200;3500:TAP:240,684;4500:TAP:240,248;5500:TAP:240,355;6500:TAP:240,310;8000:QUIT",
+  "shots": [
+    [
+      4100,
+      "cleaning"
+    ],
+    [
+      5100,
+      "sleep-delay-options"
+    ],
+    [
+      6100,
+      "between-options"
+    ],
+    [
+      7100,
+      "image-delay-options"
+    ]
+  ]
+}

@@ -1,0 +1,78 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-06 07:30
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[312] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[312] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[313] [DBG] [SDREG] Fonts directory not found: /fonts
+[313] [DBG] [SDREG] Discovery complete: 0 families
+[313] [DBG] [SDFS] SD font system ready (0 families discovered)
+[313] [DBG] [MAIN] Fonts setup
+[313] [DBG] [ACT] Entering activity: Boot
+[313] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[318] [DBG] [ACT] Exiting activity: Boot
+[318] [DBG] [ACT] Entering activity: Home
+[318] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[331] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/shots/home.bmp
+[10009] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10009] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[20048] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20048] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[30066] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30066] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[40094] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[40094] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[50131] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[50132] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[60162] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[60162] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[70171] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[70171] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[70353] [DBG] [MAIN] Power button held 306ms, sleeping
+[70355] [DBG] [ACT] Exiting activity: Home
+[70355] [DBG] [ACT] Entering activity: Sleep
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[70460] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[70461] [DBG] [CRV] Curve loaded from /.crosspoint/panel_curve.txt: be170a3a
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/.crosspoint/sleep_cache.idx (flags=0x0 errno=2 No such file or directory)
+[70523] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[70523] [DBG] [SLP] drawing to 0 x 0
+[70523] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[70523] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[70542] [DBG] [CLN] Short clean: HALF scrub to white
+[70542] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[70554] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[70554] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[70573] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[70573] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[70593] [DBG] [MAIN] Entering deep sleep
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[1] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-06 07:32
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+2026-11-06 07:32:01.557 program[41074:3395433] Task policy set failed: 4 ((os/kern) invalid argument)
+[172] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[172] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[172] [DBG] [SDREG] Fonts directory not found: /fonts
+[172] [DBG] [SDREG] Discovery complete: 0 families
+[172] [DBG] [SDFS] SD font system ready (0 families discovered)
+[172] [DBG] [MAIN] Fonts setup
+[172] [DBG] [ACT] Entering activity: Home
+[174] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[188] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-debug-batlog/shots/wake.bmp

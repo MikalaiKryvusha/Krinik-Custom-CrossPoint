@@ -1,0 +1,165 @@
+diff --git a/src/activities/boot_sleep/SleepActivity.cpp b/src/activities/boot_sleep/SleepActivity.cpp
+index 9ce72765..e74dce51 100644
+--- a/src/activities/boot_sleep/SleepActivity.cpp
++++ b/src/activities/boot_sleep/SleepActivity.cpp
+@@ -14,6 +14,9 @@
+ #include <Memory.h>
+ #include <PNGdec.h>
+ #include <Xtc.h>
++#ifndef SIMULATOR
++#include <esp_attr.h>
++#endif
+ 
+ #include <algorithm>
+ #include <cmath>
+@@ -25,6 +28,7 @@
+ 
+ #include "CrossPointSettings.h"
+ #include "CrossPointState.h"
++#include "SleepImageCursor.h"
+ #include "activities/reader/ReaderUtils.h"
+ #include "components/UITheme.h"
+ #include "fontIds.h"
+@@ -509,6 +513,12 @@ bool findNextValidSleepImage(HalFile& dir, const SleepRecentKind recentKind, cha
+ // both sleep directories, wrapping to the first. The folders are rescanned on every sleep, so added and removed
+ // images take effect at once. One pass, no name list in RAM; the last shown path is kept on the card.
+ constexpr char SLEEP_LAST_SHOWN_PATH[] = "/.crosspoint/sleep_last.txt";
++#ifdef SIMULATOR
++SleepImageCursor unsavedSleepCursor{};
++#else
++RTC_DATA_ATTR SleepImageCursor unsavedSleepCursor{};
++#endif
++static_assert(MAX_SLEEP_FILE_NAME_LEN + 32 <= SleepImageCursor::PATH_CAPACITY);
+ 
+ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirPath, std::string& selectedPath) {
+   auto name = makeUniqueNoThrow<char[]>(MAX_SLEEP_FILE_NAME_LEN);
+@@ -521,6 +531,7 @@ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirP
+     Storage.readFileToString("SLP", SLEEP_LAST_SHOWN_PATH, MAX_SLEEP_FILE_NAME_LEN + 32, lastShown);
+   }
+ 
++  const char* cursor = unsavedSleepCursor.lastShown(lastShown.c_str());
+   std::string first;
+   std::string next;
+   std::string path;
+@@ -532,15 +543,17 @@ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirP
+       path += '/';
+       path += name.get();
+       if (first.empty() || path < first) first = path;
+-      if (path > lastShown && (next.empty() || path < next)) next = path;
++      if (path > cursor && (next.empty() || path < next)) next = path;
+     }
+   }
+   if (first.empty()) return false;
+ 
+   selectedPath = next.empty() ? first : next;
+   Storage.mkdir("/.crosspoint");
+-  if (!Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()))) {
+-    LOG_ERR("SLP", "Failed to save last sleep image");
++  const bool saved = Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()));
++  if (!saved) LOG_ERR("SLP", "Failed to save last sleep image");
++  if (!unsavedSleepCursor.record(selectedPath, saved)) {
++    LOG_ERR("SLP", "Sleep image path exceeds retained cursor capacity");
+   }
+   return true;
+ }
+diff --git a/src/activities/boot_sleep/SleepImageCursor.h b/src/activities/boot_sleep/SleepImageCursor.h
+new file mode 100644
+index 00000000..f412ef8b
+--- /dev/null
++++ b/src/activities/boot_sleep/SleepImageCursor.h
+@@ -0,0 +1,26 @@
++#pragma once
++
++#include <cstring>
++#include <string_view>
++
++// Only unsaved positions override the card. RTC_DATA_ATTR storage keeps this
++// state through deep sleep; a cold boot starts with the on-card cursor again.
++struct SleepImageCursor {
++  static constexpr size_t PATH_CAPACITY = 288;
++
++  const char* lastShown(const char* savedPath) const { return pending ? path : savedPath; }
++
++  bool record(const std::string_view shownPath, const bool saved) {
++    pending = false;
++    if (saved) return true;
++    if (shownPath.empty() || shownPath.size() >= sizeof(path)) return false;
++    std::memcpy(path, shownPath.data(), shownPath.size());
++    path[shownPath.size()] = '\0';
++    pending = true;
++    return true;
++  }
++
++ private:
++  char path[PATH_CAPACITY] = {};
++  bool pending = false;
++};
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index e1fe1b37..c77475d6 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -114,3 +114,5 @@ add_test(NAME clipping_highlight_planes COMMAND ${Python3_EXECUTABLE} ${CMAKE_CU
+ add_test(NAME clipping_selection_text COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_clipping_selection_text.py)
+ 
+ add_test(NAME recursive_dictionary COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_recursive_dictionary.py)
++
++add_subdirectory(sleep_image_cursor)
+diff --git a/test/sleep_image_cursor/CMakeLists.txt b/test/sleep_image_cursor/CMakeLists.txt
+new file mode 100644
+index 00000000..ec8916dc
+--- /dev/null
++++ b/test/sleep_image_cursor/CMakeLists.txt
+@@ -0,0 +1,4 @@
++add_executable(SleepImageCursorTest SleepImageCursorTest.cpp)
++target_include_directories(SleepImageCursorTest PRIVATE ${REPO_ROOT}/src/activities/boot_sleep)
++target_link_libraries(SleepImageCursorTest PRIVATE crosspoint_test_common GTest::gtest_main)
++gtest_discover_tests(SleepImageCursorTest)
+diff --git a/test/sleep_image_cursor/SleepImageCursorTest.cpp b/test/sleep_image_cursor/SleepImageCursorTest.cpp
+new file mode 100644
+index 00000000..34870d93
+--- /dev/null
++++ b/test/sleep_image_cursor/SleepImageCursorTest.cpp
+@@ -0,0 +1,43 @@
++#include <gtest/gtest.h>
++
++#include "SleepImageCursor.h"
++
++TEST(SleepImageCursor, ColdBootUsesCardPosition) {
++  SleepImageCursor cursor{};
++  EXPECT_STREQ(cursor.lastShown("/.sleep/2.bmp"), "/.sleep/2.bmp");
++}
++
++TEST(SleepImageCursor, FailedSavesKeepAdvancingPastTheStaleCardPosition) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/1.bmp", false));
++  EXPECT_STREQ(cursor.lastShown(""), "/.sleep/1.bmp");
++  ASSERT_TRUE(cursor.record("/.sleep/2.bmp", false));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/2.bmp");
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", false));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/3.bmp");
++}
++
++TEST(SleepImageCursor, SuccessfulSaveReturnsAuthorityToTheCard) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/2.bmp", false));
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", true));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/3.bmp"), "/.sleep/3.bmp");
++  EXPECT_STREQ(cursor.lastShown("/.sleep/external.bmp"), "/.sleep/external.bmp");
++}
++
++TEST(SleepImageCursor, ResetDiscardsAnUnsavedPosition) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", false));
++  cursor = SleepImageCursor{};
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/1.bmp");
++}
++
++TEST(SleepImageCursor, BoundsAndTerminatesTheRetainedPath) {
++  SleepImageCursor cursor{};
++  const std::string longest(SleepImageCursor::PATH_CAPACITY - 1, 'x');
++  ASSERT_TRUE(cursor.record(longest, false));
++  EXPECT_STREQ(cursor.lastShown(""), longest.c_str());
++  EXPECT_FALSE(cursor.record(longest + "x", false));
++  EXPECT_STREQ(cursor.lastShown("saved"), "saved");
++  EXPECT_FALSE(cursor.record("", false));
++}

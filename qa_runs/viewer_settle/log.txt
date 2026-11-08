@@ -1,0 +1,113 @@
+[0] [DBG] [UI] Using Lyra theme
+[7] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_settle/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_settle/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_settle/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[12] [DBG] [CPS] Resaving settings to update format
+[12] [DBG] [CPS] Settings loaded from file
+[14] [DBG] [UI] Using Lyra theme
+[15] [INF] [CLK] RTC clock read: 2026-11-04 17:23
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[15] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[222] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_settle/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[223] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/viewer_settle/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[223] [DBG] [SDREG] Fonts directory not found: /fonts
+[223] [DBG] [SDREG] Discovery complete: 0 families
+[223] [DBG] [SDFS] SD font system ready (0 families discovered)
+[223] [DBG] [MAIN] Fonts setup
+[223] [DBG] [ACT] Entering activity: Boot
+[225] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[229] [DBG] [ACT] Exiting activity: Boot
+[229] [DBG] [ACT] Entering activity: Home
+[231] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[242] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2582] [DBG] [ACT] Exiting activity: Home
+[2582] [DBG] [ACT] Entering activity: FileBrowser
+[2584] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[4586] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[6592] [DBG] [ACT] Exiting activity: FileBrowser
+[6592] [DBG] [ACT] Entering activity: BmpViewer
+[6593] [DBG] [CRV] Panel curve loaded: be170a3a
+[6593] [DBG] [BMP] Show 1/6: /sleep/oblivion_1.bmp
+[6617] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[6617] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6622] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[6622] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6632] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[6632] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10042] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10042] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/viewer_settle/shots/open.bmp
+[20080] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20080] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[30091] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30091] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[37090] [DBG] [BMP] Input: button prev
+[37091] [DBG] [BMP] Show 6/6: /sleep/oblivion_6.bmp
+[37133] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[37133] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[37145] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[37145] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[37160] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[37160] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[37166] [DBG] [LOOP] New max loop duration: 76 ms (activity: 76 ms)
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/viewer_settle/shots/flipped.bmp
+[40101] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[40101] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[50115] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[50115] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[60137] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[60138] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[70172] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[70172] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[80177] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[80177] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[90191] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[90191] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[100227] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[100227] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[110244] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[110244] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[120266] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[120267] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[130310] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[130310] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[140351] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[140351] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[150351] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[150351] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[157109] [DBG] [BMP] Settled redraw after 2 min
+[157109] [DBG] [BMP] Show 6/6: /sleep/oblivion_6.bmp
+[157112] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[157112] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[157117] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[157117] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[157128] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[157128] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[160372] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[160372] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/viewer_settle/shots/after_redraw.bmp
+[170421] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[170421] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[180446] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[180446] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[190501] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[190501] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[200530] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[200530] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[210557] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[210557] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[220583] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[220583] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[230613] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[230613] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[240654] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[240654] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[250685] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[250685] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[260715] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[260716] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[270749] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[270749] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes

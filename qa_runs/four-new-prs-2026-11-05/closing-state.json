@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-05",
+  "release": "krinik-1.1.1",
+  "release_commit": "a06a20d61994f89a8b11a60de00e89252d987c60",
+  "release_hardware": "owner confirmed all requested smoke checks",
+  "keinkt_main": "a176601b28e6e1b9d4290e4781f76cb3c041fe08",
+  "new_candidates": {
+    "pr/screen-clean-menu": "ea0a3625",
+    "pr/screen-calibration": "e72706b7",
+    "pr/screen-redraw-delay": "d7cc4e83"
+  },
+  "fourth_candidate": "not implemented; blank worktree screen-clean-return at d7cc4e83",
+  "opened_new_prs": 0,
+  "root_context": "local non-git Xteink; QA project unchanged",
+  "push_status": "three candidate branches pushed to origin; verify push output if resuming",
+  "next": "separate SDK PR and enable settings without SD per owner; complete cleanup C; review drafts",
+  "closure": "force-close explicitly requested by owner; closure-only judge skipped"
+}

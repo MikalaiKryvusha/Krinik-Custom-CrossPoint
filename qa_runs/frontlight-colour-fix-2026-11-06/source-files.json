@@ -1,0 +1,87 @@
+[
+  {
+    "repo": "firmware",
+    "file": "lib/hal/HalFrontlight.cpp",
+    "sha256": "ffb673d017de29c158f3013a4284c7afc513c795b0e8c407752e53f2b51d302e"
+  },
+  {
+    "repo": "firmware",
+    "file": "lib/hal/HalFrontlight.h",
+    "sha256": "3d9e96e82379d01ea49d5fb1477112e283a07bfb08154dab3b6d6129b9451ff7"
+  },
+  {
+    "repo": "firmware",
+    "file": "platformio.ini",
+    "sha256": "45f7362c0c66386394d589cf6b022ec8b45a1c9c8d0be0e0fe10c44e96ca77e3"
+  },
+  {
+    "repo": "firmware",
+    "file": "test/CMakeLists.txt",
+    "sha256": "581c0eb507483ddfde574986bfd60c87c391b81007a642bd11a7371a61162070"
+  },
+  {
+    "repo": "firmware",
+    "file": "test/frontlight_dither/FrontlightDitherTest.cpp",
+    "sha256": "72bf90c9a72e0309778cc432f9a7c8826547afdc40f6195edd27a996e386af5e"
+  },
+  {
+    "repo": "firmware",
+    "file": "test/frontlight_dither/stubs/Arduino.h",
+    "sha256": "e14332ab9130510f71ab5f5625e48bc3f647f934a5c18df1829e821f1e32d539"
+  },
+  {
+    "repo": "firmware",
+    "file": "test/frontlight_dither/stubs/esp_timer.h",
+    "sha256": "d0fdb7eb37991c154c475eb01411bac3d7754c93c237d84251b51f277274f355"
+  },
+  {
+    "repo": "firmware",
+    "file": "test/frontlight_dither/stubs/freertos/FreeRTOS.h",
+    "sha256": "a1a2f52562c3be588b8358ce204286207d098c5cfadc2fbf1f9e3f299803398f"
+  },
+  {
+    "repo": "firmware",
+    "file": "test/frontlight_dither/stubs/freertos/semphr.h",
+    "sha256": "83b2eb1173c28515af0e48c4b3a7a884247e485846a605d38774f6dcde5148e1"
+  },
+  {
+    "repo": "firmware",
+    "file": "test/test_frontlight_dither.py",
+    "sha256": "65cd955823b893468b4ef1a316a1217a591f2927ecdb4ad86b884f1b2909b227"
+  },
+  {
+    "repo": "sdk",
+    "file": "docs/testing.md",
+    "sha256": "b635b5e778dc948d57acb240fedb2ac7d2a0237fc948ceeb48719e7e6832f8cd"
+  },
+  {
+    "repo": "sdk",
+    "file": "libs/hardware/FrontlightManager/include/FrontlightManager.h",
+    "sha256": "3e06a098efcdb203a67c9f05b23578f49066006d3ff543c3293d236fb720c3fb"
+  },
+  {
+    "repo": "sdk",
+    "file": "libs/hardware/FrontlightManager/include/FrontlightPwmDither.h",
+    "sha256": "ac3ca5222a6138059f0e407bee09664aca1ca2c6083a133537757fba0f7a0b39"
+  },
+  {
+    "repo": "sdk",
+    "file": "libs/hardware/FrontlightManager/src/FrontlightManager.cpp",
+    "sha256": "e422e5f55bbe01f6ed762ef576da0322805011413c66517c6c0e72c6e314b1d9"
+  },
+  {
+    "repo": "sdk",
+    "file": "libs/hardware/FrontlightManager/test/host/run.sh",
+    "sha256": "907e32827f237c773fe61ca8bd3aa2b5a1e3aa0eaacb372b2ac7d31d5c0ce656"
+  },
+  {
+    "repo": "sdk",
+    "file": "libs/hardware/FrontlightManager/test/host/stubs/Logging.h",
+    "sha256": "faf5c2e366558e31693f0d37873e91f76bf880f4c02de1dbcc4ed211c4cc174d"
+  },
+  {
+    "repo": "sdk",
+    "file": "libs/hardware/FrontlightManager/test/host/test_dither.cpp",
+    "sha256": "dd89559b60dedb7a6ef98bf9ec8059430520d6ea16815059595f7d12071a1ece"
+  }
+]

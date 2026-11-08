@@ -1,0 +1,447 @@
+Processing simulator_x4_pro (platform: native)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+Language              Code  BCP47        Own  Fallback  Unused  Data (B)
+--------------------  ----  -----------  ---  --------  ------  --------
+English               EN    en           658  0         17      11228   
+العربية               AR    ar           449  209       8       13537   
+Azərbaycanca          AZ    az           640  18        17      14468   
+Беларуская            BE    be           440  218       8       15273   
+Български             BG    bg           423  235       8       15313   
+Bosanski              BS    bs           440  218       8       9049    
+Català                CA    ca           656  2         17      14533   
+Valencià              CAV   ca-valencia  656  2         17      14509   
+Čeština               CS    cs           440  218       8       9476    
+Dansk                 DA    da           329  329       7       5682    
+Deutsch               DE    de           631  27        17      12501   
+Español               ES    es           656  2         17      13871   
+فارسی                 FA    fa           452  206       9       14520   
+Suomi                 FI    fi           301  357       5       5816    
+Français              FR    fr           497  161       12      9781    
+עברית                 HE    he           656  2         17      17365   
+Magyar                HU    hu           440  218       8       9952    
+Bahasa Indonesia      ID    id           440  218       8       8446    
+Italiano              IT    it           656  2         17      13138   
+Қазақша               KK    kk           440  218       8       15428   
+Lietuvių              LT    lt           440  218       8       7882    
+Norsk bokmål          NB    nb           440  218       8       8045    
+Nederlands            NL    nl           329  329       7       5754    
+Orangutan             OOK   ook          333  325       4       2627    
+Polski                PL    pl           550  108       12      11424   
+Português (Brasil)    PT    pt-BR        522  136       12      10159   
+Português (Portugal)  P2    pt-PT        522  136       12      10922   
+Română                RO    ro           329  329       7       6491    
+Русский               RU    ru           635  23        17      21090   
+Slovenčina            SK    sk           440  218       8       9609    
+Slovenščina           SI    sl           440  218       8       8992    
+Svenska               SV    sv           639  19        0       12670   
+Türkçe                TR    tr           441  217       8       9014    
+Українська            UK    uk           442  216       8       15652   
+Tiếng Việt            VI    vi           656  2         17      15762   
+
+  Total: 658  |  Used in code: 641  |  Never used: 17
+  Flash: 399,979 B strings (deduped)  +  46,060 B offset tables  =  446,039 B
+
+  Stripping 17 unused string(s) from output.
+
+Code generation complete!
+  Languages: 35
+  String keys: 641
+Generated: src/images/logoSvg.generated.h
+  Original: 654 bytes
+  Minified: 654 bytes (100.0%)
+  Compressed: 382 bytes (58.4%)
+Generated: src/network/html/HomePageHtml.generated.h
+  Original: 2195 bytes
+  Minified: 5362 bytes (244.3%)
+  Compressed: 1932 bytes (88.0%)
+Generated: src/network/html/SettingsPageHtml.generated.h
+  Original: 21779 bytes
+  Minified: 19617 bytes (90.1%)
+  Compressed: 5021 bytes (23.1%)
+Generated: src/network/html/FontsPageHtml.generated.h
+  Original: 8398 bytes
+  Minified: 9046 bytes (107.7%)
+  Compressed: 3296 bytes (39.2%)
+Generated: src/network/html/PluginsPageHtml.generated.h
+  Original: 1277 bytes
+  Minified: 4742 bytes (371.3%)
+  Compressed: 1812 bytes (141.9%)
+Generated: src/network/html/RunnerPageHtml.generated.h
+  Original: 1223 bytes
+  Minified: 731 bytes (59.8%)
+  Compressed: 477 bytes (39.0%)
+Generated: src/network/html/FilesPageHtml.generated.h
+  Original: 146959 bytes
+  Minified: 104126 bytes (70.9%)
+  Compressed: 25458 bytes (17.3%)
+Generated: src/network/html/js/jszip_minJs.generated.h
+  Original: 97630 bytes
+  Minified: 97630 bytes (100.0%)
+  Compressed: 28379 bytes (29.1%)
+Generated: src/network/html/js/epub_optimizerJs.generated.h
+  Original: 68679 bytes
+  Minified: 44771 bytes (65.2%)
+  Compressed: 11319 bytes (16.5%)
+Generated: src/network/html/js/plugin_hostJs.generated.h
+  Original: 10845 bytes
+  Minified: 5971 bytes (55.1%)
+  Compressed: 2204 bytes (20.3%)
+Generated: src/network/html/assets/crosspoint_iconSvg.generated.h
+  Original: 586 bytes
+  Minified: 586 bytes (100.0%)
+  Compressed: 344 bytes (58.7%)
+Generated: src/network/html/assets/iconsSvg.generated.h
+  Original: 1167 bytes
+  Minified: 1167 bytes (100.0%)
+  Compressed: 471 bytes (40.4%)
+Generated: src/network/html/assets/webCss.generated.h
+  Original: 21184 bytes
+  Minified: 17166 bytes (81.0%)
+  Compressed: 4238 bytes (20.0%)
+Generated: src/components/icons/checkbox_onSvg.generated.h
+  Original: 252 bytes
+  Minified: 252 bytes (100.0%)
+  Compressed: 171 bytes (67.9%)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ deep+, Compatibility ~ off
+Found 41 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- Crosspoint Simulator @ 1.0.0+sha.04332e7
+|-- JsonSax @ 1.0.0
+|-- Opds @ 1.0.0
+|-- CatalogList @ 1.0.0
+|-- FreeInkUI @ 0.1.0
+|-- Icons @ 1.0.0
+|-- FreeInkFont @ 0.1.0
+|-- ArduinoJson @ 7.4.2
+|-- QRCode @ 0.0.1
+|-- AnimatedGIF @ 2.2.0+sha.d01888f
+|-- Logging
+|-- Memory
+|-- Serialization
+|-- Utf8
+|-- BlePageTurner @ 0.1.0
+|-- Epub
+|-- I18n
+|-- EpdFont
+|-- KOReaderSync
+|-- HttpHeader
+|-- GfxRenderer
+|-- FsHelpers
+|-- expat @ 2.7.3
+|-- LibraryIndex
+|-- BmpToBmpConverter
+|-- Xtc
+|-- TrustedTime
+|-- MiniBidi
+|-- InflateReader
+|-- uzlib @ 2.9.8
+|-- DeviceSecret
+|-- Txt
+Building in release mode
+Retrieved `.pio/build/simulator_x4_pro/src/ClippingStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/CrossPointSettings.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/CrossPointState.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/FontInstaller.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/LcpPassphraseStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/MappedInputManager.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/OpdsServerStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/OpdsTokenStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/ReaderFontSizes.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/RecentBooksStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/SdCardFontSystem.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/SettingsList.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/WifiCredentialStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/Activity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/ActivityManager.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/CatalogActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/UiListActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/UiTabListActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/boot_sleep/BootActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/boot_sleep/SleepActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/browser/OpdsBookBrowserActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/home/CrashActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/home/FileBrowserActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/home/HomeActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/library/LibraryListActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/network/CalibreConnectActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/network/CrossPointWebServerActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/network/NetworkModeSelectionActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/network/UsbDriveActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/network/WifiSelectionActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/plugins/PluginCatalogActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/ClipSelectionActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/DictionaryDefinitionActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/DictionaryWordSelectActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/EndOfBookOptions.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/EpubReaderActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/EpubReaderBookmarksActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/EpubReaderChapterSelectionActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/EpubReaderClippingListActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/EpubReaderFootnoteSelectActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/EpubReaderMenuActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/EpubReaderPercentSelectionActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/KOReaderSyncActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/QrDisplayActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/ReaderActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/ReaderSession.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/ReaderToolbarUi.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/XtcReaderActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/reader/XtcReaderChapterSelectionActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/AboutActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/BleSettingsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/ButtonRemapActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/ClearCacheActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/ClockSettingsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/ClockSyncActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/FontDownloadActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/HomeButtonSettingsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/KOReaderAuthActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/KOReaderSettingsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/KeyboardLayoutsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/LanguageSelectActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/OpdsServerListActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/OpdsSettingsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/OtaUpdateActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/PluginHubInstallActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/SdFirmwareUpdateActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/SettingsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/SettingsListActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/StatusBarSettingsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/TextSettingsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/TextSettingsPreview.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/settings/TimezonePickerActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/util/BmpViewerActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/util/ConfirmationActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/util/DetailsActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/util/FrontlightPanelActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/util/FullScreenMessageActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/util/IntervalSelectionActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/util/KeyboardEntryActivity.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/activities/util/KeyboardLayoutSet.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/clippings/ClippingSync.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/clippings/ClippingsManager.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/CatalogScreens.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/CoverGridHomeUi.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/HomeCoverCache.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/UITheme.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/UiAppHost.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/themes/BaseTheme.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/themes/lyra/Lyra3CoversTheme.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/themes/lyra/LyraTheme.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/components/themes/roundedraff/RoundedRaffTheme.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/main.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/network/CrossPointWebServer.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/network/FirmwareBoardTag.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/network/HttpDownloader.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/network/LcpDevice.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/network/OpdsHttpTransport.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/network/WebDAVHandler.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/platform/UsbSerialJtagHandoff.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/BookCacheUtils.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/BookProgress.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/BookmarkFile.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/BookmarkUtil.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/ButtonNavigator.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/DictHtmlPages.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/DictZip.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/Dictionary.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/DictionaryRegistry.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/HtmlToPlainText.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/NextBookFinder.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/OpdsFilename.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/PluginEvents.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/PluginHttp.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/PluginLocations.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/QrUtils.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/ScreenshotUtil.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/StringUtils.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/Timezones.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/util/UrlUtils.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/src/vocabulary/VocabularyStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libf1d/Logging/Logging.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib8ae/Memory/BuildScratch.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libf1d/libLogging.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libffa/Utf8/Utf8.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib8ae/libMemory.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe3d/uzlib/tinflate.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libffa/libUtf8.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe3d/libuzlib.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libb85/InflateReader/InflateReader.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/FontAlloc.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libb85/libInflateReader.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/FtFont.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/Gpos.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/Gsub.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/TtfFont.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_autofit.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_cff.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_ftbase.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_ftbitmap.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_ftdebug.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_ftglyph.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_ftgzip.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_ftinit.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_ftmm.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_ftsystem.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_psaux.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_pshinter.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_psnames.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_raster.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_sfnt.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_smooth.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/FreeInkFont/freetype/ft_truetype.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbc0/EpdFont/EpdFont.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib7e3/libFreeInkFont.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbc0/EpdFont/EpdFontFamily.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbc0/EpdFont/FontDecompressor.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbc0/EpdFont/SdCardFont.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbc0/EpdFont/SdCardFontManager.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbc0/EpdFont/SdCardFontRegistry.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbc0/EpdFont/TtfEpdFont.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe3d/MiniBidi/BidiUtils.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbc0/libEpdFont.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe3d/MiniBidi/minibidi.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib5cb/GfxRenderer/Bitmap.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe3d/libMiniBidi.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib5cb/GfxRenderer/BitmapHelpers.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib5cb/GfxRenderer/FontCacheManager.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/simulator_patched/GfxRenderer.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/CrossPointWebServer.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib5cb/libGfxRenderer.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/ESP.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalClock.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalDisplay.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalFrontlight.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalGPIO.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalMemory.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalPowerManager.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalStorage.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalSystem.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/HalTiltSensor.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/NetworkClient.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/SimHttpRoutes.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/SimLog.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/SimScreenText.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/SimulatorImageDecode.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/SimulatorLifecycle.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/WebServer.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/WebSocketsServer.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/firmware_link_stubs.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/qrcode.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/simulator_firmware.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/simulator_main.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/simulator/simulator_ota.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib66d/JsonSax/StreamingJsonParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib315/libsimulator.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib0f9/expat/xmlparse.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib66d/libJsonSax.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib0f9/expat/xmlrole.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib0f9/expat/xmltok.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/Opds2Parser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib0f9/libexpat.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpdsAuthDoc.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpdsClient.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpdsFeedParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpdsImplicitAuth.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpdsLoginForm.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpdsParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpdsPublicationDoc.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpdsSearchTemplate.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/Opds/OpenSearchDescParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib690/CatalogList/JsonListParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib4be/libOpds.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib690/CatalogList/XmlListParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib8f2/FreeInkUI/FreeInkUI.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib690/libCatalogList.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib8f2/libFreeInkUI.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe7d/QRCode/qrcode.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libdbd/AnimatedGIF/AnimatedGIF.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe7d/libQRCode.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib0e7/Serialization/ObfuscationUtils.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libdbd/libAnimatedGIF.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib0e7/Serialization/PersistableStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib2e7/BlePageTurner/NoRadio.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib0e7/libSerialization.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib2e7/BlePageTurner/Runtime.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib2e7/BlePageTurner/SdkRadio.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib664/DeviceSecret/DeviceSecret.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib2e7/libBlePageTurner.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libac8/TrustedTime/TrustedTime.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib664/libDeviceSecret.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libac8/libTrustedTime.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbe0/miniz/InflateStream.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbe0/miniz/miniz_impl.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/liba40/ZipFile/ZipFile.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libbe0/libminiz.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib1e1/FsHelpers/FsHelpers.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/liba40/libZipFile.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib1e1/libFsHelpers.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe86/GifToBmpConverter/GifToBmpConverter.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib8ea/JpegToBmpConverter/JpegToBmpConverter.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/libe86/libGifToBmpConverter.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3eb/PngToBmpConverter/PngToBmpConverter.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib8ea/libJpegToBmpConverter.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3eb/libPngToBmpConverter.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib91b/Txt/Txt.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib91b/Txt/TxtToHtml.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/BookKey.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib91b/libTxt.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/BookMetadataCache.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/CjkBreaks.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/Page.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/ParsedText.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/Section.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/WordStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/blocks/ImageBlock.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/blocks/TextBlock.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/converters/GifToFramebufferConverter.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/converters/ImageDecoderFactory.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/converters/ImageDimsProbe.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/converters/ImageToFramebufferDecoder.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/converters/JpegToFramebufferConverter.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/converters/PngToFramebufferConverter.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/css/CssParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/htmlEntities.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/hyphenation/HyphenationCommon.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/hyphenation/Hyphenator.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/hyphenation/LanguageRegistry.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/hyphenation/LiangHyphenation.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/parsers/ChapterHtmlSlimParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/parsers/ContainerParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/parsers/ContentOpfParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/parsers/TocNavParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/Epub/Epub/parsers/TocNcxParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib499/I18n/I18n.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib869/libEpub.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib499/I18n/I18nStrings.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib649/HttpHeader/HttpHeader.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib499/libI18n.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib649/libHttpHeader.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3ca/KOReaderSync/ChapterXPathResolver.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3ca/KOReaderSync/KOReaderCredentialStore.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3ca/KOReaderSync/KOReaderDocumentId.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3ca/KOReaderSync/KOReaderSyncClient.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3ca/KOReaderSync/ProgressComparison.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3ca/KOReaderSync/ProgressMapper.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib06c/Xtc/Xtc.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib3ca/libKOReaderSync.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib06c/Xtc/Xtc/XtcParser.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib456/LibraryIndex/LibraryBuilder.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib06c/libXtc.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib456/LibraryIndex/LibraryFormat.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib456/LibraryIndex/LibraryIndexFile.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib456/LibraryIndex/LibraryText.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib05a/BmpToBmpConverter/BmpToBmpConverter.o' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib456/libLibraryIndex.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/lib05a/libBmpToBmpConverter.a' from cache
+Retrieved `.pio/build/simulator_x4_pro/program' from cache
+========================= [SUCCESS] Took 12.48 seconds =========================
+
+Environment       Status    Duration
+----------------  --------  ------------
+simulator_x4_pro  SUCCESS   00:00:12.485
+========================= 1 succeeded in 00:00:12.485 =========================

@@ -1,0 +1,444 @@
+diff --git a/lib/Epub/Epub/Section.cpp b/lib/Epub/Epub/Section.cpp
+index 583f65ad..bc28881a 100644
+--- a/lib/Epub/Epub/Section.cpp
++++ b/lib/Epub/Epub/Section.cpp
+@@ -81,7 +81,8 @@ namespace {
+ // v71: Focus split offsets follow the visual run order for RTL words.
+ // v72: Make ruby rendering closer to how Chromium renders ruby by default.
+ // v73: TrueType vector fonts load and advance .notdef for missing glyphs.
+-constexpr uint8_t SECTION_FILE_VERSION = 73;
++// v74: Place anchors on their target lines and carry them with headings/paragraphs.
++constexpr uint8_t SECTION_FILE_VERSION = 74;
+ // Written into the version field while a build is in progress; patched to
+ // SECTION_FILE_VERSION only when the build is finalized. An abandoned /
+ // crash-interrupted .bin therefore carries version 0, which loadSectionFile rejects
+diff --git a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
+index 94400273..ee2885bb 100644
+--- a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
++++ b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
+@@ -341,19 +341,31 @@ void ChapterHtmlSlimParser::flushPendingAnchor() {
+     }
+   }
+ 
+-  // The page is fixed when the block places its first content (placeUnplacedAnchors).
+   unplacedAnchorIds.push_back(std::move(pendingAnchorId));
+   pendingAnchorId.clear();
+ }
+ 
++void ChapterHtmlSlimParser::placeInlineAnchors(const uint32_t endOffset, const bool remaining) {
++  while (!inlineAnchorIds.empty() && (remaining || inlineAnchorIds.front().second < endOffset)) {
++    anchorData.push_back({std::move(inlineAnchorIds.front().first), static_cast<uint16_t>(completedPageCount)});
++    inlineAnchorIds.pop_front();
++  }
++}
++
++void ChapterHtmlSlimParser::placeTrailingInlineAnchors() {
++  const size_t before = anchorData.size();
++  placeInlineAnchors(0, true);
++  if (anchorData.size() != before && recentLineCount > 0 && currentPage && !currentPage->elements.empty() &&
++      currentPage->elements.back()->getTag() == TAG_PageLine) {
++    recentLineAnchors[recentLineCount - 1].second = anchorData.size();
++  }
++}
++
+ void ChapterHtmlSlimParser::placeUnplacedAnchors() {
+   if (unplacedAnchorIds.empty()) return;
+-  anchorParagraphBegin = anchorData.size();
+   for (auto& id : unplacedAnchorIds) {
+     anchorData.push_back({std::move(id), static_cast<uint16_t>(completedPageCount)});
+   }
+-  anchorParagraphEnd = anchorData.size();
+-  anchorParagraph = layoutParagraph;
+   unplacedAnchorIds.clear();
+ }
+ 
+@@ -370,8 +382,11 @@ void ChapterHtmlSlimParser::emitCurrentPage() {
+   paragraphLinesOnPage = 0;
+ }
+ 
+-void ChapterHtmlSlimParser::noteContent(const int top, const int bottom) {
+-  placeUnplacedAnchors();
++void ChapterHtmlSlimParser::noteContent(const int top, const int bottom, const bool recordAnchors) {
++  if (recordAnchors) {
++    placeUnplacedAnchors();
++    if (!layoutParagraph) placeInlineAnchors(0, true);
++  }
+   for (BoxScope& box : boxScopes) {
+     if (box.top < 0) box.top = static_cast<int16_t>(top);
+     box.bottom = static_cast<int16_t>(std::max<int>(box.bottom, bottom));
+@@ -819,7 +834,6 @@ void ChapterHtmlSlimParser::startNewTextBlock(const BlockStyle& blockStyle, cons
+     makePages(true, paragraphEnd);
+     if (stopRequested) return;
+   }
+-  anchorParagraph = nullptr;
+   // If the pending anchor is a TOC chapter boundary, force a page break after the previous
+   // block is flushed so the chapter starts on a fresh page.
+   flushPendingAnchor();
+@@ -1408,7 +1422,9 @@ void XMLCALL ChapterHtmlSlimParser::startElement(void* userData, const XML_Char*
+         const bool isTocAnchor =
+             std::find(self->tocAnchors.begin(), self->tocAnchors.end(), idValue) != self->tocAnchors.end();
+         if (isTocAnchor || (!isNonNavigableInlineElement(name) &&
+-                            self->anchorData.size() + self->unplacedAnchorIds.size() < MAX_ANCHORS_PER_CHAPTER)) {
++                            self->anchorData.size() + self->unplacedAnchorIds.size() + self->inlineAnchorIds.size() +
++                                    (self->pendingAnchorId.empty() ? 0 : 1) <
++                                MAX_ANCHORS_PER_CHAPTER)) {
+           // Flush a displaced anchor before overwriting. Consecutive non-block elements
+           // (e.g. <aside id="fn1">text</aside><aside id="fn2">) with no intervening block
+           // never trigger startNewTextBlock, so fn1 gets silently overwritten. That leaves
+@@ -1417,7 +1433,15 @@ void XMLCALL ChapterHtmlSlimParser::startElement(void* userData, const XML_Char*
+           if (!self->pendingAnchorId.empty()) {
+             self->flushPendingAnchor();
+           }
+-          self->pendingAnchorId = idValue;
++          const bool inText =
++              !isTocAnchor && self->tableDepth == 0 && !isHeaderOrBlock(name) && !isTableStructuralTag(name) &&
++              !matches(name, IMAGE_TAGS, std::size(IMAGE_TAGS)) &&
++              ((self->currentTextBlock && !self->currentTextBlock->isEmpty()) || self->partWordBufferIndex > 0);
++          if (inText) {
++            self->inlineAnchorIds.push_back({idValue, self->visibleTextOffset});
++          } else {
++            self->pendingAnchorId = idValue;
++          }
+         }
+       } else if (strcmp(atts[i], "dir") == 0) {
+         dirAttr = atts[i + 1];
+@@ -2815,6 +2839,7 @@ void XMLCALL ChapterHtmlSlimParser::endElement(void* userData, const XML_Char* n
+       // from inheriting the closed block style (e.g. alignment or margins).
+       // Vertical margins and paddings are stripped
+       self->startNewTextBlock(self->blockStyleStack.back().withoutTop().withoutBottom());
++      self->placeTrailingInlineAnchors();
+       self->updateEffectiveInlineStyle();
+       if (!self->boxScopes.empty() && self->boxScopes.back().depth == self->depth) self->closeBoxScope();
+       // Set after the closing element's own text was laid out above.
+@@ -2995,6 +3020,7 @@ bool ChapterHtmlSlimParser::finishParse() {
+       LOG_ERR("EHP", "Text layout dropped content (OOM); failing section build");
+       return false;
+     }
++    placeTrailingInlineAnchors();
+     // Anchors of a block that placed nothing land on the last page.
+     placeUnplacedAnchors();
+     if (!pendingAnchorId.empty()) {
+@@ -3099,12 +3125,6 @@ bool ChapterHtmlSlimParser::canCarry(const size_t carry) const {
+ // link areas to the top of the next page with their spacing intact.
+ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const size_t paragraphLines,
+                                                    const uint32_t visibleOffset) {
+-  // Every line of the anchored paragraph on this page moves, and the paragraph starts here:
+-  // its anchors follow its first line to the next page.
+-  const bool carriesAnchorParagraphStart =
+-      anchorParagraph && anchorParagraph == layoutParagraph && anchorParagraphEnd > anchorParagraphBegin &&
+-      anchorParagraphEnd <= anchorData.size() && paragraphLines > 0 && paragraphLines == paragraphLinesOnPage &&
+-      anchorData[anchorParagraphBegin].second == completedPageCount;
+   auto nextPage = makeUniqueNoThrow<Page>();
+   if (!nextPage) {
+     LOG_ERR("EHP", "OOM: Page (%zu bytes)", sizeof(Page));
+@@ -3113,6 +3133,7 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+   }
+   std::unique_ptr<PageElement> carried[MAX_CARRIED_LINES];
+   uint32_t carriedOffsets[MAX_CARRIED_LINES] = {};
++  std::pair<size_t, size_t> carriedAnchors[MAX_CARRIED_LINES] = {};
+   std::vector<PageLink> carriedLinks;
+   int16_t carriedTop = 0;
+   const int16_t carriedBottom = currentPageNextY;
+@@ -3120,6 +3141,7 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+     carried[carry - 1 - i] = std::move(currentPage->elements.back());
+     currentPage->elements.pop_back();
+     carriedOffsets[carry - 1 - i] = recentLineOffsets[recentLineCount - 1 - i];
++    carriedAnchors[carry - 1 - i] = recentLineAnchors[recentLineCount - 1 - i];
+   }
+   if (carry > 0) {
+     carriedTop = carried[0]->yPos;
+@@ -3151,11 +3173,6 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+   setCurrentPageVisibleOffset(visibleOffset);
+   emitCurrentPage();
+   completedPageCount++;
+-  if (carriesAnchorParagraphStart) {
+-    for (size_t i = anchorParagraphBegin; i < anchorParagraphEnd; ++i) {
+-      anchorData[i].second = static_cast<uint16_t>(completedPageCount);
+-    }
+-  }
+   if (stopRequested) return;
+   currentPage = std::move(nextPage);
+   currentPageNextY = 0;
+@@ -3165,11 +3182,15 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+     carried[i]->yPos = static_cast<int16_t>(carried[i]->yPos - carriedTop);
+     setCurrentPageVisibleOffset(carriedOffsets[i]);
+     currentPage->elements.push_back(std::move(carried[i]));
+-    recentLineOffsets[recentLineCount++] = carriedOffsets[i];
++    recentLineOffsets[recentLineCount] = carriedOffsets[i];
++    recentLineAnchors[recentLineCount++] = carriedAnchors[i];
++    for (size_t anchor = carriedAnchors[i].first; anchor < carriedAnchors[i].second; ++anchor) {
++      anchorData[anchor].second = static_cast<uint16_t>(completedPageCount);
++    }
+   }
+   if (carry > 0) {
+     currentPageNextY = static_cast<int16_t>(carriedBottom - carriedTop);
+-    noteContent(0, currentPageNextY);
++    noteContent(0, currentPageNextY, false);
+   }
+   for (const PageLink& link : carriedLinks) {
+     currentPage->addLink(link.href, link.x, static_cast<int16_t>(link.y - carriedTop), link.width, link.height);
+@@ -3220,19 +3241,30 @@ void ChapterHtmlSlimParser::addLineToPage(std::unique_ptr<TextBlock> line, const
+       LOG_DBG("EHP", "Dropped page link: %.48s", link.href);
+     }
+   }
++  uint32_t lineEndOffset = visibleOffset;
++  if (!inlineAnchorIds.empty()) {
++    for (uint16_t i = 0; i < line->wordCount(); ++i) {
++      lineEndOffset = std::max(lineEndOffset, line->wordSourceRange(i).end);
++    }
++  }
+   auto pageLine = makeUniqueNoThrow<PageLine>(std::move(line), xOffset, currentPageNextY);
+   if (!pageLine) {
+     LOG_ERR("EHP", "OOM: PageLine");
+     return;
+   }
+   currentPage->elements.push_back(std::move(pageLine));
++  const size_t lineAnchorBegin = anchorData.size();
+   noteContent(currentPageNextY, currentPageNextY + contentHeight);
++  placeInlineAnchors(lineEndOffset);
++  const size_t lineAnchorEnd = anchorData.size();
+   currentPageNextY += lineHeight;
+   if (layoutParagraph && paragraphLinesOnPage < UINT8_MAX) paragraphLinesOnPage++;
+   if (recentLineCount == MAX_CARRIED_LINES) {
+     memmove(recentLineOffsets, recentLineOffsets + 1, sizeof(recentLineOffsets[0]) * (MAX_CARRIED_LINES - 1));
++    std::move(recentLineAnchors + 1, recentLineAnchors + MAX_CARRIED_LINES, recentLineAnchors);
+     recentLineCount--;
+   }
++  recentLineAnchors[recentLineCount] = {lineAnchorBegin, lineAnchorEnd};
+   recentLineOffsets[recentLineCount++] = visibleOffset;
+ }
+ 
+diff --git a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
+index 19280421..23f68dce 100644
+--- a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
++++ b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
+@@ -143,6 +143,8 @@ class ChapterHtmlSlimParser {
+   uint8_t paragraphLinesOnPage = 0;
+   uint8_t keepWithNextLines = 0;                       // trailing heading lines on this page
+   uint32_t recentLineOffsets[MAX_CARRIED_LINES] = {};  // visible offsets of this page's last lines, newest last
++  // Anchor ranges follow the same six trailing lines when pagination carries them.
++  std::pair<size_t, size_t> recentLineAnchors[MAX_CARRIED_LINES] = {};
+   uint8_t recentLineCount = 0;
+   size_t linesToCarry(size_t& paragraphLines) const;
+   size_t keepWithNextCarry() const;
+@@ -202,15 +204,12 @@ class ChapterHtmlSlimParser {
+   int completedPageCount = 0;
+   std::deque<std::pair<std::string, uint16_t>> anchorData;
+   std::string pendingAnchorId;  // deferred until after previous text block is flushed
++  // Inline targets wait for the line containing their visible-text offset.
++  std::deque<std::pair<std::string, uint32_t>> inlineAnchorIds;
+   // Anchors whose block has started but placed nothing yet. Their page is the page of the block's
+   // first content, which can differ from the page open at block start: the first line may not fit,
+   // or the orphan rule may move it to the next page.
+   std::vector<std::string> unplacedAnchorIds;
+-  // anchorData range of the paragraph whose first line the anchors point at; a page break that
+-  // carries every line of that paragraph moves them along.
+-  const ParsedText* anchorParagraph = nullptr;
+-  size_t anchorParagraphBegin = 0;
+-  size_t anchorParagraphEnd = 0;
+   std::vector<std::string> tocAnchors;  // the list of anchors that are TOC chapter boundaries
+   uint16_t xpathParagraphIndex = 0;
+   uint16_t xpathListItemIndex = 0;
+@@ -253,10 +252,12 @@ class ChapterHtmlSlimParser {
+   void updateEffectiveInlineStyle();
+   void startNewTextBlock(const BlockStyle& blockStyle, bool paragraphEnd = true);
+   void flushPendingAnchor();
++  void placeInlineAnchors(uint32_t endOffset, bool remaining = false);
++  void placeTrailingInlineAnchors();
+   void placeUnplacedAnchors();
+   void completeCurrentPage();
+   void emitCurrentPage();
+-  void noteContent(int top, int bottom);
++  void noteContent(int top, int bottom, bool recordAnchors = true);
+   int lastLineGlyphBottom() const;
+   void openBoxScope(BlockStyle& ownStyle, const CssStyle& cssStyle);
+   void closeBoxScope();
+diff --git a/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp b/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
+index 416a2ba9..6306df0a 100644
+--- a/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
++++ b/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
+@@ -2306,6 +2306,27 @@ TEST(TextDecorationPosition, UnderlineStaysBelowBaseline) {
+ // when that line does not fit or the orphan rule carries it on: the jump lands a page early.
+ class ChapterAnchorPageTest : public ChapterWidowOrphanTest {
+  protected:
++  void SetUp() override {
++    ChapterWidowOrphanTest::SetUp();
++    parser.insideBody = true;
++  }
++  std::optional<uint16_t> pageOfWord(const char* word) {
++    const auto contains = [&](const Page& page) {
++      for (const auto& element : page.elements) {
++        if (element->getTag() != TAG_PageLine) continue;
++        const auto& block = *static_cast<const PageLine&>(*element).getBlock();
++        for (uint16_t i = 0; i < block.wordCount(); ++i) {
++          if (std::strcmp(block.wordText(i), word) == 0) return true;
++        }
++      }
++      return false;
++    };
++    for (size_t i = 0; i < pages.size(); ++i) {
++      if (contains(*pages[i])) return static_cast<uint16_t>(i);
++    }
++    if (parser.currentPage && contains(*parser.currentPage)) return static_cast<uint16_t>(pages.size());
++    return std::nullopt;
++  }
+   void anchoredParagraph(const char* id, int wordCount) {
+     const XML_Char* attributes[] = {"id", id, nullptr};
+     ChapterHtmlSlimParser::startElement(&parser, "p", attributes);
+@@ -2368,3 +2389,156 @@ TEST_F(ChapterAnchorPageTest, ConsecutiveAnchoredNotesEachLandOnTheirFirstLine)
+   EXPECT_EQ(anchorPage("n3"), std::optional<uint16_t>(1));
+   EXPECT_EQ(anchorPage("n4"), std::optional<uint16_t>(1));
+ }
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorStaysWithItsParagraphBeforePageBreak) {
++  open("p", nullptr);
++  text(words(13 * 3));
++  const XML_Char* attributes[] = {"id", "inline-target", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("target");
++  close("a");
++  close("p");
++  open("p", "page-break-before: always");
++  text("next page");
++  close("p");
++  EXPECT_EQ(anchorPage("inline-target"), std::optional<uint16_t>(0));
++}
++
++TEST_F(ChapterAnchorPageTest, PendingAnchorCountsTowardChapterLimit) {
++  for (int i = 0; i < 1025; ++i) {
++    const auto id = "target-" + std::to_string(i);
++    const XML_Char* attributes[] = {"id", id.c_str(), nullptr};
++    ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++    close("a");
++  }
++  ASSERT_TRUE(parser.finishParse());
++  EXPECT_EQ(parser.getAnchors().size(), 1024u);
++}
++
++TEST_F(ChapterAnchorPageTest, EmptyTrailingTableKeepsItsAnchor) {
++  paragraph(13);
++  const XML_Char* attributes[] = {"id", "empty-table", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "table", attributes);
++  close("table");
++  ASSERT_TRUE(parser.finishParse());
++  EXPECT_EQ(anchorPage("empty-table"), std::optional<uint16_t>(0));
++}
++
++TEST_F(ChapterAnchorPageTest, HeadingAnchorFollowsHeadingCarriedWithNextParagraph) {
++  paragraph(13 * 4);
++  const XML_Char* attributes[] = {"id", "heading", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "h2", attributes);
++  text("Heading");
++  close("h2");
++  anchoredParagraph("body", 13 * 3);
++  EXPECT_EQ(anchorPage("heading"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("body"), std::optional<uint16_t>(1));
++}
++
++TEST_F(ChapterAnchorPageTest, AnchorFollowsTwoCarriedLinesOfItsParagraph) {
++  paragraph(13 * 3);
++  anchoredParagraph("n12", 13 * 3);
++  paragraph(1);
++  ASSERT_EQ(pages.size(), 1u);
++  EXPECT_EQ(linesOnPage(0), 3u);
++  EXPECT_EQ(anchorPage("n12"), std::optional<uint16_t>(1));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorBeforeAnAnchoredBlockStaysWithItsText) {
++  open("div", nullptr);
++  text(words(13 * 8));
++  const XML_Char* inlineAttributes[] = {"id", "inline", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", inlineAttributes);
++  text("target");
++  close("a");
++  const XML_Char* nextAttributes[] = {"id", "next", "style", "page-break-before: always", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "p", nextAttributes);
++  text("next");
++  close("p");
++  close("div");
++  EXPECT_EQ(anchorPage("inline"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("next"), std::optional<uint16_t>(2));
++}
++
++TEST_F(ChapterAnchorPageTest, TwoInlineAnchorsStayWithTheFirstLineOfALongParagraph) {
++  open("p", nullptr);
++  text("prefix ");
++  const XML_Char* early[] = {"id", "early", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", early);
++  close("a");
++  text("one ");
++  const XML_Char* later[] = {"id", "later", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", later);
++  close("a");
++  text("TARGET " + words(13 * 8));
++  close("p");
++  ASSERT_EQ(pageOfWord("TARGET"), std::optional<uint16_t>(0));
++  EXPECT_EQ(anchorPage("early"), pageOfWord("TARGET"));
++  EXPECT_EQ(anchorPage("later"), pageOfWord("TARGET"));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorAtThePageBoundaryFollowsTheNextText) {
++  open("p", nullptr);
++  text(words(13 * 5));
++  const XML_Char* attributes[] = {"id", "boundary", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("TARGET " + words(13 * 3));
++  close("a");
++  close("p");
++  ASSERT_EQ(pageOfWord("TARGET"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("boundary"), pageOfWord("TARGET"));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorFollowsItsHeadingToTheNextPage) {
++  paragraph(13 * 4);
++  open("h2", nullptr);
++  text("Heading ");
++  const XML_Char* attributes[] = {"id", "heading-inline", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("TARGET");
++  close("a");
++  close("h2");
++  paragraph(13 * 3);
++  ASSERT_EQ(pageOfWord("TARGET"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("heading-inline"), pageOfWord("TARGET"));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorSurvivesTheSoftFlushOfALongParagraph) {
++  open("p", nullptr);
++  text(words(13 * 60));
++  const XML_Char* attributes[] = {"id", "soft", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("TARGET " + words(13 * 60));
++  close("a");
++  close("p");
++  ASSERT_TRUE(pageOfWord("TARGET").has_value());
++  EXPECT_EQ(anchorPage("soft"), pageOfWord("TARGET"));
++}
++
++TEST_F(ChapterAnchorPageTest, EmptyInlineTargetAtParagraphEndStaysBeforeTheNextPage) {
++  open("p", nullptr);
++  text(words(13 * 3));
++  const XML_Char* attributes[] = {"id", "tail", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  close("a");
++  close("p");
++  open("p", "page-break-before: always");
++  text("next page");
++  close("p");
++  EXPECT_EQ(anchorPage("tail"), std::optional<uint16_t>(0));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineTargetBeforeAnImageFollowsTheImagePlaceholder) {
++  parser.imageRendering = 1;
++  open("p", nullptr);
++  text(words(13 * 5));
++  const XML_Char* anchor[] = {"id", "image", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", anchor);
++  close("a");
++  const XML_Char* image[] = {"src", "image.png", "alt", "placeholder", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "img", image);
++  close("img");
++  close("p");
++  ASSERT_EQ(pageOfWord("[Image:"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("image"), pageOfWord("[Image:"));
++}

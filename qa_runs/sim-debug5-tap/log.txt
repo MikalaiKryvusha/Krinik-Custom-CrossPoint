@@ -1,0 +1,65 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-06 19:11
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[193] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[193] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[193] [DBG] [SDREG] Fonts directory not found: /fonts
+[193] [DBG] [SDREG] Discovery complete: 0 families
+[193] [DBG] [SDFS] SD font system ready (0 families discovered)
+[193] [DBG] [MAIN] Fonts setup
+[193] [DBG] [ACT] Entering activity: Boot
+[193] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[197] [DBG] [ACT] Exiting activity: Boot
+[197] [DBG] [ACT] Entering activity: Home
+[198] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[211] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/shots/before.bmp
+[2598] [DBG] [SLP] Sleep requested from the home menu
+[2599] [DBG] [ACT] Exiting activity: Home
+[2599] [DBG] [ACT] Entering activity: Sleep
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[2701] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[2703] [DBG] [CRV] Curve loaded from /.crosspoint/panel_curve.txt: be170a3a
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/.crosspoint/sleep_cache.idx (flags=0x0 errno=2 No such file or directory)
+[2766] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[2766] [DBG] [SLP] drawing to 0 x 0
+[2766] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2766] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2784] [DBG] [CLN] Short clean: HALF scrub to white
+[2784] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2789] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2789] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2808] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2808] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2829] [DBG] [MAIN] Entering deep sleep
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[0] [DBG] [CPS] Settings loaded from file
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-06 19:11
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+2026-11-06 19:11:25.734 program[86691:5560788] Task policy set failed: 4 ((os/kern) invalid argument)
+[280] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[280] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[280] [DBG] [SDREG] Fonts directory not found: /fonts
+[280] [DBG] [SDREG] Discovery complete: 0 families
+[280] [DBG] [SDFS] SD font system ready (0 families discovered)
+[280] [DBG] [MAIN] Fonts setup
+[280] [DBG] [ACT] Entering activity: Home
+[311] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[377] [DBG] [LOOP] New max loop duration: 53 ms (activity: 0 ms)
+[377] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/sim-debug5-tap/shots/woke.bmp

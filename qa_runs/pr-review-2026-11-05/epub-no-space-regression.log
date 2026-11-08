@@ -1,0 +1,131 @@
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:9: warning: keyword is hidden by macro definition [-Wkeyword-macro]
+   23 | #define class struct
+      |         ^
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:24:9: warning: keyword is hidden by macro definition [-Wkeyword-macro]
+   24 | #define private public
+      |         ^
+In file included from /var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:25:
+In file included from /Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:15:
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/ParsedText.h:16:1: warning: struct 'GfxRenderer' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   16 | class GfxRenderer;
+      | ^
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/stubs/GfxRenderer.h:20:7: note: previous use is here
+   20 | class GfxRenderer {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/ParsedText.h:16:1: note: did you mean class here?
+   16 | class GfxRenderer;
+      | ^~~~~
+      | class
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:25:
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:21:1: warning: struct 'Page' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   21 | class Page;
+      | ^
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/Page.h:124:7: note: previous use is here
+  124 | class Page {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:21:1: note: did you mean class here?
+   21 | class Page;
+      | ^~~~~
+      | class
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:25:
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:22:1: warning: struct 'GfxRenderer' was previously declared as a struct; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   22 | class GfxRenderer;
+      | ^
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/stubs/GfxRenderer.h:20:7: note: previous use is here
+   20 | class GfxRenderer {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:22:1: note: did you mean class here?
+   22 | class GfxRenderer;
+      | ^~~~~
+      | class
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:25:
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:23:1: warning: struct 'Epub' was previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   23 | class Epub;
+      | ^
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+/Users/kryvusha/Xteink/pr-fixes/epub/test/chapter_html_slim_parser/stubs/Epub.h:8:7: note: previous use is here
+    8 | class Epub {
+      |       ^
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:23:1: note: did you mean class here?
+   23 | class Epub;
+      | ^~~~~
+      | class
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:23:15: note: expanded from macro 'class'
+   23 | #define class struct
+      |               ^
+In file included from /var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:25:
+/Users/kryvusha/Xteink/pr-fixes/epub/test/../lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h:326:9: warning: field 'focusReadingEnabled' will be initialized after field 'completePageFn' [-Wreorder-ctor]
+  319 |         fontId(fontId),
+      |         ~~~~~~~~~~~~~~
+      |         completePageFn(completePageFn)
+  320 |         lineCompression(lineCompression),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         popupFn(popupFn)
+  321 |         extraParagraphSpacing(extraParagraphSpacing),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         fontId(fontId)
+  322 |         paragraphAlignment(paragraphAlignment),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         lineCompression(lineCompression)
+  323 |         viewportWidth(viewportWidth),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         extraParagraphSpacing(extraParagraphSpacing)
+  324 |         viewportHeight(viewportHeight),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         paragraphAlignment(paragraphAlignment)
+  325 |         hyphenationEnabled(hyphenationEnabled),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportWidth(viewportWidth)
+  326 |         focusReadingEnabled(focusReadingEnabled),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         viewportHeight(viewportHeight)
+  327 |         completePageFn(completePageFn),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |         hyphenationEnabled(hyphenationEnabled)
+  328 |         popupFn(popupFn),
+      |         ~~~~~~~~~~~~~~~~
+      |         focusReadingEnabled(focusReadingEnabled)
+7 warnings generated.
+Running main() from /Users/kryvusha/Xteink/fw-pr/build/test/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ChapterAnchorPageTest.InlineTargetImmediatelyAfterALongImagePlaceholderFollowsItsText
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ChapterAnchorPageTest
+[ RUN      ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterALongImagePlaceholderFollowsItsText
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/crosspoint-anchor-probe-8dfqtp4z/Probe.cpp:2600: Failure
+Expected equality of these values:
+  anchorPage("after")
+    Which is: (0)
+  pageOfWord("TARGET")
+    Which is: (1)
+
+[  FAILED  ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterALongImagePlaceholderFollowsItsText (0 ms)
+[----------] 1 test from ChapterAnchorPageTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] ChapterAnchorPageTest.InlineTargetImmediatelyAfterALongImagePlaceholderFollowsItsText
+
+ 1 FAILED TEST

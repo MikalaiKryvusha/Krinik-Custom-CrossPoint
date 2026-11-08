@@ -1,0 +1,18 @@
+[
+  {
+    "target": "default",
+    "binary": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/firmware-review-final/epub-default.bin",
+    "sha256": "e7940f19432f6720a86af56fa0e7ad67e3b236b51489b6a2ce90fbdae4c9c812",
+    "elf_sha256": "931aba040296b69e55943422bfba3468d86db65250888d13975ea6759ded4981",
+    "exit_code": 0,
+    "source_diff_sha256": "5aec1cccfa218a8d3d185e8cffbb1c35c7eed18e9ea6b48a5820564a24a00f76"
+  },
+  {
+    "target": "x4pro",
+    "binary": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/firmware-review-final/epub-x4pro.bin",
+    "sha256": "15d01bbdf3e5c887886e883ee629f29bfb937366e86bcd04bd26b231e47d992c",
+    "elf_sha256": "a504ecea167f7e3f6b6ae827a7a59bf6ab067b4d554a2228a315fd2b7baf6dcb",
+    "exit_code": 0,
+    "source_diff_sha256": "5aec1cccfa218a8d3d185e8cffbb1c35c7eed18e9ea6b48a5820564a24a00f76"
+  }
+]

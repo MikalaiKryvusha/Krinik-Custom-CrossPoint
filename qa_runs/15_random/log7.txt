@@ -1,0 +1,40 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 09:56
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[219] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[219] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[219] [DBG] [SDREG] Fonts directory not found: /fonts
+[219] [DBG] [SDREG] Discovery complete: 0 families
+[219] [DBG] [SDFS] SD font system ready (0 families discovered)
+[219] [DBG] [MAIN] Fonts setup
+[219] [DBG] [ACT] Entering activity: Boot
+[219] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[241] [DBG] [ACT] Exiting activity: Boot
+[242] [DBG] [ACT] Entering activity: Home
+[242] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[261] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2806] [DBG] [MAIN] Power button held 306ms, sleeping
+[2807] [DBG] [ACT] Exiting activity: Home
+[2807] [DBG] [ACT] Entering activity: Sleep
+[2807] [DBG] [GFX] Time = 2546 ms from clearScreen to displayBuffer
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/15_random/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[2915] [DBG] [SLP] Loading: /sleep/oblivion_1.bmp
+[2916] [DBG] [CRV] Panel curve loaded: be170a3a
+[2916] [DBG] [SLP] bitmap 480 x 800, screen 480 x 800
+[2916] [DBG] [SLP] drawing to 0 x 0
+[2916] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2916] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2945] [DBG] [SLP] Clean to white (FULL) before absolute gray
+[2945] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2959] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2959] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2983] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2983] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[3009] [DBG] [MAIN] Entering deep sleep

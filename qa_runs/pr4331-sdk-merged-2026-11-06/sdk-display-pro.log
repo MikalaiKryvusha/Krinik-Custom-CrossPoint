@@ -1,0 +1,159 @@
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:259:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  259 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:637:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  637 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:675:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  675 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:682:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  682 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:736:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  736 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:796:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  796 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:841:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  841 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:879:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  879 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:906:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  906 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:927:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  927 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:938:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  938 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:972:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  972 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:989:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  989 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1026:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1026 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1033:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1033 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1040:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1040 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1048:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1048 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1057:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1057 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1080:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1080 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1121:19: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1121 |     DisplayPmLock pmLock;
+      |                   ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1151:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1151 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1160:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1160 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1189:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1189 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1195:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1195 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1201:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1201 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+25 warnings generated.
+Pro plane bytes, transaction counts, clean refreshes, power state and async frame ownership passed
+Sticky absolute capability, activation, power-down and B/W recovery passed
+Metalio refresh, temperature, grayscale fallback and async power-down passed
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:259:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  259 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:637:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  637 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:675:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  675 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:682:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  682 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:736:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  736 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:796:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  796 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:841:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  841 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:879:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  879 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:906:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  906 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:927:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  927 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:938:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  938 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:972:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  972 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:989:17: warning: unused variable 'pmLock' [-Wunused-variable]
+  989 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1008:19: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1008 |     DisplayPmLock pmLock;
+      |                   ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1026:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1026 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1033:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1033 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1040:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1040 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1048:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1048 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1057:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1057 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1080:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1080 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1151:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1151 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1160:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1160 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1189:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1189 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1195:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1195 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+/var/folders/hm/hrqlbttx1bqf2dvbngt3p2500000gn/T/freeink-pro-test-fo6lezy_/src/FreeInkDisplay.cpp:1201:17: warning: unused variable 'pmLock' [-Wunused-variable]
+ 1201 |   DisplayPmLock pmLock;
+      |                 ^~~~~~
+25 warnings generated.
+Pro plane bytes, transaction counts, clean refreshes, power state and async frame ownership passed
+Sticky absolute capability, activation, power-down and B/W recovery passed
+Metalio refresh, temperature, grayscale fallback and async power-down passed
+SSD1677/UC8179/UC8279 facade controller identity and unselected state passed

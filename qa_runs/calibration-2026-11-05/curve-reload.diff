@@ -1,0 +1,86 @@
+diff --git a/src/activities/settings/SettingsActivity.cpp b/src/activities/settings/SettingsActivity.cpp
+index 02a1e570..b60f3a8e 100644
+--- a/src/activities/settings/SettingsActivity.cpp
++++ b/src/activities/settings/SettingsActivity.cpp
+@@ -41,6 +41,7 @@
+ #include "components/UiAppHelpers.h"
+ #include "fontIds.h"
+ #include "util/CalibrationCard.h"
++#include "util/PanelCurve.h"
+ #include "util/PluginEvents.h"
+ 
+ namespace fui = freeink::ui;
+@@ -271,6 +272,10 @@ void SettingsActivity::toggleSelectedSetting() {
+     // Toggle the boolean value using the member pointer
+     const bool currentValue = SETTINGS.*(setting.valuePtr);
+     SETTINGS.*(setting.valuePtr) = !currentValue;
++    if (setting.valuePtr == &CrossPointSettings::panelCalPictures ||
++        setting.valuePtr == &CrossPointSettings::panelCalBooks) {
++      panelcurve::forget();  // a curve file put on the card since boot takes effect now
++    }
+   } else if (setting.type == SettingType::ENUM && setting.valuePtr != nullptr) {
+     const uint8_t currentValue = SETTINGS.*(setting.valuePtr);
+     const auto enumLabels = setting.enumLabels();
+diff --git a/src/network/CrossPointWebServer.cpp b/src/network/CrossPointWebServer.cpp
+index 7fe99dd7..4410e434 100644
+--- a/src/network/CrossPointWebServer.cpp
++++ b/src/network/CrossPointWebServer.cpp
+@@ -62,6 +62,7 @@
+ #include "util/BookCacheUtils.h"
+ #include "util/DictionaryRegistry.h"
+ #include "util/FirmwareIdentity.h"
++#include "util/PanelCurve.h"
+ #include "util/PluginHttp.h"
+ #include "util/PluginLocations.h"
+ #include "util/TaskWatchdog.h"
+@@ -1700,6 +1701,11 @@ void CrossPointWebServer::handlePostSettings() {
+       case SettingType::TOGGLE: {
+         const int val = doc[s.key].as<int>() ? 1 : 0;
+         if (s.valuePtr) {
++          if ((s.valuePtr == &CrossPointSettings::panelCalPictures ||
++               s.valuePtr == &CrossPointSettings::panelCalBooks) &&
++              SETTINGS.*(s.valuePtr) != val) {
++            panelcurve::forget();
++          }
+           SETTINGS.*(s.valuePtr) = val;
+         }
+         applied++;
+diff --git a/src/util/PanelCurve.cpp b/src/util/PanelCurve.cpp
+index 64e45d35..b3be8409 100644
+--- a/src/util/PanelCurve.cpp
++++ b/src/util/PanelCurve.cpp
+@@ -104,8 +104,8 @@ void readFromCard(const Source& src, uint8_t table[256], uint32_t& hash) {
+   LOG_DBG("CRV", "Curve loaded from %s: %08x", path, static_cast<unsigned>(hash));
+ }
+ 
+-// Each curve is 256 bytes: read from the card once after boot, then kept in RAM. The checkboxes are read on every call,
+-// so switching one takes effect at once.
++// Each curve is 256 bytes: read from the card on first use, then kept in RAM until a checkbox is switched (forget()).
++// The checkboxes are read on every call, so switching one takes effect at once.
+ struct Cached {
+   uint8_t table[256];
+   uint32_t hash = 0;
+@@ -134,6 +134,11 @@ bool load(uint8_t table[256], uint32_t& hash) {
+   return true;
+ }
+ 
++void forget() {
++  picturesSlot.ready = false;
++  booksSlot.ready = false;
++}
++
+ const uint8_t* bookCurve(uint32_t& hash) {
+   if (!SETTINGS.panelCalBooks) {
+     hash = 0;
+diff --git a/src/util/PanelCurve.h b/src/util/PanelCurve.h
+index 10ff4291..e1d74b18 100644
+--- a/src/util/PanelCurve.h
++++ b/src/util/PanelCurve.h
+@@ -24,4 +24,7 @@ bool load(uint8_t table[256], uint32_t& hash);
+ // The books curve (images inside EPUBs): with «Калибровка книг» on, panel_curve_book.txt or the built-in book curve;
+ // off — nullptr (books draw as stock). The table lives as long as the program; `hash` is 0 when off.
+ const uint8_t* bookCurve(uint32_t& hash);
++// Drop both cached curves: the next draw reads the card files again. Called when «Калибровка картинок» or
++// «Калибровка книг» is switched (on the device or over the web), so a new file on the card needs no restart.
++void forget();
+ }  // namespace panelcurve

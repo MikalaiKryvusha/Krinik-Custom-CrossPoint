@@ -1,0 +1,45 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_files/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_files/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_files/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 11:39
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[235] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_files/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[235] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_files/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[235] [DBG] [SDREG] Fonts directory not found: /fonts
+[235] [DBG] [SDREG] Discovery complete: 0 families
+[235] [DBG] [SDFS] SD font system ready (0 families discovered)
+[235] [DBG] [MAIN] Fonts setup
+[235] [DBG] [ACT] Entering activity: Boot
+[236] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[287] [DBG] [ACT] Exiting activity: Boot
+[287] [DBG] [ACT] Entering activity: Home
+[288] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[307] [DBG] [ACT] Exiting activity: Home
+[307] [DBG] [ACT] Entering activity: FileBrowser
+[308] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[499] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1582] [DBG] [ACT] Exiting activity: FileBrowser
+[1582] [DBG] [ACT] Entering activity: BmpViewer
+[1583] [DBG] [CRV] Panel curve loaded: be170a3a
+[1584] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1633] [DBG] [CLN] Deep clean: 2 black/white cycles
+[1633] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1636] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1644] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1652] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1669] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1669] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1686] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1687] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1707] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1707] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[1718] [DBG] [LOOP] New max loop duration: 136 ms (activity: 136 ms)
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_files/shots/files.bmp

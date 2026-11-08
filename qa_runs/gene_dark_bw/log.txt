@@ -1,0 +1,116 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[0] [DBG] [CPS] Resaving settings to update format
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 20:54
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[198] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[198] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[198] [DBG] [SDREG] Fonts directory not found: /fonts
+[198] [DBG] [SDREG] Discovery complete: 0 families
+[198] [DBG] [SDFS] SD font system ready (0 families discovered)
+[198] [DBG] [MAIN] Fonts setup
+[198] [DBG] [ACT] Entering activity: Boot
+[198] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[218] [DBG] [ACT] Exiting activity: Boot
+[218] [DBG] [ACT] Entering activity: Home
+[219] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[232] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6080] [DBG] [ACT] Exiting activity: Home
+[6080] [DBG] [ACT] Entering activity: FileBrowser
+[6083] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[10043] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10044] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10080] [DBG] [ACT] Exiting activity: FileBrowser
+[10080] [DBG] [ACT] Entering activity: EpubReader
+[10080] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[10081] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[10081] [DBG] [GFX] Time = 3999 ms from clearScreen to displayBuffer
+[10087] [DBG] [EBP] Loading ePub: /Калибровка.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/.crosspoint/epub_1904033327718914090/book.bin (flags=0x0 errno=2 No such file or directory)
+[10087] [DBG] [EBP] Cache not found, building spine/TOC cache
+[10087] [DBG] [BMC] Entering write mode
+[10087] [DBG] [BMC] Beginning content opf pass
+[10088] [DBG] [ZIP] Decompressed 169 bytes into 240 bytes
+[10088] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[10089] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[10089] [DBG] [COF] Using fast index for 10 manifest items
+[10089] [DBG] [ZIP] Decompressed 534 bytes into 1337 bytes
+[10089] [DBG] [EBP] Successfully parsed content.opf
+[10089] [DBG] [EBP] OPF pass completed in 2 ms
+[10089] [DBG] [BMC] Beginning toc pass
+[10089] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[10089] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[10089] [DBG] [NAV] Found nav toc element
+[10090] [DBG] [NAV] Finished parsing nav toc
+[10090] [DBG] [ZIP] Decompressed 344 bytes into 576 bytes
+[10090] [DBG] [EBP] Parsed TOC nav items
+[10090] [DBG] [EBP] TOC pass completed in 1 ms
+[10090] [DBG] [BMC] Wrote 4 spine, 4 TOC entries
+[10090] [DBG] [BMC] Successfully built book.bin
+[10090] [DBG] [EBP] buildBookBin completed in 0 ms
+[10090] [DBG] [EBP] Total indexing completed in 3 ms
+[10090] [DBG] [EBP] No CSS files to parse, but CssParser created for inline styles
+[10090] [DBG] [EBP] CSS files to parse: 0
+[10090] [DBG] [CSS] Saved 0 rules to complete cache
+[10090] [DBG] [EBP] Loaded 0 CSS style rules from 0 files (0 identical duplicates skipped, complete)
+[10090] [DBG] [BMC] Loaded cache data: 4 spine, 4 TOC entries
+[10090] [DBG] [EBP] Loaded ePub: /Калибровка.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/.crosspoint/epub_1904033327718914090/progress.bin (flags=0x0 errno=2 No such file or directory)
+[10090] [DBG] [EBP] Core Metadata: cover(15)=OEBPS/cover.jpg, textReference(0)=
+[10090] [DBG] [ERS] Loading file: OEBPS/scale.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/.crosspoint/epub_1904033327718914090/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[10090] [DBG] [ERS] Cache not found, building...
+[10091] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[10091] [DBG] [ZIP] Decompressed 242 bytes into 304 bytes
+[10091] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_1904033327718914090/html/.tmp_0.html (304 bytes)
+[10091] [DBG] [CSS] Loaded 0 rules from complete cache
+[10091] [DBG] [EHP] Found image: src=images/scale.png
+[10091] [DBG] [EHP] Image dimensions: 783x470
+[10091] [DBG] [EHP] Display size from CSS width: 741x445
+[10091] [DBG] [EHP] Time to parse and build pages: 0 ms
+[10092] [DBG] [SCT] Page 0 processed
+[10092] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/sd/.crosspoint/epub_1904033327718914090/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[10092] [DBG] [IMG] Lazy-extracting OEBPS/images/scale.png -> /.crosspoint/epub_1904033327718914090/img_0_0.png
+[10092] [DBG] [ZIP] Decompressed 12609 bytes into 13948 bytes
+[10092] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_1904033327718914090/img_0_0.png
+[10092] [DBG] [IMG] Using PNG decoder
+[10092] [DBG] [PNG] Decoding PNG: /.crosspoint/epub_1904033327718914090/img_0_0.png
+[10095] [DBG] [PNG] PNG 783x470 (visible 783x470) -> 741x445 (scale 0.95), type: 6, bpp: 8
+[10095] [DBG] [IMG] Cache stream started: /.crosspoint/epub_1904033327718914090/img_0_0.pxc (741x445, band 16 rows)
+[10107] [DBG] [PNG] PNG decoding complete - render time: 12 ms
+[10107] [DBG] [IMG] Cache written: /.crosspoint/epub_1904033327718914090/img_0_0.pxc (741x445, 82774 bytes)
+[10112] [DBG] [IMG] Decode successful
+[10112] [DBG] [GFX] Time = 20 ms from clearScreen to displayBuffer
+[10114] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10114] [DBG] [IMG] Loading from cache: /.crosspoint/epub_1904033327718914090/img_0_0.pxc (741x445)
+[10114] [DBG] [IMG] Cache render complete (payload now in RAM)
+[10114] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10114] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10114] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10115] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10115] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10115] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10115] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10116] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10116] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10116] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10116] [DBG] [IMG] Rendering image at 32,8: /.crosspoint/epub_1904033327718914090/img_0_0.png (741x445)
+[10121] [DBG] [ERS] Page render (tiled): prewarm=0ms bw_render=20ms display=2ms gray_lsb=1ms gray_msb=1ms gray_display=5ms cleanup=0ms total=29ms
+[10121] [DBG] [ERS] Rendered page in 29ms
+[10122] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[20055] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20055] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[30099] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30099] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/gene_dark_bw/shots/page1.bmp
+[40107] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[40107] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes

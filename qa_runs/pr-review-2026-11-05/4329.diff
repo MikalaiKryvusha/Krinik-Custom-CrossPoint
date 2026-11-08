@@ -1,0 +1,38 @@
+diff --git a/src/activities/home/HomeActivity.cpp b/src/activities/home/HomeActivity.cpp
+index dd2386c0f83..fe86524defe 100644
+--- a/src/activities/home/HomeActivity.cpp
++++ b/src/activities/home/HomeActivity.cpp
+@@ -278,6 +278,7 @@ bool HomeActivity::storeCoverBuffer() {
+     return false;
+   }
+   coverBufferSize = needed;
++  coverBufferInverted = display.isInverted();
+   if (!renderer.copyRegionToBuffer(coverRectX, coverRectY, coverRectW, coverRectH, coverBuffer, coverBufferSize)) {
+     free(coverBuffer);
+     coverBuffer = nullptr;
+@@ -501,6 +502,12 @@ void HomeActivity::render(RenderLock&&) {
+     }
+     return;
+   }
++  // A cover snapshot from the other output polarity holds the other byte form (night mode keeps images pre-inverted so
++  // they stay positive): pasting it back after a theme switch showed the cover as a negative. Redraw it instead.
++  if (coverBufferStored && coverBufferInverted != display.isInverted()) {
++    freeCoverBuffer();
++    coverRendered = false;
++  }
+   bool bufferRestored = coverRendered && coverBufferStored && restoreCoverBuffer();
+ 
+   // Band spans topPadding..homeTopPadding: the cover tile starts at the fixed
+diff --git a/src/activities/home/HomeActivity.h b/src/activities/home/HomeActivity.h
+index 181c82911da..84e26cbf671 100644
+--- a/src/activities/home/HomeActivity.h
++++ b/src/activities/home/HomeActivity.h
+@@ -27,6 +27,8 @@ class HomeActivity final : public Activity {
+   bool coverBufferStored = false;  // Track if cover buffer is stored
+   uint8_t* coverBuffer = nullptr;  // HomeActivity's own buffer for cover image
+   size_t coverBufferSize = 0;      // Bytes allocated to coverBuffer
++  // Output polarity the snapshot was taken in (night mode stores images pre-inverted).
++  bool coverBufferInverted = false;
+   // Logical rect last passed to drawRecentBookCover. The cover snapshot only
+   // needs to cover this region, not the entire framebuffer, so we cache the
+   // tile instead of all 48 KB. Set in render() before the call.

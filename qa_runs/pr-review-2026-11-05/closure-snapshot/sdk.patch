@@ -1,0 +1,252 @@
+diff --git a/libs/hardware/SDCardManager/include/SDCardManager.h b/libs/hardware/SDCardManager/include/SDCardManager.h
+index 50d87bd..5956447 100644
+--- a/libs/hardware/SDCardManager/include/SDCardManager.h
++++ b/libs/hardware/SDCardManager/include/SDCardManager.h
+@@ -15,11 +15,12 @@
+ // forces SdFat's USE_UTF8_LONG_NAMES on for the whole build — without it,
+ // SdFat mangles any non-ASCII long filename into an unopenable path.
+ 
++#include <BoardConfig.h>
++#include <SdFat.h>
+ #include <WString.h>
+-#include <vector>
++
+ #include <string>
+-#include <SdFat.h>
+-#include <BoardConfig.h>
++#include <vector>
+ 
+ #if FREEINK_SD_SDMMC
+ namespace freeink {
+@@ -38,6 +39,8 @@ class SDCardManager {
+   // scans the FAT and is too slow to call on every frame). 0 if not mounted or
+   // the cluster count cannot be determined.
+   uint64_t sdUsedBytes();
++  // Checked form: false if unmounted or the FAT scan failed; usedBytes is then 0.
++  bool sdUsedBytes(uint64_t& usedBytes);
+   std::vector<String> listFiles(const char* path = "/", int maxFiles = 200);
+   // Read the entire file at `path` into a String. Returns empty string on failure.
+   String readFile(const char* path);
+@@ -107,7 +110,7 @@ class SDCardManager {
+   void shutdown() {}
+ #endif
+ 
+- static SDCardManager& getInstance() { return instance; }
++  static SDCardManager& getInstance() { return instance; }
+ 
+  private:
+   static SDCardManager instance;
+@@ -120,6 +123,7 @@ class SDCardManager {
+   uint64_t cachedUsedBytes = 0;
+   uint32_t cachedUsedBytesAt = 0;
+   bool cachedUsedBytesValid = false;
++  bool cachedUsedBytesAvailable = false;
+ 
+   // All filesystem ops route through one FsVolume& so the backend is swappable.
+   // SPI boards: `sd` (SdFs is-a FsVolume). SDMMC boards: a bare FsVolume mounted
+diff --git a/libs/hardware/SDCardManager/src/SDCardManager.cpp b/libs/hardware/SDCardManager/src/SDCardManager.cpp
+index 29c263a..0ff0d32 100644
+--- a/libs/hardware/SDCardManager/src/SDCardManager.cpp
++++ b/libs/hardware/SDCardManager/src/SDCardManager.cpp
+@@ -1,9 +1,10 @@
+ #include "SDCardManager.h"
+ 
+ #include <BoardConfig.h>
++#include <SPI.h>
+ #include <driver/gpio.h>
+ #include <esp_task_wdt.h>
+-#include <SPI.h>
++
+ #include <new>
+ 
+ #include "SdmmcBlockDevice.h"  // no-op unless FREEINK_SD_SDMMC
+@@ -126,7 +127,8 @@ bool SDCardManager::begin() {
+   // dormant — bail out before any pin is touched, or SdFat drives "pin 255" and
+   // floods the log. (Native-SDMMC boards like the X4 Pro take the #if branch above.)
+   if (BoardConfig::ACTIVE.sd.cs < 0) {
+-    if (Serial) Serial.printf("[%lu] [SD] SD disabled: CS unassigned in the %s profile\n", millis(), BoardConfig::ACTIVE.name);
++    if (Serial)
++      Serial.printf("[%lu] [SD] SD disabled: CS unassigned in the %s profile\n", millis(), BoardConfig::ACTIVE.name);
+     initialized = false;
+     cachedTotalBytes = 0;
+     cachedUsedBytesValid = false;
+@@ -136,12 +138,12 @@ bool SDCardManager::begin() {
+   // Pins/clock come from the runtime-active profile (board-overridable via
+   // BoardConfig::ACTIVE.sd.spiHz; 0 = default). Read after device selection.
+   const uint8_t SD_CS = BoardConfig::ACTIVE.sd.cs;
+-  const int8_t SD_SCLK = BoardConfig::ACTIVE.sd.sclk >= 0 ? BoardConfig::ACTIVE.sd.sclk
+-                                                          : (BoardConfig::ACTIVE.sd.separateSpi ? -1
+-                                                                                                : BoardConfig::ACTIVE.display.sclk);
+-  const int8_t SD_MOSI = BoardConfig::ACTIVE.sd.mosi >= 0 ? BoardConfig::ACTIVE.sd.mosi
+-                                                          : (BoardConfig::ACTIVE.sd.separateSpi ? -1
+-                                                                                                : BoardConfig::ACTIVE.display.mosi);
++  const int8_t SD_SCLK = BoardConfig::ACTIVE.sd.sclk >= 0
++                             ? BoardConfig::ACTIVE.sd.sclk
++                             : (BoardConfig::ACTIVE.sd.separateSpi ? -1 : BoardConfig::ACTIVE.display.sclk);
++  const int8_t SD_MOSI = BoardConfig::ACTIVE.sd.mosi >= 0
++                             ? BoardConfig::ACTIVE.sd.mosi
++                             : (BoardConfig::ACTIVE.sd.separateSpi ? -1 : BoardConfig::ACTIVE.display.mosi);
+   const int8_t SD_MISO = BoardConfig::ACTIVE.sd.miso;
+   const uint32_t SPI_FQ = BoardConfig::ACTIVE.sd.spiHz != 0 ? BoardConfig::ACTIVE.sd.spiHz : 40000000;
+ 
+@@ -227,9 +229,9 @@ bool SDCardManager::begin() {
+ 
+   if (!cardReady) {
+     if (Serial)
+-      Serial.printf("[%lu] [SD] SD card not detected (err=0x%02X data=0x%02X cs=%d sclk=%d miso=%d mosi=%d clk=%luHz)\n",
+-                    millis(), sd.sdErrorCode(), sd.sdErrorData(), SD_CS, SD_SCLK,
+-                    SD_MISO, SD_MOSI, (unsigned long)SPI_FQ);
++      Serial.printf(
++          "[%lu] [SD] SD card not detected (err=0x%02X data=0x%02X cs=%d sclk=%d miso=%d mosi=%d clk=%luHz)\n",
++          millis(), sd.sdErrorCode(), sd.sdErrorData(), SD_CS, SD_SCLK, SD_MISO, SD_MOSI, (unsigned long)SPI_FQ);
+     initialized = false;
+     cachedTotalBytes = 0;
+     cachedUsedBytesValid = false;
+@@ -282,9 +284,7 @@ FsBlockDeviceInterface* SDCardManager::detachFilesystemForRawAccess() { return n
+ #endif  // USE_BLOCK_DEVICE_INTERFACE || HAS_SDIO_CLASS
+ #endif  // FREEINK_SD_SDMMC
+ 
+-bool SDCardManager::ready() const {
+-  return initialized;
+-}
++bool SDCardManager::ready() const { return initialized; }
+ 
+ std::vector<String> SDCardManager::listFiles(const char* path, const int maxFiles) {
+   std::vector<String> ret;
+@@ -413,8 +413,7 @@ bool SDCardManager::readFileToStream(const char* path, Print& out, const size_t
+ }
+ 
+ size_t SDCardManager::readFileToBuffer(const char* path, char* buffer, const size_t bufferSize, const size_t maxBytes) {
+-  if (!buffer || bufferSize == 0)
+-    return 0;
++  if (!buffer || bufferSize == 0) return 0;
+   if (!initialized) {
+     if (Serial) Serial.println("SDCardManager: not initialized; cannot read file");
+     buffer[0] = '\0';
+@@ -536,23 +535,32 @@ bool SDCardManager::openFileForWrite(const char* moduleName, const String& path,
+ uint64_t SDCardManager::sdTotalBytes() const { return cachedTotalBytes; }
+ 
+ uint64_t SDCardManager::sdUsedBytes() {
+-  if (!initialized) return 0;
++  uint64_t usedBytes = 0;
++  sdUsedBytes(usedBytes);
++  return usedBytes;
++}
++
++bool SDCardManager::sdUsedBytes(uint64_t& usedBytes) {
++  usedBytes = 0;
++  if (!initialized) return false;
+   const uint32_t now = millis();
+   if (!cachedUsedBytesValid || (now - cachedUsedBytesAt) >= USED_BYTES_CACHE_TTL_MS) {
+     const int32_t freeClusters = vol().freeClusterCount();
+     const uint64_t clusterCount = vol().clusterCount();
+-    if (freeClusters < 0) {
++    cachedUsedBytesAvailable = freeClusters >= 0;
++    if (!cachedUsedBytesAvailable) {
++      if (Serial) Serial.printf("[%lu] [SD] Failed to count free clusters\n", millis());
+       cachedUsedBytes = 0;
+     } else {
+-      const uint64_t cappedFree = (static_cast<uint64_t>(freeClusters) > clusterCount)
+-                                      ? clusterCount
+-                                      : static_cast<uint64_t>(freeClusters);
++      const uint64_t cappedFree =
++          (static_cast<uint64_t>(freeClusters) > clusterCount) ? clusterCount : static_cast<uint64_t>(freeClusters);
+       cachedUsedBytes = (clusterCount - cappedFree) * vol().bytesPerCluster();
+     }
+     cachedUsedBytesValid = true;
+     cachedUsedBytesAt = now;
+   }
+-  return cachedUsedBytes;
++  usedBytes = cachedUsedBytes;
++  return cachedUsedBytesAvailable;
+ }
+ 
+ bool SDCardManager::removeDir(const char* path) {
+diff --git a/libs/hardware/SDCardManager/test/host/stubs/BoardConfig.h b/libs/hardware/SDCardManager/test/host/stubs/BoardConfig.h
+index 95806d1..7b414b0 100644
+--- a/libs/hardware/SDCardManager/test/host/stubs/BoardConfig.h
++++ b/libs/hardware/SDCardManager/test/host/stubs/BoardConfig.h
+@@ -1,5 +1,7 @@
+ #pragma once
+ 
++#include <cstdint>
++
+ #define FREEINK_SD_SDMMC 0
+ #define FREEINK_DEVICE_PAPERMONO 0
+ #define FREEINK_MCU_S3 0
+diff --git a/libs/hardware/SDCardManager/test/host/stubs/SdFat.h b/libs/hardware/SDCardManager/test/host/stubs/SdFat.h
+index 4910097..67ef59c 100644
+--- a/libs/hardware/SDCardManager/test/host/stubs/SdFat.h
++++ b/libs/hardware/SDCardManager/test/host/stubs/SdFat.h
+@@ -3,6 +3,7 @@
+ #include <cstring>
+ #include <limits>
+ #include <vector>
++
+ #include "WString.h"
+ 
+ using oflag_t = int;
+@@ -18,6 +19,9 @@ inline size_t maxRead = std::numeric_limits<size_t>::max();
+ inline size_t largestRequest = 0;
+ inline unsigned reads = 0, closes = 0;
+ inline uint32_t readMs = 0;
++inline int32_t freeClusters = 1;
++inline uint32_t clusters = 1;
++inline unsigned clusterScans = 0;
+ }  // namespace fakeSd
+ 
+ class FsFile {
+@@ -63,9 +67,12 @@ class FsVolume {
+   bool remove(const char*) { return true; }
+   bool rmdir(const char*) { return true; }
+   bool rename(const char*, const char*) { return true; }
+-  uint32_t clusterCount() const { return 1; }
++  uint32_t clusterCount() const { return fakeSd::clusters; }
+   uint32_t bytesPerCluster() const { return 512; }
+-  int32_t freeClusterCount() const { return 1; }
++  int32_t freeClusterCount() const {
++    ++fakeSd::clusterScans;
++    return fakeSd::freeClusters;
++  }
+ };
+ 
+ class SdFat : public FsVolume {
+diff --git a/libs/hardware/SDCardManager/test/host/test_stream.cpp b/libs/hardware/SDCardManager/test/host/test_stream.cpp
+index 33b7127..a67a916 100644
+--- a/libs/hardware/SDCardManager/test/host/test_stream.cpp
++++ b/libs/hardware/SDCardManager/test/host/test_stream.cpp
+@@ -38,6 +38,34 @@ static void reset(size_t size) {
+ }
+ 
+ int main() {
++  {
++    SDCardManager card;
++    uint64_t used = 99;
++    assert(!card.sdUsedBytes(used) && used == 0);
++    nowMs = 0;
++    fakeSd::clusters = 64;
++    fakeSd::freeClusters = 64;
++    fakeSd::clusterScans = 0;
++    assert(card.begin());
++    assert(card.sdUsedBytes(used) && used == 0);  // a genuinely empty card
++    fakeSd::freeClusters = -1;
++    assert(card.sdUsedBytes(used) && used == 0);  // cached valid zero
++    nowMs += 20001;
++    assert(!card.sdUsedBytes(used) && used == 0);
++    const auto scansAfterFailure = fakeSd::clusterScans;
++    assert(card.sdUsedBytes() == 0);  // preserve the legacy API
++    assert(!card.sdUsedBytes(used));
++    assert(fakeSd::clusterScans == scansAfterFailure);  // cache failure, too
++    fakeSd::freeClusters = 16;
++    nowMs += 20001;
++    assert(card.sdUsedBytes(used) && used == 48 * 512);
++    fakeSd::freeClusters = 100;
++    nowMs += 20001;
++    assert(card.sdUsedBytes(used) && used == 0);  // retain the existing clamp
++    fakeSd::clusters = 1;
++    fakeSd::freeClusters = 1;
++  }
++
+   SDCardManager manager;
+   reset(8);
+   Sink unopened;

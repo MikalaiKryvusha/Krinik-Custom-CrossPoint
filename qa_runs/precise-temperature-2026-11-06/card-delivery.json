@@ -1,0 +1,10 @@
+{
+  "image": "firmware-builds/cp-2.0.0-krinik-1.1.1-debug3.bin",
+  "destination": "/Volumes/X4-KRINIK/.firmware/cp-2.0.0-krinik-1.1.1-debug3.bin",
+  "bytes": 5421456,
+  "sha256": "90f3e6ab37b7b3f4c54f4d175f99d4949da16547363017fb7b4f0a9a534fc08e",
+  "copied": true,
+  "readback_verified": true,
+  "installed": false,
+  "ejected": true
+}

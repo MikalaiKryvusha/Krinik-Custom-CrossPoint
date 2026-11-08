@@ -1,0 +1,286 @@
+--- before/lib/hal/HalFrontlight.cpp
++++ firmware/lib/hal/HalFrontlight.cpp
+@@ -48,6 +48,7 @@
+ }  // namespace
+ 
+ void HalFrontlight::begin(const uint8_t brightness, const uint8_t warmth, const bool on) {
++  manager.setPwmDitherLimit(preciseTemperature ? FrontlightManager::percentDuty(10, fullDuty()) : 0);
+   // begin() runs the hardware probe (EEGO A4: an I2C ACK from the LM3630A at
+   // 0x36) that decides present(), so it must come FIRST. Guarding on present()
+   // before begin() would skip the probe forever and hide the light on units
+@@ -105,6 +106,14 @@
+ void HalFrontlight::setWarmth(const uint8_t warmPercent) {
+   Guard guard(mutex);
+   manager.setColorTemperature(warmPercent > 100 ? 100 : warmPercent);
++  updateDitherTimerLocked();
++}
++
++void HalFrontlight::setPreciseTemperature(const bool enabled) {
++  if (enabled == preciseTemperature) return;
++  Guard guard(mutex);
++  preciseTemperature = enabled;
++  manager.setPwmDitherLimit(enabled ? FrontlightManager::percentDuty(10, fullDuty()) : 0);
+   updateDitherTimerLocked();
+ }
+ 
+--- before/lib/hal/HalFrontlight.h
++++ firmware/lib/hal/HalFrontlight.h
+@@ -15,6 +15,8 @@
+ 
+   void setBrightness(uint8_t percent);
+   void setWarmth(uint8_t warmPercent);
++  // Fractional temperature mixing is confined to the lowest 10% of the brightness curve.
++  void setPreciseTemperature(bool enabled);
+   // On X4 Pro the switch is a ramp (setRampMs) on the perceptual curve (Nikolai 04.11.2026: «плавной ШИМ анимацией»),
+   // and so is the light coming on at boot/wake (begin): driven by an esp_timer task — the caller (boot, the control
+   // center, the power-button toggle) never waits for it. Other boards switch at once, as before.
+@@ -48,6 +50,7 @@
+   // toggling back on restores it.
+   uint8_t lastBrightness = 60;
+   bool lit = false;
++  bool preciseTemperature = true;
+ 
+   // The ramp. Every write to the manager goes under `mutex`: the timer task and the main/input tasks share it.
+   static void rampTick(void* self);
+--- before/src/CrossPointSettings.h
++++ firmware/src/CrossPointSettings.h
+@@ -454,6 +454,7 @@
+   // Restore the saved on/off state after a normal boot or wake. Brightness and
+   // warmth are always remembered even when this is disabled.
+   uint8_t frontlightRestoreOnWake = 1;
++  uint8_t frontlightPreciseTemperature = 1;
+   // What the slide switch controls (boards with one): frontlight on/off or
+   // night mode. The switch's position is applied at boot and on each change.
+   enum SLIDE_SWITCH_ACTION : uint8_t {
+--- before/src/SettingsList.cpp
++++ firmware/src/SettingsList.cpp
+@@ -55,6 +55,10 @@
+   emit(SettingInfo::Enum(StrId::STR_LIGHT_RAMP, &CrossPointSettings::lightRamp,
+                          {StrId::STR_STATE_OFF, StrId::STR_MS_200, StrId::STR_MS_500, StrId::STR_MS_1000}, "lightRamp",
+                          StrId::STR_CAT_DISPLAY));
++#if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
++  emit(SettingInfo::Toggle(StrId::STR_PRECISE_TEMPERATURE, &CrossPointSettings::frontlightPreciseTemperature,
++                           "frontlightPreciseTemperature", StrId::STR_CAT_DISPLAY));
++#endif
+   emit(SettingInfo::Enum(StrId::STR_SLEEP_COVER_FILTER, &CrossPointSettings::sleepScreenCoverFilter,
+                          {StrId::STR_NONE_OPT, StrId::STR_FILTER_CONTRAST, StrId::STR_INVERTED},
+                          "sleepScreenCoverFilter", StrId::STR_CAT_DISPLAY));
+--- before/src/main.cpp
++++ firmware/src/main.cpp
+@@ -905,6 +905,7 @@
+                                   : (SETTINGS.frontlightOn != 0 && SETTINGS.frontlightRestoreOnWake != 0);
+ #ifndef SIMULATOR  // the simulator HAL (external) has no light ramp
+   Frontlight.setRampMs(SETTINGS.getLightRampMs());
++  Frontlight.setPreciseTemperature(SETTINGS.frontlightPreciseTemperature != 0);
+ #endif
+   Frontlight.begin(SETTINGS.frontlightBrightness, SETTINGS.frontlightWarmth, restoreLightOn);
+ 
+@@ -1153,6 +1154,7 @@
+   }
+ #ifndef SIMULATOR
+   Frontlight.setRampMs(SETTINGS.getLightRampMs());  // «Плавная подсветка» applies as soon as it is changed
++  Frontlight.setPreciseTemperature(SETTINGS.frontlightPreciseTemperature != 0);
+ #endif
+   if (gpio.wasAnyPressed() || gpio.wasAnyReleased() || gpio.wasTouchActivity() || halTiltSensor.hadActivity() ||
+       remoteActed || activityManager.preventAutoSleep()) {
+--- before/platformio.ini
++++ firmware/platformio.ini
+@@ -793,7 +793,7 @@
+   -DBOARD_HAS_PSRAM
+   -DUSB_PRODUCT=\"CrossPoint_X4_Pro\"
+   -DUSB_MANUFACTURER=\"CrossPoint\"
+-  -DCROSSPOINT_VERSION=\"cp-${crosspoint.version}-krinik-${krinik.version}-debug2\"
++  -DCROSSPOINT_VERSION=\"cp-${crosspoint.version}-krinik-${krinik.version}-debug3\"
+   -DENABLE_SERIAL_LOG
+   -DLOG_LEVEL=1
+   -DUSE_BLOCK_DEVICE_INTERFACE=1
+--- before/lib/I18n/translations/english.yaml
++++ firmware/lib/I18n/translations/english.yaml
+@@ -244,6 +244,7 @@
+ STR_SLEEP_COVER_SET_SINGLE: "Done · sleep: one image"
+ STR_FLASHLIGHT: "Flashlight"
+ STR_LIGHT_RAMP: "Smooth Light"
++STR_PRECISE_TEMPERATURE: "Precise Temperature"
+ STR_MS_200: "200 ms"
+ STR_MS_500: "500 ms"
+ STR_MS_1000: "1000 ms"
+--- before/lib/I18n/translations/russian.yaml
++++ firmware/lib/I18n/translations/russian.yaml
+@@ -237,6 +237,7 @@
+ STR_SLEEP_COVER_SET_SINGLE: "Готово · сон: одна картинка"
+ STR_FLASHLIGHT: "Фонарик"
+ STR_LIGHT_RAMP: "Плавная подсветка"
++STR_PRECISE_TEMPERATURE: "Точная температура"
+ STR_MS_200: "200 мс"
+ STR_MS_500: "500 мс"
+ STR_MS_1000: "1000 мс"
+--- before/test/frontlight_dither/FrontlightDitherTest.cpp
++++ firmware/test/frontlight_dither/FrontlightDitherTest.cpp
+@@ -134,33 +134,89 @@
+   light.setBrightness(5);
+   assert(fakeTimer.active);
+   mean(4000, 2.5, 2.5);
+-  // Sweep the production percent curve, including levels far above the original 5/6/7% report.
++  light.setPreciseTemperature(false);
++  assert(!fakeTimer.active && pwm[0] == 2 && pwm[1] == 3);
++  const auto disabledWrites = pwmWrites;
++  fakeTimer.args.callback(fakeTimer.args.arg);
++  assert(pwmWrites == disabledWrites);
++  for (unsigned brightness = 1; brightness <= 100; ++brightness) {
++    light.setBrightness(brightness);
++    for (unsigned warmth = 0; warmth <= 100; ++warmth) {
++      light.setWarmth(warmth);
++      assert(!fakeTimer.active);
++    }
++  }
++  light.setBrightness(5);
++  light.setWarmth(50);
++  light.setPreciseTemperature(true);
++  assert(fakeTimer.active);
++  mean(4000, 2.5, 2.5);
++  light.setBrightness(10);
++  light.setWarmth(35);
++  assert(fakeTimer.active);
++  mean(4000, 6.5, 3.5);
++  light.setBrightness(11);
++  assert(!fakeTimer.active && pwm[0] == 7 && pwm[1] == 4);
++  light.setBrightness(10);
++  assert(fakeTimer.active);
++  light.setBrightness(100);
++  light.setWarmth(50);
++  assert(!fakeTimer.active && pwm[0] == 1023 && pwm[1] == 1024);
++
++  // Sweep both sides of the 10% policy boundary over every warmth.
+   light.setRampMs(0);
+   for (unsigned brightness = 1; brightness <= 100; ++brightness) {
+     light.setBrightness(brightness);
+     const auto total = FrontlightManager::percentDuty(brightness, 2047);
+     for (unsigned warmth = 0; warmth <= 100; ++warmth) {
+       light.setWarmth(warmth);
+-      assert(fakeTimer.active == (total * warmth % 100 != 0));
++      const bool precise = brightness <= 10;
++      assert(fakeTimer.active == (precise && total * warmth % 100 != 0));
+       uint64_t c = 0, w = 0;
+       for (unsigned i = 0; i < 400; ++i) {
+         if (fakeTimer.active) tick();
+         assert(pwm[0] <= 2047 && pwm[1] <= 2047);
+-        if (warmth == 50) assert(pwm[0] == pwm[1]);
++        if (precise && warmth == 50) assert(pwm[0] == pwm[1]);
+         if (warmth == 0) assert(pwm[1] == 0);
+         if (warmth == 100) assert(pwm[0] == 0);
+         c += pwm[0];
+         w += pwm[1];
+       }
+-      assert(std::abs(static_cast<double>(c) - 400.0 * total * (100 - warmth) / 100) < 1.1);
+-      assert(std::abs(static_cast<double>(w) - 400.0 * total * warmth / 100) < 1.1);
++      if (precise) {
++        assert(std::abs(static_cast<double>(c) - 400.0 * total * (100 - warmth) / 100) < 1.1);
++        assert(std::abs(static_cast<double>(w) - 400.0 * total * warmth / 100) < 1.1);
++      } else {
++        assert(pwm[0] + pwm[1] == total);
++        assert(std::abs(static_cast<double>(pwm[1]) - total * warmth / 100.0) <= 0.5);
++      }
+     }
+   }
++  light.setBrightness(100);
++  light.setWarmth(50);
++  light.setRampMs(200);
++  light.setOn(false);
++  bool sawLowMix = false;
++  for (unsigned i = 0; i < 900 && fakeTimer.active; ++i) {
++    tick();
++    if (pwm[0] + pwm[1] <= 10 && pwm[0] + pwm[1] > 0) {
++      assert(pwm[0] == pwm[1]);
++      sawLowMix = true;
++    }
++  }
++  assert(sawLowMix && !fakeTimer.active && pwm[0] == 0 && pwm[1] == 0);
++  light.setOn(true);
++  for (unsigned i = 0; i < 900 && fakeTimer.active; ++i) tick();
++  assert(!fakeTimer.active && pwm[0] == 1023 && pwm[1] == 1024);
++  light.setOn(false);
++  light.setPreciseTemperature(false);  // changing the setting must not cancel a fade
++  for (unsigned i = 0; i < 900 && fakeTimer.active; ++i) tick();
++  assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 0);
+   light.setRampMs(0);
+   light.setOn(false);
+   assert(!fakeTimer.active && pwm[0] == 0 && pwm[1] == 0);
+   std::puts(
+-      "Real HAL+SDK: 5/6/7% mix, fade/reversal, endpoints, steady timer, off/sleep/queued callback and timer failure "
++      "Real HAL+SDK: runtime option, 10/11% gate, 100/50 idle, low mix, fade/reversal, off/sleep/queued callback and "
++      "timer failure "
+       "passed");
+ #endif
+ }
+--- before/freeink-sdk/libs/hardware/FrontlightManager/include/FrontlightManager.h
++++ firmware/freeink-sdk/libs/hardware/FrontlightManager/include/FrontlightManager.h
+@@ -40,6 +40,8 @@
+   // Raw total duty, without a curve. Debug X4 Pro retains its fraction and quantizes each channel separately.
+   // brightness()/brightnessLevel() keep their values. Repeat while needsPwmDither() is true.
+   void setTotalDuty(float duty);
++  // Fractional channel mixing is allowed up to this total duty, inclusive; zero disables it.
++  void setPwmDitherLimit(uint32_t duty);
+   bool needsPwmDither() const {
+ #if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
+     return _pwmDither.pending();
+@@ -188,6 +190,7 @@
+   float _rawDuty = 0.0f;
+ #if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
+   FrontlightPwmDither _pwmDither;
++  uint32_t _pwmDitherLimit = UINT32_MAX;
+ #endif
+   // Duty written by the previous apply(); 0 = the light was off. The off->on
+   // edge is what arms the boost kick-start (see apply()).
+--- before/freeink-sdk/libs/hardware/FrontlightManager/include/FrontlightPwmDither.h
++++ firmware/freeink-sdk/libs/hardware/FrontlightManager/include/FrontlightPwmDither.h
+@@ -25,6 +25,12 @@
+ 
+   bool pending() const { return needsUpdates; }
+ 
++  void reset() {
++    coolError = 0.0f;
++    warmError = 0.0f;
++    needsUpdates = false;
++  }
++
+  private:
+   static uint32_t quantize(float target, float& error) {
+     if (target <= 0.0f) {
+--- before/freeink-sdk/libs/hardware/FrontlightManager/src/FrontlightManager.cpp
++++ firmware/freeink-sdk/libs/hardware/FrontlightManager/src/FrontlightManager.cpp
+@@ -558,9 +558,15 @@
+   if (dual) {
+ #if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
+     const float exactDuty = _useRawDuty ? _rawDuty : static_cast<float>(totalDuty);
+-    const auto sample = _pwmDither.next(exactDuty, _warmPercent, full);
+-    warmDuty = sample.warm;
+-    coolDuty = sample.cool;
++    if (_pwmDitherLimit > 0 && exactDuty <= static_cast<float>(_pwmDitherLimit)) {
++      const auto sample = _pwmDither.next(exactDuty, _warmPercent, full);
++      warmDuty = sample.warm;
++      coolDuty = sample.cool;
++    } else {
++      _pwmDither.reset();
++      warmDuty = (totalDuty * _warmPercent + 50u) / 100u;
++      coolDuty = totalDuty - warmDuty;
++    }
+ #else
+     warmDuty = (totalDuty * _warmPercent + 50u) / 100u;
+     coolDuty = totalDuty - warmDuty;
+@@ -701,6 +707,16 @@
+ #endif
+ }
+ 
++void FrontlightManager::setPwmDitherLimit(uint32_t duty) {
++#if FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO
++  if (_pwmDitherLimit == duty) return;
++  _pwmDitherLimit = duty;
++  apply();
++#else
++  (void)duty;
++#endif
++}
++
+ void FrontlightManager::setBrightnessLevel(uint8_t level) {
+ #if FREEINK_CAP_FRONTLIGHT
+   _brightnessLevel = level;

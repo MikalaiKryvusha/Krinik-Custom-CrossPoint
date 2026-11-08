@@ -1,0 +1,27 @@
+steady: brightness_pct warmth_pct total cold warm warm_fraction
+1 50 1 0 1 1.000000
+2 50 2 1 1 0.500000
+3 50 3 1 2 0.666667
+4 50 4 2 2 0.500000
+5 50 5 2 3 0.600000
+6 50 6 3 3 0.500000
+7 50 7 3 4 0.571429
+8 50 8 4 4 0.500000
+9 50 9 4 5 0.555556
+10 50 10 5 5 0.500000
+1 30 1 1 0 0.000000
+2 30 2 1 1 0.500000
+3 30 3 2 1 0.333333
+4 30 4 3 1 0.250000
+5 30 5 3 2 0.400000
+6 30 6 4 2 0.333333
+7 30 7 5 2 0.285714
+8 30 8 6 2 0.250000
+9 30 9 6 3 0.333333
+10 30 10 7 3 0.300000
+fade 0 -> 5%, 1000ms, warmth 50%; buckets of requested fractional total duty
+[0,1): samples=1788 mean_cold=0.000000 mean_warm=0.332774 warm_fraction=1.000000 lit_warm_only=595
+[1,2): samples=741 mean_cold=0.470985 mean_warm=1.000000 warm_fraction=0.679817 lit_warm_only=392
+[2,3): samples=569 mean_cold=1.000000 mean_warm=1.483304 warm_fraction=0.597311 lit_warm_only=0
+[3,4): samples=479 mean_cold=1.488518 mean_warm=2.000000 warm_fraction=0.573309 lit_warm_only=0
+[4,5): samples=422 mean_cold=2.000000 mean_warm=2.490521 warm_fraction=0.554617 lit_warm_only=0

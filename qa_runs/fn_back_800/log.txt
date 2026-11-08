@@ -1,0 +1,105 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[1] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [RBS] Recent books loaded from file (1 entries)
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-04 19:18
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[191] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_back_800/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[191] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_back_800/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[191] [DBG] [SDREG] Fonts directory not found: /fonts
+[191] [DBG] [SDREG] Discovery complete: 0 families
+[191] [DBG] [SDFS] SD font system ready (0 families discovered)
+[191] [DBG] [MAIN] Fonts setup
+[191] [DBG] [ACT] Entering activity: Boot
+[191] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[212] [DBG] [ACT] Exiting activity: Boot
+[212] [DBG] [ACT] Entering activity: EpubReader
+[212] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[212] [DBG] [EBP] Loading ePub: /Книги/Артур Шопенгауэр. О четверояком корне закона достаточного основания.epub
+[212] [DBG] [BMC] Loaded cache data: 18 spine, 60 TOC entries
+[212] [DBG] [CSS] Loaded 13 rules from complete cache
+[212] [DBG] [EBP] Loaded ePub: /Книги/Артур Шопенгауэр. О четверояком корне закона достаточного основания.epub
+[212] [DBG] [ERS] Loaded cache: 17, 0
+[213] [DBG] [ERS] Loaded link stack, depth 1
+[213] [DBG] [ERS] Loading file: OPS/ch1-17.xhtml, index: 17
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/fn_back_800/sd/.crosspoint/epub_3326978849599308136/sections/17.bin (flags=0x0 errno=2 No such file or directory)
+[213] [DBG] [ERS] Cache not found, building...
+[213] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[214] [DBG] [ZIP] Decompressed 15811 bytes into 56780 bytes
+[214] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_3326978849599308136/html/.tmp_17.html (56780 bytes)
+[214] [DBG] [CSS] Loaded 13 rules from complete cache
+[217] [DBG] [SCT] Page 0 processed
+[220] [DBG] [SCT] Page 1 processed
+[224] [DBG] [SCT] Page 2 processed
+[226] [DBG] [SCT] Page 3 processed
+[230] [DBG] [SCT] Page 4 processed
+[231] [DBG] [SCT] Page 5 processed
+[233] [DBG] [SCT] Page 6 processed
+[235] [DBG] [SCT] Page 7 processed
+[236] [DBG] [FDC] Prewarm: 14 glyphs in 770 bytes from 2 groups (0 missed)
+[237] [DBG] [FDC] Prewarm: 42 glyphs in 1917 bytes from 2 groups (0 missed)
+[238] [DBG] [FDC] Prewarm: 18 glyphs in 1314 bytes from 3 groups (0 missed)
+[239] [DBG] [GFX] Time = 4 ms from clearScreen to displayBuffer
+[250] [DBG] [ERS] Page render (tiled): prewarm=3ms bw_render=1ms display=2ms gray_lsb=2ms gray_msb=2ms gray_display=5ms cleanup=0ms total=15ms
+[250] [DBG] [ERS] Rendered page in 15ms
+[250] [DBG] [ERS] Progress saved: spine=17 offset=0 page=0
+[252] [DBG] [SCT] Page 8 processed
+[254] [DBG] [SCT] Page 9 processed
+[263] [DBG] [SCT] Page 10 processed
+[265] [DBG] [SCT] Page 11 processed
+[269] [DBG] [SCT] Page 12 processed
+[270] [DBG] [SCT] Page 13 processed
+[274] [DBG] [SCT] Page 14 processed
+[276] [DBG] [SCT] Page 15 processed
+[279] [DBG] [SCT] Page 16 processed
+[282] [DBG] [SCT] Page 17 processed
+[285] [DBG] [SCT] Page 18 processed
+[287] [DBG] [SCT] Page 19 processed
+[291] [DBG] [SCT] Page 20 processed
+[293] [DBG] [SCT] Page 21 processed
+[296] [DBG] [SCT] Page 22 processed
+[298] [DBG] [SCT] Page 23 processed
+[301] [DBG] [SCT] Page 24 processed
+[302] [DBG] [EHP] Text block soft flush (381 words)
+[306] [DBG] [SCT] Page 25 processed
+[307] [DBG] [SCT] Page 26 processed
+[310] [DBG] [SCT] Page 27 processed
+[313] [DBG] [SCT] Page 28 processed
+[318] [DBG] [SCT] Page 29 processed
+[320] [DBG] [SCT] Page 30 processed
+[322] [DBG] [SCT] Page 31 processed
+[325] [DBG] [SCT] Page 32 processed
+[327] [DBG] [SCT] Page 33 processed
+[331] [DBG] [SCT] Page 34 processed
+[333] [DBG] [SCT] Page 35 processed
+[336] [DBG] [SCT] Page 36 processed
+[338] [DBG] [SCT] Page 37 processed
+[341] [DBG] [SCT] Page 38 processed
+[344] [DBG] [SCT] Page 39 processed
+[345] [DBG] [EHP] Time to parse and build pages: 131 ms
+[346] [DBG] [SCT] Page 40 processed
+[656] [DBG] [FDC] Prewarm: 15 glyphs in 815 bytes from 2 groups (0 missed)
+[659] [DBG] [FDC] Prewarm: 48 glyphs in 2374 bytes from 4 groups (0 missed)
+[659] [DBG] [ERS] Idle prewarm: page 1 in 4ms
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_back_800/shots/a_note.bmp
+[5536] [DBG] [ACT] Pushed to activity stack, new size = 1
+[5536] [DBG] [ACT] Entering activity: ClipSelection
+[5538] [ERR] [CLIP] Selectable word cap hit (240); multi-page selection was truncated
+[5538] [DBG] [ACT] Exiting activity: ClipSelection
+[5538] [DBG] [ACT] Popped from activity stack, new size = 0
+[5538] [DBG] [ACT] Handling result for popped activity
+[5542] [DBG] [FDC] Prewarm: 14 glyphs in 770 bytes from 2 groups (0 missed)
+[5544] [DBG] [FDC] Prewarm: 42 glyphs in 1917 bytes from 2 groups (0 missed)
+[5547] [DBG] [FDC] Prewarm: 18 glyphs in 1314 bytes from 3 groups (0 missed)
+[5571] [DBG] [ERS] Page render (tiled): prewarm=8ms bw_render=2ms display=3ms gray_lsb=6ms gray_msb=5ms gray_display=7ms cleanup=1ms total=32ms
+[5571] [DBG] [ERS] Rendered page in 32ms
+[5571] [DBG] [ERS] Progress saved: spine=17 offset=0 page=0
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_back_800/shots/b_0.4s.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_back_800/shots/c_1.5s.bmp
+[10045] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10045] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/fn_back_800/shots/d_7s.bmp

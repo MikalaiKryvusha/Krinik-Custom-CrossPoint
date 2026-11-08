@@ -1,0 +1,591 @@
+diff --git a/freeink-sdk b/freeink-sdk
+--- a/freeink-sdk
++++ b/freeink-sdk
+@@ -1 +1 @@
+-Subproject commit 4feaf66d2c54185239849d9fc39697d9797f731a
++Subproject commit 4feaf66d2c54185239849d9fc39697d9797f731a-dirty
+diff --git a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
+index 94400273..033f406a 100644
+--- a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
++++ b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp
+@@ -341,19 +341,31 @@ void ChapterHtmlSlimParser::flushPendingAnchor() {
+     }
+   }
+ 
+-  // The page is fixed when the block places its first content (placeUnplacedAnchors).
+-  unplacedAnchorIds.push_back(std::move(pendingAnchorId));
++  if (pendingAnchorInText) {
++    inlineAnchorIds.push_back(std::move(pendingAnchorId));
++  } else {
++    unplacedAnchorIds.push_back(std::move(pendingAnchorId));
++  }
+   pendingAnchorId.clear();
++  pendingAnchorInText = false;
++}
++
++void ChapterHtmlSlimParser::placeInlineAnchors() {
++  for (auto& id : inlineAnchorIds) {
++    anchorData.push_back({std::move(id), static_cast<uint16_t>(completedPageCount)});
++  }
++  if (!inlineAnchorIds.empty() && recentLineCount > 0 && currentPage && !currentPage->elements.empty() &&
++      currentPage->elements.back()->getTag() == TAG_PageLine) {
++    recentLineAnchors[recentLineCount - 1].second = anchorData.size();
++  }
++  inlineAnchorIds.clear();
+ }
+ 
+ void ChapterHtmlSlimParser::placeUnplacedAnchors() {
+   if (unplacedAnchorIds.empty()) return;
+-  anchorParagraphBegin = anchorData.size();
+   for (auto& id : unplacedAnchorIds) {
+     anchorData.push_back({std::move(id), static_cast<uint16_t>(completedPageCount)});
+   }
+-  anchorParagraphEnd = anchorData.size();
+-  anchorParagraph = layoutParagraph;
+   unplacedAnchorIds.clear();
+ }
+ 
+@@ -370,8 +382,8 @@ void ChapterHtmlSlimParser::emitCurrentPage() {
+   paragraphLinesOnPage = 0;
+ }
+ 
+-void ChapterHtmlSlimParser::noteContent(const int top, const int bottom) {
+-  placeUnplacedAnchors();
++void ChapterHtmlSlimParser::noteContent(const int top, const int bottom, const bool recordAnchors) {
++  if (recordAnchors) placeUnplacedAnchors();
+   for (BoxScope& box : boxScopes) {
+     if (box.top < 0) box.top = static_cast<int16_t>(top);
+     box.bottom = static_cast<int16_t>(std::max<int>(box.bottom, bottom));
+@@ -816,10 +828,10 @@ void ChapterHtmlSlimParser::startNewTextBlock(const BlockStyle& blockStyle, cons
+       return;
+     }
+ 
++    if (pendingAnchorInText) flushPendingAnchor();
+     makePages(true, paragraphEnd);
+     if (stopRequested) return;
+   }
+-  anchorParagraph = nullptr;
+   // If the pending anchor is a TOC chapter boundary, force a page break after the previous
+   // block is flushed so the chapter starts on a fresh page.
+   flushPendingAnchor();
+@@ -1408,7 +1420,9 @@ void XMLCALL ChapterHtmlSlimParser::startElement(void* userData, const XML_Char*
+         const bool isTocAnchor =
+             std::find(self->tocAnchors.begin(), self->tocAnchors.end(), idValue) != self->tocAnchors.end();
+         if (isTocAnchor || (!isNonNavigableInlineElement(name) &&
+-                            self->anchorData.size() + self->unplacedAnchorIds.size() < MAX_ANCHORS_PER_CHAPTER)) {
++                            self->anchorData.size() + self->unplacedAnchorIds.size() + self->inlineAnchorIds.size() +
++                                    (self->pendingAnchorId.empty() ? 0 : 1) <
++                                MAX_ANCHORS_PER_CHAPTER)) {
+           // Flush a displaced anchor before overwriting. Consecutive non-block elements
+           // (e.g. <aside id="fn1">text</aside><aside id="fn2">) with no intervening block
+           // never trigger startNewTextBlock, so fn1 gets silently overwritten. That leaves
+@@ -1418,6 +1432,10 @@ void XMLCALL ChapterHtmlSlimParser::startElement(void* userData, const XML_Char*
+             self->flushPendingAnchor();
+           }
+           self->pendingAnchorId = idValue;
++          self->pendingAnchorInText =
++              !isHeaderOrBlock(name) && !isTableStructuralTag(name) &&
++              !matches(name, IMAGE_TAGS, std::size(IMAGE_TAGS)) &&
++              ((self->currentTextBlock && !self->currentTextBlock->isEmpty()) || self->partWordBufferIndex > 0);
+         }
+       } else if (strcmp(atts[i], "dir") == 0) {
+         dirAttr = atts[i + 1];
+@@ -2987,6 +3005,7 @@ bool ChapterHtmlSlimParser::finishParse() {
+ 
+   // Process last page if there is still text
+   if (currentTextBlock) {
++    if (pendingAnchorInText) flushPendingAnchor();
+     makePages();
+     if (stopRequested) return false;
+     // Re-check: makePages() latches layoutOom for lines dropped DURING this
+@@ -3099,12 +3118,6 @@ bool ChapterHtmlSlimParser::canCarry(const size_t carry) const {
+ // link areas to the top of the next page with their spacing intact.
+ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const size_t paragraphLines,
+                                                    const uint32_t visibleOffset) {
+-  // Every line of the anchored paragraph on this page moves, and the paragraph starts here:
+-  // its anchors follow its first line to the next page.
+-  const bool carriesAnchorParagraphStart =
+-      anchorParagraph && anchorParagraph == layoutParagraph && anchorParagraphEnd > anchorParagraphBegin &&
+-      anchorParagraphEnd <= anchorData.size() && paragraphLines > 0 && paragraphLines == paragraphLinesOnPage &&
+-      anchorData[anchorParagraphBegin].second == completedPageCount;
+   auto nextPage = makeUniqueNoThrow<Page>();
+   if (!nextPage) {
+     LOG_ERR("EHP", "OOM: Page (%zu bytes)", sizeof(Page));
+@@ -3113,6 +3126,7 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+   }
+   std::unique_ptr<PageElement> carried[MAX_CARRIED_LINES];
+   uint32_t carriedOffsets[MAX_CARRIED_LINES] = {};
++  std::pair<size_t, size_t> carriedAnchors[MAX_CARRIED_LINES] = {};
+   std::vector<PageLink> carriedLinks;
+   int16_t carriedTop = 0;
+   const int16_t carriedBottom = currentPageNextY;
+@@ -3120,6 +3134,7 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+     carried[carry - 1 - i] = std::move(currentPage->elements.back());
+     currentPage->elements.pop_back();
+     carriedOffsets[carry - 1 - i] = recentLineOffsets[recentLineCount - 1 - i];
++    carriedAnchors[carry - 1 - i] = recentLineAnchors[recentLineCount - 1 - i];
+   }
+   if (carry > 0) {
+     carriedTop = carried[0]->yPos;
+@@ -3151,11 +3166,6 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+   setCurrentPageVisibleOffset(visibleOffset);
+   emitCurrentPage();
+   completedPageCount++;
+-  if (carriesAnchorParagraphStart) {
+-    for (size_t i = anchorParagraphBegin; i < anchorParagraphEnd; ++i) {
+-      anchorData[i].second = static_cast<uint16_t>(completedPageCount);
+-    }
+-  }
+   if (stopRequested) return;
+   currentPage = std::move(nextPage);
+   currentPageNextY = 0;
+@@ -3165,11 +3175,15 @@ void ChapterHtmlSlimParser::breakPageCarryingLines(const size_t carry, const siz
+     carried[i]->yPos = static_cast<int16_t>(carried[i]->yPos - carriedTop);
+     setCurrentPageVisibleOffset(carriedOffsets[i]);
+     currentPage->elements.push_back(std::move(carried[i]));
+-    recentLineOffsets[recentLineCount++] = carriedOffsets[i];
++    recentLineOffsets[recentLineCount] = carriedOffsets[i];
++    recentLineAnchors[recentLineCount++] = carriedAnchors[i];
++    for (size_t anchor = carriedAnchors[i].first; anchor < carriedAnchors[i].second; ++anchor) {
++      anchorData[anchor].second = static_cast<uint16_t>(completedPageCount);
++    }
+   }
+   if (carry > 0) {
+     currentPageNextY = static_cast<int16_t>(carriedBottom - carriedTop);
+-    noteContent(0, currentPageNextY);
++    noteContent(0, currentPageNextY, false);
+   }
+   for (const PageLink& link : carriedLinks) {
+     currentPage->addLink(link.href, link.x, static_cast<int16_t>(link.y - carriedTop), link.width, link.height);
+@@ -3226,13 +3240,17 @@ void ChapterHtmlSlimParser::addLineToPage(std::unique_ptr<TextBlock> line, const
+     return;
+   }
+   currentPage->elements.push_back(std::move(pageLine));
++  const size_t lineAnchorBegin = anchorData.size();
+   noteContent(currentPageNextY, currentPageNextY + contentHeight);
++  const size_t lineAnchorEnd = anchorData.size();
+   currentPageNextY += lineHeight;
+   if (layoutParagraph && paragraphLinesOnPage < UINT8_MAX) paragraphLinesOnPage++;
+   if (recentLineCount == MAX_CARRIED_LINES) {
+     memmove(recentLineOffsets, recentLineOffsets + 1, sizeof(recentLineOffsets[0]) * (MAX_CARRIED_LINES - 1));
++    std::move(recentLineAnchors + 1, recentLineAnchors + MAX_CARRIED_LINES, recentLineAnchors);
+     recentLineCount--;
+   }
++  recentLineAnchors[recentLineCount] = {lineAnchorBegin, lineAnchorEnd};
+   recentLineOffsets[recentLineCount++] = visibleOffset;
+ }
+ 
+@@ -3265,6 +3283,7 @@ void ChapterHtmlSlimParser::makePages(const bool includeLastLine, const bool par
+   layoutCurrentBlock(includeLastLine);
+   if (stopRequested) return;
+   if (includeLastLine) {
++    placeInlineAnchors();
+     // A heading's lines on this page wait to move with what follows it.
+     keepWithNextLines =
+         blockStyle.keepWithNext
+diff --git a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
+index d8e88b32..058ed822 100644
+--- a/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
++++ b/lib/Epub/Epub/parsers/ChapterHtmlSlimParser.h
+@@ -143,6 +143,8 @@ class ChapterHtmlSlimParser {
+   uint8_t paragraphLinesOnPage = 0;
+   uint8_t keepWithNextLines = 0;                       // trailing heading lines on this page
+   uint32_t recentLineOffsets[MAX_CARRIED_LINES] = {};  // visible offsets of this page's last lines, newest last
++  // Anchor ranges follow the same six trailing lines when pagination carries them.
++  std::pair<size_t, size_t> recentLineAnchors[MAX_CARRIED_LINES] = {};
+   uint8_t recentLineCount = 0;
+   size_t linesToCarry(size_t& paragraphLines) const;
+   size_t keepWithNextCarry() const;
+@@ -201,16 +203,13 @@ class ChapterHtmlSlimParser {
+   // anchors needs ~28 KB contiguous, and a failed allocation aborts).
+   int completedPageCount = 0;
+   std::deque<std::pair<std::string, uint16_t>> anchorData;
+-  std::string pendingAnchorId;          // deferred until after previous text block is flushed
++  std::string pendingAnchorId;  // deferred until after previous text block is flushed
++  bool pendingAnchorInText = false;
++  std::deque<std::string> inlineAnchorIds;
+   // Anchors whose block has started but placed nothing yet. Their page is the page of the block's
+   // first content, which can differ from the page open at block start: the first line may not fit,
+   // or the orphan rule may move it to the next page.
+   std::vector<std::string> unplacedAnchorIds;
+-  // anchorData range of the paragraph whose first line the anchors point at; a page break that
+-  // carries every line of that paragraph moves them along.
+-  const ParsedText* anchorParagraph = nullptr;
+-  size_t anchorParagraphBegin = 0;
+-  size_t anchorParagraphEnd = 0;
+   std::vector<std::string> tocAnchors;  // the list of anchors that are TOC chapter boundaries
+   uint16_t xpathParagraphIndex = 0;
+   uint16_t xpathListItemIndex = 0;
+@@ -253,10 +252,11 @@ class ChapterHtmlSlimParser {
+   void updateEffectiveInlineStyle();
+   void startNewTextBlock(const BlockStyle& blockStyle, bool paragraphEnd = true);
+   void flushPendingAnchor();
++  void placeInlineAnchors();
+   void placeUnplacedAnchors();
+   void completeCurrentPage();
+   void emitCurrentPage();
+-  void noteContent(int top, int bottom);
++  void noteContent(int top, int bottom, bool recordAnchors = true);
+   int lastLineGlyphBottom() const;
+   void openBoxScope(BlockStyle& ownStyle, const CssStyle& cssStyle);
+   void closeBoxScope();
+diff --git a/lib/hal/HalStorage.cpp b/lib/hal/HalStorage.cpp
+index cd2ff733..17924f52 100644
+--- a/lib/hal/HalStorage.cpp
++++ b/lib/hal/HalStorage.cpp
+@@ -61,7 +61,6 @@ bool HalStorage::begin() {
+ 
+ bool HalStorage::ready() const { return SDCard.ready(); }
+ 
+-
+ // For the rest of the methods, we acquire the mutex to ensure thread safety
+ 
+ class HalStorage::StorageLock {
+@@ -149,7 +148,7 @@ UsbDriveState HalStorage::usbDriveState() const {
+   return SDCard.method(__VA_ARGS__);
+ 
+ uint64_t HalStorage::sdTotalBytes() { HAL_STORAGE_WRAPPED_CALL(sdTotalBytes); }
+-uint64_t HalStorage::sdUsedBytes() { HAL_STORAGE_WRAPPED_CALL(sdUsedBytes); }
++bool HalStorage::sdUsedBytes(uint64_t& usedBytes) { HAL_STORAGE_WRAPPED_CALL(sdUsedBytes, usedBytes); }
+ uint8_t HalStorage::sdFatType() { HAL_STORAGE_WRAPPED_CALL(sdFatType); }
+ 
+ std::vector<String> HalStorage::listFiles(const char* path, int maxFiles) {
+diff --git a/lib/hal/HalStorage.h b/lib/hal/HalStorage.h
+index 88b5c4d6..0b1288ec 100644
+--- a/lib/hal/HalStorage.h
++++ b/lib/hal/HalStorage.h
+@@ -26,7 +26,7 @@ class HalStorage {
+   bool ready() const;
+   // Card capacity, used space (cached ~20 s; the first call scans the FAT) and FAT type (16, 32, 64 = exFAT).
+   uint64_t sdTotalBytes();
+-  uint64_t sdUsedBytes();
++  bool sdUsedBytes(uint64_t& usedBytes);
+   uint8_t sdFatType();
+   // Stop the SD card for deep sleep: unmount, stop the SDMMC host, and release
+   // the bus pads (no-op on SPI boards). Call only after all file users have
+diff --git a/src/activities/boot_sleep/SleepActivity.cpp b/src/activities/boot_sleep/SleepActivity.cpp
+index 70749bb2..8614d433 100644
+--- a/src/activities/boot_sleep/SleepActivity.cpp
++++ b/src/activities/boot_sleep/SleepActivity.cpp
+@@ -1,5 +1,10 @@
+ #include "SleepActivity.h"
+ 
++#include "SleepImageCursor.h"
++#ifndef SIMULATOR
++#include <esp_attr.h>
++#endif
++
+ #include <BitmapHelpers.h>
+ #include <BmpToBmpConverter.h>
+ #include <Epub.h>
+@@ -529,6 +534,21 @@ bool findNextValidSleepImage(HalFile& dir, const SleepRecentKind recentKind, cha
+ // path order across both sleep directories, wrapping to the first. The folders are rescanned on
+ // every sleep, so added and removed images take effect at once. One pass, no name list in RAM.
+ constexpr char SLEEP_LAST_SHOWN_PATH[] = "/.crosspoint/sleep_last.txt";
++#ifdef SIMULATOR
++SleepImageCursor unsavedSleepCursor{};
++#else
++RTC_DATA_ATTR SleepImageCursor unsavedSleepCursor{};
++#endif
++static_assert(MAX_SLEEP_FILE_NAME_LEN + 32 <= SleepImageCursor::PATH_CAPACITY);
++
++void saveSleepImageCursor(const std::string& selectedPath) {
++  Storage.mkdir("/.crosspoint");
++  const bool saved = Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()));
++  if (!saved) LOG_ERR("SLP", "Failed to save last sleep image");
++  if (!unsavedSleepCursor.record(selectedPath, saved)) {
++    LOG_ERR("SLP", "Sleep image path exceeds retained cursor capacity");
++  }
++}
+ 
+ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirPath, std::string& selectedPath) {
+   auto name = makeUniqueNoThrow<char[]>(MAX_SLEEP_FILE_NAME_LEN);
+@@ -541,6 +561,7 @@ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirP
+     Storage.readFileToString("SLP", SLEEP_LAST_SHOWN_PATH, MAX_SLEEP_FILE_NAME_LEN + 32, lastShown);
+   }
+ 
++  const char* cursor = unsavedSleepCursor.lastShown(lastShown.c_str());
+   std::string first;
+   std::string next;
+   std::string path;
+@@ -552,16 +573,13 @@ bool selectNextSleepFileInOrder(const char* firstDirPath, const char* secondDirP
+       path += '/';
+       path += name.get();
+       if (first.empty() || path < first) first = path;
+-      if (path > lastShown && (next.empty() || path < next)) next = path;
++      if (path > cursor && (next.empty() || path < next)) next = path;
+     }
+   }
+   if (first.empty()) return false;
+ 
+   selectedPath = next.empty() ? first : next;
+-  Storage.mkdir("/.crosspoint");
+-  if (!Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()))) {
+-    LOG_ERR("SLP", "Failed to save last sleep image");
+-  }
++  saveSleepImageCursor(selectedPath);
+   return true;
+ }
+ 
+@@ -578,6 +596,7 @@ bool selectSleepFileAtRandom(const char* firstDirPath, const char* secondDirPath
+     Storage.readFileToString("SLP", SLEEP_LAST_SHOWN_PATH, MAX_SLEEP_FILE_NAME_LEN + 32, lastShown);
+   }
+ 
++  const char* cursor = unsavedSleepCursor.lastShown(lastShown.c_str());
+   std::string path;
+   uint32_t count = 0;
+   bool lastPresent = false;
+@@ -589,7 +608,7 @@ bool selectSleepFileAtRandom(const char* firstDirPath, const char* secondDirPath
+       path = dirPath;
+       path += '/';
+       path += name.get();
+-      if (path == lastShown) lastPresent = true;
++      if (path == cursor) lastPresent = true;
+     }
+   }
+   if (count == 0) return false;
+@@ -603,11 +622,10 @@ bool selectSleepFileAtRandom(const char* firstDirPath, const char* secondDirPath
+       path = dirPath;
+       path += '/';
+       path += name.get();
+-      if (skipLast && path == lastShown) continue;
++      if (skipLast && path == cursor) continue;
+       if (target-- != 0) continue;
+       selectedPath = path;
+-      Storage.mkdir("/.crosspoint");
+-      Storage.writeFile(SLEEP_LAST_SHOWN_PATH, String(selectedPath.c_str()));
++      saveSleepImageCursor(selectedPath);
+       return true;
+     }
+   }
+diff --git a/src/activities/boot_sleep/SleepImageCursor.h b/src/activities/boot_sleep/SleepImageCursor.h
+new file mode 100644
+index 00000000..f412ef8b
+--- /dev/null
++++ b/src/activities/boot_sleep/SleepImageCursor.h
+@@ -0,0 +1,26 @@
++#pragma once
++
++#include <cstring>
++#include <string_view>
++
++// Only unsaved positions override the card. RTC_DATA_ATTR storage keeps this
++// state through deep sleep; a cold boot starts with the on-card cursor again.
++struct SleepImageCursor {
++  static constexpr size_t PATH_CAPACITY = 288;
++
++  const char* lastShown(const char* savedPath) const { return pending ? path : savedPath; }
++
++  bool record(const std::string_view shownPath, const bool saved) {
++    pending = false;
++    if (saved) return true;
++    if (shownPath.empty() || shownPath.size() >= sizeof(path)) return false;
++    std::memcpy(path, shownPath.data(), shownPath.size());
++    path[shownPath.size()] = '\0';
++    pending = true;
++    return true;
++  }
++
++ private:
++  char path[PATH_CAPACITY] = {};
++  bool pending = false;
++};
+diff --git a/src/activities/settings/AboutActivity.cpp b/src/activities/settings/AboutActivity.cpp
+index aa3dcbe4..6b35cd8b 100644
+--- a/src/activities/settings/AboutActivity.cpp
++++ b/src/activities/settings/AboutActivity.cpp
+@@ -172,22 +172,29 @@ void AboutActivity::onEnter() {
+   std::error_code spaceError;
+   const auto space = std::filesystem::space(simSd && *simSd ? simSd : "./fs_", spaceError);
+   const uint64_t sdTotal = spaceError ? 0 : space.capacity;
+-  const auto sdUsedBytes = [&] { return spaceError ? 0 : space.capacity - space.available; };
++  const auto sdUsedBytes = [&](uint64_t& used) {
++    used = spaceError ? 0 : space.capacity - space.available;
++    return !spaceError;
++  };
+   const auto sdFatType = [] { return static_cast<uint8_t>(0); };
+ #else
+   const uint64_t sdTotal = Storage.sdTotalBytes();
+-  const auto sdUsedBytes = [] { return Storage.sdUsedBytes(); };
++  const auto sdUsedBytes = [](uint64_t& used) { return Storage.sdUsedBytes(used); };
+   const auto sdFatType = [] { return Storage.sdFatType(); };
+ #endif
+   if (sdTotal == 0) {
+     rowValues_[ITEM_SD_SIZE] = "нет карты";
+     rowValues_[ITEM_SD_FS] = rowValues_[ITEM_SD_USED] = rowValues_[ITEM_SD_FREE] = "—";
+   } else {
+-    const uint64_t sdUsed = sdUsedBytes();
+     rowValues_[ITEM_SD_SIZE] = formatBytes(sdTotal);
+     rowValues_[ITEM_SD_FS] = fatTypeName(sdFatType());
+-    rowValues_[ITEM_SD_USED] = formatBytes(sdUsed);
+-    rowValues_[ITEM_SD_FREE] = formatBytes(sdUsed <= sdTotal ? sdTotal - sdUsed : 0);
++    uint64_t sdUsed = 0;
++    if (sdUsedBytes(sdUsed)) {
++      rowValues_[ITEM_SD_USED] = formatBytes(sdUsed);
++      rowValues_[ITEM_SD_FREE] = formatBytes(sdUsed <= sdTotal ? sdTotal - sdUsed : 0);
++    } else {
++      rowValues_[ITEM_SD_USED] = rowValues_[ITEM_SD_FREE] = "Ошибка.";
++    }
+   }
+ }
+ 
+diff --git a/test/CMakeLists.txt b/test/CMakeLists.txt
+index e1fe1b37..c77475d6 100644
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -114,3 +114,5 @@ add_test(NAME clipping_highlight_planes COMMAND ${Python3_EXECUTABLE} ${CMAKE_CU
+ add_test(NAME clipping_selection_text COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_clipping_selection_text.py)
+ 
+ add_test(NAME recursive_dictionary COMMAND ${Python3_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test_recursive_dictionary.py)
++
++add_subdirectory(sleep_image_cursor)
+diff --git a/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp b/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
+index 26a0a687..8120a231 100644
+--- a/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
++++ b/test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp
+@@ -1,4 +1,3 @@
+-#include <optional>
+ #include <Epub.h>
+ #include <Epub/Page.h>
+ #include <Epub/converters/ImageDimsProbe.h>
+@@ -10,6 +9,7 @@
+ #include <filesystem>
+ #include <functional>
+ #include <memory>
++#include <optional>
+ #include <set>
+ #include <sstream>
+ #include <string>
+@@ -2368,3 +2368,73 @@ TEST_F(ChapterAnchorPageTest, ConsecutiveAnchoredNotesEachLandOnTheirFirstLine)
+   EXPECT_EQ(anchorPage("n3"), std::optional<uint16_t>(1));
+   EXPECT_EQ(anchorPage("n4"), std::optional<uint16_t>(1));
+ }
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorStaysWithItsParagraphBeforePageBreak) {
++  open("p", nullptr);
++  text(words(13 * 3));
++  const XML_Char* attributes[] = {"id", "inline-target", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++  text("target");
++  close("a");
++  close("p");
++  open("p", "page-break-before: always");
++  text("next page");
++  close("p");
++  EXPECT_EQ(anchorPage("inline-target"), std::optional<uint16_t>(0));
++}
++
++TEST_F(ChapterAnchorPageTest, PendingAnchorCountsTowardChapterLimit) {
++  for (int i = 0; i < 1025; ++i) {
++    const auto id = "target-" + std::to_string(i);
++    const XML_Char* attributes[] = {"id", id.c_str(), nullptr};
++    ChapterHtmlSlimParser::startElement(&parser, "a", attributes);
++    close("a");
++  }
++  ASSERT_TRUE(parser.finishParse());
++  EXPECT_EQ(parser.getAnchors().size(), 1024u);
++}
++
++TEST_F(ChapterAnchorPageTest, EmptyTrailingTableKeepsItsAnchor) {
++  paragraph(13);
++  const XML_Char* attributes[] = {"id", "empty-table", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "table", attributes);
++  close("table");
++  ASSERT_TRUE(parser.finishParse());
++  EXPECT_EQ(anchorPage("empty-table"), std::optional<uint16_t>(0));
++}
++
++TEST_F(ChapterAnchorPageTest, HeadingAnchorFollowsHeadingCarriedWithNextParagraph) {
++  paragraph(13 * 4);
++  const XML_Char* attributes[] = {"id", "heading", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "h2", attributes);
++  text("Heading");
++  close("h2");
++  anchoredParagraph("body", 13 * 3);
++  EXPECT_EQ(anchorPage("heading"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("body"), std::optional<uint16_t>(1));
++}
++
++TEST_F(ChapterAnchorPageTest, AnchorFollowsTwoCarriedLinesOfItsParagraph) {
++  paragraph(13 * 3);
++  anchoredParagraph("n12", 13 * 3);
++  paragraph(1);
++  ASSERT_EQ(pages.size(), 1u);
++  EXPECT_EQ(linesOnPage(0), 3u);
++  EXPECT_EQ(anchorPage("n12"), std::optional<uint16_t>(1));
++}
++
++TEST_F(ChapterAnchorPageTest, InlineAnchorBeforeAnAnchoredBlockStaysWithItsText) {
++  open("div", nullptr);
++  text(words(13 * 8));
++  const XML_Char* inlineAttributes[] = {"id", "inline", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "a", inlineAttributes);
++  text("target");
++  close("a");
++  const XML_Char* nextAttributes[] = {"id", "next", "style", "page-break-before: always", nullptr};
++  ChapterHtmlSlimParser::startElement(&parser, "p", nextAttributes);
++  text("next");
++  close("p");
++  close("div");
++  EXPECT_EQ(anchorPage("inline"), std::optional<uint16_t>(1));
++  EXPECT_EQ(anchorPage("next"), std::optional<uint16_t>(2));
++}
+diff --git a/test/sleep_image_cursor/CMakeLists.txt b/test/sleep_image_cursor/CMakeLists.txt
+new file mode 100644
+index 00000000..ec8916dc
+--- /dev/null
++++ b/test/sleep_image_cursor/CMakeLists.txt
+@@ -0,0 +1,4 @@
++add_executable(SleepImageCursorTest SleepImageCursorTest.cpp)
++target_include_directories(SleepImageCursorTest PRIVATE ${REPO_ROOT}/src/activities/boot_sleep)
++target_link_libraries(SleepImageCursorTest PRIVATE crosspoint_test_common GTest::gtest_main)
++gtest_discover_tests(SleepImageCursorTest)
+diff --git a/test/sleep_image_cursor/SleepImageCursorTest.cpp b/test/sleep_image_cursor/SleepImageCursorTest.cpp
+new file mode 100644
+index 00000000..34870d93
+--- /dev/null
++++ b/test/sleep_image_cursor/SleepImageCursorTest.cpp
+@@ -0,0 +1,43 @@
++#include <gtest/gtest.h>
++
++#include "SleepImageCursor.h"
++
++TEST(SleepImageCursor, ColdBootUsesCardPosition) {
++  SleepImageCursor cursor{};
++  EXPECT_STREQ(cursor.lastShown("/.sleep/2.bmp"), "/.sleep/2.bmp");
++}
++
++TEST(SleepImageCursor, FailedSavesKeepAdvancingPastTheStaleCardPosition) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/1.bmp", false));
++  EXPECT_STREQ(cursor.lastShown(""), "/.sleep/1.bmp");
++  ASSERT_TRUE(cursor.record("/.sleep/2.bmp", false));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/2.bmp");
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", false));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/3.bmp");
++}
++
++TEST(SleepImageCursor, SuccessfulSaveReturnsAuthorityToTheCard) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/2.bmp", false));
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", true));
++  EXPECT_STREQ(cursor.lastShown("/.sleep/3.bmp"), "/.sleep/3.bmp");
++  EXPECT_STREQ(cursor.lastShown("/.sleep/external.bmp"), "/.sleep/external.bmp");
++}
++
++TEST(SleepImageCursor, ResetDiscardsAnUnsavedPosition) {
++  SleepImageCursor cursor{};
++  ASSERT_TRUE(cursor.record("/.sleep/3.bmp", false));
++  cursor = SleepImageCursor{};
++  EXPECT_STREQ(cursor.lastShown("/.sleep/1.bmp"), "/.sleep/1.bmp");
++}
++
++TEST(SleepImageCursor, BoundsAndTerminatesTheRetainedPath) {
++  SleepImageCursor cursor{};
++  const std::string longest(SleepImageCursor::PATH_CAPACITY - 1, 'x');
++  ASSERT_TRUE(cursor.record(longest, false));
++  EXPECT_STREQ(cursor.lastShown(""), longest.c_str());
++  EXPECT_FALSE(cursor.record(longest + "x", false));
++  EXPECT_STREQ(cursor.lastShown("saved"), "saved");
++  EXPECT_FALSE(cursor.record("", false));
++}

@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "language": "EN",
+    "imageRedrawDelay": 1,
+    "sleepRedrawDelay": 0,
+    "sleepTimeoutMinutes": 30
+  },
+  "state": {
+    "openEpubPath": "/test.bmp",
+    "lastSleepFromReader": true,
+    "readerActivityLoadCount": 0,
+    "showBootScreen": true
+  },
+  "script": "126000:QUIT",
+  "shots": {
+    "59000": "before-redraw",
+    "61000": "after-redraw",
+    "124000": "after-two-delays"
+  }
+}

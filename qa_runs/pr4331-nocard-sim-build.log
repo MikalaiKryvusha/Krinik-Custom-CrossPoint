@@ -1,0 +1,522 @@
+Processing simulator_x4_pro (platform: native)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+Language              Code  BCP47        Own  Fallback  Unused  Data (B)
+--------------------  ----  -----------  ---  --------  ------  --------
+English               EN    en           656  0         17      11184   
+العربية               AR    ar           449  207       8       13537   
+Azərbaycanca          AZ    az           640  16        17      14468   
+Беларуская            BE    be           440  216       8       15273   
+Български             BG    bg           423  233       8       15313   
+Bosanski              BS    bs           440  216       8       9049    
+Català                CA    ca           656  0         17      14533   
+Valencià              CAV   ca-valencia  656  0         17      14509   
+Čeština               CS    cs           440  216       8       9476    
+Dansk                 DA    da           329  327       7       5682    
+Deutsch               DE    de           631  25        17      12501   
+Español               ES    es           656  0         17      13871   
+فارسی                 FA    fa           452  204       9       14520   
+Suomi                 FI    fi           301  355       5       5816    
+Français              FR    fr           497  159       12      9781    
+עברית                 HE    he           656  0         17      17365   
+Magyar                HU    hu           440  216       8       9952    
+Bahasa Indonesia      ID    id           440  216       8       8446    
+Italiano              IT    it           656  0         17      13138   
+Қазақша               KK    kk           440  216       8       15428   
+Lietuvių              LT    lt           440  216       8       7882    
+Norsk bokmål          NB    nb           440  216       8       8045    
+Nederlands            NL    nl           329  327       7       5754    
+Orangutan             OOK   ook          333  323       4       2627    
+Polski                PL    pl           550  106       12      11424   
+Português (Brasil)    PT    pt-BR        522  134       12      10159   
+Português (Portugal)  P2    pt-PT        522  134       12      10922   
+Română                RO    ro           329  327       7       6491    
+Русский               RU    ru           635  21        17      21090   
+Slovenčina            SK    sk           440  216       8       9609    
+Slovenščina           SI    sl           440  216       8       8992    
+Svenska               SV    sv           639  17        0       12670   
+Türkçe                TR    tr           441  215       8       9014    
+Українська            UK    uk           442  214       8       15652   
+Tiếng Việt            VI    vi           656  0         17      15762   
+
+  Total: 656  |  Used in code: 639  |  Never used: 17
+  Flash: 399,935 B strings (deduped)  +  45,920 B offset tables  =  445,855 B
+
+  Stripping 17 unused string(s) from output.
+
+Code generation complete!
+  Languages: 35
+  String keys: 639
+Generated: src/images/logoSvg.generated.h
+  Original: 654 bytes
+  Minified: 654 bytes (100.0%)
+  Compressed: 382 bytes (58.4%)
+Generated: src/network/html/HomePageHtml.generated.h
+  Original: 2195 bytes
+  Minified: 5362 bytes (244.3%)
+  Compressed: 1932 bytes (88.0%)
+Generated: src/network/html/SettingsPageHtml.generated.h
+  Original: 21779 bytes
+  Minified: 19617 bytes (90.1%)
+  Compressed: 5021 bytes (23.1%)
+Generated: src/network/html/FontsPageHtml.generated.h
+  Original: 8398 bytes
+  Minified: 9046 bytes (107.7%)
+  Compressed: 3296 bytes (39.2%)
+Generated: src/network/html/PluginsPageHtml.generated.h
+  Original: 1277 bytes
+  Minified: 4742 bytes (371.3%)
+  Compressed: 1812 bytes (141.9%)
+Generated: src/network/html/RunnerPageHtml.generated.h
+  Original: 1223 bytes
+  Minified: 731 bytes (59.8%)
+  Compressed: 477 bytes (39.0%)
+Generated: src/network/html/FilesPageHtml.generated.h
+  Original: 146959 bytes
+  Minified: 104126 bytes (70.9%)
+  Compressed: 25458 bytes (17.3%)
+Generated: src/network/html/js/jszip_minJs.generated.h
+  Original: 97630 bytes
+  Minified: 97630 bytes (100.0%)
+  Compressed: 28379 bytes (29.1%)
+Generated: src/network/html/js/epub_optimizerJs.generated.h
+  Original: 68679 bytes
+  Minified: 44771 bytes (65.2%)
+  Compressed: 11319 bytes (16.5%)
+Generated: src/network/html/js/plugin_hostJs.generated.h
+  Original: 10845 bytes
+  Minified: 5971 bytes (55.1%)
+  Compressed: 2204 bytes (20.3%)
+Generated: src/network/html/assets/crosspoint_iconSvg.generated.h
+  Original: 586 bytes
+  Minified: 586 bytes (100.0%)
+  Compressed: 344 bytes (58.7%)
+Generated: src/network/html/assets/iconsSvg.generated.h
+  Original: 1167 bytes
+  Minified: 1167 bytes (100.0%)
+  Compressed: 471 bytes (40.4%)
+Generated: src/network/html/assets/webCss.generated.h
+  Original: 21184 bytes
+  Minified: 17166 bytes (81.0%)
+  Compressed: 4238 bytes (20.0%)
+Generated: src/components/icons/checkbox_onSvg.generated.h
+  Original: 252 bytes
+  Minified: 252 bytes (100.0%)
+  Compressed: 171 bytes (67.9%)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ deep+, Compatibility ~ off
+Found 41 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- Crosspoint Simulator @ 1.0.0+sha.4c78f3f
+|-- JsonSax @ 1.0.0
+|-- Opds @ 1.0.0
+|-- CatalogList @ 1.0.0
+|-- FreeInkUI @ 0.1.0
+|-- Icons @ 1.0.0
+|-- FreeInkFont @ 0.1.0
+|-- ArduinoJson @ 7.4.2
+|-- QRCode @ 0.0.1
+|-- AnimatedGIF @ 2.2.0+sha.d01888f
+|-- Logging
+|-- Memory
+|-- Serialization
+|-- Utf8
+|-- BlePageTurner @ 0.1.0
+|-- Epub
+|-- I18n
+|-- EpdFont
+|-- KOReaderSync
+|-- HttpHeader
+|-- GfxRenderer
+|-- FsHelpers
+|-- expat @ 2.7.3
+|-- LibraryIndex
+|-- BmpToBmpConverter
+|-- Xtc
+|-- TrustedTime
+|-- MiniBidi
+|-- InflateReader
+|-- uzlib @ 2.9.8
+|-- DeviceSecret
+|-- Txt
+Building in release mode
+Compiling .pio/build/simulator_x4_pro/src/ClippingStore.o
+Compiling .pio/build/simulator_x4_pro/src/CrossPointSettings.o
+Compiling .pio/build/simulator_x4_pro/src/FontInstaller.o
+Compiling .pio/build/simulator_x4_pro/src/MappedInputManager.o
+Compiling .pio/build/simulator_x4_pro/src/OpdsServerStore.o
+Compiling .pio/build/simulator_x4_pro/src/RecentBooksStore.o
+Compiling .pio/build/simulator_x4_pro/src/SdCardFontSystem.o
+Compiling .pio/build/simulator_x4_pro/src/SettingsList.o
+Compiling .pio/build/simulator_x4_pro/src/activities/Activity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/ActivityManager.o
+Compiling .pio/build/simulator_x4_pro/src/activities/CatalogActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/UiListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/UiTabListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/boot_sleep/BootActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/boot_sleep/SleepActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/browser/OpdsBookBrowserActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/home/CrashActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/home/FileBrowserActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/home/HomeActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/library/LibraryListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/CalibreConnectActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/CrossPointWebServerActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/NetworkModeSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/UsbDriveActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/WifiSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/plugins/PluginCatalogActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/ClipSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/DictionaryDefinitionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/DictionaryWordSelectActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EndOfBookOptions.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderBookmarksActivity.o
+src/activities/network/WifiSelectionActivity.cpp:867:11: warning: enumeration value 'PASSWORD_ENTRY' not handled in switch [-Wswitch]
+  867 |   switch (state) {
+      |           ^~~~~
+src/activities/network/WifiSelectionActivity.cpp:867:11: note: add missing switch cases
+  867 |   switch (state) {
+      |           ^
+1 warning generated.
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderChapterSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderClippingListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderFootnoteSelectActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderMenuActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderPercentSelectionActivity.o
+src/activities/reader/EpubReaderActivity.cpp:1161:11: warning: enumeration values 'AUTO_PAGE_TURN' and 'ROTATE_SCREEN' not handled in switch [-Wswitch]
+ 1161 |   switch (action) {
+      |           ^~~~~~
+src/activities/reader/EpubReaderActivity.cpp:1161:11: note: add missing switch cases
+ 1161 |   switch (action) {
+      |           ^
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/KOReaderSyncActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/QrDisplayActivity.o
+1 warning generated.
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/ReaderActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/ReaderToolbarUi.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/XtcReaderActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/XtcReaderChapterSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/AboutActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/BleSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/ButtonRemapActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/ClearCacheActivity.o
+src/activities/settings/AboutActivity.cpp:96:11: warning: enumeration values 'Cst816s' and 'PiccoCst' not handled in switch [-Wswitch]
+   96 |   switch (c) {
+      |           ^
+src/activities/settings/AboutActivity.cpp:96:11: note: add missing switch cases
+   96 |   switch (c) {
+      |           ^
+   97 |     case BoardConfig::TouchController::None:
+   98 |       return nullptr;
+   99 |     case BoardConfig::TouchController::Chsc6x:
+  100 |       return "CHSC6X";
+  101 |     case BoardConfig::TouchController::Gt911:
+  102 |       return "GT911";
+  103 |     case BoardConfig::TouchController::Ft5x06:
+  104 |       return "FT5x06";
+  105 |     case BoardConfig::TouchController::Ft6336u:
+  106 |       return "FT6336U";
+  107 |     case BoardConfig::TouchController::Gslx680:
+  108 |       return "GSLX680";
+  109 |   }
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/ClockSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/ClockSyncActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/FontDownloadActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/HomeButtonSettingsActivity.o
+1 warning generated.
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/KOReaderAuthActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/KOReaderSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/KeyboardLayoutsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/LanguageSelectActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/OpdsServerListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/OpdsSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/OtaUpdateActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/PluginHubInstallActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/SdFirmwareUpdateActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/SettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/SettingsListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/StatusBarSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/TextSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/TextSettingsPreview.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/TimezonePickerActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/BmpViewerActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/ConfirmationActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/DetailsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/FrontlightPanelActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/FullScreenMessageActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/IntervalSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/KeyboardEntryActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/KeyboardLayoutSet.o
+Compiling .pio/build/simulator_x4_pro/src/clippings/ClippingSync.o
+Compiling .pio/build/simulator_x4_pro/src/clippings/ClippingsManager.o
+Compiling .pio/build/simulator_x4_pro/src/components/CatalogScreens.o
+Compiling .pio/build/simulator_x4_pro/src/components/CoverGridHomeUi.o
+Compiling .pio/build/simulator_x4_pro/src/components/HomeCoverCache.o
+Compiling .pio/build/simulator_x4_pro/src/components/UITheme.o
+Compiling .pio/build/simulator_x4_pro/src/components/UiAppHost.o
+Compiling .pio/build/simulator_x4_pro/src/components/themes/BaseTheme.o
+Compiling .pio/build/simulator_x4_pro/src/components/themes/lyra/Lyra3CoversTheme.o
+Compiling .pio/build/simulator_x4_pro/src/components/themes/lyra/LyraTheme.o
+Compiling .pio/build/simulator_x4_pro/src/components/themes/roundedraff/RoundedRaffTheme.o
+Compiling .pio/build/simulator_x4_pro/src/main.o
+Compiling .pio/build/simulator_x4_pro/src/network/CrossPointWebServer.o
+Compiling .pio/build/simulator_x4_pro/src/network/FirmwareBoardTag.o
+Compiling .pio/build/simulator_x4_pro/src/network/HttpDownloader.o
+Compiling .pio/build/simulator_x4_pro/src/network/LcpDevice.o
+Compiling .pio/build/simulator_x4_pro/src/network/OpdsHttpTransport.o
+Compiling .pio/build/simulator_x4_pro/src/network/WebDAVHandler.o
+Compiling .pio/build/simulator_x4_pro/src/platform/UsbSerialJtagHandoff.o
+Compiling .pio/build/simulator_x4_pro/src/util/BookCacheUtils.o
+Compiling .pio/build/simulator_x4_pro/src/util/BookProgress.o
+Compiling .pio/build/simulator_x4_pro/src/util/BookmarkFile.o
+Compiling .pio/build/simulator_x4_pro/src/util/BookmarkUtil.o
+Compiling .pio/build/simulator_x4_pro/src/util/ButtonNavigator.o
+Compiling .pio/build/simulator_x4_pro/src/util/DictHtmlPages.o
+Compiling .pio/build/simulator_x4_pro/src/util/DictZip.o
+Compiling .pio/build/simulator_x4_pro/src/util/Dictionary.o
+Compiling .pio/build/simulator_x4_pro/src/util/DictionaryRegistry.o
+Compiling .pio/build/simulator_x4_pro/src/util/HtmlToPlainText.o
+Compiling .pio/build/simulator_x4_pro/src/util/NextBookFinder.o
+Compiling .pio/build/simulator_x4_pro/src/util/OpdsFilename.o
+Compiling .pio/build/simulator_x4_pro/src/util/PluginEvents.o
+Compiling .pio/build/simulator_x4_pro/src/util/PluginHttp.o
+Compiling .pio/build/simulator_x4_pro/src/util/PluginLocations.o
+Compiling .pio/build/simulator_x4_pro/src/util/QrUtils.o
+Compiling .pio/build/simulator_x4_pro/src/util/ScreenshotUtil.o
+Compiling .pio/build/simulator_x4_pro/src/util/StringUtils.o
+Compiling .pio/build/simulator_x4_pro/src/util/Timezones.o
+Compiling .pio/build/simulator_x4_pro/src/util/UrlUtils.o
+Compiling .pio/build/simulator_x4_pro/libda0/Logging/Logging.o
+Compiling .pio/build/simulator_x4_pro/libb48/Memory/BuildScratch.o
+Compiling .pio/build/simulator_x4_pro/lib582/Utf8/Utf8.o
+Compiling .pio/build/simulator_x4_pro/libc1e/uzlib/tinflate.o
+Compiling .pio/build/simulator_x4_pro/libe66/InflateReader/InflateReader.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/FontAlloc.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/FtFont.o
+Archiving .pio/build/simulator_x4_pro/libc1e/libuzlib.a
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/Gpos.o
+Archiving .pio/build/simulator_x4_pro/libe66/libInflateReader.a
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/Gsub.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/TtfFont.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_autofit.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_cff.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_ftbase.o
+Archiving .pio/build/simulator_x4_pro/libda0/libLogging.a
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_ftbitmap.o
+Archiving .pio/build/simulator_x4_pro/lib582/libUtf8.a
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_ftdebug.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_ftglyph.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_ftgzip.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_ftinit.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_ftmm.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_ftsystem.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_psaux.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_pshinter.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_psnames.o
+Archiving .pio/build/simulator_x4_pro/libb48/libMemory.a
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_raster.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_sfnt.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_smooth.o
+Compiling .pio/build/simulator_x4_pro/libbe6/FreeInkFont/freetype/ft_truetype.o
+Indexing .pio/build/simulator_x4_pro/libc1e/libuzlib.a
+Indexing .pio/build/simulator_x4_pro/libe66/libInflateReader.a
+Indexing .pio/build/simulator_x4_pro/libb48/libMemory.a
+Compiling .pio/build/simulator_x4_pro/lib9f8/EpdFont/EpdFont.o
+Compiling .pio/build/simulator_x4_pro/lib9f8/EpdFont/EpdFontFamily.o
+Archiving .pio/build/simulator_x4_pro/libbe6/libFreeInkFont.a
+Indexing .pio/build/simulator_x4_pro/libbe6/libFreeInkFont.a
+Compiling .pio/build/simulator_x4_pro/lib9f8/EpdFont/FontDecompressor.o
+Indexing .pio/build/simulator_x4_pro/libda0/libLogging.a
+Indexing .pio/build/simulator_x4_pro/lib582/libUtf8.a
+Compiling .pio/build/simulator_x4_pro/lib9f8/EpdFont/SdCardFont.o
+Compiling .pio/build/simulator_x4_pro/lib9f8/EpdFont/SdCardFontManager.o
+Compiling .pio/build/simulator_x4_pro/lib9f8/EpdFont/SdCardFontRegistry.o
+Compiling .pio/build/simulator_x4_pro/lib9f8/EpdFont/TtfEpdFont.o
+Compiling .pio/build/simulator_x4_pro/lib6c0/MiniBidi/BidiUtils.o
+Compiling .pio/build/simulator_x4_pro/lib6c0/MiniBidi/minibidi.o
+Compiling .pio/build/simulator_x4_pro/lib40e/GfxRenderer/Bitmap.o
+Compiling .pio/build/simulator_x4_pro/lib40e/GfxRenderer/BitmapHelpers.o
+Compiling .pio/build/simulator_x4_pro/lib40e/GfxRenderer/FontCacheManager.o
+Compiling .pio/build/simulator_x4_pro/lib40e/GfxRenderer/GfxRenderer.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/CrossPointWebServer.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/ESP.o
+Archiving .pio/build/simulator_x4_pro/lib6c0/libMiniBidi.a
+Archiving .pio/build/simulator_x4_pro/lib9f8/libEpdFont.a
+Indexing .pio/build/simulator_x4_pro/lib6c0/libMiniBidi.a
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalClock.o
+Indexing .pio/build/simulator_x4_pro/lib9f8/libEpdFont.a
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalDisplay.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalFrontlight.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalGPIO.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalMemory.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalPowerManager.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalStorage.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalSystem.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/HalTiltSensor.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/NetworkClient.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/SimulatorImageDecode.o
+Archiving .pio/build/simulator_x4_pro/lib40e/libGfxRenderer.a
+Indexing .pio/build/simulator_x4_pro/lib40e/libGfxRenderer.a
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/SimulatorLifecycle.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/WebServer.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/WebSocketsServer.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/firmware_link_stubs.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/qrcode.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/simulator_firmware.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/simulator_main.o
+Compiling .pio/build/simulator_x4_pro/lib704/simulator/simulator_ota.o
+Compiling .pio/build/simulator_x4_pro/libc6c/JsonSax/StreamingJsonParser.o
+Compiling .pio/build/simulator_x4_pro/lib9a5/expat/xmlparse.o
+Archiving .pio/build/simulator_x4_pro/libc6c/libJsonSax.a
+Indexing .pio/build/simulator_x4_pro/libc6c/libJsonSax.a
+Compiling .pio/build/simulator_x4_pro/lib9a5/expat/xmlrole.o
+Compiling .pio/build/simulator_x4_pro/lib9a5/expat/xmltok.o
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/Opds2Parser.o
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpdsAuthDoc.o
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpdsClient.o
+Archiving .pio/build/simulator_x4_pro/lib9a5/libexpat.a
+Indexing .pio/build/simulator_x4_pro/lib9a5/libexpat.a
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpdsFeedParser.o
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpdsImplicitAuth.o
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpdsLoginForm.o
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpdsParser.o
+Archiving .pio/build/simulator_x4_pro/lib704/libsimulator.a
+Indexing .pio/build/simulator_x4_pro/lib704/libsimulator.a
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpdsPublicationDoc.o
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpdsSearchTemplate.o
+Compiling .pio/build/simulator_x4_pro/liba63/Opds/OpenSearchDescParser.o
+Compiling .pio/build/simulator_x4_pro/libace/CatalogList/JsonListParser.o
+Compiling .pio/build/simulator_x4_pro/libace/CatalogList/XmlListParser.o
+Compiling .pio/build/simulator_x4_pro/libc98/FreeInkUI/FreeInkUI.o
+Compiling .pio/build/simulator_x4_pro/libd6f/QRCode/qrcode.o
+Compiling .pio/build/simulator_x4_pro/libba7/AnimatedGIF/AnimatedGIF.o
+Archiving .pio/build/simulator_x4_pro/libd6f/libQRCode.a
+Compiling .pio/build/simulator_x4_pro/lib1c1/Serialization/ObfuscationUtils.o
+Archiving .pio/build/simulator_x4_pro/libba7/libAnimatedGIF.a
+Indexing .pio/build/simulator_x4_pro/libd6f/libQRCode.a
+Indexing .pio/build/simulator_x4_pro/libba7/libAnimatedGIF.a
+Compiling .pio/build/simulator_x4_pro/lib1c1/Serialization/PersistableStore.o
+Compiling .pio/build/simulator_x4_pro/libaba/BlePageTurner/NoRadio.o
+Compiling .pio/build/simulator_x4_pro/libaba/BlePageTurner/Runtime.o
+Archiving .pio/build/simulator_x4_pro/libc98/libFreeInkUI.a
+Indexing .pio/build/simulator_x4_pro/libc98/libFreeInkUI.a
+Compiling .pio/build/simulator_x4_pro/libaba/BlePageTurner/SdkRadio.o
+Archiving .pio/build/simulator_x4_pro/libace/libCatalogList.a
+Compiling .pio/build/simulator_x4_pro/liba19/DeviceSecret/DeviceSecret.o
+Compiling .pio/build/simulator_x4_pro/lib9ea/TrustedTime/TrustedTime.o
+Archiving .pio/build/simulator_x4_pro/liba63/libOpds.a
+Compiling .pio/build/simulator_x4_pro/libc0f/miniz/InflateStream.o
+Indexing .pio/build/simulator_x4_pro/libace/libCatalogList.a
+Indexing .pio/build/simulator_x4_pro/liba63/libOpds.a
+Compiling .pio/build/simulator_x4_pro/libc0f/miniz/miniz_impl.o
+Compiling .pio/build/simulator_x4_pro/lib271/ZipFile/ZipFile.o
+In file included from lib/miniz/src/miniz_impl.c:4:
+lib/miniz/src/MinizConfig.h:13:9: warning: 'MINIZ_NO_ZLIB_COMPATIBLE_NAMES' macro redefined [-Wmacro-redefined]
+   13 | #define MINIZ_NO_ZLIB_COMPATIBLE_NAMES
+      |         ^
+<command line>:11:9: note: previous definition is here
+   11 | #define MINIZ_NO_ZLIB_COMPATIBLE_NAMES 1
+      |         ^
+Archiving .pio/build/simulator_x4_pro/libaba/libBlePageTurner.a
+1 warning generated.
+Indexing .pio/build/simulator_x4_pro/libaba/libBlePageTurner.a
+Compiling .pio/build/simulator_x4_pro/libcb0/FsHelpers/FsHelpers.o
+Compiling .pio/build/simulator_x4_pro/libc4c/GifToBmpConverter/GifToBmpConverter.o
+Compiling .pio/build/simulator_x4_pro/libf57/JpegToBmpConverter/JpegToBmpConverter.o
+Archiving .pio/build/simulator_x4_pro/lib1c1/libSerialization.a
+Indexing .pio/build/simulator_x4_pro/lib1c1/libSerialization.a
+Compiling .pio/build/simulator_x4_pro/libee2/PngToBmpConverter/PngToBmpConverter.o
+In file included from lib/miniz/src/InflateStream.cpp:10:
+lib/miniz/src/MinizConfig.h:13:9: warning: 'MINIZ_NO_ZLIB_COMPATIBLE_NAMES' macro redefined [-Wmacro-redefined]
+   13 | #define MINIZ_NO_ZLIB_COMPATIBLE_NAMES
+      |         ^
+<command line>:11:9: note: previous definition is here
+   11 | #define MINIZ_NO_ZLIB_COMPATIBLE_NAMES 1
+      |         ^
+1 warning generated.
+Archiving .pio/build/simulator_x4_pro/libc0f/libminiz.a
+Archiving .pio/build/simulator_x4_pro/lib9ea/libTrustedTime.a
+Indexing .pio/build/simulator_x4_pro/libc0f/libminiz.a
+Archiving .pio/build/simulator_x4_pro/libcb0/libFsHelpers.a
+Indexing .pio/build/simulator_x4_pro/lib9ea/libTrustedTime.a
+Archiving .pio/build/simulator_x4_pro/liba19/libDeviceSecret.a
+Indexing .pio/build/simulator_x4_pro/libcb0/libFsHelpers.a
+Compiling .pio/build/simulator_x4_pro/lib67f/Txt/Txt.o
+Compiling .pio/build/simulator_x4_pro/lib67f/Txt/TxtToHtml.o
+Indexing .pio/build/simulator_x4_pro/liba19/libDeviceSecret.a
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/BookKey.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub.o
+Archiving .pio/build/simulator_x4_pro/lib271/libZipFile.a
+Indexing .pio/build/simulator_x4_pro/lib271/libZipFile.a
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/BookMetadataCache.o
+Archiving .pio/build/simulator_x4_pro/libc4c/libGifToBmpConverter.a
+Indexing .pio/build/simulator_x4_pro/libc4c/libGifToBmpConverter.a
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/CjkBreaks.o
+Archiving .pio/build/simulator_x4_pro/libf57/libJpegToBmpConverter.a
+Indexing .pio/build/simulator_x4_pro/libf57/libJpegToBmpConverter.a
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/Page.o
+Archiving .pio/build/simulator_x4_pro/libee2/libPngToBmpConverter.a
+Indexing .pio/build/simulator_x4_pro/libee2/libPngToBmpConverter.a
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/ParsedText.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/Section.o
+Archiving .pio/build/simulator_x4_pro/lib67f/libTxt.a
+Indexing .pio/build/simulator_x4_pro/lib67f/libTxt.a
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/WordStore.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/blocks/ImageBlock.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/blocks/TextBlock.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/converters/GifToFramebufferConverter.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/converters/ImageDecoderFactory.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/converters/ImageDimsProbe.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/converters/ImageToFramebufferDecoder.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/converters/JpegToFramebufferConverter.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/converters/PngToFramebufferConverter.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/css/CssParser.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/htmlEntities.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/hyphenation/HyphenationCommon.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/hyphenation/Hyphenator.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/hyphenation/LanguageRegistry.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/hyphenation/LiangHyphenation.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/parsers/ChapterHtmlSlimParser.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/parsers/ContainerParser.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/parsers/ContentOpfParser.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/parsers/TocNavParser.o
+Compiling .pio/build/simulator_x4_pro/lib96d/Epub/Epub/parsers/TocNcxParser.o
+Compiling .pio/build/simulator_x4_pro/liba4b/I18n/I18n.o
+Compiling .pio/build/simulator_x4_pro/liba4b/I18n/I18nStrings.o
+Compiling .pio/build/simulator_x4_pro/lib38c/HttpHeader/HttpHeader.o
+Archiving .pio/build/simulator_x4_pro/liba4b/libI18n.a
+Indexing .pio/build/simulator_x4_pro/liba4b/libI18n.a
+Compiling .pio/build/simulator_x4_pro/libca8/KOReaderSync/ChapterXPathResolver.o
+Compiling .pio/build/simulator_x4_pro/libca8/KOReaderSync/KOReaderCredentialStore.o
+Archiving .pio/build/simulator_x4_pro/lib38c/libHttpHeader.a
+Indexing .pio/build/simulator_x4_pro/lib38c/libHttpHeader.a
+Compiling .pio/build/simulator_x4_pro/libca8/KOReaderSync/KOReaderDocumentId.o
+Compiling .pio/build/simulator_x4_pro/libca8/KOReaderSync/KOReaderSyncClient.o
+Compiling .pio/build/simulator_x4_pro/libca8/KOReaderSync/ProgressComparison.o
+Compiling .pio/build/simulator_x4_pro/libca8/KOReaderSync/ProgressMapper.o
+Compiling .pio/build/simulator_x4_pro/lib421/Xtc/Xtc.o
+Compiling .pio/build/simulator_x4_pro/lib421/Xtc/Xtc/XtcParser.o
+Compiling .pio/build/simulator_x4_pro/libb16/LibraryIndex/LibraryBuilder.o
+Archiving .pio/build/simulator_x4_pro/lib96d/libEpub.a
+Indexing .pio/build/simulator_x4_pro/lib96d/libEpub.a
+Compiling .pio/build/simulator_x4_pro/libb16/LibraryIndex/LibraryFormat.o
+Compiling .pio/build/simulator_x4_pro/libb16/LibraryIndex/LibraryIndexFile.o
+Compiling .pio/build/simulator_x4_pro/libb16/LibraryIndex/LibraryText.o
+Compiling .pio/build/simulator_x4_pro/lib7fd/BmpToBmpConverter/BmpToBmpConverter.o
+Archiving .pio/build/simulator_x4_pro/lib421/libXtc.a
+Indexing .pio/build/simulator_x4_pro/lib421/libXtc.a
+Archiving .pio/build/simulator_x4_pro/libca8/libKOReaderSync.a
+Indexing .pio/build/simulator_x4_pro/libca8/libKOReaderSync.a
+Archiving .pio/build/simulator_x4_pro/libb16/libLibraryIndex.a
+Archiving .pio/build/simulator_x4_pro/lib7fd/libBmpToBmpConverter.a
+Indexing .pio/build/simulator_x4_pro/libb16/libLibraryIndex.a
+Indexing .pio/build/simulator_x4_pro/lib7fd/libBmpToBmpConverter.a
+Linking .pio/build/simulator_x4_pro/program
+========================= [SUCCESS] Took 54.71 seconds =========================
+
+Environment       Status    Duration
+----------------  --------  ------------
+simulator_x4_pro  SUCCESS   00:00:54.712
+========================= 1 succeeded in 00:00:54.712 =========================

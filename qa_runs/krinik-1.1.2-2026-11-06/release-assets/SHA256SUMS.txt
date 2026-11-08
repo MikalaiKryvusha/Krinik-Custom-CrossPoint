@@ -1,0 +1,2 @@
+3e0cc45bbb3dec91052070edce51e5c5c3bda5ffe03440e6ea2ea05b26216d6a  cp-2.0.0-krinik-1.1.2.bin
+5139af23bd2649285151b3def9f5a66853842e8d6da084b952ab2ac750f648e2  RUKOVODSTVO-krinik.epub

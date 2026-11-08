@@ -1,0 +1,13 @@
+{
+  "captured_at": "2026-11-06T20:14:34.857271+03:00",
+  "source": "/Volumes/X4-KRINIK/.crosspoint/battery_log.csv",
+  "volume_uuid": "649C18D8-130F-3C63-AD1A-F6396E1014A6",
+  "device": "disk6s1",
+  "bytes": 22209,
+  "sha256": "a0f8cd1fef40f8c879e02553bbeedadc1aada5361fcd9f743341f244f96ecc29",
+  "source_second_read_identical": true,
+  "previous_bytes": 17212,
+  "previous_capture_is_exact_prefix": true,
+  "card_writes_by_agent": false,
+  "recon": "/Users/kryvusha/Xteink/researches/2026-11-06_debug2_light_hour_comparison.md"
+}

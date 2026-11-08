@@ -1,0 +1,48 @@
+[0] [DBG] [UI] Using Lyra theme
+[4] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[6] [DBG] [CPS] Resaving settings to update format
+[7] [DBG] [CPS] Settings loaded from file
+[7] [DBG] [UI] Using Lyra theme
+[8] [INF] [CLK] RTC clock read: 2026-11-06 06:35
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[8] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[240] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[240] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[240] [DBG] [SDREG] Fonts directory not found: /fonts
+[240] [DBG] [SDREG] Discovery complete: 0 families
+[240] [DBG] [SDFS] SD font system ready (0 families discovered)
+[240] [DBG] [MAIN] Fonts setup
+[240] [DBG] [ACT] Entering activity: Boot
+[242] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[261] [DBG] [ACT] Exiting activity: Boot
+[261] [DBG] [ACT] Entering activity: Home
+[263] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[276] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/shots/home.bmp
+[3011] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3406] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[3809] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[4388] [DBG] [ACT] Exiting activity: Home
+[4388] [DBG] [ACT] Entering activity: SettingsList
+[4389] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5503] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[5907] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[6309] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6704] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[7104] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[7508] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[7984] [DBG] [ACT] Pushed to activity stack, new size = 1
+[7984] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[7984] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[7985] [DBG] [DREG] No /.dictionaries directory on SD card
+[7988] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[10001] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10002] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/pr4331-withcard/shots/about.bmp

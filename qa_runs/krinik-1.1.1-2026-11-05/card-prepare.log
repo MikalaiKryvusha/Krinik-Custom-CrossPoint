@@ -1,0 +1,16 @@
+{
+  "firmware_images": {
+    "crosspoint-2.0.0-x4pro.bin": "eec8b22b96202da31c91ec73f4af3fa9e3149658c3cf38dab7aa2b810ff34b44",
+    "cp-2.0.0-krinik-1.0.0.bin": "59f27896ba5066caa69fd975fe5bb221c965da1fa39c8c53217d7c84edbc9b6a",
+    "cp-2.0.0-krinik-1.1.1.bin": "a9104bc7b7b7ae2eea252e4d552cce0b936c2e4d414bb5f93a27ccd88bfdee99"
+  },
+  "guide_sha256": "8a3b93abe43fcc92183c7fc86cc8c694bbc25fab5f0fb5841a64fd44418cd5c3",
+  "index_records": 6,
+  "index_row_updated": [
+    3
+  ],
+  "protected_files_verified": 17,
+  "backup": "/Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/card-before",
+  "flashed": false,
+  "hardware_back_check": "pending owner"
+}

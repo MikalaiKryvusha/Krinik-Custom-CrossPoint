@@ -1,0 +1,175 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[0] [DBG] [CPS] Settings loaded from file
+[1] [DBG] [UI] Using Lyra theme
+[1] [INF] [CLK] RTC clock read: 2026-11-05 16:36
+[SIM] Frontlight: on, brightness=100%, warmth=80%
+[1] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[2] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [SDREG] Fonts directory not found: /fonts
+[2] [DBG] [SDREG] Discovery complete: 0 families
+[2] [DBG] [SDFS] SD font family not found on card: Literata (clearing)
+[2] [DBG] [SDFS] SD font system ready (0 families discovered)
+[2] [DBG] [MAIN] Fonts setup
+[2] [DBG] [ACT] Entering activity: Boot
+[2] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[7] [DBG] [CRV] Built-in curve /panel_curve_book.txt: dccbe605
+[7] [DBG] [ACT] Exiting activity: Boot
+[7] [DBG] [ACT] Entering activity: EpubReader
+[7] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[7] [DBG] [GFX] Time = 5 ms from clearScreen to displayBuffer
+[11] [DBG] [EBP] Loading ePub: /.crosspoint/calibration/books_card_v1.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/.crosspoint/epub_17237363056044662373/book.bin (flags=0x0 errno=2 No such file or directory)
+[11] [DBG] [EBP] Cache not found, building spine/TOC cache
+[11] [DBG] [BMC] Entering write mode
+[11] [DBG] [BMC] Beginning content opf pass
+[11] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[11] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[11] [DBG] [COF] Using fast index for 3 manifest items
+[11] [DBG] [EBP] Successfully parsed content.opf
+[11] [DBG] [EBP] OPF pass completed in 0 ms
+[12] [DBG] [BMC] Beginning toc pass
+[12] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[12] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[12] [DBG] [NAV] Found nav toc element
+[12] [DBG] [NAV] Finished parsing nav toc
+[12] [DBG] [EBP] Parsed TOC nav items
+[12] [DBG] [EBP] TOC pass completed in 0 ms
+[12] [DBG] [BMC] Wrote 1 spine, 1 TOC entries
+[12] [DBG] [BMC] Successfully built book.bin
+[12] [DBG] [EBP] buildBookBin completed in 0 ms
+[12] [DBG] [EBP] Total indexing completed in 1 ms
+[12] [DBG] [EBP] No CSS files to parse, but CssParser created for inline styles
+[12] [DBG] [EBP] CSS files to parse: 0
+[12] [DBG] [CSS] Saved 0 rules to complete cache
+[12] [DBG] [EBP] Loaded 0 CSS style rules from 0 files (0 identical duplicates skipped, complete)
+[12] [DBG] [BMC] Loaded cache data: 1 spine, 1 TOC entries
+[12] [DBG] [EBP] Loaded ePub: /.crosspoint/calibration/books_card_v1.epub
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/.crosspoint/epub_17237363056044662373/progress.bin (flags=0x0 errno=2 No such file or directory)
+[12] [DBG] [EBP] Core Metadata: cover(0)=, textReference(0)=
+[12] [DBG] [ERS] Loading file: OEBPS/card.xhtml, index: 0
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/.crosspoint/epub_17237363056044662373/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[12] [DBG] [ERS] Cache not found, building...
+[12] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[13] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_17237363056044662373/html/.tmp_0.html (274 bytes)
+[13] [DBG] [CSS] Loaded 0 rules from complete cache
+[13] [DBG] [EHP] Found image: src=card.png
+[13] [DBG] [EHP] Image dimensions: 480x800
+[13] [DBG] [EHP] Display size from CSS width: 267x445
+[13] [DBG] [EHP] Time to parse and build pages: 0 ms
+[13] [DBG] [SCT] Page 0 processed
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/.crosspoint/epub_17237363056044662373/img_0_0_kdccbe605.pxc (flags=0x0 errno=2 No such file or directory)
+[14] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[15] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/.crosspoint/epub_17237363056044662373/img_0_0_kdccbe605.pxc (flags=0x0 errno=2 No such file or directory)
+[15] [DBG] [IMG] Lazy-extracting OEBPS/card.png -> /.crosspoint/epub_17237363056044662373/img_0_0.png
+[16] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_17237363056044662373/img_0_0.png
+[16] [DBG] [IMG] Using PNG decoder
+[16] [DBG] [PNG] Decoding PNG: /.crosspoint/epub_17237363056044662373/img_0_0.png
+[20] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 267x445 (scale 0.56), type: 6, bpp: 8
+[20] [DBG] [IMG] Cache stream started: /.crosspoint/epub_17237363056044662373/img_0_0_kdccbe605.pxc (267x445, band 16 rows)
+[25] [DBG] [PNG] PNG decoding complete - render time: 5 ms
+[25] [DBG] [IMG] Cache written: /.crosspoint/epub_17237363056044662373/img_0_0_kdccbe605.pxc (267x445, 29819 bytes)
+[30] [DBG] [IMG] Decode successful
+[30] [DBG] [GFX] Time = 15 ms from clearScreen to displayBuffer
+[32] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[32] [DBG] [IMG] Loading from cache: /.crosspoint/epub_17237363056044662373/img_0_0_kdccbe605.pxc (267x445)
+[32] [DBG] [IMG] Cache render complete (payload now in RAM)
+[32] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[32] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[32] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[32] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[32] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[33] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[33] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[33] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[33] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[33] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[33] [DBG] [IMG] Rendering image at 263,8: /.crosspoint/epub_17237363056044662373/img_0_0.png (267x445)
+[37] [DBG] [ERS] Page render (tiled): prewarm=0ms bw_render=17ms display=2ms gray_lsb=1ms gray_msb=1ms gray_display=3ms cleanup=0ms total=24ms
+[37] [DBG] [ERS] Rendered page in 24ms
+[38] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/card.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2050.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2060.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2070.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2080.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2090.bmp
+[2122] [DBG] [ACT] Exiting activity: EpubReader
+[2122] [INF] [MEM] reader exit: free=1048576 max_block=1048576
+[2123] [DBG] [ACT] Entering activity: SettingsList
+[2123] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2123] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2123] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2123] [DBG] [DREG] No /.dictionaries directory on SD card
+[2123] [DBG] [ACT] Pushed to activity stack, new size = 2
+[2123] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2123] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2123] [DBG] [DREG] No /.dictionaries directory on SD card
+[2125] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2100.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2110.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2120.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2130.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2140.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2150.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2160.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2170.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2180.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2190.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2200.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2210.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2220.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2230.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2240.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2250.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2260.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2270.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2280.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2290.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2300.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2310.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2320.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2330.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2340.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2350.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2360.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2370.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2380.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2390.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2400.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2410.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2420.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2430.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2440.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2450.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2460.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2470.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2480.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2490.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/transition-2500.bmp
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/calibration.bmp
+[3122] [DBG] [ACT] Exiting activity: Settings
+[3122] [DBG] [ACT] Popped from activity stack, new size = 1
+[3122] [DBG] [ACT] Handling result for popped activity
+[3123] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/display.bmp
+[4122] [DBG] [ACT] Exiting activity: Settings
+[4122] [DBG] [ACT] Popped from activity stack, new size = 0
+[4122] [DBG] [ACT] Handling result for popped activity
+[4123] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/settings.bmp
+[5122] [DBG] [ACT] Exiting activity: SettingsList
+[5122] [DBG] [UI] Using Lyra theme
+[5122] [DBG] [ACT] Entering activity: Home
+[5123] [DBG] [HOME] Clean Home Screen: FULL refresh
+[5123] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[5141] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/krinik-1.1.1-2026-11-05/navigation-books-1/shots/home.bmp

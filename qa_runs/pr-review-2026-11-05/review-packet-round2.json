@@ -1,0 +1,62 @@
+{
+  "requirements": {
+    "upstream_error": "Error. without modal; preserve known capacity",
+    "krinik_error": "Ошибка. without modal; preserve extra About fields",
+    "sleep": "continue sequence through deep sleep when SD cursor writes fail; cold reset may resume disk cursor",
+    "scope": "update existing PRs 4328,4331,4332; carry same fixes into separate krinik-1.0.1 candidate preserving all extra features"
+  },
+  "candidates": {
+    "epub": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/epub",
+      "base": "b3f25945e235f79a2222139284dd2982f8913006",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/epub-round2.patch",
+      "sha256": "90bebbd688292802f770da7a7c6b9735493a10989cb32bbfa6dd1ab9e2f1c8a1",
+      "delta_since_review": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/epub-round2-delta.patch"
+    },
+    "about": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/about",
+      "base": "edad8db1e9db501c4139b2c95174d36df73734c3",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/about-round2.patch",
+      "sha256": "6d7c9e17ba9f8d7142bb4d5e95f4fea9779032f1e24224e517e56f470d8dce99",
+      "delta_since_review": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/about-round2-delta.patch"
+    },
+    "sleep": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/sleep",
+      "base": "4a5ac6031b9b03ea951e03037801bf89428f8227",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/sleep-round2.patch",
+      "sha256": "ef261bf67700e16f7370c1476d0b1062bfe67a68c834a93e7e39b6445b457170",
+      "delta_since_review": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/sleep-round2-delta.patch"
+    },
+    "krinik": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/krinik",
+      "base": "a955a572807950011502b0297933846a2472a744",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/krinik-round2.patch",
+      "sha256": "2445f7ee1be67eb0f462b0e64ac4a85f96d869c56e38091bdd733ce756fb5860",
+      "delta_since_review": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/krinik-round2-delta.patch"
+    },
+    "sdk": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/about/freeink-sdk",
+      "base": "5e94fe7480f019c89fbf691aef87523eb1b46704",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/sdk-round2.patch",
+      "sha256": "d6b04323b566c2b442678e651075ccc1f459030bf6a99af86f356afabb3224fb",
+      "delta_since_review": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/sdk-round2-delta.patch"
+    },
+    "krinik-sdk": {
+      "root": "/Users/kryvusha/Xteink/pr-fixes/krinik/freeink-sdk",
+      "base": "4feaf66d2c54185239849d9fc39697d9797f731a",
+      "patch": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/krinik-sdk-round2.patch",
+      "sha256": "5377fea8397cb32985200ac48e4b7b3e48d0cde10b3efab2c7e08de4e800ab98",
+      "delta_since_review": "/Users/kryvusha/Xteink/qa_runs/pr-review-2026-11-05/krinik-sdk-round2-delta.patch"
+    }
+  },
+  "checks": {
+    "epub": "911 host tests passed: epub-round2-host.log",
+    "krinik": "916 host tests passed: krinik-round2-host.log",
+    "sdk": "SDK production code compiled and stream+usage tests passed: sdk-final-host.log",
+    "krinik-sdk": "SDK production code compiled and tests passed: krinik-sdk-final-host.log",
+    "sleep": "5 tests passed: sleep-final-host.log",
+    "format": "bin/clang-format-fix -g passed for all firmware worktrees",
+    "firmware": "Final firmware builds follow independent review; no device testing claimed"
+  },
+  "changes_since_round1": "Inline IDs now carry visible-text offsets and are assigned when their actual line is placed, including soft flushes, paired IDs, heading carry and image placeholders. Paragraph-end empty targets have a separate fallback; images consume pending targets in non-text noteContent. Table inline IDs preserve existing block placement. Section cache version 73->74 invalidates completed and derived partial versions. Added six tests and corrected fixture insideBody to exercise real source offsets. Upstream sleep USER_GUIDE now documents In Order and bounded retention on failed cursor saves. SDK and error strings unchanged."
+}

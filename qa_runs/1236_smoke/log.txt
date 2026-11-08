@@ -1,0 +1,21 @@
+[0] [DBG] [UI] Using Lyra theme
+[2] [INF] [MAIN] Device: xteink_x4_pro
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 09:36
+[SIM] Frontlight: off, brightness=60%, warmth=50%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[755] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/1236_smoke/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[755] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/1236_smoke/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[755] [DBG] [SDREG] Fonts directory not found: /fonts
+[755] [DBG] [SDREG] Discovery complete: 0 families
+[755] [DBG] [SDFS] SD font system ready (0 families discovered)
+[755] [DBG] [MAIN] Fonts setup
+[755] [DBG] [ACT] Entering activity: Boot
+[756] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[797] [DBG] [ACT] Exiting activity: Boot
+[797] [DBG] [ACT] Entering activity: Home
+[797] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[831] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/1236_smoke/shots/home.bmp

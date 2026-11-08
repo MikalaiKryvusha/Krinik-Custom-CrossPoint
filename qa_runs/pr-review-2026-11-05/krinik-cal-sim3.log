@@ -1,0 +1,258 @@
+Processing simulator_x4_pro (platform: native)
+--------------------------------------------------------------------------------
+Verbose mode can be enabled via `-v, --verbose` option
+Language              Code  BCP47        Own  Fallback  Unused  Data (B)
+--------------------  ----  -----------  ---  --------  ------  --------
+English               EN    en           688  0         18      11991   
+العربية               AR    ar           449  239       9       13537   
+Azərbaycanca          AZ    az           640  48        18      14468   
+Беларуская            BE    be           440  248       9       15273   
+Български             BG    bg           423  265       9       15313   
+Bosanski              BS    bs           440  248       9       9049    
+Català                CA    ca           656  32        18      14533   
+Valencià              CAV   ca-valencia  656  32        18      14509   
+Čeština               CS    cs           440  248       9       9476    
+Dansk                 DA    da           329  359       8       5682    
+Deutsch               DE    de           631  57        18      12501   
+Español               ES    es           656  32        18      13871   
+فارسی                 FA    fa           452  236       10      14520   
+Suomi                 FI    fi           301  387       6       5816    
+Français              FR    fr           497  191       13      9781    
+עברית                 HE    he           656  32        18      17365   
+Magyar                HU    hu           440  248       9       9952    
+Bahasa Indonesia      ID    id           440  248       9       8446    
+Italiano              IT    it           656  32        18      13138   
+Қазақша               KK    kk           440  248       9       15428   
+Lietuvių              LT    lt           440  248       9       7882    
+Norsk bokmål          NB    nb           440  248       9       8045    
+Nederlands            NL    nl           329  359       8       5754    
+Orangutan             OOK   ook          333  355       5       2627    
+Polski                PL    pl           550  138       13      11424   
+Português (Brasil)    PT    pt-BR        522  166       13      10159   
+Português (Portugal)  P2    pt-PT        522  166       13      10922   
+Română                RO    ro           329  359       8       6491    
+Русский               RU    ru           667  21        18      22475   
+Slovenčina            SK    sk           440  248       9       9609    
+Slovenščina           SI    sl           440  248       9       8992    
+Svenska               SV    sv           639  49        1       12670   
+Türkçe                TR    tr           441  247       9       9014    
+Українська            UK    uk           442  246       9       15652   
+Tiếng Việt            VI    vi           656  32        18      15762   
+
+  Total: 688  |  Used in code: 670  |  Never used: 18
+  Flash: 402,127 B strings (deduped)  +  48,160 B offset tables  =  450,287 B
+
+  Stripping 18 unused string(s) from output.
+
+Code generation complete!
+  Languages: 35
+  String keys: 670
+Generated: src/images/logoSvg.generated.h
+  Original: 654 bytes
+  Minified: 654 bytes (100.0%)
+  Compressed: 382 bytes (58.4%)
+Generated: src/network/html/HomePageHtml.generated.h
+  Original: 2195 bytes
+  Minified: 5362 bytes (244.3%)
+  Compressed: 1932 bytes (88.0%)
+Generated: src/network/html/SettingsPageHtml.generated.h
+  Original: 21779 bytes
+  Minified: 19617 bytes (90.1%)
+  Compressed: 5021 bytes (23.1%)
+Generated: src/network/html/FontsPageHtml.generated.h
+  Original: 8398 bytes
+  Minified: 9046 bytes (107.7%)
+  Compressed: 3296 bytes (39.2%)
+Generated: src/network/html/PluginsPageHtml.generated.h
+  Original: 1277 bytes
+  Minified: 4742 bytes (371.3%)
+  Compressed: 1812 bytes (141.9%)
+Generated: src/network/html/RunnerPageHtml.generated.h
+  Original: 1223 bytes
+  Minified: 731 bytes (59.8%)
+  Compressed: 477 bytes (39.0%)
+Generated: src/network/html/FilesPageHtml.generated.h
+  Original: 146959 bytes
+  Minified: 104126 bytes (70.9%)
+  Compressed: 25458 bytes (17.3%)
+Generated: src/network/html/js/jszip_minJs.generated.h
+  Original: 97630 bytes
+  Minified: 97630 bytes (100.0%)
+  Compressed: 28379 bytes (29.1%)
+Generated: src/network/html/js/epub_optimizerJs.generated.h
+  Original: 68679 bytes
+  Minified: 44771 bytes (65.2%)
+  Compressed: 11319 bytes (16.5%)
+Generated: src/network/html/js/plugin_hostJs.generated.h
+  Original: 10845 bytes
+  Minified: 5971 bytes (55.1%)
+  Compressed: 2204 bytes (20.3%)
+Generated: src/network/html/assets/crosspoint_iconSvg.generated.h
+  Original: 586 bytes
+  Minified: 586 bytes (100.0%)
+  Compressed: 344 bytes (58.7%)
+Generated: src/network/html/assets/iconsSvg.generated.h
+  Original: 1167 bytes
+  Minified: 1167 bytes (100.0%)
+  Compressed: 471 bytes (40.4%)
+Generated: src/network/html/assets/webCss.generated.h
+  Original: 21184 bytes
+  Minified: 17166 bytes (81.0%)
+  Compressed: 4238 bytes (20.0%)
+Generated: src/components/icons/checkbox_onSvg.generated.h
+  Original: 252 bytes
+  Minified: 252 bytes (100.0%)
+  Compressed: 171 bytes (67.9%)
+LDF: Library Dependency Finder -> https://bit.ly/configure-pio-ldf
+LDF Modes: Finder ~ deep+, Compatibility ~ off
+Found 41 compatible libraries
+Scanning dependencies...
+Dependency Graph
+|-- Crosspoint Simulator @ 1.0.0+sha.4c78f3f
+|-- JsonSax @ 1.0.0
+|-- Opds @ 1.0.0
+|-- CatalogList @ 1.0.0
+|-- FreeInkUI @ 0.1.0
+|-- Icons @ 1.0.0
+|-- FreeInkFont @ 0.1.0
+|-- ArduinoJson @ 7.4.2
+|-- QRCode @ 0.0.1
+|-- AnimatedGIF @ 2.2.0+sha.d01888f
+|-- Logging
+|-- Memory
+|-- Serialization
+|-- Utf8
+|-- BlePageTurner @ 0.1.0
+|-- Epub
+|-- I18n
+|-- EpdFont
+|-- KOReaderSync
+|-- HttpHeader
+|-- GfxRenderer
+|-- FsHelpers
+|-- expat @ 2.7.3
+|-- LibraryIndex
+|-- BmpToBmpConverter
+|-- Xtc
+|-- TrustedTime
+|-- MiniBidi
+|-- InflateReader
+|-- uzlib @ 2.9.8
+|-- DeviceSecret
+|-- Txt
+Building in release mode
+Compiling .pio/build/simulator_x4_pro/src/CrossPointSettings.o
+Compiling .pio/build/simulator_x4_pro/src/SettingsList.o
+Compiling .pio/build/simulator_x4_pro/src/activities/Activity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/ActivityManager.o
+Compiling .pio/build/simulator_x4_pro/src/activities/CatalogActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/UiListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/UiTabListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/boot_sleep/BootActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/boot_sleep/SleepActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/browser/OpdsBookBrowserActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/home/CrashActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/home/FileBrowserActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/home/HomeActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/library/LibraryListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/CalibreConnectActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/CrossPointWebServerActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/NetworkModeSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/UsbDriveActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/network/WifiSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/plugins/PluginCatalogActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/ClipSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/DictionaryDefinitionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/DictionaryWordSelectActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EndOfBookOptions.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderBookmarksActivity.o
+src/activities/network/WifiSelectionActivity.cpp:867:11: warning: enumeration value 'PASSWORD_ENTRY' not handled in switch [-Wswitch]
+  867 |   switch (state) {
+      |           ^~~~~
+src/activities/network/WifiSelectionActivity.cpp:867:11: note: add missing switch cases
+  867 |   switch (state) {
+      |           ^
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderChapterSelectionActivity.o
+1 warning generated.
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderClippingListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderFootnoteSelectActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderMenuActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/EpubReaderPercentSelectionActivity.o
+src/activities/reader/EpubReaderActivity.cpp:1163:11: warning: enumeration values 'AUTO_PAGE_TURN' and 'ROTATE_SCREEN' not handled in switch [-Wswitch]
+ 1163 |   switch (action) {
+      |           ^~~~~~
+src/activities/reader/EpubReaderActivity.cpp:1163:11: note: add missing switch cases
+ 1163 |   switch (action) {
+      |           ^
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/KOReaderSyncActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/QrDisplayActivity.o
+1 warning generated.
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/ReaderActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/XtcReaderActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/reader/XtcReaderChapterSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/AboutActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/BleSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/ButtonRemapActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/ClearCacheActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/ClockSettingsActivity.o
+src/activities/settings/AboutActivity.cpp:106:11: warning: enumeration values 'Cst816s' and 'PiccoCst' not handled in switch [-Wswitch]
+  106 |   switch (c) {
+      |           ^
+src/activities/settings/AboutActivity.cpp:106:11: note: add missing switch cases
+  106 |   switch (c) {
+      |           ^
+  107 |     case BoardConfig::TouchController::None:
+  108 |       return nullptr;
+  109 |     case BoardConfig::TouchController::Chsc6x:
+  110 |       return "CHSC6X";
+  111 |     case BoardConfig::TouchController::Gt911:
+  112 |       return "GT911";
+  113 |     case BoardConfig::TouchController::Ft5x06:
+  114 |       return "FT5x06";
+  115 |     case BoardConfig::TouchController::Ft6336u:
+  116 |       return "FT6336U";
+  117 |     case BoardConfig::TouchController::Gslx680:
+  118 |       return "GSLX680";
+  119 |   }
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/ClockSyncActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/FontDownloadActivity.o
+1 warning generated.
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/HomeButtonSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/KOReaderAuthActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/KOReaderSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/KeyboardLayoutsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/LanguageSelectActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/OpdsServerListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/OpdsSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/OtaUpdateActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/PluginHubInstallActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/SdFirmwareUpdateActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/SettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/SettingsListActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/StatusBarSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/TextSettingsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/settings/TimezonePickerActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/BmpViewerActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/ConfirmationActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/DetailsActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/FlashlightActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/FrontlightPanelActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/FullScreenMessageActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/IntervalSelectionActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/KeyboardEntryActivity.o
+Compiling .pio/build/simulator_x4_pro/src/activities/util/MamaActivity.o
+Compiling .pio/build/simulator_x4_pro/src/main.o
+Compiling .pio/build/simulator_x4_pro/src/network/CrossPointWebServer.o
+Compiling .pio/build/simulator_x4_pro/src/util/CalibrationCardStorage.o
+Compiling .pio/build/simulator_x4_pro/src/util/ScreenshotUtil.o
+Compiling .pio/build/simulator_x4_pro/lib1ea/I18n/I18nStrings.o
+Archiving .pio/build/simulator_x4_pro/lib1ea/libI18n.a
+Indexing .pio/build/simulator_x4_pro/lib1ea/libI18n.a
+Linking .pio/build/simulator_x4_pro/program
+========================= [SUCCESS] Took 30.25 seconds =========================
+
+Environment       Status    Duration
+----------------  --------  ------------
+simulator_x4_pro  SUCCESS   00:00:30.253
+========================= 1 succeeded in 00:00:30.253 =========================

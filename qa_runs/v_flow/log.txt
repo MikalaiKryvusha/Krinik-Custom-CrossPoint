@@ -1,0 +1,155 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_flow/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_flow/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_flow/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[2] [DBG] [CPS] Resaving settings to update format
+[2] [DBG] [CPS] Settings loaded from file
+[3] [DBG] [UI] Using Lyra theme
+[3] [INF] [CLK] RTC clock read: 2026-11-04 11:41
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[3] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[254] [DBG] [MAIN] Display initialized
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_flow/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[255] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: /Users/kryvusha/Xteink/qa_runs/v_flow/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[255] [DBG] [SDREG] Fonts directory not found: /fonts
+[255] [DBG] [SDREG] Discovery complete: 0 families
+[255] [DBG] [SDFS] SD font system ready (0 families discovered)
+[255] [DBG] [MAIN] Fonts setup
+[255] [DBG] [ACT] Entering activity: Boot
+[255] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[277] [DBG] [ACT] Exiting activity: Boot
+[277] [DBG] [ACT] Entering activity: Home
+[277] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[291] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[2584] [DBG] [ACT] Exiting activity: Home
+[2584] [DBG] [ACT] Entering activity: FileBrowser
+[2585] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[4585] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6086] [DBG] [ACT] Exiting activity: FileBrowser
+[6086] [DBG] [ACT] Entering activity: BmpViewer
+[6087] [DBG] [CRV] Panel curve loaded: be170a3a
+[6087] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6133] [DBG] [CLN] Deep clean: 2 black/white cycles
+[6133] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6136] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6145] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6152] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[6170] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[6170] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6184] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[6184] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6203] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[6203] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6214] [DBG] [LOOP] New max loop duration: 128 ms (activity: 128 ms)
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_flow/shots/1_bmp.bmp
+[10125] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10125] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10591] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[10639] [DBG] [PNG] Decoding PNG: /pics/b_land.png
+[10661] [DBG] [PNG] PNG 800x480 (visible 800x480) -> 480x288 (scale 0.60), type: 6, bpp: 8
+[10661] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (480x288, band 16 rows)
+[10667] [DBG] [PNG] PNG decoding complete - render time: 6 ms
+[10668] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (480x288, 34564 bytes)
+[10675] [DBG] [CLN] Deep clean: 2 black/white cycles
+[10675] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[10677] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[10685] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[10694] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[10711] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is top-down
+[10711] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10716] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is top-down
+[10716] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10726] [DBG] [GFX] Cropping 480x288 by 0x0 pix, is top-down
+[10726] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10730] [DBG] [LOOP] New max loop duration: 139 ms (activity: 139 ms)
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_flow/shots/2_png.bmp
+[15586] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[15598] [DBG] [JPG] Image dimensions: 240x400
+[15599] [DBG] [JPG] Decoding JPEG: /pics/c_small.jpg
+[15604] [DBG] [JPG] JPEG 240x400 -> 240x400 (scale 1.00, jpegScale 1/1, fineScale 1.00)
+[15604] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (240x400, band 20 rows)
+[15609] [DBG] [JPG] JPEG decoding complete - render time: 5 ms
+[15609] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (240x400, 24004 bytes)
+[15611] [DBG] [CLN] Deep clean: 2 black/white cycles
+[15611] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[15613] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[15621] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[15630] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[15647] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[15647] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[15652] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[15652] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[15664] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[15664] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_flow/shots/3_jpg.bmp
+[20146] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20146] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[20587] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[20594] [DBG] [CLN] Deep clean: 2 black/white cycles
+[20594] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[20603] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[20610] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[20618] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[20635] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[20635] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[20661] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[20661] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[20687] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[20687] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_flow/shots/4_wrap_bmp.bmp
+[25585] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[25591] [DBG] [CLN] Deep clean: 2 black/white cycles
+[25591] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[25599] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[25607] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[25615] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[25632] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[25632] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[25640] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[25640] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[25658] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[25658] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_flow/shots/5_wrapback_jpg.bmp
+[30170] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30170] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[31016] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[31034] [DBG] [JPG] Image dimensions: 240x400
+[31035] [DBG] [JPG] Decoding JPEG: /pics/c_small.jpg
+[31040] [DBG] [JPG] JPEG 240x400 -> 240x400 (scale 1.00, jpegScale 1/1, fineScale 1.00)
+[31040] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (240x400, band 20 rows)
+[31048] [DBG] [JPG] JPEG decoding complete - render time: 8 ms
+[31048] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (240x400, 24004 bytes)
+[31051] [DBG] [CLN] Deep clean: 2 black/white cycles
+[31051] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[31055] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[31064] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[31072] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[31088] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[31088] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[31094] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[31094] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[31105] [DBG] [GFX] Cropping 240x400 by 0x0 pix, is top-down
+[31105] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_flow/shots/6_rot_jpg.bmp
+[36591] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[36628] [DBG] [CLN] Deep clean: 2 black/white cycles
+[36628] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[36632] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[36641] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[36649] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[36666] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[36666] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[36677] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[36677] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[36691] [DBG] [GFX] Cropping 288x480 by 0x0 pix, is bottom-up
+[36694] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[40220] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[40220] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_flow/shots/7_rot_tapnext_bmp.bmp
+[42588] [DBG] [ACT] Exiting activity: BmpViewer
+[42588] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[42598] [DBG] [ACT] Entering activity: FileBrowser
+[42599] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: /Users/kryvusha/Xteink/qa_runs/v_flow/shots/8_back.bmp
