@@ -15,6 +15,8 @@ work project. From now on it is a standalone project.
   `pr/screen-redraw-delay` d101e463 · 2d5bb845; `pr/screen-calibration` b6477e41 · 75b92fc0 · 7addf5be. Open: #4328-3
   (defensive fix proposed), #4375 string (owner's wording), #4376 main.cpp:541 and :722, #4377 ImageBlock and
   orientations (replies proposed). Correction: commit 338f0b7 says "6 local fixes" — the count is 5.
+  **Before any push:** strip the ` [NOT-TESTED]` marks the agent put into code comments of d101e463, 2d5bb845,
+  75b92fc0, 7addf5be (`git -C firmware grep -n "NOT-TESTED"` on each branch → 0) — upstream code carries no KAIF marks.
 - **Simulator:** native Windows build of our fork `MikalaiKryvusha/crosspoint-simulator`, branch `windows`, clone in
   `simulator/` — route and POSIX inventory in `researches/2026-11-09_native_windows_simulator.md`. WSL is never used.
 - PARKED 2026-11-09 14:47 +03:00: MSYS2 install (`winget install MSYS2.MSYS2 --location D:\msys64`) waits for the KAGO

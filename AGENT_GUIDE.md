@@ -1093,7 +1093,9 @@ cognition» (80% deterministic / 20% the model); it is stated once there and app
   `Date.now()`/random in compared output. Nondeterminism never shows in tests and quietly voids diffs
   and caches on live data — this checklist line notices it so you don't have to.
 - **Firmware (C++, ESP32, PlatformIO):** follow upstream CrossPoint's own conventions in the fork — a PR diff is
-  minimal and reads like upstream code; KCCP-only behaviour stays out of `pr/*` branches.
+  minimal and reads like upstream code; KCCP-only behaviour stays out of `pr/*` branches. KAIF test markers
+  (`[NOT-TESTED]` / `[TESTED: …]`) never go into code on `pr/*` branches — the test status of a PR fix lives in its
+  research doc (`researches/2026-11-09_coderabbit_pr_review.md` for the CodeRabbit round).
 - **Debug-only aids** (the 20-minute battery log, debug menu items) never reach a release build.
 - **Languages:** code, comments, commit messages — English; on-device strings and owner-facing texts — Russian
   (STATUS.md → "Language contract").
