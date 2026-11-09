@@ -52,7 +52,7 @@ five-open-PR limit means it waits in the queue for a slot.
   its label + padding (16, halved while the row does not fit, floor 4), row centered via `leadingInset`; equal
   full slots only if even 4 px does not fit. Run 18:31: `qa_runs/themes_cw/tabs_all.webp` — all five themes, every
   pill wider than its label, the row centered. English Lyra still takes the equal-slot path (unchanged); English
-  RoundedRaff run 18:32 (): «Recent ▾ | Title | Author» stays on equal slots with the pad.
+  RoundedRaff run 18:32 (`qa_runs/themes_cw/t3_en`): «Recent ▾ | Title | Author» stays on equal slots with the pad.
 
 ## Owner's decisions
 
