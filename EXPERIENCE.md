@@ -57,7 +57,7 @@
 >      claim-before-evidence, owner-decision-not-applied, text-in-agents-world,
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
 >      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand,
->      overwrote-tracked -->
+>      overwrote-tracked, tool-crash, false-defect, wrong-directory -->
 >
 > | Class slug | The failure it names |
 > |---|---|

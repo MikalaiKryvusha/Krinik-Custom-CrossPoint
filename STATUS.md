@@ -1,72 +1,42 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-08 10:40 UTC. Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-10 (chat closing). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
 ## Where to continue
 
-- **Chat 2026-11-09 (resume → CodeRabbit round 2) closed 20:20 +03:00** — its full log moved verbatim to
-  `PROJECT_HISTORY.md` (entry 2026-11-09, "CodeRabbit round 2"). Result: all 14 CodeRabbit comments answered or fixed,
-  `pr/screen-redraw-delay` and `pr/screen-calibration` pushed to the fork, 12 replies posted (research 02 → "Reply
-  drafts"); the owner checked the power-hold fix on his reader (debug6). Interviews #001 and #003 closed.
+- **Chat 2026-11-09 20:30 → 2026-11-10 (CodeRabbit round 3, debug7/8, simulator PR #62) closed** — its full log moved
+  verbatim to `PROJECT_HISTORY.md` (entry 2026-11-10). Result: #4377 books-card title fix pushed (`c9d69cbd`); #4376
+  redraw-timer fix pushed (`94e1c3a2`) after the owner's reader check; debug7 (bugs 03/04) and debug8 (idea 01) PASS on
+  the reader; native Windows simulator PR **#62** opened and its CodeRabbit round 1 fixed (`087cb54`).
 - **First steps next chat:**
-  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` — the PC is shared with KUMM (Conan
-     benchmarks) and KAGO; during another agent's quiet window: no builds, no simulator, no GUI windows.
-  2. Read CodeRabbit / maintainer answers on #4328 #4332 #4375 #4376 #4377:
-     `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --jq '.[]|select(.in_reply_to_id!=null)'`.
-     READ [2026-11-09 20:30 +03:00]: all 12 replied threads resolved by CodeRabbit, no maintainer comments, CI green on #4376/#4377.
-     OPEN: #4377 new round on `d8573ad5`, two Minor — `CalibrationCardStorage.cpp:17` (books card keeps the old-language
-     title, written once) and `:104` (v1 EPUB's `/.crosspoint/epub_<hash>/` cache not removed); #4376 asks for an X4 Pro
-     hold/short-press check (owner did it on debug6 — reply); #4328 asks whether to open a follow-up issue (post-table OOM).
-     Traced by me (not taken on CodeRabbit's word): `:17` holds — the title is baked into the EPUB (`CalibrationCard.cpp`
-     dc:title/nav/page) and shown via `epub->getTitle()`; a fix must also drop the card's `epub_<hash>` cache (title is
-     cached in `book.bin`). `:104` is true but low value — v1 existed only inside this unmerged PR.
-     Owner 20:33 «да, это наш промах. Доработать нужно»; on `:104` «можно сделать строку для перестраховки, но написать,
-     что это несущественно». DONE: fix `c9d69cbd` pushed to the fork 22:17 (#4377 head) — `booksCard()` reuses the
-     card only while `Epub::loadMetadata()` title == current language, else `clearBookCache` + rewrite via
-     `Storage.replaceFile`; v1 cache cleared. Simulator: RU→EN title, reuse, control on `d8573ad5` red (testcases
-     `TC_coderabbit_round2_calibration.md` §7). Found on the way: simulator `replaceFile` could not overwrite on Windows
-     — fixed `ba46fb7` on simulator `windows` (LOCAL, its push is the owner's open question). 4 replies POSTED
-     22:17–22:22 (owner «отправляй», #4328 «A»). WAITING FOR THE OWNER (research 02 → "Round 3 — posted"): #4376 —
-     owner 22:26 «Питание коротко: сон стоит»; his repeat with «Игнорировать» 22:31–22:39 (homework 01): hold during the
-     redraw wakes ✅, click during the redraw sleeps ✅, and TWO defects → `bugs/03` (redraw timed from the last
-     non-waking press on debug6; LOST entirely on PR #4376) and `bugs/04` (click in the light linger cancels the
-     sleep; owner A1: click only with «Сон», else a hold). Fixes judged twice by an independent agent (round 1 REFUTED
-     the PR fix — the path was cleared before the re-arm), both now VERIFIED WITH CAVEATS: debug7 `2b150595`
-     (`wip/krinik-debug7`, local) built → `firmware-builds/cp-2.0.0-krinik-1.1.1-debug7.bin` (SHA256 `8662b4db…368f`),
-     smoke `qa_runs/smoke_2b150595`; PR `94e1c3a2` local, NOT pushed (x4pro compile check running). x4pro compile of
-     `94e1c3a2` SUCCESS. 23:14 debug7 on the card (SHA256 checked there), card cleaned to debug7 + debug6 + 1.1.2,
-     reader ejected. 23:22 owner: homework 02 «все кейсы PASS, всё ок» → bugs 03/04 DONE. NEXT: push `94e1c3a2` + reply CodeRabbit #4376 (owner's word); idea 01 (Home «Сон» highlight on tap, owner 23:22).
-     Owner's open choice: the linger hold (400 ms) vs the redraw hold (≈ reset-to-sample) rules differ.
-     #4377 `:115` truncated-card finding — decline draft to proofread. CI on `c9d69cbd`.
-  3. Card cleanup DONE 2026-11-09 23:14 (`[OWNER] 20:09 «и образы старые поудаляй»`; rule: current debug + previous
-     debug + latest release): `/.firmware/` = debug7 + debug6 + 1.1.2; reader ejected.
+  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` — the PC is shared with KUMM and KAGO;
+     during another agent's quiet window: no builds, no simulator, no GUI windows.
+  2. Read reviews on simulator PR #62 (https://github.com/crosspoint-reader/crosspoint-simulator/pull/62) and on
+     firmware PRs #4328 #4332 #4375 #4376 #4377:
+     `gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`.
+     PR62_STATE_LINE
+  3. The reader card holds debug8 + debug7 + 1.1.2 (`/.firmware/`); the owner runs debug8.
 - **Open work, in order:**
-  0. **debug8 DONE** 2026-11-09 23:46 (idea 01, Home «Сон» highlight on tap): `c072214b` on `wip/krinik-debug8`
-     (local), judged, simulator + control, on the owner's reader «да, работает» (homework 03). Card = debug8 + debug7 +
-     1.1.2. #4376 fix `94e1c3a2` PUSHED 23:26 + CodeRabbit reply 4517595666 (owner «1 да»).
-  1. **Simulator upstream PR** (owner «делай» 20:13; order agreed 23:29): the «SHOT stalls after a second WAIT»
-     defect is NOT A DEFECT (23:50, research 01 — my probe had QUIT at 500 ms before SHOT at 800 ms). Windows checks
-     2026-11-10 00:02–00:35 (research 01): HTTP ✅, clock = UTC as documented, X4 env ✅; File Transfer (empty reply,
-     `dup()` of a Winsock socket) and sleep/wake (caller not waiting, exit status lost) fixed in `dfd450a` (local,
-     judged twice, runs pass with controls, kill-the-waiter PASS after the owner's «РАЗРЕШАЮ» 00:46). `bugs/05` (firmware
-     UDP `close()` on Windows) — found by reading, not reproduced. SQUASHED 00:51 → `ad131dc` (backup branch `windows-unsquashed`). On firmware `develop` `f8db833f`: builds, web_manager_smoke 8/8 (pre-fix ❌), the sample ini as written builds (+ the #60-style substitutions), system curl.exe HTTPS ✅. PR draft `qa_runs/pr-simulator-windows/body.md`, images pr-assets `15-windows-simulator/` (HTTP 200). Owner proofread «no remarks» 01:07, «отправляем» 01:08 → `windows` pushed, **PR #62 OPENED** 01:09 https://github.com/crosspoint-reader/crosspoint-simulator/pull/62 (mergeable, CodeRabbit running; AI footer removed per owner 01:09). `firmware/` back on `wip/krinik-debug8`. CodeRabbit round 1 on #62 (5 findings, all traced valid) → fix `2c34be9`+ judged (VERIFIED WITH CAVEATS; ANSI TEMP path regression found and fixed). AUTH: `[OWNER] 2026-11-10 01:38 +03:00 · chat: «на все отпраки ДАЮ РАЗРЕШЕНИЕ» · «на все твои сообщения ДАЮ РАЗРЕШЕНИЯ»` (pushes, PR replies, the closing push of this repo). OWNER 01:36 «работай автономно»: push the fixes, read CodeRabbit ~20 min later, fix until no remarks and the PR waits for a maintainer, then close the chat. 01:40–01:47 round-1 fixes run (injection probe: verbatim, no marker; control on ad131dc ran the command; replaceFile probe; web_manager_smoke 8/8; HTTPS via the new launcher; WebDAV backslash escape rejected), commits reworded without AI trailers (owner «только без авторства ИИ» 01:39), force-pushed `087cb54`, 5 replies posted, PR body updated. NEXT: ~02:08 read CodeRabbit round 2 on #62; was: squash 8 local commits, PR text for the
-     owner's proofreading, his word to push `windows`.
-  2. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — five themes checked; waits for a free upstream
-     slot (5/5 open) and the owner's proofreading of the PR text.
-  3. **Debug line**: `wip/krinik-debug6` (`e7a29dd4`, local in `firmware/`, not pushed) = debug5 + the hold fix, on
-     the owner's reader now. BACKLOG: merge release 1.1.2 (`198d385e`) into the debug line (conflicts in
-     `lib/hal/HalFrontlight.{cpp,h}`, `test/frontlight_dither/`), then `1.1.2-debugN`.
-  4. Owner's open questions: proofread `GOAL.md`; the push of this repo is done each closing.
-  5. Delete the partial `C:\msys64` left by the killed 14:44 install (KAGO said it is safe) — check the machine lock first.
-- **Rules born this chat** (all in `AGENT_GUIDE.md`): screenshots WebP q90, viewed as WebP; simulator window 480×800
-  1:1, borderless, top-left; images to the reader only after a simulator smoke of the same commit, only KCCP
-  debug/release builds, eject the reader after copying; build from PowerShell with `PYTHONUTF8=1`; the `firmware/`
-  clone keeps `core.autocrlf=false`.
-- KNOWLEDGE: native Windows simulator works (research 01, `AGENT_GUIDE.md` → Build/Test harness); debug line is on
-  1.1.1 without 1.1.2 (this file); seven lessons EXP-0001…0007 (`EXPERIENCE.md`); bug 01 (`bugs/01_…`), bug 02 not a
-  defect (`bugs/02_DONE_…`).
+  1. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — waits for a free upstream slot (5/5 open) and the
+     owner's proofreading of the PR text.
+  2. **Debug line**: `wip/krinik-debug8` (`c072214b`, local in `firmware/`, not pushed) = 1.1.1-debug6 + bugs 03/04 +
+     idea 01. BACKLOG: merge release 1.1.2 (`198d385e`) into the debug line (conflicts in `lib/hal/HalFrontlight.{cpp,h}`,
+     `test/frontlight_dither/`), then `1.1.2-debugN`. The owner's open choice: the light-linger hold (400 ms) vs the
+     timer-redraw hold (≈ reset-to-sample) rules differ.
+  3. `bugs/05` — simulator on Windows: the firmware closes its UDP discovery socket with `close()`; found by reading,
+     not reproduced. Also open, upstream-side: socket handle inheritance into curl (judge note, PR #62 research).
+  4. Owner's open questions: proofread `GOAL.md`.
+  5. Delete the partial `C:\msys64` left by the killed 2026-11-09 14:44 install (KAGO said it is safe) — check the
+     machine lock first.
+- **Rules born this chat** (all in `AGENT_GUIDE.md`): reviewer bots can be wrong — trace a finding in code before
+  acting; after a code change an independent judge first, build after; a PR description carries no AI-participation
+  line and nothing sent out carries AI authorship (no `Co-Authored-By` trailer on pushed commits).
+- KNOWLEDGE: Windows UCRT `TZ` — three-letter names only, DST on US dates (simulator README, research 01); Winsock
+  sockets cannot be `dup()`-ed and `_execvp` does not replace the process (research 01); `MoveFileEx` for an
+  overwrite-safe replace; lessons EXP-0008…0010 (`EXPERIENCE.md`): Git Bash grep crashes on long pipes, a "defect" that
+  was my script quitting first, parallel shell calls must not rely on `cd`.
 
 ## Language contract
 
