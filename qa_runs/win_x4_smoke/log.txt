@@ -1,0 +1,35 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Hardware detect: X4
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_x4_smoke/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_x4_smoke/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_x4_smoke/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[221] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_x4_smoke/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[222] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_x4_smoke/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[222] [DBG] [SDREG] Fonts directory not found: /fonts
+[222] [DBG] [SDREG] Discovery complete: 0 families
+[222] [DBG] [SDFS] SD font system ready (0 families discovered)
+[222] [DBG] [MAIN] Fonts setup
+[222] [DBG] [ACT] Entering activity: Boot
+[222] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[230] [DBG] [ACT] Exiting activity: Boot
+[230] [DBG] [ACT] Entering activity: Home
+[230] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [230] [DBG] [ACT] Entering activity: Home
+[243] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/win_x4_smoke/shots/home.bmp
+[1052] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1648] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2329] [DBG] [ACT] Exiting activity: Home
+[2329] [DBG] [ACT] Entering activity: CrossPointWebServer
+[2329] [DBG] [WEBACT] Free heap at onEnter: 1048576 bytes
+[2329] [DBG] [WEBACT] Free heap after SD font cache release: 1048576 bytes
+[2329] [DBG] [WEBACT] Launching NetworkModeSelectionActivity...
+[2329] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2329] [DBG] [ACT] Entering activity: NetworkModeSelection
+[2330] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer

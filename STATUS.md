@@ -47,9 +47,12 @@ work project. From now on it is a standalone project.
      (local), judged, simulator + control, on the owner's reader «да, работает» (homework 03). Card = debug8 + debug7 +
      1.1.2. #4376 fix `94e1c3a2` PUSHED 23:26 + CodeRabbit reply 4517595666 (owner «1 да»).
   1. **Simulator upstream PR** (owner «делай» 20:13; order agreed 23:29): the «SHOT stalls after a second WAIT»
-     defect is NOT A DEFECT (23:50, research 01 — my probe had QUIT at 500 ms before SHOT at 800 ms). Remaining:
-     not-yet-observed on Windows — File Transfer, HTTP via curl, sleep/wake relaunch, clock, the X4 (non-Pro) env;
-     then squash the 7 local commits, PR text for proofreading, the owner's word to push `windows`.
+     defect is NOT A DEFECT (23:50, research 01 — my probe had QUIT at 500 ms before SHOT at 800 ms). Windows checks
+     2026-11-10 00:02–00:35 (research 01): HTTP ✅, clock = UTC as documented, X4 env ✅; File Transfer (empty reply,
+     `dup()` of a Winsock socket) and sleep/wake (caller not waiting, exit status lost) fixed in `dfd450a` (local,
+     judged twice, runs pass with controls); kill-the-waiter test not run (permission refused). `bugs/05` (firmware
+     UDP `close()` on Windows) — found by reading, not reproduced. NEXT: squash 8 local commits, PR text for the
+     owner's proofreading, his word to push `windows`.
   2. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — five themes checked; waits for a free upstream
      slot (5/5 open) and the owner's proofreading of the PR text.
   3. **Debug line**: `wip/krinik-debug6` (`e7a29dd4`, local in `firmware/`, not pushed) = debug5 + the hold fix, on

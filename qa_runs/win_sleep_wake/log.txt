@@ -1,0 +1,55 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[6] [DBG] [CPS] Resaving settings to update format
+[6] [DBG] [CPS] Settings loaded from file
+[8] [DBG] [UI] Using Lyra theme
+[8] [INF] [CLK] RTC clock read: 2026-11-09 21:02
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[8] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[255] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[256] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[256] [DBG] [SDREG] Fonts directory not found: /fonts
+[256] [DBG] [SDREG] Discovery complete: 0 families
+[257] [DBG] [SDFS] SD font system ready (0 families discovered)
+[257] [DBG] [MAIN] Fonts setup
+[257] [DBG] [ACT] Entering activity: Boot
+[257] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[267] [DBG] [ACT] Exiting activity: Boot
+[267] [DBG] [ACT] Entering activity: Home
+[267] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [267] [DBG] [ACT] Entering activity: Home
+[282] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/shots/sleep.bmp
+[2267] [DBG] [MAIN] Power button held 1081ms, sleeping
+[2268] [DBG] [ACT] Exiting activity: Home
+[2268] [DBG] [ACT] Entering activity: Sleep
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/sleep (flags=0x0 errno=2 No such file or directory)
+[2269] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[2271] [DBG] [MAIN] Entering deep sleep
+[SIM] WAIT matched: [2268] [DBG] [ACT] Entering activity: Sleep
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[1] [DBG] [CPS] Settings loaded from file
+[2] [DBG] [UI] Using Lyra theme
+[2] [INF] [CLK] RTC clock read: 2026-11-09 21:02
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[2] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[232] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[232] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[233] [DBG] [SDREG] Fonts directory not found: /fonts
+[233] [DBG] [SDREG] Discovery complete: 0 families
+[233] [DBG] [SDFS] SD font system ready (0 families discovered)
+[233] [DBG] [MAIN] Fonts setup
+[233] [DBG] [ACT] Entering activity: Home
+[SIM] WAIT matched: [233] [DBG] [ACT] Entering activity: Home
+[238] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[258] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/win_sleep_wake/shots/wake.bmp

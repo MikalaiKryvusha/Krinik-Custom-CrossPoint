@@ -1,0 +1,89 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_ft_fixed/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_ft_fixed/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_ft_fixed/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-09 21:17
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[226] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_ft_fixed/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[226] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/win_ft_fixed/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[226] [DBG] [SDREG] Fonts directory not found: /fonts
+[226] [DBG] [SDREG] Discovery complete: 0 families
+[226] [DBG] [SDFS] SD font system ready (0 families discovered)
+[226] [DBG] [MAIN] Fonts setup
+[226] [DBG] [ACT] Entering activity: Boot
+[227] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[235] [DBG] [ACT] Exiting activity: Boot
+[235] [DBG] [ACT] Entering activity: Home
+[236] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [235] [DBG] [ACT] Entering activity: Home
+[249] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1339] [DBG] [ACT] Exiting activity: Home
+[1339] [DBG] [ACT] Entering activity: CrossPointWebServer
+[1339] [DBG] [WEBACT] Free heap at onEnter: 1048576 bytes
+[1339] [DBG] [WEBACT] Free heap after SD font cache release: 1048576 bytes
+[1339] [DBG] [WEBACT] Launching NetworkModeSelectionActivity...
+[1339] [DBG] [ACT] Pushed to activity stack, new size = 1
+[1339] [DBG] [ACT] Entering activity: NetworkModeSelection
+[1340] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1339] [DBG] [ACT] Entering activity: NetworkModeSelection
+[2437] [DBG] [ACT] Exiting activity: NetworkModeSelection
+[2437] [DBG] [ACT] Popped from activity stack, new size = 0
+[2437] [DBG] [ACT] Handling result for popped activity
+[2437] [DBG] [WEBACT] Network mode selected: Create Hotspot
+[2437] [DBG] [WEBACT] Starting Access Point mode...
+[2437] [DBG] [WEBACT] Free heap before AP start: 1048576 bytes
+[2637] [DBG] [WEBACT] Access Point started!
+[2637] [DBG] [WEBACT] SSID: CrossPoint-Reader
+[2637] [DBG] [WEBACT] IP: 127.0.0.1
+[2637] [DBG] [WEBACT] mDNS started: http://crosspoint.local/
+[2637] [DBG] [WEBACT] DNS server started for captive portal
+[2637] [DBG] [WEBACT] Free heap after AP start: 1048576 bytes
+[2637] [DBG] [WEBACT] Starting web server...
+[2637] [DBG] [WEBACT] Free heap before SD font cache release: 1048576 bytes
+[2637] [DBG] [WEBACT] Free heap before server alloc: 1048576 bytes
+[2637] [DBG] [WEB] [MEM] Free heap before begin: 1048576 bytes
+[2637] [DBG] [WEB] Network mode: AP
+[2637] [DBG] [WEB] Creating web server on port 80...
+[2637] [DBG] [WEB] [MEM] Free heap after WebServer allocation: 1048576 bytes
+[2637] [DBG] [WEB] Setting up routes...
+[2637] [DBG] [WEB] [MEM] Free heap after route setup: 1048576 bytes
+[2637] [DBG] [WEB] WebDAV handler initialized
+[2638] [DBG] [WEB] [SIM] WebServer running at http://127.0.0.1:8080/
+[2638] [DBG] [WEB] Starting WebSocket server on port 81...
+[2639] [DBG] [WS] [SIM] WebSocket server running at ws://127.0.0.1:8081/
+[2639] [DBG] [WEB] WebSocket server started
+[2639] [DBG] [WEB] Discovery UDP enabled on port 8134
+[2639] [DBG] [WEB] Web server started on port 80
+[2639] [DBG] [WEB] Access at http://127.0.0.1/
+[2639] [DBG] [WEB] WebSocket at ws://127.0.0.1:81/
+[2639] [DBG] [WEB] [MEM] Free heap after server.begin(): 1048576 bytes
+[2639] [DBG] [WEBACT] Web server started successfully
+[2639] [DBG] [LOOP] New max loop duration: 203 ms (activity: 203 ms)
+[2641] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[2787] [DBG] [WEB] [SIM] GET /
+[2787] [DBG] [WEB] Served root page
+[2815] [DBG] [WEB] [SIM] GET /api/files?path=/
+[2815] [DBG] [WEB] Scanning files in: /
+[2815] [DBG] [WEB] Served file listing page for path: /
+[2843] [DBG] [WEB] [SIM] POST /upload?path=/
+[2843] [DBG] [WEB] [UPLOAD] START: kccp_upload_probe.txt to path: /
+[2843] [DBG] [WEB] [UPLOAD] Free heap: 1048576 bytes
+[2844] [DBG] [WEB] [UPLOAD] File created successfully: /kccp_upload_probe.txt
+[2844] [DBG] [WEB] [UPLOAD] Complete: kccp_upload_probe.txt (3 bytes in 1 ms, avg 2.9 KB/s)
+[2844] [DBG] [WEB] [UPLOAD] Diagnostics: 1 writes, total write time: 0 ms (0.0%)
+[2844] [DBG] [EPB] Cache does not exist, no action needed
+[2844] [DBG] [BookCache] Done checking metadata cache for: /kccp_upload_probe.txt
+[2872] [DBG] [WEB] [SIM] GET /api/files?path=/
+[2872] [DBG] [WEB] Scanning files in: /
+[2872] [DBG] [WEB] Served file listing page for path: /
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/win_ft_fixed/shots/hotspot.bmp
+[10001] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10002] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10002] [DBG] [WEB] handleClient active, server running on port 80
