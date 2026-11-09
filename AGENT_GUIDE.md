@@ -565,8 +565,8 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
    разрешение телика» · «нахуя ты открываешь экранчик 800 на 480 на ПОЛОВИНУ МОЕГО ТЕЛЕВИЗОРА 4 К?» · «я просил
    вверху!» · «в окне виндовс без бордера и кнопок виндовс» · «1 к 1 по пикселям»`.
    **While another agent records the screen or measures (KUMM's quiet window), open no GUI window** — no simulator,
-   browser or file manager; the agreement is in that agent's message, the window ends with its «замеры закончены». The script still hard-codes the laptop's `$HOME/Xteink`
-   — fix it on first use here. `kuips-runner/` (`npm install`, KUIPS v1.3.0) is the UI test runner dependency.
+   browser or file manager; the agreement is in that agent's message, the window ends with its «замеры закончены». The script finds the workspace from its own location (no laptop
+   paths since 2026-11-09). `kuips-runner/` (`npm install`, KUIPS v1.3.0) is the UI test runner dependency.
 3. **The device** — the owner's Xteink X4 Pro (SD flash). The functional run on the real reader is the owner's;
    the agent prepares the image, the SHA256 and the checklist, and says "not verified on the reader" until he
    reports.

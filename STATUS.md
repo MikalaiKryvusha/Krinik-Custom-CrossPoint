@@ -23,8 +23,11 @@ work project. From now on it is a standalone project.
   2026-11-09 18:35–18:47: KAIF marks stripped (`2dbfff7d`, `d8573ad5`; grep → 0 on every `pr/*`); simulator runs
   done for both branches with controls — `testcases/TC_coderabbit_round2_redraw_delay.md`,
   `testcases/TC_coderabbit_round2_calibration.md`; status per comment in research 02. Not observable here:
-  `9448f2a5`, `4818dba0` (`!SIMULATOR`), `75b92fc0` (OOM). Next: device image of `pr/screen-redraw-delay` for the
-  owner's Q3 check, then the CodeRabbit reply texts for proofreading.
+  `9448f2a5`, `4818dba0` (`!SIMULATOR`), `75b92fc0` (OOM). Owner's word on sending, 2026-11-09 18:50 +03:00, after
+  seeing all 12 reply texts in the question preview: `[OWNER] «давай протестируем кнопку, и всё тправим»` (typed
+  first in the wrong layout: «jnghfdkztv jndtns» = «отправляем ответы»). Order: device image of
+  `pr/screen-redraw-delay` → the owner checks the power hold during the timer redraw on his reader → push both
+  branches → post the 12 replies of research 02 → "Reply drafts".
 - **Owner's bug 01 (2026-11-09 16:55):** Library tab «Недав...» → `bugs/01_library_tab_label_truncated.md`; fix
   `d2b45c0e` on the new branch `pr/library-tab-fit` (cut from `upstream/develop` f8db833f), red/green WebP shots in
   `qa_runs/tab_fit_before|after/`; the owner wants it as an upstream PR — it waits for a free slot (5/5 open).
