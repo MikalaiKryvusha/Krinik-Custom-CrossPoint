@@ -18,15 +18,15 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
 | #4328 | `ChapterHtmlSlimParser.cpp:3027` | Quick win | REPLY, no code (2026-11-09 15:22) — the path is not reachable in a parsed chapter; reply draft below |
 | #4332 | `SleepActivity.cpp:545` | Poor tradeoff | FIXED on the branch in ca5d9fa0 (below); only a reply to CodeRabbit is missing |
 | #4375 | `lib/I18n/translations/english.yaml:669` | Low value | REPLY, no code — owner, interview #003 Q1 = D (2026-11-09 15:43); reply draft below |
-| #4376 | `BmpViewerActivity.cpp:465` | Low value | FIX committed locally `d101e463` on `pr/screen-redraw-delay` — [NOT-TESTED], not built, not pushed |
-| #4376 | `src/main.cpp:541` | Low value | FIX committed locally `9448f2a5` on `pr/screen-redraw-delay` (path cleared in `redrawCustomImage`) — not built on the reader, not pushed |
-| #4376 | `src/main.cpp:722` | Heavy lift | FIX committed locally `4818dba0` (owner, interview #003 Q3 = B) — not built; the device check is the owner's |
-| #4376 | `src/SettingsList.cpp:74` | Low value | FIX committed locally `2d5bb845` (emit on every board, hide via `isHiddenOnDevice()`) — [NOT-TESTED], not pushed |
-| #4377 | `ImageBlock.cpp:47` | Low value | FIX committed locally `b661b6be` (owner, interview #003 Q2 = B) — not built |
-| #4377 | `ReaderUtils.h:273` | Low value | FIX committed locally `75b92fc0` (clear pending sub-section on OOM in `SettingsListActivity::openSection`) — [NOT-TESTED], not pushed |
-| #4377 | `CalibrationCard.cpp:192` | Low value | FIX committed locally `7addf5be` (valid UUID `…-8c51-6b65696e6b74`, card `books_card_v2.epub`, v1 removed) — [NOT-TESTED], not pushed |
+| #4376 | `BmpViewerActivity.cpp:465` | Low value | FIX `d101e463` — simulator run 2026-11-09 17:50: one settled redraw 60.2 s after the paint; Off → none in 68 s (testcases/TC_coderabbit_round2_redraw_delay.md C3, K2); not pushed |
+| #4376 | `src/main.cpp:541` | Low value | FIX `9448f2a5` (path cleared in `redrawCustomImage`) — compiled in the simulator; the timer path is `!SIMULATOR`, reader only; not pushed |
+| #4376 | `src/main.cpp:722` | Heavy lift | FIX `4818dba0` (owner, interview #003 Q3 = B) — `!SIMULATOR`, not compiled by the simulator; the device check is the owner's; not pushed |
+| #4376 | `src/SettingsList.cpp:74` | Low value | FIX `2d5bb845` — simulator run 17:42–17:45: X4 keeps `sleepRedrawDelay` (pre-fix drops it), X4 Pro shows the row (TC C1, C2, K1); not pushed |
+| #4377 | `ImageBlock.cpp:47` | Low value | FIX `b661b6be` (owner, interview #003 Q2 = B) — simulator run 18:45: `Removed 2`, current curve and non-`img_` kept; pre-fix keeps all (TC calibration C4, K3); not pushed |
+| #4377 | `ReaderUtils.h:273` | Low value | FIX `75b92fc0` (clear pending sub-section on OOM in `SettingsListActivity::openSection`) — OOM path not reproduced (named hole); not pushed |
+| #4377 | `CalibrationCard.cpp:192` | Low value | FIX `7addf5be` — simulator run 18:42: `books_card_v2.epub` written, v1 removed, UUID valid, book opens (TC calibration C3); not pushed |
 | #4377 | `CalibrationCardStorage.cpp:99` | Low value | ANALYSED — the current design is deliberate (below) |
-| #4377 | `PanelCurve.cpp:62` | Low value | FIX committed locally `b6477e41` (CodeRabbit's own diff) — [NOT-TESTED], not pushed |
+| #4377 | `PanelCurve.cpp:62` | Low value | FIX `b6477e41` — simulator run 18:36: `More than 256 values` logged, valid curve clean, pre-fix silent (TC calibration C1, C2, K1); not pushed |
 
 ## #4328-3 — queued anchors when `finishParse()` finds no text block (HEAD 27b28a36)
 

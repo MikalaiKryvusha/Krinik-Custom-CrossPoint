@@ -1,0 +1,125 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-09 15:42
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[223] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[224] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[224] [DBG] [SDREG] Fonts directory not found: /fonts
+[224] [DBG] [SDREG] Discovery complete: 0 families
+[224] [DBG] [SDFS] SD font system ready (0 families discovered)
+[224] [DBG] [MAIN] Fonts setup
+[224] [DBG] [ACT] Entering activity: Boot
+[224] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[233] [DBG] [ACT] Exiting activity: Boot
+[233] [DBG] [ACT] Entering activity: Home
+[234] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [233] [DBG] [ACT] Entering activity: Home
+[247] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1032] [DBG] [ACT] Exiting activity: Home
+[1032] [DBG] [ACT] Entering activity: SettingsList
+[1032] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1032] [DBG] [ACT] Entering activity: SettingsList
+[1835] [DBG] [ACT] Pushed to activity stack, new size = 1
+[1835] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[1835] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[1836] [DBG] [DREG] No /.dictionaries directory on SD card
+[1837] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1835] [DBG] [ACT] Entering activity: Settings
+[2734] [DBG] [ACT] Pushed to activity stack, new size = 2
+[2734] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2735] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2735] [DBG] [DREG] No /.dictionaries directory on SD card
+[2737] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[3153] [DBG] [ACT] Exiting activity: Settings
+[3153] [DBG] [ACT] Exiting activity: Settings
+[3153] [DBG] [ACT] Exiting activity: SettingsList
+[3153] [DBG] [UI] Using Lyra theme
+[3153] [DBG] [ACT] Entering activity: EpubReader
+[3153] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[3153] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[3154] [DBG] [GFX] Time = 419 ms from clearScreen to displayBuffer
+[3162] [DBG] [EBP] Loading ePub: /.crosspoint/calibration/books_card_v2.epub
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.crosspoint/epub_6111767555277650151/book.bin (flags=0x0 errno=2 No such file or directory)
+[3163] [DBG] [EBP] Cache not found, building spine/TOC cache
+[3163] [DBG] [BMC] Entering write mode
+[3163] [DBG] [BMC] Beginning content opf pass
+[3164] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[3164] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[3165] [DBG] [COF] Using fast index for 3 manifest items
+[3165] [DBG] [EBP] Successfully parsed content.opf
+[3165] [DBG] [EBP] OPF pass completed in 2 ms
+[3165] [DBG] [BMC] Beginning toc pass
+[3166] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[3166] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[3166] [DBG] [NAV] Found nav toc element
+[3166] [DBG] [NAV] Finished parsing nav toc
+[3166] [DBG] [EBP] Parsed TOC nav items
+[3166] [DBG] [EBP] TOC pass completed in 1 ms
+[3166] [DBG] [BMC] Wrote 1 spine, 1 TOC entries
+[3167] [DBG] [BMC] Successfully built book.bin
+[3167] [DBG] [EBP] buildBookBin completed in 1 ms
+[3167] [DBG] [EBP] Total indexing completed in 4 ms
+[3167] [DBG] [EBP] No CSS files to parse, but CssParser created for inline styles
+[3167] [DBG] [EBP] CSS files to parse: 0
+[3168] [DBG] [CSS] Saved 0 rules to complete cache
+[3168] [DBG] [EBP] Loaded 0 CSS style rules from 0 files (0 identical duplicates skipped, complete)
+[3168] [DBG] [BMC] Loaded cache data: 1 spine, 1 TOC entries
+[3168] [DBG] [EBP] Loaded ePub: /.crosspoint/calibration/books_card_v2.epub
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.crosspoint/epub_6111767555277650151/progress.bin (flags=0x0 errno=2 No such file or directory)
+[3168] [DBG] [EBP] Core Metadata: cover(0)=, textReference(0)=
+[3168] [DBG] [ERS] Loading file: OEBPS/card.xhtml, index: 0
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.crosspoint/epub_6111767555277650151/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[3169] [DBG] [ERS] Cache not found, building...
+[3169] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[3170] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_6111767555277650151/html/.tmp_0.html (274 bytes)
+[3170] [DBG] [CSS] Loaded 0 rules from complete cache
+[3171] [DBG] [EHP] Found image: src=card.png
+[3171] [DBG] [EHP] Image dimensions: 480x800
+[3171] [DBG] [EHP] Display size from CSS width: 267x445
+[3171] [DBG] [EHP] Time to parse and build pages: 0 ms
+[3171] [DBG] [SCT] Page 0 processed
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.crosspoint/epub_6111767555277650151/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[3172] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3174] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/cal_books_card/sd/.crosspoint/epub_6111767555277650151/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[3174] [DBG] [IMG] Lazy-extracting OEBPS/card.png -> /.crosspoint/epub_6111767555277650151/img_0_0.png
+[3176] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_6111767555277650151/img_0_0.png
+[3177] [DBG] [IMG] Using PNG decoder
+[3177] [DBG] [PNG] Decoding PNG: /.crosspoint/epub_6111767555277650151/img_0_0.png
+[3178] [DBG] [PNG] PNG 480x800 (visible 480x800) -> 267x445 (scale 0.56), type: 6, bpp: 8
+[3179] [DBG] [IMG] Cache stream started: /.crosspoint/epub_6111767555277650151/img_0_0.pxc (267x445, band 16 rows)
+[SIM] WAIT matched: [3153] [DBG] [ACT] Entering activity: EpubReader
+[3183] [DBG] [PNG] PNG decoding complete - render time: 4 ms
+[3183] [DBG] [IMG] Cache written: /.crosspoint/epub_6111767555277650151/img_0_0.pxc (267x445, 29819 bytes)
+[3183] [DBG] [IMG] Decode successful
+[3183] [DBG] [GFX] Time = 9 ms from clearScreen to displayBuffer
+[3184] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3185] [DBG] [IMG] Loading from cache: /.crosspoint/epub_6111767555277650151/img_0_0.pxc (267x445)
+[3185] [DBG] [IMG] Cache render complete (payload now in RAM)
+[3185] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3185] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3185] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3185] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3185] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3186] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3186] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3186] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3186] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3186] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3186] [DBG] [IMG] Rendering image at 269,8: /.crosspoint/epub_6111767555277650151/img_0_0.png (267x445)
+[3190] [DBG] [ERS] Page render (tiled): prewarm=0ms bw_render=11ms display=1ms gray_lsb=2ms gray_msb=0ms gray_display=4ms cleanup=0ms total=18ms
+[3190] [DBG] [ERS] Rendered page in 18ms
+[3193] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
