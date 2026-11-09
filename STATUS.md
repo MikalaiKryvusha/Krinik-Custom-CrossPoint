@@ -29,13 +29,20 @@ work project. From now on it is a standalone project.
      `TC_coderabbit_round2_calibration.md` §7). Found on the way: simulator `replaceFile` could not overwrite on Windows
      — fixed `ba46fb7` on simulator `windows` (LOCAL, its push is the owner's open question). 4 replies POSTED
      22:17–22:22 (owner «отправляй», #4328 «A»). WAITING FOR THE OWNER (research 02 → "Round 3 — posted"): #4376 —
-     owner 22:26 «Питание коротко: сон стоит» → his 20:14 check did not reach `holdWakes`; repeat with «Игнорировать»
-     is homework 01 → "Повтор …" (debug6 already on the reader); reply to CodeRabbit after it;
+     owner 22:26 «Питание коротко: сон стоит»; his repeat with «Игнорировать» 22:31–22:39 (homework 01): hold during the
+     redraw wakes ✅, click during the redraw sleeps ✅, and TWO defects → `bugs/03` (redraw timed from the last
+     non-waking press on debug6; LOST entirely on PR #4376) and `bugs/04` (click in the light linger cancels the
+     sleep; owner A1: click only with «Сон», else a hold). Fixes judged twice by an independent agent (round 1 REFUTED
+     the PR fix — the path was cleared before the re-arm), both now VERIFIED WITH CAVEATS: debug7 `2b150595`
+     (`wip/krinik-debug7`, local) built → `firmware-builds/cp-2.0.0-krinik-1.1.1-debug7.bin` (SHA256 `8662b4db…368f`),
+     smoke `qa_runs/smoke_2b150595`; PR `94e1c3a2` local, NOT pushed (x4pro compile check running). NEXT: reader on
+     `G:` → copy debug7 + card cleanup + eject → owner runs homework 02 → push `94e1c3a2`, reply CodeRabbit #4376.
+     Owner's open choice: the linger hold (400 ms) vs the redraw hold (≈ reset-to-sample) rules differ.
      #4377 `:115` truncated-card finding — decline draft to proofread. CI on `c9d69cbd`.
-     `firmware/` is checked out on `pr/screen-calibration` (was `wip/krinik-debug6`).
-  3. Card cleanup, PENDING (`[OWNER] 2026-11-09 20:09 «и образы старые поудаляй»` → question → «debug6 + debug5 + 1.1.2»): on the next reader connect (`G:`) delete from `/.firmware/`
-     `cp-2.0.0-krinik-1.1.1-debug3.bin`, `…-debug4.bin`, `crosspoint-2.0.0-x4pro.bin`, `cp-2.0.0-pr4376-2dbfff7d.bin`;
-     keep debug6 + debug5 + 1.1.2; then eject (`AGENT_GUIDE.md` → The device).
+  3. Card cleanup, PENDING (`[OWNER] 2026-11-09 20:09 «и образы старые поудаляй»`; rule: current debug + previous
+     debug + latest release): on the next reader connect (`G:`) delete from `/.firmware/` `…-debug3.bin`,
+     `…-debug4.bin`, `…-debug5.bin`, `crosspoint-2.0.0-x4pro.bin`, `cp-2.0.0-pr4376-2dbfff7d.bin`; keep debug7 + debug6 +
+     1.1.2; then eject (`AGENT_GUIDE.md` → The device).
 - **Open work, in order:**
   1. **Simulator upstream PR** (owner «делай» 20:13): research 01 → "Upstream PR readiness" — the in-script `SHOT`
      after a second `WAIT` saves nothing (reproduced 20:14, `qa_runs/shot_probe2`; main loop `simulator_main.cpp:17-32`

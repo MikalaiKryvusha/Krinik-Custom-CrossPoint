@@ -1132,6 +1132,10 @@ cognition» (80% deterministic / 20% the model); it is stated once there and app
   CodeRabbit finding is a claim, not an order. Before fixing or reporting it as "valid", trace it in the code
   yourself (the path it names, who calls it, what actually shows); then fix, or decline with the reason in a reply.
   Its own "fixed / withdrawn" verdicts are also claims — it has withdrawn findings it got wrong (#4328, #4377).
+- **Order after a code change: independent review FIRST, build after** (`[OWNER] 2026-11-09 22:43–22:45 «после
+  изменений кода - запустишь независимого судью на ревью» · «а нахуя собирать?» · «ты уже ревью кода прошёл?»`). The
+  judge is a fresh agent given the diff and the owner's requirements, not the author's conclusions; its findings are
+  fixed before any build, smoke or image.
 - **Debug-only aids** (the 20-minute battery log, debug menu items) never reach a release build.
 - **Languages:** code, comments, commit messages — English; on-device strings and owner-facing texts — Russian
   (STATUS.md → "Language contract").
