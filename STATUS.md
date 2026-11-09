@@ -35,14 +35,13 @@ work project. From now on it is a standalone project.
      sleep; owner A1: click only with «Сон», else a hold). Fixes judged twice by an independent agent (round 1 REFUTED
      the PR fix — the path was cleared before the re-arm), both now VERIFIED WITH CAVEATS: debug7 `2b150595`
      (`wip/krinik-debug7`, local) built → `firmware-builds/cp-2.0.0-krinik-1.1.1-debug7.bin` (SHA256 `8662b4db…368f`),
-     smoke `qa_runs/smoke_2b150595`; PR `94e1c3a2` local, NOT pushed (x4pro compile check running). NEXT: reader on
-     `G:` → copy debug7 + card cleanup + eject → owner runs homework 02 → push `94e1c3a2`, reply CodeRabbit #4376.
+     smoke `qa_runs/smoke_2b150595`; PR `94e1c3a2` local, NOT pushed (x4pro compile check running). x4pro compile of
+     `94e1c3a2` SUCCESS. 23:14 debug7 on the card (SHA256 checked there), card cleaned to debug7 + debug6 + 1.1.2,
+     reader ejected. NEXT: owner runs homework 02 → push `94e1c3a2`, reply CodeRabbit #4376.
      Owner's open choice: the linger hold (400 ms) vs the redraw hold (≈ reset-to-sample) rules differ.
      #4377 `:115` truncated-card finding — decline draft to proofread. CI on `c9d69cbd`.
-  3. Card cleanup, PENDING (`[OWNER] 2026-11-09 20:09 «и образы старые поудаляй»`; rule: current debug + previous
-     debug + latest release): on the next reader connect (`G:`) delete from `/.firmware/` `…-debug3.bin`,
-     `…-debug4.bin`, `…-debug5.bin`, `crosspoint-2.0.0-x4pro.bin`, `cp-2.0.0-pr4376-2dbfff7d.bin`; keep debug7 + debug6 +
-     1.1.2; then eject (`AGENT_GUIDE.md` → The device).
+  3. Card cleanup DONE 2026-11-09 23:14 (`[OWNER] 20:09 «и образы старые поудаляй»`; rule: current debug + previous
+     debug + latest release): `/.firmware/` = debug7 + debug6 + 1.1.2; reader ejected.
 - **Open work, in order:**
   1. **Simulator upstream PR** (owner «делай» 20:13): research 01 → "Upstream PR readiness" — the in-script `SHOT`
      after a second `WAIT` saves nothing (reproduced 20:14, `qa_runs/shot_probe2`; main loop `simulator_main.cpp:17-32`
