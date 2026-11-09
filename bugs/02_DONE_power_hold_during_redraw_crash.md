@@ -1,6 +1,8 @@
-# Bug 02 — PR #4376 test image: a power press during the timer redraw crashes the reader
+# Bug 02 — PR #4376 test image: a power press during the timer redraw looked like a crash — NOT A DEFECT
 
-**Status:** 🔴 OPEN · **Severity:** S1 (the owner's reader; outward send of #4376 stopped) · **Fixing:** this session
+**Status:** ✅ CLOSED 2026-11-09 19:10 +03:00 — not a defect: the press WOKE the reader (a CrossPoint wake from deep
+sleep is a full boot: CrossPoint boot screen → Home); the image kept running, no `/crash_report.txt`. Correction of
+the title and of the agent's chat line «прошивка упала» written before the facts. · **Severity:** was S1 (suspected)
 **Version/build:** `pr/screen-redraw-delay` `2dbfff7d` (contains `4818dba0`), image
 `firmware-builds/crosspoint-2.0.0-pr4376-2dbfff7d-x4pro.bin` (SHA256 `ad34ece5…c975`) · **When/context:**
 2026-11-09 19:05 +03:00, homework 01 step 4, on the owner's X4 Pro.
@@ -39,6 +41,17 @@ reader came up looking like stock CrossPoint (the test image has no KCCP, so a r
 Read the crash report (backtrace address → `xtensa-esp32s3-elf-addr2line` on `firmware.elf` of `2dbfff7d`), then fix
 the class it names; device re-check by the owner after a simulator smoke of the same commit.
 
+## Resolution (2026-11-09 19:06–19:10 +03:00)
+
+- Card read over USB: no `/crash_report.txt` (a panic writes it on the next boot of the same app, `HalSystem.cpp:107`).
+- Owner, in answers: first «Заводская Xteink», then corrected `[OWNER] «ой, не на заводской» · «а на стоковом
+  кроспоинте»`; then on the decisive check `[OWNER] «Строка есть, была загрузка»` — «Обновлять заставку» is present
+  (only the #4376 test image has it) and the screen showed the CrossPoint boot, then Home.
+- Verdict: homework 01 step 4 PASS (the hold during the redraw woke the reader). Step 5 (no press → stays asleep)
+  still to run.
+- Lesson for the next device check: tell the owner in advance what a successful wake looks like on this build (boot
+  screen → Home), so a correct result is not read as a crash.
+
 ## Decisions made without the owner
 
-- none yet.
+- none.
