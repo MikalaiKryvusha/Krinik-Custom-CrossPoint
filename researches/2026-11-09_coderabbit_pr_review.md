@@ -137,15 +137,27 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
 - **#4375 `english.yaml:669`:** owner, interview #003 Q1: «ничего не меняем - пояснение абстрактное и придирка
   кодрабит несостоянельна.» Draft: "Keeping the note as it is. It says what screen cleans do in general terms; how
   often they run is the Refresh Frequency setting right above it, Never included."
-- **#4377 `ImageBlock.cpp:47`:** fixed in b661b6be (owner, interview #003 Q2 = B): the first decode of a book session
-  sweeps the book's cache folder once and removes `img_*.pxc` written with another curve. Reply after the simulator run.
-- **#4376 `main.cpp:722`:** fixed in 4818dba0 (owner, interview #003 Q3 = B): the redraw ISR times both edges; a
-  completed hold at least as long as this boot's `millis()` at the wake sample (the hold a normal power wake needs)
-  wakes the reader. Reply after the owner's check on the reader.
-- Fix replies (after the build and the simulator run, with the commit hash): #4376 ×2, #4377 ×3.
+- **#4377 `ImageBlock.cpp:47`:** "Fixed in b661b6be: the first image decode of a book session sweeps the book's cache
+  folder once and removes `img_*.pxc` files written with another curve (or without one), keeping the current
+  curve's caches. Opening a book starts a new sweep."
+- **#4376 `main.cpp:722`:** "Fixed in 4818dba0: during the timer redraw the interrupt now watches both edges and
+  keeps the longest completed hold. A hold at least as long as a normal power wake needs (the time from reset to
+  the wake sample in this boot) wakes the reader instead of sending it back to sleep." — post after the owner's
+  check on the reader.
+- **#4376 `main.cpp:541`:** "Fixed in 9448f2a5: `redrawCustomImage()` clears the recorded path once the redraw has
+  painted, so a later sleep that skips `SleepActivity` has no stale path to arm a timer with."
+- **#4376 `BmpViewerActivity.cpp:465`:** "Fixed in d101e463: the paint time is loaded before `millis()` is sampled."
+- **#4376 `SettingsList.cpp:74`:** "Fixed in 2d5bb845: the setting is now emitted on every board and hidden off the X4
+  Pro through `isHiddenOnDevice()`, so another board keeps `sleepRedrawDelay` when it saves the settings file."
+- **#4377 `ReaderUtils.h:273`:** "Fixed in 75b92fc0: `SettingsListActivity::openSection()` clears the pending
+  sub-section when the section cannot open."
+- **#4377 `CalibrationCard.cpp:192`:** "Fixed in 7addf5be: the identifier is now a valid UUID. The card file moved to
+  `books_card_v2.epub` so a card written with the old identifier is not reused, and the v1 file is removed."
+- **#4377 `PanelCurve.cpp:62`:** "Fixed in b6477e41 as suggested."
+- #4328 ×2 (`:345`, `:1411`) are already marked addressed by CodeRabbit (27b28a3) — no reply needed.
 
 ## Next
 
-1. Toolchain after the KAGO lock (STATUS → "Where to continue").
-2. Walk the remaining 11 open comments the same way: claim → INTENT line → verdict → fix or reply draft.
-3. Reply drafts to CodeRabbit go to the owner for proofreading; nothing is posted or pushed without his word.
+1. Owner proofreads the reply drafts above (`[AI]`, English, his name) — nothing is posted before his word.
+2. Device image of `pr/screen-redraw-delay` for the owner's check of #4376 `main.cpp:722` (Q3).
+3. Push of `pr/screen-redraw-delay` and `pr/screen-calibration` — on the owner's word.
