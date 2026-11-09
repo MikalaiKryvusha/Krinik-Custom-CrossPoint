@@ -26,7 +26,7 @@
 - **Шаги:** клон форка `crosspoint-reader` с SDK в `firmware/`; установка PlatformIO, CMake, Node; билд
   `x4pro-krinik-debug`, `ctest`, симулятор; KAIF 2.9 + 2.10 WIP; перенос `legacy/` в `STATUS.md`,
   `PROJECT_HISTORY.md`, `EXPERIENCE.md`.
-- **Статус:** 🔧 KAIF развёрнут 2026-11-09; клон и toolchain не восстановлены.
+- **Статус:** 🔧 KAIF развёрнут 2026-11-09; `firmware/` склонирован; MSYS2 UCRT64 и PlatformIO стоят с 2026-11-09 15:24 +03:00; симулятор под Windows портируется (ресёрч 01); сборка под читалку и `ctest` на ПК ещё не запускались.
 
 ### Фаза 1 — переименование прошивки krinik → KCCP
 

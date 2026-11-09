@@ -27,14 +27,12 @@ work project. From now on it is a standalone project.
 - Toolchain installed 2026-11-09 15:18–15:24 (lock `kccp` taken until 16:03): MSYS2 UCRT64 in `D:\msys64`,
   PlatformIO 6.2.0 in `.pio-venv/`, envs `simulator_win` / `simulator_x4_pro_win` in the ignored
   `firmware/platformio.local.ini` (research 01 → "Installed on this PC"). Partial `C:\msys64` still to delete.
-- PARKED 2026-11-09 15:25 +03:00: NO builds, compiles, tests, installs or downloads until the KUMM session (`kumm-5d`) sends
-  «замеры закончены, машина твоя» — owner's request relayed by KUMM during its FPS benchmark («no exceptions»). Text
-  edits and plain git are allowed. Machine lock `kccp` released at the same moment. Resume: rebuild
-  `simulator_x4_pro_win` (first build failed on `MD5Builder.h`, `SimHttpFetch.h` `sys/wait.h`, `strlcpy`; the whole
+- Build pause 2026-11-09 15:25 → 16:41 +03:00 (KUMM FPS benchmark) is OVER: KUMM sent «замеры закончены, машина
+  твоя» at 16:41. Resume: rebuild `simulator_x4_pro_win` (first build failed on `MD5Builder.h`, `SimHttpFetch.h` `sys/wait.h`, `strlcpy`; the whole
   POSIX inventory is ported in `simulator` `d9adeea`, branch `windows`, NOT compiled yet — research 01 → "Port progress").
 - **Next:** port the simulator until `simulator_x4_pro_win` builds and opens → run the fixes of
   `pr/screen-redraw-delay` and `pr/screen-calibration` → strip the marks → ask the owner before any push or reply. Owner's open questions: proofread GOAL.md; push of this repo (`git log --oneline origin/main..HEAD` — 10 commits on 2026-11-09 15:01, this closing adds 1
-  more); #4375 note wording; #4377 ImageBlock cache choice.
+  more); the CodeRabbit reply texts (after the runs).
 - KNOWLEDGE: the simulator needs a native-Windows port, WSL is never used · `AGENT_GUIDE.md` → Build, research 01;
   the PC is shared with the KAGO agent (machine lock) · `AGENT_GUIDE.md` → Build, `EXPERIENCE.md` EXP-0002.
 

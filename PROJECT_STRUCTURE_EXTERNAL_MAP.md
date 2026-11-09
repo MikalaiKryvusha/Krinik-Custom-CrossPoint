@@ -31,7 +31,10 @@ KCCP/                         # the reader workspace — NO firmware source here
 ├── STATUS.md · GOAL.md · MASTER_PLAN.md · AGENT_GUIDE.md …   # KAIF canon (KAIF_FRAMEWORK.md lists it)
 ├── plans/ ideas/ bugs/ homeworks/ reports/   # KAIF working dirs (each with its README)
 ├── .kaif/ · .claude/ .agents/ .grok/ .cline/ .roo/   # KAIF machinery and agent skills
-└── firmware/                 # (ignored) clone of MikalaiKryvusha/crosspoint-reader + freeink-sdk submodule
+├── simulator/                # (ignored) clone of MikalaiKryvusha/crosspoint-simulator, branch windows (native Windows port)
+├── .pio-venv/                # (ignored) PlatformIO Core venv for this PC
+└── firmware/                 # (ignored) clone of MikalaiKryvusha/crosspoint-reader + freeink-sdk submodule;
+                              #   firmware/platformio.local.ini (ignored) holds this PC's simulator envs
 ```
 
 ## What each part is
