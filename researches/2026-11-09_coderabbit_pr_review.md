@@ -181,3 +181,22 @@ bots can be wrong"). Fix `c9d69cbd` pushed to the fork 22:17; evidence `testcase
   sleeps on, wakes it as well." — the owner's words, homework 01, 2026-11-09 20:14 (debug6 = this fix on KCCP).
 - **#4328 `ChapterHtmlSlimParser.cpp:3027`** (offers a follow-up issue for the post-table allocation failure) —
   OWNER DECIDES: open an issue, or reply "Thanks, no follow-up for now: that allocation failure predates this PR."
+
+### Round 3 — posted and CodeRabbit's answers (2026-11-09 22:17–22:23 +03:00)
+
+Posted after the owner's «отправляй» (22:17, his text pasted verbatim): #4377 `:17` → 4516902206, #4377 `:104` →
+4516902634, #4376 `main.cpp:752` → 4516903168; #4328 `:3027` → 4516957471 after his «A» (22:22). CodeRabbit:
+- #4377 `:17`, `:104` — accepted (4516947066, 4516958334).
+- #4376 `main.cpp:752` (4516908054) asks whether the check covered a hold that STARTED AND ENDED during the redraw with
+  `shortPwrBtn` ≠ SLEEP. Traced: `main.cpp:740-741` — with SLEEP any press wakes (`clickWakes`); the hold timing
+  (`holdWakes`) matters only for the other values. The owner's reader setting is unknown (the simulator template has
+  `"shortPwrBtn":1` = SLEEP) — if his reader is on SLEEP, his 20:14 check did not touch `holdWakes`. OPEN, owner.
+- #4377 `CalibrationCardStorage.cpp:115` NEW Minor (4516939912): a truncated EPUB with its metadata cache intact is
+  reused. Traced: the card is written to `.tmp` and moved in by `replaceFile`, so the app never leaves a half card;
+  `d8573ad5` reused ANY existing card (`if (Storage.exists(BOOKS)) return true;`), so not introduced by `c9d69cbd`;
+  "Clear reading cache" recovers — without a cache `loadMetadata()` opens the zip, fails, and the card is rewritten.
+  Draft (owner proofreads): "The card is written to a temporary file and moved into place only when complete, so the
+  reader never leaves a truncated card behind; damage from outside (a failing SD card) also hit the previous version,
+  which reused any existing file. If it happens, clearing the reading cache recovers: without a cache the title is
+  read from the EPUB itself, that read fails, and the card is written again. Validating the whole archive on every
+  open costs more than this case is worth, so I would leave it."

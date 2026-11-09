@@ -83,6 +83,19 @@
 
 <!-- class-ok: shell-lied — two unlike faces of Windows defaults (cp1251 stdout for Python, CRLF checkout); each is closed at its source (PYTHONUTF8=1 in the AGENT_GUIDE Build line, core.autocrlf=false in the firmware clone); a build wrapper that sets both is the mechanism to add next -->
 
+### EXP-0008 · 2026-11-09 · ❌→✅ · #shell #grep #stackdump
+class: tool-crash
+none-cheap: use the Grep tool or `git grep`; the carrier is the Trigger below
+**Context:** reading code of other branches with `git show <branch>:<file> | grep …` in Git Bash (CodeRabbit round 3).
+**Tried / did:** three times `grep` died with «Aborted (core dumped)» mid-pipe (exit 134) and left a
+`grep.exe.stackdump` in the current folder (`firmware/`, the KCCP root) — untracked garbage in the tree.
+**Result:** ✅ the output was re-read another way (`sed -n`, `git grep <branch>`); the dumps were moved to `D:\Temp` and deleted.
+**Lesson:** Git Bash `grep` on a long piped input is unreliable here; search branch code with `git grep <branch> -- <path>`
+or the Grep tool, and check `git status` for `*.stackdump` after a crash.
+**Repro:** `git status --short | grep -c stackdump` → 0 after any search session.
+**Trigger:** piping `git show` / big output into `grep` from Git Bash.
+**Not for:** the Grep tool and `git grep`, which did not crash.
+
 ### EXP-0007 · 2026-11-09 · ❌→✅ · #build #git #crlf
 class: shell-lied
 none-cheap: one clone setting; the carrier is AGENT_GUIDE.md → Build

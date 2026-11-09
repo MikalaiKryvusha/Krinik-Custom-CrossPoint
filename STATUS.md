@@ -27,8 +27,11 @@ work project. From now on it is a standalone project.
      card only while `Epub::loadMetadata()` title == current language, else `clearBookCache` + rewrite via
      `Storage.replaceFile`; v1 cache cleared. Simulator: RU→EN title, reuse, control on `d8573ad5` red (testcases
      `TC_coderabbit_round2_calibration.md` §7). Found on the way: simulator `replaceFile` could not overwrite on Windows
-     — fixed `ba46fb7` on simulator `windows` (LOCAL, its push is the owner's open question). WAITING FOR THE OWNER:
-     proofread 4 reply drafts (research 02 → "Round 3"), decide #4328 follow-up issue; CI on `c9d69cbd`.
+     — fixed `ba46fb7` on simulator `windows` (LOCAL, its push is the owner's open question). 4 replies POSTED
+     22:17–22:22 (owner «отправляй», #4328 «A»). WAITING FOR THE OWNER (research 02 → "Round 3 — posted"): #4376 —
+     owner 22:26 «Питание коротко: сон стоит» → his 20:14 check did not reach `holdWakes`; repeat with «Игнорировать»
+     is homework 01 → "Повтор …" (debug6 already on the reader); reply to CodeRabbit after it;
+     #4377 `:115` truncated-card finding — decline draft to proofread. CI on `c9d69cbd`.
      `firmware/` is checked out on `pr/screen-calibration` (was `wip/krinik-debug6`).
   3. Card cleanup, PENDING (`[OWNER] 2026-11-09 20:09 «и образы старые поудаляй»` → question → «debug6 + debug5 + 1.1.2»): on the next reader connect (`G:`) delete from `/.firmware/`
      `cp-2.0.0-krinik-1.1.1-debug3.bin`, `…-debug4.bin`, `crosspoint-2.0.0-x4pro.bin`, `cp-2.0.0-pr4376-2dbfff7d.bin`;
