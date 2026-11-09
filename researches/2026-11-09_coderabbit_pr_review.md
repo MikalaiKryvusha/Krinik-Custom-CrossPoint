@@ -20,13 +20,13 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
 | #4375 | `lib/I18n/translations/english.yaml:669` | Low value | ANALYSED — string draft waits for the owner (below) |
 | #4376 | `BmpViewerActivity.cpp:465` | Low value | FIX committed locally `d101e463` on `pr/screen-redraw-delay` — [NOT-TESTED], not built, not pushed |
 | #4376 | `src/main.cpp:541` | Low value | ANALYSED — fix needs the sleep call order (below) |
-| #4376 | `src/main.cpp:722` | Heavy lift | OPEN |
-| #4376 | `src/SettingsList.cpp:74` | Low value | OPEN |
-| #4377 | `ImageBlock.cpp:47` | Low value | OPEN |
-| #4377 | `ReaderUtils.h:273` | Low value | OPEN |
-| #4377 | `CalibrationCard.cpp:192` | Low value | OPEN |
-| #4377 | `CalibrationCardStorage.cpp:99` | Low value | OPEN |
-| #4377 | `PanelCurve.cpp:62` | Low value | OPEN |
+| #4376 | `src/main.cpp:722` | Heavy lift | ANALYSED — needs a design + device check (below) |
+| #4376 | `src/SettingsList.cpp:74` | Low value | FIX committed locally `2d5bb845` (emit on every board, hide via `isHiddenOnDevice()`) — [NOT-TESTED], not pushed |
+| #4377 | `ImageBlock.cpp:47` | Low value | ANALYSED — design tradeoff, reply or fix is the owner's call (below) |
+| #4377 | `ReaderUtils.h:273` | Low value | FIX committed locally `75b92fc0` (clear pending sub-section on OOM in `SettingsListActivity::openSection`) — [NOT-TESTED], not pushed |
+| #4377 | `CalibrationCard.cpp:192` | Low value | FIX committed locally `7addf5be` (valid UUID `…-8c51-6b65696e6b74`, card `books_card_v2.epub`, v1 removed) — [NOT-TESTED], not pushed |
+| #4377 | `CalibrationCardStorage.cpp:99` | Low value | ANALYSED — the current design is deliberate (below) |
+| #4377 | `PanelCurve.cpp:62` | Low value | FIX committed locally `b6477e41` (CodeRabbit's own diff) — [NOT-TESTED], not pushed |
 
 ## #4328-3 — queued anchors when `finishParse()` finds no text block (HEAD 27b28a36)
 
@@ -75,10 +75,33 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
   wipes the path `SleepActivity` has just set. Verify on the simulator: power press during a timer redraw → no second
   timer for the old path in the log.
 
+## #4376 — a valid power hold during the timer redraw is lost (`main.cpp:700-721`, HEAD d7cc4e83)
+
+- During `redrawCustomImage()` an interrupt only sets `settledRedrawPress` (edge seen). After it: wake if
+  `settledRedrawPress && shortPwrBtn == SLEEP`, else `gpio.verifyPowerButtonWakeup()` — which samples the button NOW.
+  A hold that starts and ends inside the redraw, long enough to wake normally, is therefore ignored when `shortPwrBtn`
+  is not SLEEP. Claim holds by code.
+- Candidate fix `[AI]`: the ISR records press and release times (`millis()` on both edges, `CHANGE`); after the redraw,
+  a completed hold ≥ the normal wake hold time counts as a wake request. Needs the wake threshold from
+  `verifyPowerButtonWakeup()` and a check on the reader (the simulator has no deep-sleep timer path) → the owner's
+  device test; propose to keep it out of this PR and answer CodeRabbit with the limit, if the owner agrees.
+
 ## #4376 — `BmpViewerActivity.cpp:465` (fixed locally, d101e463)
 
 `millis() - paintedAtMs.load()` → paint time loaded into a local first, then `millis()`; the writer
 (`render()` → `paintedAtMs` relaxed, `imagePainted` release) and the reader's acquire stay paired.
+
+## #4377 — two design tradeoffs (HEAD f90b29b4)
+
+- **`ImageBlock.cpp:47` superseded curve caches.** `getCachePath()` names a pixel cache `<image>_k<hash>.pxc` per
+  book tone curve; a new curve leaves the old caches on the card. CodeRabbit's number: 4 obsolete curves × 500 images
+  at 482×728 ≈ 176 MB. Claim holds by code. Options `[AI]`: (a) on a curve change, remove `*_k*.pxc` whose hash is not
+  the current one (a directory walk per book on the first image); (b) reply: curves change rarely (one calibration per
+  panel), the card is the user's, a "Clear reading cache" action already exists (`STR_CLEAR_READING_CACHE`).
+- **`CalibrationCardStorage.cpp:99` reuse both picture-card orientations.** `picturesCard()` keeps ONE card in the folder
+  on purpose (comment: "the viewer pages through its siblings") and rewrites 1.15 MB when the orientation changes.
+  CodeRabbit proposes caching both and excluding the unused one from sibling navigation. Verdict `[AI]`: the current
+  design trades a rare rewrite for no special case in the viewer; propose a reply with that reason.
 
 ## Next
 
