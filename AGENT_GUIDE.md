@@ -576,7 +576,13 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
    (`wip/krinik-debug*`, env `x4pro-krinik-debug`) with the change under test ported onto it; never a bare upstream
    `pr/*` build (it drops his Home «Сон» and «Фонарик», the Russian About and the rest of KCCP). `[OWNER] 2026-11-09
    19:11 +03:00 · chat: «ну так ты мне мои дебаг сборки ставь, а не гоавно всякое» · «я тестирую ТОЛЬКО НА KCCP дебаг и
-   релиз сборках!» · «я не не буду пользоваться оригинальным CP» · «мы им только контрибьютим наши лучшие наработки»`. The functional run on the real reader is the owner's;
+   релиз сборках!» · «я не не буду пользоваться оригинальным CP» · «мы им только контрибьютим наши лучшие наработки»`.
+   **After copying an image to the reader's card, eject the reader at once** (the card is `G:` when it is on the wire):
+   `(New-Object -ComObject Shell.Application).Namespace(17).ParseName("G:").InvokeVerb("Eject")`, then check that
+   `Test-Path G:\` is `False`. `[OWNER] 2026-11-09 20:09 +03:00 · chat: «после того, как прошивку закинул - отключай
+   читалку, пусть будет правилом»`. Old images leave the card's `/.firmware/`; on 2026-11-09 the owner chose to keep
+   the current debug, the previous debug as the fallback, and the latest release (`«и образы старые поудаляй»` →
+   «debug6 + debug5 + 1.1.2»). The copies stay in `firmware-builds/`. The functional run on the real reader is the owner's;
    the agent prepares the image, the SHA256 and the checklist, and says "not verified on the reader" until he
    reports.
 
