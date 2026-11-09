@@ -1,0 +1,27 @@
+{
+  "kind": "interview",
+  "document": "interviews/interview_003_coderabbit_round2.md",
+  "by": "Mikalai Kryvusha",
+  "at": "2026-11-09T12:43:46.650Z",
+  "atHuman": "9 ноября 2026, 15:43 (+03:00)",
+  "comment": "",
+  "answers": {
+    "Q1": {
+      "choice": "D",
+      "text": "ничего не меняем - пояснение абстрактное и придирка кодрабит несостоянельна.",
+      "comment": ""
+    },
+    "Q2": {
+      "choice": "B",
+      "text": "",
+      "comment": ""
+    },
+    "Q3": {
+      "choice": "B",
+      "text": "",
+      "comment": ""
+    }
+  },
+  "rev": "bc9dbbe1cc3fb96d4ce698668e50263cb4398dc8fa0760f10f13553ed525f20b",
+  "revAfter": "1004bb257a5e4419174f76a0bf032b0a20aea050034d9265ab65e62ae5c31724"
+}
