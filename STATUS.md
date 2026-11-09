@@ -50,7 +50,7 @@ work project. From now on it is a standalone project.
      defect is NOT A DEFECT (23:50, research 01 — my probe had QUIT at 500 ms before SHOT at 800 ms). Windows checks
      2026-11-10 00:02–00:35 (research 01): HTTP ✅, clock = UTC as documented, X4 env ✅; File Transfer (empty reply,
      `dup()` of a Winsock socket) and sleep/wake (caller not waiting, exit status lost) fixed in `dfd450a` (local,
-     judged twice, runs pass with controls); kill-the-waiter test not run (permission refused). `bugs/05` (firmware
+     judged twice, runs pass with controls, kill-the-waiter PASS after the owner's «РАЗРЕШАЮ» 00:46). `bugs/05` (firmware
      UDP `close()` on Windows) — found by reading, not reproduced. NEXT: squash 8 local commits, PR text for the
      owner's proofreading, his word to push `windows`.
   2. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — five themes checked; waits for a free upstream

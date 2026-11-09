@@ -102,8 +102,10 @@ The firmware's own simulator paths may hold more POSIX — found only by compili
   - Sleep/wake (`win_sleep_wake_fixed`): `sim_run.sh` now waits — `wake.webp` present. Control: `win_sleep_wake`
     (before) — the script returned before the woken shot.
   - Exit status (`win_wake_exitcode`): a woken instance whose WAIT times out exits 1, and the run returns `exit 1`.
-  - Kill of the top waiter (job object) — NOT run: the permission system refused stopping the process; the run ended
-    by its own QUIT, no `program.exe` left after (`win_wake_kill`).
+  - Kill of the top waiter (job object) — PASS 00:48 after `[OWNER] 2026-11-10 00:46 «РАЗРЕШАЮ»`
+    (`win_wake_kill2`): tree `timeout` → `program.exe` 9120 (waiter) → `program.exe` 11604 (woken, on Home); stopping
+    9120 alone left 0 `program.exe`. (A first try at 00:46 stopped the only process before the sleep — my wait loop
+    ended on its own 30 s timeout and printed "up" anyway; not counted.)
   - X4 (non-Pro) `simulator_win` builds and boots: Home with the button hints, DOWN DOWN ENTER opens File Transfer
     (`win_x4_smoke`).
   Left for the PR: squash the 8 local commits, PR text (owner proofreads), the owner's word to push `windows`; macOS
