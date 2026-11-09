@@ -103,6 +103,18 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
   CodeRabbit proposes caching both and excluding the unused one from sibling navigation. Verdict `[AI]`: the current
   design trades a rare rewrite for no special case in the viewer; propose a reply with that reason.
 
+## Reply drafts for the CodeRabbit threads — NOT posted, the owner proofreads first `[AI]`
+
+- **#4332 `SleepActivity.cpp:545`:** "Fixed in ca5d9fa0: the unsaved position is kept in RTC memory (`RTC_DATA_ATTR`,
+  survives deep sleep) and takes priority over `sleep_last.txt` until a write succeeds; a cold boot falls back to the
+  card. Host tests in `test/sleep_image_cursor/`."
+- **#4377 `CalibrationCardStorage.cpp:99`:** "Intentional: the folder holds one picture card so the viewer's sibling
+  navigation needs no special case. An orientation change rewrites the card once; the calibration screen is opened
+  rarely, so the rewrite is cheaper than a second card plus a sibling filter."
+- **#4377 `ImageBlock.cpp:47`:** pending the owner's choice (cleanup on curve change, or reply pointing at "Clear
+  reading cache").
+- Fix replies (after the build and the simulator run, with the commit hash): #4376 ×2, #4377 ×3.
+
 ## Next
 
 1. Toolchain after the KAGO lock (STATUS → "Where to continue").
