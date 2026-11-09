@@ -71,6 +71,18 @@ The firmware's own simulator paths may hold more POSIX — found only by compili
 - Risk (b), seen in build 2: `windows.h` macros (via `winsock2.h`) inside the firmware's web-server TU — `WIN32_LEAN_AND_MEAN` and
   `NOMINMAX` are set; the compiler will show what is left.
 
+## Upstream PR readiness (2026-11-09 17:23 +03:00, owner asked «в апстрим симулятор Windows можем отправить?»)
+
+- `crosspoint-reader/crosspoint-simulator` takes outside PRs (#46–#61 by osteotek, gkaindl, lpla; no CONTRIBUTING.md);
+  we have 0 open there; our branch is level with `upstream/main` (0 commits behind).
+- Observed working: build, boot to Home, Home → Library, scripted keys, `WAIT`, screenshots, window placement.
+- Not yet observed: File Transfer web server (Winsock path, the `close()`-on-socket risk), HTTP fetch via curl/cmd,
+  sleep → wake relaunch (`SimulatorLifecycle` `execvp`), clock in UTC (UCRT `tzset`), the X4 (non-Pro) env, and that
+  macOS/Linux still build (no Linux here; WSL is never used — upstream CI #60 may cover it).
+- Missing for a PR: `sample-platformio-windows.ini` (the env from `firmware/platformio.local.ini`, with the three
+  build workarounds: `-include stdint.h`, `-std=gnu17`, `-Dmemcpy_P=memcpy`), a README section replacing "Native
+  Windows is not supported", the four commits squashed, PR text for the owner's proofreading.
+
 ## Plan
 
 1. Toolchain: `winget install MSYS2.MSYS2`; `pacman -S mingw-w64-ucrt-x86_64-{gcc,SDL2,openssl,cmake,ninja,pkgconf}`;
