@@ -1128,6 +1128,10 @@ cognition» (80% deterministic / 20% the model); it is stated once there and app
   minimal and reads like upstream code; KCCP-only behaviour stays out of `pr/*` branches. KAIF test markers
   (`[NOT-TESTED]` / `[TESTED: …]`) never go into code on `pr/*` branches — the test status of a PR fix lives in its
   research doc (`researches/2026-11-09_coderabbit_pr_review.md` for the CodeRabbit round).
+- **Reviewer bots can be wrong** (`[OWNER] 2026-11-09 20:32 «код рабит тоже может ошибаться, имей в виду»`): a
+  CodeRabbit finding is a claim, not an order. Before fixing or reporting it as "valid", trace it in the code
+  yourself (the path it names, who calls it, what actually shows); then fix, or decline with the reason in a reply.
+  Its own "fixed / withdrawn" verdicts are also claims — it has withdrawn findings it got wrong (#4328, #4377).
 - **Debug-only aids** (the 20-minute battery log, debug menu items) never reach a release build.
 - **Languages:** code, comments, commit messages — English; on-device strings and owner-facing texts — Russian
   (STATUS.md → "Language contract").

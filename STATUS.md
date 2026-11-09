@@ -15,6 +15,20 @@ work project. From now on it is a standalone project.
      benchmarks) and KAGO; during another agent's quiet window: no builds, no simulator, no GUI windows.
   2. Read CodeRabbit / maintainer answers on #4328 #4332 #4375 #4376 #4377:
      `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --jq '.[]|select(.in_reply_to_id!=null)'`.
+     READ [2026-11-09 20:30 +03:00]: all 12 replied threads resolved by CodeRabbit, no maintainer comments, CI green on #4376/#4377.
+     OPEN: #4377 new round on `d8573ad5`, two Minor — `CalibrationCardStorage.cpp:17` (books card keeps the old-language
+     title, written once) and `:104` (v1 EPUB's `/.crosspoint/epub_<hash>/` cache not removed); #4376 asks for an X4 Pro
+     hold/short-press check (owner did it on debug6 — reply); #4328 asks whether to open a follow-up issue (post-table OOM).
+     Traced by me (not taken on CodeRabbit's word): `:17` holds — the title is baked into the EPUB (`CalibrationCard.cpp`
+     dc:title/nav/page) and shown via `epub->getTitle()`; a fix must also drop the card's `epub_<hash>` cache (title is
+     cached in `book.bin`). `:104` is true but low value — v1 existed only inside this unmerged PR.
+     Owner 20:33 «да, это наш промах. Доработать нужно»; on `:104` «можно сделать строку для перестраховки, но написать,
+     что это несущественно». IN FLIGHT: `firmware/` is on `pr/screen-calibration`, UNCOMMITTED edit of
+     `CalibrationCardStorage.cpp` — `booksCard()` reuses the card only when `Epub::loadMetadata()` title == current
+     language title, else `clearBookCache(BOOKS)` + rewrite; `writeFile` uses `Storage.replaceFile` (rewrite over an
+     existing card); v1 cache cleared via `clearBookCache(BOOKS_V1)`. NOT BUILT — KUMM quiet window to 21:15. Next:
+     `git submodule update` (freeink-sdk pointer left from debug6), build, simulator: open books card RU → switch EN →
+     reopen (title EN), reopen again (no rewrite in log); commit, push fork, reply on both threads.
   3. Card cleanup, PENDING (`[OWNER] 2026-11-09 20:09 «и образы старые поудаляй»` → question → «debug6 + debug5 + 1.1.2»): on the next reader connect (`G:`) delete from `/.firmware/`
      `cp-2.0.0-krinik-1.1.1-debug3.bin`, `…-debug4.bin`, `crosspoint-2.0.0-x4pro.bin`, `cp-2.0.0-pr4376-2dbfff7d.bin`;
      keep debug6 + debug5 + 1.1.2; then eject (`AGENT_GUIDE.md` → The device).
