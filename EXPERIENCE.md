@@ -81,6 +81,8 @@
 
 ## Entries
 
+<!-- class-ok: shell-lied — two unlike faces of Windows defaults (cp1251 stdout for Python, CRLF checkout); each is closed at its source (PYTHONUTF8=1 in the AGENT_GUIDE Build line, core.autocrlf=false in the firmware clone); a build wrapper that sets both is the mechanism to add next -->
+
 ### EXP-0007 · 2026-11-09 · ❌→✅ · #build #git #crlf
 class: shell-lied
 none-cheap: one clone setting; the carrier is AGENT_GUIDE.md → Build

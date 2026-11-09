@@ -160,4 +160,4 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
 
 1. Owner proofreads the reply drafts above (`[AI]`, English, his name) — nothing is posted before his word.
 2. Device image of `pr/screen-redraw-delay` for the owner's check of #4376 `main.cpp:722` (Q3).
-3. Push of `pr/screen-redraw-delay` and `pr/screen-calibration` — on the owner's word.
+3. Push of `pr/screen-redraw-delay` and `pr/screen-calibration` — DONE 2026-11-09 20:15 after `[OWNER] «давай протестируем кнопку, и всё тправим»` (18:50) and the reader check; the 12 replies posted the same minute.
