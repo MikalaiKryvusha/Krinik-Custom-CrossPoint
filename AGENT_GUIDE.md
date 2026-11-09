@@ -599,6 +599,10 @@ Grow this tooling over time; each command, stand and device gets its row in the 
   (STATUS.md, code map).
 - **Upstream allows five open PRs per author.** Never close a PR to free a slot; a ready PR waits in
   `qa_runs/prs-2026-11-06/queue.json`.
+- **Nothing sent out carries AI authorship** — no `Co-Authored-By: Claude` trailer in commits pushed to an upstream PR
+  branch, no AI signature in PR replies: `[OWNER] 2026-11-10 01:39 +03:00 · chat: «только без авторства ИИ»` (said
+  with «на все отпраки ДАЮ РАЗРЕШЕНИЕ»; PR #62's two commits were reworded and force-pushed the same minute).
+  Already-published history of this KCCP repo is not rewritten.
 - **A PR description carries no AI-participation line** (no «Generated with Claude Code» footer) —
   `[OWNER] 2026-11-10 01:09 +03:00 · chat: «без стррки участия ии»` (said on simulator PR #62, the footer removed at
   once). The text that goes out is exactly the proofread text. A repo's own template question («AI Usage») is answered

@@ -1,0 +1,70 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[4] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[5] [DBG] [UI] Using Lyra theme
+[5] [INF] [CLK] RTC clock read: 2026-11-09 22:47
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[5] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[215] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[215] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[215] [DBG] [SDREG] Fonts directory not found: /fonts
+[215] [DBG] [SDREG] Discovery complete: 0 families
+[215] [DBG] [SDFS] SD font system ready (0 families discovered)
+[215] [DBG] [MAIN] Fonts setup
+[215] [DBG] [ACT] Entering activity: Boot
+[216] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[223] [DBG] [ACT] Exiting activity: Boot
+[223] [DBG] [ACT] Entering activity: Home
+[223] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [223] [DBG] [ACT] Entering activity: Home
+[237] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1323] [DBG] [ACT] Exiting activity: Home
+[1323] [DBG] [ACT] Entering activity: SettingsList
+[1324] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1323] [DBG] [ACT] Entering activity: SettingsList
+[2227] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2227] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2227] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2227] [DBG] [DREG] No /.dictionaries directory on SD card
+[2228] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [2227] [DBG] [ACT] Entering activity: Settings
+[3329] [DBG] [ACT] Pushed to activity stack, new size = 2
+[3329] [DBG] [ACT] Entering activity: FontDownload
+[3329] [DBG] [ACT] Pushed to activity stack, new size = 3
+[3329] [DBG] [ACT] Entering activity: WifiSelection
+[3430] [DBG] [LOOP] New max loop duration: 101 ms (activity: 101 ms)
+[3430] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [3329] [DBG] [ACT] Entering activity: WifiSelection
+[3444] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[5133] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[5145] [DBG] [WIFI] Connected BSSID: 02:00:00:00:00:02, channel: 1, RSSI: -45 dBm
+[5145] [DBG] [WIFI] Connected with saved/open credentials, completing immediately
+[5145] [DBG] [ACT] Exiting activity: WifiSelection
+[5145] [DBG] [WIFI] Free heap at onExit start: 1048576 bytes
+[5145] [DBG] [WIFI] Deleting WiFi scan...
+[5145] [DBG] [WIFI] Free heap after scanDelete: 1048576 bytes
+[5145] [DBG] [WIFI] Free heap at onExit end: 1048576 bytes
+[5145] [DBG] [ACT] Popped from activity stack, new size = 2
+[5145] [DBG] [ACT] Handling result for popped activity
+[5146] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[5147] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr62_fix_fonts/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[5148] [DBG] [SDREG] Fonts directory not found: /fonts
+[5148] [DBG] [SDREG] Discovery complete: 0 families
+[5148] [DBG] [HTTP] Downloading: https://github.com/crosspoint-reader/crosspoint-fonts/releases/download/sd-fonts-m1-b4/fonts.json -> /fonts_manifest.tmp
+[5148] [DBG] [HTTP] wolfSSL GET: https://github.com/crosspoint-reader/crosspoint-fonts/releases/download/sd-fonts-m1-b4/fonts.json (heap 1048576, max block 1048576)
+[5489] [DBG] [HTTP] wolfSSL GET: https://github.com/crosspoint-reader/crosspoint-fonts/releases/download/sd-fonts-m1-b4/fonts.json (heap 1048576, max block 1048576)
+[5736] [DBG] [HTTP] Downloaded 29187 bytes
+[5780] [DBG] [FONT] Manifest loaded: 35 families, 9 script groups
+[5780] [DBG] [LOOP] New max loop duration: 635 ms (activity: 635 ms)
+[5781] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [5780] [DBG] [FONT] Manifest loaded: 35 families, 9 script groups

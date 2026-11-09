@@ -2,7 +2,7 @@
 
 **Build and run the simulator natively on Windows**, with the MSYS2 UCRT64 toolchain (gcc, SDL2, OpenSSL) and no WSL. Until now the README said "Native Windows is not supported; use WSL". With this PR the same firmware builds into a Windows `program.exe` that boots, takes scripted input and screenshots, serves the web manager, fetches over HTTPS through `curl`, and relaunches after sleep, as on macOS and Linux.
 
-Every platform change is behind `_WIN32`. Outside it there are only two thin wrappers (`simCloseSocket()` = `close()`, `simDupSocket()` = `dup()`), curl's `-w` argument passed through the existing `shellQuote()`, and three opt-in window variables, so macOS and Linux behave as before.
+Every platform change is behind `_WIN32`. Outside it there are only two thin wrappers (`simCloseSocket()` = `close()`, `simDupSocket()` = `dup()`), a 500 answer if `dup()` ever fails, and three opt-in window variables, so macOS and Linux behave as before; the POSIX code in `SimHttpFetch.h` and `HalStorage.cpp` is the same as on `main`.
 
 | X4 Pro | X4 | File Transfer → Hotspot | Manage Fonts over HTTPS |
 | --- | --- | --- | --- |
@@ -17,10 +17,11 @@ Every platform change is behind `_WIN32`. Outside it there are only two thin wra
 | Area | File | On Windows | On macOS / Linux |
 | --- | --- | --- | --- |
 | Sockets | `src/lwip/sockets.h` | Winsock behind the lwip names: one `WSAStartup()`, `send`/`recv`/`setsockopt` overloads for byte pointers and `timeval` timeouts, `fcntl(O_NONBLOCK)`, `SHUT_*` → `SD_*`; `<windows.h>` names that collide with firmware identifiers kept out (`Sleep()` renamed while Winsock is read; `IGNORE`, `ERROR`, `DELETE` and similar undefined) | unchanged; adds `simCloseSocket()` = `close()`, `simDupSocket()` = `dup()` |
-| Web server | `src/WebServer.cpp` | the handler's client is a Winsock duplicate (`simDupSocket()`) | same `dup()` as before |
+| Web server | `src/WebServer.cpp` | the handler's client is a Winsock duplicate (`simDupSocket()`); 500 if it cannot be made | same `dup()`; 500 if `dup()` fails (the handler used to run with fd -1) |
 | POSIX bits | `src/SimPosixCompat.h` | `mkdir(path, mode)`, `fsync`, `O_BINARY` on every `open()`, `setenv`/`unsetenv` over `_putenv_s` | not included |
-| HTTP | `src/SimHttpFetch.h` | temp file in `%TEMP%`, `cmd.exe` quoting, no `sys/wait.h` | `-w` argument now through `shellQuote()` |
-| Storage | `src/HalStorage.cpp` | free/used space via `std::filesystem::space()`; `replaceFile()` removes the old file first, as the device does (`rename()` cannot overwrite on Windows) | same results |
+| HTTP | `src/SimHttpFetch.h` | curl started with `CreateProcessW`, no shell: each argument quoted for the C runtime rules, the body from a temp file in `%TEMP%`, the URL via `--url` | unchanged |
+| Win32 calls | `src/SimWin32.{h,cpp}` | process launch with stdout capture, `MoveFileEx`; kept out of headers firmware includes | empty |
+| Storage | `src/HalStorage.cpp` | free/used space via `std::filesystem::space()`; `replaceFile()` through `MoveFileEx(REPLACE_EXISTING)`, which keeps the destination if the move fails (`rename()` cannot overwrite on Windows); `\` counts as a separator before the `..` check | unchanged |
 | Sleep/wake | `src/SimulatorLifecycle.cpp` | relaunch with `CreateProcessW`, wait, exit with the child's status | `execvp`, unchanged |
 | Window | `src/HalDisplay.cpp` | per-monitor DPI awareness before `SDL_Init` | – |
 | Window (all) | `src/HalDisplay.cpp` | `CROSSPOINT_SIM_WINDOW_POS`, `_PERCENT`, `_BORDERLESS` | same, opt-in |
@@ -92,11 +93,14 @@ Windows 11 (10.0.26200), MSYS2 gcc 16.2.0, SDL2 2.32.10, OpenSSL 3.6.5, Platform
 | Sleep → key → wake | ✅ the woken instance boots to Home and runs `CROSSPOINT_SIM_INPUT_SCRIPT_AFTER_WAKE`; the caller waits for it |
 | Exit status after a wake | ✅ a woken instance whose `WAIT` times out exits 1, and so does the top process |
 | Kill only the waiting process | ✅ the woken instance ends with it |
+| curl without a shell | ✅ a POST whose header held `a" & echo PWNED > <file> & "b %TEMP% c` and whose JSON body held quotes, `%TEMP%` and a newline arrives verbatim, no file is created (the `cmd.exe` version created it) |
+| `replaceFile()` | ✅ a missing source leaves the destination as it was; a present one replaces it |
+| Backslash paths | ✅ WebDAV `PUT /books%5C..%5C..%5Cx` is rejected by storage, nothing written outside the SD folder |
 | Window at 300 % display scale | ✅ 480×800 physical pixels, screenshots 480×800 |
 | macOS / Linux | not run here; the POSIX paths are unchanged. The Linux CI proposed in #60 would build this branch once it lands |
 
 ## Known limits
 
-* **The clock shows UTC.** The Windows C runtime reads only the simple `TZ` form, so a POSIX rule with daylight saving falls back to UTC. Noted in the README.
+* **Clock.** The Windows C runtime reads only the simple `TZ` form: fixed offsets (`MSK-3`) are exact, daylight saving follows the US dates whatever rule follows, and zone names that are not three letters (`AKST…`, `AEST…`) give a wrong local time. Measured, and noted in the README.
 * **Each sleep keeps one waiting process** until the woken one exits. That is the price of keeping the exit status; they end in order.
 * Not included: a Windows CI job.
