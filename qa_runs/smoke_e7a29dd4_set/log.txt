@@ -1,0 +1,43 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/smoke_e7a29dd4_set/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/smoke_e7a29dd4_set/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/smoke_e7a29dd4_set/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-09 17:08
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[221] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/smoke_e7a29dd4_set/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[222] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/smoke_e7a29dd4_set/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[222] [DBG] [SDREG] Fonts directory not found: /fonts
+[222] [DBG] [SDREG] Discovery complete: 0 families
+[222] [DBG] [SDFS] SD font system ready (0 families discovered)
+[222] [DBG] [MAIN] Fonts setup
+[222] [DBG] [ACT] Entering activity: Boot
+[222] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] SCREEN: CrossPoint | Загрузка | dev-simulator
+[230] [DBG] [ACT] Exiting activity: Boot
+[230] [DBG] [ACT] Entering activity: Home
+[230] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 17:08 | 100% | Нет открытой книги | Выберите книгу ниже | Обзор файлов | Библиотека | Передача файлов | Настройки | Фонарик | Сон
+[SIM] WAIT matched: [230] [DBG] [ACT] Entering activity: Home
+[245] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1126] [DBG] [ACT] Exiting activity: Home
+[1126] [DBG] [ACT] Entering activity: SettingsList
+[1126] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 17:08 | 100% | Настройки | dev-simulator | Система | Экран | Чтение | Кнопки | Библиотека | Подключения
+[SIM] WAIT matched: [1126] [DBG] [ACT] Entering activity: SettingsList
+[2027] [DBG] [ACT] Pushed to activity stack, new size = 1
+[2027] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/smoke_e7a29dd4_set/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[2027] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/smoke_e7a29dd4_set/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[2028] [DBG] [DREG] No /.dictionaries directory on SD card
+[2029] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 17:08 | 100% | Экран | Экран сна | Свой | Сон через | 10 мин | Режим обложки сна | Вписать | Порядок обложек сна | По порядку | Ориентация | По картинке | заставки сна | Подсветка на засыпании | 5 сек | Плавная подсветка | 200 мс | Фильтр экрана сна | Нет | Возобновление по таймауту | Скрыть % батареи | Никогда | Тема интерфейса | Lyra
+[SIM] WAIT matched: [2027] [DBG] [ACT] Entering activity: Settings
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/smoke_e7a29dd4_set/shots/display.bmp
