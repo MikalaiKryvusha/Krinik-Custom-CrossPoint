@@ -87,6 +87,9 @@ Versions are KCCP versions; 1.0.0–1.1.1 were released under the old name *krin
 | Precise temperature: dithering only at low brightness | ✅ | debug&nbsp;→&nbsp;next |
 | 🛠&nbsp;**DEBUG&nbsp;ONLY**: Battery log every 20 minutes | ✅ | debug4 |
 | "Sleep" item in the Home menu | ✅ | debug&nbsp;→&nbsp;next |
+| "Sleep" on Home shows its selection before the sleep starts | ✅ | debug8 |
+| Sleep-screen redraw timed from the sleep; a press that does not wake no longer shifts or cancels it | ✅ | debug7 |
+| Light lingering at sleep: with Short Power Button ≠ Sleep only a hold cancels the sleep, a click does not | ✅ | debug7 |
 
 | Planned | Status |
 |---|---|
@@ -247,6 +250,9 @@ CrossPoint firmware executable (it includes wolfSSL), with the source in the
 | Точная температура: дизеринг только на малой яркости | ✅ | debug&nbsp;→&nbsp;след. |
 | 🛠&nbsp;**ТОЛЬКО&nbsp;ДЛЯ&nbsp;ОТЛАДКИ**: Лог батареи раз в 20 минут | ✅ | debug4 |
 | Пункт «Сон» в главном меню | ✅ | debug&nbsp;→&nbsp;след. |
+| «Сон» на главном экране выделяется до начала сна | ✅ | debug8 |
+| Перерисовка заставки отсчитывается от ухода в сон; нажатие, которое не будит, её не сдвигает и не отменяет | ✅ | debug7 |
+| Подсветка на засыпании: при «Короткое нажатие PWR» не «Сон» сон отменяет только удержание, щелчок — нет | ✅ | debug7 |
 
 | В планах | Статус |
 |---|---|

@@ -16,7 +16,7 @@ work project. From now on it is a standalone project.
   2. Read reviews on simulator PR #62 (https://github.com/crosspoint-reader/crosspoint-simulator/pull/62) and on
      firmware PRs #4328 #4332 #4375 #4376 #4377:
      `gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`.
-     PR62_STATE_LINE
+     PR #62 at 02:10 +03:00: head `087cb54`, mergeable; CodeRabbit round 1 — all 4 threads resolved, the outside-diff finding acknowledged; `@coderabbitai review` → 02:16 «No actionable comments were generated in the recent review» over `ad131dc..087cb54`, check pass. **Goal reached (owner 01:36): no CodeRabbit remarks, the PR waits for a maintainer.** Replies: `qa_runs/pr-simulator-windows/replies-round1.md`.
   3. The reader card holds debug8 + debug7 + 1.1.2 (`/.firmware/`); the owner runs debug8.
 - **Open work, in order:**
   1. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — waits for a free upstream slot (5/5 open) and the
