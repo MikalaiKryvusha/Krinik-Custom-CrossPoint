@@ -62,7 +62,8 @@ Separate tickets for items 1–2 were NOT filed; they are listed here for the KA
 - `/fable-judge` pass over the install: **VERIFIED WITH CAVEATS.**
   - Re-run: placeholders grep → 0 hits in AGENT_GUIDE and all 5 skill trees; template `\`<` slots in maps/GOAL/
     MASTER_PLAN/KAIF_FRAMEWORK → 0; `git check-ignore` → portrait, markers, `KAIF.md`, loader all ignored; `check` above.
-  - Caveat 1: hooks not wired (harness refusal) — owner command `node .kaif/kaif-core.mjs wire-hooks`.
+  - Caveat 1 (closed 2026-11-09 14:38 +03:00): hooks were not wired by the agent (harness refusal); the owner ran
+    `node .kaif/kaif-core.mjs wire-hooks` himself — `15 of 15 KAIF hooks added`; `check` no longer warns.
   - Caveat 2: `checkpoint maps` was recorded before the maps were filled (friction 1); filled later in the session.
   - Caveat 3: build/test commands in AGENT_GUIDE are documented, NOT run — no `pio`, `cmake`, `firmware/` on this PC
     (UNVERIFIABLE here; Task 0 step 2).
