@@ -1,0 +1,20 @@
+{
+  "framework": "KAIF",
+  "version": "2.9",
+  "released": "2026-10-16",
+  "origin": "https://github.com/MikalaiKryvusha/KAIF",
+  "tracking": "origin",
+  "sphere": "programming",
+  "agents": [
+    "claude-code",
+    "codex",
+    "grok-build",
+    "cline",
+    "zoo-code"
+  ],
+  "language": "ru",
+  "canonArtifacts": [],
+  "build": "3aa4b346ba3b",
+  "prerelease": "2.10",
+  "projectName": "Krinik Custom CrossPoint"
+}
