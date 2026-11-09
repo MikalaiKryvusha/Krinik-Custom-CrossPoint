@@ -572,7 +572,11 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
 3. **The device** — the owner's Xteink X4 Pro (SD flash). **An image goes to the reader only after a smoke run of the
    SAME commit on the simulator** (boot → Home, the changed screens, no `[ERR]`), its WebP shots read. `[OWNER]
    2026-11-09 18:57 +03:00 · chat: «читалка на проводе. Но заливать разрешаю прошивку ТОЛЬКО после смоук теста на
-   симуляторе»`. The functional run on the real reader is the owner's;
+   симуляторе»`. **A test image for the owner's reader is a KCCP debug build** — the current debug line
+   (`wip/krinik-debug*`, env `x4pro-krinik-debug`) with the change under test ported onto it; never a bare upstream
+   `pr/*` build (it drops his Home «Сон» and «Фонарик», the Russian About and the rest of KCCP). `[OWNER] 2026-11-09
+   19:11 +03:00 · chat: «ну так ты мне мои дебаг сборки ставь, а не гоавно всякое» · «я тестирую ТОЛЬКО НА KCCP дебаг и
+   релиз сборках!» · «я не не буду пользоваться оригинальным CP» · «мы им только контрибьютим наши лучшие наработки»`. The functional run on the real reader is the owner's;
    the agent prepares the image, the SHA256 and the checklist, and says "not verified on the reader" until he
    reports.
 
