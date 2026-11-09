@@ -17,12 +17,12 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
 | #4328 | `ChapterHtmlSlimParser.cpp:1411` | Quick win | addressed in 27b28a3 (CodeRabbit's mark) |
 | #4328 | `ChapterHtmlSlimParser.cpp:3027` | Quick win | REPLY, no code (2026-11-09 15:22) — the path is not reachable in a parsed chapter; reply draft below |
 | #4332 | `SleepActivity.cpp:545` | Poor tradeoff | FIXED on the branch in ca5d9fa0 (below); only a reply to CodeRabbit is missing |
-| #4375 | `lib/I18n/translations/english.yaml:669` | Low value | ANALYSED — string draft waits for the owner (below) |
+| #4375 | `lib/I18n/translations/english.yaml:669` | Low value | REPLY, no code — owner, interview #003 Q1 = D (2026-11-09 15:43); reply draft below |
 | #4376 | `BmpViewerActivity.cpp:465` | Low value | FIX committed locally `d101e463` on `pr/screen-redraw-delay` — [NOT-TESTED], not built, not pushed |
 | #4376 | `src/main.cpp:541` | Low value | FIX committed locally `9448f2a5` on `pr/screen-redraw-delay` (path cleared in `redrawCustomImage`) — not built on the reader, not pushed |
-| #4376 | `src/main.cpp:722` | Heavy lift | ANALYSED — needs a design + device check (below) |
+| #4376 | `src/main.cpp:722` | Heavy lift | FIX committed locally `4818dba0` (owner, interview #003 Q3 = B) — not built; the device check is the owner's |
 | #4376 | `src/SettingsList.cpp:74` | Low value | FIX committed locally `2d5bb845` (emit on every board, hide via `isHiddenOnDevice()`) — [NOT-TESTED], not pushed |
-| #4377 | `ImageBlock.cpp:47` | Low value | ANALYSED — design tradeoff, reply or fix is the owner's call (below) |
+| #4377 | `ImageBlock.cpp:47` | Low value | FIX committed locally `b661b6be` (owner, interview #003 Q2 = B) — not built |
 | #4377 | `ReaderUtils.h:273` | Low value | FIX committed locally `75b92fc0` (clear pending sub-section on OOM in `SettingsListActivity::openSection`) — [NOT-TESTED], not pushed |
 | #4377 | `CalibrationCard.cpp:192` | Low value | FIX committed locally `7addf5be` (valid UUID `…-8c51-6b65696e6b74`, card `books_card_v2.epub`, v1 removed) — [NOT-TESTED], not pushed |
 | #4377 | `CalibrationCardStorage.cpp:99` | Low value | ANALYSED — the current design is deliberate (below) |
@@ -134,8 +134,14 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
   section build fails before `finishParse()`. The only remaining null path is an allocation failure of the
   post-table block, which loses the whole final page, not only its anchors; that path predates this PR, so I would
   keep it out of here."
-- **#4377 `ImageBlock.cpp:47`:** pending the owner's choice (cleanup on curve change, or reply pointing at "Clear
-  reading cache").
+- **#4375 `english.yaml:669`:** owner, interview #003 Q1: «ничего не меняем - пояснение абстрактное и придирка
+  кодрабит несостоянельна.» Draft: "Keeping the note as it is. It says what screen cleans do in general terms; how
+  often they run is the Refresh Frequency setting right above it, Never included."
+- **#4377 `ImageBlock.cpp:47`:** fixed in b661b6be (owner, interview #003 Q2 = B): the first decode of a book session
+  sweeps the book's cache folder once and removes `img_*.pxc` written with another curve. Reply after the simulator run.
+- **#4376 `main.cpp:722`:** fixed in 4818dba0 (owner, interview #003 Q3 = B): the redraw ISR times both edges; a
+  completed hold at least as long as this boot's `millis()` at the wake sample (the hold a normal power wake needs)
+  wakes the reader. Reply after the owner's check on the reader.
 - Fix replies (after the build and the simulator run, with the commit hash): #4376 ×2, #4377 ×3.
 
 ## Next

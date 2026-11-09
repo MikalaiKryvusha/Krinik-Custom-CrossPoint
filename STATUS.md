@@ -18,7 +18,8 @@ work project. From now on it is a standalone project.
   Progress 2026-11-09 15:25: re-dump — still 14 CodeRabbit comments, no human review comments. #4376 main.cpp:541
   fixed locally `9448f2a5` (6 local fixes now); #4328-3 → reply, no code (path unreachable; research 02). Interview
   #001 closed (both answers were already in code). Still open: #4375 string, #4376 main.cpp:722, #4377 ImageBlock —
-  the three are the owner's questions in `interviews/interview_003_coderabbit_round2.md` (⏳ waiting).
+  owner answered interview #003 at 15:43: Q1 D (no change, reply), Q2 B → `b661b6be` on `pr/screen-calibration`,
+  Q3 B → `4818dba0` on `pr/screen-redraw-delay` (device check is the owner's). 8 local fixes now, none built.
   **Before any push:** strip the ` [NOT-TESTED]` marks the agent put into code comments of d101e463, 2d5bb845,
   75b92fc0, 7addf5be (`git -C firmware grep -n "NOT-TESTED"` on each branch → 0) — upstream code carries no KAIF marks.
 - **Simulator:** native Windows build of our fork `MikalaiKryvusha/crosspoint-simulator`, branch `windows`, clone in
