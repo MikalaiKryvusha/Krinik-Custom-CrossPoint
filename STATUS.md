@@ -28,6 +28,9 @@ work project. From now on it is a standalone project.
 - PARKED 2026-11-09 17:22 +03:00: KUMM quiet window — no builds, no simulator, NO GUI windows (KUMM records the
   screen) until KUMM sends «замеры закончены». Then: bug 01 control runs, C1–C3 of
   `testcases/TC_coderabbit_round2_redraw_delay.md`, the `pr/screen-calibration` runs.
+- **Simulator upstream PR** — owner «окей» 2026-11-09 17:25 +03:00 to the plan: after the KUMM window run the
+  unobserved parts (File Transfer, curl, sleep/wake relaunch, clock, X4 env), add `sample-platformio-windows.ini` +
+  README, squash, bring the PR text for proofreading; sending only on his word (research 01 → "Upstream PR readiness").
 - **Simulator:** WORKS natively on Windows since 2026-11-09 16:52 (`simulator` `0431782` + window placement). Build
   from PowerShell with `$env:PYTHONUTF8="1"`; run `SIM_ENV=simulator_x4_pro_win sh tools/sim_run.sh …` from Git Bash.
   Native Windows build of our fork `MikalaiKryvusha/crosspoint-simulator`, branch `windows`, clone in
