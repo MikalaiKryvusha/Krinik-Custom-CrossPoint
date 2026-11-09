@@ -524,8 +524,10 @@ pio run -d firmware -e x4pro-krinik            # release image
 pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
 ```
 
-- **Not restored on this PC yet** (2026-11-09: no `pio`, `cmake`, gcc/clang/MSVC in PATH; `firmware/` cloned
-  2026-11-09) — Task 0 step 2.
+- **On this PC** (2026-11-09 15:24): MSYS2 UCRT64 in `D:\msys64` (gcc, cmake, SDL2, openssl), PlatformIO in the
+  workspace venv `.pio-venv/`; nothing is on the system PATH — prefix `D:\msys64\ucrt64\bin` for a build. The device
+  envs above are not built here yet (Task 0 step 2); the simulator envs live in `firmware/platformio.local.ini`
+  (research 01 → "Installed on this PC").
 - **The simulator does not build on native Windows** (`crosspoint-simulator` README: "Native Windows is not supported;
   use WSL"). **WSL is never used on this PC:** `[OWNER] 2026-11-09 14:41 +03:00 · chat: «WSL - нет, и не будет!»`. The
   simulator and the host tests run NATIVELY on Windows — the route (toolchain, ports of POSIX-only parts) is recorded

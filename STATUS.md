@@ -15,17 +15,23 @@ work project. From now on it is a standalone project.
   `pr/screen-redraw-delay` d101e463 · 2d5bb845; `pr/screen-calibration` b6477e41 · 75b92fc0 · 7addf5be. Open: #4328-3
   (defensive fix proposed), #4375 string (owner's wording), #4376 main.cpp:541 and :722, #4377 ImageBlock and
   orientations (replies proposed). Correction: commit 338f0b7 says "6 local fixes" — the count is 5.
+  Progress 2026-11-09 15:25: re-dump — still 14 CodeRabbit comments, no human review comments. #4376 main.cpp:541
+  fixed locally `9448f2a5` (6 local fixes now); #4328-3 → reply, no code (path unreachable; research 02). Interview
+  #001 closed (both answers were already in code). Still open: #4375 string, #4376 main.cpp:722, #4377 ImageBlock.
   **Before any push:** strip the ` [NOT-TESTED]` marks the agent put into code comments of d101e463, 2d5bb845,
   75b92fc0, 7addf5be (`git -C firmware grep -n "NOT-TESTED"` on each branch → 0) — upstream code carries no KAIF marks.
 - **Simulator:** native Windows build of our fork `MikalaiKryvusha/crosspoint-simulator`, branch `windows`, clone in
   `simulator/` — route and POSIX inventory in `researches/2026-11-09_native_windows_simulator.md`. WSL is never used.
-- PARKED 2026-11-09 14:47 +03:00: MSYS2 install (`winget install MSYS2.MSYS2 --location D:\msys64`) waits for the KAGO
-  machine lock (`node D:/work/ai_sandbox/_tools/machine-lock.mjs status`, held until 15:35) and its SSD-firmware power
-  cycle; a killed first install left a partial `C:\msys64` (KAGO: safe to delete). Resume: lock free → install →
-  pacman `mingw-w64-ucrt-x86_64-{gcc,SDL2,openssl,cmake,ninja,pkgconf}` → PlatformIO venv → port.
-- **First step next chat:** `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` → free → MSYS2 into `D:\msys64`
-  (research 01, Plan) → build `pr/screen-redraw-delay` and `pr/screen-calibration` in the simulator → strip the marks →
-  ask the owner before any push or reply. Owner's open questions: proofread GOAL.md; push of this repo (`git log --oneline origin/main..HEAD` — 10 commits on 2026-11-09 15:01, this closing adds 1
+- Toolchain installed 2026-11-09 15:18–15:24 (lock `kccp` taken until 16:03): MSYS2 UCRT64 in `D:\msys64`,
+  PlatformIO 6.2.0 in `.pio-venv/`, envs `simulator_win` / `simulator_x4_pro_win` in the ignored
+  `firmware/platformio.local.ini` (research 01 → "Installed on this PC"). Partial `C:\msys64` still to delete.
+- PARKED 2026-11-09 15:25 +03:00: NO builds, compiles, tests, installs or downloads until the KUMM session (`kumm-5d`) sends
+  «замеры закончены, машина твоя» — owner's request relayed by KUMM during its FPS benchmark («no exceptions»). Text
+  edits and plain git are allowed. Machine lock `kccp` released at the same moment. Resume: rebuild
+  `simulator_x4_pro_win` (first build failed on `MD5Builder.h`, `SimHttpFetch.h` `sys/wait.h`, `strlcpy`; the whole
+  POSIX inventory is ported in `simulator` `d9adeea`, branch `windows`, NOT compiled yet — research 01 → "Port progress").
+- **Next:** port the simulator until `simulator_x4_pro_win` builds and opens → run the fixes of
+  `pr/screen-redraw-delay` and `pr/screen-calibration` → strip the marks → ask the owner before any push or reply. Owner's open questions: proofread GOAL.md; push of this repo (`git log --oneline origin/main..HEAD` — 10 commits on 2026-11-09 15:01, this closing adds 1
   more); #4375 note wording; #4377 ImageBlock cache choice.
 - KNOWLEDGE: the simulator needs a native-Windows port, WSL is never used · `AGENT_GUIDE.md` → Build, research 01;
   the PC is shared with the KAGO agent (machine lock) · `AGENT_GUIDE.md` → Build, `EXPERIENCE.md` EXP-0002.

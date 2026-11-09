@@ -41,6 +41,16 @@ KEINKT Calibrator ──phone photos──▶ panel_curve.txt ──card──�
 simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR frames, regression checks
 ```
 
+## Firmware code the PR work touches (in `firmware/`, not this repo)
+
+- `src/main.cpp` — boot `setup()` (wake cause, X4 Pro timer-redraw wake) and `enterDeepSleep()` (sleep screen via
+  `ActivityManager::goToSleep()`, then the redraw timer is armed from `SleepActivity::lastCustomImagePath()`).
+- `src/activities/boot_sleep/SleepActivity.cpp` — draws the sleep screen; records the custom image path for the
+  delayed redraw (#4376) and repaints it on the timer wake (`redrawCustomImage`).
+- `lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp` — expat XHTML → text blocks → pages; queues anchor ids and
+  places them on pages (#4328); a malformed chapter is a parse error, `finishParse()` closes the last page.
+- `firmware/platformio.local.ini` (ignored) — this PC's native Windows simulator envs (research 01).
+
 ## Invariants & rules of the model
 
 - A feature reaches upstream only after it works on the real reader (the owner's word on the device).

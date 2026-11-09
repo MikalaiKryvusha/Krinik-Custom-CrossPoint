@@ -38,6 +38,33 @@
 
 The firmware's own simulator paths may hold more POSIX — found only by compiling.
 
+## Installed on this PC (2026-11-09 15:18–15:24 +03:00, under the machine lock `kccp`)
+
+- MSYS2 in **`D:\msys64`** (`winget install MSYS2.MSYS2 --location D:\msys64`), not `C:\msys64` (the partial `C:\msys64`
+  from the killed 14:44 install is still there — KAGO: safe to delete). UCRT64: gcc 16.2.0, cmake 4.4.5, ninja, pkgconf,
+  SDL2, openssl, python 3.14.10, git, make.
+- PlatformIO Core 6.2.0 in the workspace venv `.pio-venv/` (Python 3.11 via `py -3.11`; the `py` launcher lists a 3.12
+  whose `python.exe` is gone).
+- The env lives in `firmware/platformio.local.ini` (ignored by `*.local*`; `platformio.ini` pulls it via
+  `extra_configs`), so `pr/*` branches stay clean: `simulator_win` / `simulator_x4_pro_win`, simulator lib =
+  `symlink://` to `simulator/`. `sdl2-config` is a shell script cmd cannot run → the SDL2 flags are spelled out
+  (pkg-config's `-mwindows` left out so the log stays on stdout).
+- Build: `$env:PATH = "D:\msys64\ucrt64\bin;" + $env:PATH; .pio-venv\Scripts\pio.exe run -d firmware -e simulator_x4_pro_win`.
+
+## Port progress
+
+- Build 1 (2026-11-09 15:24, `pr/screen-redraw-delay` 9448f2a5): failed on `MD5Builder.h` (#error), `SimHttpFetch.h`
+  (`sys/wait.h`) and the firmware's `strlcpy` (`WifiSelectionActivity.cpp:228`; MinGW has none).
+- `simulator` `d9adeea` (written during the KUMM benchmark pause, NOT compiled): the whole inventory above, behind
+  `_WIN32` — OpenSSL MD5; `lwip/sockets.h` = Winsock + `WSAStartup` + send/recv/setsockopt overloads + `fcntl`;
+  `SimHttpFetch.h` %TEMP% + cmd quoting; `strlcpy` in `Arduino.h`; `SimPosixCompat.h` (`mkdir` 2-arg, `fsync`,
+  `O_BINARY`); `std::filesystem::space` for `statvfs`. The firmware's own `src/network/CrossPointWebServer.cpp`
+  includes `<lwip/sockets.h>` and uses `fcntl` / `close` on its UDP discovery socket.
+- Risk (b): that `close(fd)` reaches the CRT `_close()` with a Winsock handle — an invalid-parameter abort is
+  possible when the web server stops. Not on the path of the PR checks; watch for it when File Transfer is closed.
+- Risk (b): `windows.h` macros (via `winsock2.h`) inside the firmware's web-server TU — `WIN32_LEAN_AND_MEAN` and
+  `NOMINMAX` are set; the compiler will show what is left.
+
 ## Plan
 
 1. Toolchain: `winget install MSYS2.MSYS2`; `pacman -S mingw-w64-ucrt-x86_64-{gcc,SDL2,openssl,cmake,ninja,pkgconf}`;
