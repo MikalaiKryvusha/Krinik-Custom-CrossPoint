@@ -1,0 +1,25 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Hardware detect: X4
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr_sim_x4/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr_sim_x4/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr_sim_x4/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[224] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr_sim_x4/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[225] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/pr_sim_x4/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[225] [DBG] [SDREG] Fonts directory not found: /fonts
+[225] [DBG] [SDREG] Discovery complete: 0 families
+[225] [DBG] [SDFS] SD font system ready (0 families discovered)
+[225] [DBG] [MAIN] Fonts setup
+[225] [DBG] [ACT] Entering activity: Boot
+[225] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[234] [DBG] [ACT] Exiting activity: Boot
+[234] [DBG] [ACT] Entering activity: Home
+[234] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [234] [DBG] [ACT] Entering activity: Home
+[248] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/pr_sim_x4/shots/home_x4.bmp

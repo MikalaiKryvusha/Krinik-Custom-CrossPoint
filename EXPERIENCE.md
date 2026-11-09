@@ -83,6 +83,19 @@
 
 <!-- class-ok: shell-lied — two unlike faces of Windows defaults (cp1251 stdout for Python, CRLF checkout); each is closed at its source (PYTHONUTF8=1 in the AGENT_GUIDE Build line, core.autocrlf=false in the firmware clone); a build wrapper that sets both is the mechanism to add next -->
 
+### EXP-0010 · 2026-11-10 · ❌→✅ · #shell #cwd #parallel
+class: wrong-directory
+none-cheap: absolute paths in every command; the carrier is the Trigger below
+**Context:** several Bash calls sent in one message, each starting with `cd <dir> && …` (simulator runs, ini swap).
+**Tried / did:** three times the command ran in another folder: `tools/sim_run.sh: No such file`, `./.pio-venv/…: No such
+file`, and once my restore `cp …bak platformio.local.ini` wrote the firmware's local ini into the KCCP root while the
+firmware kept the swapped-in sample (caught by `git status`; the original was not lost).
+**Lesson:** a command that depends on its directory uses absolute paths for every file it writes; parallel calls never
+rely on a `cd` — and a restore is checked at its target (`diff`/`grep` on the absolute path) in the same call.
+**Repro:** after any swap/restore: `git -C <repo> status --short` for both repos → nothing unexpected.
+**Trigger:** batching several shell calls, or any backup → swap → restore of a config file.
+**Not for:** single sequential calls whose `cd` succeeded (the cwd persists).
+
 ### EXP-0009 · 2026-11-09 · ❌→✅ · #simulator #script #false-defect
 class: false-defect
 none-cheap: one re-read of the tool's README before naming a defect; the carrier is the Repro below

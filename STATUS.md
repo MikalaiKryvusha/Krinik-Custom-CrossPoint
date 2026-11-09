@@ -51,7 +51,7 @@ work project. From now on it is a standalone project.
      2026-11-10 00:02–00:35 (research 01): HTTP ✅, clock = UTC as documented, X4 env ✅; File Transfer (empty reply,
      `dup()` of a Winsock socket) and sleep/wake (caller not waiting, exit status lost) fixed in `dfd450a` (local,
      judged twice, runs pass with controls, kill-the-waiter PASS after the owner's «РАЗРЕШАЮ» 00:46). `bugs/05` (firmware
-     UDP `close()` on Windows) — found by reading, not reproduced. NEXT: squash 8 local commits, PR text for the
+     UDP `close()` on Windows) — found by reading, not reproduced. SQUASHED 00:51 → `ad131dc` (backup branch `windows-unsquashed`). On firmware `develop` `f8db833f`: builds, web_manager_smoke 8/8 (pre-fix ❌), the sample ini as written builds (+ the #60-style substitutions), system curl.exe HTTPS ✅. PR draft `qa_runs/pr-simulator-windows/body.md`, images pr-assets `15-windows-simulator/` (HTTP 200). `firmware/` is DETACHED at upstream/develop — return to `wip/krinik-debug8`. NEXT: owner proofreads the PR text, then his word to push `windows` + open the PR; was: squash 8 local commits, PR text for the
      owner's proofreading, his word to push `windows`.
   2. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — five themes checked; waits for a free upstream
      slot (5/5 open) and the owner's proofreading of the PR text.
