@@ -1,0 +1,41 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_after/t0/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_after/t0/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_after/t0/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Classic theme
+[6] [INF] [CLK] RTC clock read: 2026-11-09 15:04
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[230] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_after/t0/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[230] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_after/t0/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[231] [DBG] [SDREG] Fonts directory not found: /fonts
+[231] [DBG] [SDREG] Discovery complete: 0 families
+[231] [DBG] [SDFS] SD font system ready (0 families discovered)
+[231] [DBG] [MAIN] Fonts setup
+[231] [DBG] [ACT] Entering activity: Boot
+[231] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[239] [DBG] [ACT] Exiting activity: Boot
+[239] [DBG] [ACT] Entering activity: Home
+[239] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [239] [DBG] [ACT] Entering activity: Home
+[253] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1036] [DBG] [ACT] Exiting activity: Home
+[1036] [DBG] [ACT] Entering activity: Library
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_after/t0/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[1036] [DBG] [GFX] Time = 784 ms from clearScreen to displayBuffer
+[1039] [DBG] [LIBIDX] phase prepare/prior: 1ms
+[1039] [DBG] [LIBIDX] phase walk/metadata/stage: 0ms
+[1039] [DBG] [LIBIDX] phase reconcile: 0ms
+[1039] [DBG] [LIBIDX] phase title order: 0ms
+[1040] [DBG] [LIBIDX] phase author/orders/emit: 1ms
+[1040] [INF] [LIBIDX] built: 0 books, 0 folders, 0 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 2ms
+[1040] [INF] [LIB] reconciled: 0 unchanged, 0 added, 0 renamed, 0 removed, 0 enriched (0 dup, 0 unreadable)
+[1040] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1042] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1036] [DBG] [ACT] Entering activity: Library
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/themes_after/t0/shots/library.bmp

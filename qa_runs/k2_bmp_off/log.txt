@@ -1,0 +1,58 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/k2_bmp_off/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/k2_bmp_off/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/k2_bmp_off/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-09 14:50
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[263] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/k2_bmp_off/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[263] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/k2_bmp_off/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[264] [DBG] [SDREG] Fonts directory not found: /fonts
+[264] [DBG] [SDREG] Discovery complete: 0 families
+[264] [DBG] [SDFS] SD font system ready (0 families discovered)
+[264] [DBG] [MAIN] Fonts setup
+[264] [DBG] [ACT] Entering activity: Boot
+[264] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[272] [DBG] [ACT] Exiting activity: Boot
+[272] [DBG] [ACT] Entering activity: Home
+[272] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [272] [DBG] [ACT] Entering activity: Home
+[288] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1071] [DBG] [ACT] Exiting activity: Home
+[1071] [DBG] [ACT] Entering activity: FileBrowser
+[1072] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1071] [DBG] [ACT] Entering activity: FileBrowser
+[1966] [DBG] [ACT] Exiting activity: FileBrowser
+[1966] [DBG] [ACT] Entering activity: BmpViewer
+[1967] [DBG] [GFX] Time = 895 ms from clearScreen to displayBuffer
+[1968] [DBG] [GFX] Time = 896 ms from clearScreen to displayBuffer
+[1970] [DBG] [GFX] Time = 898 ms from clearScreen to displayBuffer
+[1972] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1972] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] WAIT matched: [1966] [DBG] [ACT] Entering activity: BmpViewer
+[1994] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[1994] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2025] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2025] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2054] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2054] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10046] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10046] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[20067] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20067] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[30119] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30119] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[40134] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[40134] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[50169] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[50169] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[60184] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[60184] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[70219] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[70219] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes

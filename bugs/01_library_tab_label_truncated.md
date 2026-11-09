@@ -54,8 +54,12 @@ five-open-PR limit means it waits in the queue for a slot.
 - English control 2026-11-09 17:29: `upstream/develop` vs `d2b45c0e`, English UI, Library — BMPs differ only in
   (57,14)–(65,26), the clock digit; everything from y = 40 down (the tab bar included) is pixel-identical.
 
-- To run, owner's word `[OWNER] 2026-11-09 17:50 +03:00 · chat: «и во всех бы темах проверить, не только Lyra»`:
-  the Library tab bar in every UI theme (`uiTheme` values of the build), Russian, before/after.
+- All five themes, owner's word `[OWNER] 2026-11-09 17:50 +03:00 · chat: «и во всех бы темах проверить, не только
+  Lyra»` — run 2026-11-09 18:04–18:06, Russian, X4 Pro, Library opened by a tap on each theme's Home item:
+  `qa_runs/themes_before/tabs_all.webp` (develop f8db833f): «Недав...» in Classic, Lyra, Lyra 3 covers, RoundedRaff,
+  Cover grid, and RoundedRaff also cuts «Назва...»; `qa_runs/themes_after/tabs_all.webp` (`d2b45c0e`): every label
+  whole in all five. RoundedRaff (body-size font, full-slot pill theme): «Недавние ▾» fits with ~0 px padding
+  (`qa_runs/themes_after/t3_tabs_zoom.webp`) — whole, but tight.
 - Hole, named: the only other `UiTabListActivity` is `TextSettingsActivity` (Settings → Reading → text settings and
   the reader menu); it keeps `tabPillMaxPad = 0`, so the changed block (`if (tabPillMaxPad > 0 …)`) is not entered —
   proved by the code gate, not observed on screen (a scripted walk there timed out: `WAIT:…Settings` also matches

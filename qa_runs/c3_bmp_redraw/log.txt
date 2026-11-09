@@ -1,0 +1,68 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/c3_bmp_redraw/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/c3_bmp_redraw/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/c3_bmp_redraw/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[5] [DBG] [UI] Using Lyra theme
+[5] [INF] [CLK] RTC clock read: 2026-11-09 14:48
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[299] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/c3_bmp_redraw/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[299] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/c3_bmp_redraw/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[300] [DBG] [SDREG] Fonts directory not found: /fonts
+[300] [DBG] [SDREG] Discovery complete: 0 families
+[300] [DBG] [SDFS] SD font system ready (0 families discovered)
+[300] [DBG] [MAIN] Fonts setup
+[300] [DBG] [ACT] Entering activity: Boot
+[300] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[312] [DBG] [ACT] Exiting activity: Boot
+[312] [DBG] [ACT] Entering activity: Home
+[313] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [312] [DBG] [ACT] Entering activity: Home
+[327] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1113] [DBG] [ACT] Exiting activity: Home
+[1113] [DBG] [ACT] Entering activity: FileBrowser
+[1114] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1113] [DBG] [ACT] Entering activity: FileBrowser
+[2009] [DBG] [ACT] Exiting activity: FileBrowser
+[2009] [DBG] [ACT] Entering activity: BmpViewer
+[2010] [DBG] [GFX] Time = 896 ms from clearScreen to displayBuffer
+[2011] [DBG] [GFX] Time = 897 ms from clearScreen to displayBuffer
+[2013] [DBG] [GFX] Time = 899 ms from clearScreen to displayBuffer
+[2015] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2015] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2049] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2049] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2084] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2084] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[2128] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[2128] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/c3_bmp_redraw/shots/viewer.bmp
+[10037] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10037] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[20053] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20053] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[30058] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[30058] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[40071] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[40071] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[50090] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[50090] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[60120] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[60120] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[62179] [DBG] [BMP] Settled image redraw
+[62179] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[62179] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[62214] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[62214] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] WAIT matched: [62179] [DBG] [BMP] Settled image redraw
+[62250] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[62250] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[62289] [DBG] [GFX] Cropping 480x800 by 0x0 pix, is bottom-up
+[62289] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[70132] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[70132] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes

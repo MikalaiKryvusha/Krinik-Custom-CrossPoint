@@ -56,7 +56,8 @@
 > <!-- classes: question-already-answered, guard-not-proven-against-threat, shown-as-link,
 >      claim-before-evidence, owner-decision-not-applied, text-in-agents-world,
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
->      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand -->
+>      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand,
+>      overwrote-tracked -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -79,6 +80,17 @@
 > Skill: `/experience` (capture a lesson · recall relevant lessons).
 
 ## Entries
+
+### EXP-0006 · 2026-11-09 · ❌→✅ · #qa_runs #overwrite #fixtures
+class: overwrote-tracked
+none-cheap: a one-line check before the write; the carrier is the Repro below
+**Context:** making theme cards for the bug 01 runs: `shutil.rmtree` + copy into `qa_runs/sd_theme0…4`.
+**Tried / did:** the folders were tracked laptop fixtures (commit 7a52b12); they were overwritten and later deleted as
+"scratch" — `git status` showed ` D`; restored with `git checkout -- qa_runs/sd_theme*`.
+**Lesson:** a folder name the agent "makes up" may already exist in the repo; look before writing or deleting.
+**Repro:** `git ls-files <dir> | head -1` → empty before creating or removing a fixture folder.
+**Trigger:** creating, copying over or deleting any folder under `qa_runs/`.
+**Not for:** run folders `sim_run.sh` itself recreates (`qa_runs/<run>`), which are the script's by design.
 
 ### EXP-0005 · 2026-11-09 · ❌→✅ · #sed #rename #twins
 class: twins-missed
