@@ -81,6 +81,18 @@
 
 ## Entries
 
+### EXP-0007 · 2026-11-09 · ❌→✅ · #build #git #crlf
+class: shell-lied
+none-cheap: one clone setting; the carrier is AGENT_GUIDE.md → Build
+**Context:** first device build `pio run -e x4pro` on this PC.
+**Tried / did:** the build failed: «SdFat patch does not apply: 0001-invalidate-failed-cache-fill.patch» — the
+patch file was CRLF in the working tree (global `core.autocrlf=true`), the downloaded SdFat source LF.
+**Lesson:** a Windows clone that feeds patches or byte-exact files to a build keeps the repository's line endings.
+**Repro:** `git -C firmware config core.autocrlf false`, delete the tracked files, `git -C firmware checkout -- .`
+→ `file scripts/sdfat_patches/*.patch` shows no CRLF; the build prints «Applied SdFat patch».
+**Trigger:** a fresh clone on Windows that builds firmware or applies patches.
+**Not for:** text documents of this KCCP repo.
+
 ### EXP-0006 · 2026-11-09 · ❌→✅ · #qa_runs #overwrite #fixtures
 class: overwrote-tracked
 none-cheap: a one-line check before the write; the carrier is the Repro below

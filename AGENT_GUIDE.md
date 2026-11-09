@@ -528,7 +528,9 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
   workspace venv `.pio-venv/`; nothing is on the system PATH — prefix `D:\msys64\ucrt64\bin` for a build. The device
   envs above are not built here yet (Task 0 step 2); the simulator envs live in `firmware/platformio.local.ini`
   (research 01 → "Installed on this PC"). Build from PowerShell with `$env:PYTHONUTF8 = "1"` — from Git Bash the
-  i18n pre-script failed on cp1251 and `pio` hung (EXPERIENCE EXP-0004).
+  i18n pre-script failed on cp1251 and `pio` hung (EXPERIENCE EXP-0004). The `firmware/` clone has
+  `core.autocrlf=false` (set 2026-11-09): with the machine-wide `true`, the SdFat patch in `scripts/sdfat_patches/`
+  was checked out with CRLF and the `x4pro` build failed with «patch does not apply» (EXP-0007).
 - **The simulator does not build on native Windows** (`crosspoint-simulator` README: "Native Windows is not supported;
   use WSL"). **WSL is never used on this PC:** `[OWNER] 2026-11-09 14:41 +03:00 · chat: «WSL - нет, и не будет!»`. The
   simulator and the host tests run NATIVELY on Windows — the route (toolchain, ports of POSIX-only parts) is recorded
