@@ -2,7 +2,7 @@
 
 > **Created:** 2026-11-09 · **Parent:** owner, chat 2026-11-09 14:39 +03:00: «делаем дальше, чиним замечания, которые
 > нам сделаны в наших ПР» · «тестируем на симуляторе на этой машине» · **Status:** inventory done 2026-11-09 14:46;
-> #4328-3 analysed 14:50; no code changed yet · **Outbound:** fixes → fork `pr/*` branches; reply texts → owner's
+> #4328-3 analysed 14:47; no code changed yet · **Outbound:** fixes → fork `pr/*` branches; reply texts → owner's
 > proofreading before posting.
 
 Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --paginate` filtered `user.login ~ coderabbit`
@@ -16,10 +16,10 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
 | #4328 | `ChapterHtmlSlimParser.cpp:345` | Heavy lift | addressed in 27b28a3 (CodeRabbit's mark) |
 | #4328 | `ChapterHtmlSlimParser.cpp:1411` | Quick win | addressed in 27b28a3 (CodeRabbit's mark) |
 | #4328 | `ChapterHtmlSlimParser.cpp:3027` | Quick win | OPEN — analysed below |
-| #4332 | `SleepActivity.cpp:545` | Poor tradeoff | OPEN |
-| #4375 | `lib/I18n/translations/english.yaml:669` | Low value | OPEN |
-| #4376 | `BmpViewerActivity.cpp:465` | Low value | OPEN |
-| #4376 | `src/main.cpp:541` | Low value | OPEN |
+| #4332 | `SleepActivity.cpp:545` | Poor tradeoff | FIXED on the branch in ca5d9fa0 (below); only a reply to CodeRabbit is missing |
+| #4375 | `lib/I18n/translations/english.yaml:669` | Low value | ANALYSED — string draft waits for the owner (below) |
+| #4376 | `BmpViewerActivity.cpp:465` | Low value | FIX committed locally `d101e463` on `pr/screen-redraw-delay` — [NOT-TESTED], not built, not pushed |
+| #4376 | `src/main.cpp:541` | Low value | ANALYSED — fix needs the sleep call order (below) |
 | #4376 | `src/main.cpp:722` | Heavy lift | OPEN |
 | #4376 | `src/SettingsList.cpp:74` | Low value | OPEN |
 | #4377 | `ImageBlock.cpp:47` | Low value | OPEN |
@@ -42,6 +42,43 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
 - Proposed fix (not applied): move the anchor placement out of `if (currentTextBlock)` — with no block, place the
   queued ids on `completedPageCount - 1` (the last emitted page; 0 if none). Needs a host test (truncated table at
   chapter end with an id) — host tests wait for the native Windows toolchain (research 01).
+
+## #4332 — repeated sleep image when `sleep_last.txt` cannot be written (comment on 4a5ac603)
+
+- Owner's prior choice: interview #001 Q2 → `A` («продолжать цикл при обычном сне и пробуждении»;
+  `interviews/decisions/interview_001_crosspoint_user_choices.decision.json`).
+- Already on `origin/pr/sleep-image-order`: `ca5d9fa0 fix: retain unsaved sleep image cursor` (2026-11-05 15:48 +03:00) —
+  `RTC_DATA_ATTR SleepImageCursor` (289 bytes) keeps the unsaved position through deep sleep and wins over the card
+  until a write succeeds; cold boot falls back to the card; host tests `test/sleep_image_cursor/`; USER_GUIDE updated.
+- To do: a reply in the CodeRabbit thread pointing at ca5d9fa0 — draft for the owner's proofreading. Host tests not
+  re-run on this PC yet (no toolchain).
+
+## #4375 — the Screen Cleaning note implies cleaning runs with Refresh Frequency = Never (HEAD ea0a3625)
+
+- Screen «Screen Cleaning» / «Очистка экрана» holds two rows: `STR_REFRESH_FREQ` («Refresh Frequency» / «Частота
+  обновления») and `fadingFix`; the note `STR_SCREEN_CLEAN_NOTE` is drawn under them (`SettingsActivity.cpp:523-526`).
+- Now: EN `english.yaml:669` «Screen cleans run from time to time and remove traces and halos of previous screens.»;
+  RU `russian.yaml:642` «Очистки экрана выполняются периодически, помогают убрать следы и ореолы прошлых экранов.»
+- Verdict `[AI]`: the claim holds — "from time to time / периодически" is false when Refresh Frequency is Never.
+- Draft for the owner (on-device text in his name — his wording decides) `[AI]`:
+  EN «Screen cleans remove traces and halos of previous screens. Refresh Frequency sets how often they run.»
+  RU «Очистка экрана убирает следы и ореолы прошлых экранов. Как часто она выполняется, задаёт «Частота обновления».»
+  Both strings fit the note's two-line area? — check on the simulator before the commit.
+
+## #4376 — stale sleep image path arms another redraw timer (HEAD d7cc4e83)
+
+- `main.cpp:530-541` arms the timer from `SleepActivity::lastCustomImagePath()`, a RAM `std::string`
+  (`SleepActivity.cpp:35`) cleared ONLY in `SleepActivity::onEnter()` (`:700`) and set at `:803`, `:815`.
+- Claim holds by code: a deep-sleep entry that skips `SleepActivity` (CodeRabbit: a suppressed page-button release)
+  reads the previous path. Candidate fix `[AI]`: clear the path at the start of every sleep transition, before
+  `SleepActivity` runs — needs the exact call order of the sleep entry in `main.cpp` (not read yet) so the clear never
+  wipes the path `SleepActivity` has just set. Verify on the simulator: power press during a timer redraw → no second
+  timer for the old path in the log.
+
+## #4376 — `BmpViewerActivity.cpp:465` (fixed locally, d101e463)
+
+`millis() - paintedAtMs.load()` → paint time loaded into a local first, then `millis()`; the writer
+(`render()` → `paintedAtMs` relaxed, `imagePainted` release) and the reader's acquire stay paired.
 
 ## Next
 
