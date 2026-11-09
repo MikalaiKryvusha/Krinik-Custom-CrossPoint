@@ -56,7 +56,7 @@
 > <!-- classes: question-already-answered, guard-not-proven-against-threat, shown-as-link,
 >      claim-before-evidence, owner-decision-not-applied, text-in-agents-world,
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
->      field-dropped-in-rebuild, shared-machine-not-checked -->
+>      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -79,6 +79,21 @@
 > Skill: `/experience` (capture a lesson · recall relevant lessons).
 
 ## Entries
+
+### EXP-0003 · 2026-11-09 · ❌→✅ · #closing #ritual #hooks
+class: ritual-run-by-hand
+none-cheap: the hook keys on the Skill call by design; the carrier is the Trigger below and the KAIF ticket (issue #195 comment)
+**Context:** closing the chat at the owner's named time (15:00) with `/end-chat-soft`.
+**Tried / did:** read `.claude/skills/end-chat-soft/SKILL.md` with `sed` and walked its steps by hand — never called the
+skill through the Skill tool.
+**Result:** ❌→✅ — `stop-farewell-capture.mjs` saw no closure in the turn and wrote no
+`FAREWELL_MESSAGE_FROM_THE_PREVIOUS_CHAT.md`; the owner asked «Почему это не написано в прощальный документ?»; the file
+was then written by hand with the farewell verbatim.
+**Lesson:** a KAIF ritual is RUN through its skill invocation (Skill tool `end-chat-soft` / `end-chat-force` / `resume`),
+never re-enacted from the file: the hooks recognise the ritual by that call.
+**Repro:** after a closing, `ls FAREWELL_MESSAGE_FROM_THE_PREVIOUS_CHAT.md` → exists, its text = the farewell.
+**Trigger:** the owner names a closing, or a named time arrives → call the Skill tool with `end-chat-soft` first.
+**Not for:** reading a skill to prepare (that is fine) — only the execution must go through the call.
 
 ### EXP-0002 · 2026-11-09 · ❌→✅ · #machine #install #kago
 class: shared-machine-not-checked
