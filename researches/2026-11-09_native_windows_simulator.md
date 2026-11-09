@@ -84,6 +84,9 @@ The firmware's own simulator paths may hold more POSIX — found only by compili
   The parser is fine (the path is the rest after the second colon). `scheduleSimulatorScreenshot()` queues the event
   under `screenshotMutex` (`HalDisplay.cpp:260`); the consumer has not been read yet. Workaround: the timed
   `CROSSPOINT_SIM_SCREENSHOTS` schedule works. Must be fixed before the upstream PR.
+- FIXED defect of the port (2026-11-09 22:10, simulator `ba46fb7`, local): `HalStorage::replaceFile` was a bare
+  `::rename`, which on Windows refuses to overwrite an existing file — firmware that rewrites a file in place failed
+  (`Writing …books_card_v2.epub failed`, run `qa_runs/cal_lang_en` first try). Now remove-then-rename, as the device.
 - Missing for a PR: `sample-platformio-windows.ini` (the env from `firmware/platformio.local.ini`, with the three
   build workarounds: `-include stdint.h`, `-std=gnu17`, `-Dmemcpy_P=memcpy`), a README section replacing "Native
   Windows is not supported", the four commits squashed, PR text for the owner's proofreading.

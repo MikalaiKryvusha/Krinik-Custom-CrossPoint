@@ -161,3 +161,23 @@ Dump: `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments --pag
 1. Owner proofreads the reply drafts above (`[AI]`, English, his name) — nothing is posted before his word.
 2. Device image of `pr/screen-redraw-delay` for the owner's check of #4376 `main.cpp:722` (Q3).
 3. Push of `pr/screen-redraw-delay` and `pr/screen-calibration` — DONE 2026-11-09 20:15 after `[OWNER] «давай протестируем кнопку, и всё тправим»` (18:50) and the reader check; the 12 replies posted the same minute.
+
+## Round 3 — CodeRabbit on `d8573ad5` / `2dbfff7` (read 2026-11-09 20:30 +03:00) `[AI]`
+
+All 12 posted replies were resolved by CodeRabbit (two findings withdrawn: #4328 `:3027`, #4377 `:100`). New: two
+Minor findings on #4377 and two follow-up questions. Each traced in the code before acting (AGENT_GUIDE → "Reviewer
+bots can be wrong"). Fix `c9d69cbd` pushed to the fork 22:17; evidence `testcases/TC_coderabbit_round2_calibration.md`
+§7. Reply drafts — NOT posted, the owner proofreads first:
+
+- **#4377 `CalibrationCardStorage.cpp:17`** (title after a language change — valid, our miss): "Fixed in c9d69cbd:
+  the books card is reused only while its title (from the reader cache, or from the EPUB when no cache exists)
+  matches the current language; otherwise its cache is cleared and the card is written again in place."
+- **#4377 `CalibrationCardStorage.cpp:104`** (v1 cache — true, negligible; owner: a safety line, say it is
+  insignificant): "Added in c9d69cbd as a safety net: the v1 card's reader cache is now cleared even when its EPUB is
+  already gone. In practice this is negligible: v1 only ever existed inside this unmerged PR, so only test devices
+  could hold its cache."
+- **#4376 `main.cpp:752`** (asks for a check on X4 Pro hardware): "Checked on an X4 Pro: pressing power while the
+  delayed redraw runs lets the redraw finish and wakes the reader; pressing it after the redraw, while the reader
+  sleeps on, wakes it as well." — the owner's words, homework 01, 2026-11-09 20:14 (debug6 = this fix on KCCP).
+- **#4328 `ChapterHtmlSlimParser.cpp:3027`** (offers a follow-up issue for the post-table allocation failure) —
+  OWNER DECIDES: open an issue, or reply "Thanks, no follow-up for now: that allocation failure predates this PR."

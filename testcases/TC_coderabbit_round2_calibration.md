@@ -48,3 +48,25 @@ caches of the previous one.
 ## 6. Verdict
 
 R1–R3 pass with controls; R4 not observed (named hole). Feature marker not set: the reader itself is the owner's.
+
+## 7. Round 3 — books card title after a language change (`c9d69cbd`)
+
+**Basis:** CodeRabbit on `d8573ad5`, `CalibrationCardStorage.cpp:17` and `:104` (traced in code first, AGENT_GUIDE →
+"Reviewer bots can be wrong"); owner 2026-11-09 20:33 «Доработать нужно», on `:104` «строку для перестраховки».
+
+| # | Requirement (EARS) | Fit criterion |
+|---|---|---|
+| R5 | WHEN the books card is opened and its title differs from the current language's, the reader shall rewrite the card and drop its reader cache. | OPF `dc:title` = current language; log `Cache cleared`, `book.bin` rebuilt |
+| R6 | WHEN the books card is opened in the same language again, the reader shall reuse the card and its cache. | no `Cache cleared`, `Loaded cache data`, same SHA256 |
+
+| # | Case (steps → expected) | Status + evidence |
+|---|---|---|
+| C5 | RU card: open the books card → card written with «Калибровочный экран книг» | pass 20:58 · `qa_runs/cal_lang_ru` |
+| C6 | that card, `settings.json` language `EN` → open → «Books Calibration Screen» in OPF, nav and the status bar | pass 22:11 · `qa_runs/cal_lang_en` (`en.webp`), 0 errors |
+| C7 | the C6 card, open again → reused | pass 22:12 · `qa_runs/cal_lang_en_again`: 0 `Cache cleared`, SHA256 `67ade316…` unchanged |
+| K4 | C6 on `d8573ad5` (before the fix) → the Russian title stays | red as expected 22:15 · `qa_runs/cal_lang_en_pre` (`en_pre.webp`: English UI, «Калибровочный экран книг») |
+
+The first C6 run (22:08) failed with `Writing …books_card_v2.epub failed`: a SIMULATOR defect — its `replaceFile` was a
+bare `rename()`, which cannot overwrite on Windows; the device's `SDCardManager::replaceFile` removes first. Fixed in
+the simulator `windows` branch `ba46fb7` (local). `:104` (v1 cache) not separately observed — one `clearBookCache` call
+on a path no shipped build ever wrote. Verdict: R5, R6 pass with a control; the reader run is the owner's.

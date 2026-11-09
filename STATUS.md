@@ -23,12 +23,13 @@ work project. From now on it is a standalone project.
      dc:title/nav/page) and shown via `epub->getTitle()`; a fix must also drop the card's `epub_<hash>` cache (title is
      cached in `book.bin`). `:104` is true but low value — v1 existed only inside this unmerged PR.
      Owner 20:33 «да, это наш промах. Доработать нужно»; on `:104` «можно сделать строку для перестраховки, но написать,
-     что это несущественно». IN FLIGHT: `firmware/` is on `pr/screen-calibration`, UNCOMMITTED edit of
-     `CalibrationCardStorage.cpp` — `booksCard()` reuses the card only when `Epub::loadMetadata()` title == current
-     language title, else `clearBookCache(BOOKS)` + rewrite; `writeFile` uses `Storage.replaceFile` (rewrite over an
-     existing card); v1 cache cleared via `clearBookCache(BOOKS_V1)`. NOT BUILT — KUMM quiet window to 21:15. Next:
-     `git submodule update` (freeink-sdk pointer left from debug6), build, simulator: open books card RU → switch EN →
-     reopen (title EN), reopen again (no rewrite in log); commit, push fork, reply on both threads.
+     что это несущественно». DONE: fix `c9d69cbd` pushed to the fork 22:17 (#4377 head) — `booksCard()` reuses the
+     card only while `Epub::loadMetadata()` title == current language, else `clearBookCache` + rewrite via
+     `Storage.replaceFile`; v1 cache cleared. Simulator: RU→EN title, reuse, control on `d8573ad5` red (testcases
+     `TC_coderabbit_round2_calibration.md` §7). Found on the way: simulator `replaceFile` could not overwrite on Windows
+     — fixed `ba46fb7` on simulator `windows` (LOCAL, its push is the owner's open question). WAITING FOR THE OWNER:
+     proofread 4 reply drafts (research 02 → "Round 3"), decide #4328 follow-up issue; CI on `c9d69cbd`.
+     `firmware/` is checked out on `pr/screen-calibration` (was `wip/krinik-debug6`).
   3. Card cleanup, PENDING (`[OWNER] 2026-11-09 20:09 «и образы старые поудаляй»` → question → «debug6 + debug5 + 1.1.2»): on the next reader connect (`G:`) delete from `/.firmware/`
      `cp-2.0.0-krinik-1.1.1-debug3.bin`, `…-debug4.bin`, `crosspoint-2.0.0-x4pro.bin`, `cp-2.0.0-pr4376-2dbfff7d.bin`;
      keep debug6 + debug5 + 1.1.2; then eject (`AGENT_GUIDE.md` → The device).

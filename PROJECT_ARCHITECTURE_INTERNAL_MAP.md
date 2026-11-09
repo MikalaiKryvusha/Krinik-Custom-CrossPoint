@@ -50,6 +50,8 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
 - `lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp` — expat XHTML → text blocks → pages; queues anchor ids and
   places them on pages (#4328); a malformed chapter is a parse error, `finishParse()` closes the last page.
 - `firmware/platformio.local.ini` (ignored) — this PC's native Windows simulator envs (research 01).
+- `simulator/src/HalStorage.cpp` — the simulator's SD card over a host folder (`CROSSPOINT_SIM_SD`); `replaceFile`
+  mirrors the device's remove-then-rename (a bare `rename` cannot overwrite on Windows, found 2026-11-09).
 
 ## Invariants & rules of the model
 
