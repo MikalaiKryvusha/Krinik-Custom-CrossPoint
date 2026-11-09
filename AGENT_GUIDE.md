@@ -567,7 +567,10 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
    **While another agent records the screen or measures (KUMM's quiet window), open no GUI window** — no simulator,
    browser or file manager; the agreement is in that agent's message, the window ends with its «замеры закончены». The script finds the workspace from its own location (no laptop
    paths since 2026-11-09). `kuips-runner/` (`npm install`, KUIPS v1.3.0) is the UI test runner dependency.
-3. **The device** — the owner's Xteink X4 Pro (SD flash). The functional run on the real reader is the owner's;
+3. **The device** — the owner's Xteink X4 Pro (SD flash). **An image goes to the reader only after a smoke run of the
+   SAME commit on the simulator** (boot → Home, the changed screens, no `[ERR]`), its WebP shots read. `[OWNER]
+   2026-11-09 18:57 +03:00 · chat: «читалка на проводе. Но заливать разрешаю прошивку ТОЛЬКО после смоук теста на
+   симуляторе»`. The functional run on the real reader is the owner's;
    the agent prepares the image, the SHA256 and the checklist, and says "not verified on the reader" until he
    reports.
 
