@@ -79,11 +79,14 @@ The firmware's own simulator paths may hold more POSIX — found only by compili
 - Not yet observed: File Transfer web server (Winsock path, the `close()`-on-socket risk), HTTP fetch via curl/cmd,
   sleep → wake relaunch (`SimulatorLifecycle` `execvp`), clock in UTC (UCRT `tzset`), the X4 (non-Pro) env, and that
   macOS/Linux still build (no Linux here; WSL is never used — upstream CI #60 may cover it).
-- OPEN defect of the port (2026-11-09 17:45): an in-script `SHOT:<path>` stalls the input script on Windows — no
-  BMP, no later action, the run ends on the 60 s timeout (runs `bug_library_trunc`, `nav_reading`, `c1_display`).
-  The parser is fine (the path is the rest after the second colon). `scheduleSimulatorScreenshot()` queues the event
-  under `screenshotMutex` (`HalDisplay.cpp:260`); the consumer has not been read yet. Workaround: the timed
-  `CROSSPOINT_SIM_SCREENSHOTS` schedule works. Must be fixed before the upstream PR.
+- ~~OPEN defect: an in-script `SHOT` stalls after a second `WAIT`~~ — **NOT A DEFECT** (2026-11-09 23:50 +03:00,
+  checked). The probe that "showed" it (`shot_probe2`, 20:14) was `…;800:SHOT:…;500:QUIT`: times count from the last
+  matched WAIT (README: «Times are measured from process startup, or from the last matched WAIT»), so QUIT fired at
+  500 ms, before the SHOT at 800 ms. Variants run today on the current binary: two WAITs + SHOT before QUIT → saved
+  (`qa_runs/shot_two_waits`); one WAIT → saved (`shot_one_wait`); the old script verbatim → no shot (`shot_probe3`);
+  direct runs: SHOT 800 / QUIT 500 → no BMP, SHOT 800 / QUIT 1300 → BMP; a missing folder → logged
+  `[SIM] Cannot save screenshot …: Couldn't open …` (no stall). `c1_display`'s log (17:45), named as "stalled" here,
+  in fact has `Saved screenshot` after three WAITs. The claim was mine, from scripts read wrong.
 - FIXED defect of the port (2026-11-09 22:10, simulator `ba46fb7`, local): `HalStorage::replaceFile` was a bare
   `::rename`, which on Windows refuses to overwrite an existing file — firmware that rewrites a file in place failed
   (`Writing …books_card_v2.epub failed`, run `qa_runs/cal_lang_en` first try). Now remove-then-rename, as the device.

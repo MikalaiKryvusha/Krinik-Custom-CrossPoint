@@ -43,15 +43,13 @@ work project. From now on it is a standalone project.
   3. Card cleanup DONE 2026-11-09 23:14 (`[OWNER] 20:09 «и образы старые поудаляй»`; rule: current debug + previous
      debug + latest release): `/.firmware/` = debug7 + debug6 + 1.1.2; reader ejected.
 - **Open work, in order:**
-  0. **debug8** (idea 01, Home «Сон» highlight on tap; owner «сейчас» 23:26): `c072214b` on `wip/krinik-debug8`
-     (local), judge VERIFIED WITH CAVEATS (my cause was wrong: the 90 ms touch-down dwell, corrected), simulator
-     `qa_runs/sleep_tap_debug8` highlight before sleep / control `sleep_tap_debug7` none → image
-     `firmware-builds/cp-2.0.0-krinik-1.1.1-debug8.bin` (SHA256 `b93fd2cd…4497`). 23:44 on the card (SHA256 checked), card = debug8 + debug7 + 1.1.2, ejected → NEXT: homework 03,
-     card = debug8 + debug7 + 1.1.2, eject → homework 03. Then the simulator PR below (order agreed 23:29 «окей»).
-     #4376 fix `94e1c3a2` PUSHED 23:26 + CodeRabbit reply 4517595666 (owner «1 да»).
-  1. **Simulator upstream PR** (owner «делай» 20:13): research 01 → "Upstream PR readiness" — the in-script `SHOT`
-     after a second `WAIT` saves nothing (reproduced 20:14, `qa_runs/shot_probe2`; main loop `simulator_main.cpp:17-32`
-     next to read), then File Transfer, curl, sleep/wake relaunch, clock, the sample ini as written, squash, PR text.
+  0. **debug8 DONE** 2026-11-09 23:46 (idea 01, Home «Сон» highlight on tap): `c072214b` on `wip/krinik-debug8`
+     (local), judged, simulator + control, on the owner's reader «да, работает» (homework 03). Card = debug8 + debug7 +
+     1.1.2. #4376 fix `94e1c3a2` PUSHED 23:26 + CodeRabbit reply 4517595666 (owner «1 да»).
+  1. **Simulator upstream PR** (owner «делай» 20:13; order agreed 23:29): the «SHOT stalls after a second WAIT»
+     defect is NOT A DEFECT (23:50, research 01 — my probe had QUIT at 500 ms before SHOT at 800 ms). Remaining:
+     not-yet-observed on Windows — File Transfer, HTTP via curl, sleep/wake relaunch, clock, the X4 (non-Pro) env;
+     then squash the 7 local commits, PR text for proofreading, the owner's word to push `windows`.
   2. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — five themes checked; waits for a free upstream
      slot (5/5 open) and the owner's proofreading of the PR text.
   3. **Debug line**: `wip/krinik-debug6` (`e7a29dd4`, local in `firmware/`, not pushed) = debug5 + the hold fix, on

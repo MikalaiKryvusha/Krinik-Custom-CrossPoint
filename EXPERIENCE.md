@@ -83,6 +83,22 @@
 
 <!-- class-ok: shell-lied — two unlike faces of Windows defaults (cp1251 stdout for Python, CRLF checkout); each is closed at its source (PYTHONUTF8=1 in the AGENT_GUIDE Build line, core.autocrlf=false in the firmware clone); a build wrapper that sets both is the mechanism to add next -->
 
+### EXP-0009 · 2026-11-09 · ❌→✅ · #simulator #script #false-defect
+class: false-defect
+none-cheap: one re-read of the tool's README before naming a defect; the carrier is the Repro below
+**Context:** the native Windows simulator; a "defect" carried for 6 hours and into the chat handover: «an in-script
+`SHOT` stalls after a second `WAIT`», blocking the upstream PR.
+**Tried / did:** the probe was `…;800:SHOT:…;500:QUIT`. Script times count from the last matched WAIT (the README says
+so), so QUIT ran at 500 ms, before the SHOT — no BMP, no message. I read it as a stall and later "narrowed" it to "after
+the second WAIT" from one more probe written the same wrong way.
+**Result:** ✅ 2026-11-09 23:50 — 3+ variants on the current binary: SHOT before QUIT saves (one and two WAITs), the old
+script verbatim does not, a missing folder logs `Cannot save screenshot`. Not a defect; research 01 corrected.
+**Lesson:** before calling a tool broken, check that the input obeys the tool's documented semantics, and make the
+probe able to fail for one reason only (a QUIT far after the action under test).
+**Repro:** in a script, every time after a WAIT must be larger than the action's it should follow — QUIT last, by a margin.
+**Trigger:** writing `CROSSPOINT_SIM_INPUT_SCRIPT`, or concluding "the simulator hangs".
+**Not for:** the timed `CROSSPOINT_SIM_SCREENSHOTS` schedule (counts from process start).
+
 ### EXP-0008 · 2026-11-09 · ❌→✅ · #shell #grep #stackdump
 class: tool-crash
 none-cheap: use the Grep tool or `git grep`; the carrier is the Trigger below

@@ -1,6 +1,6 @@
 # Idea 01 — Home «Сон»: show the selection on tap before the sleep starts
 
-**Status:** 🔧 built as debug8 `c072214b` (judged, simulator-checked), on the owner's check — homework 03 · the owner's own request · **Scope:** KCCP debug line only (the Home «Сон» item is KCCP) ·
+**Status:** ✅ DONE 2026-11-09 23:46 +03:00 — debug8 `c072214b`, owner «да, работает» (homework 03) · the owner's own request · **Scope:** KCCP debug line only (the Home «Сон» item is KCCP) ·
 **Created:** 2026-11-09 23:22 +03:00
 **Owner's words (verbatim):** `[OWNER] 2026-11-09 23:22 +03:00 · chat: «по нашей кнопке Сон на домашней есть импрувмент
 - успевать её покрасить выделением при тапе по ней, и только потом запускать алгоритмы сна. Сейчас она при тапе не
@@ -22,3 +22,7 @@ NO render queued. The cover-grid home never renders on touch down at all. Taps �
 In `case HomeMenuItem::SLEEP:` call `requestUpdateAndWait()` (exists in `Activity.h:44`: renders and waits for the
 render task) before `activityManager.requestSleep()`. Then the owner's order: independent judge → build → simulator
 smoke (tap «Сон»: a shot of the highlighted row before the sleep screen) → debug8 image → owner's check.
+
+## ✅ STATUS: DONE (2026-11-09 23:46 +03:00)
+
+debug8 `c072214b` on the owner's reader: `[OWNER] 2026-11-09 23:46 +03:00 · chat: «да, работает»`.
