@@ -38,3 +38,6 @@ interviews/decisions/*.lock
 
 # Owner voice portrait (public snapshot from KAIF; may quote private writing) - local only
 /AUTHOR_STYLOMETRY.md
+
+# Windows port of crosspoint-simulator (fork MikalaiKryvusha/crosspoint-simulator, branch windows) - own repo
+/simulator/

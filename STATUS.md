@@ -4,6 +4,21 @@ Updated 2026-11-08 10:40 UTC. Licence: MIT (owner, 2026-11-08: «как у ор�
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
+## Where to continue
+
+- **Active task (owner, chat 2026-11-09 14:39):** «чиним замечания, которые нам сделаны в наших ПР» — the 14 CodeRabbit
+  inline comments on PRs #4328 (3), #4332 (1), #4375 (1), #4376 (4), #4377 (5); «тестируем на симуляторе на этой машине».
+  Comments dumped by `gh api repos/crosspoint-reader/crosspoint-reader/pulls/<n>/comments` (filter `coderabbit`).
+  Fixes go to the fork's `pr/*` branches in `firmware/`; no push and no reply text without the owner's word.
+- **Simulator:** native Windows build of our fork `MikalaiKryvusha/crosspoint-simulator`, branch `windows`, clone in
+  `simulator/` — route and POSIX inventory in `researches/2026-11-09_native_windows_simulator.md`. WSL is never used.
+- PARKED 2026-11-09 14:47 +03:00: MSYS2 install (`winget install MSYS2.MSYS2 --location D:\msys64`) waits for the KAGO
+  machine lock (`node D:/work/ai_sandbox/_tools/machine-lock.mjs status`, held until 15:35) and its SSD-firmware power
+  cycle; a killed first install left a partial `C:\msys64` (KAGO: safe to delete). Resume: lock free → install →
+  pacman `mingw-w64-ucrt-x86_64-{gcc,SDL2,openssl,cmake,ninja,pkgconf}` → PlatformIO venv → port.
+- **Task 0 step 3 done 2026-11-09:** KAIF 2.9 (+2.10 WIP) deployed from KAIF commit d2f21274d396, commits 8a78058,
+  2924afa; field report KAIF issue #195. Steps 1 (firmware clone — done 2026-11-09), 2, 4–6 open.
+
 ## Language contract
 
 - Documents the agent reads (this file, plans, researches, code comments, commit messages) — **English**.

@@ -524,7 +524,16 @@ pio run -d firmware -e x4pro-krinik            # release image
 pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
 ```
 
-- **Not restored on this PC yet** (2026-11-09: no `pio`, no `cmake` in PATH, no `firmware/`) — Task 0 step 2.
+- **Not restored on this PC yet** (2026-11-09: no `pio`, `cmake`, gcc/clang/MSVC in PATH; `firmware/` cloned
+  2026-11-09) — Task 0 step 2.
+- **The simulator does not build on native Windows** (`crosspoint-simulator` README: "Native Windows is not supported;
+  use WSL"). **WSL is never used on this PC:** `[OWNER] 2026-11-09 14:41 +03:00 · chat: «WSL - нет, и не будет!»`. The
+  simulator and the host tests run NATIVELY on Windows — the route (toolchain, ports of POSIX-only parts) is recorded
+  in `researches/2026-11-09_native_windows_simulator.md` as it is found. Never propose WSL again.
+- **Drive C: can be busy with a dump run by the KAGO agent** (another Claude session on this PC, `ListAgents` →
+  `kago-*`). Before any install or bulk write to C:, ask that session (`SendMessage`) and wait for its answer —
+  `[OWNER] 2026-11-09 14:44 +03:00 · chat: «а как ты это всё поставишь сейчас? если идет дамп C?» · «спроси у него»`.
+  The first MSYS2 install (winget, 14:44) was killed mid-way and left a partial `C:\msys64`.
   The laptop was macOS: adapt, never copy its paths (`~/.platformio/penv/bin/pio`, `$HOME/Xteink/...`).
 - Run PlatformIO ONE build at a time; `pio run -e x4pro` wipes the simulator binary — rebuild the simulator after
   a device build.
