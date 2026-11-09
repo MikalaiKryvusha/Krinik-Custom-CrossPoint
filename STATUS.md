@@ -43,6 +43,12 @@ work project. From now on it is a standalone project.
   3. Card cleanup DONE 2026-11-09 23:14 (`[OWNER] 20:09 «и образы старые поудаляй»`; rule: current debug + previous
      debug + latest release): `/.firmware/` = debug7 + debug6 + 1.1.2; reader ejected.
 - **Open work, in order:**
+  0. **debug8** (idea 01, Home «Сон» highlight on tap; owner «сейчас» 23:26): `c072214b` on `wip/krinik-debug8`
+     (local), judge VERIFIED WITH CAVEATS (my cause was wrong: the 90 ms touch-down dwell, corrected), simulator
+     `qa_runs/sleep_tap_debug8` highlight before sleep / control `sleep_tap_debug7` none → image
+     `firmware-builds/cp-2.0.0-krinik-1.1.1-debug8.bin` (SHA256 `b93fd2cd…4497`). NEXT: reader on `G:` → copy,
+     card = debug8 + debug7 + 1.1.2, eject → homework 03. Then the simulator PR below (order agreed 23:29 «окей»).
+     #4376 fix `94e1c3a2` PUSHED 23:26 + CodeRabbit reply 4517595666 (owner «1 да»).
   1. **Simulator upstream PR** (owner «делай» 20:13): research 01 → "Upstream PR readiness" — the in-script `SHOT`
      after a second `WAIT` saves nothing (reproduced 20:14, `qa_runs/shot_probe2`; main loop `simulator_main.cpp:17-32`
      next to read), then File Transfer, curl, sleep/wake relaunch, clock, the sample ini as written, squash, PR text.
