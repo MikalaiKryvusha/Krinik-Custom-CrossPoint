@@ -22,7 +22,15 @@ work project. From now on it is a standalone project.
   Q3 B → `4818dba0` on `pr/screen-redraw-delay` (device check is the owner's). 8 local fixes now, none built.
   **Before any push:** strip the ` [NOT-TESTED]` marks the agent put into code comments of d101e463, 2d5bb845,
   75b92fc0, 7addf5be (`git -C firmware grep -n "NOT-TESTED"` on each branch → 0) — upstream code carries no KAIF marks.
-- **Simulator:** native Windows build of our fork `MikalaiKryvusha/crosspoint-simulator`, branch `windows`, clone in
+- **Owner's bug 01 (2026-11-09 16:55):** Library tab «Недав...» → `bugs/01_library_tab_label_truncated.md`; fix
+  `d2b45c0e` on the new branch `pr/library-tab-fit` (cut from `upstream/develop` f8db833f), red/green WebP shots in
+  `qa_runs/tab_fit_before|after/`; the owner wants it as an upstream PR — it waits for a free slot (5/5 open).
+- PARKED 2026-11-09 17:22 +03:00: KUMM quiet window — no builds, no simulator, NO GUI windows (KUMM records the
+  screen) until KUMM sends «замеры закончены». Then: bug 01 control runs, C1–C3 of
+  `testcases/TC_coderabbit_round2_redraw_delay.md`, the `pr/screen-calibration` runs.
+- **Simulator:** WORKS natively on Windows since 2026-11-09 16:52 (`simulator` `0431782` + window placement). Build
+  from PowerShell with `$env:PYTHONUTF8="1"`; run `SIM_ENV=simulator_x4_pro_win sh tools/sim_run.sh …` from Git Bash.
+  Native Windows build of our fork `MikalaiKryvusha/crosspoint-simulator`, branch `windows`, clone in
   `simulator/` — route and POSIX inventory in `researches/2026-11-09_native_windows_simulator.md`. WSL is never used.
 - Toolchain installed 2026-11-09 15:18–15:24 (lock `kccp` taken until 16:03): MSYS2 UCRT64 in `D:\msys64`,
   PlatformIO 6.2.0 in `.pio-venv/`, envs `simulator_win` / `simulator_x4_pro_win` in the ignored

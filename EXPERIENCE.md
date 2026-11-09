@@ -80,6 +80,29 @@
 
 ## Entries
 
+### EXP-0005 · 2026-11-09 · ❌→✅ · #sed #rename #twins
+class: twins-missed
+none-cheap: one-off bulk rename; the carrier is the Repro grep below
+**Context:** porting the simulator's socket shims to Winsock: `sed 's/::close(/simCloseSocket(/g'` over three files.
+**Tried / did:** the pattern meant global `::close(fd)` calls; it also matched the method definition
+`WebSocketsServer::close()`, which became `WebSocketsServersimCloseSocket()` — caught only by the compiler (build 4).
+**Lesson:** a qualified-name pattern (`::name(`) also matches `Class::name(` definitions; anchor it to what precedes.
+**Repro:** after a bulk rename, `grep -nE "[A-Za-z0-9_]<new>|<new>\(\)" <files>` → 0 hits.
+**Trigger:** writing a `sed`/regex rename of a C++ name.
+**Not for:** renames done by a compiler-aware tool.
+
+### EXP-0004 · 2026-11-09 · ❌→✅ · #build #shell #encoding
+class: shell-lied
+none-cheap: one shell rule; the carrier is AGENT_GUIDE.md → Build
+**Context:** `pio run -e simulator_x4_pro_win` started from Git Bash in the background.
+**Tried / did:** the `gen_i18n.py` pre-script wrote Cyrillic through cp1251 → `UnicodeEncodeError`; `pio` did not
+exit and sat idle for 15 minutes; the owner asked «ну?». The same build from PowerShell had passed four times.
+**Lesson:** on this PC build from PowerShell and set `PYTHONUTF8=1`; a background build gets a monitor that also
+matches a stall, not only the exit line.
+**Repro:** `$env:PYTHONUTF8 = "1"; .pio-venv\Scripts\pio.exe run -d firmware -e simulator_x4_pro_win` → `[SUCCESS]`.
+**Trigger:** starting any PlatformIO build here.
+**Not for:** the simulator run itself — `sh tools/sim_run.sh` from Git Bash works.
+
 ### EXP-0003 · 2026-11-09 · ❌→✅ · #closing #ritual #hooks
 class: ritual-run-by-hand
 none-cheap: the hook keys on the Skill call by design; the carrier is the Trigger below and the KAIF ticket (issue #195 comment)

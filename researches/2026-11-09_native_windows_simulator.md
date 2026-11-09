@@ -62,7 +62,13 @@ The firmware's own simulator paths may hold more POSIX — found only by compili
   includes `<lwip/sockets.h>` and uses `fcntl` / `close` on its UDP discovery socket.
 - Risk (b): that `close(fd)` reaches the CRT `_close()` with a Winsock handle — an invalid-parameter abort is
   possible when the web server stops. Not on the path of the PR checks; watch for it when File Transfer is closed.
-- Risk (b): `windows.h` macros (via `winsock2.h`) inside the firmware's web-server TU — `WIN32_LEAN_AND_MEAN` and
+- Build 2 (2026-11-09 16:43, after the KUMM pause): every object compiled except two — the firmware's
+  `src/network/CrossPointWebServer.cpp` (`windows.h` via `lwip/sockets.h` defines `IGNORE`, which kills the enum
+  `SHORT_PWRBTN::IGNORE` in `CrossPointSettings.h:167`) and the simulator's `HalClock.cpp` (`setenv`; MinGW has
+  `_putenv_s`). Fix: `#undef` the colliding `windows.h` macros right after Winsock; `setenv`/`unsetenv` in
+  `SimPosixCompat.h` (also used by `SimulatorLifecycle.cpp`). Note: the UCRT `tzset()` reads only the simple `TZ`
+  form, so a POSIX rule with DST may show a shifted clock in the simulator.
+- Risk (b), seen in build 2: `windows.h` macros (via `winsock2.h`) inside the firmware's web-server TU — `WIN32_LEAN_AND_MEAN` and
   `NOMINMAX` are set; the compiler will show what is left.
 
 ## Plan

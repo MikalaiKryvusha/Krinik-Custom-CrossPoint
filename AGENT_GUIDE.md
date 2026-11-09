@@ -527,7 +527,8 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
 - **On this PC** (2026-11-09 15:24): MSYS2 UCRT64 in `D:\msys64` (gcc, cmake, SDL2, openssl), PlatformIO in the
   workspace venv `.pio-venv/`; nothing is on the system PATH — prefix `D:\msys64\ucrt64\bin` for a build. The device
   envs above are not built here yet (Task 0 step 2); the simulator envs live in `firmware/platformio.local.ini`
-  (research 01 → "Installed on this PC").
+  (research 01 → "Installed on this PC"). Build from PowerShell with `$env:PYTHONUTF8 = "1"` — from Git Bash the
+  i18n pre-script failed on cp1251 and `pio` hung (EXPERIENCE EXP-0004).
 - **The simulator does not build on native Windows** (`crosspoint-simulator` README: "Native Windows is not supported;
   use WSL"). **WSL is never used on this PC:** `[OWNER] 2026-11-09 14:41 +03:00 · chat: «WSL - нет, и не будет!»`. The
   simulator and the host tests run NATIVELY on Windows — the route (toolchain, ports of POSIX-only parts) is recorded
@@ -550,7 +551,18 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
    laptop run 936/936).
 2. **Simulator** — `simulator_x4_pro`, driven by `sh tools/sim_run.sh <name> '<input script>' '<ms:shot;…>'`:
    a fresh copy of the template card, scripted button input, screenshots to `qa_runs/<name>/shots/` (WebP), the
-   log in `qa_runs/<name>/log.txt` with an error count. The script still hard-codes the laptop's `$HOME/Xteink`
+   log in `qa_runs/<name>/log.txt` with an error count.
+   **Screenshots are WebP — taken in WebP and looked at in WebP.** The simulator writes BMP; `sim_run.sh` turns
+   it into WebP at once (`tools/shot_webp.py`, Pillow in `.pio-venv/`) and the agent opens the `.webp` file to see
+   the screen; no PNG, no BMP kept or viewed. WebP quality 90. `[OWNER] 2026-11-09 16:53–16:54 +03:00 · chat: «мы
+   работаем в webp» · «ты должен снимать скриншоты в нем и в нем их смотреть» · «со зжатием 90%»` (read as
+   `quality=90` — `[AI]` interpretation, said to the owner).
+   **The simulator window opens 480×800 in the top-left corner** (`CROSSPOINT_SIM_WINDOW_POS=0,32`,
+   `CROSSPOINT_SIM_WINDOW_PERCENT=100`, set by `sim_run.sh`) — the owner works on a large TV screen beside it; keep
+   100 %, the screenshot hook captures the window. `[OWNER] 2026-11-09 16:56–16:57 +03:00 · chat: «можешь эмулятор
+   открывать маленьким окном вверху слева?» · «можно прям 480×800 и открывать. У меня огромное разрешение телика»`.
+   **While another agent records the screen or measures (KUMM's quiet window), open no GUI window** — no simulator,
+   browser or file manager; the agreement is in that agent's message, the window ends with its «замеры закончены». The script still hard-codes the laptop's `$HOME/Xteink`
    — fix it on first use here. `kuips-runner/` (`npm install`, KUIPS v1.3.0) is the UI test runner dependency.
 3. **The device** — the owner's Xteink X4 Pro (SD flash). The functional run on the real reader is the owner's;
    the agent prepares the image, the SHA256 and the checklist, and says "not verified on the reader" until he
