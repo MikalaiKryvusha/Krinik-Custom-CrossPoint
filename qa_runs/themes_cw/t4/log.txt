@@ -1,0 +1,41 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_cw/t4/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_cw/t4/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_cw/t4/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[4] [DBG] [CPS] Resaving settings to update format
+[4] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-09 15:31
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[208] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_cw/t4/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[209] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_cw/t4/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[209] [DBG] [SDREG] Fonts directory not found: /fonts
+[209] [DBG] [SDREG] Discovery complete: 0 families
+[209] [DBG] [SDFS] SD font system ready (0 families discovered)
+[209] [DBG] [MAIN] Fonts setup
+[209] [DBG] [ACT] Entering activity: Boot
+[209] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[217] [DBG] [ACT] Exiting activity: Boot
+[217] [DBG] [ACT] Entering activity: Home
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/themes_cw/t4/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[218] [DBG] [GFX] Time = 9 ms from clearScreen to displayBuffer
+[220] [DBG] [LIBIDX] phase prepare/prior: 0ms
+[221] [DBG] [LIBIDX] phase walk/metadata/stage: 0ms
+[221] [DBG] [LIBIDX] phase reconcile: 0ms
+[221] [DBG] [LIBIDX] phase title order: 0ms
+[222] [DBG] [LIBIDX] phase author/orders/emit: 1ms
+[222] [INF] [LIBIDX] built: 0 books, 0 folders, 0 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 2ms
+[222] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [217] [DBG] [ACT] Entering activity: Home
+[236] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[249] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1024] [DBG] [ACT] Exiting activity: Home
+[1024] [DBG] [ACT] Entering activity: Library
+[1025] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1026] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1024] [DBG] [ACT] Entering activity: Library
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/themes_cw/t4/shots/library.bmp

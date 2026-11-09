@@ -46,6 +46,14 @@ five-open-PR limit means it waits in the queue for a slot.
 - TWINS: searched `tabPillMaxPad` in `src/` — set only in `LibraryListActivity` (16); every other `UiTabListActivity`
   keeps 0 and does not enter the changed block.
 
+- Owner 2026-11-09 18:09 +03:00 on the RoundedRaff shot (pill hugging «Недавние ▾»): `[OWNER] «тут пилюли нужно
+  расширить»`. A full-slot fallback changed nothing (equal slots ≈ the label width there). `d0c99508`: when the
+  widest label + 16 px does not fit an equal slot, the bar switches to `TabBarLayout::ContentWidth` — each pill =
+  its label + padding (16, halved while the row does not fit, floor 4), row centered via `leadingInset`; equal
+  full slots only if even 4 px does not fit. Run 18:31: `qa_runs/themes_cw/tabs_all.webp` — all five themes, every
+  pill wider than its label, the row centered. English Lyra still takes the equal-slot path (unchanged); English
+  RoundedRaff may switch to content width — not run yet.
+
 ## Owner's decisions
 
 - The sort arrow stays: `[OWNER] 2026-11-09 17:31 +03:00 · chat + question «Убираем её совсем?» → «Оставить как есть»`,
