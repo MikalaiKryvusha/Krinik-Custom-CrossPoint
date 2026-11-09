@@ -56,7 +56,7 @@
 > <!-- classes: question-already-answered, guard-not-proven-against-threat, shown-as-link,
 >      claim-before-evidence, owner-decision-not-applied, text-in-agents-world,
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
->      field-dropped-in-rebuild -->
+>      field-dropped-in-rebuild, shared-machine-not-checked -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -80,9 +80,34 @@
 
 ## Entries
 
-### EXP-0001 · 2026-01-01 · ✅ · #example #meta
-**Context:** first task after KAIF was deployed into this project (example entry — replace with real ones).
-**Tried / did:** wrote the first real lesson here in the canonical format.
-**Result:** ✅ — the experience log is live and greppable.
-**Lesson:** capture lessons at the level of *approach* (what worked / what to avoid), not defect detail
-(that lives in `bugs/`); one short entry beats a long story.   → link: (none)
+### EXP-0002 · 2026-11-09 · ❌→✅ · #machine #install #kago
+class: shared-machine-not-checked
+none-cheap: a hook gating winget/pacman needs a settings change by the owner; the lock command stands in AGENT_GUIDE.md -> Build
+**Context:** installing MSYS2 (`winget`) while the KAGO agent ran a `wbadmin` image of C: and planned an SSD-firmware
+power cycle; the owner stopped it («а как ты это всё поставишь сейчас? если идет дамп C?»).
+**Tried / did:** started the install without asking; killed it — a partial `C:\msys64` stayed. Then asked KAGO via
+`SendMessage`; it answered with the backup's state and its machine lock.
+**Result:** ❌→✅ — install parked until the lock is free; nothing broken (the image reads a VSS snapshot).
+**Lesson:** this PC is shared by agents of several projects; anything that changes the machine (install, heavy run,
+reboot-sensitive work) checks the machine lock first and asks its holder.   → link: AGENT_GUIDE.md → Build
+**Repro:** `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` (exit 3 = busy: wait or ask the holder);
+`ListAgents` → `kago-*` / `kumm-*` sessions.
+**Trigger:** about to run `winget`, `pacman`, `pip install` into a system location, a long build or a reboot → run
+the status command first.
+**Not for:** reading, git, editing sources inside the project folder.
+
+### EXP-0001 · 2026-11-09 · ❌ · #counts #stamps #checkpoint
+class: claim-before-evidence
+none-cheap: free-text numbers in chat and commit messages are not machine-readable; the Repro commands are the carrier
+**Context:** KAIF install and the CodeRabbit triage in one session.
+**Tried / did:** four claims written from memory instead of from a command: "13 CodeRabbit comments" (gh said
+5+4+1+1+3 = 14); "6 local fixes" in commit 338f0b7 (git log shows 5); a stamp "14:50" (the probe said 14:47);
+`checkpoint maps` run in the same parallel batch as the map Writes that FAILED — recorded "done" on empty templates.
+**Result:** ❌ — all four caught and corrected in place within the session (chat, STATUS, the research doc).
+**Lesson:** a number, a count, a moment or a "done" is copied from the output of a command run in the same call —
+never summed or felt; a checkpoint runs only after the result of the work it certifies is read.
+**Repro:** counts — `node -e` / `wc -l` over the dump; fixes — `git -C firmware log --oneline <base>..<branch>`;
+moment — `date '+%Y-%m-%d %H:%M %z'` in the same call as the write; checkpoint — never in the same tool batch as
+the edit it certifies.
+**Trigger:** writing any number or time into chat, a commit message, STATUS or a report.
+**Not for:** numbers quoted verbatim from a source document (cite the source instead).
