@@ -46,6 +46,21 @@ five-open-PR limit means it waits in the queue for a slot.
 - TWINS: searched `tabPillMaxPad` in `src/` — set only in `LibraryListActivity` (16); every other `UiTabListActivity`
   keeps 0 and does not enter the changed block.
 
+## Owner's decisions
+
+- The sort arrow stays: `[OWNER] 2026-11-09 17:31 +03:00 · chat + question «Убираем её совсем?» → «Оставить как есть»`,
+  after the agent said it shows the sort direction (▾ descending, ▴ ascending; `LibraryListActivity::tabIndicator`);
+  earlier words «и стрелка эта вниз слева нахуй не нужна» · «справа вернее» · «ааааа, понял».
+- English control 2026-11-09 17:29: `upstream/develop` vs `d2b45c0e`, English UI, Library — BMPs differ only in
+  (57,14)–(65,26), the clock digit; everything from y = 40 down (the tab bar included) is pixel-identical.
+
+- To run, owner's word `[OWNER] 2026-11-09 17:50 +03:00 · chat: «и во всех бы темах проверить, не только Lyra»`:
+  the Library tab bar in every UI theme (`uiTheme` values of the build), Russian, before/after.
+- Hole, named: the only other `UiTabListActivity` is `TextSettingsActivity` (Settings → Reading → text settings and
+  the reader menu); it keeps `tabPillMaxPad = 0`, so the changed block (`if (tabPillMaxPad > 0 …)`) is not entered —
+  proved by the code gate, not observed on screen (a scripted walk there timed out: `WAIT:…Settings` also matches
+  `SettingsList`). The unfocused tab state (selection in the list) needs a card with books — not run.
+
 ## Decisions made without the owner
 
 - `[AI]` Fix in the firmware (`UiTabListActivity`), not in the FreeInkUI SDK: the cap is a CrossPoint choice, and a

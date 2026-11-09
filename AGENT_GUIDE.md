@@ -557,10 +557,13 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
    the screen; no PNG, no BMP kept or viewed. WebP quality 90. `[OWNER] 2026-11-09 16:53–16:54 +03:00 · chat: «мы
    работаем в webp» · «ты должен снимать скриншоты в нем и в нем их смотреть» · «со зжатием 90%»` (read as
    `quality=90` — `[AI]` interpretation, said to the owner).
-   **The simulator window opens 480×800 in the top-left corner** (`CROSSPOINT_SIM_WINDOW_POS=0,32`,
-   `CROSSPOINT_SIM_WINDOW_PERCENT=100`, set by `sim_run.sh`) — the owner works on a large TV screen beside it; keep
-   100 %, the screenshot hook captures the window. `[OWNER] 2026-11-09 16:56–16:57 +03:00 · chat: «можешь эмулятор
-   открывать маленьким окном вверху слева?» · «можно прям 480×800 и открывать. У меня огромное разрешение телика»`.
+   **The simulator window is 480×800 PHYSICAL pixels (1:1), borderless, at the very top-left (0,0)** — the owner works
+   on a 4K TV at 300 % scale; the simulator declares DPI awareness (`SDL_HINT_WINDOWS_DPI_AWARENESS`), `sim_run.sh`
+   sets `CROSSPOINT_SIM_WINDOW_POS=0,0`, `CROSSPOINT_SIM_WINDOW_PERCENT=100`, `CROSSPOINT_SIM_WINDOW_BORDERLESS=1`.
+   A DPI-unaware window was stretched 3× over half the screen. `[OWNER] 2026-11-09 16:56–17:56 +03:00 · chat:
+   «можешь эмулятор открывать маленьким окном вверху слева?» · «можно прям 480×800 и открывать. У меня огромное
+   разрешение телика» · «нахуя ты открываешь экранчик 800 на 480 на ПОЛОВИНУ МОЕГО ТЕЛЕВИЗОРА 4 К?» · «я просил
+   вверху!» · «в окне виндовс без бордера и кнопок виндовс» · «1 к 1 по пикселям»`.
    **While another agent records the screen or measures (KUMM's quiet window), open no GUI window** — no simulator,
    browser or file manager; the agreement is in that agent's message, the window ends with its «замеры закончены». The script still hard-codes the laptop's `$HOME/Xteink`
    — fix it on first use here. `kuips-runner/` (`npm install`, KUIPS v1.3.0) is the UI test runner dependency.

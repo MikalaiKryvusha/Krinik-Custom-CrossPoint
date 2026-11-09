@@ -79,6 +79,11 @@ The firmware's own simulator paths may hold more POSIX — found only by compili
 - Not yet observed: File Transfer web server (Winsock path, the `close()`-on-socket risk), HTTP fetch via curl/cmd,
   sleep → wake relaunch (`SimulatorLifecycle` `execvp`), clock in UTC (UCRT `tzset`), the X4 (non-Pro) env, and that
   macOS/Linux still build (no Linux here; WSL is never used — upstream CI #60 may cover it).
+- OPEN defect of the port (2026-11-09 17:45): an in-script `SHOT:<path>` stalls the input script on Windows — no
+  BMP, no later action, the run ends on the 60 s timeout (runs `bug_library_trunc`, `nav_reading`, `c1_display`).
+  The parser is fine (the path is the rest after the second colon). `scheduleSimulatorScreenshot()` queues the event
+  under `screenshotMutex` (`HalDisplay.cpp:260`); the consumer has not been read yet. Workaround: the timed
+  `CROSSPOINT_SIM_SCREENSHOTS` schedule works. Must be fixed before the upstream PR.
 - Missing for a PR: `sample-platformio-windows.ini` (the env from `firmware/platformio.local.ini`, with the three
   build workarounds: `-include stdint.h`, `-std=gnu17`, `-Dmemcpy_P=memcpy`), a README section replacing "Native
   Windows is not supported", the four commits squashed, PR text for the owner's proofreading.

@@ -34,17 +34,17 @@ timer, a power hold made during the timer redraw wakes the reader.
 
 | # | Case (steps → expected) | Technique | Status + evidence |
 |---|---|---|---|
-| C1 smoke | X4 Pro sim: Home → Settings → Display → the sleep-image redraw row is listed | use-case walk | [NOT-TESTED] |
-| C2 | X4 sim, card seeded with `"sleepRedrawDelay":2`: boot (settings resave) → file still has `"sleepRedrawDelay":2`; Display settings without the row | decision table (board × saved value) | [NOT-TESTED] |
-| C3 | X4 Pro sim, image redraw = 1 min, a BMP opened from the file browser, wait 75 s → one `Settled image redraw` ≥ 60 s after the paint | boundary (delay) | [NOT-TESTED] |
+| C1 smoke | X4 Pro sim: Home → Settings → Экран → «Настройки очисток экрана» → the row «Обновлять заставку» is listed | use-case walk | pass 2026-11-09 17:45 · `qa_runs/c1_display/shots/screen_clean.webp` + screen text «Обновлять заставку \| ВЫКЛ» |
+| C2 | X4 sim, card seeded with `"sleepRedrawDelay":2`: boot (settings resave) → file still has `"sleepRedrawDelay":2`; Display settings without the row | decision table (board × saved value) | pass (persistence) 2026-11-09 17:42 · `qa_runs/c2_x4_keep` log «Hardware detect: X4», «Resaving settings», file `"sleepRedrawDelay":2`; the hidden row NOT observed (X4 Home keys open Library) — by code: `isHiddenOnDevice` → `!isX4Pro()` |
+| C3 | X4 Pro sim, image redraw = 1 min, a BMP opened from the file browser, wait 75 s → one `Settled image redraw` ≥ 60 s after the paint | boundary (delay) | pass 2026-11-09 17:50 · `qa_runs/c3_bmp_redraw` log: paint 2013 ms, redraw 62 179 ms (+60.2 s), 1 line in 77 s |
 | C4 | Device image `x4pro` of `4818dba0` built; owner: sleep with a custom image and 1-min sleep redraw, press and hold power during the redraw → the reader wakes | state transition | [NOT-TESTED] |
 
 ## 5. Control cases
 
 | # | Control → expected: the behaviour is absent | Status + evidence |
 |---|---|---|
-| K1 | C2 on the commit before the fix (`d7cc4e83`): the resaved file loses `sleepRedrawDelay` | [NOT-TESTED] |
-| K2 | C3 with image redraw = Off: no `Settled image redraw` in 75 s | [NOT-TESTED] |
+| K1 | C2 on the commit before the fix (`d7cc4e83`): the resaved file loses `sleepRedrawDelay` | red as expected 2026-11-09 17:44 · `qa_runs/k1_x4_drop`: X4, resave, key ABSENT |
+| K2 | C3 with image redraw = Off: no `Settled image redraw` in 75 s | pass 2026-11-09 17:52 · `qa_runs/k2_bmp_off`: viewer open 1 966 → ≥ 70 219 ms, 0 lines |
 
 ## 6. Verdict
 
