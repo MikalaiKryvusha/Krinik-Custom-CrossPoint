@@ -17,7 +17,8 @@ work project. From now on it is a standalone project.
   orientations (replies proposed). Correction: commit 338f0b7 says "6 local fixes" — the count is 5.
   Progress 2026-11-09 15:25: re-dump — still 14 CodeRabbit comments, no human review comments. #4376 main.cpp:541
   fixed locally `9448f2a5` (6 local fixes now); #4328-3 → reply, no code (path unreachable; research 02). Interview
-  #001 closed (both answers were already in code). Still open: #4375 string, #4376 main.cpp:722, #4377 ImageBlock.
+  #001 closed (both answers were already in code). Still open: #4375 string, #4376 main.cpp:722, #4377 ImageBlock —
+  the three are the owner's questions in `interviews/interview_003_coderabbit_round2.md` (⏳ waiting).
   **Before any push:** strip the ` [NOT-TESTED]` marks the agent put into code comments of d101e463, 2d5bb845,
   75b92fc0, 7addf5be (`git -C firmware grep -n "NOT-TESTED"` on each branch → 0) — upstream code carries no KAIF marks.
 - **Simulator:** native Windows build of our fork `MikalaiKryvusha/crosspoint-simulator`, branch `windows`, clone in
