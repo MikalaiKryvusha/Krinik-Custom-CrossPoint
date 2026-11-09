@@ -23,8 +23,12 @@ work project. From now on it is a standalone project.
   machine lock (`node D:/work/ai_sandbox/_tools/machine-lock.mjs status`, held until 15:35) and its SSD-firmware power
   cycle; a killed first install left a partial `C:\msys64` (KAGO: safe to delete). Resume: lock free → install →
   pacman `mingw-w64-ucrt-x86_64-{gcc,SDL2,openssl,cmake,ninja,pkgconf}` → PlatformIO venv → port.
-- **Task 0 step 3 done 2026-11-09:** KAIF 2.9 (+2.10 WIP) deployed from KAIF commit d2f21274d396, commits 8a78058,
-  2924afa; field report KAIF issue #195. Steps 1 (firmware clone — done 2026-11-09), 2, 4–6 open.
+- **First step next chat:** `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` → free → MSYS2 into `D:\msys64`
+  (research 01, Plan) → build `pr/screen-redraw-delay` and `pr/screen-calibration` in the simulator → strip the marks →
+  ask the owner before any push or reply. Owner's open questions: proofread GOAL.md; push of this repo (`git log --oneline origin/main..HEAD` — 10 commits on 2026-11-09 15:01, this closing adds 1
+  more); #4375 note wording; #4377 ImageBlock cache choice.
+- KNOWLEDGE: the simulator needs a native-Windows port, WSL is never used · `AGENT_GUIDE.md` → Build, research 01;
+  the PC is shared with the KAGO agent (machine lock) · `AGENT_GUIDE.md` → Build, `EXPERIENCE.md` EXP-0002.
 
 ## Language contract
 
@@ -39,8 +43,8 @@ work project. From now on it is a standalone project.
 This is the first and only task until it is closed. Do it in order; each step has an exit you can check.
 
 1. **Clone the workspace.**
-   - [ ] `git clone https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint.git` into the owner's chosen folder.
-   - [ ] Inside it, clone the firmware fork with its SDK submodule (it is ignored by this repo's `.gitignore`):
+   - [x] `git clone https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint.git` into the owner's chosen folder.
+   - [x] Inside it, clone the firmware fork with its SDK submodule (it is ignored by this repo's `.gitignore`):
      `git clone --recurse-submodules https://github.com/MikalaiKryvusha/crosspoint-reader.git firmware`,
      then `git -C firmware remote add upstream https://github.com/crosspoint-reader/crosspoint-reader.git`.
    - [ ] Clone KEINKT beside it if calibration work is planned: `https://github.com/MikalaiKryvusha/KEINKT.git` (separate project,
@@ -57,14 +61,14 @@ This is the first and only task until it is closed. Do it in order; each step ha
    - Exit: the three commands above pass; record versions of PlatformIO, Node, CMake in the closing report.
 
 3. **Deploy KAIF from `main` (2.9 release + 2.10 WIP).**
-   - [ ] Download the entry file into the workspace root:
+   - [x] Download the entry file into the workspace root:
      `curl -fsSL https://raw.githubusercontent.com/MikalaiKryvusha/KAIF/main/KAIF.md -o KAIF.md`.
-   - [ ] Run it with the owner's phrasing: **"Deploy KAIF from KAIF.md, my working language is Russian"** — payload English,
+   - [x] Run it with the owner's phrasing: **"Deploy KAIF from KAIF.md, my working language is Russian"** — payload English,
      owner-facing documents Russian, tracking to the origin.
-   - [ ] Record the exact KAIF commit SHA that was installed (`main` moves daily; 2.10 is unreleased). If the 2.10 WIP installer
+   - [x] Record the exact KAIF commit SHA that was installed (`main` moves daily; 2.10 is unreleased). If the 2.10 WIP installer
      fails, report the failure upstream (KAIF field report, see step 5) and fall back to the `v2.9` tag:
      `https://raw.githubusercontent.com/MikalaiKryvusha/KAIF/v2.9/KAIF.md`.
-   - [ ] `GOAL.md` comes from the owner, not from the agent: KAIF asks for it after the install — run that as a Russian interview.
+   - [x] `GOAL.md` comes from the owner, not from the agent: KAIF asks for it after the install — run that as a Russian interview.
    - Exit: `.kaif/kaif.json` exists with the version and origin; the KAIF self-check of the install summary is green.
 
 4. **Adapt the legacy material into the KAIF canon** (KAIF's own adaptation task drives this; the inputs are below).
@@ -134,13 +138,8 @@ already say KCCP. In the firmware fork it is still krinik:
 
 ### Hardware research
 
-- Charging cannot be stopped in software at 4.1 V or N %: no charger on I²C, no CE/EN line to the ESP32. Only a board modification
-  could do it. **Not doing it** (owner, 2026-11-08: «это не будет делаться»). Available now: a "unplug the charger" reminder at N % in firmware. Analysis:
-  `researches/2026-11-06_stock_batinfo_charger_analysis.md` (its raw inputs — vendor firmware, disassembly, third-party photos —
-  stayed on the laptop, see below).
-- Measurements, do not repeat without a goal: charge 50→100 % in 1:07:06, gauge max 4.381 V
-  (`qa_runs/debug2-charge-2026-11-06-180555/`); awake hour: light off ≈ 4–5 pp, light 100 % ≈ 8–9 pp
-  (`qa_runs/debug2-light-hours-2026-11-06-201434/`).
+- Closed 2026-11-08: no charging cut-off (needs a board modification); the charger analysis and the battery/light
+  measurements moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-09, STATUS trim).
 - LED driver/current/ratings still unknown; UI 80 % on the log scale ≈ 21.4 % duty, not 80 % current.
 
 ### Future (owner, 2026-11-06: "on the future")
