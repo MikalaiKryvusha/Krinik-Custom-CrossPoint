@@ -1,6 +1,6 @@
 # Bug 04 — a short click in the sleep light linger cancels the sleep with «Короткое нажатие PWR» = «Игнорировать»
 
-**Status:** 🔧 fix written, under independent review — not built, not on the reader · **Severity:** S2 · **Version/build:**
+**Status:** ✅ DONE 2026-11-09 23:22 +03:00 — verified on the reader (debug7) · **Severity:** S2 · **Version/build:**
 debug line `wip/krinik-debug6` `e7a29dd4` (KCCP only; the linger is not in any upstream PR) · **When/context:**
 2026-11-09 22:39 +03:00, the repeat of homework 01, on the owner's X4 Pro.
 **Owner's report (verbatim):** `[OWNER] 2026-11-09 22:39 +03:00 · chat: «короткое нажатие на задержке подсветки перед
@@ -31,3 +31,7 @@ owner; the wake threshold itself is not measured. Next as bug 03.
 N − 1 intervals) → now `400 / 20 + 1` = 21 samples; the two comments that promised "any press cancels" corrected.
 Open (owner's call, said in chat): this hold rule (400 ms) differs from the timer-redraw rule (`holdWakes`: hold ≥ the
 time from reset to the wake sample).
+
+## ✅ STATUS: DONE (2026-11-09 23:22 +03:00)
+
+Verified on the owner's X4 Pro with debug7 `2b150595` — homework 02, `[OWNER] 2026-11-09 23:22 +03:00 · chat: «все кейсы PASS, всё ок»`.

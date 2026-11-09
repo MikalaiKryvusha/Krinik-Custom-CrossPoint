@@ -1,6 +1,6 @@
 # Bug 03 — the sleep-image redraw is timed from the last non-waking press (debug line) or lost (PR #4376)
 
-**Status:** 🔧 fix written, under independent review — not built, not on the reader · **Severity:** S2 (a feature
+**Status:** ✅ DONE 2026-11-09 23:22 +03:00 — verified on the reader (debug7) · **Severity:** S2 (a feature
 silently does the wrong thing) · **Version/build:** debug line `wip/krinik-debug6` `e7a29dd4` (KCCP 1.1.1-debug6, on
 the owner's reader); PR #4376 `pr/screen-redraw-delay` `2dbfff7d` · **When/context:** 2026-11-09 22:39 +03:00, the
 repeat of homework 01 with «Короткое нажатие PWR» = «Игнорировать», on the owner's X4 Pro.
@@ -44,3 +44,7 @@ smoke, image, the owner's check.
 - debug7 `f52de583` **VERIFIED WITH CAVEATS**; taken in `2b150595` (amend): the due moment stamped just before
   `startDeepSleep` (stamped at arming it ran up to the linger length early after a press), `ESP_OK` checked.
 - Round 2 on `94e1c3a2` / `2b150595` — running.
+
+## ✅ STATUS: DONE (2026-11-09 23:22 +03:00)
+
+Verified on the owner's X4 Pro with debug7 `2b150595` — homework 02, `[OWNER] 2026-11-09 23:22 +03:00 · chat: «все кейсы PASS, всё ок»`.
