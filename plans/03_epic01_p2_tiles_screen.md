@@ -31,7 +31,7 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
 
 ## Steps
 
-- [ ] P2.1 Recon (read, cite): `UiListActivity` (rows, `ListItem.icon`, `setCheckboxRow`, `syncListViewport`, extra
+- [x] P2.1 Recon (read, cite): `UiListActivity` (rows, `ListItem.icon`, `setCheckboxRow`, `syncListViewport`, extra
       hits after `screen.list()` — later hits win), the hit cap, `KeyboardLayoutsActivity` (working copy, locked row,
       save on exit), idea 08's sub-screen wiring (`SettingsSection` past `End`, `addAction`), how Settings returns to the
       reader (`pendingSettingsSubSection`, `goToReader`). Anchor: «Список из семи строк…».
@@ -55,3 +55,18 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
    (`syncListViewport`); the shot shows it.
 3. The return-to-book route crosses `goToSettings`'s replace (the book is closed). Reaction: reopen the book by
    `APP_STATE.openEpubPath` — the same path the reader uses at boot; the page restores from its progress file.
+
+## P2.1 recon — findings (2026-11-13, `wip/krinik-debug10` `8538f3dd`)
+
+- `screen.list()` (FreeInkUI `components/lists/list.h`) lays the rows out inside itself and exposes no row rects and no
+  custom trailing slot (only `value` / `toggle` / a swipe-reveal action); `UiListActivity`'s own comment: «Screens that
+  are not a single list (sliders, tab layouts, state machines) should NOT derive from this — they use UiAppHost
+  directly». A row with its own ▲ ▼ targets is such a screen → `ShadeTilesActivity` on `UiAppHost` (the shade's
+  pattern: `screen.takeTop()` per row, `screen.frame().hit(rect, action, value, InputTouch)` per element).
+- The firmware checkbox (`list.h:855-864`, `toggleCheckbox`): `stroke(box, fg, 2, 2)`, and when on `fill(box.inset(size/4),
+  fg, 2)`, `size = min(togW, togH) - 6` — drawn the same way by hand.
+- No arrow icons exist (`src/components/icons/`: only download / upload) → ▲ ▼ as 1-bit icons (P2.2).
+- Handlers: `FreeInkApp<24, 6>` — ≤ 6 `app.on` actions (row toggle, up, down, back… — one action with the value
+  encoding row × kind keeps it at 1–2); ≤ 24 hits: 7 rows × 3 = 21 + the header back.
+- Keys on this screen: `KeyboardLayoutsActivity` reads buttons in `loop()` (Up/Down move the selection, Confirm toggles);
+  for this screen: Up/Down select a row, Confirm toggles; moving a row by keys — an open detail, said in the report.
