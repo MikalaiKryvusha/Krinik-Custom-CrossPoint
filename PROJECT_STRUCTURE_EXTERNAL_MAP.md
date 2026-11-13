@@ -30,6 +30,7 @@ KCCP/                         # the reader workspace — NO firmware source here
 ├── legacy/                   # laptop-era README/STATUS/HANDOVER/HISTORY (Russian archive) + left-on-laptop.tsv
 ├── STATUS.md · GOAL.md · MASTER_PLAN.md · AGENT_GUIDE.md …   # KAIF canon (KAIF_FRAMEWORK.md lists it)
 ├── plans/ ideas/ bugs/ homeworks/ reports/   # KAIF working dirs (each with its README)
+├── testcases/                # case sets TC_<feature>.md + reports/<date>_<work>.md (run reports, kaif-testrun-lint)
 ├── .kaif/ · .claude/ .agents/ .grok/ .cline/ .roo/   # KAIF machinery and agent skills
 ├── simulator/                # (ignored) clone of MikalaiKryvusha/crosspoint-simulator, branch windows (native Windows port)
 ├── .pio-venv/                # (ignored) PlatformIO Core venv for this PC
