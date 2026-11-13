@@ -44,7 +44,7 @@ KCCP/                         # the reader workspace — NO firmware source here
 |------|-----------|-------------------------|
 | `restore.mjs` | one-command reader setup over the reader's File Transfer web server | `settings.json`, `fonts/`, the reader's IP |
 | `firmware-builds/` | released and debug images with checksums | built in `firmware/` (`pio run`), published as GitHub releases of THIS repo |
-| `tools/sim_run.sh` | one simulator run: fresh card copy → scripted input → shots + log | `firmware/.pio/build/simulator_x4_pro/program`, `qa_runs/sd_template`, `tools/shot_webp.py` |
+| `tools/sim_run.sh` | one simulator run: fresh card copy → scripted input → shots + log; refuses a script item without `<ms>:` or earlier than the one before it in its WAIT segment (exit 2) | `firmware/.pio/build/simulator_x4_pro*/program`, `qa_runs/sd_template` (or `SD_TEMPLATE`), `tools/shot_webp.py`, `F:\ai_sandbox\msys64\ucrt64\bin` (SDL2.dll) |
 | `qa_runs/` | dated evidence per run, PR bodies and queue (`prs-2026-11-06/queue.json`) | written by the tools and by the agent; filtered for publication |
 | `README.md` | bilingual storefront (English, then Russian) with the roadmap table | `docs/`, releases, upstream PR list |
 | `legacy/` | archive — read, never extended | — |

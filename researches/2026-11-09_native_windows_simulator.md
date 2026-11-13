@@ -49,7 +49,20 @@ The firmware's own simulator paths may hold more POSIX — found only by compili
   `extra_configs`), so `pr/*` branches stay clean: `simulator_win` / `simulator_x4_pro_win`, simulator lib =
   `symlink://` to `simulator/`. `sdl2-config` is a shell script cmd cannot run → the SDL2 flags are spelled out
   (pkg-config's `-mwindows` left out so the log stays on stdout).
-- Build: `$env:PATH = "D:\msys64\ucrt64\bin;" + $env:PATH; .pio-venv\Scripts\pio.exe run -d firmware -e simulator_x4_pro_win`.
+- Build: `$env:PATH = "F:\ai_sandbox\msys64\ucrt64\bin;" + $env:PATH; .pio-venv\Scripts\pio.exe run -d firmware -e simulator_x4_pro_win`.
+- **Moved 2026-11-13 14:09 +03:00** (the owner's word 14:06: «D:\msys64\ давай переместим в F:\ai_sandbox\»): MSYS2 now lives in
+  **`F:\ai_sandbox\msys64`** — robocopy, 60 379 files / 2 293 125 441 bytes on both sides; the include/lib flags of
+  `firmware/platformio.local.ini`, `tools/sim_run.sh`, the Start-menu shortcuts and the HKCU uninstall entry point there.
+  MSYS2 itself is relocatable (its `/etc/fstab` mounts are relative); the CMake cache of `firmware/build/test` had to be
+  re-made (`cmake --fresh`), it stores the compiler's absolute path.
+- **The first FULL host-test run on this PC** (2026-11-13 14:17 +03:00, F: toolchain, `cmake --build build/test -- -k 0`,
+  `ctest -j1`, `PYTHONUTF8=1`): **761 of 769 pass**. 8 fail for native-Windows reasons, none tied to where MSYS2 lies:
+  5 executables do not compile — `ChapterHtmlSlimParserTest` (`std::filesystem::path::c_str()` is `wchar_t*` on
+  MinGW), `BmpToBmpTest`, `BookMetadataCacheTest`, `GifBmpTest`, `GifSupportTest`; 3 fail at run time —
+  `TrustedTimeTimezone` (its script compiles a check with `setenv`/`settimeofday`, absent in MinGW, and a `time_t`
+  narrowing under `-Werror`), `PatchAnimatedGif`, `CssParserTest.FailedPromotionRestoresTheOnlyBackupCache`. Without
+  `PYTHONUTF8=1` `clipping_selection_text` also fails (cp1251 cannot encode `あ`). No earlier full run exists to
+  compare with (debug9 built only its targets). Porting these is not in any plan yet.
 
 ## Port progress
 

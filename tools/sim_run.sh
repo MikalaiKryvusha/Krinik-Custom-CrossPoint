@@ -4,15 +4,24 @@
 # Shots are names (home, sleep1…) → qa_runs/<name>/shots/<shot>.bmp, then WebP. Template: qa_runs/sd_template.
 # Env: SD_TEMPLATE (card folder under qa_runs/), SIM_ENV (default simulator_x4_pro, on Windows simulator_x4_pro_win),
 # FW_DIR (default <workspace>/firmware), SIM_TIMEOUT (s), KEEP_BMP. Windows: run from Git Bash; the UCRT64 bin
-# folder (SDL2.dll) is put first in PATH when D:/msys64 exists.
+# folder (SDL2.dll) is put first in PATH when F:/ai_sandbox/msys64 exists (moved from D:/msys64 2026-11-13).
 set -e
+# Script guard (EXP-0009, EXP-0015). Every input-script item is <ms>:<action>, and its time counts from the last WAIT,
+# so inside one WAIT segment the times must not go down. The simulator silently misreads both slips (a bare `WAIT:…`
+# ran the rest at once; a `1000:TAP` written after a `1500:SHOT` ran before it) — refuse them before the run.
+for s in "$2" "${4:-}"; do
+  echo "$s" | tr ';' '\n' | grep -v '^$' | awk -F: '
+    $1 !~ /^[0-9]+$/ { print "sim_run: script item without <ms>: prefix: " $0; exit 2 }
+    $1 + 0 < prev { print "sim_run: item earlier than the one before it (times count from the last WAIT): " $0; exit 2 }
+    { prev = $1 + 0; if ($2 == "WAIT") prev = 0 }' >&2 || exit 2
+done
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 R=$ROOT/qa_runs/$1; rm -rf "$R"; mkdir -p "$R/shots"; cp -R "$ROOT/qa_runs/${SD_TEMPLATE:-sd_template}" "$R/sd"
 expand() { echo "$1" | tr ';' '\n' | sed -n "s|^\([0-9]*\):\(.*\)$|\1:$R/shots/\2.bmp|p" | paste -sd ';' -; }
 PROG=program; PY=python3
 case "$(uname -s)" in MINGW*|MSYS*) PROG=program.exe; PY="$ROOT/.pio-venv/Scripts/python.exe"  # has Pillow for shot_webp.py
   R=$(cygpath -m "$R")  # a native exe needs D:/… paths inside env values
-  [ -d /d/msys64/ucrt64/bin ] && PATH=/d/msys64/ucrt64/bin:$PATH ;; esac
+  [ -d /f/ai_sandbox/msys64/ucrt64/bin ] && PATH=/f/ai_sandbox/msys64/ucrt64/bin:$PATH ;; esac
 cd "${FW_DIR:-$ROOT/firmware}"
 # The window opens 480x800 physical pixels, borderless, at the very top-left of the owner's 4K screen (owner,
 # 2026-11-09). Keep 100 %: the screenshot hook captures the window, a smaller window gives smaller shots.

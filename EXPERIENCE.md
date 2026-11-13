@@ -81,6 +81,21 @@
 
 ## Entries
 
+### EXP-0015 · 2026-11-13 · ❌→✅ · #simulator #script #wait
+class: false-defect
+mechanized: tools/sim_run.sh — the script guard refuses an item without `<ms>:` and an item earlier than the one before it in its WAIT segment (red on both scripts below, 2026-11-13)
+**Context:** idea 07, the debug9 control run in the image viewer: open a picture, long tap right, long tap left, shots.
+**Tried / did:** (1) `WAIT:Entering activity: BmpViewer` with no time — the simulator ran the rest at once: the first shot
+and a long tap landed in the book (`ClipSelection`), one turn looked "lost"; (2) after that fix, `1000:TAP` written after
+`1500:SHOT` in one WAIT segment — the tap ran before the shot, and `QUIT` before the last shot (EXP-0009's class again).
+**Result:** ❌→✅ caught by the ORDER of the log lines (`Saved screenshot` before `Entering activity: BmpViewer`), not by
+the shots; the third run with increasing times passed.
+**Lesson:** an input that seems lost is first checked against the script grammar: `<ms>:WAIT:<regex>`, times count from
+the last WAIT and never go down inside a segment.
+**Repro:** `sh tools/sim_run.sh x "1000:TAP:0.5,0.5;WAIT:y;500:QUIT" ''` → exit 2 and the reason, no run folder.
+**Trigger:** writing `CROSSPOINT_SIM_INPUT_SCRIPT` with WAIT.
+**Not for:** the timed screenshot schedule (the third argument of `sim_run.sh`), which counts from the process start.
+
 ### EXP-0014 · 2026-11-13 · ❌→✅ · #show #window #edge #screen
 class: shown-as-link
 none-cheap: one launch recipe; the carrier is the Repro below
@@ -143,6 +158,7 @@ rely on a `cd` — and a restore is checked at its target (`diff`/`grep` on the 
 
 ### EXP-0009 · 2026-11-09 · ❌→✅ · #simulator #script #false-defect
 class: false-defect
+mechanized: tools/sim_run.sh — the script guard (times inside a WAIT segment never go down; added 2026-11-13 when the class recurred, EXP-0015)
 none-cheap: one re-read of the tool's README before naming a defect; the carrier is the Repro below
 **Context:** the native Windows simulator; a "defect" carried for 6 hours and into the chat handover: «an in-script
 `SHOT` stalls after a second `WAIT`», blocking the upstream PR.
