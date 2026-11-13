@@ -53,3 +53,17 @@
 like every Settings screen, the cursor on the long-tapped tile. Final view: `homeworks/05_shade_mockups/final.html`.
 Decided by the agent unless he says otherwise: Back from «Плитки шторки» returns to the book; the screen is also
 reachable from «Настройки → Экран». Still open for him: the tile set (7).
+
+`[OWNER] 2026-11-13 13:00 +03:00 · chat` (on the final view, frame 3 with six tiles; a crop of it attached):
+
+> здесь отступы некорректные
+
+> отступы нужно будет пересчитывать для разного числа плиток
+
+> чтобы они органично в центре располагались, с равными отступами между ними и по краям
+
+**Requirement (from the words above):** WHEN the shade shows N tiles, the firmware shall place them with equal gaps
+between the tiles and at both edges: gap = (sheet width − N × 56) / (N + 1). Today `FrontlightPanelActivity`
+centres each tile in an equal slot (`row.width * id / tileCount`) — its edge gap is half the gap between tiles, so
+the row layout itself changes. Fit: for N = 5 / 6 / 7 the gap is 86.7 / 66.3 / 51 points, measured on a simulator
+shot of each N.
