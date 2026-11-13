@@ -81,10 +81,12 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   setting (by its field) to a top-level group or to a Display sub-screen past `End` — «Настройки очисток экрана»,
   «Калибровка экрана», «Настройки сна» (debug10, idea 08); `addAction` rows open the sub-screens. The groups and the
   sub-screens past `End` are the enum `SettingsSection` (`SettingsSection.h`).
-- `src/activities/settings/ShadeTilesActivity.{h,cpp}` (debug10, epic 01 Ф2) — «Кнопки в шторке», the second row of
+- `src/activities/settings/ShadeTilesActivity.{h,cpp}` (1.1.3-debug2 `41718c61`, epic 01 Ф2) — «Кнопки в шторке», the second row of
   «Экран»: one hand-drawn row per tile on `UiAppHost` (icon, name, checkbox, ▲ ▼; theme tokens from
   `Screen::resolveListProps`), edits go straight into `SETTINGS.shadeTiles`, the file is written on exit; portrait while
-  open; Back = `finish()`. The Bluetooth row is hidden where Bluetooth is not compiled in (the simulator).
+  open; Back = `finish()`. The Bluetooth row is hidden where Bluetooth is not compiled in (the simulator). Row names are
+  the screen's own short strings where the Settings name is too long (`STR_SHADE_TILE_ORIENTATION` «Ориентация»).
+  The constructor's `cursorTile` is the phase 3 entry (the long-tapped button).
 - `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: seven tiles by string id, on/off and order,
   `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), at least one on, the
   equal-gap row layout and touch slots; host test `test/shade_tiles/`; held by `CrossPointSettings::shadeTiles`.

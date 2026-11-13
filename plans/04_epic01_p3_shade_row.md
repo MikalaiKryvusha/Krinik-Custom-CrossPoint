@@ -81,7 +81,9 @@ Anchor (meta-plan, Ф3): «Ряд кнопок по модели с равным
 - The model's layout (`src/util/ShadeTiles.h:143-180`): `gapWidth`, `tileLeft` (space-evenly, gaps differ ≤ 1 px),
   `tileSlot` (touch slots meet exactly, the first and the last reach the row's edges).
 - Long press in FreeInkUI (`FreeInkUICore.h:302`, `:1013-1027`, `:1351-1355`): a hit registered with `InputLongPress`
-  is dispatched on the long-press release with `ActionEvent::longPress = true`; a plain `InputTouch` hit never takes a
+  is dispatched with `ActionEvent::longPress = true` the moment the long press fires, the finger still DOWN (the app's
+  `touchSnapshotFrom`, `src/components/UiAppHelpers.h:174-192`, delivers it as a released+longPress snapshot and the
+  rest of the contact is suppressed, so the lift cannot also tap); a plain `InputTouch` hit never takes a
   long press (`findTouch`, `:1234-1236`).
 - Home «Сон» (`HomeActivity.cpp:349-355`): `requestUpdateAndWait()` then `activityManager.requestSleep()`. Home
   «Фонарик» (`:345-346`): `activityManager.goToFlashlight()` — a REPLACE (`ActivityManager.cpp:303`), the book would
@@ -90,7 +92,8 @@ Anchor (meta-plan, Ф3): «Ряд кнопок по модели с равным
   handler set no action — a handler that calls `finish()` closes the parent with no frame of it in between.
 - The long-press threshold (risk 4, closed): `InputManager::TOUCH_LONG_PRESS_MS = 500`
   (`freeink-sdk/libs/hardware/InputManager/include/InputManager.h:536`) — the meta-plan's «дольше полсекунды»; it fires
-  once per contact while the finger is down, and FreeInkUI dispatches it on the release. `UiAppHost::routeTouch(input,
+  once per contact while the finger is down, and the screen reacts at that moment (see the line above; corrected 19:24 —
+  an earlier line here said «on the release»). `UiAppHost::routeTouch(input,
   withLongPress, routeHeld)` forwards it only with `withLongPress = true`; the shade calls `routeTouch(mappedInput,
   false, /*routeHeld=*/true)` today (`FrontlightPanelActivity.cpp:271`) — P3.6 sets the first flag.
 - `GUI.drawHeader` publishes the header back arrow as a tap target (`HeaderBackTapTarget`, cleared on a push,

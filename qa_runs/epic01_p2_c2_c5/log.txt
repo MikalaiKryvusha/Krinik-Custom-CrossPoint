@@ -1,0 +1,65 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-13 16:26
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[218] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[219] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[219] [DBG] [SDREG] Fonts directory not found: /fonts
+[219] [DBG] [SDREG] Discovery complete: 0 families
+[219] [DBG] [SDFS] SD font system ready (0 families discovered)
+[219] [DBG] [MAIN] Fonts setup
+[219] [DBG] [ACT] Entering activity: Boot
+[220] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[229] [DBG] [ACT] Exiting activity: Boot
+[229] [DBG] [ACT] Entering activity: Home
+[229] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [229] [DBG] [ACT] Entering activity: Home
+[243] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1831] [DBG] [ACT] Exiting activity: Home
+[1831] [DBG] [ACT] Entering activity: SettingsList
+[1831] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1831] [DBG] [ACT] Entering activity: SettingsList
+[3427] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3427] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[3427] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[3428] [DBG] [DREG] No /.dictionaries directory on SD card
+[3428] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [3427] [DBG] [ACT] Entering activity: Settings
+[5525] [DBG] [ACT] Pushed to activity stack, new size = 2
+[5525] [DBG] [ACT] Entering activity: ShadeTiles
+[5527] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [5525] [DBG] [ACT] Entering activity: ShadeTiles
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/shots/tiles0.bmp
+[8622] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[10001] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10001] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/shots/c2.bmp
+[11630] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[13626] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[15619] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/shots/c3.bmp
+[18628] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[20010] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[20010] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/shots/c4a.bmp
+[21621] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/shots/c4b.bmp
+[24846] [INF] [STL] Shade tiles saved: sleep,night,cleanup,orientation,touch,bluetooth,-flashlight
+[24846] [DBG] [ACT] Exiting activity: ShadeTiles
+[24846] [DBG] [ACT] Popped from activity stack, new size = 1
+[24846] [DBG] [ACT] Handling result for popped activity
+[24847] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [24846] [DBG] [ACT] Popped from activity stack, new size = 1
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p2_c2_c5/shots/c5.bmp

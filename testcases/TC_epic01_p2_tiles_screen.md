@@ -3,7 +3,7 @@
 **Created:** 2026-11-13 · **Under test:** `wip/kccp-1.1.3-debug2` (`firmware/`, on `bcbd6dab`) — `ShadeTilesActivity`, its
 row in Settings → Display · **Version/build:** simulator `simulator_x4_pro_win` (built without Bluetooth), then
 `1.1.3-debug2` on the owner's X4 Pro with phase 3
-**Test basis:** `plans/03_epic01_p2_tiles_screen.md` → acceptance criteria 1–6; the meta-plan row Ф2 of
+**Test basis:** `plans/03_DONE_epic01_p2_tiles_screen.md` → acceptance criteria 1–6; the meta-plan row Ф2 of
 `plans/01_EPIC_shade_tiles.md` («Список из семи строк: иконка, имя, квадратик прошивки, ▲ ▼. Книжная ориентация. …
 Пункт в «Настройки → Экран».»); the epic rule «Хотя бы одна плитка остаётся включённой: последний квадратик не
 снимается, строка текста поясняет почему».
@@ -40,14 +40,14 @@ Achieve: the owner turns the shade's tiles on and off and puts them in his order
 
 | # | Case (steps → expected) | Technique | Status + evidence |
 |---|---|---|---|
-| C1 | Home → Settings → «Экран»: «Кнопки в шторке» is the second row (shot `display`); tap it → `Entering activity: ShadeTiles`; shot `tiles0`: header, note, rows «Ночной режим» ☑, «Очистка экрана» ☑, «Ориентация чтения» ☑, «Сенсор» ☑, «Сон» ☐, «Фонарик» ☐; each row: icon, name, ▲, ▼, the checkbox at the right edge (the mockup); the cursor pill on row 1 | smoke (R1, R6 entry) | not run |
-| C2 | C1 → tap the «Сон» row → «Сон» ☑ (shot) | use case (R2) | not run |
-| C3 | C2 → ▲ on «Сон» three times, each after the previous move is on the screen (a tap on a frame that does not show the last move is dropped by design) → order «Ночной режим», «Сон», «Очистка экрана», «Ориентация чтения», «Сенсор», «Фонарик» (shot); the first ▲ steps over the hidden Bluetooth | state transition (R4) | not run |
-| C4 | C3 → ▼ on «Ночной режим» → «Сон» first, «Ночной режим» second (shot); then ▲ on «Сон» (row 1) → the order and the checkboxes unchanged (shot) | state transition, boundary (R4) | not run |
-| C5 | C4 → swipe Back from the left edge → `Popped`, shot = «Экран»; log `Shade tiles saved: sleep,night,cleanup,orientation,touch,bluetooth,-flashlight`; the card's `settings.json` holds that string | use case (R5, R6) | not run |
-| C6 | C1 → uncheck «Очистка экрана», «Ориентация чтения», «Сенсор» → only «Ночной режим» ☑ among the rows (Bluetooth hidden but on); tap «Ночной режим» → stays ☑ (shot) | boundary (R3) | not run |
-| C7 | C6 → tap «Сон» (☑), tap «Ночной режим» → «Ночной режим» ☐ now (two were on) (shot); header arrow tap → `Popped`; `settings.json`: `-night,-cleanup,-orientation,-touch,bluetooth,sleep,-flashlight` | control of C6 (R3), header Back (R6) | not run |
-| C8 | C1 → Down, Down → pill on row 3 (shot); Confirm → «Ориентация чтения» ☐ (shot); Confirm → ☑; Up ×3 → pill wraps to «Фонарик» (shot); Back key → `Popped`; log `Shade tiles saved:` with the default row (an edit was made — the save is by the edit flag, by design: a shade opened in between may have saved an intermediate row), and NO `shadeTiles` key in `settings.json` (the row equals the default) | keys (R7), control of R5 (the default row is never written) | not run |
+| C1 | Home → Settings → «Экран»: «Кнопки в шторке» is the second row (shot `display`); tap it → `Entering activity: ShadeTiles`; shot `tiles0`: header, note, rows «Ночной режим» ☑, «Очистка экрана» ☑, «Ориентация чтения» ☑, «Сенсор» ☑, «Сон» ☐, «Фонарик» ☐; each row: icon, name, ▲, ▼, the checkbox at the right edge (the mockup); the cursor pill on row 1 | smoke (R1, R6 entry) | pass — [TESTED: 2026-11-13 · simulator run epic01_p2_c1, shots display/tiles0 read; the cut «Ориентация чтен…» fixed by STR_SHADE_TILE_ORIENTATION · testcases/reports/2026-11-13_epic01_p2.md] |
+| C2 | C1 → tap the «Сон» row → «Сон» ☑ (shot) | use case (R2) | pass — [TESTED: 2026-11-13 · shot c2: «Сон» ☑ · testcases/reports/2026-11-13_epic01_p2.md] |
+| C3 | C2 → ▲ on «Сон» three times, each after the previous move is on the screen (a tap on a frame that does not show the last move is dropped by design) → order «Ночной режим», «Сон», «Очистка экрана», «Ориентация чтения», «Сенсор», «Фонарик» (shot); the first ▲ steps over the hidden Bluetooth | state transition (R4) | pass — [TESTED: 2026-11-13 · shot c3: the order as expected · testcases/reports/2026-11-13_epic01_p2.md] |
+| C4 | C3 → ▼ on «Ночной режим» → «Сон» first, «Ночной режим» second (shot); then ▲ on «Сон» (row 1) → the order and the checkboxes unchanged (shot) | state transition, boundary (R4) | pass — [TESTED: 2026-11-13 · shots c4a/c4b · testcases/reports/2026-11-13_epic01_p2.md] |
+| C5 | C4 → swipe Back from the left edge → `Popped`, shot = «Экран»; log `Shade tiles saved: sleep,night,cleanup,orientation,touch,bluetooth,-flashlight`; the card's `settings.json` holds that string | use case (R5, R6) | pass — [TESTED: 2026-11-13 · log + settings.json `sleep,night,cleanup,orientation,touch,bluetooth,-flashlight`, shot c5 · testcases/reports/2026-11-13_epic01_p2.md] |
+| C6 | C1 → uncheck «Очистка экрана», «Ориентация чтения», «Сенсор» → only «Ночной режим» ☑ among the rows (Bluetooth hidden but on); tap «Ночной режим» → stays ☑ (shot) | boundary (R3) | pass — [TESTED: 2026-11-13 · shot c6 · testcases/reports/2026-11-13_epic01_p2.md] |
+| C7 | C6 → tap «Сон» (☑), tap «Ночной режим» → «Ночной режим» ☐ now (two were on) (shot); header arrow tap → `Popped`; `settings.json`: `-night,-cleanup,-orientation,-touch,bluetooth,sleep,-flashlight` | control of C6 (R3), header Back (R6) | pass — [TESTED: 2026-11-13 · shot c7, header arrow Popped, settings.json as expected · testcases/reports/2026-11-13_epic01_p2.md] |
+| C8 | C1 → Down, Down → pill on row 3 (shot); Confirm → «Ориентация чтения» ☐ (shot); Confirm → ☑; Up ×3 → pill wraps to «Фонарик» (shot); Back key → `Popped`; log `Shade tiles saved:` with the default row (an edit was made — the save is by the edit flag, by design: a shade opened in between may have saved an intermediate row), and NO `shadeTiles` key in `settings.json` (the row equals the default) | keys (R7), control of R5 (the default row is never written) | pass — [TESTED: 2026-11-13 · shots k1–k4, log saved default row, no key in settings.json · testcases/reports/2026-11-13_epic01_p2.md] |
 
 ## 5. Not covered — said aloud
 

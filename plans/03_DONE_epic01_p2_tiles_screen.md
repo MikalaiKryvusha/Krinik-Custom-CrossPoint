@@ -3,7 +3,8 @@
 > **Created:** 2026-11-13 · **Parent:** `plans/01_EPIC_shade_tiles.md` → «Ф2 — экран «Кнопки в шторке»» · **Status:** 📐
 > planned 2026-11-13 15:58 +03:00; P2.1 recon done; P2.2–P2.5 written 2026-11-13 16:57 +03:00, reworked to the mockup by
 > 17:19; moved to `wip/kccp-1.1.3-debug2` 19:06; P2.6 judge 19:21 — no blockers (findings below); next P2.7 build +
-> simulator · **Outbound:** —
+> simulator; ✅ phase closed 2026-11-13 19:33 +03:00 — firmware `41718c61`, simulator C1–C8 pass
+> (`testcases/reports/2026-11-13_epic01_p2.md`), host suite 773/781 = the 8 known · **Outbound:** —
 
 ## Goal vector (Achieve)
 
@@ -65,8 +66,10 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
       arrays were 815-char lines). Left as nits: a dropped tap still repaints; ▲ on row 1 does not move the cursor;
       «Bluetooth Page Turner» may be cut with an ellipsis on the device (look on the reader). To Ф3 (plan 04 risks):
       keys over the image viewer, a second copy of this screen from a shade over it.
-- [ ] P2.7 Build; simulator: criteria 1–5; `settings.json` read; run report `testcases/reports/<date>_epic01_p2.md`.
-- [ ] P2.8 Commit; tick Ф2; write the phase 3 plan.
+- [x] P2.7 Build; simulator: criteria 1–5; `settings.json` read; run report `testcases/reports/2026-11-13_epic01_p2.md`:
+      C1–C8 pass; found and fixed in the phase: «Ориентация чтения» cut with an ellipsis → the mockup's «Ориентация»
+      (`STR_SHADE_TILE_ORIENTATION`, judged, re-run); a `tools/sim_run.sh` gap (in-script SHOT names) fixed in KCCP.
+- [x] P2.8 Commit (firmware `41718c61`, 19:33); Ф2 ticked in the meta-plan; the phase 3 plan is `plans/04_epic01_p3_shade_row.md`.
 
 ## Risks
 
@@ -93,3 +96,19 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
   encoding row × kind keeps it at 1–2); ≤ 24 hits: 7 rows × 3 = 21 + the header back.
 - Keys on this screen: `KeyboardLayoutsActivity` reads buttons in `loop()` (Up/Down move the selection, Confirm toggles);
   for this screen: Up/Down select a row, Confirm toggles; moving a row by keys — an open detail, said in the report.
+
+## Decisions made without the owner
+
+Every call below is `[AI]` and reversible; listed at the phase closing 2026-11-13 19:33 +03:00.
+- The screen is built on `UiAppHost`, not `UiListActivity` (P2.1: FreeInkUI `list()` has no slot for a row's own ▲ ▼).
+- No working copy: edits go straight into `SETTINGS.shadeTiles`; the file is saved on exit after ANY edit (a flag, so an
+  intermediate row a shade saved in between is overwritten); the key is written only while the row is not the default.
+- The last-on rule counts the SHOWN rows (a hidden Bluetooth that is on does not keep the shade alive).
+- ▲ ▼ step over a hidden row; ▲ on row 1 and ▼ on the last row do nothing and do not fall through to the checkbox.
+- The row is the second of «Экран», right under «Настройки сна»; touch boards only.
+- One note above the rows (the Settings sub-screen pattern) says what the checkboxes and arrows do and why one button
+  stays on — the mockup has no note; the epic's rule asks for «строка текста поясняет почему».
+- Moving a row by keys is not built (Up/Down move the cursor, Confirm checks); said here as an open detail.
+- English on-device strings say "buttons" ("Control Center Buttons"), following the owner's Russian rename of 17:06.
+- The orientation row is named «Ориентация» / "Orientation" (the mockup's word) by its own string.
+- A tap on a frame that does not show the last move yet is dropped (the second of two fast ▲ waits for the frame).

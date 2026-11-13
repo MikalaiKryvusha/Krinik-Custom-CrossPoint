@@ -14,9 +14,10 @@ work project. From now on it is a standalone project.
   Draft homework for the image: `homeworks/06_kccp_1.1.3_debug1.md` (build data placeholders ⟨…⟩). Release-time debt
   (judge): `README.md` / `USER_GUIDE.md` describe fractional mixing as always on and battery as «still being
   measured» — fix before KCCP 1.1.3 ships.
-- **Unparked 19:06:** debug1 got its test fix (`84c33f85`); the Ф2 screen was popped from the stash onto the new line
-  `wip/kccp-1.1.3-debug2` (= debug1 + Ф2, then Ф3) and the stash is dropped. Next: judge of the whole Ф2 diff →
-  simulator cases `testcases/TC_epic01_p2_tiles_screen.md` → commit.
+- **Epic 01 Ф2 closed 19:33:** «Кнопки в шторке» committed as firmware `41718c61` on `wip/kccp-1.1.3-debug2`; two
+  judges; simulator C1–C8 pass (`testcases/reports/2026-11-13_epic01_p2.md`; «Ориентация чтения» was cut → the
+  mockup's «Ориентация»); host suite 773/781 = the 8 known. **Next: Ф3** by `plans/04_epic01_p3_shade_row.md` (the
+  shade draws its row from the model, «Сон», «Фонарик», the long tap → this screen; risks 5–6 from the judge).
 - ~~**PARKED: epic 01 Ф2 screen «Кнопки в шторке»**~~ ([NOW]) — the owner 18:52 «может ты готов мне сборку 1.1.3-debug1
   собрать? Или там много работч ещё?» → the debug1 image first. The screen's uncommitted work (the rework of
   `ShadeTilesActivity` to the mockup `homeworks/05_shade_mockups/final.html` step 2 + the first judge's findings, cut
@@ -50,7 +51,7 @@ work project. From now on it is a standalone project.
   English agent docs keep "tile"; the owner's own past quotes are left verbatim.
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
-  2. **Epic 01 Ф2, step P2.2-end / P2.3** by `plans/03_epic01_p2_tiles_screen.md`: paste the ▲ ▼ icons from
+  2. **Epic 01 Ф2, step P2.2-end / P2.3** by `plans/03_DONE_epic01_p2_tiles_screen.md`: paste the ▲ ▼ icons from
      `python -I -X utf8 tools/make_icon.py tri_up icon_tri_up_32` (and `tri_down`) into
      `firmware/src/components/icons/customListIcons.h`; write `ShadeTilesActivity` on `UiAppHost` (not `UiListActivity` —
      the list hides row rects; see the plan's P2.1 findings), the entries (`SettingsSection::ShadeTiles` after idea 08's
@@ -195,7 +196,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 screen «Кнопки в шторке» (uncommitted in `firmware/`, judge running) → then Ф3 | crosspoint-reader · `wip/kccp-1.1.3-debug2` | bcbd6dab + tree |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 screen «Кнопки в шторке» (`41718c61`) → then Ф3 — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 41718c61 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |
