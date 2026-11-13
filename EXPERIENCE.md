@@ -57,7 +57,8 @@
 >      claim-before-evidence, owner-decision-not-applied, text-in-agents-world,
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
 >      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand,
->      overwrote-tracked, tool-crash, false-defect, wrong-directory, missing-dependency, own-process-killed -->
+>      overwrote-tracked, tool-crash, false-defect, wrong-directory, missing-dependency, own-process-killed,
+>      wrote-outside-project -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -80,6 +81,18 @@
 > Skill: `/experience` (capture a lesson · recall relevant lessons).
 
 ## Entries
+
+### EXP-0017 · 2026-11-13 · ❌ · #disk #temp #scratchpad #owner
+class: wrote-outside-project
+none-cheap: a PreToolUse hook refusing writes outside the project is a settings change the owner makes; the carrier is HOUSE_RULES.md П1
+**Context:** KCCP chats used the harness scratchpad `D:\Temp\claude\…` (named in the system prompt) for a firmware
+`git worktree` (`wt113`, the debug1 merge) and a patch backup of uncommitted work.
+**Result:** ❌ the owner found `D:\Temp` full of agents' folders: «а что это за свалка? … я не разрешал агентам там
+работать» and deleted it himself; the rule since 18:56: temp files inside the project.
+**Lesson:** a folder the harness OFFERS is not a folder the owner ALLOWED; the agent's temp files live in `<project>/.tmp/`.
+**Repro:** before any temp write, the path starts with `D:/work/ai_sandbox/KCCP/.tmp/`; `git check-ignore -v .tmp/x` → `.gitignore:…:/.tmp/`.
+**Trigger:** about to create a worktree, a backup, a download or a script output.
+**Not for:** files the harness writes itself (background outputs, subagent transcripts) — their folder is a harness setting.
 
 ### EXP-0016 · 2026-11-13 · ❌→✅ · #input #gesture #twins #firmware
 class: twins-missed

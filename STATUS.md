@@ -6,6 +6,24 @@ work project. From now on it is a standalone project.
 
 ## Where to continue
 
+- **Day loop since 2026-11-13 19:01 +03:00 — the owner:** «работай автономно над читалкой, со сборкой не торопись, она
+  мне пока не особо нужна. Работаем по фичам KCCP» · «дневной цикл». The debug1 IMAGE waits (no build, no card, no
+  homework delivery until asked); the loop works the KCCP features: epic 01 Ф2 → Ф3, idea 06, idea 09, idea 03.
+  The debug1 judge (19:00) found `frontlight_dither` red at `d56b53e9` (a fade check kept the old 10 % threshold) —
+  observed red, fixed (threshold = the 9 % duty), green on all three configurations, red on the old gate (control).
+  Draft homework for the image: `homeworks/06_kccp_1.1.3_debug1.md` (build data placeholders ⟨…⟩). Release-time debt
+  (judge): `README.md` / `USER_GUIDE.md` describe fractional mixing as always on and battery as «still being
+  measured» — fix before KCCP 1.1.3 ships.
+- **Unparked 19:06:** debug1 got its test fix (`84c33f85`); the Ф2 screen was popped from the stash onto the new line
+  `wip/kccp-1.1.3-debug2` (= debug1 + Ф2, then Ф3) and the stash is dropped. Next: judge of the whole Ф2 diff →
+  simulator cases `testcases/TC_epic01_p2_tiles_screen.md` → commit.
+- ~~**PARKED: epic 01 Ф2 screen «Кнопки в шторке»**~~ ([NOW]) — the owner 18:52 «может ты готов мне сборку 1.1.3-debug1
+  собрать? Или там много работч ещё?» → the debug1 image first. The screen's uncommitted work (the rework of
+  `ShadeTilesActivity` to the mockup `homeworks/05_shade_mockups/final.html` step 2 + the first judge's findings, cut
+  mid-way by the 17:19 limit) is `git -C firmware stash list` → «epic01 F2 screen WIP …» on `wip/krinik-debug10` (the only
+  copy: the patch backup lay in `D:\Temp`, which the owner deleted 18:56 — temp files now live in `.tmp/`,
+  `HOUSE_RULES.md` П1). Resume: `git -C firmware checkout wip/krinik-debug10`
+  → `git -C firmware stash pop` → finish the rework → judge → build → simulator.
 - **Chat 2026-11-13 13:51 → 16:21 closed** (the owner's word 16:21 «закрывай чат, и продолжим в новом»). Done — detail in
   `PROJECT_HISTORY.md` (entry «STATUS trim 3»):
   - **debug10** = `wip/krinik-debug10` in `firmware/` (local, NOT pushed, NO image yet — the owner 16:02 «пока нет»):
@@ -19,6 +37,17 @@ work project. From now on it is a standalone project.
     double-click on `Udalit staryj msys64 (KCCP).cmd` (desktop) — the agent's delete is refused by the permission rules.
   - Ideas recorded: 07 (rotation: built, simulator-tested), 08 (sleep settings: built, simulator S3 — the value-change part, S4 and S6 open), 09 (the viewer opens a picture in the orientation that
     fits its shape — verbatim only), epic 01 planned (`plans/01_EPIC_shade_tiles.md`, Russian).
+- **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
+  сейчас есть, собираем в 1.1.3 - это будет наш очередной релиз. соответственно, для меня, для тестов на железе. пока
+  можешь собрать отладочкую сборку 1.1.3-debug1» (the answer to the agent's 17:05 question «называем 1.1.3-debug1 и
+  вливаем 1.1.2?»; earlier 17:03 «какие фичи поставит мне 1.1.3-debug1 ?»). In work: a new line from debug10 `ed5e2f0d`
+  + release 1.1.2 `198d385e` merged (frontlight conflicts) + `[krinik] version = 1.1.3`, env suffix `-debug1` → judge →
+  build → host tests → simulator smoke → image + SHA256 + homework. `[AI]` the «Кнопки в шторке» screen (epic 01 Ф2) is
+  NOT in debug1: the shade does not read its row until Ф3 — it comes with Ф3 in debug2 (said to the owner 17:08).
+- **The shade's elements are «кнопки» — the owner 2026-11-13 17:06 +03:00:** «Плитки шторки - переименовать в "Кнопки в
+  шторке"» · «это не плитки, это Кнопки». Applied 17:07: the screen and the on-device strings, the meta-plan, MASTER_PLAN,
+  plan 03, the cases, the map, code comments. Russian texts say «кнопка»; code identifiers (`ShadeTiles`, `Tile`) and
+  English agent docs keep "tile"; the owner's own past quotes are left verbatim.
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
   2. **Epic 01 Ф2, step P2.2-end / P2.3** by `plans/03_epic01_p2_tiles_screen.md`: paste the ▲ ▼ icons from
@@ -166,6 +195,8 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 screen «Кнопки в шторке» (uncommitted in `firmware/`, judge running) → then Ф3 | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 84c33f85 + tree |
+| 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) — local, not pushed; two judges passed; NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | 84c33f85 |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |
 | simulator fix: a plain refresh ends the absolute gray mode (bugs/06) — local, not pushed | crosspoint-simulator · `fix/gray-absolute-reset` (from `windows` = PR #62) | 49ded1a |

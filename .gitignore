@@ -36,6 +36,10 @@ Thumbs.db
 interviews/decisions/*.lock
 .kaif/update-rehearsal.json
 
+# Agents' temporary files live inside the project, never on the rest of the disk (the owner 2026-11-13 18:56:
+# «у каждого проекта есть директория - там и работайте»); emptied by the agent in the same move
+/.tmp/
+
 # Owner voice portrait (public snapshot from KAIF; may quote private writing) - local only
 /AUTHOR_STYLOMETRY.md
 

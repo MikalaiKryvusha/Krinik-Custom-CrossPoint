@@ -23,7 +23,7 @@
 | **Upstream CrossPoint** | `crosspoint-reader/crosspoint-reader`, branch `develop` | the base KCCP builds on and gives back to |
 | **The fork** | `MikalaiKryvusha/crosspoint-reader` (+ `freeink-sdk`) | carries `pr/*` branches for upstream PRs; KCCP lines (`nikolai`, `release/*`, `wip/*`) are moving out |
 | **KCCP build** | a firmware image from a fork branch (`x4pro-krinik[-debug]`) | what the owner's and his mother's X4 Pro readers run |
-| **Debug line** | `wip/krinik-debugN`, now `wip/krinik-debug10` (debug2–10; the code map in `STATUS.md`) | features tested on the reader before a release |
+| **Debug line** | `wip/krinik-debugN` (debug2–10), since 2026-11-13 the KCCP 1.1.3 line `wip/kccp-1.1.3-debugN` (debug10 + release 1.1.2 merged; the code map in `STATUS.md`) | features tested on the reader before a release; the owner 13.11: 1.1.3 is the next release |
 | **Upstream PR** | one `pr/<topic>` branch + body + before/after frames | moves a feature proven on the reader into CrossPoint |
 | **Reader setup** | `restore.mjs` + `settings.json` + fonts + guide EPUBs | reproduces the owner's reader state |
 | **Panel curve** | `panel_curve.txt` from KEINKT Calibrator | maps gray levels to how the e-ink panel really shows them |
@@ -63,12 +63,23 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   upright (the owner, 13.11.2026: «как смотришь на картинку, так и управляешь»; since debug10). The physical keys keep the
   reading orientation (`MappedInputManager::setKeysFollowReadingOrientation`, set in the viewer's onEnter, cleared in
   onExit): a short press pages the pictures, a long press turns the picture.
-- `src/activities/ActivityManager.cpp` — one current activity + a stack: `startActivityForResult` PUSHES (the parent
+- `src/activities/ActivityManager.{h,cpp}` — one current activity + a stack: `startActivityForResult` PUSHES (the parent
   stays alive, no `onExit`), `finish()` POPS (the parent's result handler runs, then the parent is repainted);
-  `goTo*` REPLACES and clears the stack (`onExit` for all).
+  `goTo*` REPLACES and clears the stack (`onExit` for all). The shade is PUSHED over whatever is in front (`loop()`, the
+  top-edge swipe or a status-bar tap), so the book stays alive under it.
+- `src/activities/util/FrontlightPanelActivity.cpp` — the shade (control center): grabber, brightness / warmth sliders,
+  the tile row (five hard-coded tiles until epic 01 Ф3 draws the row from `ShadeTiles`). The simulator is built without
+  Bluetooth (`FREEINK_CAP_BLE_HID_HOST` off → `bleturner::status().compiledIn` false), so there the row has four tiles.
+- `src/activities/UiListActivity.cpp` — the base of single-list screens (FreeInkUI `list()`, swipes scroll, keys move
+  the selection); `KeyboardLayoutsActivity` is its checkbox-list example (a working mask, saved on exit).
 - `src/activities/settings/SettingsActivity.cpp` — one Settings screen per `SettingsSection`: `sectionFor()` routes each
   setting (by its field) to a top-level group or to a Display sub-screen past `End` — «Настройки очисток экрана»,
-  «Калибровка экрана», «Настройки сна» (debug10, idea 08); `addAction` rows open the sub-screens.
+  «Калибровка экрана», «Настройки сна» (debug10, idea 08); `addAction` rows open the sub-screens. The groups and the
+  sub-screens past `End` are the enum `SettingsSection` (`SettingsSection.h`).
+- `src/activities/settings/ShadeTilesActivity.{h,cpp}` (debug10, epic 01 Ф2) — «Кнопки в шторке», the second row of
+  «Экран»: one hand-drawn row per tile on `UiAppHost` (icon, name, checkbox, ▲ ▼; theme tokens from
+  `Screen::resolveListProps`), edits go straight into `SETTINGS.shadeTiles`, the file is written on exit; portrait while
+  open; Back = `finish()`. The Bluetooth row is hidden where Bluetooth is not compiled in (the simulator).
 - `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: seven tiles by string id, on/off and order,
   `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), at least one on, the
   equal-gap row layout and touch slots; host test `test/shade_tiles/`; held by `CrossPointSettings::shadeTiles`.

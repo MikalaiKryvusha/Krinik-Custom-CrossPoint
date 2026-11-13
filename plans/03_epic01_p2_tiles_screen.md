@@ -1,7 +1,8 @@
-# Plan 03 — epic 01, phase 2: the settings screen «Плитки шторки»
+# Plan 03 — epic 01, phase 2: the settings screen «Кнопки в шторке»
 
-> **Created:** 2026-11-13 · **Parent:** `plans/01_EPIC_shade_tiles.md` → «Ф2 — экран «Плитки шторки»» · **Status:** 📐
-> planned 2026-11-13 15:58 +03:00; P2.1 recon done, P2.2 icon tool `tools/make_icon.py` done (icons not pasted yet); next P2.3 · **Outbound:** —
+> **Created:** 2026-11-13 · **Parent:** `plans/01_EPIC_shade_tiles.md` → «Ф2 — экран «Кнопки в шторке»» · **Status:** 📐
+> planned 2026-11-13 15:58 +03:00; P2.1 recon done; P2.2–P2.5 written 2026-11-13 16:57 +03:00 (uncommitted on
+> `wip/krinik-debug10`); next P2.6 judge (running), P2.7 build + simulator · **Outbound:** —
 
 ## Goal vector (Achieve)
 
@@ -15,7 +16,7 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
 
 ## Acceptance criteria (phase)
 
-1. WHEN the owner opens «Настройки → Экран → Плитки шторки», the screen shall list the tiles in the stored order, each
+1. WHEN the owner opens «Настройки → Экран → Кнопки в шторке», the screen shall list the tiles in the stored order, each
    row with its name, the firmware square checkbox (filled = on) and ▲ ▼. Check: simulator shot, rows read.
 2. WHEN he taps a row's checkbox, the tile shall turn on / off; the last tile on shall not turn off and the row shall
    say why. Check: simulator taps + shots.
@@ -24,8 +25,9 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
 4. WHEN he leaves the screen, `settings.json` shall hold the new `shadeTiles` string (only if it differs from the default).
    Check: the file read after the run.
 5. WHEN the screen was opened from Settings, Back shall return to «Экран»; WHEN opened by the entry phase 3 will call
-   (`goToShadeTiles(tile, fromBook)`), the cursor shall stand on that tile's row and Back shall return to the book.
-   Check: a simulator run through a debug entry (or phase 3's long tap) — the book page shot after Back.
+   (the shade pushes `ShadeTilesActivity(tile)`), the cursor shall stand on that tile's row and Back shall return to the
+   book. Check: the Settings half on the simulator in phase 2; the shade half with phase 3's long tap — the book page shot
+   after Back.
 6. The screen shall register at most 24 hit targets (the FreeInkApp cap drops overflow silently). Check: a
    `static_assert` on the count + the shot (all ▲ ▼ react).
 
@@ -35,14 +37,25 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
       hits after `screen.list()` — later hits win), the hit cap, `KeyboardLayoutsActivity` (working copy, locked row,
       save on exit), idea 08's sub-screen wiring (`SettingsSection` past `End`, `addAction`), how Settings returns to the
       reader (`pendingSettingsSubSection`, `goToReader`). Anchor: «Список из семи строк…».
-- [ ] P2.2 Icons ▲ ▼ (1-bit `freeink::Icon`, Pillow script `tools/` → `src/components/icons/customListIcons.h`, the
+- [x] P2.2 Icons ▲ ▼ (1-bit `freeink::Icon`, Pillow script `tools/` → `src/components/icons/customListIcons.h`, the
       header's recipe); the tile icons of the rows: the shade's current ones (phase 3 replaces night / Sleep / Flashlight).
-- [ ] P2.3 `ShadeTilesActivity` (on `UiAppHost` — the P2.1 findings below; NOT `UiListActivity`): a working copy of `SETTINGS.shadeTiles`; rows from
-      `shadetiles::List` (Bluetooth row only when compiled in — the model keeps it); checkbox via `canTurnOff`; ▲ ▼ via
-      `moveUp/moveDown`; save on exit when edited; `[NOT-TESTED]`.
-- [ ] P2.4 Entries: `SettingsSection::ShadeTiles` + an action row in «Экран» (after «Настройки сна»? — order said in the
-      report); `ActivityManager::goToShadeTiles(tile, fromBook)` with a pending return-to-book flag (cleared by goHome).
-- [ ] P2.5 Strings (en, ru): «Плитки шторки», «Очистка экрана» (the tile name), the last-tile note; the rest exist.
+      Done 2026-11-13 16:50: `icon_tri_up_32`, `icon_tri_down_32` and `icon_half_circle_32` (the night tile's planned icon,
+      so the night row and the «Сон» row do not both show a moon) pasted, shapes read as ASCII art.
+- [x] P2.3 `ShadeTilesActivity` (on `UiAppHost` — the P2.1 findings below; NOT `UiListActivity`), written 2026-11-13
+      16:55, judge pending. Deviations from this line, `[AI]`: no working copy — edits go straight into
+      `SETTINGS.shadeTiles` (a shade opened over the screen shows them), the file is written on exit when the row differs
+      from the one on entry; the last-tile rule counts the SHOWN rows (a hidden Bluetooth tile that is on does not keep
+      the shade alive); ▲ ▼ step over a hidden row. Rows drawn with `Screen::resolveListProps` tokens (the Settings list
+      look); `[NOT-TESTED]`.
+- [x] P2.4 Entries, written 2026-11-13 16:55: `SettingAction::ShadeTiles`, the row second in «Экран» right under «Настройки
+      сна» (`[AI]` placement; touch boards only — a buttons-only board has no tile row). Changed `[AI]`: NO
+      `SettingsSection::ShadeTiles` (the screen is its own activity, as `KeyboardLayoutsActivity`) and NO
+      `goToShadeTiles(tile, fromBook)` — the shade is PUSHED over the book (`ActivityManager::loop`), so phase 3 lets the
+      shade push this screen with the long-tapped tile and close itself when the screen returns; the book is never
+      reopened (risk 3 gone). The screen's Back is `finish()` in both cases.
+- [x] P2.5 Strings (en, ru), written 2026-11-13 16:57: `STR_SHADE_TILES` «Кнопки в шторке», `STR_SHADE_TILE_CLEANUP`
+      «Очистка экрана», `STR_SHADE_TILES_NOTE` — one note above the rows (the Settings sub-screen pattern) that says the
+      checked tiles stand in the shade in this order and one tile always stays on, with the reason (the long tap).
 - [ ] P2.6 Judge (fresh agent, the diff + this plan + the meta-plan) BEFORE the build; fix findings.
 - [ ] P2.7 Build; simulator: criteria 1–5; `settings.json` read; run report `testcases/reports/<date>_epic01_p2.md`.
 - [ ] P2.8 Commit; tick Ф2; write the phase 3 plan.
@@ -53,8 +66,9 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
    whose move is impossible register no hit (fewer targets).
 2. A portrait list of 7 rows plus a note may not fit 800 px with the theme's row height. Reaction: the list scrolls
    (`syncListViewport`); the shot shows it.
-3. The return-to-book route crosses `goToSettings`'s replace (the book is closed). Reaction: reopen the book by
-   `APP_STATE.openEpubPath` — the same path the reader uses at boot; the page restores from its progress file.
+3. ~~The return-to-book route crosses `goToSettings`'s replace (the book is closed). Reaction: reopen the book by
+   `APP_STATE.openEpubPath`.~~ Gone 2026-11-13 16:52: the shade is pushed over the book (`ActivityManager::loop`), so the
+   screen opened from the shade is pushed too and the book stays alive under both (P2.4).
 
 ## P2.1 recon — findings (2026-11-13, `wip/krinik-debug10` `8538f3dd`)
 
