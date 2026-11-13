@@ -29,6 +29,13 @@
 
 > или это баг движка?
 
+`[OWNER] 2026-11-13 13:51 +03:00 · chat` (his debug9 check on the reader, homework 04):
+
+> но подписи картинок  в дебаг9 всё ещё открываются от картинок
+
+`[AI]` read as «отрываются» (a caption on another page than its picture). Expected: debug9 carries idea 02 only; this
+idea has no code yet. The owner's observation confirms the defect is live on the reader with the debug9 build.
+
 ## Recon (2026-11-13, code `wip/krinik-debug8` + the sample book; a subagent's report, the key points re-read by the agent)
 
 - **Not a bug — a missing rule.** The sample book (Hofstadter, «Гёдель, Эшер, Бах») marks a caption as a plain body

@@ -1,7 +1,8 @@
 # Idea 02 — tap on an image in a book opens it full screen
 
 > **Created:** 2026-11-13 (the owner's request, chat) · **Parent:** — · **Status:** 🔧 planned 2026-11-13 10:45 +03:00;
-> built — debug9 image 11:32, on the reader's card 11:47; NOT verified on the reader yet (homework 04) · **Outbound:** —
+> built — debug9 image 11:32, on the reader's card 11:47; on the reader 2026-11-13 13:51 +03:00 the owner: «открытие
+> картинок на фулскрин работает» (homework 04 steps 1, 3); steps 2, 4–7 not reported yet · **Outbound:** —
 > (KCCP only for now; an upstream PR is a later question)
 
 ## Goal vector (Achieve)

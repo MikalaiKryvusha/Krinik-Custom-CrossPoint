@@ -1,6 +1,6 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-13 13:35 +03:00 (chat closing). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-13 13:54 +03:00 (new chat: debug9 verdict, idea 07). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
@@ -12,7 +12,9 @@ work project. From now on it is a standalone project.
     three times; host test `test/page_image_target/` 4/4 (red on a `<=` mutation); simulator C1–C5, C7, K1–K3 pass
     (`testcases/reports/2026-11-13_idea02_simulator.md`; C6 — the second fast Back swipe — only on the reader). Image
     `firmware-builds/cp-2.0.0-krinik-1.1.1-debug9.bin` (SHA256 `6b5f4f36…`) is on the reader's card since 11:47
-    (card = debug9 + debug8 + 1.1.2). **Homework 04 waits for the owner's check** — not verified on the reader yet.
+    (card = debug9 + debug8 + 1.1.2). **On the reader 2026-11-13 13:51 +03:00 the owner: «открытие картинок на
+    фулскрин работает»** (homework 04 steps 1, 3); steps 2, 4–7 (Back to the same page, the second fast Back, text taps,
+    page brightness, long-tap rotation) not reported yet; no serial log taken.
   - **Bug 06** — the simulator kept its absolute gray mode after the image viewer (pages dark); fixed in the simulator
     clone on the LOCAL branch `fix/gray-absolute-reset` (`49ded1a`); PR #62 (`windows`, `087cb54`) untouched.
   - **Idea 03 (caption stays with its picture):** recon + research (`researches/2026-11-13_figure_caption_keep_together.md`,
@@ -27,9 +29,14 @@ work project. From now on it is a standalone project.
     Flashlight); EQUAL gaps between tiles and at the edges for any count (today the edge gap is half). Final view
     `homeworks/05_shade_mockups/final.html`. `[AI]` defaults: Back returns to the book; also in «Настройки → Экран».
   - **Idea 06 (Home buttons settings)** — the same screen kind for the Home menu items (owner 13:29); verbatim only.
+- **Chat 2026-11-13 13:51 → (open).** The owner on debug9: picture opening works; «подписи … всё ещё открываются от
+  картинок» — `[AI]` read as «отрываются», expected (idea 03 has no code; recorded there). New **idea 07** (owner 13:51):
+  in the viewer a long tap on the right half turns the picture clockwise, on the left half counterclockwise — code recon
+  in the idea (`BmpViewerActivity::loop()` already gets the long-tap point in reading-orientation coordinates and ignores
+  it; `rotate()` turns one way); answered «можно», offered for debug10 together with idea 05 — waits for his go-ahead.
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
-  2. **The owner's debug9 check (homework 04).** When he says the reader is on the cable (book screen, NOT USB drive):
+  2. **The rest of the owner's debug9 check (homework 04, steps 2, 4–7).** When he says the reader is on the cable (book screen, NOT USB drive):
      `.pio-venv/Scripts/python.exe -I -X utf8 tools/serial_log.py <scratch>/serial_debug9.log` in the background; watch
      `Image tap`, `Back swipe`, `[ERR]`, `OOM` (the debug image logs at LOG_LEVEL=1 — INF and up). His verdict → homework
      04 «Итог», `ideas/02` closure, `testcases/TC_idea02…` C6.

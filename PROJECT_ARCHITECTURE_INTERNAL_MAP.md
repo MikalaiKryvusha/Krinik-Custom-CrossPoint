@@ -23,7 +23,7 @@
 | **Upstream CrossPoint** | `crosspoint-reader/crosspoint-reader`, branch `develop` | the base KCCP builds on and gives back to |
 | **The fork** | `MikalaiKryvusha/crosspoint-reader` (+ `freeink-sdk`) | carries `pr/*` branches for upstream PRs; KCCP lines (`nikolai`, `release/*`, `wip/*`) are moving out |
 | **KCCP build** | a firmware image from a fork branch (`x4pro-krinik[-debug]`) | what the owner's and his mother's X4 Pro readers run |
-| **Debug line** | `wip/krinik-debug5` (debug2–5) | features tested on the reader before a release |
+| **Debug line** | `wip/krinik-debugN`, now `wip/krinik-debug9` (debug2–9; the code map in `STATUS.md`) | features tested on the reader before a release |
 | **Upstream PR** | one `pr/<topic>` branch + body + before/after frames | moves a feature proven on the reader into CrossPoint |
 | **Reader setup** | `restore.mjs` + `settings.json` + fonts + guide EPUBs | reproduces the owner's reader state |
 | **Panel curve** | `panel_curve.txt` from KEINKT Calibrator | maps gray levels to how the e-ink panel really shows them |
@@ -56,7 +56,10 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   Back → side taps / swipes / buttons = page turn); the page render keeps the current page's links for hit-testing.
 - `src/activities/util/BmpViewerActivity.cpp` — the file browser's full-screen image viewer (BMP/JPEG/PNG through the
   panel curve, cache `/.crosspoint/view_*.bmp`, siblings of the folder, long tap rotates); opened by
-  `ActivityManager::goToReader` for an image file (replace).
+  `ActivityManager::goToReader` for an image file (replace), and since debug9 pushed over the book reader for a tapped
+  book picture (idea 02). The picture is painted in `drawOrientation()` (reading orientation + long-tap turns); the
+  renderer is set back to `holdOrientation()` right after, so touch points (`wasScreenLongPress`, taps) arrive in the
+  reading orientation, as the owner holds the reader (idea 07 builds on this).
 - `src/activities/ActivityManager.cpp` — one current activity + a stack: `startActivityForResult` PUSHES (the parent
   stays alive, no `onExit`), `finish()` POPS (the parent's result handler runs, then the parent is repainted);
   `goTo*` REPLACES and clears the stack (`onExit` for all).
