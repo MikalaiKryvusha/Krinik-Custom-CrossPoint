@@ -30,17 +30,20 @@ return to the same book page. Target: KCCP 1.1.3, tested first as a KCCP debug b
 
 ## Plan
 
-1. [ ] Firmware branch `wip/krinik-debug9` from `wip/krinik-debug8` (`c072214b`), local in `firmware/`.
-2. [ ] `lib/Epub/Epub/PageImageTarget.h`: a picture's path + rect on the page, `contains()` and `imageAtPoint()` — the
+1. [x] Firmware branch `wip/krinik-debug9` from `wip/krinik-debug8` (`c072214b`), local in `firmware/`.
+2. [x] `lib/Epub/Epub/PageImageTarget.h`: a picture's path + rect on the page, `contains()` and `imageAtPoint()` — the
    same page-relative coordinates and oriented margins as `PageLink` / `linkAtPoint`.
-3. [ ] `EpubReaderActivity`: when a page is shown, keep its picture targets beside `currentPageLinks`; in `loop()` one
+3. [x] `EpubReaderActivity`: when a page is shown, keep its picture targets beside `currentPageLinks`; in `loop()` one
    tap query serves links first, then pictures, BEFORE the centre-tap menu and the side-tap turns (the owner: the picture
    tap beats the navigation taps). A hit opens the viewer with `startActivityForResult`; its return repaints the page.
-4. [ ] `BmpViewerActivity`: a book-picture mode — one picture, no folder siblings, Back = `finish()` (back into the
+4. [x] `BmpViewerActivity`: a book-picture mode — one picture, no folder siblings, Back = `finish()` (back into the
    book) instead of the file browser.
-5. [ ] Host test `test/page_image_target/` (the hit-test, guard proven red on a broken `contains`).
-6. [ ] Independent judge on the diff (owner's order: review first, build after), fixes.
-7. [ ] Builds when the machine lock is free: simulator `simulator_x4_pro_win`, run criteria 1–3 on an OWN generated test
+5. [x] Host test `test/page_image_target/` — 4/4 pass; red on the `<=` edge mutation (2 of 4 fail), 2026-11-13 11:10.
+6. [x] Independent judge on the diff (owner's order: review first, build after) — APPROVE WITH FIXES, no blocker,
+   2026-11-13 ≈11:06; findings traced in the code and answered below («Judge findings»).
+7. [~] Simulator done 2026-11-13 11:12–11:27 (report `testcases/reports/2026-11-13_idea02_simulator.md`: C1–C5,
+   K1–K3 pass, C6 skipped there; the dark page after the viewer was the simulator's own defect — `bugs/06`, fixed in
+   the simulator `49ded1a`); firmware `526c7452` + `35dc070c` (the judge's last delta: no forced clean base). Builds when the machine lock is free: simulator `simulator_x4_pro_win`, run criteria 1–3 on an OWN generated test
    book (third-party books stay off the repo), WebP shots read; then `x4pro-krinik-debug` → `1.1.1-debug9` image →
    card `/.firmware/` → eject → homework for the owner; his serial log read during his check.
 8. [ ] KCCP 1.1.3 itself (debug line + release 1.1.2 merged + this feature) is assembled after the owner's check —
@@ -54,6 +57,35 @@ return to the same book page. Target: KCCP 1.1.3, tested first as a KCCP debug b
   and swipes still turn the page.
 - (b) A picture whose file was not extracted (decode failed): the tap falls through to the zones as today.
 - (c) Tiny inline pictures (a formula glyph) become tap targets too — watch the sample book.
+
+## Judge findings (independent review of the diff, 2026-11-13) and what was done
+
+| # | Finding | Done |
+|---|---|---|
+| 1 | `width > 0 && height > 0` in `contains()` is dead code | removed; the empty-rectangle test stays — it reddens on `<=` |
+| 2 | with touch controls off a centre tap on a picture opens the menu | kept: the same gate as links (`touchReaderControls`); the owner's setting is on |
+| 3 | during auto page turn a centre tap only stops the auto turn | kept: stopping the auto turn first is the existing rule for every centre tap |
+| 4 | GIF pictures are drawn in books but the viewer cannot open them | known gap (the viewer reads BMP/JPEG/PNG); the tap falls through to the zones |
+| 5 | no minimum picture size | kept, risk (c); watched on the sample book |
+| 6 | free heap under the viewer is not measured | the tap logs `heap free / max block` at INF — read in the owner's serial log |
+| 7 | a second quick Back swipe, while the picture is still on the glass, pages one page back | fixed: until the page is repainted a Back swipe turns no page (`backSwipeBelongsToViewer`); the owner turns pages by tap AND swipe (`pageTurnGesture=0`) |
+| 8 | sleeping from the viewer gives the plugin sleep event no book info | existing pattern of every screen pushed over the book; not changed |
+| NIT | wrong reason in the lock comment | fixed |
+| NIT | Confirm in the viewer still offers «set as sleep cover» for a book picture | kept: the viewer's own feature, behind its confirmation dialog |
+| Δ1 | the Back-swipe flag set before the push can be cleared by a last repaint before the viewer shows | fixed: set in the pop handler |
+| Δ2 | `pagesUntilFullRefresh = 1` at the pop is a no-op on the owner's settings and a flash in night mode / B/W images | removed (`35dc070c`) |
+| Δ3 | the simulator fix (reset of the absolute gray mode on a plain refresh) — any path broken? | none found: no refresh between an absolute base and its gray pass in the viewer, the reader or the sleep screen |
+
+## Decisions made without the owner (so far)
+
+- `[AI]` In the viewer a book picture is alone: no prev/next through the book's pictures (the cache folder is not a
+  gallery); the long tap still rotates, Confirm still offers «set as sleep cover».
+- `[AI]` The full-screen picture goes through the viewer's own «pictures» tone curve (Калибровка картинок), not the
+  books curve — the viewer's render path is the one that curve was measured for.
+- `[AI]` With touch controls off the picture tap is off too (the same switch as links).
+- `[AI]` A GIF picture is not opened (the viewer reads BMP/JPEG/PNG). The sample book holds 103 JPEG + 77 PNG and no
+  GIF (counted on its local copy 2026-11-13); the owner's other books were not counted (the reader left the wire).
+- `[AI]` The image-tap log line is INF (visible in the debug image's serial log), with the free heap.
 
 `[OWNER] 2026-11-13 10:34 +03:00 · chat:`
 

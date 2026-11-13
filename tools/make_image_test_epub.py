@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw
 PICTURES = [
     ("pic1.jpg", (600, 260), "1"),
     ("pic2.jpg", (300, 640), "2"),
-    ("pic3.jpg", (240, 160), "3"),
+    ("pic3.png", (240, 160), "3"),
 ]
 FILLER = (
     "Это проверочный абзац тестовой книги. Он нужен, чтобы картинки стояли на странице не одни, а среди текста, "
@@ -22,8 +22,13 @@ FILLER = (
 )
 
 
-def picture_jpg(size, label):
-    """A gray test card: a frame, diagonal bands and a big label, so the full-screen view is easy to tell apart."""
+def media_type(name):
+    return "image/png" if name.endswith(".png") else "image/jpeg"
+
+
+def picture_bytes(name, size, label):
+    """A gray test card: a frame, diagonal bands and a big label, so the full-screen view is easy to tell apart.
+    JPEG or PNG by the file name — the owner's sample book mixes both (103 JPEG + 77 PNG)."""
     w, h = size
     img = Image.new("L", size, 235)
     draw = ImageDraw.Draw(img)
@@ -34,7 +39,10 @@ def picture_jpg(size, label):
     draw.rectangle([w // 2 - box // 2, h // 2 - box // 2, w // 2 + box // 2, h // 2 + box // 2], fill=0)
     draw.text((w // 2 - 4, h // 2 - 6), label, fill=255)
     out = io.BytesIO()
-    img.save(out, "JPEG", quality=90)
+    if name.endswith(".png"):
+        img.save(out, "PNG")
+    else:
+        img.save(out, "JPEG", quality=90)
     return out.getvalue()
 
 
@@ -79,7 +87,7 @@ NAV = (
 
 
 def opf(title):
-    items = "".join(f'<item id="i{n}" href="images/{name}" media-type="image/jpeg"/>'
+    items = "".join(f'<item id="i{n}" href="images/{name}" media-type="{media_type(name)}"/>'
                     for n, (name, _, _) in enumerate(PICTURES, 1))
     return (
         '<?xml version="1.0" encoding="utf-8"?>\n<package xmlns="http://www.idpf.org/2007/opf" version="3.0" '
@@ -107,7 +115,7 @@ def main():
         z.writestr("OPS/style.css", STYLE, compress_type=zipfile.ZIP_DEFLATED)
         z.writestr("OPS/ch1.xhtml", chapter_xhtml(figure), compress_type=zipfile.ZIP_DEFLATED)
         for name, size, label in PICTURES:
-            z.writestr(f"OPS/images/{name}", picture_jpg(size, label), compress_type=zipfile.ZIP_STORED)
+            z.writestr(f"OPS/images/{name}", picture_bytes(name, size, label), compress_type=zipfile.ZIP_STORED)
     print(out)
 
 

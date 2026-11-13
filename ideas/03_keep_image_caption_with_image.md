@@ -59,6 +59,8 @@
 
 > читай ГОСТЫ
 
+> особенно кост оформления пояснительных записок БГУИР, курсовых и дипломных работ
+
 ## The direction (the owner's word above; the split into two parts is `[AI]`, said to him in chat 10:54)
 
 **The standard caption:** EPUB 3 content is XHTML5 — a picture with its caption is `<figure><img/><figcaption>…`

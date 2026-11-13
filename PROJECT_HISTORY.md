@@ -27,6 +27,25 @@
 
 ## Entries (newest first)
 
+### 2026-11-13 — battery research closed; the debug battery log's final numbers ✅
+
+The owner closed it (`[OWNER] 2026-11-13 10:36 +03:00 · chat: «…можно прекратить эти замеры. Подсветка не много кушает
+заряда батареи…»`, 11:04 «логи можно отключать в следующей дебаг сборке. чтобы они не кушали батарею и флешку не
+изнашивали»): `KRINIK_BATTERY_LOG` is off from `1.1.1-debug9`. The final log — 7.0 days, 2026-11-06 11:05 →
+2026-11-13 11:18 by the reader's clock, 732 rows (`qa_runs/battery_log-2026-11-13-final.csv`; summary
+`python -I -X utf8 tools/battery_summary.py <csv>`):
+
+| Mode (not charging) | Hours | Drain | One charge lasts |
+|---|---|---|---|
+| reading, light off | 3.7 | 3.56 %/h | ~28 h |
+| light on 11–50 % (UI) | 2.5 | 4.01 %/h | ~25 h |
+| light on > 50 % (UI) | 11.3 | 8.46 %/h | ~12 h |
+| sleep (40 periods) | 111.5 | 0.43 %/day | months |
+
+Sleep periods ≥ 6 h: 8, 86.8 h, 0 % lost. Caveats: the gauge counts in 1 % steps; few light-off hours; page turns
+are mixed into the awake rows. Side finding, not checked: the log's last row is a boot at 11:18 by the reader's
+clock, while the reader was on the wire at ≈ 10:37 PC time — the reader's clock may run ≈ 40 min fast.
+
 ### 2026-11-10 — CodeRabbit round 3, debug7/8, simulator PR #62 (moved verbatim from STATUS "Where to continue")
 
 - **Chat 2026-11-09 (resume → CodeRabbit round 2) closed 20:20 +03:00** — its full log moved verbatim to

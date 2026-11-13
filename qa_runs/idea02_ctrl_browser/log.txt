@@ -1,0 +1,44 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea02_ctrl_browser/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea02_ctrl_browser/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea02_ctrl_browser/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-13 08:15
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[225] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea02_ctrl_browser/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[225] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea02_ctrl_browser/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[226] [DBG] [SDREG] Fonts directory not found: /fonts
+[226] [DBG] [SDREG] Discovery complete: 0 families
+[226] [DBG] [SDFS] SD font system ready (0 families discovered)
+[226] [DBG] [MAIN] Fonts setup
+[226] [DBG] [ACT] Entering activity: Boot
+[226] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[234] [DBG] [ACT] Exiting activity: Boot
+[234] [DBG] [ACT] Entering activity: BmpViewer
+[234] [DBG] [CRV] Curve loaded from /.crosspoint/panel_curve.txt: be170a3a
+[235] [DBG] [BMP] Show 1/1: /pics/pic1.jpg
+[237] [DBG] [JPG] Image dimensions: 600x260
+[237] [DBG] [JPG] Decoding JPEG: /pics/pic1.jpg
+[239] [DBG] [JPG] JPEG 600x260 -> 800x346 (scale 1.33, jpegScale 1/1, fineScale 1.33)
+[240] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (800x346, band 25 rows)
+[248] [DBG] [JPG] JPEG decoding complete - render time: 8 ms
+[248] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (800x346, 69204 bytes)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea02_ctrl_browser/sd/.crosspoint/view_cache.idx (flags=0x0 errno=2 No such file or directory)
+[262] [DBG] [GFX] Cropping 800x346 by 0x0 pix, is top-down
+[262] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[269] [DBG] [GFX] Cropping 800x346 by 0x0 pix, is top-down
+[269] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[281] [DBG] [GFX] Cropping 800x346 by 0x0 pix, is top-down
+[281] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[288] [DBG] [LOOP] New max loop duration: 54 ms (activity: 54 ms)
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea02_ctrl_browser/shots/viewer.bmp
+[4305] [DBG] [ACT] Exiting activity: BmpViewer
+[4305] [DBG] [ACT] Entering activity: FileBrowser
+[4306] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea02_ctrl_browser/shots/browser.bmp

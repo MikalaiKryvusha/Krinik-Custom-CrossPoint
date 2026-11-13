@@ -26,7 +26,7 @@ same page; taps outside pictures keep doing what they did.
 | Dimension | Values covered | Explicitly NOT covered (risk named) |
 |---|---|---|
 | tap position vs picture | inside (centre zone) · inside (side zone) · outside on text (centre, side) | on the picture's 1-px edge — host test covers the edges |
-| picture kind | wide (600×260) · tall full-page (300×640) · small (240×160) — own test book, JPEG | PNG/GIF/SVG in books — not in the owner's books (census in idea 03) |
+| picture kind | wide (600×260) · tall full-page (300×640) JPEG; small (240×160) PNG (C7) — own test book | the sample book holds 103 JPEG + 77 PNG (counted 2026-11-13 on the local copy); the other books not counted (the reader left the wire); GIF — drawn in books, the viewer cannot open it: the tap falls to the zones (known gap, judge finding 4) |
 | orientation | landscape CCW (the owner's `orientation: 3`) | portrait, inverted, landscape CW — the hit-test is orientation-free (logical coordinates); device check optional |
 | return path | swipe Back | the physical Back button of other boards — X4 Pro has none |
 | state | fresh card, first open of the book | sleep while the viewer is open; a book with cached pages from an older build — device check by the owner |
@@ -36,20 +36,22 @@ same page; taps outside pictures keep doing what they did.
 
 | # | Case (steps → expected) | Technique | Status + evidence |
 |---|---|---|---|
-| C1 | boot into `image_test.epub` (card `qa_runs/sd_book_images`) → page 1 shows picture 1 under the heading, no `[ERR]` | smoke | [NOT-TESTED] |
-| C2 | C1 → `TAP` at picture 1's centre → the viewer shows picture 1 full screen; log `Image tap` | use case (R1, R3 centre) | [NOT-TESTED] |
-| C3 | C2 → `SWIPE` from x < 120 to the right → book page 1 again, the same as C1's shot | state transition (R2) | [NOT-TESTED] |
-| C4 | C1 → `TAP` inside picture 1 near its right end (a side zone) → the viewer, not page 2 | decision table (R3 side) | [NOT-TESTED] |
-| C5 | page with the tall picture 2 (fills the page) → `TAP` on it → viewer; swipe Back → same page | boundary (full-page picture) | [NOT-TESTED] |
+| C1 | boot into `image_test.epub` (card `qa_runs/sd_book_images`) → page 1 shows picture 1 under the heading, no `[ERR]` | smoke | pass — [TESTED: 2026-11-13 · simulator, page 1/8 read · testcases/reports/2026-11-13_idea02_simulator.md] |
+| C2 | C1 → `TAP` at picture 1's centre → the viewer shows picture 1 full screen; log `Image tap` | use case (R1, R3 centre) | pass — [TESTED: 2026-11-13 · simulator, viewer shot + log `Image tap` · testcases/reports/2026-11-13_idea02_simulator.md] |
+| C3 | C2 → `SWIPE` from x < 120 to the right → book page 1 again, the same as C1's shot | state transition (R2) | pass after the simulator fix (bugs/06) — [TESTED: 2026-11-13 · back shot = page 1/8 · testcases/reports/2026-11-13_idea02_simulator.md] |
+| C4 | C1 → `TAP` inside picture 1 near its right end (a side zone) → the viewer, not page 2 | decision table (R3 side) | pass — [TESTED: 2026-11-13 · tap x=0.83 → viewer · testcases/reports/2026-11-13_idea02_simulator.md] |
+| C5 | page with the tall picture 2 (fills the page) → `TAP` on it → viewer; swipe Back → same page | boundary (full-page picture) | pass — [TESTED: 2026-11-13 · page 4/8 → viewer → 4/8 · testcases/reports/2026-11-13_idea02_simulator.md] |
+| C6 | C2 → two Back `SWIPE`s ~300 ms apart (the second while the picture is still on the glass) → book page 1, NOT the page before; log `Back swipe before the page repaint ignored` | error guessing (judge finding 7) | skipped in the simulator (repaint ~13 ms) — device check, homework 04 |
+| C7 | the page with the small PNG picture 3 → `TAP` on it → the viewer shows it full screen; Back → the same page | partition (PNG: 77 of the sample book's 180 pictures) | [NOT-TESTED] |
 
 ## 5. Control cases
 
 | # | Control → expected: the behaviour is absent | Status + evidence |
 |---|---|---|
-| K1 | C1 → `TAP` on text in the centre zone → the toolbar menu, no viewer (R4) | [NOT-TESTED] |
-| K2 | C1 → `TAP` on text in a side zone → page 2, no viewer (R4) | [NOT-TESTED] |
-| K3 | the same `TAP` as C2 on a `wip/krinik-debug8` build → the menu opens, no viewer (the feature off) | [NOT-TESTED] |
+| K1 | C1 → `TAP` on text in the centre zone → the toolbar menu, no viewer (R4) | pass — [TESTED: 2026-11-13 · centre tap on text → toolbar · testcases/reports/2026-11-13_idea02_simulator.md] |
+| K2 | C1 → `TAP` on text in a side zone → page 2, no viewer (R4) | pass — [TESTED: 2026-11-13 · side tap on text → 2/8 · testcases/reports/2026-11-13_idea02_simulator.md] |
+| K3 | the same `TAP` as C2 on a `wip/krinik-debug8` build → the menu opens, no viewer (the feature off) | pass — [TESTED: 2026-11-13 · debug8: menu, no viewer · testcases/reports/2026-11-13_idea02_simulator.md] |
 
 ## 6. Verdict
 
-[NOT-TESTED] — no run yet. Run reports go to `testcases/reports/<date>_idea02_*.md`.
+partial — the simulator run passes (C6 skipped there); the feature waits for the owner's reader (homework 04): testcases/reports/2026-11-13_idea02_simulator.md.

@@ -28,6 +28,7 @@
 | **Reader setup** | `restore.mjs` + `settings.json` + fonts + guide EPUBs | reproduces the owner's reader state |
 | **Panel curve** | `panel_curve.txt` from KEINKT Calibrator | maps gray levels to how the e-ink panel really shows them |
 | **Evidence** | `qa_runs/<run>/` | proves what a build or a PR does (logs, shots, measurements) |
+| **Own test books** | `tools/make_image_test_epub.py` → `qa_runs/sd_book_images/image_test.epub` (JPEG + PNG pictures with «Рис. N» captions, `--figure` for the standard markup) | the simulator stand for book pictures (ideas 02/03); third-party books never enter the repo |
 
 ## How they interact
 
