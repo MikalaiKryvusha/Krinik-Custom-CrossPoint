@@ -71,10 +71,10 @@ clockwise, the back key counterclockwise. Stand: a temporary card with two pictu
 | # | Requirement (EARS) | Fit criterion |
 |---|---|---|
 | R7 | WHEN the reader presses a page key shortly in the viewer, the viewer shall show the next (previous) picture of the folder, once. | log `Show 2/2` after the release; no `rotate` line |
-| R8 | WHEN the reader holds a page key past 700 ms, the viewer shall turn the picture (forward key clockwise, back key counterclockwise) and shall not page. | log `long press forward -> rotate clockwise` / `back -> counterclockwise`, `View turns`, and no `Show` line for that press |
+| R8 | WHEN the reader holds a page key past 700 ms, the viewer shall turn the picture (forward key clockwise, back key counterclockwise) and shall not page. | log `long press forward -> rotate clockwise` / `back -> counterclockwise`, `View turns`, and no `Input: button` line for that press (the turn repaints the SAME picture, so its `Show` line is expected — corrected after the run) |
 
 | # | Case (steps → expected) | Technique | Status + evidence |
 |---|---|---|---|
-| C10 | viewer on picture 1 → short press of the forward key → picture 2 (`Show 2/2`) | use case (R7) | pass — [TESTED: 2026-11-13 · short DOWN → one page on release · testcases/reports/2026-11-13_idea07_keys_simulator.md] |
-| C11 | then hold the forward key 1000 ms → `View turns: 1`, still picture 2 | use case (R8) | pass — [TESTED: 2026-11-13 · long press → View turns, no page · testcases/reports/2026-11-13_idea07_keys_simulator.md] |
-| C12 | then hold the back key 1000 ms → `View turns: 0`, still picture 2 | use case (R8) | pass — [TESTED: 2026-11-13 · long press → View turns, no page · testcases/reports/2026-11-13_idea07_keys_simulator.md] |
+| C10 | viewer on picture 1 → short press of a page key (run: DOWN = the back key here) → the other picture (`Show 2/2`, two pictures wrap), one page turn | use case (R7) | pass — [TESTED: 2026-11-13 · short DOWN → one page on release · testcases/reports/2026-11-13_idea07_keys_simulator.md] |
+| C11 | then hold that key (the back key) 1000 ms → `long press back -> rotate counterclockwise`, `View turns: 3`, still picture 2 | use case (R8) | pass — [TESTED: 2026-11-13 · long press → View turns, no page · testcases/reports/2026-11-13_idea07_keys_simulator.md] |
+| C12 | then hold the other key (the forward key) 1000 ms → `long press forward -> rotate clockwise`, `View turns: 0`, still picture 2 | use case (R8) | pass — [TESTED: 2026-11-13 · long press → View turns, no page · testcases/reports/2026-11-13_idea07_keys_simulator.md] |

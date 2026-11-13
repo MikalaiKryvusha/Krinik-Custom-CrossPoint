@@ -1,7 +1,7 @@
 # Idea 07 — in the image viewer a long tap on the right half turns the picture clockwise, on the left half counterclockwise
 
 > **Created:** 2026-11-13 (the owner's request, chat — asked under `resume`, right after his debug9 check) · **Parent:**
-> `ideas/02_image_fullscreen_on_tap.md` (the same viewer) · **Status:** 🔧 built and simulator-tested 2026-11-13 14:31 +03:00 on `wip/krinik-debug10` `9f02db5f` (report `testcases/reports/2026-11-13_idea07_simulator.md`); the image comes with idea 05; recon of the code done 2026-11-13 13:53 +03:00; answered
+> `ideas/02_image_fullscreen_on_tap.md` (the same viewer) · **Status:** 🔧 up to `085c70d9`: halves and every touch by the picture, keys page / long press turns — simulator-tested; first built and simulator-tested 2026-11-13 14:31 +03:00 on `wip/krinik-debug10` `9f02db5f` (report `testcases/reports/2026-11-13_idea07_simulator.md`); the image comes with idea 05; recon of the code done 2026-11-13 13:53 +03:00; answered
 > «можно» in chat, implementation offered for debug10 together with idea 05; the owner's go-ahead 2026-11-13 14:03 +03:00
 > («делаем») · **Outbound:** —
 
@@ -17,7 +17,7 @@ half of the screen — clockwise, the left half — counterclockwise.
 
 ## Acceptance criteria
 
-1. WHEN the owner long-taps the right half of the screen (halves by the orientation set in the reader's settings), the viewer shall turn the picture
+1. WHEN the owner long-taps the right half of the PICTURE as it stands upright (the owner 14:54, below; first built by the orientation set in Settings), the viewer shall turn the picture
    90° clockwise. Check: simulator, a picture with an arrow/asymmetric shape, shots before and after.
 2. WHEN the owner long-taps the left half, the viewer shall turn the picture 90° counterclockwise. Check: the same.
 3. A right long tap followed by a left long tap shall return the picture to its first view. Check: the shot equals the first shot.
@@ -41,7 +41,8 @@ half of the screen — clockwise, the left half — counterclockwise.
 
 - `[AI]` The same rule in both viewer entries — a picture from a book (idea 02) and an image file from the file browser:
   they are one activity, `BmpViewerActivity`.
-- `[AI]` The halves are split by the middle of the screen width in the orientation set in the reader's settings (the owner's wording, 14:51), not as the picture is turned.
+- ~~`[AI]` The halves are split by the middle of the screen width in the orientation set in the reader's settings, not as the picture is turned.~~ — superseded by the owner 14:54 «половины давай считать по картинке, убедил» (built in `8538f3dd`).
+- `[AI]` The book's touch hold after a turned picture ends at the page repaint or after 3000 ms at most (`VIEWER_HOLD_MS`); the device repaint time is logged for the owner's check.
 
 ## Plan (ordinary — heaviness 0 of 5: one module, no external truth, one session, KCCP debug only, the owner said «делаем»)
 
@@ -89,7 +90,7 @@ show the triangle's corner after each long tap; the log shows the `LOG_INF` line
   to the owner in chat 2026-11-13 14:20 +03:00, recommendation B; the first long tap is the same under both, so S5
   runs meanwhile.
 
-## The owner's decision on the halves (B)
+## The owner's decision on the halves (B) <!-- attribution-ok: his verbatim quote stands 4 lines below («половины давай считать по картинке, убедил») -->
 
 `[OWNER] 2026-11-13 14:54 +03:00 · chat:`
 
@@ -100,7 +101,7 @@ the viewer opened it in (idea 09 will choose that orientation by the picture's s
 of the touch point the picture's right side faces screen-right, -down, -left, -up for `viewTurns` 0, 1, 2, 3 (`+1` =
 clockwise, observed in run D0). The code maps the long-tap point by `viewTurns`; the cases C3' and C6 below check it.
 
-## The owner's decision: every viewer gesture follows the picture
+## The owner's decision: every viewer gesture follows the picture <!-- attribution-ok: his verbatim quote stands below («как смотришь на картинку, так и управляешь, да, логично») -->
 
 Asked 2026-11-13 14:56 (should the swipes, side taps, Back and the shade follow the picture like the halves?),
 recommended yes. `[OWNER] 2026-11-13 15:05 +03:00 · chat` — first my recommendation quoted back («рекомендую да: одно

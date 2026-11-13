@@ -525,7 +525,7 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
 ```
 
 - **On this PC** (2026-11-09 15:24): MSYS2 UCRT64 in `F:\ai_sandbox\msys64` (gcc, cmake, SDL2, openssl; moved from
-  `D:\msys64` on the owner's word 2026-11-13 14:06), PlatformIO in the
+  `D:\msys64` on the owner's word 2026-11-13 14:06 «D:\msys64\ давай переместим в F:\ai_sandbox\»), PlatformIO in the
   workspace venv `.pio-venv/`; nothing is on the system PATH — prefix `F:\ai_sandbox\msys64\ucrt64\bin` for a build. The debug
   device image builds here since 2026-11-09 (debug6–8 in `firmware-builds/` as `cp-2.0.0-krinik-1.1.1-debugN.bin` +
   `.bin.sha256`): its number is the `-debugN` of `CROSSPOINT_VERSION` in `firmware/platformio.ini` →

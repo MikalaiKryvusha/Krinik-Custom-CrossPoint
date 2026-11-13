@@ -42,11 +42,11 @@
       `addAction(SettingsSection::Display, STR_SLEEP_SETTINGS, …)`; the sub-screen title; `pendingSettingsSubSection`
       return like ScreenClean; string `STR_SLEEP_SETTINGS` = «Настройки сна» (ru) / "Sleep Settings" (en); `[NOT-TESTED]`.
 - [x] S2. Judge on the diff before the build.
-- [x] S3. Simulator: Settings → «Экран» shows «Настройки сна» and none of the nine; the sub-screen shows the nine in the
+- [x] S3. (partly — the value change of «Сон через» and the `settings.json` read NOT run; the report says so) Simulator: Settings → «Экран» shows «Настройки сна» and none of the nine; the sub-screen shows the nine in the
       order of the table; changing «Сон через» there and going Back keeps the value (`settings.json` read). Shots read.
 - [ ] S4. The web settings page (`src/network/html/SettingsPage.html`) groups by category, not by sub-screen — check it
       still lists the nine (no change expected).
-- [ ] S5. Commit on `wip/krinik-debug10`; the image is the one debug10.
+- [x] S5. (`52212d81`) Commit on `wip/krinik-debug10`; the image is the one debug10.
 - [ ] S6. The owner's on-device guide `guide_settings_section.xhtml` (→ `РУКОВОДСТВО.epub`) lists the nine under
       «Настройки: Экран»: move them under «Настройки сна» (owner-facing text — voice portrait, check, then his read).
 

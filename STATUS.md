@@ -1,98 +1,54 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-13 13:54 +03:00 (new chat: debug9 verdict, idea 07). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-13 16:41 +03:00 (chat 13:51 → 16:21 closed: debug10 = ideas 07/08 + epic 01 Ф1). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
 ## Where to continue
 
-- **msys64 moved (owner 14:06 «D:\msys64\ давай переместим в F:\ai_sandbox\»)** — now `F:\ai_sandbox\msys64`
-  (robocopy 14:09, 60 379 files / 2 293 125 441 bytes both sides); paths fixed: `firmware/platformio.local.ini`,
-  `tools/sim_run.sh`, AGENT_GUIDE Build, research 01, Start-menu shortcuts, HKCU uninstall entry. The old folder is
-  RENAMED `D:\msys64.moved-2026-11-13`; checked on F: alone — clean simulator build 271 files (0 from cache) SUCCESS,
-  host tests 761/769 (the 8 are native-Windows portability, research 01), simulator runs with SDL2.dll from F:. The
-  agent's delete of the old copy was refused by the permission rules → **`Udalit staryj msys64 (KCCP).cmd` on the
-  owner's desktop** (checks F: first, removes the old copy, deletes itself) — waits for his double-click. Not ours to
-  fix: Vibepollo/KAST build caches name `D:/msys64` (KAST's own MSYS2 was removed 2026-10-15; its plan 01 reinstalls to `D:\msys64`).
-- **Idea 07 built and simulator-tested** on `wip/krinik-debug10` `9f02db5f` (from debug9, local): right-half long tap
-  clockwise, left-half counterclockwise; judge no blockers; cases D0, C1–C5 pass
-  (`testcases/reports/2026-11-13_idea07_simulator.md`). **Open with the owner:** after he turns the reader in his hands,
-  whose halves — the owner chose B 14:54 «половины давай считать по картинке, убедил», then 15:05 every viewer gesture by the picture «как смотришь на картинку, так и управляешь, да, логично» (code change in flight). The
-  device image comes with idea 05 (his «делаем» = one debug10).
-- **debug10 now (firmware, local, not pushed):** `435d2493` epic 01 Ф1 · `52212d81` idea 08 «Настройки сна» (simulator
-  S3 pass) · `8538f3dd` viewer: every TOUCH follows the picture as it stands (halves, swipes, Back), the KEYS keep the
-  reading orientation (`MappedInputManager::setKeysFollowReadingOrientation`; the owner 15:20–15:21 «НЕТ! ФИзические
-  кнопки крутят в одном направлении» · «одна кнопка в одном, вторая - в противоположном»), and after a turned book
-  picture closes the book skips screen touches until its page repaints (≤ 3 s; device time is logged). Simulator C6–C9
-  pass (`testcases/reports/2026-11-13_idea07_08_simulator.md`); five judge passes, two shapes refused (EXP-0016).
-  The keys PAGE the pictures as before — the owner 16:01 «А — листают картинки, как и было» (no code change).
-- **Idea 07 keys done 16:14** (firmware `085c70d9`): a short press of a page key pages the pictures on the release, a
-  LONG press turns the picture (`[AI]` forward clockwise, back counterclockwise); judge no blockers; simulator C10–C12
-  pass (`testcases/reports/2026-11-13_idea07_keys_simulator.md`). No interim image (the owner 16:02 «пока нет. работаем
-  дальше»). **Next: epic 01 Ф2 P2.3** (`plans/03_epic01_p2_tiles_screen.md`). Context window 80 % at 16:03 — close the
-  chat soon (`/end-chat-soft`).
-- **Idea 05 = epic 01** (heaviness 2 of 5): research `researches/2026-11-13_idea05_shade_tiles_epic.md` (AOSP tile
-  list, WCAG 2.5.7 up/down, CSS space-evenly, long tap → tile settings); meta-plan `plans/01_EPIC_shade_tiles.md`
-  (Russian; phases Ф1 model+storage → Ф2 the «Плитки шторки» screen → Ф3 the shade row, new tiles, icons, long tap →
-  Ф4 acceptance + image). **Ф1 closed 15:02** (firmware `435d2493`: `src/util/ShadeTiles.h` + host test 12/12 +
-  storage; report `testcases/reports/2026-11-13_epic01_p1.md`). **Next: idea 08 «Настройки сна»** (plan inside the idea),
-  then the Ф2 plan — written: `plans/03_epic01_p2_tiles_screen.md`, P2.1 recon done (a UiAppHost screen, not a
-  UiListActivity: the list hides row rects); P2.2 icons — `tools/make_icon.py` draws ▲ ▼ and the half-filled circle
-  (1-bit `freeink::Icon`); **next: paste them into `customListIcons.h`, then P2.3 `ShadeTilesActivity`.** Waiting on the owner: whether ALL viewer gestures (swipes, side taps, Back, the shade) follow the
-  picture like the long-tap halves (asked 14:56, recommended yes — one rule; it also suits idea 09).
-- **Chat 2026-11-13 10:34 → 13:35 closed — features for KCCP 1.1.3** (the owner's task under `resume`). Results:
-  - **Idea 02 (tap a book picture → full screen, swipe Back → the same page): built.** `wip/krinik-debug9`
-    (`526c7452` + `35dc070c`, local in `firmware/`, not pushed) = debug8 + the picture tap + battery log OFF; judged
-    three times; host test `test/page_image_target/` 4/4 (red on a `<=` mutation); simulator C1–C5, C7, K1–K3 pass
-    (`testcases/reports/2026-11-13_idea02_simulator.md`; C6 — the second fast Back swipe — only on the reader). Image
-    `firmware-builds/cp-2.0.0-krinik-1.1.1-debug9.bin` (SHA256 `6b5f4f36…`) is on the reader's card since 11:47
-    (card = debug9 + debug8 + 1.1.2). **On the reader 2026-11-13 13:51 +03:00 the owner: «открытие картинок на
-    фулскрин работает»** (homework 04 steps 1, 3); steps 2, 4–7 (Back to the same page, the second fast Back, text taps,
-    page brightness, long-tap rotation) not reported yet; no serial log taken.
-  - **Bug 06** — the simulator kept its absolute gray mode after the image viewer (pages dark); fixed in the simulator
-    clone on the LOCAL branch `fix/gray-absolute-reset` (`49ded1a`); PR #62 (`windows`, `087cb54`) untouched.
-  - **Idea 03 (caption stays with its picture):** recon + research (`researches/2026-11-13_figure_caption_keep_together.md`,
-    СТП 01-2017 БГУИР 2.5 read verbatim); direction by the owner: re-typeset the books to `<figure>`/`<figcaption>` +
-    the firmware keeps a figure on one page (picture shrinks if needed); no first-line indent (owner 11:13);
-    `[AI]` caption centred under the picture — the reading of СТП 2.5.5, not his word.
-  - **Idea 04 (FB2 → EPUB on the reader):** first recon (upstream declined FB2 three times; papyrix-reader `lib/Fb2`,
-    MIT); heavy → `/plan-epic`; test FB2 `D:\Hofshtadter_Gyodel-Esher-Bah-Eta-beskonechnaya-girlyanda.9y7ehg.198312.fb2.zip`.
-  - **Idea 05 (shade tiles): AGREED, go-ahead 13:28** — a long tap on any tile opens Settings straight on «Плитки
-    шторки» (list: icon · name · ▲▼ · firmware square checkbox; portrait; cursor on the tapped tile); seven tiles
-    (night mode — new iOS-style half-filled circle icon, cleanup, orientation, touch, Bluetooth, Sleep — crescent,
-    Flashlight); EQUAL gaps between tiles and at the edges for any count (today the edge gap is half). Final view
-    `homeworks/05_shade_mockups/final.html`. `[AI]` defaults: Back returns to the book; also in «Настройки → Экран».
-  - **Idea 06 (Home buttons settings)** — the same screen kind for the Home menu items (owner 13:29); verbatim only.
-- **Chat 2026-11-13 13:51 → (open).** The owner on debug9: picture opening works; «подписи … всё ещё открываются от
-  картинок» — `[AI]` read as «отрываются», expected (idea 03 has no code; recorded there). New **idea 07** (owner 13:51):
-  in the viewer a long tap on the right half turns the picture clockwise, on the left half counterclockwise — code recon
-  in the idea (`BmpViewerActivity::loop()` already gets the long-tap point in reading-orientation coordinates and ignores
-  it; `rotate()` turns one way); answered «можно», offered for debug10 together with idea 05 — **go-ahead 14:03 «делаем»**: debug10 = debug9 +
-  idea 07 + idea 05.
+- **Chat 2026-11-13 13:51 → 16:21 closed** (the owner's word 16:21 «закрывай чат, и продолжим в новом»). Done — detail in
+  `PROJECT_HISTORY.md` (entry «STATUS trim 3»):
+  - **debug10** = `wip/krinik-debug10` in `firmware/` (local, NOT pushed, NO image yet — the owner 16:02 «пока нет»):
+    `9f02db5f` idea 07 long-tap rotation · `435d2493` epic 01 Ф1 (shade tile model + storage) · `551173b8` comment fix ·
+    `52212d81` idea 08 «Настройки сна» · `8538f3dd` viewer: every TOUCH follows the picture as it stands, the KEYS keep
+    the reading orientation, the book holds touch after a turned picture · `085c70d9` keys: short press pages, LONG press
+    turns (`[AI]` forward clockwise, back counterclockwise) · `ed5e2f0d` a comment fix. All judged; simulator reports in `testcases/reports/2026-11-13_*`.
+    The device env `x4pro-krinik-debug` builds on `085c70d9`: SUCCESS 2026-11-13 16:33, RAM 34.3 %, Flash 82.7 % — no image
+    copied to `firmware-builds/` (the image comes with the shade, Ф4).
+  - **msys64 moved to `F:\ai_sandbox\msys64`** (the owner 14:06); the old copy `D:\msys64.moved-2026-11-13` waits for his
+    double-click on `Udalit staryj msys64 (KCCP).cmd` (desktop) — the agent's delete is refused by the permission rules.
+  - Ideas recorded: 07 (rotation: built, simulator-tested), 08 (sleep settings: built, simulator S3 — the value-change part, S4 and S6 open), 09 (the viewer opens a picture in the orientation that
+    fits its shape — verbatim only), epic 01 planned (`plans/01_EPIC_shade_tiles.md`, Russian).
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
-  2. **The rest of the owner's debug9 check (homework 04, steps 2, 4–7).** When he says the reader is on the cable (book screen, NOT USB drive):
-     `.pio-venv/Scripts/python.exe -I -X utf8 tools/serial_log.py <scratch>/serial_debug9.log` in the background; watch
-     `Image tap`, `Back swipe`, `[ERR]`, `OOM` (the debug image logs at LOG_LEVEL=1 — INF and up). His verdict → homework
-     04 «Итог», `ideas/02` closure, `testcases/TC_idea02…` C6.
-  3. **Epic 01 (idea 05) by `plans/01_EPIC_shade_tiles.md`** — the phase in flight and its plan are named at the top
-     of this list; the «Плитки шторки» screen of Ф2 is reused later by idea 06 «Кнопки главного экрана».
+  2. **Epic 01 Ф2, step P2.2-end / P2.3** by `plans/03_epic01_p2_tiles_screen.md`: paste the ▲ ▼ icons from
+     `python -I -X utf8 tools/make_icon.py tri_up icon_tri_up_32` (and `tri_down`) into
+     `firmware/src/components/icons/customListIcons.h`; write `ShadeTilesActivity` on `UiAppHost` (not `UiListActivity` —
+     the list hides row rects; see the plan's P2.1 findings), the entries (`SettingsSection::ShadeTiles` after idea 08's
+     pattern; `goToShadeTiles(tile, fromBook)`), strings; judge BEFORE the build; simulator run; then Ф3 (the shade row,
+     «Сон», «Фонарик», icons, the long tap), Ф4 (the debug10 image + homework).
+  3. **Idea 06 «Кнопки главного экрана»** reuses the Ф2 screen — its own epic after epic 01 (the owner asked 16:21
+     whether it comes in the next chat: yes, if the window allows after the shade).
+  4. The owner's debug9 check (homework 04, steps 2, 4–7) is superseded by the debug10 image (it carries everything of
+     debug9); his verdict on picture opening (13:51 «работает») is recorded.
 - **Open work, in order:**
-  1. Idea 05 + 06 (one list component); 2. Idea 03 (re-typeset tool + firmware `<figure>`); 3. KCCP 1.1.3 assembly:
-     merge release 1.1.2 (`198d385e`) into the debug line (conflicts `lib/hal/HalFrontlight.{cpp,h}`,
-     `test/frontlight_dither/`); the owner's open choice: light-linger hold (400 ms) vs timer-redraw hold; 4. Idea 04
-     (epic). 5. Bug 01 PR `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — a free upstream slot (5/5) + proofreading.
-     6. `bugs/05`, `bugs/06` (a simulator PR for 06 needs the owner's proofreading). 7. The test hook does not see
-     `tools/sim_run.sh` runs: a `testHook` block in `.kaif/kaif.json` — to be asked (the auto-mode
-     classifier refused the agent's edit). 8. Proofread `GOAL.md`. 9. Delete the partial `C:\msys64` (check the machine lock).
+  1. Epic 01 (idea 05) + idea 06; 2. Idea 09 (open a picture in the orientation that fits its shape — plan; the halves and
+     touches then follow that orientation, `ideas/07`); 3. Idea 03 (re-typeset tool + firmware `<figure>`); 4. KCCP 1.1.3
+     assembly: merge release 1.1.2 (`198d385e`) into the debug line (conflicts `lib/hal/HalFrontlight.{cpp,h}`,
+     `test/frontlight_dither/`); the owner's open choice: light-linger hold (400 ms) vs timer-redraw hold; 5. Idea 04
+     (epic). 6. Bug 01 PR `pr/library-tab-fit` — a free upstream slot (5/5) + proofreading. 7. `bugs/05`, `bugs/06`.
+     8. The test hook does not see `tools/sim_run.sh` / ctest runs: a `testHook` block in `.kaif/kaif.json` — to be asked.
+     9. Idea 08 S6: the on-device guide `guide_settings_section.xhtml` (the nine sleep options now under «Настройки сна»).
+     10. Proofread `GOAL.md`. 11. Delete the partial `C:\msys64` (check the machine lock).
   - Reviews to read: simulator PR #62 and firmware PRs #4328 #4332 #4375 #4376 #4377
     (`gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`).
-- KNOWLEDGE: `python -I` ignores `PYTHONUTF8` — use `-X utf8` (AGENT_GUIDE Code style, updated);
-  the simulator's reader takes the OVERLAY gray path, only the viewer uses absolute (`bugs/06`); Settings screens are
-  portrait while the reader and its shade follow the reading orientation; the firmware checkbox is a square with a
-  filled inner square (FreeInkUI `list.h`); a launched Edge window is not a shown window (EXP-0014); a page server under
-  `timeout` dies (EXP-0013); `pdftotext` is at `/mingw64/bin` (Git for Windows); the debug image number lives in
-  `platformio.ini` (AGENT_GUIDE Build, updated). Reader clock may run ≈ 40 min fast (unverified, PROJECT_HISTORY).
+- KNOWLEDGE: the image viewer keeps the renderer in the picture's orientation and the keys in the reading orientation
+  (internal map, `ideas/07`); one physical gesture has several input names and consumers — gate the touch frame
+  (EXP-0016); simulator scripts need `<ms>:` on every item and rising times inside a WAIT segment — now a guard in
+  `tools/sim_run.sh` (EXP-0015); the clock placeholder is filled only by Write/Edit, not by scripts (EXP-0012); the full
+  host-test suite on this PC is 773/781 with 8 native-Windows failures (research 01); MSYS2 lives in `F:\ai_sandbox\msys64`
+  (AGENT_GUIDE Build); Settings sub-screens past `SettingsSection::End` (internal map); `python -I` ignores `PYTHONUTF8`
+  — use `-X utf8`; Settings screens are portrait while the reader and its shade follow the reading orientation.
 
 ## Language contract
 
@@ -187,7 +143,7 @@ already say KCCP. In the firmware fork it is still krinik:
 ### Device (Xteink X4 Pro, eFuse-locked: firmware only from the SD card)
 
 - Last build confirmed on the reader: **1.1.1-debug8** (2026-11-09 23:46, homework 03); **debug9** is on the card since
-  2026-11-13 11:47, not checked yet (homework 04). Debug2–8 history: `PROJECT_HISTORY.md`.
+  2026-11-13 11:47, the owner 13:51: picture opening works (homework 04 steps 1, 3); the rest is superseded by the debug10 image. Debug2–8 history: `PROJECT_HISTORY.md`.
 - [ ] Precise temperature rework (owner, 2026-11-08): dithering only at brightness **≤ 9 %**, off at **10 %** (now it runs up to the
   duty of 10 %).
 - **KCCP 1.1.2** (frontlight) is published: https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2 (2026-11-08,
@@ -210,7 +166,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| debug10 = debug9 + idea 07 (long tap turns by half); idea 05 next — local, not pushed | crosspoint-reader · `wip/krinik-debug10` | 9f02db5f |
+| debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |
 | simulator fix: a plain refresh ends the absolute gray mode (bugs/06) — local, not pushed | crosspoint-simulator · `fix/gray-absolute-reset` (from `windows` = PR #62) | 49ded1a |
 | debug2–5 work (was uncommitted on top of `nikolai-debug`) | `MikalaiKryvusha/crosspoint-reader` · `wip/krinik-debug5` | 78cfbf36 |

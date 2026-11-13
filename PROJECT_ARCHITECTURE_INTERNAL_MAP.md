@@ -23,7 +23,7 @@
 | **Upstream CrossPoint** | `crosspoint-reader/crosspoint-reader`, branch `develop` | the base KCCP builds on and gives back to |
 | **The fork** | `MikalaiKryvusha/crosspoint-reader` (+ `freeink-sdk`) | carries `pr/*` branches for upstream PRs; KCCP lines (`nikolai`, `release/*`, `wip/*`) are moving out |
 | **KCCP build** | a firmware image from a fork branch (`x4pro-krinik[-debug]`) | what the owner's and his mother's X4 Pro readers run |
-| **Debug line** | `wip/krinik-debugN`, now `wip/krinik-debug9` (debug2–9; the code map in `STATUS.md`) | features tested on the reader before a release |
+| **Debug line** | `wip/krinik-debugN`, now `wip/krinik-debug10` (debug2–10; the code map in `STATUS.md`) | features tested on the reader before a release |
 | **Upstream PR** | one `pr/<topic>` branch + body + before/after frames | moves a feature proven on the reader into CrossPoint |
 | **Reader setup** | `restore.mjs` + `settings.json` + fonts + guide EPUBs | reproduces the owner's reader state |
 | **Panel curve** | `panel_curve.txt` from KEINKT Calibrator | maps gray levels to how the e-ink panel really shows them |
@@ -60,7 +60,9 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   book picture (idea 02). The picture is painted in `drawOrientation()` (the reading orientation set in Settings +
   long-tap turns) and the renderer STAYS there, so every touch — swipes, side taps, Back, the long-tap halves (idea
   07: right half clockwise, left counterclockwise) and the shade opened over it — is read as the picture stands
-  upright (the owner, 13.11.2026: «как смотришь на картинку, так и управляешь»; since debug10).
+  upright (the owner, 13.11.2026: «как смотришь на картинку, так и управляешь»; since debug10). The physical keys keep the
+  reading orientation (`MappedInputManager::setKeysFollowReadingOrientation`, set in the viewer's onEnter, cleared in
+  onExit): a short press pages the pictures, a long press turns the picture.
 - `src/activities/ActivityManager.cpp` — one current activity + a stack: `startActivityForResult` PUSHES (the parent
   stays alive, no `onExit`), `finish()` POPS (the parent's result handler runs, then the parent is repainted);
   `goTo*` REPLACES and clears the stack (`onExit` for all).

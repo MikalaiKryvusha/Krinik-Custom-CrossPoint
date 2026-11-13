@@ -1,7 +1,7 @@
 # Plan 03 — epic 01, phase 2: the settings screen «Плитки шторки»
 
 > **Created:** 2026-11-13 · **Parent:** `plans/01_EPIC_shade_tiles.md` → «Ф2 — экран «Плитки шторки»» · **Status:** 📐
-> planned 2026-11-13 15:58 +03:00; not started · **Outbound:** —
+> planned 2026-11-13 15:58 +03:00; P2.1 recon done, P2.2 icon tool `tools/make_icon.py` done (icons not pasted yet); next P2.3 · **Outbound:** —
 
 ## Goal vector (Achieve)
 
@@ -37,7 +37,7 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
       reader (`pendingSettingsSubSection`, `goToReader`). Anchor: «Список из семи строк…».
 - [ ] P2.2 Icons ▲ ▼ (1-bit `freeink::Icon`, Pillow script `tools/` → `src/components/icons/customListIcons.h`, the
       header's recipe); the tile icons of the rows: the shade's current ones (phase 3 replaces night / Sleep / Flashlight).
-- [ ] P2.3 `ShadeTilesActivity` (`UiListActivity`): a working copy of `SETTINGS.shadeTiles`; rows from
+- [ ] P2.3 `ShadeTilesActivity` (on `UiAppHost` — the P2.1 findings below; NOT `UiListActivity`): a working copy of `SETTINGS.shadeTiles`; rows from
       `shadetiles::List` (Bluetooth row only when compiled in — the model keeps it); checkbox via `canTurnOff`; ▲ ▼ via
       `moveUp/moveDown`; save on exit when edited; `[NOT-TESTED]`.
 - [ ] P2.4 Entries: `SettingsSection::ShadeTiles` + an action row in «Экран» (after «Настройки сна»? — order said in the
