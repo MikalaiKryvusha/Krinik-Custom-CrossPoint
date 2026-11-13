@@ -1,7 +1,9 @@
 # Idea 03 — never split an image from its caption across pages
 
 > **Created:** 2026-11-13 (the owner's request, chat — tossed mid-task while idea 02 was in recon) · **Parent:** — ·
-> **Status:** 🆕 the owner's original, verbatim · **Outbound:** —
+> **Status:** 🔬 recon done, direction set by the owner 2026-11-13 10:53 +03:00 (re-typeset to the standard + the
+> firmware honours `<figure>`); plan next, after idea 02 · **Outbound:** the firmware half is an upstream PR candidate
+> (standard HTML5 semantics)
 
 `[OWNER] 2026-11-13 10:38 +03:00 · chat:`
 
@@ -50,3 +52,32 @@
 > В EPUB нет договорённого атрибута на подписи картинок?
 
 > ну так вот я и говорю, что нужно бля книги корректно переверстать.
+
+## The direction (the owner's word above; the split into two parts is `[AI]`, said to him in chat 10:54)
+
+**The standard caption:** EPUB 3 content is XHTML5 — a picture with its caption is `<figure><img/><figcaption>…`
+`</figcaption></figure>`, and CSS `break-inside: avoid` (old name `page-break-inside: avoid`) asks a reader not to split
+the block. None of the owner's books uses it.
+
+**Census of the owner's card** (2026-11-13 10:53 +03:00, `G:\Книги`, 10 EPUB, script
+`caption_census.py` in the session scratchpad — moves to `tools/` with the re-typeset tool):
+
+| Book | `<img>` | `<figure>` | `<figcaption>` | «Рис…» paragraph right after a picture |
+|---|---|---|---|---|
+| Хофштадтер, «Гёдель, Эшер, Бах» | 180 | 0 | 0 | 148 |
+| Тегмарк, «Наша математическая вселенная» | 117 | 0 | 0 | 98 |
+| Шопенгауэр, «Мир как воля и представление…» | 97 | 0 | 0 | 0 |
+| Дойч, «Начало бесконечности» | 51 | 0 | 0 | 0 |
+| Дойч, «Структура реальности» | 34 | 0 | 0 | 0 |
+| Шекспир, «Трагедии. Сонеты» | 12 | 0 | 0 | 0 |
+| Докинз, «Эгоистичный ген» | 9 | 0 | 0 | 0 |
+| Шопенгауэр, «О четверояком корне…» | 6 | 0 | 0 | 0 |
+| Лю Цысинь; Лем | 1 each (cover) | 0 | 0 | 0 |
+
+**Two parts:**
+1. **Re-typeset tool** (`tools/`, runs on the PC): picture + the «Рис. N…» paragraph right after it →
+   `<figure>…<figcaption>…</figcaption></figure>` with `break-inside: avoid`. What counts as a caption lives HERE, per
+   book, not in the firmware. Books without such paragraphs (Дойч, Докинз…) are checked by eye for other caption forms.
+2. **Firmware:** a `<figure>` is laid out on ONE page — picture and `<figcaption>` together; when they do not fit one
+   page, the picture inside shrinks (the owner: a smaller in-page picture is fine, the full-screen view of idea 02 shows
+   the detail). Today `figure` is a plain block and `figcaption` is unknown, so the tool alone changes nothing on the reader.
