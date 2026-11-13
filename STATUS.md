@@ -14,10 +14,12 @@ work project. From now on it is a standalone project.
   Draft homework for the image: `homeworks/06_kccp_1.1.3_debug1.md` (build data placeholders ⟨…⟩). Release-time debt
   (judge): `README.md` / `USER_GUIDE.md` describe fractional mixing as always on and battery as «still being
   measured» — fix before KCCP 1.1.3 ships.
-- **Epic 01 Ф2 closed 19:33:** «Кнопки в шторке» committed as firmware `41718c61` on `wip/kccp-1.1.3-debug2`; two
-  judges; simulator C1–C8 pass (`testcases/reports/2026-11-13_epic01_p2.md`; «Ориентация чтения» was cut → the
-  mockup's «Ориентация»); host suite 773/781 = the 8 known. **Next: Ф3** by `plans/04_epic01_p3_shade_row.md` (the
-  shade draws its row from the model, «Сон», «Фонарик», the long tap → this screen; risks 5–6 from the judge).
+- **Epic 01 Ф2 + Ф3 closed** on `wip/kccp-1.1.3-debug2`: «Кнопки в шторке» `41718c61` (19:33, C1–C8) and the shade
+  `261e5c63` (20:06, D1–D8: the owner's row with equal gaps measured by `tools/shade_gaps.py`, «Сон», «Фонарик» over
+  the book, the long tap → the screen on that button → Back → the book). **Ф4 waits for the owner's word on the image**
+  (the whole-epic judge, the device build, smoke, homework — `homeworks/06_kccp_1.1.3_debug1.md` grows into the
+  1.1.3-debug2 homework). Next in the loop: idea 06 (epic recon done: `researches/2026-11-13_idea06_home_buttons_epic.md`,
+  the owner's questions → an interview), idea 09 (planned in `ideas/09`).
 - **Chat 2026-11-13 13:51 → 16:21 closed** — its summary moved verbatim to `PROJECT_HISTORY.md` (entry «STATUS trim
   4»); debug10 `wip/krinik-debug10` is the base of the 1.1.3 line below.
 - **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
@@ -31,12 +33,9 @@ work project. From now on it is a standalone project.
   → «Решения владельца» (the verbatim block moved to `PROJECT_HISTORY.md`, «STATUS trim 4»).
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
-  2. **Epic 01 Ф3** by `plans/04_epic01_p3_shade_row.md` on `wip/kccp-1.1.3-debug2` (Ф2 closed 19:33, `41718c61`):
-     the code is written (uncommitted since 19:40, judge running); then the simulator cases
-     `testcases/TC_epic01_p3_shade_row.md` (card `qa_runs/sd_book_images`, the temporary six-button copy
-     `qa_runs/sd_epic01_p3_six` — delete after the runs), commit; then Ф4 (the epic's judge, the 1.1.3-debug2 image
-     WHEN the owner asks — 19:01 «со сборкой не торопись»). Before any firmware commit: `sh tools/host_tests.sh`
-     (new failures + CRLF, EXP-0018/0019).
+  2. **Epic 01 Ф4** only on the owner's word (the image); meanwhile idea 06 (interview from the epic recon) and idea 09
+     (`ideas/09` plan S1–S5) on `wip/kccp-1.1.3-debug2`. Before any firmware commit: `sh tools/host_tests.sh` (new
+     failures + CRLF, EXP-0018/0019); a shade shot is measured by `tools/shade_gaps.py`.
   3. **Idea 06 «Кнопки главного экрана»** reuses the Ф2 screen — its own epic after epic 01 (the owner asked 16:21
      whether it comes in the next chat: yes, if the window allows after the shade).
   4. The owner's debug9 check (homework 04, steps 2, 4–7) is superseded by the debug10 image (it carries everything of
@@ -171,7 +170,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 screen «Кнопки в шторке» (`41718c61`) → then Ф3 — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 41718c61 |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 261e5c63 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |

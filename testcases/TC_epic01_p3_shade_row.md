@@ -4,7 +4,7 @@
 the buttons, the long tap), `FlashlightActivity` (return to the caller), `ShadeTilesActivity` (the entry from the shade:
 the cursor, the keys flag, `isOpen`) · **Version/build:** simulator `simulator_x4_pro_win` (built WITHOUT Bluetooth),
 then `1.1.3-debug2` on the owner's X4 Pro
-**Test basis:** `plans/04_epic01_p3_shade_row.md` → criteria 1–8; the meta-plan `plans/01_EPIC_shade_tiles.md` →
+**Test basis:** `plans/04_DONE_epic01_p3_shade_row.md` → criteria 1–8; the meta-plan `plans/01_EPIC_shade_tiles.md` →
 «Критерии приёмки» 1, 2, 4, 5, 6, 7 and the Ф3 gate («снимки шторки с 5, 6 и 7 кнопками в обеих ориентациях; критерии
 1, 2, 4, 5, 6, 7 на симуляторе»).
 
@@ -38,14 +38,14 @@ tap on a button opens «Кнопки в шторке» on that button, and Back 
 
 | # | Case (steps → expected) | Technique | Status + evidence |
 |---|---|---|---|
-| D1 | Book (`sd_book_images`) → top-edge swipe → shade: four buttons Ночной режим (half-filled circle), Очистка, Ориентация, Сенсор; equal gaps at the edges and between (shot) | smoke (R1) | not run |
-| D2 | D1 → long tap on «Ориентация» (third) → `Long tap on orientation`, `Entering activity: ShadeTiles`; portrait shot with the pill on «Ориентация» | use case (R2) | not run |
-| D3 | D2 → swipe Back → two `Popped`; the shot = the book page in landscape, no shade | use case (R3) | not run |
-| D4 | D1 → long tap on «Ночной режим» → the screen; tap «Сон» ☑, ▲ ×3 on «Сон» (the meta-plan's ×4 counts the Bluetooth row the simulator hides: «Сон» is 5th here) → Back → book; open the shade again → five buttons, «Сон» (moon) second (shot); `settings.json` lists `sleep` second | use case (meta criterion 2) | not run |
-| D5 | Card with «Фонарик» on (a hand-written `shadeTiles` with `flashlight` on) → shade → tap «Фонарик» → `Entering activity: Flashlight` (shot: the lamp button upright in the shade before the tap); tap → two `Popped` → the book page | use case (R4) | not run |
-| D6 | Card with «Сон» on → shade → tap «Сон» → the sleep entry in the log (shot of the sleep screen) | use case (R5) | not run |
-| D7 | Home → Settings → «Экран» → «Кнопки в шторке» → top-edge swipe (the shade over the screen) → long tap on a button → the shade closes; ONE `Entering activity: ShadeTiles` in the log | control (R6) | not run |
-| D8 | Each old button by one tap in the shade over the book: night mode inverts, cleanup closes the shade, orientation cycles, touch toggles (shots/log) | regression | not run |
+| D1 | Book (`sd_book_images`) → top-edge swipe → shade: four buttons Ночной режим (half-filled circle), Очистка, Ориентация, Сенсор; equal gaps at the edges and between (shot) | smoke (R1) | pass — [TESTED: 2026-11-13 · shot d1, shade_gaps spread 1 (the old row 34) · testcases/reports/2026-11-13_epic01_p3.md] |
+| D2 | D1 → long tap on «Ориентация» (third) → `Long tap on orientation`, `Entering activity: ShadeTiles`; portrait shot with the pill on «Ориентация» | use case (R2) | pass — [TESTED: 2026-11-13 · log Long tap on orientation, shot d2 · testcases/reports/2026-11-13_epic01_p3.md] |
+| D3 | D2 → swipe Back → two `Popped`; the shot = the book page in landscape, no shade | use case (R3) | pass — [TESTED: 2026-11-13 · two Popped, shot d3 the book · testcases/reports/2026-11-13_epic01_p3.md] |
+| D4 | D1 → long tap on «Ночной режим» → the screen; tap «Сон» ☑, ▲ ×3 on «Сон» (the meta-plan's ×4 counts the Bluetooth row the simulator hides: «Сон» is 5th here) → Back → book; open the shade again → five buttons, «Сон» (moon) second (shot); `settings.json` lists `sleep` second | use case (meta criterion 2) | pass — [TESTED: 2026-11-13 · settings.json night,sleep,…, shot d4c five buttons · testcases/reports/2026-11-13_epic01_p3.md] |
+| D5 | Card with «Фонарик» on (a hand-written `shadeTiles` with `flashlight` on) → shade → tap «Фонарик» → `Entering activity: Flashlight` (shot: the lamp button upright in the shade before the tap); tap → two `Popped` → the book page | use case (R4) | pass — [TESTED: 2026-11-13 · Flashlight then two Popped, shot d5c · testcases/reports/2026-11-13_epic01_p3.md] |
+| D6 | Card with «Сон» on → shade → tap «Сон» → the sleep entry in the log (shot of the sleep screen) | use case (R5) | pass — [TESTED: 2026-11-13 · Entering activity: Sleep, shot d6 · testcases/reports/2026-11-13_epic01_p3.md] |
+| D7 | Home → Settings → «Экран» → «Кнопки в шторке» → top-edge swipe (the shade over the screen) → long tap on a button → the shade closes; ONE `Entering activity: ShadeTiles` in the log | control (R6) | pass — [TESTED: 2026-11-13 · one Popped, one ShadeTiles entry, shot d7b · testcases/reports/2026-11-13_epic01_p3.md] |
+| D8 | Each old button by one tap in the shade over the book: night mode inverts, cleanup closes the shade, orientation cycles, touch toggles (shots/log) | regression | pass — [TESTED: 2026-11-13 · shots d8*, settings.json · testcases/reports/2026-11-13_epic01_p3.md] |
 
 ## 5. Not covered — said aloud
 

@@ -2,7 +2,8 @@
 
 > **Created:** 2026-11-13 · **Parent:** `plans/01_EPIC_shade_tiles.md` → «Ф3 — шторка» · **Status:** 📐 draft with the
 > P3.1 recon, written ≈ 2026-11-13 19:10 +03:00 (committed 19:12) while the Ф2 screen was under its judge; final when Ф2 closes (the ladder rule: phase N+1 is
-> planned when phase N closes — the steps below are re-read then) · **Outbound:** —
+> planned when phase N closes — the steps below are re-read then); ✅ phase closed 2026-11-13 20:05 +03:00 — firmware
+> `261e5c63`, simulator D1–D8 pass (`testcases/reports/2026-11-13_epic01_p3.md`) · **Outbound:** —
 
 ## Goal vector (Achieve)
 
@@ -36,25 +37,26 @@ Anchor (meta-plan, Ф3): «Ряд кнопок по модели с равным
 ## Steps
 
 - [x] P3.1 Recon (2026-11-13, `wip/kccp-1.1.3-debug2` `84c33f85`) — findings below.
-- [ ] P3.2 The row from the model: `FrontlightPanelActivity::buildPanelScreen` walks `SETTINGS.shadeTiles` (shown and
+- [x] P3.2 The row from the model: `FrontlightPanelActivity::buildPanelScreen` walks `SETTINGS.shadeTiles` (shown and
       on), places each by `tileLeft`, hits by `tileSlot`; `runTile` dispatches by `shadetiles::Tile`, not by a slot
       index; the night / orientation / touch / Bluetooth drawing stays as it is (filled = on, the orientation glyph
       turned, the Bluetooth-off glyph). Anchor: «Ряд кнопок по модели с равными отступами».
-- [ ] P3.3 Icons: night → `icon_half_circle_32` (pasted in Ф2), «Сон» → `icon_moon_32`, «Фонарик» → the Home menu's lamp,
+- [x] P3.3 Icons: night → `icon_half_circle_32` (pasted in Ф2), «Сон» → `icon_moon_32`, «Фонарик» → the Home menu's lamp,
       `FlashlightIcon` (`src/components/icons/flashlight.h`, 32×32, 128 bytes, the 1-bit format of `freeink::Icon`:
       read as ASCII 2026-11-13 — a lamp lying with its beam and rays to the LEFT, «stored rotated 90° CCW»): wrapped as
       `freeink::Icon{32, 32, 16, FlashlightIcon}` and drawn with `fui::Rotation::CW90` so the beam points up — the shot
       confirms; the Ф2 screen's `tileIcon()` takes the same three. Anchor: «Иконки: круг с залитой половиной…».
-- [ ] P3.4 «Сон»: `activityManager.requestSleep()` (the shade's `prepareForSleep` already skips its exit clean).
-- [ ] P3.5 «Фонарик»: `FlashlightActivity` gets a «return to the caller» mode — `finish()` instead of
+- [x] P3.4 «Сон»: `activityManager.requestSleep()` (the shade's `prepareForSleep` already skips its exit clean).
+- [x] P3.5 «Фонарик»: `FlashlightActivity` gets a «return to the caller» mode — `finish()` instead of
       `goHome(HomeMenuItem::FLASHLIGHT)` (Home keeps its cursor-on-Flashlight return); the shade pushes it with
       `startActivityForResult` and closes itself in the result handler. `[AI]` meta-plan: «Фонарик» opens over the book.
-- [ ] P3.6 The long tap: each button's hit takes `InputTouch | InputLongPress`; `event.longPress` → push
+- [x] P3.6 The long tap: each button's hit takes `InputTouch | InputLongPress`; `event.longPress` → push
       `ShadeTilesActivity(tile)` with a result handler that calls `finish()`. Anchor: «Долгий тап по кнопке открывает
       экран Ф2».
-- [ ] P3.7 Judge (fresh agent: the diff + this plan + the meta-plan) BEFORE the build; simulator runs for criteria 1–8;
+- [x] P3.7 Judge (fresh agent: the diff + this plan + the meta-plan) BEFORE the build — 19:52, no blockers; simulator runs for criteria 1–8;
       run report `testcases/reports/<date>_epic01_p3.md`; cases `testcases/TC_epic01_p3_shade_row.md`.
-- [ ] P3.8 Commit; tick Ф3; write the Ф4 plan (judge of the whole epic, the 1.1.3-debug2 image when the owner asks).
+- [x] P3.8 Commit (`261e5c63`); Ф3 ticked. The Ф4 plan is written when the owner asks for the image (19:01 «со
+      сборкой не торопись»): the whole-epic judge, the device build, the smoke on the image's commit, the homework.
 
 ## Risks
 
@@ -98,3 +100,17 @@ Anchor (meta-plan, Ф3): «Ряд кнопок по модели с равным
   false, /*routeHeld=*/true)` today (`FrontlightPanelActivity.cpp:271`) — P3.6 sets the first flag.
 - `GUI.drawHeader` publishes the header back arrow as a tap target (`HeaderBackTapTarget`, cleared on a push,
   `ActivityManager.cpp:228-230`) — the Ф2 screen's header arrow is a Back.
+
+## Decisions made without the owner
+
+Every call below is `[AI]` and reversible; listed at the phase closing 2026-11-13 20:05 +03:00.
+- The long press is taken only for a contact that began on the button row (a resting finger on a slider keeps
+  dragging) — the slider half is not run on the simulator; the owner's reader shows it.
+- A long tap from a shade lying over «Кнопки в шторке» only closes the shade (no second copy of the screen).
+- «Фонарик» from the shade: pushed over the screen below in a return-to-caller mode; Home's «Фонарик» unchanged. A
+  flashlight opened over the Home flashlight (Home → «Фонарик» → shade → «Фонарик») returns the first one at the
+  normal brightness instead of full (the judge, rare) — left as is.
+- «Сон» from the shade: the Home sleep call as it is (no selection paint first: the button is not a list row).
+- The lamp: the Home menu's bitmap, turned CW90 (no new drawing); the night button: the half-filled circle.
+- The settings screen takes the keys off the reading orientation while open and puts the caller's value back.
+- Not changed: the shared sleep log line says «from the home menu» also for the shade's «Сон» (a nit in `main.cpp`).

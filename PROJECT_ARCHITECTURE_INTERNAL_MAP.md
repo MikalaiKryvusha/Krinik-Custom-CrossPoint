@@ -73,8 +73,11 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   cleared on a push). `goToFlashlight()` REPLACES (the book closes) and `FlashlightActivity` leaves by `goHome()`.
 - `src/activities/util/FrontlightPanelActivity.{h,cpp}` — the shade (control center; the header holds its one-shot
   close flags `themeApplying` · `refreshTileUsed` · `goingToSleep`): grabber, brightness / warmth sliders,
-  the tile row (five hard-coded tiles until epic 01 Ф3 draws the row from `ShadeTiles`). The simulator is built without
-  Bluetooth (`FREEINK_CAP_BLE_HID_HOST` off → `bleturner::status().compiledIn` false), so there the row has four tiles.
+  the button row (since 1.1.3-debug2 `261e5c63`, epic 01 Ф3): the buttons of `SETTINGS.shadeTiles` that are on and shown,
+  in the owner's order, placed by `shadetiles::tileLeft` (equal gaps), hit value = the `Tile`; «Сон» requests sleep,
+  «Фонарик» pushes `FlashlightActivity(returnToCaller)`; a long tap (only for a contact that began on the row) pushes
+  `ShadeTilesActivity(tile)` and the shade closes when it returns. The simulator is built without Bluetooth
+  (`FREEINK_CAP_BLE_HID_HOST` off → `bleturner::status().compiledIn` false), so there the default row has four buttons.
 - `src/MappedInputManager.{h,cpp}` — logical buttons and screen gestures over `HalGPIO`: maps the physical keys by the
   live renderer orientation (or, while `keysFollowReadingOrientation` is set by the image viewer, by the reading
   orientation), taps / swipes / long presses in logical coordinates; `wasScreenLongPress` CONSUMES the long press and

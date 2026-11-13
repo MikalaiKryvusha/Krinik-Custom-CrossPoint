@@ -69,7 +69,7 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
 - [x] P2.7 Build; simulator: criteria 1–5; `settings.json` read; run report `testcases/reports/2026-11-13_epic01_p2.md`:
       C1–C8 pass; found and fixed in the phase: «Ориентация чтения» cut with an ellipsis → the mockup's «Ориентация»
       (`STR_SHADE_TILE_ORIENTATION`, judged, re-run); a `tools/sim_run.sh` gap (in-script SHOT names) fixed in KCCP.
-- [x] P2.8 Commit (firmware `41718c61`, 19:33); Ф2 ticked in the meta-plan; the phase 3 plan is `plans/04_epic01_p3_shade_row.md`.
+- [x] P2.8 Commit (firmware `41718c61`, 19:33); Ф2 ticked in the meta-plan; the phase 3 plan is `plans/04_DONE_epic01_p3_shade_row.md`.
 
 ## Risks
 

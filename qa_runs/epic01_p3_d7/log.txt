@@ -1,0 +1,54 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[69] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[69] [DBG] [CPS] Resaving settings to update format
+[69] [DBG] [CPS] Settings loaded from file
+[88] [DBG] [UI] Using Lyra theme
+[89] [INF] [CLK] RTC clock read: 2026-11-13 16:59
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[89] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[1682] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[1683] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[1684] [DBG] [SDREG] Fonts directory not found: /fonts
+[1684] [DBG] [SDREG] Discovery complete: 0 families
+[1684] [DBG] [SDFS] SD font system ready (0 families discovered)
+[1684] [DBG] [MAIN] Fonts setup
+[1684] [DBG] [ACT] Entering activity: Boot
+[1684] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1699] [DBG] [ACT] Exiting activity: Boot
+[1699] [DBG] [ACT] Entering activity: Home
+[SIM] WAIT matched: [1699] [DBG] [ACT] Entering activity: Home
+[1912] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1924] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3303] [DBG] [ACT] Exiting activity: Home
+[3304] [DBG] [ACT] Entering activity: SettingsList
+[3305] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [3304] [DBG] [ACT] Entering activity: SettingsList
+[4896] [DBG] [ACT] Pushed to activity stack, new size = 1
+[4896] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[4898] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[4899] [DBG] [DREG] No /.dictionaries directory on SD card
+[4902] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [4896] [DBG] [ACT] Entering activity: Settings
+[7013] [DBG] [ACT] Pushed to activity stack, new size = 2
+[7013] [DBG] [ACT] Entering activity: ShadeTiles
+[7015] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [7013] [DBG] [ACT] Entering activity: ShadeTiles
+[9481] [DBG] [ACT] Pushed to activity stack, new size = 3
+[9481] [DBG] [ACT] Entering activity: FrontlightPanel
+[9481] [DBG] [GFX] Time = 2468 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [9481] [DBG] [ACT] Entering activity: FrontlightPanel
+[10004] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10004] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/shots/d7a.bmp
+[13056] [DBG] [ACT] Exiting activity: FrontlightPanel
+[13056] [DBG] [ACT] Popped from activity stack, new size = 2
+[13058] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p3_d7/shots/d7b.bmp
