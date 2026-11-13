@@ -22,13 +22,17 @@ PROG=program; PY=python3
 case "$(uname -s)" in MINGW*|MSYS*) PROG=program.exe; PY="$ROOT/.pio-venv/Scripts/python.exe"  # has Pillow for shot_webp.py
   R=$(cygpath -m "$R")  # a native exe needs D:/… paths inside env values
   [ -d /f/ai_sandbox/msys64/ucrt64/bin ] && PATH=/f/ai_sandbox/msys64/ucrt64/bin:$PATH ;; esac
+# An in-script `<ms>:SHOT:<name>` with a bare name goes to this run's shots folder: the simulator takes the text after
+# SHOT: as a path, so a bare name landed in the cwd (firmware/) with no extension (2026-11-13, run epic01_p2_c1).
+shots() { echo "$1" | sed "s#\(^\|;\)\([0-9]*\):SHOT:\([^;/]*\)#\1\2:SHOT:$R/shots/\3.bmp#g"; }
+SCRIPT=$(shots "$2"); SCRIPT_AFTER_WAKE=$(shots "${4:-}")
 cd "${FW_DIR:-$ROOT/firmware}"
 # The window opens 480x800 physical pixels, borderless, at the very top-left of the owner's 4K screen (owner,
 # 2026-11-09). Keep 100 %: the screenshot hook captures the window, a smaller window gives smaller shots.
 export CROSSPOINT_SIM_WINDOW_POS="${CROSSPOINT_SIM_WINDOW_POS:-0,0}" CROSSPOINT_SIM_WINDOW_PERCENT="${CROSSPOINT_SIM_WINDOW_PERCENT:-100}" \
   CROSSPOINT_SIM_WINDOW_BORDERLESS="${CROSSPOINT_SIM_WINDOW_BORDERLESS:-1}"
-CROSSPOINT_SIM_SD="$R/sd" CROSSPOINT_SIM_INPUT_SCRIPT="$2" CROSSPOINT_SIM_SCREENSHOTS="$(expand "$3")" \
-CROSSPOINT_SIM_INPUT_SCRIPT_AFTER_WAKE="${4:-}" CROSSPOINT_SIM_SCREENSHOTS_AFTER_WAKE="$(expand "${5:-}")" \
+CROSSPOINT_SIM_SD="$R/sd" CROSSPOINT_SIM_INPUT_SCRIPT="$SCRIPT" CROSSPOINT_SIM_SCREENSHOTS="$(expand "$3")" \
+CROSSPOINT_SIM_INPUT_SCRIPT_AFTER_WAKE="$SCRIPT_AFTER_WAKE" CROSSPOINT_SIM_SCREENSHOTS_AFTER_WAKE="$(expand "${5:-}")" \
   timeout ${SIM_TIMEOUT:-90} .pio/build/${SIM_ENV:-simulator_x4_pro}/$PROG > "$R/log.txt" 2>&1 || echo "exit $? (see $R/log.txt)"
 [ -n "$KEEP_BMP" ] || $PY -I "$ROOT/tools/shot_webp.py" "$R/shots" >/dev/null
 ls "$R/shots"; grep -c -E '\[(ERR|E)\]|panic|Abort|Segmentation' "$R/log.txt" | sed 's/^/errors in log: /' || true
