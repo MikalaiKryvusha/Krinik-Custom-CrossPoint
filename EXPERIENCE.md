@@ -82,6 +82,19 @@
 
 ## Entries
 
+### EXP-0019 · 2026-11-13 · ❌→✅ · #crlf #python #firmware #windows
+class: shell-lied
+mechanized: tools/host_tests.sh — refuses CRLF in firmware src/ lib/ test/ (tracked or new), red on a header turned CRLF (2026-11-13)
+**Context:** patching firmware sources with `pathlib.Path.write_text(...)` from `python -I -X utf8` on Windows.
+**Result:** ❌ text mode turned every `\n` into `\r\n`; the firmware clone has `core.autocrlf=false`, so
+`ShadeTilesActivity.{h,cpp}` went into `41718c61` as CRLF and the shade's diff showed 1 068 changed lines. Git Bash
+`grep -c $'\r'` printed 0 on those files — `git ls-files --eol` told the truth. ✅ `sed -i 's/\r$//'`, `376bcf11`.
+**Lesson:** a Python script that writes a source file on Windows passes `newline="\n"` (or writes bytes); line endings are
+read with `git ls-files --eol`, never with grep.
+**Repro:** `git -C firmware ls-files --eol -- src lib test | grep -E 'i/crlf|w/crlf'` → only the upstream OFL/UFL/hyphenation texts.
+**Trigger:** a script that rewrites a file in `firmware/`.
+**Not for:** this KCCP repo (`core.autocrlf=true` normalises on commit).
+
 ### EXP-0018 · 2026-11-13 · ❌→✅ · #host-tests #suite #firmware
 class: suite-not-run
 mechanized: tools/host_tests.sh — the full suite diffed against tools/host_tests_known_failures.txt, exit 1 on a new failure (red on a list missing one known name, 2026-11-13)

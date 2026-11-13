@@ -15,6 +15,15 @@ case "$(uname -s)" in MINGW*|MSYS*)
   TEMP=$(cygpath -w "$TMPD"); TMP=$TEMP; export TEMP TMP ;;
 *) TMPDIR=$TMPD; export TMPDIR ;; esac
 export PATH PYTHONUTF8=1
+# Line endings first (EXP-0019): a Python write_text on Windows wrote CRLF into new firmware sources, and the firmware
+# clone has core.autocrlf=false, so they went into a commit as CRLF. Every source file is LF, tracked or about to be
+# added; the CRLF texts upstream ships on purpose (font licenses, a hyphenation fixture) are the known exceptions.
+CRLF=$(cd "$FW" && { git ls-files --eol -- src lib test; git ls-files --others --exclude-standard --eol -- src lib test; } |
+  grep -E 'i/crlf|w/crlf' | grep -vE '/(OFL|UFL)\.txt$|hyphenation_eval/resources/' || true)
+if [ -n "$CRLF" ]; then
+  printf 'host_tests: CRLF in firmware sources (convert with: sed -i "s/\\r$//" <file>):\n%s\n' "$CRLF"
+  exit 1
+fi
 BUILD_LOG=$TMPD/host_tests_build.log
 CTEST_LOG=$TMPD/host_tests_ctest.log
 if [ "${SKIP_BUILD:-0}" != 1 ]; then

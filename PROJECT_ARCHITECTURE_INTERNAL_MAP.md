@@ -75,6 +75,13 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   close flags `themeApplying` · `refreshTileUsed` · `goingToSleep`): grabber, brightness / warmth sliders,
   the tile row (five hard-coded tiles until epic 01 Ф3 draws the row from `ShadeTiles`). The simulator is built without
   Bluetooth (`FREEINK_CAP_BLE_HID_HOST` off → `bleturner::status().compiledIn` false), so there the row has four tiles.
+- `src/MappedInputManager.{h,cpp}` — logical buttons and screen gestures over `HalGPIO`: maps the physical keys by the
+  live renderer orientation (or, while `keysFollowReadingOrientation` is set by the image viewer, by the reading
+  orientation), taps / swipes / long presses in logical coordinates; `wasScreenLongPress` CONSUMES the long press and
+  suppresses the rest of the contact.
+- `src/activities/util/FlashlightActivity.{h,cpp}` — Home «Фонарик»: a white page, the light at full output, any tap /
+  Back leaves (Home, cursor on «Фонарик»); with `returnToCaller` (epic 01 Ф3, the shade's button) it `finish()`es to
+  the screen it was pushed over.
 - `src/activities/UiListActivity.cpp` — the base of single-list screens (FreeInkUI `list()`, swipes scroll, keys move
   the selection); `KeyboardLayoutsActivity` is its checkbox-list example (a working mask, saved on exit).
 - `src/activities/settings/SettingsActivity.cpp` — one Settings screen per `SettingsSection`: `sectionFor()` routes each
