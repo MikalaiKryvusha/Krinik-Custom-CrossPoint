@@ -25,3 +25,7 @@
 `[OWNER] 2026-11-13 12:23 +03:00 · chat` (homework 05, entry variants 1–4):
 
 > 3 Долгий тап по любой плитке
+
+`[OWNER] 2026-11-13 12:24 +03:00 · chat` (homework 05, screen variants А–Г, asked «what does the long tap open?»):
+
+> АСписок с галочками и стрелками
