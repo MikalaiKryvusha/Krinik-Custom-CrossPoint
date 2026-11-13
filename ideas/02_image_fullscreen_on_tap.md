@@ -1,6 +1,6 @@
 # Idea 02 — tap on an image in a book opens it full screen
 
-> **Created:** 2026-11-13 (the owner's request, chat) · **Parent:** — · **Status:** 🔧 planned 2026-11-13 10:50 +03:00, in
+> **Created:** 2026-11-13 (the owner's request, chat) · **Parent:** — · **Status:** 🔧 planned 2026-11-13 10:45 +03:00, in
 > work · **Outbound:** — (KCCP only for now; an upstream PR is a later question)
 
 ## Goal vector (Achieve)

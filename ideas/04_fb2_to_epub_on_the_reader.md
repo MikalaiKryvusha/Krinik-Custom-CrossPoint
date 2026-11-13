@@ -1,7 +1,7 @@
 # Idea 04 — an FB2 → EPUB converter on the reader itself
 
 > **Created:** 2026-11-13 (the owner's request, chat — tossed mid-task while ideas 02/03 were in work) · **Parent:** — ·
-> **Status:** 🔬 first recon 2026-11-13 10:58 +03:00; heavy (→ `/plan-epic`), after ideas 02/03 · **Outbound:** —
+> **Status:** 🔬 first recon 2026-11-13 10:56 +03:00; heavy (→ `/plan-epic`), after ideas 02/03 · **Outbound:** —
 
 `[OWNER] 2026-11-13 10:54 +03:00 · chat:`
 

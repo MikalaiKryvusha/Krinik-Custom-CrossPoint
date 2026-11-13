@@ -1,7 +1,7 @@
 # Research — keeping a picture and its caption on one page (idea 03)
 
 > **Created:** 2026-11-13 · **Parent:** `ideas/03_keep_image_caption_with_image.md` · **Status:** 🔬 first sweep
-> 2026-11-13 11:06 +03:00 (web + own code + the owner's books) · **Outbound:** the firmware half is an upstream PR
+> 2026-11-13 11:02 +03:00 (web + own code + the owner's books) · **Outbound:** the firmware half is an upstream PR
 > candidate (standard semantics)
 
 ## The industry practice (web sweep, 2026-11-13)

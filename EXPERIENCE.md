@@ -81,6 +81,16 @@
 
 ## Entries
 
+### EXP-0012 · 2026-11-13 · ❌→✅ · #stamps #clock
+class: claim-before-evidence
+mechanized: .kaif/hooks/clock-now.mjs — write the NOW placeholder (the word NOW in white square brackets), the hook fills the machine's time on Write/Edit
+**Context:** status stamps in ideas 02/04 and a research header, typed by feel while the work ran fast.
+**Result:** three stamps 2–4 minutes off (10:50 for a 10:45 plan, 10:58 for 10:56, 11:06 for 11:02) — caught the
+same hour against `git log --format='%h %ci'` and corrected in place.
+**Repro:** after writing stamps, `git log --format='%h %ci %s' -10` → each stamp ≤ the commit time of its document.
+**Trigger:** typing any `HH:MM` of our own moment into a document.
+**Not for:** the owner's message times quoted from the clock hook's line.
+
 ### EXP-0011 · 2026-11-13 · ❌→✅ · #epub #lint #tools
 class: missing-dependency
 none-cheap: one-line S3 note; the lint itself should say «xmllint not found» — fix it when the tool is next touched
