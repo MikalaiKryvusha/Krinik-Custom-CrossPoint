@@ -28,10 +28,11 @@
 <body>
 <main>
 <h1>Шторка: итоговый вид того, что решено</h1>
-<p class="lead">Долгий тап по любой плитке шторки сразу открывает в настройках экран «Плитки шторки»: галочка включает
+<p class="lead">Долгий тап по любой плитке шторки сразу открывает в настройках экран «Плитки шторки»: квадратик включает
    плитку, ▲ ▼ двигают её в ряду. Шторка и книга — в альбомной ориентации, настройки — в книжной, как все экраны настроек.</p>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-theme" viewBox="0 0 32 32"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 5a11 11 0 0 0 0 22z" fill="currentColor"/></symbol>
   <symbol id="i-moon" viewBox="0 0 32 32"><path d="M21 5a11 11 0 1 0 6 18A9 9 0 0 1 21 5z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
   <symbol id="i-refresh" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M25 12a10 10 0 0 0-17-3l-2 2"/><path d="M6 6v5h5"/><path d="M7 20a10 10 0 0 0 17 3l2-2"/><path d="M26 26v-5h-5"/></g></symbol>
   <symbol id="i-orient" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 6v20M27 6v20M10 16h12"/><path d="M14 12v8M18 12v8"/></g></symbol>
@@ -70,7 +71,7 @@
   <div class="step"><span class="n">1. Шторка открыта поверх книги</span>
     <div class="scr land"><svg viewBox="0 0 800 480"><use href="#book"/><use href="#sheet"/>
       <g transform="translate(0,232)">
-        <g transform="translate(86.7,0)"><use href="#tile" width="56" height="56"/><use href="#i-moon" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(86.7,0)"><use href="#tile" width="56" height="56"/><use href="#i-theme" x="12" y="12" width="32" height="32" color="#000"/></g>
         <g transform="translate(229.3,0)"><use href="#tile" width="56" height="56"/><use href="#i-refresh" x="12" y="12" width="32" height="32" color="#000"/></g>
         <g transform="translate(372,0)"><use href="#tile" width="56" height="56"/><use href="#i-orient" x="12" y="12" width="32" height="32" color="#000"/>
           <circle cx="28" cy="28" r="42" fill="none" stroke="#000" stroke-width="2.5" stroke-dasharray="4 5"/></g>
@@ -86,28 +87,28 @@
         <text x="22" y="98" font-size="34">←</text><text x="66" y="98" font-size="32" font-weight="700">Плитки шторки</text>
         <!-- rows: height 74; the cursor row (gray) is the tile that was long-tapped -->
         <g font-size="26">
-          <g transform="translate(0,130)"><use href="#i-moon" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Ночной режим</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
-          <g transform="translate(0,204)"><use href="#i-refresh" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Очистка экрана</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
-          <g transform="translate(0,278)"><rect x="12" y="4" width="456" height="66" rx="12" fill="#c8c8c8"/><use href="#i-orient" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Ориентация</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
-          <g transform="translate(0,352)"><use href="#i-hand" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Сенсор</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
-          <g transform="translate(0,426)"><use href="#i-bt" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Bluetooth</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
-          <g transform="translate(0,500)"><use href="#i-sleep" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Сон</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413.5" y="21.5" width="29" height="29" rx="4" fill="none" stroke="#000" stroke-width="3"/></g>
-          <g transform="translate(0,574)"><use href="#i-flash" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Фонарик</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413.5" y="21.5" width="29" height="29" rx="4" fill="none" stroke="#000" stroke-width="3"/></g>
+          <g transform="translate(0,130)"><use href="#i-theme" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Ночной режим</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413" y="21" width="30" height="30" rx="2" fill="none" stroke="#000" stroke-width="3"/><rect x="421" y="29" width="14" height="14" rx="2" fill="#000"/></g>
+          <g transform="translate(0,204)"><use href="#i-refresh" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Очистка экрана</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413" y="21" width="30" height="30" rx="2" fill="none" stroke="#000" stroke-width="3"/><rect x="421" y="29" width="14" height="14" rx="2" fill="#000"/></g>
+          <g transform="translate(0,278)"><rect x="12" y="4" width="456" height="66" rx="12" fill="#c8c8c8"/><use href="#i-orient" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Ориентация</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413" y="21" width="30" height="30" rx="2" fill="none" stroke="#000" stroke-width="3"/><rect x="421" y="29" width="14" height="14" rx="2" fill="#000"/></g>
+          <g transform="translate(0,352)"><use href="#i-hand" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Сенсор</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413" y="21" width="30" height="30" rx="2" fill="none" stroke="#000" stroke-width="3"/><rect x="421" y="29" width="14" height="14" rx="2" fill="#000"/></g>
+          <g transform="translate(0,426)"><use href="#i-bt" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Bluetooth</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413" y="21" width="30" height="30" rx="2" fill="none" stroke="#000" stroke-width="3"/><rect x="421" y="29" width="14" height="14" rx="2" fill="#000"/></g>
+          <g transform="translate(0,500)"><use href="#i-moon" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Сон</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413" y="21" width="30" height="30" rx="2" fill="none" stroke="#000" stroke-width="3"/></g>
+          <g transform="translate(0,574)"><use href="#i-flash" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Фонарик</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413" y="21" width="30" height="30" rx="2" fill="none" stroke="#000" stroke-width="3"/></g>
         </g>
       </g></svg></div>
-    <span class="t">«Плитки шторки»: галочка — плитка в шторке, ▲ ▼ — место в ряду. Курсор стоит на той плитке, по которой был долгий тап.</span></div>
+    <span class="t">«Плитки шторки»: залитый квадратик — плитка в шторке, ▲ ▼ — место в ряду. Курсор стоит на той плитке, по которой был долгий тап.</span></div>
   <div class="arrow">→</div>
   <div class="step"><span class="n">3. Шторка после правки</span>
     <div class="scr land"><svg viewBox="0 0 800 480"><use href="#book"/><use href="#sheet"/>
       <g transform="translate(0,232)">
-        <g transform="translate(66.3,0)"><use href="#tile" width="56" height="56"/><use href="#i-moon" x="12" y="12" width="32" height="32" color="#000"/></g>
-        <g transform="translate(188.6,0)"><use href="#tile" width="56" height="56"/><use href="#i-sleep" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(66.3,0)"><use href="#tile" width="56" height="56"/><use href="#i-theme" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(188.6,0)"><use href="#tile" width="56" height="56"/><use href="#i-moon" x="12" y="12" width="32" height="32" color="#000"/></g>
         <g transform="translate(310.9,0)"><use href="#tile" width="56" height="56"/><use href="#i-refresh" x="12" y="12" width="32" height="32" color="#000"/></g>
         <g transform="translate(433.1,0)"><use href="#tile" width="56" height="56"/><use href="#i-orient" x="12" y="12" width="32" height="32" color="#000"/></g>
         <g transform="translate(555.4,0)"><use href="#tile-on" width="56" height="56"/><use href="#i-hand" x="12" y="12" width="32" height="32" color="#fff"/></g>
         <g transform="translate(677.7,0)"><use href="#tile" width="56" height="56"/><use href="#i-bt" x="12" y="12" width="32" height="32" color="#000"/></g>
       </g></svg></div>
-    <span class="t">Пример: «Сон» отмечен галочкой и поднят ▲ на второе место — в шторке шесть плиток.</span></div>
+    <span class="t">Пример: «Сон» отмечен квадратиком и поднят ▲ на второе место — в шторке шесть плиток.</span></div>
 </div>
 
 <p class="notes"><b>Открыто, решаю сам, если не скажешь иначе:</b> «Назад» с экрана «Плитки шторки» возвращает в книгу, откуда

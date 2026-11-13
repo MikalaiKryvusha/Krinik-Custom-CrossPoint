@@ -62,6 +62,15 @@ reachable from «Настройки → Экран». Still open for him: the ti
 
 > чтобы они органично в центре располагались, с равными отступами между ними и по краям
 
+`[OWNER] 2026-11-13 13:19–13:24 +03:00 · chat` (on the final view):
+
+> странные у тебя чекбоксы
+> в прошивке квадратики
+
+> для переключателя темы нужно нарисовать новую кнопку, как в iOS - круг черный и белый по половине, найди в интентете.
+>
+> Сон - будет полумесяц
+
 **Requirement (from the words above):** WHEN the shade shows N tiles, the firmware shall place them with equal gaps
 between the tiles and at both edges: gap = (sheet width − N × 56) / (N + 1). Today `FrontlightPanelActivity`
 centres each tile in an equal slot (`row.width * id / tileCount`) — its edge gap is half the gap between tiles, so
