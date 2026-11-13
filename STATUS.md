@@ -18,8 +18,10 @@ work project. From now on it is a standalone project.
   `261e5c63` (20:06, D1–D8: the owner's row with equal gaps measured by `tools/shade_gaps.py`, «Сон», «Фонарик» over
   the book, the long tap → the screen on that button → Back → the book). **Ф4 waits for the owner's word on the image**
   (the whole-epic judge, the device build, smoke, homework — `homeworks/06_kccp_1.1.3_debug1.md` grows into the
-  1.1.3-debug2 homework). Next in the loop: idea 06 (epic recon done: `researches/2026-11-13_idea06_home_buttons_epic.md`,
-  the owner's questions → an interview), idea 09 (planned in `ideas/09`).
+  1.1.3-debug2 homework). Next in the loop: idea 09 (planned in `ideas/09`).
+- **❓ awaiting the owner: `interviews/interview_004_home_buttons.md`** (idea 06, five forks: which Home buttons may be
+  hidden and «Настройки», the mama row, the place in Settings, the long-tap entry, more buttons than fit). Filed
+  2026-11-13 20:08 +03:00, NOT shown yet (the owner is busy; a clean voice pass runs first); idea 06 waits on it.
 - **Chat 2026-11-13 13:51 → 16:21 closed** — its summary moved verbatim to `PROJECT_HISTORY.md` (entry «STATUS trim
   4»); debug10 `wip/krinik-debug10` is the base of the 1.1.3 line below.
 - **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
