@@ -9,6 +9,18 @@
 >
 > Да, читалка не умеет читать FB2, но можно сделать конвертер? чтобы она конвертировала FB2 в корректный качественный EPUB?
 
+`[OWNER] 2026-11-13 10:58–10:59 +03:00 · chat` (test material):
+
+> тебе нужна тестовая FB2 ?
+
+> тестовая книга в корне D
+> Hofshtadter_Gyodel-Esher-Bah-Eta-beskonechnaya-girlyanda.9y7ehg.198312.fb2.zip
+
+**Test material** (third-party — stays off the repo): `D:\Hofshtadter_Gyodel-Esher-Bah-Eta-beskonechnaya-girlyanda.9y7ehg.198312.fb2.zip`
+(4.1 MB zip → one 7.9 MB `.fb2`, FictionBook 2.0, 180 `<image l:href="#i_NNN.jpg"/>`, 180 `<binary>`). A caption is the
+paragraph right after the picture, as in the EPUB edition: `<image l:href="#i_004.jpg"/>` ·
+`<p><emphasis>Рис. 2. Адольф фон Мензель. «Концерт флейтистов в Сансуси».</emphasis></p>` (line 480–481).
+
 ## First recon (2026-11-13, `gh` over upstream + the firmware tree)
 
 - **Upstream CrossPoint has said no to FB2 three times:** issue #592 «Feature Request: fb2 support» — closed NOT_PLANNED
