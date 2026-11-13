@@ -16,9 +16,11 @@ work project. From now on it is a standalone project.
   caption styled by the GOSTs / the BSUIR standard (the owner, 11:13) — read them first. Idea 04 (FB2 → EPUB on the
   reader): first recon, heavy, after 02/03; test FB2 at `D:\Hofshtadter_…fb2.zip`. Idea 05 (configure the shade's
   quick tiles + enter that from the shade, owner 11:48): mockups `homeworks/05_shade_mockups/mockups.html` (А–Г, 1–4),
-  owner 12:23–12:25: entry = long tap on any tile (3), screen = list with checkboxes and arrows (А), the long tap leads
-  straight into Settings «to the corresponding screen» — which screen (А for every tile, or the tile's own settings) asked;
-  the tile set (7) still open.
+  AGREED (owner 12:23–13:00): a long tap on any tile opens Settings straight on «Плитки шторки» (list with checkboxes
+  and ▲▼, portrait, cursor on the tapped tile); tiles sit with EQUAL gaps between them and at both edges for any count
+  (a firmware layout change: today the edge gap is half). Final view `homeworks/05_shade_mockups/final.html`.
+  `[AI]` defaults: Back returns to the book; the screen is also in «Настройки → Экран». Open: the tile set (7). NEXT:
+  the owner's answer on the tile set → `/plan-task` for idea 05 → code on a debug line.
 - **Chat 2026-11-09 20:30 → 2026-11-10 (CodeRabbit round 3, debug7/8, simulator PR #62) closed** — its full log moved
   verbatim to `PROJECT_HISTORY.md` (entry 2026-11-10). Result: #4377 books-card title fix pushed (`c9d69cbd`); #4376
   redraw-timer fix pushed (`94e1c3a2`) after the owner's reader check; debug7 (bugs 03/04) and debug8 (idea 01) PASS on
