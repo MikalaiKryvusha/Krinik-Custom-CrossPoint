@@ -27,6 +27,34 @@
 
 ## Entries (newest first)
 
+### 2026-11-13 — STATUS trim 4 (2026-11-13 19:45 +03:00): the summary of the closed chat 13:51 → 16:21 (moved verbatim)
+
+- **Chat 2026-11-13 13:51 → 16:21 closed** (the owner's word 16:21 «закрывай чат, и продолжим в новом»). Done — detail in
+  `PROJECT_HISTORY.md` (entry «STATUS trim 3»):
+  - **debug10** = `wip/krinik-debug10` in `firmware/` (local, NOT pushed, NO image yet — the owner 16:02 «пока нет»):
+    `9f02db5f` idea 07 long-tap rotation · `435d2493` epic 01 Ф1 (shade tile model + storage) · `551173b8` comment fix ·
+    `52212d81` idea 08 «Настройки сна» · `8538f3dd` viewer: every TOUCH follows the picture as it stands, the KEYS keep
+    the reading orientation, the book holds touch after a turned picture · `085c70d9` keys: short press pages, LONG press
+    turns (`[AI]` forward clockwise, back counterclockwise) · `ed5e2f0d` a comment fix. All judged; simulator reports in `testcases/reports/2026-11-13_*`.
+    The device env `x4pro-krinik-debug` builds on `085c70d9`: SUCCESS 2026-11-13 16:33, RAM 34.3 %, Flash 82.7 % — no image
+    copied to `firmware-builds/` (the image comes with the shade, Ф4).
+  - **msys64 moved to `F:\ai_sandbox\msys64`** (the owner 14:06); the old copy `D:\msys64.moved-2026-11-13` waits for his
+    double-click on `Udalit staryj msys64 (KCCP).cmd` (desktop) — the agent's delete is refused by the permission rules.
+  - Ideas recorded: 07 (rotation: built, simulator-tested), 08 (sleep settings: built, simulator S3 — the value-change part, S4 and S6 open), 09 (the viewer opens a picture in the orientation that
+    fits its shape — verbatim only), epic 01 planned (`plans/01_EPIC_shade_tiles.md`, Russian).
+
+- **The shade's elements are «кнопки» — the owner 2026-11-13 17:06 +03:00:** «Плитки шторки - переименовать в "Кнопки в
+  шторке"» · «это не плитки, это Кнопки». Applied 17:07: the screen and the on-device strings, the meta-plan, MASTER_PLAN,
+  plan 03, the cases, the map, code comments. Russian texts say «кнопка»; code identifiers (`ShadeTiles`, `Tile`) and
+  English agent docs keep "tile"; the owner's own past quotes are left verbatim.
+- KNOWLEDGE: the image viewer keeps the renderer in the picture's orientation and the keys in the reading orientation
+  (internal map, `ideas/07`); one physical gesture has several input names and consumers — gate the touch frame
+  (EXP-0016); simulator scripts need `<ms>:` on every item and rising times inside a WAIT segment — now a guard in
+  `tools/sim_run.sh` (EXP-0015); the clock placeholder is filled only by Write/Edit, not by scripts (EXP-0012); the full
+  host-test suite on this PC is 773/781 with 8 native-Windows failures (research 01); MSYS2 lives in `F:\ai_sandbox\msys64`
+  (AGENT_GUIDE Build); Settings sub-screens past `SettingsSection::End` (internal map); `python -I` ignores `PYTHONUTF8`
+  — use `-X utf8`; Settings screens are portrait while the reader and its shade follow the reading orientation.
+
 ### 2026-11-13 — STATUS trim 3: chat 13:51 → 16:21 closed, its «Where to continue» body (moved verbatim)
 
 - **msys64 moved (owner 14:06 «D:\msys64\ давай переместим в F:\ai_sandbox\»)** — now `F:\ai_sandbox\msys64`

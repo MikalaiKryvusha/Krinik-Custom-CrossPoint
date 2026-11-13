@@ -18,19 +18,8 @@ work project. From now on it is a standalone project.
   judges; simulator C1–C8 pass (`testcases/reports/2026-11-13_epic01_p2.md`; «Ориентация чтения» was cut → the
   mockup's «Ориентация»); host suite 773/781 = the 8 known. **Next: Ф3** by `plans/04_epic01_p3_shade_row.md` (the
   shade draws its row from the model, «Сон», «Фонарик», the long tap → this screen; risks 5–6 from the judge).
-- **Chat 2026-11-13 13:51 → 16:21 closed** (the owner's word 16:21 «закрывай чат, и продолжим в новом»). Done — detail in
-  `PROJECT_HISTORY.md` (entry «STATUS trim 3»):
-  - **debug10** = `wip/krinik-debug10` in `firmware/` (local, NOT pushed, NO image yet — the owner 16:02 «пока нет»):
-    `9f02db5f` idea 07 long-tap rotation · `435d2493` epic 01 Ф1 (shade tile model + storage) · `551173b8` comment fix ·
-    `52212d81` idea 08 «Настройки сна» · `8538f3dd` viewer: every TOUCH follows the picture as it stands, the KEYS keep
-    the reading orientation, the book holds touch after a turned picture · `085c70d9` keys: short press pages, LONG press
-    turns (`[AI]` forward clockwise, back counterclockwise) · `ed5e2f0d` a comment fix. All judged; simulator reports in `testcases/reports/2026-11-13_*`.
-    The device env `x4pro-krinik-debug` builds on `085c70d9`: SUCCESS 2026-11-13 16:33, RAM 34.3 %, Flash 82.7 % — no image
-    copied to `firmware-builds/` (the image comes with the shade, Ф4).
-  - **msys64 moved to `F:\ai_sandbox\msys64`** (the owner 14:06); the old copy `D:\msys64.moved-2026-11-13` waits for his
-    double-click on `Udalit staryj msys64 (KCCP).cmd` (desktop) — the agent's delete is refused by the permission rules.
-  - Ideas recorded: 07 (rotation: built, simulator-tested), 08 (sleep settings: built, simulator S3 — the value-change part, S4 and S6 open), 09 (the viewer opens a picture in the orientation that
-    fits its shape — verbatim only), epic 01 planned (`plans/01_EPIC_shade_tiles.md`, Russian).
+- **Chat 2026-11-13 13:51 → 16:21 closed** — its summary moved verbatim to `PROJECT_HISTORY.md` (entry «STATUS trim
+  4»); debug10 `wip/krinik-debug10` is the base of the 1.1.3 line below.
 - **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
   сейчас есть, собираем в 1.1.3 - это будет наш очередной релиз. соответственно, для меня, для тестов на железе. пока
   можешь собрать отладочкую сборку 1.1.3-debug1» (the answer to the agent's 17:05 question «называем 1.1.3-debug1 и
@@ -38,10 +27,8 @@ work project. From now on it is a standalone project.
   `wip/kccp-1.1.3-debug1` (debug10 `ed5e2f0d` + release 1.1.2 merged + version 1.1.3 / `-debug1` + two test fixes),
   judged, host tests green; the image waits for the owner's word (19:01). `[AI]` the «Кнопки в шторке» screen (epic 01 Ф2) is
   NOT in debug1: the shade does not read its row until Ф3 — it comes with Ф3 in debug2 (said to the owner 17:08).
-- **The shade's elements are «кнопки» — the owner 2026-11-13 17:06 +03:00:** «Плитки шторки - переименовать в "Кнопки в
-  шторке"» · «это не плитки, это Кнопки». Applied 17:07: the screen and the on-device strings, the meta-plan, MASTER_PLAN,
-  plan 03, the cases, the map, code comments. Russian texts say «кнопка»; code identifiers (`ShadeTiles`, `Tile`) and
-  English agent docs keep "tile"; the owner's own past quotes are left verbatim.
+- **The shade's elements are «кнопки»** (the owner 17:06) — applied; the record is in `plans/01_EPIC_shade_tiles.md`
+  → «Решения владельца» (the verbatim block moved to `PROJECT_HISTORY.md`, «STATUS trim 4»).
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
   2. **Epic 01 Ф3** by `plans/04_epic01_p3_shade_row.md` on `wip/kccp-1.1.3-debug2` (Ф2 closed 19:33, `41718c61`):
@@ -65,13 +52,8 @@ work project. From now on it is a standalone project.
      10. Proofread `GOAL.md`. 11. Delete the partial `C:\msys64` (check the machine lock).
   - Reviews to read: simulator PR #62 and firmware PRs #4328 #4332 #4375 #4376 #4377
     (`gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`).
-- KNOWLEDGE: the image viewer keeps the renderer in the picture's orientation and the keys in the reading orientation
-  (internal map, `ideas/07`); one physical gesture has several input names and consumers — gate the touch frame
-  (EXP-0016); simulator scripts need `<ms>:` on every item and rising times inside a WAIT segment — now a guard in
-  `tools/sim_run.sh` (EXP-0015); the clock placeholder is filled only by Write/Edit, not by scripts (EXP-0012); the full
-  host-test suite on this PC is 773/781 with 8 native-Windows failures (research 01); MSYS2 lives in `F:\ai_sandbox\msys64`
-  (AGENT_GUIDE Build); Settings sub-screens past `SettingsSection::End` (internal map); `python -I` ignores `PYTHONUTF8`
-  — use `-X utf8`; Settings screens are portrait while the reader and its shade follow the reading orientation.
+- KNOWLEDGE (13.11): the facts of the chats live in the maps, `EXPERIENCE.md` (EXP-0012…0019) and
+  `HOUSE_RULES.md`; the 13:51 → 16:21 KNOWLEDGE paragraph moved verbatim to `PROJECT_HISTORY.md` («STATUS trim 4»).
 
 ## Language contract
 
