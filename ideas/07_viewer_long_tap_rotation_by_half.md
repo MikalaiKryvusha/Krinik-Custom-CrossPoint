@@ -130,3 +130,15 @@ picture as it stands upright. The long-tap code keeps `touchX >= width / 2`, now
   only touches follow the picture. Asked 15:22 whether the keys PAGE the pictures or ROTATE the picture — the answer
   `[OWNER] 2026-11-13 16:01 +03:00 · chat:` «А — листают картинки, как и было». No code change: the keys page the
   pictures (`openSibling`) in the reading orientation, as built in `8538f3dd`.
+
+## The owner: a long press of a key rotates (2026-11-13 16:02)
+
+`[OWNER] 2026-11-13 16:02 +03:00 · chat` (right after «А — листают картинки, как и было»):
+
+> Лонг-нажатием можно сделать вразение
+
+`[AI]` read as «вращение»: a SHORT press of a page key pages the pictures (as before), a LONG press turns the picture —
+`[AI]` the forward key clockwise, the back key counterclockwise (said in chat 16:02). In the viewer the keys page on the
+RELEASE whatever `longPressButtonBehavior` says, so a long press never pages first and rotates after.
+
+`[OWNER] 2026-11-13 16:02 +03:00 · chat` (on an interim debug10 image without the shade): «пока нет. работаем дальше».
