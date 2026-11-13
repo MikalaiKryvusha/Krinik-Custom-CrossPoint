@@ -42,3 +42,11 @@
 - **The engine fix** (recommended `[AI]`): when the first line after a picture does not fit, the picture moves to the
   next page with it; when the two do not fit one page, the picture shrinks. Open owner question: what counts as the
   caption (any paragraph right after a picture, or only a «Рис. N…» one) — goes to `interviews/`.
+
+`[OWNER] 2026-11-13 10:53 +03:00 · chat:`
+
+> Что считать подписью
+>
+> В EPUB нет договорённого атрибута на подписи картинок?
+
+> ну так вот я и говорю, что нужно бля книги корректно переверстать.
