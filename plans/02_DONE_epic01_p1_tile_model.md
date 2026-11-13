@@ -72,3 +72,15 @@ with `settings.json` read (P1.6), the judge's report (P1.5). A run report
    time from the left; the test's Target (≤ 1 px) holds by construction.
 3. **The Bluetooth tile is absent in a build without BLE** (the simulator). Reaction: the model keeps all seven; the
    row (phase 3) and the list (phase 2) skip a tile whose function the build lacks — a phase 2/3 rule, noted there.
+
+## Decisions made without the owner
+
+Listed at the closing review 2026-11-13 (the phase closed 15:02; this section added by the 19:2x backlog revision):
+- `[AI]` The stored form is ONE string, a comma list of ids with "-" for off (P1.4; changed while coding from "a JSON
+  array of pairs": AOSP's own shape, research I1, and a pure host-tested parse/format).
+- `[AI]` The key is written only while the row differs from the default, so an older firmware on the card and a debug9
+  settings file both see the default row (`CrossPointSettings.h`, the `shadeTiles` comment).
+- `[AI]` Ids are strings, a tile added later goes to the end OFF, at least one tile stays on — the meta-plan's «Решения
+  без владельца», items 1–3 (said to the owner 2026-11-13 12:57, no objection recorded).
+- `[AI]` Risk 1 accepted: an older firmware that saves settings drops the key (no code can prevent it) — to be said in
+  the next image's homework.

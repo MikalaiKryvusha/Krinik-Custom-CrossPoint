@@ -58,7 +58,7 @@
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
 >      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand,
 >      overwrote-tracked, tool-crash, false-defect, wrong-directory, missing-dependency, own-process-killed,
->      wrote-outside-project -->
+>      wrote-outside-project, suite-not-run -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -81,6 +81,19 @@
 > Skill: `/experience` (capture a lesson · recall relevant lessons).
 
 ## Entries
+
+### EXP-0018 · 2026-11-13 · ❌→✅ · #host-tests #suite #firmware
+class: suite-not-run
+mechanized: tools/host_tests.sh — the full suite diffed against tools/host_tests_known_failures.txt, exit 1 on a new failure (red on a list missing one known name, 2026-11-13)
+**Context:** debug10 `8538f3dd` (idea 07, keys keep the reading orientation) added `keyOrientationOf()` to
+`src/MappedInputManager.cpp`; its checks were simulator runs and targeted tests.
+**Result:** ❌ `RemoteButtonInputIntegration` cuts that file by text and went red; nobody ran the full suite until the
+1.1.3-debug1 check (772 of 781 read as «the usual 8 failures» would have hidden it). ✅ the test's stubs fixed (`bcbd6dab`).
+**Lesson:** a change in `src/` or `lib/` is followed by the FULL host suite before its commit, compared with the known
+failures by a script, never by recalling a count.
+**Repro:** `sh tools/host_tests.sh` → `no new failure (known list: 8)`, exit 0.
+**Trigger:** about to commit firmware code.
+**Not for:** a commit that touches only docs or `qa_runs/`.
 
 ### EXP-0017 · 2026-11-13 · ❌ · #disk #temp #scratchpad #owner
 class: wrote-outside-project

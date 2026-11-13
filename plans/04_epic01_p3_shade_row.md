@@ -40,9 +40,11 @@ Anchor (meta-plan, Ф3): «Ряд кнопок по модели с равным
       on), places each by `tileLeft`, hits by `tileSlot`; `runTile` dispatches by `shadetiles::Tile`, not by a slot
       index; the night / orientation / touch / Bluetooth drawing stays as it is (filled = on, the orientation glyph
       turned, the Bluetooth-off glyph). Anchor: «Ряд кнопок по модели с равными отступами».
-- [ ] P3.3 Icons: night → `icon_half_circle_32` (pasted in Ф2), «Сон» → `icon_moon_32`, «Фонарик» → a lamp (a new 1-bit
-      icon by `tools/make_icon.py`, or the Home menu's flashlight glyph if it is a bitmap — look first); the Ф2 screen's
-      `tileIcon()` takes the same three. Anchor: «Иконки: круг с залитой половиной…».
+- [ ] P3.3 Icons: night → `icon_half_circle_32` (pasted in Ф2), «Сон» → `icon_moon_32`, «Фонарик» → the Home menu's lamp,
+      `FlashlightIcon` (`src/components/icons/flashlight.h`, 32×32, 128 bytes, the 1-bit format of `freeink::Icon`:
+      read as ASCII 2026-11-13 — a lamp lying with its beam and rays to the LEFT, «stored rotated 90° CCW»): wrapped as
+      `freeink::Icon{32, 32, 16, FlashlightIcon}` and drawn with `fui::Rotation::CW90` so the beam points up — the shot
+      confirms; the Ф2 screen's `tileIcon()` takes the same three. Anchor: «Иконки: круг с залитой половиной…».
 - [ ] P3.4 «Сон»: `activityManager.requestSleep()` (the shade's `prepareForSleep` already skips its exit clean).
 - [ ] P3.5 «Фонарик»: `FlashlightActivity` gets a «return to the caller» mode — `finish()` instead of
       `goHome(HomeMenuItem::FLASHLIGHT)` (Home keeps its cursor-on-Flashlight return); the shade pushes it with

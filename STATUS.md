@@ -195,8 +195,8 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 screen «Кнопки в шторке» (uncommitted in `firmware/`, judge running) → then Ф3 | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 84c33f85 + tree |
-| 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) — local, not pushed; two judges passed; NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | 84c33f85 |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 screen «Кнопки в шторке» (uncommitted in `firmware/`, judge running) → then Ф3 | crosspoint-reader · `wip/kccp-1.1.3-debug2` | bcbd6dab + tree |
+| 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |
 | simulator fix: a plain refresh ends the absolute gray mode (bugs/06) — local, not pushed | crosspoint-simulator · `fix/gray-absolute-reset` (from `windows` = PR #62) | 49ded1a |

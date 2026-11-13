@@ -1,0 +1,8 @@
+BmpToBmpTest_NOT_BUILT
+BookMetadataCacheTest_NOT_BUILT
+ChapterHtmlSlimParserTest_NOT_BUILT
+CssParserTest.FailedPromotionRestoresTheOnlyBackupCache
+GifBmpTest_NOT_BUILT
+GifSupportTest_NOT_BUILT
+PatchAnimatedGif
+TrustedTimeTimezone
