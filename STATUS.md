@@ -33,7 +33,8 @@ work project. From now on it is a standalone project.
   картинок» — `[AI]` read as «отрываются», expected (idea 03 has no code; recorded there). New **idea 07** (owner 13:51):
   in the viewer a long tap on the right half turns the picture clockwise, on the left half counterclockwise — code recon
   in the idea (`BmpViewerActivity::loop()` already gets the long-tap point in reading-orientation coordinates and ignores
-  it; `rotate()` turns one way); answered «можно», offered for debug10 together with idea 05 — waits for his go-ahead.
+  it; `rotate()` turns one way); answered «можно», offered for debug10 together with idea 05 — **go-ahead 14:03 «делаем»**: debug10 = debug9 +
+  idea 07 + idea 05.
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
   2. **The rest of the owner's debug9 check (homework 04, steps 2, 4–7).** When he says the reader is on the cable (book screen, NOT USB drive):

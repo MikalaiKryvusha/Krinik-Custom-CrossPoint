@@ -2,7 +2,8 @@
 
 > **Created:** 2026-11-13 (the owner's request, chat — asked under `resume`, right after his debug9 check) · **Parent:**
 > `ideas/02_image_fullscreen_on_tap.md` (the same viewer) · **Status:** 🔬 recon of the code done 2026-11-13 13:53 +03:00; answered
-> «можно» in chat, implementation offered for debug10 — waits for the owner's go-ahead · **Outbound:** —
+> «можно» in chat, implementation offered for debug10 together with idea 05; the owner's go-ahead 2026-11-13 14:03 +03:00
+> («делаем») · **Outbound:** —
 
 `[OWNER] 2026-11-13 13:51 +03:00 · chat:`
 
@@ -41,3 +42,36 @@ half of the screen — clockwise, the left half — counterclockwise.
 - `[AI]` The same rule in both viewer entries — a picture from a book (idea 02) and an image file from the file browser:
   they are one activity, `BmpViewerActivity`.
 - `[AI]` The halves are split by the middle of the screen width as the owner holds the reader, not as the picture is turned.
+
+## Plan (ordinary — heaviness 0 of 5: one module, no external truth, one session, KCCP debug only, the owner said «делаем»)
+
+**Goal:** a long tap in the viewer turns the picture toward the side it was made on — right half clockwise, left half
+counterclockwise (criteria 1–4 above; the checks run on the simulator, the owner's reader is the last stand).
+
+**Steps:**
+- [ ] S1. Test pictures get an orientation mark: `tools/make_image_test_epub.py` draws a filled black triangle in the
+      top-left corner of every picture (sizes unchanged → the book's pages unchanged); regenerate
+      `qa_runs/sd_book_images/image_test.epub`. Reason: the diagonal bands look the same after a quarter turn either way.
+- [ ] S2. Observe the CURRENT direction on debug9 (`35dc070c`, the built simulator binary): open picture 1, long tap,
+      shot. This fixes which sign of `viewTurns` is clockwise on screen.
+- [ ] S3. Firmware `wip/krinik-debug10` from `wip/krinik-debug9`: `rotate(int quarterTurns)`; `loop()` takes the sign
+      from `touchX` against half the screen width (reading orientation); an `LOG_INF` line names the half and the
+      direction; the comment carries `[NOT-TESTED]`; `CROSSPOINT_VERSION` → `-debug10`.
+- [ ] S4. Independent judge (a fresh agent with the diff and this idea, not my conclusions) BEFORE the build; fix findings.
+- [ ] S5. Build `simulator_x4_pro_win`; run the case set `testcases/TC_idea07_viewer_rotation_by_half.md`:
+      R (right long tap → clockwise), L (left → counterclockwise), RL (right then left → the first view),
+      K1 (short side tap in the viewer still pages, swipe Back still returns to the book page), control (debug9: a left
+      long tap turns the same way as a right one). Run report `testcases/reports/2026-11-13_idea07_simulator.md`.
+- [ ] S6. Commit locally; the device image waits for idea 05 in the same debug10 (the owner: one build for both).
+
+**Verification:** the case set and the run report above (both born in S5); the shots `qa_runs/idea07_*/shots/*.webp`
+show the triangle's corner after each long tap; the log shows the `LOG_INF` line with the half.
+
+**Risks:**
+1. The simulator's scripted point frame differs from the firmware's touch frame in the viewer → R and L swap. Reaction:
+   the shots and the `LOG_INF` x value show it at once; read both, never only the log.
+2. The direction is mirrored on the device against the simulator (the panel is mounted rotated). Reaction: the
+   owner's step-7-style check on the reader is the last stand; the homework names the triangle-free way to check
+   (a picture with text).
+3. A long tap near the middle lands on the "wrong" half. Reaction: none needed — the owner asked for halves; the
+   boundary is the middle by his words.
