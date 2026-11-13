@@ -2,8 +2,8 @@
 
 > **Created:** 2026-11-13 (the owner's request, chat — given while debug9 waited for the reader) · **Parent:** `STATUS.md` →
 > «Future» (configurable Control Center tiles, owner 2026-11-06) · **Status:** 🆕 the owner's original, verbatim ·
-> **Outbound:** — · **Status update:** ✅ design AGREED 2026-11-13 13:28 +03:00 (go-ahead, seven tiles incl. Flashlight) —
-> final view `homeworks/05_shade_mockups/final.html`; NEXT: `/plan-task`, then code (not started)
+> **Outbound:** — · **Status update:** ✅ design AGREED 2026-11-13 13:28 +03:00 (go-ahead, seven tiles incl. Flashlight); planned as epic 01 (`plans/01_EPIC_shade_tiles.md`, research `researches/2026-11-13_idea05_shade_tiles_epic.md`) —
+> final view `homeworks/05_shade_mockups/final.html`; NEXT: phase 1 by `plans/02_epic01_p1_tile_model.md` (code not started)
 
 ## Recon (2026-11-13, `wip/krinik-debug9`)
 
