@@ -525,8 +525,11 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
 ```
 
 - **On this PC** (2026-11-09 15:24): MSYS2 UCRT64 in `D:\msys64` (gcc, cmake, SDL2, openssl), PlatformIO in the
-  workspace venv `.pio-venv/`; nothing is on the system PATH — prefix `D:\msys64\ucrt64\bin` for a build. The device
-  envs above are not built here yet (Task 0 step 2); the simulator envs live in `firmware/platformio.local.ini`
+  workspace venv `.pio-venv/`; nothing is on the system PATH — prefix `D:\msys64\ucrt64\bin` for a build. The debug
+  device image builds here since 2026-11-09 (debug6–8 in `firmware-builds/` as `cp-2.0.0-krinik-1.1.1-debugN.bin` +
+  `.bin.sha256`): its number is the `-debugN` of `CROSSPOINT_VERSION` in `firmware/platformio.ini` →
+  `[env:x4pro-krinik-debug]`, bumped in the debug commit; that env logs at `LOG_LEVEL=1` (`LOG_INF` and up reach the
+  serial log, `LOG_DBG` does not), the simulator envs at 2. The simulator envs live in `firmware/platformio.local.ini`
   (research 01 → "Installed on this PC"). Build from PowerShell with `$env:PYTHONUTF8 = "1"` — from Git Bash the
   i18n pre-script failed on cp1251 and `pio` hung (EXPERIENCE EXP-0004). The `firmware/` clone has
   `core.autocrlf=false` (set 2026-11-09): with the machine-wide `true`, the SdFat patch in `scripts/sdfat_patches/`
