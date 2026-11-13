@@ -35,6 +35,10 @@ def picture_bytes(name, size, label):
     for i in range(-h, w, 40):
         draw.line([(i, 0), (i + h, h)], fill=150, width=12)
     draw.rectangle([0, 0, w - 1, h - 1], outline=0, width=6)
+    # Orientation mark: a black triangle in the top-left corner, so a quarter turn is told clockwise from
+    # counterclockwise in a shot (the diagonal bands look alike after either turn) — the viewer rotation of idea 07.
+    mark = min(w, h) // 3
+    draw.polygon([(0, 0), (mark, 0), (0, mark)], fill=0)
     box = min(w, h) // 2
     draw.rectangle([w // 2 - box // 2, h // 2 - box // 2, w // 2 + box // 2, h // 2 + box // 2], fill=0)
     draw.text((w // 2 - 4, h // 2 - 6), label, fill=255)
