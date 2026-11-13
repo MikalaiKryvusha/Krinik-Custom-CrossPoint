@@ -18,13 +18,6 @@ work project. From now on it is a standalone project.
   judges; simulator C1–C8 pass (`testcases/reports/2026-11-13_epic01_p2.md`; «Ориентация чтения» was cut → the
   mockup's «Ориентация»); host suite 773/781 = the 8 known. **Next: Ф3** by `plans/04_epic01_p3_shade_row.md` (the
   shade draws its row from the model, «Сон», «Фонарик», the long tap → this screen; risks 5–6 from the judge).
-- ~~**PARKED: epic 01 Ф2 screen «Кнопки в шторке»**~~ ([NOW]) — the owner 18:52 «может ты готов мне сборку 1.1.3-debug1
-  собрать? Или там много работч ещё?» → the debug1 image first. The screen's uncommitted work (the rework of
-  `ShadeTilesActivity` to the mockup `homeworks/05_shade_mockups/final.html` step 2 + the first judge's findings, cut
-  mid-way by the 17:19 limit) is `git -C firmware stash list` → «epic01 F2 screen WIP …» on `wip/krinik-debug10` (the only
-  copy: the patch backup lay in `D:\Temp`, which the owner deleted 18:56 — temp files now live in `.tmp/`,
-  `HOUSE_RULES.md` П1). Resume: `git -C firmware checkout wip/krinik-debug10`
-  → `git -C firmware stash pop` → finish the rework → judge → build → simulator.
 - **Chat 2026-11-13 13:51 → 16:21 closed** (the owner's word 16:21 «закрывай чат, и продолжим в новом»). Done — detail in
   `PROJECT_HISTORY.md` (entry «STATUS trim 3»):
   - **debug10** = `wip/krinik-debug10` in `firmware/` (local, NOT pushed, NO image yet — the owner 16:02 «пока нет»):
@@ -41,9 +34,9 @@ work project. From now on it is a standalone project.
 - **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
   сейчас есть, собираем в 1.1.3 - это будет наш очередной релиз. соответственно, для меня, для тестов на железе. пока
   можешь собрать отладочкую сборку 1.1.3-debug1» (the answer to the agent's 17:05 question «называем 1.1.3-debug1 и
-  вливаем 1.1.2?»; earlier 17:03 «какие фичи поставит мне 1.1.3-debug1 ?»). In work: a new line from debug10 `ed5e2f0d`
-  + release 1.1.2 `198d385e` merged (frontlight conflicts) + `[krinik] version = 1.1.3`, env suffix `-debug1` → judge →
-  build → host tests → simulator smoke → image + SHA256 + homework. `[AI]` the «Кнопки в шторке» screen (epic 01 Ф2) is
+  вливаем 1.1.2?»; earlier 17:03 «какие фичи поставит мне 1.1.3-debug1 ?»). Done 17:12–19:22: the line
+  `wip/kccp-1.1.3-debug1` (debug10 `ed5e2f0d` + release 1.1.2 merged + version 1.1.3 / `-debug1` + two test fixes),
+  judged, host tests green; the image waits for the owner's word (19:01). `[AI]` the «Кнопки в шторке» screen (epic 01 Ф2) is
   NOT in debug1: the shade does not read its row until Ф3 — it comes with Ф3 in debug2 (said to the owner 17:08).
 - **The shade's elements are «кнопки» — the owner 2026-11-13 17:06 +03:00:** «Плитки шторки - переименовать в "Кнопки в
   шторке"» · «это не плитки, это Кнопки». Applied 17:07: the screen and the on-device strings, the meta-plan, MASTER_PLAN,

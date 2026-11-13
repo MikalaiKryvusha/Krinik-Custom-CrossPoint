@@ -1,7 +1,7 @@
 # Plan 04 — epic 01, phase 3: the shade draws its row from the model; «Сон», «Фонарик»; a long tap opens the settings
 
 > **Created:** 2026-11-13 · **Parent:** `plans/01_EPIC_shade_tiles.md` → «Ф3 — шторка» · **Status:** 📐 draft with the
-> P3.1 recon, written [NOW] while the Ф2 screen is under its judge; final when Ф2 closes (the ladder rule: phase N+1 is
+> P3.1 recon, written ≈ 2026-11-13 19:10 +03:00 (committed 19:12) while the Ф2 screen was under its judge; final when Ф2 closes (the ladder rule: phase N+1 is
 > planned when phase N closes — the steps below are re-read then) · **Outbound:** —
 
 ## Goal vector (Achieve)

@@ -188,6 +188,8 @@ same hour against `git log --format='%h %ci'` and corrected in place.
 **Not for:** the owner's message times quoted from the clock hook's line. The hook fills the placeholder only in a
 Write / Edit / MultiEdit of the file — a script (sed, a heredoc, Python) that writes it leaves it raw: there, put
 `$(date …)` into the script instead (2026-11-13: a raw placeholder in `ideas/08`, caught by grep the same minute).
+The placeholder is the word NOW in WHITE square brackets — U+27E6 … U+27E7 — an ASCII `[NOW]` is left raw even by
+Write/Edit (2026-11-13 19:43 +03:00: two raw `[NOW]` in STATUS and plan 04, found by `git grep -n '\[NOW\]'`).
 
 ### EXP-0011 · 2026-11-13 · ❌→✅ · #epub #lint #tools
 class: missing-dependency
