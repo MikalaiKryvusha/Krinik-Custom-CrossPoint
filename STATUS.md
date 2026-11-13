@@ -7,10 +7,14 @@ work project. From now on it is a standalone project.
 ## Where to continue
 
 - **Chat 2026-11-13 10:34 (in progress) — features for KCCP 1.1.3** (the owner's task): idea 02 (tap a book picture →
-  full screen, swipe Back → the book) coded on `wip/krinik-debug9` (local, from debug8), under an independent review,
-  build/simulator wait for KUMM's machine lock; test cases `testcases/TC_idea02_image_fullscreen_tap.md`, own test
-  card `qa_runs/sd_book_images`. Idea 03 (keep a caption with its picture): recon done, direction = re-typeset tool +
-  the firmware keeps a `<figure>` on one page. Idea 04 (FB2 → EPUB on the reader): first recon, heavy, after 02/03.
+  full screen, swipe Back → the book) on `wip/krinik-debug9` (`35dc070c`, local): judged ×3, host test, simulator
+  C1–C5, C7, K1–K3 pass (`testcases/reports/2026-11-13_idea02_simulator.md`); image `cp-2.0.0-krinik-1.1.1-debug9.bin`
+  (SHA256 `6b5f4f36…`) in `firmware-builds/`, **NOT on the card yet — the reader left the wire between 11:06 and 11:29**; homework 04
+  waits for it (then: copy to `/.firmware/`, eject, read the serial log during the owner's check). The simulator's
+  stale gray mode = `bugs/06` (fixed locally, `simulator` branch `fix/gray-absolute-reset`). Idea 03 (keep a caption
+  with its picture): recon + research done, direction = re-typeset tool + the firmware keeps a `<figure>` on one page,
+  caption styled by the GOSTs / the BSUIR standard (the owner, 11:13) — read them first. Idea 04 (FB2 → EPUB on the
+  reader): first recon, heavy, after 02/03; test FB2 at `D:\Hofshtadter_…fb2.zip`.
 - **Chat 2026-11-09 20:30 → 2026-11-10 (CodeRabbit round 3, debug7/8, simulator PR #62) closed** — its full log moved
   verbatim to `PROJECT_HISTORY.md` (entry 2026-11-10). Result: #4377 books-card title fix pushed (`c9d69cbd`); #4376
   redraw-timer fix pushed (`94e1c3a2`) after the owner's reader check; debug7 (bugs 03/04) and debug8 (idea 01) PASS on

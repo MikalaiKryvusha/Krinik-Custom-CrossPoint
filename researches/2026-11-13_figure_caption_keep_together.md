@@ -22,6 +22,36 @@
   not scale very well») — the same price this project found; a table with a `<caption>`; a page break before the picture.
 - **Not found:** how crengine (KOReader) treats `break-inside` on a figure — no source; an open question, not a claim.
 
+## How a caption looks — the standards the owner named (2026-11-13 11:13 +03:00: «подписи картинок - это не параграф,
+## они не обязаны слушаться правила отступа для красной строки параграфа» · «читай ГОСТЫ» · «особенно кост оформления
+## пояснительных записок БГУИР, курсовых и дипломных работ»)
+
+**СТП 01-2017 БГУИР «Дипломные проекты (работы). Общие требования»** — read in the primary text (PDF from
+`library.bsuir.by/m/12_101945_1_141949.pdf` and `www.bsuir.by/m/12_100229_1_124328.pdf`, extracted with `pdftotext`;
+the 2010 edition is the other PDF; a 2024 edition is mentioned by a 2023 BSUIR guide, not read), section 2.5, verbatim:
+
+- 2.5.4: «Иллюстрацию, помещенную в тексте между абзацами, располагают по центру и отделяют от текста и подрисуночной
+  подписи одной пробельной строкой (приложение Н).»
+- 2.5.5: «Каждый рисунок сопровождают подрисуночной подписью. Подпись должна содержать слово «Рисунок» без сокращения
+  и порядковый номер иллюстрации арабскими цифрами…» · «Все иллюстрации должны иметь наименования, которые записывают
+  после номера рисунка через знак тире с прописной буквы. Точки после номера и наименования рисунка не ставят,
+  например: Рисунок 2.1 – Структурная схема нескорректированной системы управления» · «Подпись и наименование
+  располагают, выравнивая по центру относительно рисунка.» · «Все пояснительные данные помещают между рисунком и
+  подрисуночной подписью.» · «Все подрисуночные подписи в пояснительной записке следует выполнять единообразно.»
+- 2.5.6: «Рисунок, как правило, выполняется на одной странице.»
+
+**ГОСТ 7.32-2017** (Отчет о НИР. Структура и правила оформления), 6.5 — read only through a mirror that cut the page
+(legalacts.ru) and a model summary of the cut part, so NOT verbatim: 6.5.7 — the caption is centred under the figure,
+«Рисунок 1 – Схема прибора», no full stop; 6.5.1 — the figure stands right after the text that first mentions it or on
+the next page. Verbatim from the visible part, 6.1.1: «Абзацный отступ должен быть одинаковым по всему тексту отчета
+и равен 1,25 см.» — the indent is a property of TEXT paragraphs; the caption rule is centring. Reading 6.5 verbatim
+from an official copy stays open.
+
+**What it gives the e-reader (`[AI]` reading, for the plan):** a caption is centred under its picture, with no
+first-line indent, separated from the picture by one line, never ending with a full stop, kept on the picture's page.
+Open for the owner: whether the re-typeset tool also rewrites the book's own label («Рис. 2.» → «Рисунок 2 –») — that
+edits the book's text; the agent's default is to keep the author's wording and change only the layout.
+
 ## This firmware today (`wip/krinik-debug8`, re-read 2026-11-13)
 
 - `figure` is a plain block (`ChapterHtmlSlimParser.cpp:56`), `figcaption` is unknown; `page-break-*: avoid` is not
