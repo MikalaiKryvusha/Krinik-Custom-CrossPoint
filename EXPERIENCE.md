@@ -57,7 +57,7 @@
 >      claim-before-evidence, owner-decision-not-applied, text-in-agents-world,
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
 >      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand,
->      overwrote-tracked, tool-crash, false-defect, wrong-directory, missing-dependency -->
+>      overwrote-tracked, tool-crash, false-defect, wrong-directory, missing-dependency, own-process-killed -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -80,6 +80,19 @@
 > Skill: `/experience` (capture a lesson · recall relevant lessons).
 
 ## Entries
+
+### EXP-0013 · 2026-11-13 · ❌→✅ · #contour #review #server #timeout
+class: own-process-killed
+none-cheap: one launch rule; the carrier is the Repro below
+**Context:** showing homework 04 to the owner with `timeout 60 node .kaif/tools/contour/review.mjs <doc>` — the
+`timeout` was meant to keep the tool call from hanging.
+**Result:** ❌ `review.mjs <doc>` keeps the page's HTTP server alive; `timeout` killed it at 60 s and the owner saw the
+page die («контур упал», 11:45). ✅ Relaunched in the background, page answers HTTP 200.
+**Lesson:** a tool that SERVES something the owner looks at runs as a background process, never under `timeout`;
+"the call returned" is checked by asking the server, not by the exit of the launcher.
+**Repro:** launch with the Bash tool's `run_in_background`, then `curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:<port>/` → `200`.
+**Trigger:** any `review.mjs <doc>` / page / server launch for the owner.
+**Not for:** `review.mjs --queue --list`, `--check`, `--call` — they print and exit.
 
 ### EXP-0012 · 2026-11-13 · ❌→✅ · #stamps #clock
 class: claim-before-evidence
