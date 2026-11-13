@@ -17,7 +17,7 @@ half of the screen — clockwise, the left half — counterclockwise.
 
 ## Acceptance criteria
 
-1. WHEN the owner long-taps the right half of the screen (as he holds the reader), the viewer shall turn the picture
+1. WHEN the owner long-taps the right half of the screen (halves by the orientation set in the reader's settings), the viewer shall turn the picture
    90° clockwise. Check: simulator, a picture with an arrow/asymmetric shape, shots before and after.
 2. WHEN the owner long-taps the left half, the viewer shall turn the picture 90° counterclockwise. Check: the same.
 3. A right long tap followed by a left long tap shall return the picture to its first view. Check: the shot equals the first shot.
@@ -30,7 +30,7 @@ half of the screen — clockwise, the left half — counterclockwise.
   the coordinates are read and then ignored. `rotate()` does `viewTurns = (viewTurns + 1) % 4` — one direction only.
 - The coordinates are logical in the READING orientation: after painting, the viewer sets the renderer back to
   `holdOrientation()` (the line after the paint in `render`), and `GfxRenderer::tapToLogical` maps by the renderer's
-  current orientation. So "left / right half" is as the owner holds the reader, whatever turn the picture has.
+  current orientation. So "left / right half" follows the orientation set in the reader's settings, whatever turn the picture has.
 - `ROTATION_ORDER` carries the comment "a long tap turns the picture clockwise"; the VISIBLE direction of `+1` was never
   observed (homework 04 step 7: the rotation was not checked on the simulator). It is observed first, then the halves
   get their signs.
@@ -41,7 +41,7 @@ half of the screen — clockwise, the left half — counterclockwise.
 
 - `[AI]` The same rule in both viewer entries — a picture from a book (idea 02) and an image file from the file browser:
   they are one activity, `BmpViewerActivity`.
-- `[AI]` The halves are split by the middle of the screen width as the owner holds the reader, not as the picture is turned.
+- `[AI]` The halves are split by the middle of the screen width in the orientation set in the reader's settings (the owner's wording, 14:51), not as the picture is turned.
 
 ## Plan (ordinary — heaviness 0 of 5: one module, no external truth, one session, KCCP debug only, the owner said «делаем»)
 
@@ -85,6 +85,17 @@ show the triangle's corner after each long tap; the log shows the `LOG_INF` line
 - NIT fixed: the `drawOrientation()` comment now says "net clockwise quarter turns (a left-half long tap counts -1)".
 - MINOR (meaning, not code): the halves are judged in the READING orientation. If the owner turns the reader in his
   hands to look at a turned picture upright, the next long tap's halves run across his new view. The two readings —
-  A: the halves as he holds the reader for reading (built) · B: the halves of the picture as it stands upright — put
+  A: the halves by the orientation set in the reader's settings (built; the owner corrected «как держал читалку» to «как настроена ориентация в ОС читалки», 14:51) · B: the halves of the picture as it stands upright — put
   to the owner in chat 2026-11-13 14:20 +03:00, recommendation B; the first long tap is the same under both, so S5
   runs meanwhile.
+
+## The owner's decision on the halves (B)
+
+`[OWNER] 2026-11-13 14:54 +03:00 · chat:`
+
+> половины давай считать по картинке, убедил
+
+So: the right half is the right half of the PICTURE as it stands upright, whatever turn it has and whatever orientation
+the viewer opened it in (idea 09 will choose that orientation by the picture's shape). In the reading-orientation frame
+of the touch point the picture's right side faces screen-right, -down, -left, -up for `viewTurns` 0, 1, 2, 3 (`+1` =
+clockwise, observed in run D0). The code maps the long-tap point by `viewTurns`; the cases C3' and C6 below check it.

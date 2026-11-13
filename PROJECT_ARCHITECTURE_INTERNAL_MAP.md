@@ -59,10 +59,13 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   `ActivityManager::goToReader` for an image file (replace), and since debug9 pushed over the book reader for a tapped
   book picture (idea 02). The picture is painted in `drawOrientation()` (reading orientation + long-tap turns); the
   renderer is set back to `holdOrientation()` right after, so touch points (`wasScreenLongPress`, taps) arrive in the
-  reading orientation, as the owner holds the reader (idea 07 builds on this).
+  reading orientation set in the reader's settings (idea 07 builds on this).
 - `src/activities/ActivityManager.cpp` — one current activity + a stack: `startActivityForResult` PUSHES (the parent
   stays alive, no `onExit`), `finish()` POPS (the parent's result handler runs, then the parent is repainted);
   `goTo*` REPLACES and clears the stack (`onExit` for all).
+- `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: seven tiles by string id, on/off and order,
+  `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), at least one on, the
+  equal-gap row layout and touch slots; host test `test/shade_tiles/`; held by `CrossPointSettings::shadeTiles`.
 - `firmware/platformio.local.ini` (ignored) — this PC's native Windows simulator envs (research 01).
 - `simulator/src/HalStorage.cpp` — the simulator's SD card over a host folder (`CROSSPOINT_SIM_SD`); `replaceFile`
   mirrors the device's remove-then-rename (a bare `rename` cannot overwrite on Windows, found 2026-11-09).

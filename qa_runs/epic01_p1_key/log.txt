@@ -1,0 +1,121 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[7] [INF] [CPS] Shade tiles: sleep,night,-touch,-cleanup,-orientation,-bluetooth,-flashlight
+[7] [DBG] [CPS] Resaving settings to update format
+[7] [DBG] [CPS] Settings loaded from file
+[9] [DBG] [UI] Using Lyra theme
+[9] [INF] [CLK] RTC clock read: 2026-11-13 12:00
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[9] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[350] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[351] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[351] [DBG] [SDREG] Fonts directory not found: /fonts
+[351] [DBG] [SDREG] Discovery complete: 0 families
+[351] [DBG] [SDFS] SD font system ready (0 families discovered)
+[351] [DBG] [MAIN] Fonts setup
+[351] [DBG] [ACT] Entering activity: Boot
+[351] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[368] [DBG] [ACT] Exiting activity: Boot
+[368] [DBG] [ACT] Entering activity: EpubReader
+[368] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[369] [DBG] [GFX] Time = 18 ms from clearScreen to displayBuffer
+[387] [DBG] [EBP] Loading ePub: /image_test.epub
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/.crosspoint/epub_78130459853375809/book.bin (flags=0x0 errno=2 No such file or directory)
+[388] [DBG] [EBP] Cache not found, building spine/TOC cache
+[389] [DBG] [BMC] Entering write mode
+[389] [DBG] [BMC] Beginning content opf pass
+[390] [DBG] [ZIP] Decompressed 151 bytes into 220 bytes
+[390] [DBG] [EBP] Parsing content.opf: OPS/content.opf
+[391] [DBG] [COF] Found EPUB 3 nav document: OPS/nav.xhtml
+[392] [DBG] [COF] Using fast index for 6 manifest items
+[392] [DBG] [ZIP] Decompressed 429 bytes into 867 bytes
+[392] [DBG] [EBP] Successfully parsed content.opf
+[393] [DBG] [EBP] OPF pass completed in 4 ms
+[393] [DBG] [BMC] Beginning toc pass
+[393] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[393] [DBG] [EBP] Parsing toc nav file: OPS/nav.xhtml
+[394] [DBG] [NAV] Found nav toc element
+[394] [DBG] [NAV] Finished parsing nav toc
+[394] [DBG] [ZIP] Decompressed 240 bytes into 307 bytes
+[394] [DBG] [EBP] Parsed TOC nav items
+[394] [DBG] [EBP] TOC pass completed in 1 ms
+[394] [DBG] [BMC] Wrote 1 spine, 1 TOC entries
+[395] [DBG] [BMC] Successfully built book.bin
+[395] [DBG] [EBP] buildBookBin completed in 1 ms
+[395] [DBG] [EBP] Total indexing completed in 6 ms
+[396] [DBG] [EBP] CSS files to parse: 1
+[396] [DBG] [EBP] Parsing CSS file: OPS/style.css
+[396] [DBG] [ZIP] Decompressed 102 bytes into 167 bytes
+[396] [DBG] [CSS] Parsed 3 rules from 167 bytes
+[398] [DBG] [CSS] Saved 3 rules to complete cache
+[398] [DBG] [EBP] Loaded 3 CSS style rules from 1 files (0 identical duplicates skipped, complete)
+[398] [DBG] [BMC] Loaded cache data: 1 spine, 1 TOC entries
+[398] [DBG] [EBP] Loaded ePub: /image_test.epub
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/.crosspoint/epub_78130459853375809/progress.bin (flags=0x0 errno=2 No such file or directory)
+[399] [DBG] [EBP] Core Metadata: cover(0)=, textReference(0)=
+[399] [DBG] [ERS] Loading file: OPS/ch1.xhtml, index: 0
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/.crosspoint/epub_78130459853375809/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[400] [DBG] [ERS] Cache not found, building...
+[400] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[401] [DBG] [ZIP] Decompressed 558 bytes into 4009 bytes
+[401] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_78130459853375809/html/.tmp_0.html (4009 bytes)
+[403] [DBG] [CSS] Loaded 3 rules from complete cache
+[403] [DBG] [EHP] Found image: src=images/pic1.jpg
+[404] [DBG] [EHP] Image dimensions: 600x260
+[404] [DBG] [EHP] Display size: 600x260 (scale 1.00)
+[406] [DBG] [SCT] Page 0 processed
+[407] [DBG] [SCT] Page 1 processed
+[408] [DBG] [EHP] Found image: src=images/pic2.jpg
+[408] [DBG] [EHP] Image dimensions: 300x640
+[408] [DBG] [EHP] Display size: 208x445 (scale 0.70)
+[409] [DBG] [SCT] Page 2 processed
+[409] [DBG] [SCT] Page 3 processed
+[411] [DBG] [SCT] Page 4 processed
+[411] [DBG] [EHP] Found image: src=images/pic3.png
+[SIM] WAIT matched: [368] [DBG] [ACT] Entering activity: EpubReader
+[411] [DBG] [EHP] Image dimensions: 240x160
+[411] [DBG] [EHP] Display size: 240x160 (scale 1.00)
+[413] [DBG] [SCT] Page 5 processed
+[415] [DBG] [SCT] Page 6 processed
+[415] [DBG] [EHP] Time to parse and build pages: 12 ms
+[416] [DBG] [SCT] Page 7 processed
+[419] [DBG] [FDC] Prewarm: 21 glyphs in 1918 bytes from 2 groups (0 missed)
+[421] [DBG] [FDC] Prewarm: 12 glyphs in 1260 bytes from 2 groups (0 missed)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/.crosspoint/epub_78130459853375809/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[423] [DBG] [GFX] Time = 6 ms from clearScreen to displayBuffer
+[424] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic01_p1_key/sd/.crosspoint/epub_78130459853375809/img_0_0.pxc (flags=0x0 errno=2 No such file or directory)
+[425] [DBG] [IMG] Lazy-extracting OPS/images/pic1.jpg -> /.crosspoint/epub_78130459853375809/img_0_0.jpg
+[428] [DBG] [IMG] Decoding and caching: /.crosspoint/epub_78130459853375809/img_0_0.jpg
+[428] [DBG] [IMG] Using JPEG decoder
+[428] [DBG] [JPG] Decoding JPEG: /.crosspoint/epub_78130459853375809/img_0_0.jpg
+[431] [DBG] [JPG] JPEG 600x260 -> 600x260 (scale 1.00, jpegScale 1/1, fineScale 1.00)
+[432] [DBG] [IMG] Cache stream started: /.crosspoint/epub_78130459853375809/img_0_0.pxc (600x260, band 20 rows)
+[438] [DBG] [JPG] JPEG decoding complete - render time: 6 ms
+[438] [DBG] [IMG] Cache written: /.crosspoint/epub_78130459853375809/img_0_0.pxc (600x260, 39004 bytes)
+[438] [DBG] [IMG] Decode successful
+[438] [DBG] [GFX] Time = 14 ms from clearScreen to displayBuffer
+[440] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[440] [DBG] [IMG] Loading from cache: /.crosspoint/epub_78130459853375809/img_0_0.pxc (600x260)
+[441] [DBG] [IMG] Cache render complete (payload now in RAM)
+[441] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[441] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[441] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[442] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[442] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[442] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[442] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[443] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[443] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[444] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[444] [DBG] [IMG] Rendering image at 103,67: /.crosspoint/epub_78130459853375809/img_0_0.jpg (600x260)
+[450] [DBG] [ERS] Page render (tiled): prewarm=4ms bw_render=17ms display=2ms gray_lsb=2ms gray_msb=2ms gray_display=6ms cleanup=0ms total=33ms
+[450] [DBG] [ERS] Rendered page in 33ms
+[454] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[856] [DBG] [FDC] Prewarm: 30 glyphs in 2548 bytes from 2 groups (0 missed)
+[856] [DBG] [ERS] Idle prewarm: page 1 in 2ms

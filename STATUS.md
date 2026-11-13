@@ -17,12 +17,15 @@ work project. From now on it is a standalone project.
 - **Idea 07 built and simulator-tested** on `wip/krinik-debug10` `9f02db5f` (from debug9, local): right-half long tap
   clockwise, left-half counterclockwise; judge no blockers; cases D0, C1–C5 pass
   (`testcases/reports/2026-11-13_idea07_simulator.md`). **Open with the owner:** after he turns the reader in his hands,
-  whose halves — A as held for reading (built) or B of the upright picture (recommended) — asked in chat 14:20. The
+  whose halves — the owner chose B 14:54 «половины давай считать по картинке, убедил»: by the picture as it stands upright (code change in flight). The
   device image comes with idea 05 (his «делаем» = one debug10).
 - **Idea 05 = epic 01** (heaviness 2 of 5): research `researches/2026-11-13_idea05_shade_tiles_epic.md` (AOSP tile
   list, WCAG 2.5.7 up/down, CSS space-evenly, long tap → tile settings); meta-plan `plans/01_EPIC_shade_tiles.md`
   (Russian; phases Ф1 model+storage → Ф2 the «Плитки шторки» screen → Ф3 the shade row, new tiles, icons, long tap →
-  Ф4 acceptance + image); **next: Ф1 by `plans/02_epic01_p1_tile_model.md`** on `wip/krinik-debug10`.
+  Ф4 acceptance + image). **Ф1 closed 15:02** (firmware `435d2493`: `src/util/ShadeTiles.h` + host test 12/12 +
+  storage; report `testcases/reports/2026-11-13_epic01_p1.md`). **Next: idea 08 «Настройки сна»** (plan inside the idea),
+  then the Ф2 plan. Waiting on the owner: whether ALL viewer gestures (swipes, side taps, Back, the shade) follow the
+  picture like the long-tap halves (asked 14:56, recommended yes — one rule; it also suits idea 09).
 - **Chat 2026-11-13 10:34 → 13:35 closed — features for KCCP 1.1.3** (the owner's task under `resume`). Results:
   - **Idea 02 (tap a book picture → full screen, swipe Back → the same page): built.** `wip/krinik-debug9`
     (`526c7452` + `35dc070c`, local in `firmware/`, not pushed) = debug8 + the picture tap + battery log OFF; judged
