@@ -1,0 +1,82 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[4] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[4] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-13 17:21
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[213] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[213] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[214] [DBG] [SDREG] Fonts directory not found: /fonts
+[214] [DBG] [SDREG] Discovery complete: 0 families
+[214] [DBG] [SDFS] SD font system ready (0 families discovered)
+[214] [DBG] [MAIN] Fonts setup
+[214] [DBG] [ACT] Entering activity: Boot
+[214] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[222] [DBG] [ACT] Exiting activity: Boot
+[222] [DBG] [ACT] Entering activity: Home
+[222] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [222] [DBG] [ACT] Entering activity: Home
+[236] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1819] [DBG] [ACT] Exiting activity: Home
+[1819] [DBG] [ACT] Entering activity: FileBrowser
+[1820] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1819] [DBG] [ACT] Entering activity: FileBrowser
+[3416] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[4418] [DBG] [ACT] Exiting activity: FileBrowser
+[4418] [DBG] [ACT] Entering activity: BmpViewer
+[4418] [DBG] [CRV] Curve loaded from /.crosspoint/panel_curve.txt: be170a3a
+[4421] [DBG] [JPG] Image dimensions: 640x320
+[4421] [INF] [BMP] Shape turns: 3 (640x320, reading orientation 2)
+[4421] [DBG] [BMP] Show 1/3: /pics/a_wide.jpg
+[4423] [DBG] [JPG] Image dimensions: 640x320
+[4423] [DBG] [JPG] Decoding JPEG: /pics/a_wide.jpg
+[4425] [DBG] [JPG] JPEG 640x320 -> 800x400 (scale 1.25, jpegScale 1/1, fineScale 1.25)
+[4426] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (800x400, band 24 rows)
+[4434] [DBG] [JPG] JPEG decoding complete - render time: 8 ms
+[4434] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (800x400, 80004 bytes)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/sd/.crosspoint/view_cache.idx (flags=0x0 errno=2 No such file or directory)
+[4448] [DBG] [GFX] Cropping 800x400 by 0x0 pix, is top-down
+[4448] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4456] [DBG] [GFX] Cropping 800x400 by 0x0 pix, is top-down
+[4456] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4469] [DBG] [GFX] Cropping 800x400 by 0x0 pix, is top-down
+[4469] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4477] [DBG] [LOOP] New max loop duration: 59 ms (activity: 59 ms)
+[SIM] WAIT matched: [4418] [DBG] [ACT] Entering activity: BmpViewer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/shots/a.bmp
+[8145] [DBG] [BMP] Input: button prev
+[8146] [INF] [BMP] Shape turns: 0 (320x320, reading orientation 2)
+[8146] [DBG] [BMP] Show 3/3: /pics/c_square.bmp
+[8379] [DBG] [GFX] Cropping 480x480 by 0x0 pix, is bottom-up
+[8379] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[8387] [DBG] [GFX] Cropping 480x480 by 0x0 pix, is bottom-up
+[8387] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[8398] [DBG] [GFX] Cropping 480x480 by 0x0 pix, is bottom-up
+[8398] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[8403] [DBG] [LOOP] New max loop duration: 258 ms (activity: 258 ms)
+[10010] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10010] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/shots/b.bmp
+[12147] [DBG] [BMP] Input: button prev
+[12149] [INF] [BMP] Shape turns: 0 (320x640, reading orientation 2)
+[12149] [DBG] [BMP] Show 2/3: /pics/b_tall.png
+[12151] [DBG] [PNG] Decoding PNG: /pics/b_tall.png
+[12153] [DBG] [PNG] PNG 320x640 (visible 320x640) -> 400x800 (scale 1.25), type: 6, bpp: 8
+[12153] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (400x800, band 16 rows)
+[12162] [DBG] [PNG] PNG decoding complete - render time: 9 ms
+[12162] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (400x800, 80004 bytes)
+[12170] [DBG] [GFX] Cropping 400x800 by 0x0 pix, is top-down
+[12170] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[12180] [DBG] [GFX] Cropping 400x800 by 0x0 pix, is top-down
+[12180] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[12193] [DBG] [GFX] Cropping 400x800 by 0x0 pix, is top-down
+[12194] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea09_o2/shots/c.bmp

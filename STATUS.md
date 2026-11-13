@@ -18,7 +18,9 @@ work project. From now on it is a standalone project.
   `261e5c63` (20:06, D1–D8: the owner's row with equal gaps measured by `tools/shade_gaps.py`, «Сон», «Фонарик» over
   the book, the long tap → the screen on that button → Back → the book). **Ф4 waits for the owner's word on the image**
   (the whole-epic judge, the device build, smoke, homework — `homeworks/06_kccp_1.1.3_debug1.md` grows into the
-  1.1.3-debug2 homework). Next in the loop: idea 09 (planned in `ideas/09`).
+  1.1.3-debug2 homework). **Idea 09 built** (`9027b99a`, 20:24): every picture opens by its shape, simulator E1–E10
+  pass (`testcases/reports/2026-11-13_idea09.md`). Next in the loop: idea 03 (caption standards recon done) or idea 06
+  after the owner's answers.
 - **❓ awaiting the owner: `interviews/interview_004_home_buttons.md`** (idea 06, five forks: which Home buttons may be
   hidden and «Настройки», the mama row, the place in Settings, the long-tap entry, more buttons than fit). Filed
   2026-11-13 20:08 +03:00, NOT shown yet (the owner is busy; a clean voice pass runs first); idea 06 waits on it.
@@ -172,7 +174,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 261e5c63 |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 9027b99a |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |
