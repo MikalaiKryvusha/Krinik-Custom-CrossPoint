@@ -51,12 +51,12 @@ work project. From now on it is a standalone project.
   English agent docs keep "tile"; the owner's own past quotes are left verbatim.
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
-  2. **Epic 01 Ф2, step P2.2-end / P2.3** by `plans/03_DONE_epic01_p2_tiles_screen.md`: paste the ▲ ▼ icons from
-     `python -I -X utf8 tools/make_icon.py tri_up icon_tri_up_32` (and `tri_down`) into
-     `firmware/src/components/icons/customListIcons.h`; write `ShadeTilesActivity` on `UiAppHost` (not `UiListActivity` —
-     the list hides row rects; see the plan's P2.1 findings), the entries (`SettingsSection::ShadeTiles` after idea 08's
-     pattern; `goToShadeTiles(tile, fromBook)`), strings; judge BEFORE the build; simulator run; then Ф3 (the shade row,
-     «Сон», «Фонарик», icons, the long tap), Ф4 (the debug10 image + homework).
+  2. **Epic 01 Ф3** by `plans/04_epic01_p3_shade_row.md` on `wip/kccp-1.1.3-debug2` (Ф2 closed 19:33, `41718c61`):
+     the code is written (uncommitted at 19:45, judge running); then the simulator cases
+     `testcases/TC_epic01_p3_shade_row.md` (card `qa_runs/sd_book_images`, the temporary six-button copy
+     `qa_runs/sd_epic01_p3_six` — delete after the runs), commit; then Ф4 (the epic's judge, the 1.1.3-debug2 image
+     WHEN the owner asks — 19:01 «со сборкой не торопись»). Before any firmware commit: `sh tools/host_tests.sh`
+     (new failures + CRLF, EXP-0018/0019).
   3. **Idea 06 «Кнопки главного экрана»** reuses the Ф2 screen — its own epic after epic 01 (the owner asked 16:21
      whether it comes in the next chat: yes, if the window allows after the shade).
   4. The owner's debug9 check (homework 04, steps 2, 4–7) is superseded by the debug10 image (it carries everything of
