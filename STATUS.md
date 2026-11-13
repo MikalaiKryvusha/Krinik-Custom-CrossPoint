@@ -148,7 +148,11 @@ already say KCCP. In the firmware fork it is still krinik:
 
 - Closed 2026-11-08: no charging cut-off (needs a board modification); the charger analysis and the battery/light
   measurements moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-09, STATUS trim).
-- LED driver/current/ratings still unknown; UI 80 % on the log scale ≈ 21.4 % duty, not 80 % current.
+- **Closed [2026-11-13 10:36 +03:00]: battery-discharge measurements stop; no more search for ways to cut the current
+  through the frontlight** — `[OWNER] 2026-11-13 10:36 +03:00 · chat: «там ты замерял разряд батареи, я думаю, что можно
+  прекратить эти замеры. Подсветка не много кушает заряда батареи, и можно перестать искать способы снижения тока через
+  подсветку»`. Open: whether the debug-only 20-minute battery log leaves the debug builds (asked in chat, same turn).
+- LED driver/current/ratings stay unknown — no longer researched (decision above).
 
 ### Future (owner, 2026-11-06: "on the future")
 
