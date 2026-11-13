@@ -53,6 +53,12 @@
 
 > ну так вот я и говорю, что нужно бля книги корректно переверстать.
 
+`[OWNER] 2026-11-13 11:13 +03:00 · chat` (seeing the simulator page of the test book, caption with a first-line indent):
+
+> подписи картинок - это не параграф, они не обязаны слушаться правила отступа для красной строки параграфа
+
+> читай ГОСТЫ
+
 ## The direction (the owner's word above; the split into two parts is `[AI]`, said to him in chat 10:54)
 
 **The standard caption:** EPUB 3 content is XHTML5 — a picture with its caption is `<figure><img/><figcaption>…`
