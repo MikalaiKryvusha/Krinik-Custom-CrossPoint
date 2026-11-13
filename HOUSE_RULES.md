@@ -19,3 +19,15 @@
 
 [OWNER] 2026-11-13 18:55–18:56 +03:00 · чат: «а что это за свалка? D:\Temp\ я не разрешал агентам там работать» · «у
 каждого проекта есть директория - там и работайте»
+
+## 2. Стенды, окружения и устройства
+
+Компилятор, Python (`tempfile`) и ctest кладут свои временные файлы в папку из переменных `TEMP` и `TMP`. Каждая команда
+ниже ставит обе переменные на `.tmp/` проекта (правило П1).
+
+| Стенд | Для чего | Как агент до него доходит (Git Bash) | Известные ловушки |
+|---|---|---|---|
+| Хост-тесты | модули прошивки на ПК | `export PATH="/f/ai_sandbox/msys64/ucrt64/bin:$PATH" TEMP='D:\work\ai_sandbox\KCCP\.tmp' TMP='D:\work\ai_sandbox\KCCP\.tmp'; cd firmware; cmake --build build/test -- -k 0; (cd build/test && ctest -j1)` | 8 падений под Windows известны (ресёрч 01); `ParserStopTest` нестабилен под `-j` |
+| Тест подсветки отдельно | шлюз «Точной температуры», плавные переходы | `TEMP` и `TMP` на `.tmp/`, `PATH` с UCRT64; `.pio-venv/Scripts/python.exe -I -X utf8 test/test_frontlight_dither.py` из `firmware/` | — |
+| Симулятор | экраны прошивки, ввод скриптом, снимки WebP | сборка из PowerShell: `$env:PYTHONUTF8 = "1"; $env:TEMP = "D:\work\ai_sandbox\KCCP\.tmp"; $env:TMP = $env:TEMP; .pio-venv\Scripts\pio.exe run -d firmware -e simulator_x4_pro_win`; прогон: `SIM_ENV=simulator_x4_pro_win sh tools/sim_run.sh <имя> '<скрипт>' '<снимки>'` | EXP-0004, EXP-0009, EXP-0015; сборка под читалку стирает бинарник симулятора |
+| Сборка под читалку | образ для SD-карты | PowerShell, `PYTHONUTF8`, `TEMP` и `TMP` как у симулятора; `.pio-venv\Scripts\pio.exe run -d firmware -e x4pro-krinik-debug` | EXP-0004, EXP-0007 |

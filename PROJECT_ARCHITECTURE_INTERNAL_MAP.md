@@ -66,7 +66,11 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
 - `src/activities/ActivityManager.{h,cpp}` — one current activity + a stack: `startActivityForResult` PUSHES (the parent
   stays alive, no `onExit`), `finish()` POPS (the parent's result handler runs, then the parent is repainted);
   `goTo*` REPLACES and clears the stack (`onExit` for all). The shade is PUSHED over whatever is in front (`loop()`, the
-  top-edge swipe or a status-bar tap), so the book stays alive under it.
+  top-edge swipe or a status-bar tap), so the book stays alive under it. A result handler that itself calls `finish()`
+  pops the parent too, WITHOUT repainting it (`ActivityManager.cpp` ~205: `requestUpdate()` only when no action is
+  pending) — the shade can close right behind a screen it pushed with no shade frame in between (epic 01 Ф3). Pop with
+  an empty stack goes Home. `GUI.drawHeader` registers the header's back arrow as a tap target (`HeaderBackTapTarget`,
+  cleared on a push). `goToFlashlight()` REPLACES (the book closes) and `FlashlightActivity` leaves by `goHome()`.
 - `src/activities/util/FrontlightPanelActivity.cpp` — the shade (control center): grabber, brightness / warmth sliders,
   the tile row (five hard-coded tiles until epic 01 Ф3 draws the row from `ShadeTiles`). The simulator is built without
   Bluetooth (`FREEINK_CAP_BLE_HID_HOST` off → `bleturner::status().compiledIn` false), so there the row has four tiles.

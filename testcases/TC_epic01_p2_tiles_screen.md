@@ -20,7 +20,7 @@ Achieve: the owner turns the shade's tiles on and off and puts them in his order
 | R1 | WHEN the owner opens Settings → «Экран» → «Кнопки в шторке», the screen shall list the shown tiles in the stored order, each row with icon, name, checkbox (filled = on), ▲ ▼. | shot: header «Кнопки в шторке», the note, six rows on the simulator in the default order, four checked |
 | R2 | WHEN he taps a row, the tile shall turn on / off. | shot after the tap: the checkbox changed |
 | R3 | IF the tapped row is the last shown tile that is on, THEN the screen shall keep it on; the note above the rows says why. | shot: the checkbox stays filled |
-| R4 | WHEN he taps ▲ (▼), the row shall move one shown place up (down); row 1 has no ▲, the last row no ▼. | shots: the order after each move |
+| R4 | WHEN he taps ▲ (▼), the row shall move one shown place up (down); every row shows ▲ ▼ (the mockup `homeworks/05_shade_mockups/final.html`, step 2), and ▲ on row 1 / ▼ on the last row do nothing. | shots: the order after each move; a tap on the dead arrow changes nothing and does not toggle the row |
 | R5 | WHEN he leaves the screen, `settings.json` shall hold the new `shadeTiles` string, and nothing when the row is back to where it was. | the card's `settings.json` read after the run; log `Shade tiles saved:` |
 | R6 | WHEN the screen was opened from Settings, Back shall return to «Экран». | shot after Back: «Экран» |
 | R7 | The keys shall move the cursor (Up / Down, wrapping) and check / uncheck the cursor row (Confirm). | shots: the pill row and the checkbox |
@@ -40,10 +40,10 @@ Achieve: the owner turns the shade's tiles on and off and puts them in his order
 
 | # | Case (steps → expected) | Technique | Status + evidence |
 |---|---|---|---|
-| C1 | Home → Settings → «Экран»: «Кнопки в шторке» is the second row (shot `display`); tap it → `Entering activity: ShadeTiles`; shot `tiles0`: header, note, rows «Ночной режим» ☑, «Очистка экрана» ☑, «Ориентация чтения» ☑, «Сенсор» ☑, «Сон» ☐, «Фонарик» ☐; no ▲ on row 1, no ▼ on row 6; the cursor pill on row 1 | smoke (R1, R6 entry) | not run |
+| C1 | Home → Settings → «Экран»: «Кнопки в шторке» is the second row (shot `display`); tap it → `Entering activity: ShadeTiles`; shot `tiles0`: header, note, rows «Ночной режим» ☑, «Очистка экрана» ☑, «Ориентация чтения» ☑, «Сенсор» ☑, «Сон» ☐, «Фонарик» ☐; each row: icon, name, ▲, ▼, the checkbox at the right edge (the mockup); the cursor pill on row 1 | smoke (R1, R6 entry) | not run |
 | C2 | C1 → tap the «Сон» row → «Сон» ☑ (shot) | use case (R2) | not run |
 | C3 | C2 → ▲ on «Сон» three times → order «Ночной режим», «Сон», «Очистка экрана», «Ориентация чтения», «Сенсор», «Фонарик» (shot); the first ▲ steps over the hidden Bluetooth | state transition (R4) | not run |
-| C4 | C3 → ▼ on «Ночной режим» → «Сон» first, «Ночной режим» second; «Сон» has no ▲ now (shot) | state transition, boundary (R4) | not run |
+| C4 | C3 → ▼ on «Ночной режим» → «Сон» first, «Ночной режим» second (shot); then ▲ on «Сон» (row 1) → the order and the checkboxes unchanged (shot) | state transition, boundary (R4) | not run |
 | C5 | C4 → swipe Back from the left edge → `Popped`, shot = «Экран»; log `Shade tiles saved: sleep,night,cleanup,orientation,touch,bluetooth,-flashlight`; the card's `settings.json` holds that string | use case (R5, R6) | not run |
 | C6 | C1 → uncheck «Очистка экрана», «Ориентация чтения», «Сенсор» → only «Ночной режим» ☑ among the rows (Bluetooth hidden but on); tap «Ночной режим» → stays ☑ (shot) | boundary (R3) | not run |
 | C7 | C6 → tap «Сон» (☑), tap «Ночной режим» → «Ночной режим» ☐ now (two were on) (shot); header arrow tap → `Popped`; `settings.json`: `-night,-cleanup,-orientation,-touch,bluetooth,sleep,-flashlight` | control of C6 (R3), header Back (R6) | not run |
