@@ -58,9 +58,8 @@ work project. From now on it is a standalone project.
      `.pio-venv/Scripts/python.exe -I -X utf8 tools/serial_log.py <scratch>/serial_debug9.log` in the background; watch
      `Image tap`, `Back swipe`, `[ERR]`, `OOM` (the debug image logs at LOG_LEVEL=1 — INF and up). His verdict → homework
      04 «Итог», `ideas/02` closure, `testcases/TC_idea02…` C6.
-  3. **Idea 05 → `/plan-task`** (the agreed design above; code map `researches/2026-11-13_idea05_06_code_map.md`), then code on `wip/krinik-debug10` from debug9: settings
-     storage of tile order/visibility, the «Плитки шторки» screen (reuse it for idea 06 «Кнопки главного экрана»), the
-     shade row (variable tiles, equal gaps, long tap → Settings), icons, strings; judge → simulator → image.
+  3. **Epic 01 (idea 05) by `plans/01_EPIC_shade_tiles.md`** — the phase in flight and its plan are named at the top
+     of this list; the «Плитки шторки» screen of Ф2 is reused later by idea 06 «Кнопки главного экрана».
 - **Open work, in order:**
   1. Idea 05 + 06 (one list component); 2. Idea 03 (re-typeset tool + firmware `<figure>`); 3. KCCP 1.1.3 assembly:
      merge release 1.1.2 (`198d385e`) into the debug line (conflicts `lib/hal/HalFrontlight.{cpp,h}`,

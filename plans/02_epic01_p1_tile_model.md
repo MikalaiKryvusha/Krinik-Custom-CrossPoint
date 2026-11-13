@@ -46,8 +46,10 @@ Anchor (meta-plan, Ф1): «Чистая модель: семь плиток со
 - [ ] P1.3 Host test `test/shade_tiles/ShadeTilesTest.cpp` + `CMakeLists.txt` + the `add_subdirectory` line: criteria
       1–5; then the mutation: the old slot formula in the layout → the gap test red; restore → green. Anchor: «хост-тест
       зелёный и краснеет на нарочно сломанной раскладке».
-- [ ] P1.4 `CrossPointSettings`: field `ShadeTileList shadeTiles`; save as a JSON array of `["id", 0|1]` pairs only when
-      not default; load if present → normalize; `[NOT-TESTED]`. Anchor: «Хранение в `settings.json`».
+- [ ] P1.4 `CrossPointSettings`: field `shadetiles::List shadeTiles`; saved only when not default as ONE string, a
+      comma list of ids with "-" for off (`"night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight"`) — changed
+      while coding from "a JSON array of pairs": the string is AOSP's own shape (I1) and makes parse/format pure and
+      host-tested; load if present → `parse`; a `LOG_INF` names the loaded row. Anchor: «Хранение в `settings.json`».
 - [ ] P1.5 Judge (a fresh agent, the diff + this plan + the meta-plan, not my conclusions) BEFORE the build; fix findings.
 - [ ] P1.6 Host tests: the new suite + the full suite count stays 761 passing (the 8 Windows-portability failures known);
       simulator smoke on the same commit: boot into the book, open the shade, 0 errors; `settings.json` read after the run.
