@@ -64,8 +64,14 @@ Anchor (meta-plan, Ф3): «Ряд кнопок по модели с равным
 2. The portrait screen over a landscape book: `ShadeTilesActivity` sets portrait in `onEnter` and restores the caller's
    orientation in `onExit`; the book repaints in its own orientation. Check: the shot of criterion 3.
 3. Heap: book + shade + settings screen at once. Reaction: `makeUniqueNoThrow`, the log's free heap after the push.
-4. The long-press threshold of the input layer vs «дольше полсекунды» (criterion 1). Reaction: read the threshold in
-   `MappedInputManager` / HAL and quote it in the cases.
+4. ~~The long-press threshold of the input layer vs «дольше полсекунды»~~ — closed by the recon: 500 ms (below).
+5. The shade over the IMAGE VIEWER (the Ф2 judge, 19:21): the viewer keeps `setKeysFollowReadingOrientation(true)`
+   while it lives, so on «Кнопки в шторке» pushed from that shade the keys would follow `SETTINGS.orientation`, not the
+   portrait screen. Reaction: the screen clears the flag in `onEnter` and puts the previous value back in `onExit` (a
+   getter in `MappedInputManager` if none exists); a simulator case opens the screen from a shade over a picture.
+6. A shade opened OVER «Кнопки в шторке» (the top-edge swipe works there) and a long tap in it would push a second copy
+   of the screen. Reaction: the shade does not take the long tap when the screen below it is «Кнопки в шторке» (or the
+   long tap closes the shade only) — decided in P3.6, with a case.
 
 ## P3.1 recon — findings (2026-11-13)
 
@@ -82,5 +88,10 @@ Anchor (meta-plan, Ф3): «Ряд кнопок по модели с равным
   close; `FlashlightActivity::loop()` leaves by `goHome(HomeMenuItem::FLASHLIGHT)` (`FlashlightActivity.cpp:41-43`).
 - Pop (`ActivityManager.cpp:166-211`): the parent's result handler runs, and the parent is repainted only when the
   handler set no action — a handler that calls `finish()` closes the parent with no frame of it in between.
+- The long-press threshold (risk 4, closed): `InputManager::TOUCH_LONG_PRESS_MS = 500`
+  (`freeink-sdk/libs/hardware/InputManager/include/InputManager.h:536`) — the meta-plan's «дольше полсекунды»; it fires
+  once per contact while the finger is down, and FreeInkUI dispatches it on the release. `UiAppHost::routeTouch(input,
+  withLongPress, routeHeld)` forwards it only with `withLongPress = true`; the shade calls `routeTouch(mappedInput,
+  false, /*routeHeld=*/true)` today (`FrontlightPanelActivity.cpp:271`) — P3.6 sets the first flag.
 - `GUI.drawHeader` publishes the header back arrow as a tap target (`HeaderBackTapTarget`, cleared on a push,
   `ActivityManager.cpp:228-230`) — the Ф2 screen's header arrow is a Back.

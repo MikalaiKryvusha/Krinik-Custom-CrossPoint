@@ -1,8 +1,9 @@
 # Plan 03 — epic 01, phase 2: the settings screen «Кнопки в шторке»
 
 > **Created:** 2026-11-13 · **Parent:** `plans/01_EPIC_shade_tiles.md` → «Ф2 — экран «Кнопки в шторке»» · **Status:** 📐
-> planned 2026-11-13 15:58 +03:00; P2.1 recon done; P2.2–P2.5 written 2026-11-13 16:57 +03:00 (uncommitted on
-> `wip/krinik-debug10`); next P2.6 judge (running), P2.7 build + simulator · **Outbound:** —
+> planned 2026-11-13 15:58 +03:00; P2.1 recon done; P2.2–P2.5 written 2026-11-13 16:57 +03:00, reworked to the mockup by
+> 17:19; moved to `wip/kccp-1.1.3-debug2` 19:06; P2.6 judge 19:21 — no blockers (findings below); next P2.7 build +
+> simulator · **Outbound:** —
 
 ## Goal vector (Achieve)
 
@@ -43,8 +44,9 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
       so the night row and the «Сон» row do not both show a moon) pasted, shapes read as ASCII art.
 - [x] P2.3 `ShadeTilesActivity` (on `UiAppHost` — the P2.1 findings below; NOT `UiListActivity`), written 2026-11-13
       16:55, judge pending. Deviations from this line, `[AI]`: no working copy — edits go straight into
-      `SETTINGS.shadeTiles` (a shade opened over the screen shows them), the file is written on exit when the row differs
-      from the one on entry; the last-tile rule counts the SHOWN rows (a hidden Bluetooth tile that is on does not keep
+      `SETTINGS.shadeTiles` (a shade opened over the screen shows them), the file is written on exit when the row was
+      EDITED during the visit (a flag, not a comparison: a shade opened in between may have saved an intermediate row —
+      judge 2026-11-13 19:21); the key itself is written only while the row differs from the default; the last-tile rule counts the SHOWN rows (a hidden Bluetooth tile that is on does not keep
       the shade alive); ▲ ▼ step over a hidden row. Rows drawn with `Screen::resolveListProps` tokens (the Settings list
       look); `[NOT-TESTED]`.
 - [x] P2.4 Entries, written 2026-11-13 16:55: `SettingAction::ShadeTiles`, the row second in «Экран» right under «Настройки
@@ -56,14 +58,21 @@ Anchor (meta-plan, Ф2): «Список из семи строк: иконка, 
 - [x] P2.5 Strings (en, ru), written 2026-11-13 16:57: `STR_SHADE_TILES` «Кнопки в шторке», `STR_SHADE_TILE_CLEANUP`
       «Очистка экрана», `STR_SHADE_TILES_NOTE` — one note above the rows (the Settings sub-screen pattern) that says the
       checked tiles stand in the shade in this order and one tile always stays on, with the reason (the long tap).
-- [ ] P2.6 Judge (fresh agent, the diff + this plan + the meta-plan) BEFORE the build; fix findings.
+- [x] P2.6 Judge (fresh agent, the diff + this plan + the meta-plan + the mockup + the cases) BEFORE the build,
+      2026-11-13 19:21 +03:00: VERIFIED WITH CAVEATS, no blockers; every identifier resolves; the stale-frame guard
+      cannot lock the screen; seven rows fit (434 px of ~500). Fixed: the cases C1/C4/C8/R4/R5 and P2.3 now follow the
+      code and the mockup (arrows on every row; save by the edit flag); clang-format 21 over the Ф2 files (the icon
+      arrays were 815-char lines). Left as nits: a dropped tap still repaints; ▲ on row 1 does not move the cursor;
+      «Bluetooth Page Turner» may be cut with an ellipsis on the device (look on the reader). To Ф3 (plan 04 risks):
+      keys over the image viewer, a second copy of this screen from a shade over it.
 - [ ] P2.7 Build; simulator: criteria 1–5; `settings.json` read; run report `testcases/reports/<date>_epic01_p2.md`.
 - [ ] P2.8 Commit; tick Ф2; write the phase 3 plan.
 
 ## Risks
 
-1. The 24-target cap: 7 rows + 14 arrows + the header back = 22. Reaction: `static_assert`, and the arrows of a row
-   whose move is impossible register no hit (fewer targets).
+1. The 24-target cap: 7 rows + 14 arrows = 21 (the header back is `HeaderBackTapTarget`, outside the app's table).
+   Reaction: `static_assert`; every row registers both arrows (the mockup), a dead arrow does nothing and does not
+   fall through to the row.
 2. A portrait list of 7 rows plus a note may not fit 800 px with the theme's row height. Reaction: the list scrolls
    (`syncListViewport`); the shot shows it.
 3. ~~The return-to-book route crosses `goToSettings`'s replace (the book is closed). Reaction: reopen the book by
