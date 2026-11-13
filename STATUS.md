@@ -45,7 +45,7 @@ work project. From now on it is a standalone project.
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
   2. **Epic 01 Ф3** by `plans/04_epic01_p3_shade_row.md` on `wip/kccp-1.1.3-debug2` (Ф2 closed 19:33, `41718c61`):
-     the code is written (uncommitted at 19:45, judge running); then the simulator cases
+     the code is written (uncommitted since 19:40, judge running); then the simulator cases
      `testcases/TC_epic01_p3_shade_row.md` (card `qa_runs/sd_book_images`, the temporary six-button copy
      `qa_runs/sd_epic01_p3_six` — delete after the runs), commit; then Ф4 (the epic's judge, the 1.1.3-debug2 image
      WHEN the owner asks — 19:01 «со сборкой не торопись»). Before any firmware commit: `sh tools/host_tests.sh`
