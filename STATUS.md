@@ -14,7 +14,9 @@ work project. From now on it is a standalone project.
   stale gray mode = `bugs/06` (fixed locally, `simulator` branch `fix/gray-absolute-reset`). Idea 03 (keep a caption
   with its picture): recon + research done, direction = re-typeset tool + the firmware keeps a `<figure>` on one page,
   caption styled by the GOSTs / the BSUIR standard (the owner, 11:13) — read them first. Idea 04 (FB2 → EPUB on the
-  reader): first recon, heavy, after 02/03; test FB2 at `D:\Hofshtadter_…fb2.zip`.
+  reader): first recon, heavy, after 02/03; test FB2 at `D:\Hofshtadter_…fb2.zip`. Idea 05 (configure the shade's
+  quick tiles + enter that from the shade, owner 11:48): mockups `homeworks/05_shade_mockups/mockups.html` (А–Г, 1–4),
+  homework 05 waits for his choice.
 - **Chat 2026-11-09 20:30 → 2026-11-10 (CodeRabbit round 3, debug7/8, simulator PR #62) closed** — its full log moved
   verbatim to `PROJECT_HISTORY.md` (entry 2026-11-10). Result: #4377 books-card title fix pushed (`c9d69cbd`); #4376
   redraw-timer fix pushed (`94e1c3a2`) after the owner's reader check; debug7 (bugs 03/04) and debug8 (idea 01) PASS on
