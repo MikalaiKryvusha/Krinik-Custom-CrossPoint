@@ -57,7 +57,7 @@
 >      claim-before-evidence, owner-decision-not-applied, text-in-agents-world,
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
 >      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand,
->      overwrote-tracked, tool-crash, false-defect, wrong-directory -->
+>      overwrote-tracked, tool-crash, false-defect, wrong-directory, missing-dependency -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -80,6 +80,15 @@
 > Skill: `/experience` (capture a lesson · recall relevant lessons).
 
 ## Entries
+
+### EXP-0011 · 2026-11-13 · ❌→✅ · #epub #lint #tools
+class: missing-dependency
+none-cheap: one-line S3 note; the lint itself should say «xmllint not found» — fix it when the tool is next touched
+**Context:** `node tools/epub_lint.mjs` on the generated test book `qa_runs/sd_book_images/image_test.epub`.
+**Result:** «✗ … XHTML: ch1.xhtml undefined» — not a book defect: no `xmllint` on this PC (neither PATH nor `D:\msys64`).
+**Repro:** well-formedness without xmllint: `.pio-venv/Scripts/python.exe -I -c "import zipfile,sys,xml.dom.minidom as m;z=zipfile.ZipFile(sys.argv[1]);[m.parseString(z.read(n)) for n in z.namelist() if n.endswith(('.xhtml','.opf','.xml'))];print('ok')" <book.epub>`
+**Trigger:** an `undefined` in the XHTML lines of `epub_lint.mjs`.
+**Not for:** the link/manifest checks of the same lint, which do not need xmllint.
 
 <!-- class-ok: shell-lied — two unlike faces of Windows defaults (cp1251 stdout for Python, CRLF checkout); each is closed at its source (PYTHONUTF8=1 in the AGENT_GUIDE Build line, core.autocrlf=false in the firmware clone); a build wrapper that sets both is the mechanism to add next -->
 
