@@ -71,6 +71,12 @@ reachable from «Настройки → Экран». Still open for him: the ti
 >
 > Сон - будет полумесяц
 
+`[OWNER] 2026-11-13 13:28 +03:00 · chat` (asked: are the seven tiles enough?):
+
+> да, гоу, делаем
+>
+> фонарик тоже - опция шторки
+
 **Requirement (from the words above):** WHEN the shade shows N tiles, the firmware shall place them with equal gaps
 between the tiles and at both edges: gap = (sheet width − N × 56) / (N + 1). Today `FrontlightPanelActivity`
 centres each tile in an equal slot (`row.width * id / tileCount`) — its edge gap is half the gap between tiles, so
