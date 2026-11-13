@@ -33,3 +33,23 @@
 `[OWNER] 2026-11-13 12:25 +03:00 · chat:`
 
 > прич\м пусть лонг-тап из шторки сразу вед\т внутрь настроек на соответствующий экран
+
+`[OWNER] 2026-11-13 12:47–12:56 +03:00 · chat` (after the agent asked which «соответствующий экран» is meant):
+
+> покажешь макеты?
+>
+> гоу
+
+> покажешь макет?
+
+> не понимаю, что ты открыл
+
+> мы же согласовали макеты и решения
+
+> я хотел более конечный вид того, что согласовали
+
+**Agreed design** (`[AI]` reading of «мы же согласовали» — the screen is the one he chose, А; said to him in chat
+12:57): a long tap on any tile opens Settings straight on «Плитки шторки» — the list with checkboxes and ▲▼, portrait
+like every Settings screen, the cursor on the long-tapped tile. Final view: `homeworks/05_shade_mockups/final.html`.
+Decided by the agent unless he says otherwise: Back from «Плитки шторки» returns to the book; the screen is also
+reachable from «Настройки → Экран». Still open for him: the tile set (7).

@@ -81,6 +81,19 @@
 
 ## Entries
 
+### EXP-0014 · 2026-11-13 · ❌→✅ · #show #window #edge #screen
+class: shown-as-link
+none-cheap: one launch recipe; the carrier is the Repro below
+**Context:** showing the shade mockups with `Start-Process msedge --app=file:///…` — the owner: «не понимаю, что ты открыл».
+**Result:** ❌ a screenshot showed VS Code in front; the page window was not on his screen. ✅ Relaunched with a position
+and size and brought forward with `AppActivate` — the next screenshot shows the page window over VS Code.
+**Lesson:** a launched window is not a shown window: bring it forward by its title and look at the screen before saying
+it is open. On this PC a plain `CopyFromScreen` captures 1280×720 = only the top-left third of the 4K TV at 300 %.
+**Repro:** `Start-Process $edge -ArgumentList '--app=file:///<page>','--window-position=0,0','--window-size=1280,720'`;
+`(New-Object -ComObject WScript.Shell).AppActivate("<page title>")` → `True`; then a screenshot shows the title bar.
+**Trigger:** any page or picture opened for the owner.
+**Not for:** the review contour's own window (it reports its launch; still look before claiming it is seen).
+
 ### EXP-0013 · 2026-11-13 · ❌→✅ · #contour #review #server #timeout
 class: own-process-killed
 none-cheap: one launch rule; the carrier is the Repro below

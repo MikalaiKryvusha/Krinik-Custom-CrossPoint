@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шторка: итоговый вид</title>
+<!-- KCCP idea 05 — the agreed design only (the owner 2026-11-13 12:23–12:56: entry = a long tap on any tile, screen =
+     list with checkboxes and arrows, the long tap leads straight into Settings). Drawn in the style of the real screens
+     (simulator shots qa_runs/idea05_settings_look: Settings and «Экран» are portrait, the reader and its shade landscape). -->
+<style>
+  :root { --bg:#1b1c20; --ink:#ececf0; --muted:#a0a0a8; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.45 system-ui, "Segoe UI", sans-serif; }
+  main { max-width:1260px; margin:0 auto; padding:14px 16px 40px; }
+  h1 { font-size:22px; margin:6px 0 4px; }
+  .lead { color:var(--muted); margin:0 0 16px; }
+  .flow { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .step { display:flex; flex-direction:column; gap:8px; }
+  .step .n { font-weight:700; font-size:18px; }
+  .step .t { color:var(--muted); font-size:15px; max-width:520px; }
+  .scr { background:#fff; border:3px solid #000; border-radius:8px; overflow:hidden; line-height:0; box-shadow:0 0 0 1px #555; }
+  .land { width:520px; } .port { width:300px; }
+  .scr svg { width:100%; height:auto; display:block; }
+  .arrow { font-size:40px; color:var(--muted); }
+  .notes { margin-top:20px; color:var(--muted); font-size:15px; }
+  .notes b { color:var(--ink); }
+</style>
+</head>
+<body>
+<main>
+<h1>Шторка: итоговый вид того, что решено</h1>
+<p class="lead">Долгий тап по любой плитке шторки сразу открывает в настройках экран «Плитки шторки»: галочка включает
+   плитку, ▲ ▼ двигают её в ряду. Шторка и книга — в альбомной ориентации, настройки — в книжной, как все экраны настроек.</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-moon" viewBox="0 0 32 32"><path d="M21 5a11 11 0 1 0 6 18A9 9 0 0 1 21 5z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M25 12a10 10 0 0 0-17-3l-2 2"/><path d="M6 6v5h5"/><path d="M7 20a10 10 0 0 0 17 3l2-2"/><path d="M26 26v-5h-5"/></g></symbol>
+  <symbol id="i-orient" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 6v20M27 6v20M10 16h12"/><path d="M14 12v8M18 12v8"/></g></symbol>
+  <symbol id="i-hand" viewBox="0 0 32 32"><path d="M12 15V6a2 2 0 0 1 4 0v8m0-1a2 2 0 0 1 4 0v2m0-1a2 2 0 0 1 4 0v6c0 5-3 8-8 8s-7-2-9-6l-3-5a2 2 0 0 1 3-2l3 3V15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bt" viewBox="0 0 32 32"><path d="M10 10l12 12-6 6V4l6 6-12 12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sleep" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h8l-8 9h8"/><path d="M17 15h7l-7 9h7"/></g></symbol>
+  <symbol id="i-flash" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M10 4h12v6l-3 4v14h-6V14l-3-4z"/><path d="M14 18h4" stroke-linecap="round"/></g></symbol>
+  <symbol id="i-sun" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="16" cy="16" r="5"/><path d="M16 3v4M16 25v4M3 16h4M25 16h4M7 7l3 3M22 22l3 3M7 25l3-3M22 10l3-3"/></g></symbol>
+  <symbol id="i-battery" viewBox="0 0 40 20"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="2" width="34" height="16" rx="3"/><rect x="36" y="7" width="3" height="6" fill="currentColor"/><rect x="4" y="5" width="28" height="10" fill="currentColor"/></g></symbol>
+  <symbol id="tile" viewBox="0 0 48 48"><rect x="1.5" y="1.5" width="45" height="45" rx="9" fill="#fff" stroke="#000" stroke-width="2.4"/></symbol>
+  <symbol id="tile-on" viewBox="0 0 48 48"><rect x="1" y="1" width="46" height="46" rx="9" fill="#000"/></symbol>
+  <g id="book">
+    <rect width="800" height="480" fill="#fff"/>
+    <g font-family="system-ui, sans-serif" font-size="27" fill="#000"><text x="40" y="364">Это проверочный абзац тестовой книги. Он</text><text x="40" y="400">нужен, чтобы картинки стояли на странице</text><text x="40" y="436">не одни, а среди текста.</text></g>
+    <g font-size="15" fill="#000" font-family="system-ui, sans-serif"><text x="14" y="470">100%  08:49</text><text x="400" y="470" text-anchor="middle">Глава 1. Картинки</text><text x="786" y="470" text-anchor="end">2/8  25%</text></g>
+  </g>
+  <g id="sheet">
+    <rect width="800" height="318" fill="#fff"/><line x1="0" y1="318" x2="800" y2="318" stroke="#000" stroke-width="2"/>
+    <g font-family="system-ui, sans-serif" fill="#000">
+      <text x="16" y="26" font-size="17">08:49</text><text x="706" y="26" font-size="17" text-anchor="end">100%</text><use href="#i-battery" x="712" y="11" width="40" height="20" color="#000"/>
+      <text x="16" y="62" font-size="20" font-weight="700">Яркость</text><text x="784" y="62" font-size="20" font-weight="700" text-anchor="end">57%</text>
+      <rect x="16" y="74" width="36" height="40" rx="6" fill="none" stroke="#000" stroke-width="2"/><text x="34" y="100" font-size="20" text-anchor="middle">−</text>
+      <rect x="66" y="74" width="590" height="40" rx="8" fill="none" stroke="#000" stroke-width="2"/><rect x="66" y="74" width="330" height="40" rx="8" fill="#000"/><rect x="384" y="70" width="28" height="48" rx="6" fill="#fff" stroke="#000" stroke-width="2"/>
+      <rect x="668" y="74" width="36" height="40" rx="6" fill="none" stroke="#000" stroke-width="2"/><text x="686" y="100" font-size="20" text-anchor="middle">+</text>
+      <rect x="720" y="72" width="44" height="44" rx="8" fill="none" stroke="#000" stroke-width="2"/><use href="#i-sun" x="728" y="80" width="28" height="28" color="#000"/>
+      <text x="16" y="152" font-size="20" font-weight="700">Теплота</text><text x="784" y="152" font-size="20" font-weight="700" text-anchor="end">80%</text>
+      <rect x="16" y="164" width="36" height="40" rx="6" fill="none" stroke="#000" stroke-width="2"/><text x="34" y="190" font-size="20" text-anchor="middle">−</text>
+      <rect x="66" y="164" width="660" height="40" rx="8" fill="none" stroke="#000" stroke-width="2"/><rect x="66" y="164" width="530" height="40" rx="8" fill="#000"/><rect x="584" y="160" width="28" height="48" rx="6" fill="#fff" stroke="#000" stroke-width="2"/>
+      <rect x="740" y="164" width="36" height="40" rx="6" fill="none" stroke="#000" stroke-width="2"/><text x="758" y="190" font-size="20" text-anchor="middle">+</text>
+    </g>
+    <rect x="370" y="305" width="60" height="5" rx="2.5" fill="#000"/>
+  </g>
+</defs></svg>
+
+<div class="flow">
+  <div class="step"><span class="n">1. Шторка открыта поверх книги</span>
+    <div class="scr land"><svg viewBox="0 0 800 480"><use href="#book"/><use href="#sheet"/>
+      <g transform="translate(0,232)">
+        <g transform="translate(80,0)"><use href="#tile" width="56" height="56"/><use href="#i-moon" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(230,0)"><use href="#tile" width="56" height="56"/><use href="#i-refresh" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(380,0)"><use href="#tile" width="56" height="56"/><use href="#i-orient" x="12" y="12" width="32" height="32" color="#000"/>
+          <circle cx="28" cy="28" r="42" fill="none" stroke="#000" stroke-width="2.5" stroke-dasharray="4 5"/></g>
+        <g transform="translate(530,0)"><use href="#tile-on" width="56" height="56"/><use href="#i-hand" x="12" y="12" width="32" height="32" color="#fff"/></g>
+        <g transform="translate(680,0)"><use href="#tile" width="56" height="56"/><use href="#i-bt" x="12" y="12" width="32" height="32" color="#000"/></g>
+      </g></svg></div>
+    <span class="t">Долгий тап по любой плитке, здесь — по «Ориентации». Обычный тап по плитке работает как сейчас.</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><span class="n">2. Сразу открываются настройки</span>
+    <div class="scr port"><svg viewBox="0 0 480 800"><rect width="480" height="800" fill="#fff"/>
+      <g font-family="system-ui, sans-serif" fill="#000">
+        <text x="20" y="34" font-size="20">08:49</text><text x="408" y="34" font-size="20" text-anchor="end">100%</text><use href="#i-battery" x="414" y="18" width="44" height="22" color="#000"/>
+        <text x="22" y="98" font-size="34">←</text><text x="66" y="98" font-size="32" font-weight="700">Плитки шторки</text>
+        <!-- rows: height 74; the cursor row (gray) is the tile that was long-tapped -->
+        <g font-size="26">
+          <g transform="translate(0,130)"><use href="#i-moon" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Ночной режим</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
+          <g transform="translate(0,204)"><use href="#i-refresh" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Очистка экрана</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
+          <g transform="translate(0,278)"><rect x="12" y="4" width="456" height="66" rx="12" fill="#c8c8c8"/><use href="#i-orient" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Ориентация</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
+          <g transform="translate(0,352)"><use href="#i-hand" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Сенсор</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
+          <g transform="translate(0,426)"><use href="#i-bt" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Bluetooth</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="412" y="20" width="32" height="32" rx="4" fill="#000"/><path d="M419 36l7 7 12-14" stroke="#fff" stroke-width="3.5" fill="none"/></g>
+          <g transform="translate(0,500)"><use href="#i-sleep" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Сон</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413.5" y="21.5" width="29" height="29" rx="4" fill="none" stroke="#000" stroke-width="3"/></g>
+          <g transform="translate(0,574)"><use href="#i-flash" x="26" y="16" width="38" height="38" color="#000"/><text x="80" y="46">Фонарик</text><text x="318" y="46" font-size="24">▲</text><text x="360" y="46" font-size="24">▼</text><rect x="413.5" y="21.5" width="29" height="29" rx="4" fill="none" stroke="#000" stroke-width="3"/></g>
+        </g>
+      </g></svg></div>
+    <span class="t">«Плитки шторки»: галочка — плитка в шторке, ▲ ▼ — место в ряду. Курсор стоит на той плитке, по которой был долгий тап.</span></div>
+  <div class="arrow">→</div>
+  <div class="step"><span class="n">3. Шторка после правки</span>
+    <div class="scr land"><svg viewBox="0 0 800 480"><use href="#book"/><use href="#sheet"/>
+      <g transform="translate(0,232)">
+        <g transform="translate(60,0)"><use href="#tile" width="56" height="56"/><use href="#i-moon" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(176,0)"><use href="#tile" width="56" height="56"/><use href="#i-sleep" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(292,0)"><use href="#tile" width="56" height="56"/><use href="#i-refresh" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(408,0)"><use href="#tile" width="56" height="56"/><use href="#i-orient" x="12" y="12" width="32" height="32" color="#000"/></g>
+        <g transform="translate(524,0)"><use href="#tile-on" width="56" height="56"/><use href="#i-hand" x="12" y="12" width="32" height="32" color="#fff"/></g>
+        <g transform="translate(640,0)"><use href="#tile" width="56" height="56"/><use href="#i-bt" x="12" y="12" width="32" height="32" color="#000"/></g>
+      </g></svg></div>
+    <span class="t">Пример: «Сон» отмечен галочкой и поднят ▲ на второе место — в шторке шесть плиток.</span></div>
+</div>
+
+<p class="notes"><b>Открыто, решаю сам, если не скажешь иначе:</b> «Назад» с экрана «Плитки шторки» возвращает в книгу, откуда
+   пришёл долгий тап; экран «Плитки шторки» также есть в меню «Настройки → Экран».<br>
+   <b>Открыто для тебя:</b> хватает ли семи плиток (ночной режим, очистка экрана, ориентация, сенсор, Bluetooth, «Сон»,
+   «Фонарик»).</p>
+</main>
+</body>
+</html>
