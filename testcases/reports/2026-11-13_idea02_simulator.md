@@ -33,6 +33,8 @@ All runs: `SD_TEMPLATE=sd_book_images SIM_ENV=simulator_x4_pro_win sh tools/sim_
 | 8 | 2026-11-13 11:22 +03:00 | `idea02_find_p` · three side taps on text | 0 · the tall picture is on page 4 |
 | 9 | 2026-11-13 11:22 +03:00 | `idea02_c5` · to page 4, `TAP:0.5,0.45`, Back, next page | 0 · see C5 |
 | 10 | 2026-11-13 11:24 +03:00 | `idea02_k3_debug8` (debug8 build) · `3000:TAP:0.5,0.40;6500:QUIT` | 0 · menu, no viewer |
+| 11 | 2026-11-13 11:27 +03:00 | `idea02_smoke_final` (`35dc070c`, the image's code) · side tap on pic 1, Back, pages, tap on pic 2, Back | 0 · viewer → 1/8, viewer → 4/8 |
+| 12 | 2026-11-13 11:34 +03:00 | `idea02_c7_png` · to page 6, `TAP:0.5,0.37`, Back | 0 · PNG full screen → 6/8 |
 
 ## 4. Checks
 
@@ -49,6 +51,7 @@ WebP shots and the log lines READ for every case below.
 | C4 | pass | tap inside picture 1 at x=0.83 (the right page-turn zone) → the viewer, not page 2 |
 | C5 | pass | full-page tall picture on page 4 → viewer shows it full height; Back → 4/8 |
 | C6 | skipped | the simulator repaints the page ~13 ms after the pop, so a second swipe cannot land inside the window; the device check (homework) covers it |
+| C7 | pass | the small PNG picture 3 (240×160) on page 6 → the viewer scales it to the full screen; Back → 6/8 (`idea02_c7_png`) |
 | K1 | pass | centre tap on text (page 2) → the toolbar menu |
 | K2 | pass | side tap on text (caption line, x=0.95) → page 2/8 |
 | K3 | pass | the same picture tap on debug8 → the toolbar menu, no viewer — the feature is what changed it |

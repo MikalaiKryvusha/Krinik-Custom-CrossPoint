@@ -42,7 +42,7 @@ same page; taps outside pictures keep doing what they did.
 | C4 | C1 → `TAP` inside picture 1 near its right end (a side zone) → the viewer, not page 2 | decision table (R3 side) | pass — [TESTED: 2026-11-13 · tap x=0.83 → viewer · testcases/reports/2026-11-13_idea02_simulator.md] |
 | C5 | page with the tall picture 2 (fills the page) → `TAP` on it → viewer; swipe Back → same page | boundary (full-page picture) | pass — [TESTED: 2026-11-13 · page 4/8 → viewer → 4/8 · testcases/reports/2026-11-13_idea02_simulator.md] |
 | C6 | C2 → two Back `SWIPE`s ~300 ms apart (the second while the picture is still on the glass) → book page 1, NOT the page before; log `Back swipe before the page repaint ignored` | error guessing (judge finding 7) | skipped in the simulator (repaint ~13 ms) — device check, homework 04 |
-| C7 | the page with the small PNG picture 3 → `TAP` on it → the viewer shows it full screen; Back → the same page | partition (PNG: 77 of the sample book's 180 pictures) | [NOT-TESTED] |
+| C7 | the page with the small PNG picture 3 → `TAP` on it → the viewer shows it full screen; Back → the same page | partition (PNG: 77 of the sample book's 180 pictures) | pass — [TESTED: 2026-11-13 · page 6/8 PNG → viewer full screen → 6/8 · testcases/reports/2026-11-13_idea02_simulator.md] |
 
 ## 5. Control cases
 
