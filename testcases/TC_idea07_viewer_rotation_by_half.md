@@ -61,3 +61,20 @@ orientation set in Settings; this set runs on the code where the renderer stays 
 | C7 | C6 → long tap at (0.75, 0.5) of the NEW frame → log `right half`, turns 2 | use case (R5) | pass — [TESTED: 2026-11-13 · log x=359 of 480 right half, turns 2 / x=199 left, turns 1 · testcases/reports/2026-11-13_idea07_08_simulator.md] |
 | C8 | C7 → long tap at (0.25, 0.5) → log `left half`, turns 1 | use case (R5) | pass — [TESTED: 2026-11-13 · log x=359 of 480 right half, turns 2 / x=199 left, turns 1 · testcases/reports/2026-11-13_idea07_08_simulator.md] |
 | C9 | C8 → `SWIPE` from the left edge of the current frame → book page 1 | control (R6) | pass — [TESTED: 2026-11-13 · Back from the turned frame → page 1/8 · testcases/reports/2026-11-13_idea07_08_simulator.md] |
+
+## 7. Third set — the keys (the owner, 2026-11-13 16:01–16:02)
+
+Basis: «А — листают картинки, как и было» (R7) · «Лонг-нажатием можно сделать вразение» (R8); `[AI]` the forward key
+clockwise, the back key counterclockwise. Stand: a temporary card with two pictures in one folder, the viewer opened from
+«Обзор файлов» (file-browser mode — a book picture has no siblings to page to).
+
+| # | Requirement (EARS) | Fit criterion |
+|---|---|---|
+| R7 | WHEN the reader presses a page key shortly in the viewer, the viewer shall show the next (previous) picture of the folder, once. | log `Show 2/2` after the release; no `rotate` line |
+| R8 | WHEN the reader holds a page key past 700 ms, the viewer shall turn the picture (forward key clockwise, back key counterclockwise) and shall not page. | log `long press forward -> rotate clockwise` / `back -> counterclockwise`, `View turns`, and no `Show` line for that press |
+
+| # | Case (steps → expected) | Technique | Status + evidence |
+|---|---|---|---|
+| C10 | viewer on picture 1 → short press of the forward key → picture 2 (`Show 2/2`) | use case (R7) | not run |
+| C11 | then hold the forward key 1000 ms → `View turns: 1`, still picture 2 | use case (R8) | not run |
+| C12 | then hold the back key 1000 ms → `View turns: 0`, still picture 2 | use case (R8) | not run |

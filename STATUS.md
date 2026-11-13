@@ -26,6 +26,13 @@ work project. From now on it is a standalone project.
   picture closes the book skips screen touches until its page repaints (≤ 3 s; device time is logged). Simulator C6–C9
   pass (`testcases/reports/2026-11-13_idea07_08_simulator.md`); five judge passes, two shapes refused (EXP-0016).
   The keys PAGE the pictures as before — the owner 16:01 «А — листают картинки, как и было» (no code change).
+- **In flight 16:04 — idea 07 keys (the owner 16:01–16:02):** short press of a page key pages the pictures, a LONG
+  press turns the picture (`[AI]` forward key clockwise, back key counterclockwise); code uncommitted in
+  `BmpViewerActivity.cpp` (`wasLongPressed` before `detectPageTurn(input, /*pageOnRelease=*/true)`) and
+  `ReaderUtils.h` (the new default parameter); a judge is reading; then build + cases C10–C12
+  (`testcases/TC_idea07_viewer_rotation_by_half.md` §7) on the temporary card `qa_runs/sd_viewer_keys_tmp` (two pictures
+  in `pics/`, open from «Обзор файлов»; delete the card after the run). No interim image (the owner 16:02 «пока нет.
+  работаем дальше»). After it: epic 01 Ф2 P2.3. Context window 80 % at 16:03 — close the chat soon (`/end-chat-soft`).
 - **Idea 05 = epic 01** (heaviness 2 of 5): research `researches/2026-11-13_idea05_shade_tiles_epic.md` (AOSP tile
   list, WCAG 2.5.7 up/down, CSS space-evenly, long tap → tile settings); meta-plan `plans/01_EPIC_shade_tiles.md`
   (Russian; phases Ф1 model+storage → Ф2 the «Плитки шторки» screen → Ф3 the shade row, new tiles, icons, long tap →
