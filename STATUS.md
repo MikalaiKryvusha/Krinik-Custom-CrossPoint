@@ -6,6 +6,20 @@ work project. From now on it is a standalone project.
 
 ## Where to continue
 
+- **msys64 moved (owner 14:06 «D:\msys64\ давай переместим в F:\ai_sandbox\»)** — now `F:\ai_sandbox\msys64`
+  (robocopy 14:09, 60 379 files / 2 293 125 441 bytes both sides); paths fixed: `firmware/platformio.local.ini`,
+  `tools/sim_run.sh`, AGENT_GUIDE Build, research 01, Start-menu shortcuts, HKCU uninstall entry. The old folder is
+  RENAMED `D:\msys64.moved-2026-11-13`; checked on F: alone — clean simulator build 271 files (0 from cache) SUCCESS,
+  host tests 761/769 (the 8 are native-Windows portability, research 01), simulator runs with SDL2.dll from F:. The
+  agent's delete of the old copy was refused by the permission rules → **`Udalit staryj msys64 (KCCP).cmd` on the
+  owner's desktop** (checks F: first, removes the old copy, deletes itself) — waits for his double-click. Not ours to
+  fix: Vibepollo/KAST build caches name `D:/msys64` (KAST's own MSYS2 was removed 2026-10-15; its plan 01 reinstalls to `D:\msys64`).
+- **Idea 07 built and simulator-tested** on `wip/krinik-debug10` `9f02db5f` (from debug9, local): right-half long tap
+  clockwise, left-half counterclockwise; judge no blockers; cases D0, C1–C5 pass
+  (`testcases/reports/2026-11-13_idea07_simulator.md`). **Open with the owner:** after he turns the reader in his hands,
+  whose halves — A as held for reading (built) or B of the upright picture (recommended) — asked in chat 14:20. The
+  device image comes with idea 05 (his «делаем» = one debug10). Next: idea 05 → `/plan-epic` (heaviness 2 of 5: ≥3
+  subsystems, more than one session).
 - **Chat 2026-11-13 10:34 → 13:35 closed — features for KCCP 1.1.3** (the owner's task under `resume`). Results:
   - **Idea 02 (tap a book picture → full screen, swipe Back → the same page): built.** `wip/krinik-debug9`
     (`526c7452` + `35dc070c`, local in `firmware/`, not pushed) = debug8 + the picture tap + battery log OFF; judged
@@ -177,6 +191,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
+| debug10 = debug9 + idea 07 (long tap turns by half); idea 05 next — local, not pushed | crosspoint-reader · `wip/krinik-debug10` | 9f02db5f |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |
 | simulator fix: a plain refresh ends the absolute gray mode (bugs/06) — local, not pushed | crosspoint-simulator · `fix/gray-absolute-reset` (from `windows` = PR #62) | 49ded1a |
 | debug2–5 work (was uncommitted on top of `nikolai-debug`) | `MikalaiKryvusha/crosspoint-reader` · `wip/krinik-debug5` | 78cfbf36 |

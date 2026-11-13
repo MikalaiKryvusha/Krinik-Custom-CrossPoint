@@ -1,7 +1,7 @@
 # Idea 07 — in the image viewer a long tap on the right half turns the picture clockwise, on the left half counterclockwise
 
 > **Created:** 2026-11-13 (the owner's request, chat — asked under `resume`, right after his debug9 check) · **Parent:**
-> `ideas/02_image_fullscreen_on_tap.md` (the same viewer) · **Status:** 🔬 recon of the code done 2026-11-13 13:53 +03:00; answered
+> `ideas/02_image_fullscreen_on_tap.md` (the same viewer) · **Status:** 🔧 built and simulator-tested 2026-11-13 14:31 +03:00 on `wip/krinik-debug10` `9f02db5f` (report `testcases/reports/2026-11-13_idea07_simulator.md`); the image comes with idea 05; recon of the code done 2026-11-13 13:53 +03:00; answered
 > «можно» in chat, implementation offered for debug10 together with idea 05; the owner's go-ahead 2026-11-13 14:03 +03:00
 > («делаем») · **Outbound:** —
 
@@ -49,20 +49,20 @@ half of the screen — clockwise, the left half — counterclockwise.
 counterclockwise (criteria 1–4 above; the checks run on the simulator, the owner's reader is the last stand).
 
 **Steps:**
-- [ ] S1. Test pictures get an orientation mark: `tools/make_image_test_epub.py` draws a filled black triangle in the
+- [x] S1. Test pictures get an orientation mark: `tools/make_image_test_epub.py` draws a filled black triangle in the
       top-left corner of every picture (sizes unchanged → the book's pages unchanged); regenerate
       `qa_runs/sd_book_images/image_test.epub`. Reason: the diagonal bands look the same after a quarter turn either way.
-- [ ] S2. Observe the CURRENT direction on debug9 (`35dc070c`, the built simulator binary): open picture 1, long tap,
+- [x] S2. Observe the CURRENT direction on debug9 (`35dc070c`, the built simulator binary): open picture 1, long tap,
       shot. This fixes which sign of `viewTurns` is clockwise on screen.
-- [ ] S3. Firmware `wip/krinik-debug10` from `wip/krinik-debug9`: `rotate(int quarterTurns)`; `loop()` takes the sign
+- [x] S3. Firmware `wip/krinik-debug10` from `wip/krinik-debug9`: `rotate(int quarterTurns)`; `loop()` takes the sign
       from `touchX` against half the screen width (reading orientation); an `LOG_INF` line names the half and the
       direction; the comment carries `[NOT-TESTED]`; `CROSSPOINT_VERSION` → `-debug10`.
-- [ ] S4. Independent judge (a fresh agent with the diff and this idea, not my conclusions) BEFORE the build; fix findings.
-- [ ] S5. Build `simulator_x4_pro_win`; run the case set `testcases/TC_idea07_viewer_rotation_by_half.md`:
+- [x] S4. Independent judge (a fresh agent with the diff and this idea, not my conclusions) BEFORE the build; fix findings.
+- [x] S5. Build `simulator_x4_pro_win`; run the case set `testcases/TC_idea07_viewer_rotation_by_half.md`:
       R (right long tap → clockwise), L (left → counterclockwise), RL (right then left → the first view),
       K1 (short side tap in the viewer still pages, swipe Back still returns to the book page), control (debug9: a left
       long tap turns the same way as a right one). Run report `testcases/reports/2026-11-13_idea07_simulator.md`.
-- [ ] S6. Commit locally; the device image waits for idea 05 in the same debug10 (the owner: one build for both).
+- [x] S6. Commit locally; the device image waits for idea 05 in the same debug10 (the owner: one build for both).
 
 **Verification:** the case set and the run report above (both born in S5); the shots `qa_runs/idea07_*/shots/*.webp`
 show the triangle's corner after each long tap; the log shows the `LOG_INF` line with the half.
@@ -75,3 +75,16 @@ show the triangle's corner after each long tap; the log shows the `LOG_INF` line
    (a picture with text).
 3. A long tap near the middle lands on the "wrong" half. Reaction: none needed — the owner asked for halves; the
    boundary is the middle by his words.
+
+## Judge (S4, a fresh agent on the uncommitted diff vs `35dc070c`, 2026-11-13 14:19 +03:00) — no blockers
+
+- Checks done by derivation: every viewer path ends on `holdOrientation()` before `loop()` reads a touch (paint,
+  message, sleep cover, return from the control center), so `tapToLogical` and `getScreenWidth()` share one frame;
+  `+1` is clockwise and `-1` counterclockwise for all four reading orientations and every `viewTurns`; the modulo stays
+  in 0..3; the input order of `loop()` is unchanged; the `LOG_INF` arguments match.
+- NIT fixed: the `drawOrientation()` comment now says "net clockwise quarter turns (a left-half long tap counts -1)".
+- MINOR (meaning, not code): the halves are judged in the READING orientation. If the owner turns the reader in his
+  hands to look at a turned picture upright, the next long tap's halves run across his new view. The two readings —
+  A: the halves as he holds the reader for reading (built) · B: the halves of the picture as it stands upright — put
+  to the owner in chat 2026-11-13 14:20 +03:00, recommendation B; the first long tap is the same under both, so S5
+  runs meanwhile.
