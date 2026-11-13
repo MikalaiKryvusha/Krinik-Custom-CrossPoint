@@ -30,6 +30,8 @@ if [ "${SKIP_BUILD:-0}" != 1 ]; then
   cmake --build "$FW/build/test" -- -k 0 >"$BUILD_LOG" 2>&1  # the known NOT_BUILT targets fail here by design
 fi
 (cd "$FW/build/test" && ctest -j1 >"$CTEST_LOG" 2>&1)
+# The known-failing CssParserTest leaves its scratch folder in TEMP (= .tmp/): remove it with the run (HOUSE_RULES П1).
+rm -rf "$TMPD/crosspoint_css_parser_test"
 SUMMARY=$(grep -m1 "tests passed" "$CTEST_LOG")
 [ -n "$SUMMARY" ] || { echo "host_tests: no ctest summary in $CTEST_LOG"; exit 2; }
 echo "host_tests: $SUMMARY"

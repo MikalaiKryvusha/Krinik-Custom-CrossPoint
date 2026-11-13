@@ -41,13 +41,16 @@ tap on a button opens «Кнопки в шторке» on that button, and Back 
 | D1 | Book (`sd_book_images`) → top-edge swipe → shade: four buttons Ночной режим (half-filled circle), Очистка, Ориентация, Сенсор; equal gaps at the edges and between (shot) | smoke (R1) | not run |
 | D2 | D1 → long tap on «Ориентация» (third) → `Long tap on orientation`, `Entering activity: ShadeTiles`; portrait shot with the pill on «Ориентация» | use case (R2) | not run |
 | D3 | D2 → swipe Back → two `Popped`; the shot = the book page in landscape, no shade | use case (R3) | not run |
-| D4 | D1 → long tap on «Ночной режим» → the screen; tap «Сон» ☑, ▲ ×4 on «Сон» → Back → book; open the shade again → five buttons, «Сон» (moon) second (shot); `settings.json` lists `sleep` second | use case (meta criterion 2) | not run |
+| D4 | D1 → long tap on «Ночной режим» → the screen; tap «Сон» ☑, ▲ ×3 on «Сон» (the meta-plan's ×4 counts the Bluetooth row the simulator hides: «Сон» is 5th here) → Back → book; open the shade again → five buttons, «Сон» (moon) second (shot); `settings.json` lists `sleep` second | use case (meta criterion 2) | not run |
 | D5 | Card with «Фонарик» on (a hand-written `shadeTiles` with `flashlight` on) → shade → tap «Фонарик» → `Entering activity: Flashlight` (shot: the lamp button upright in the shade before the tap); tap → two `Popped` → the book page | use case (R4) | not run |
 | D6 | Card with «Сон» on → shade → tap «Сон» → the sleep entry in the log (shot of the sleep screen) | use case (R5) | not run |
 | D7 | Home → Settings → «Экран» → «Кнопки в шторке» → top-edge swipe (the shade over the screen) → long tap on a button → the shade closes; ONE `Entering activity: ShadeTiles` in the log | control (R6) | not run |
 | D8 | Each old button by one tap in the shade over the book: night mode inverts, cleanup closes the shade, orientation cycles, touch toggles (shots/log) | regression | not run |
 
 ## 5. Not covered — said aloud
+
+- Coordinates (landscape book, row y 0.5875): four buttons at x 0.191 · 0.397 · 0.628 · 0.859; six at 0.132 · 0.279 ·
+  0.426 · 0.574 · 0.721 · 0.868 (`tileLeft` over the 768 px row from x 16, button 56 px).
 
 - Seven buttons (Bluetooth), the slide-switch-owned buttons, the panel's look — the owner's reader.
 - R7 (a resting finger on a slider, then a drag): the simulator script has TAP (a hold in place) and SWIPE (a moving
