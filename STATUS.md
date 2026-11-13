@@ -25,7 +25,7 @@ work project. From now on it is a standalone project.
   кнопки крутят в одном направлении» · «одна кнопка в одном, вторая - в противоположном»), and after a turned book
   picture closes the book skips screen touches until its page repaints (≤ 3 s; device time is logged). Simulator C6–C9
   pass (`testcases/reports/2026-11-13_idea07_08_simulator.md`); five judge passes, two shapes refused (EXP-0016).
-  **Open with the owner:** do the keys PAGE the pictures (A, as now) or ROTATE the picture (B) — asked 15:22.
+  The keys PAGE the pictures as before — the owner 16:01 «А — листают картинки, как и было» (no code change).
 - **Idea 05 = epic 01** (heaviness 2 of 5): research `researches/2026-11-13_idea05_shade_tiles_epic.md` (AOSP tile
   list, WCAG 2.5.7 up/down, CSS space-evenly, long tap → tile settings); meta-plan `plans/01_EPIC_shade_tiles.md`
   (Russian; phases Ф1 model+storage → Ф2 the «Плитки шторки» screen → Ф3 the shade row, new tiles, icons, long tap →

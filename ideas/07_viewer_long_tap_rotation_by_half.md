@@ -127,5 +127,6 @@ picture as it stands upright. The long-tap code keeps `touchX >= width / 2`, now
 - ~~`[AI]` The side and front keys follow the picture too~~ — REFUTED by the owner the same minute:
   `[OWNER] 2026-11-13 15:20 +03:00 · chat:` «НЕТ! ФИзические кнопки крутят в одном направлении» · 15:21 «одна кнопка в
   одном, вторая - в противоположном». The keys are read in the reading orientation set in Settings (as in debug9);
-  only touches follow the picture. Whether the keys PAGE the pictures (as now) or ROTATE the picture (one clockwise,
-  the other counterclockwise) — asked in chat 15:22.
+  only touches follow the picture. Asked 15:22 whether the keys PAGE the pictures or ROTATE the picture — the answer
+  `[OWNER] 2026-11-13 16:01 +03:00 · chat:` «А — листают картинки, как и было». No code change: the keys page the
+  pictures (`openSibling`) in the reading orientation, as built in `8538f3dd`.
