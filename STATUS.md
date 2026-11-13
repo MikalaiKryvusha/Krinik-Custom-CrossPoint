@@ -9,8 +9,8 @@ work project. From now on it is a standalone project.
 - **Chat 2026-11-13 10:34 (in progress) — features for KCCP 1.1.3** (the owner's task): idea 02 (tap a book picture →
   full screen, swipe Back → the book) on `wip/krinik-debug9` (`35dc070c`, local): judged ×3, host test, simulator
   C1–C5, C7, K1–K3 pass (`testcases/reports/2026-11-13_idea02_simulator.md`); image `cp-2.0.0-krinik-1.1.1-debug9.bin`
-  (SHA256 `6b5f4f36…`) in `firmware-builds/`, **NOT on the card yet — the reader left the wire between 11:06 and 11:29**; homework 04
-  waits for it (then: copy to `/.firmware/`, eject, read the serial log during the owner's check). The simulator's
+  (SHA256 `6b5f4f36…`) in `firmware-builds/`, **on the card since 11:47 (SHA256 checked there; card = debug9 + debug8 + 1.1.2, debug7 removed; reader ejected)**; homework 04
+  waits for the owner's check (serial logger: scratchpad `serial_debug9.log`, VID 303A). The simulator's
   stale gray mode = `bugs/06` (fixed locally, `simulator` branch `fix/gray-absolute-reset`). Idea 03 (keep a caption
   with its picture): recon + research done, direction = re-typeset tool + the firmware keeps a `<figure>` on one page,
   caption styled by the GOSTs / the BSUIR standard (the owner, 11:13) — read them first. Idea 04 (FB2 → EPUB on the
@@ -26,7 +26,7 @@ work project. From now on it is a standalone project.
      firmware PRs #4328 #4332 #4375 #4376 #4377:
      `gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`.
      PR #62 at 02:10 +03:00: head `087cb54`, mergeable; CodeRabbit round 1 — all 4 threads resolved, the outside-diff finding acknowledged; `@coderabbitai review` → 02:16 «No actionable comments were generated in the recent review» over `ad131dc..087cb54`, check pass. **Goal reached (owner 01:36): no CodeRabbit remarks, the PR waits for a maintainer.** Replies: `qa_runs/pr-simulator-windows/replies-round1.md`.
-  3. The reader card holds debug8 + debug7 + 1.1.2 (`/.firmware/`); the owner runs debug8.
+  3. The reader card holds debug9 + debug8 + 1.1.2 (`/.firmware/`, 2026-11-13 11:47); the owner installs debug9.
 - **Open work, in order:**
   1. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — waits for a free upstream slot (5/5 open) and the
      owner's proofreading of the PR text.
