@@ -71,7 +71,8 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   pending) — the shade can close right behind a screen it pushed with no shade frame in between (epic 01 Ф3). Pop with
   an empty stack goes Home. `GUI.drawHeader` registers the header's back arrow as a tap target (`HeaderBackTapTarget`,
   cleared on a push). `goToFlashlight()` REPLACES (the book closes) and `FlashlightActivity` leaves by `goHome()`.
-- `src/activities/util/FrontlightPanelActivity.cpp` — the shade (control center): grabber, brightness / warmth sliders,
+- `src/activities/util/FrontlightPanelActivity.{h,cpp}` — the shade (control center; the header holds its one-shot
+  close flags `themeApplying` · `refreshTileUsed` · `goingToSleep`): grabber, brightness / warmth sliders,
   the tile row (five hard-coded tiles until epic 01 Ф3 draws the row from `ShadeTiles`). The simulator is built without
   Bluetooth (`FREEINK_CAP_BLE_HID_HOST` off → `bleturner::status().compiledIn` false), so there the row has four tiles.
 - `src/activities/UiListActivity.cpp` — the base of single-list screens (FreeInkUI `list()`, swipes scroll, keys move
