@@ -17,8 +17,15 @@ work project. From now on it is a standalone project.
 - **Idea 07 built and simulator-tested** on `wip/krinik-debug10` `9f02db5f` (from debug9, local): right-half long tap
   clockwise, left-half counterclockwise; judge no blockers; cases D0, C1–C5 pass
   (`testcases/reports/2026-11-13_idea07_simulator.md`). **Open with the owner:** after he turns the reader in his hands,
-  whose halves — the owner chose B 14:54 «половины давай считать по картинке, убедил»: by the picture as it stands upright (code change in flight). The
+  whose halves — the owner chose B 14:54 «половины давай считать по картинке, убедил», then 15:05 every viewer gesture by the picture «как смотришь на картинку, так и управляешь, да, логично» (code change in flight). The
   device image comes with idea 05 (his «делаем» = one debug10).
+- **debug10 now (firmware, local, not pushed):** `435d2493` epic 01 Ф1 · `52212d81` idea 08 «Настройки сна» (simulator
+  S3 pass) · `8538f3dd` viewer: every TOUCH follows the picture as it stands (halves, swipes, Back), the KEYS keep the
+  reading orientation (`MappedInputManager::setKeysFollowReadingOrientation`; the owner 15:20–15:21 «НЕТ! ФИзические
+  кнопки крутят в одном направлении» · «одна кнопка в одном, вторая - в противоположном»), and after a turned book
+  picture closes the book skips screen touches until its page repaints (≤ 3 s; device time is logged). Simulator C6–C9
+  pass (`testcases/reports/2026-11-13_idea07_08_simulator.md`); five judge passes, two shapes refused (EXP-0016).
+  **Open with the owner:** do the keys PAGE the pictures (A, as now) or ROTATE the picture (B) — asked 15:22.
 - **Idea 05 = epic 01** (heaviness 2 of 5): research `researches/2026-11-13_idea05_shade_tiles_epic.md` (AOSP tile
   list, WCAG 2.5.7 up/down, CSS space-evenly, long tap → tile settings); meta-plan `plans/01_EPIC_shade_tiles.md`
   (Russian; phases Ф1 model+storage → Ф2 the «Плитки шторки» screen → Ф3 the shade row, new tiles, icons, long tap →

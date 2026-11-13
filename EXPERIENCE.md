@@ -81,6 +81,22 @@
 
 ## Entries
 
+### EXP-0016 · 2026-11-13 · ❌→✅ · #input #gesture #twins #firmware
+class: twins-missed
+none-cheap: the twin is a second consumer of one physical gesture; the carrier is the Repro grep below
+**Context:** idea 07 — after a turned book picture closes, a second fast swipe must not act in the book. First fix: the
+activity manager skipped its control-center swipe while the reader held touch.
+**Result:** ❌ the judge: the reader's own menu gesture (`isTouchMenuGesture` → `wasMenuGesture`) is the SAME top-edge
+swipe (`wasLightPanelGesture` and `wasMenuGesture` both = `wasTopEdgeDownSwipe`) — silencing one consumer handed the
+swipe to the other; link, picture and long-press taps also still acted. ✅ Rework: one gate over the whole touch frame
+(`gpio.wasTouchActivity()` → skip + `suppressTouchContact()`), bounded in time.
+**Lesson:** to silence touch for a while, gate the touch FRAME before any consumer reads it — never one gesture by
+name: one physical motion has several names in the input layer and several consumers.
+**Repro:** before silencing a gesture `X`, `git grep -n "was.*Swipe\|Gesture()" -- src lib/hal | grep -i "<the motion>"`
+lists every alias and consumer.
+**Trigger:** writing any "ignore gesture X while Y" condition.
+**Not for:** a gesture with exactly one consumer and no alias (checked by the grep).
+
 ### EXP-0015 · 2026-11-13 · ❌→✅ · #simulator #script #wait
 class: false-defect
 mechanized: tools/sim_run.sh — the script guard refuses an item without `<ms>:` and an item earlier than the one before it in its WAIT segment (red on both scripts below, 2026-11-13)
@@ -130,7 +146,9 @@ mechanized: .kaif/hooks/clock-now.mjs — write the NOW placeholder (the word NO
 same hour against `git log --format='%h %ci'` and corrected in place.
 **Repro:** after writing stamps, `git log --format='%h %ci %s' -10` → each stamp ≤ the commit time of its document.
 **Trigger:** typing any `HH:MM` of our own moment into a document.
-**Not for:** the owner's message times quoted from the clock hook's line.
+**Not for:** the owner's message times quoted from the clock hook's line. The hook fills the placeholder only in a
+Write / Edit / MultiEdit of the file — a script (sed, a heredoc, Python) that writes it leaves it raw: there, put
+`$(date …)` into the script instead (2026-11-13: a raw placeholder in `ideas/08`, caught by grep the same minute).
 
 ### EXP-0011 · 2026-11-13 · ❌→✅ · #epub #lint #tools
 class: missing-dependency
@@ -141,6 +159,7 @@ none-cheap: one-line S3 note; the lint itself should say «xmllint not found» �
 **Trigger:** an `undefined` in the XHTML lines of `epub_lint.mjs`.
 **Not for:** the link/manifest checks of the same lint, which do not need xmllint.
 
+<!-- class-ok: twins-missed — two unlike faces (EXP-0005 a regex rename matching extra C++ sites; EXP-0016 two consumers of one input gesture under different names); each face carries its own grep Repro, and a guard for the whole class would be a general code-search policy, not cheaply possible; the judge pass before every build is what caught EXP-0016 -->
 <!-- class-ok: shell-lied — two unlike faces of Windows defaults (cp1251 stdout for Python, CRLF checkout); each is closed at its source (PYTHONUTF8=1 in the AGENT_GUIDE Build line, core.autocrlf=false in the firmware clone); a build wrapper that sets both is the mechanism to add next -->
 
 ### EXP-0010 · 2026-11-10 · ❌→✅ · #shell #cwd #parallel

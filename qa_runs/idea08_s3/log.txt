@@ -1,0 +1,57 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-13 12:56
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[252] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[253] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[253] [DBG] [SDREG] Fonts directory not found: /fonts
+[253] [DBG] [SDREG] Discovery complete: 0 families
+[253] [DBG] [SDFS] SD font system ready (0 families discovered)
+[253] [DBG] [MAIN] Fonts setup
+[253] [DBG] [ACT] Entering activity: Boot
+[253] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[262] [DBG] [ACT] Exiting activity: Boot
+[262] [DBG] [ACT] Entering activity: Home
+[262] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [262] [DBG] [ACT] Entering activity: Home
+[276] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1855] [DBG] [ACT] Exiting activity: Home
+[1855] [DBG] [ACT] Entering activity: SettingsList
+[1856] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1855] [DBG] [ACT] Entering activity: SettingsList
+[3453] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3453] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[3453] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[3454] [DBG] [DREG] No /.dictionaries directory on SD card
+[3454] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [3453] [DBG] [ACT] Entering activity: Settings
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/shots/display.bmp
+[5551] [DBG] [ACT] Pushed to activity stack, new size = 2
+[5551] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[5552] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[5552] [DBG] [DREG] No /.dictionaries directory on SD card
+[5553] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [5551] [DBG] [ACT] Entering activity: Settings
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/shots/sleep.bmp
+[8376] [DBG] [ACT] Exiting activity: Settings
+[8376] [DBG] [ACT] Popped from activity stack, new size = 1
+[8376] [DBG] [ACT] Handling result for popped activity
+[8376] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [8376] [DBG] [ACT] Popped from activity stack, new size = 1
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea08_s3/shots/back.bmp
+[10001] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10001] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes

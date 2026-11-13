@@ -43,3 +43,21 @@ Achieve: the owner turns a picture in the viewer toward the side he long-taps, a
 ## 5. Not covered — said aloud
 
 - The second fast Back swipe and the heap under the viewer stay with homework 04 (debug9), unchanged by this idea.
+
+## 6. Second set — every gesture follows the picture (the owner, 2026-11-13 14:54 and 15:05)
+
+Basis: «половины давай считать по картинке, убедил» (R5) · «как смотришь на картинку, так и управляешь, да, логично»
+(R6) — `ideas/07` → the two last sections. The first set (C1–C5) ran on `9f02db5f`, where the halves followed the
+orientation set in Settings; this set runs on the code where the renderer stays in the picture's orientation.
+
+| # | Requirement (EARS) | Fit criterion |
+|---|---|---|
+| R5 | WHEN the picture is turned and the reader long-taps the right half OF THE PICTURE as it stands upright, the viewer shall turn it clockwise again. | log: the second right long tap names the right half and the turn count rises to 2 |
+| R6 | WHILE a picture is turned, the viewer shall read every touch in the picture's orientation. | the simulator shot after a turn is in the picture's orientation (portrait for a quarter turn from landscape) with the picture upright; the Back swipe from the picture's left edge returns to the book |
+
+| # | Case (steps → expected) | Technique | Status + evidence |
+|---|---|---|---|
+| C6 | C1 → long tap at (0.75, 0.5) → log `right half`, turns 1; the shot is portrait, the picture upright, triangle top-left | state transition (R6) | pass — [TESTED: 2026-11-13 · portrait shot, picture upright, turns 1 · testcases/reports/2026-11-13_idea07_08_simulator.md] |
+| C7 | C6 → long tap at (0.75, 0.5) of the NEW frame → log `right half`, turns 2 | use case (R5) | pass — [TESTED: 2026-11-13 · log x=359 of 480 right half, turns 2 / x=199 left, turns 1 · testcases/reports/2026-11-13_idea07_08_simulator.md] |
+| C8 | C7 → long tap at (0.25, 0.5) → log `left half`, turns 1 | use case (R5) | pass — [TESTED: 2026-11-13 · log x=359 of 480 right half, turns 2 / x=199 left, turns 1 · testcases/reports/2026-11-13_idea07_08_simulator.md] |
+| C9 | C8 → `SWIPE` from the left edge of the current frame → book page 1 | control (R6) | pass — [TESTED: 2026-11-13 · Back from the turned frame → page 1/8 · testcases/reports/2026-11-13_idea07_08_simulator.md] |

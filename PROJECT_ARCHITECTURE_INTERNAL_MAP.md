@@ -57,12 +57,16 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
 - `src/activities/util/BmpViewerActivity.cpp` — the file browser's full-screen image viewer (BMP/JPEG/PNG through the
   panel curve, cache `/.crosspoint/view_*.bmp`, siblings of the folder, long tap rotates); opened by
   `ActivityManager::goToReader` for an image file (replace), and since debug9 pushed over the book reader for a tapped
-  book picture (idea 02). The picture is painted in `drawOrientation()` (reading orientation + long-tap turns); the
-  renderer is set back to `holdOrientation()` right after, so touch points (`wasScreenLongPress`, taps) arrive in the
-  reading orientation set in the reader's settings (idea 07 builds on this).
+  book picture (idea 02). The picture is painted in `drawOrientation()` (the reading orientation set in Settings +
+  long-tap turns) and the renderer STAYS there, so every touch — swipes, side taps, Back, the long-tap halves (idea
+  07: right half clockwise, left counterclockwise) and the shade opened over it — is read as the picture stands
+  upright (the owner, 13.11.2026: «как смотришь на картинку, так и управляешь»; since debug10).
 - `src/activities/ActivityManager.cpp` — one current activity + a stack: `startActivityForResult` PUSHES (the parent
   stays alive, no `onExit`), `finish()` POPS (the parent's result handler runs, then the parent is repainted);
   `goTo*` REPLACES and clears the stack (`onExit` for all).
+- `src/activities/settings/SettingsActivity.cpp` — one Settings screen per `SettingsSection`: `sectionFor()` routes each
+  setting (by its field) to a top-level group or to a Display sub-screen past `End` — «Настройки очисток экрана»,
+  «Калибровка экрана», «Настройки сна» (debug10, idea 08); `addAction` rows open the sub-screens.
 - `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: seven tiles by string id, on/off and order,
   `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), at least one on, the
   equal-gap row layout and touch slots; host test `test/shade_tiles/`; held by `CrossPointSettings::shadeTiles`.

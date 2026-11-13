@@ -99,3 +99,33 @@ So: the right half is the right half of the PICTURE as it stands upright, whatev
 the viewer opened it in (idea 09 will choose that orientation by the picture's shape). In the reading-orientation frame
 of the touch point the picture's right side faces screen-right, -down, -left, -up for `viewTurns` 0, 1, 2, 3 (`+1` =
 clockwise, observed in run D0). The code maps the long-tap point by `viewTurns`; the cases C3' and C6 below check it.
+
+## The owner's decision: every viewer gesture follows the picture
+
+Asked 2026-11-13 14:56 (should the swipes, side taps, Back and the shade follow the picture like the halves?),
+recommended yes. `[OWNER] 2026-11-13 15:05 +03:00 · chat` — first my recommendation quoted back («рекомендую да: одно
+правило на весь вьювер, и оно сразу подходит для идеи 09.»), then:
+
+> как смотришь на картинку, так и управляешь, да, логично
+
+So: after painting, the viewer keeps the renderer in the picture's orientation (`drawOrientation()`), and every touch —
+the long-tap halves, the side taps and swipes to the next / previous picture, the Back swipe from the left edge, the
+top-edge swipe that opens the shade (the shade then draws in that orientation too) — is mapped in the frame of the
+picture as it stands upright. The long-tap code keeps `touchX >= width / 2`, now in that frame; no extra mapping.
+
+## Judge on "every gesture follows the picture" (2026-11-13 15:20 +03:00) — no blockers
+
+- Checked by derivation: every exit restores the saved orientation; the shade over the viewer draws in the picture's
+  frame and repaints the viewer on return; the halves are the picture's halves for every base and every turn; +1 is
+  clockwise in any frame; no touch is read before the first paint.
+- MINOR fixed: after a TURNED book picture closes, a second fast swipe made in the picture's frame was read by the book
+  in its own frame — two turns → the next page, one turn → the control center. Fix: while the picture is still on the
+  glass the book acts on no touch gesture (not only Back), and the activity manager opens no control center over a
+  screen that holds touch gestures (`Activity::holdsTouchGestures()`, the reader returns its window flag). Buttons
+  still turn pages. The fix delta goes to a judge of its own before the build.
+- NIT fixed: two stale comments (the class comment, the Back swipe "left quarter of the screen").
+- ~~`[AI]` The side and front keys follow the picture too~~ — REFUTED by the owner the same minute:
+  `[OWNER] 2026-11-13 15:20 +03:00 · chat:` «НЕТ! ФИзические кнопки крутят в одном направлении» · 15:21 «одна кнопка в
+  одном, вторая - в противоположном». The keys are read in the reading orientation set in Settings (as in debug9);
+  only touches follow the picture. Whether the keys PAGE the pictures (as now) or ROTATE the picture (one clockwise,
+  the other counterclockwise) — asked in chat 15:22.
