@@ -31,7 +31,9 @@ work project. From now on it is a standalone project.
   (Russian; phases Ф1 model+storage → Ф2 the «Плитки шторки» screen → Ф3 the shade row, new tiles, icons, long tap →
   Ф4 acceptance + image). **Ф1 closed 15:02** (firmware `435d2493`: `src/util/ShadeTiles.h` + host test 12/12 +
   storage; report `testcases/reports/2026-11-13_epic01_p1.md`). **Next: idea 08 «Настройки сна»** (plan inside the idea),
-  then the Ф2 plan. Waiting on the owner: whether ALL viewer gestures (swipes, side taps, Back, the shade) follow the
+  then the Ф2 plan — written: `plans/03_epic01_p2_tiles_screen.md`, P2.1 recon done (a UiAppHost screen, not a
+  UiListActivity: the list hides row rects); P2.2 icons — `tools/make_icon.py` draws ▲ ▼ and the half-filled circle
+  (1-bit `freeink::Icon`); **next: paste them into `customListIcons.h`, then P2.3 `ShadeTilesActivity`.** Waiting on the owner: whether ALL viewer gestures (swipes, side taps, Back, the shade) follow the
   picture like the long-tap halves (asked 14:56, recommended yes — one rule; it also suits idea 09).
 - **Chat 2026-11-13 10:34 → 13:35 closed — features for KCCP 1.1.3** (the owner's task under `resume`). Results:
   - **Idea 02 (tap a book picture → full screen, swipe Back → the same page): built.** `wip/krinik-debug9`
