@@ -75,6 +75,6 @@ clockwise, the back key counterclockwise. Stand: a temporary card with two pictu
 
 | # | Case (steps → expected) | Technique | Status + evidence |
 |---|---|---|---|
-| C10 | viewer on picture 1 → short press of the forward key → picture 2 (`Show 2/2`) | use case (R7) | not run |
-| C11 | then hold the forward key 1000 ms → `View turns: 1`, still picture 2 | use case (R8) | not run |
-| C12 | then hold the back key 1000 ms → `View turns: 0`, still picture 2 | use case (R8) | not run |
+| C10 | viewer on picture 1 → short press of the forward key → picture 2 (`Show 2/2`) | use case (R7) | pass — [TESTED: 2026-11-13 · short DOWN → one page on release · testcases/reports/2026-11-13_idea07_keys_simulator.md] |
+| C11 | then hold the forward key 1000 ms → `View turns: 1`, still picture 2 | use case (R8) | pass — [TESTED: 2026-11-13 · long press → View turns, no page · testcases/reports/2026-11-13_idea07_keys_simulator.md] |
+| C12 | then hold the back key 1000 ms → `View turns: 0`, still picture 2 | use case (R8) | pass — [TESTED: 2026-11-13 · long press → View turns, no page · testcases/reports/2026-11-13_idea07_keys_simulator.md] |

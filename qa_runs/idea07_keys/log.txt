@@ -1,0 +1,98 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[7] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[7] [DBG] [CPS] Resaving settings to update format
+[7] [DBG] [CPS] Settings loaded from file
+[9] [DBG] [UI] Using Lyra theme
+[9] [INF] [CLK] RTC clock read: 2026-11-13 13:13
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[9] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[375] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[375] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[376] [DBG] [SDREG] Fonts directory not found: /fonts
+[376] [DBG] [SDREG] Discovery complete: 0 families
+[376] [DBG] [SDFS] SD font system ready (0 families discovered)
+[376] [DBG] [MAIN] Fonts setup
+[376] [DBG] [ACT] Entering activity: Boot
+[376] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[391] [DBG] [ACT] Exiting activity: Boot
+[391] [DBG] [ACT] Entering activity: Home
+[391] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [391] [DBG] [ACT] Entering activity: Home
+[406] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1988] [DBG] [ACT] Exiting activity: Home
+[1988] [DBG] [ACT] Entering activity: FileBrowser
+[1989] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1988] [DBG] [ACT] Entering activity: FileBrowser
+[3583] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[4586] [DBG] [ACT] Exiting activity: FileBrowser
+[4586] [DBG] [ACT] Entering activity: BmpViewer
+[4586] [DBG] [CRV] Curve loaded from /.crosspoint/panel_curve.txt: be170a3a
+[4586] [DBG] [BMP] Show 1/2: /pics/pic1.jpg
+[4591] [DBG] [JPG] Image dimensions: 600x400
+[4591] [DBG] [JPG] Decoding JPEG: /pics/pic1.jpg
+[4593] [DBG] [JPG] JPEG 600x400 -> 720x480 (scale 1.20, jpegScale 1/1, fineScale 1.20)
+[4594] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (720x480, band 23 rows)
+[4608] [DBG] [JPG] JPEG decoding complete - render time: 14 ms
+[4608] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (720x480, 86404 bytes)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/sd/.crosspoint/view_cache.idx (flags=0x0 errno=2 No such file or directory)
+[4632] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[4632] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4645] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[4645] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4667] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[4667] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[4679] [DBG] [LOOP] New max loop duration: 94 ms (activity: 93 ms)
+[SIM] WAIT matched: [4586] [DBG] [ACT] Entering activity: BmpViewer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/shots/v0.bmp
+[6844] [DBG] [BMP] Input: button prev
+[6844] [DBG] [BMP] Show 2/2: /pics/pic2.jpg
+[6847] [DBG] [JPG] Image dimensions: 600x400
+[6847] [DBG] [JPG] Decoding JPEG: /pics/pic2.jpg
+[6849] [DBG] [JPG] JPEG 600x400 -> 720x480 (scale 1.20, jpegScale 1/1, fineScale 1.20)
+[6850] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (720x480, band 23 rows)
+[6863] [DBG] [JPG] JPEG decoding complete - render time: 13 ms
+[6863] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (720x480, 86404 bytes)
+[6874] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[6874] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6886] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[6886] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[6908] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[6908] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] WAIT matched: [6844] [DBG] [BMP] Show 2/2: /pics/pic2.jpg
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/shots/c10.bmp
+[10005] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10005] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10149] [INF] [BMP] Input: long press back -> rotate counterclockwise
+[10149] [INF] [BMP] View turns: 3
+[10149] [DBG] [BMP] Show 2/2: /pics/pic2.jpg
+[10151] [DBG] [JPG] Image dimensions: 600x400
+[10152] [DBG] [JPG] Decoding JPEG: /pics/pic2.jpg
+[10154] [DBG] [JPG] JPEG 600x400 -> 480x320 (scale 0.80, jpegScale 1/1, fineScale 0.80)
+[10155] [DBG] [IMG] Cache stream started: /.crosspoint/view.pxc.tmp (480x320, band 16 rows)
+[10162] [DBG] [JPG] JPEG decoding complete - render time: 7 ms
+[10162] [DBG] [IMG] Cache written: /.crosspoint/view.pxc.tmp (480x320, 38404 bytes)
+[10180] [DBG] [GFX] Cropping 480x320 by 0x0 pix, is top-down
+[10180] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10187] [DBG] [GFX] Cropping 480x320 by 0x0 pix, is top-down
+[10187] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[10199] [DBG] [GFX] Cropping 480x320 by 0x0 pix, is top-down
+[10199] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] WAIT matched: [10149] [INF] [BMP] View turns: 3
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/shots/c11.bmp
+[13428] [INF] [BMP] Input: long press forward -> rotate clockwise
+[13428] [INF] [BMP] View turns: 0
+[13428] [DBG] [BMP] Show 2/2: /pics/pic2.jpg
+[13444] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[13444] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[13457] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[13457] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[13474] [DBG] [GFX] Cropping 720x480 by 0x0 pix, is top-down
+[13474] [DBG] [GFX] Scaling by 1.000000 - not scaled
+[SIM] WAIT matched: [13428] [INF] [BMP] View turns: 0
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/idea07_keys/shots/c12.bmp
