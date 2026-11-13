@@ -1,7 +1,7 @@
 # Idea 09 — the image viewer opens a picture in the orientation that fits its shape
 
 > **Created:** 2026-11-13 (the owner's request, chat — given while idea 07's halves question was being explained) ·
-> **Parent:** `ideas/07_viewer_long_tap_rotation_by_half.md` (the same viewer) · **Status:** 📐 planned 2026-11-13 (plan below); the owner's original,
+> **Parent:** `ideas/07_viewer_long_tap_rotation_by_half.md` (the same viewer) · **Status:** 🔧 written 2026-11-13 on `wip/kccp-1.1.3-debug2` (S1–S2, judged, uncommitted), simulator next; the owner's original,
 > verbatim · **Outbound:** —
 
 `[OWNER] 2026-11-13 14:51 +03:00 · chat` (on idea 07's question, the option A wording «как ты держал читалку при чтении»):
@@ -56,11 +56,15 @@ from there as today (idea 07); the halves, swipes and Back follow the picture as
 
 ## Plan (ordinary — heaviness 0 of 5: one module, no external truth, one session, KCCP only, the owner asked)
 
-- [ ] S1 `shapeTurns()`: read the picture's size; wide = w > h, tall = h > w; return the quarter turns from the reading
+- [x] S1 `shapeTurns()`: read the picture's size; wide = w > h, tall = h > w; return the quarter turns from the reading
       orientation to the target of the table above (0 for А, В, square, unreadable). Comment `[NOT-TESTED]`.
-- [ ] S2 `onEnter()` and `openSibling()` set `viewTurns = shapeTurns()` before `showCurrent()` — every picture opens by
-      its own shape; a long-tap turn of one picture does not carry to the next `[AI]` (today it does).
-- [ ] S3 Judge (fresh agent: the diff + this document) before the build.
+- [x] S2 `applyShape()` (sets `viewTurns` by the shape, remembers the orientation it was set for): the FIRST `onEnter()`
+      (it is re-called after the sleep-cover dialog — a manual turn must survive), every `openSibling()`, and the
+      «back from a sheet» repaint when the reading orientation changed under it. Every picture opens by its own shape;
+      a long-tap turn of one picture does not carry to the next `[AI]`.
+- [x] S3 Judge (fresh agent: the diff + this document) before the build — 2026-11-13: the 16 orientation × shape cases
+      match А–Г; fixed: the re-entry lost a manual turn, the shade's «Ориентация» drew a wide picture portrait in a
+      landscape reader, open-time decisions left no log; EXIF is ignored by the painter and by `shapeTurns` alike.
 - [ ] S4 Simulator: a card with one wide and one tall picture in a folder and in the test book; cases А–Г in both
       reading orientations of each kind (8 runs), the shot and `View turns:` read; a run report.
 - [ ] S5 Commit on the 1.1.3 debug line; the owner's check comes with the next image's homework.
@@ -69,5 +73,6 @@ from there as today (idea 07); the halves, swipes and Back follow the picture as
 
 - `[AI]` A square or unreadable picture opens in the reading orientation.
 - `[AI]` Each picture applies the rule when it is shown; a long-tap turn is not carried to the next picture.
-- `[AI]` A change of the reading orientation from the shade while a picture is open keeps the picture's current turn
-  (as today) — the rule runs when a picture opens, not again.
+- `[AI]` A change of the reading orientation from the shade while a picture is open applies the rule again for the new
+  orientation (changed 2026-11-13 after the judge: keeping the turn drew a wide picture portrait in a landscape reader,
+  against case А). A manual long-tap turn survives a shade that does not change the orientation.

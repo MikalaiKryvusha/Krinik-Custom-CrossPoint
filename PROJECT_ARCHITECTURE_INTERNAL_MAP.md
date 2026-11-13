@@ -62,7 +62,9 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   07: right half clockwise, left counterclockwise) and the shade opened over it — is read as the picture stands
   upright (the owner, 13.11.2026: «как смотришь на картинку, так и управляешь»; since debug10). The physical keys keep the
   reading orientation (`MappedInputManager::setKeysFollowReadingOrientation`, set in the viewer's onEnter, cleared in
-  onExit): a short press pages the pictures, a long press turns the picture.
+  onExit): a short press pages the pictures, a long press turns the picture. Idea 09 (1.1.3-debug2, in work): every
+  picture OPENS by its shape — `shapeTurns()` sets `viewTurns` in `onEnter` and `openSibling` (a wide picture in a
+  portrait reader → «Альбомная 180°», a tall one in a landscape reader → «Книжная»).
 - `src/activities/ActivityManager.{h,cpp}` — one current activity + a stack: `startActivityForResult` PUSHES (the parent
   stays alive, no `onExit`), `finish()` POPS (the parent's result handler runs, then the parent is repainted);
   `goTo*` REPLACES and clears the stack (`onExit` for all). The shade is PUSHED over whatever is in front (`loop()`, the
