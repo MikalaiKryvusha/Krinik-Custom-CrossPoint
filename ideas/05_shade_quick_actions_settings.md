@@ -2,7 +2,8 @@
 
 > **Created:** 2026-11-13 (the owner's request, chat — given while debug9 waited for the reader) · **Parent:** `STATUS.md` →
 > «Future» (configurable Control Center tiles, owner 2026-11-06) · **Status:** 🆕 the owner's original, verbatim ·
-> **Outbound:** — · **Status update:** 🎨 mockups ready 2026-11-13 ≈11:56 +03:00 — homework 05, owner's choice pending
+> **Outbound:** — · **Status update:** ✅ design AGREED 2026-11-13 13:28 +03:00 (go-ahead, seven tiles incl. Flashlight) —
+> final view `homeworks/05_shade_mockups/final.html`; NEXT: `/plan-task`, then code (not started)
 
 ## Recon (2026-11-13, `wip/krinik-debug9`)
 
@@ -52,7 +53,7 @@
 12:57): a long tap on any tile opens Settings straight on «Плитки шторки» — the list with checkboxes and ▲▼, portrait
 like every Settings screen, the cursor on the long-tapped tile. Final view: `homeworks/05_shade_mockups/final.html`.
 Decided by the agent unless he says otherwise: Back from «Плитки шторки» returns to the book; the screen is also
-reachable from «Настройки → Экран». Still open for him: the tile set (7).
+reachable from «Настройки → Экран». The tile set (7) was still open at 12:57 — answered at 13:28 (below).
 
 `[OWNER] 2026-11-13 13:00 +03:00 · chat` (on the final view, frame 3 with six tiles; a crop of it attached):
 

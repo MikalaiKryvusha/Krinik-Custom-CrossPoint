@@ -1,7 +1,8 @@
 # Idea 02 — tap on an image in a book opens it full screen
 
-> **Created:** 2026-11-13 (the owner's request, chat) · **Parent:** — · **Status:** 🔧 planned 2026-11-13 10:45 +03:00, in
-> work · **Outbound:** — (KCCP only for now; an upstream PR is a later question)
+> **Created:** 2026-11-13 (the owner's request, chat) · **Parent:** — · **Status:** 🔧 planned 2026-11-13 10:45 +03:00;
+> built — debug9 image 11:32, on the reader's card 11:47; NOT verified on the reader yet (homework 04) · **Outbound:** —
+> (KCCP only for now; an upstream PR is a later question)
 
 ## Goal vector (Achieve)
 
@@ -43,9 +44,10 @@ return to the same book page. Target: KCCP 1.1.3, tested first as a KCCP debug b
    2026-11-13 ≈11:06; findings traced in the code and answered below («Judge findings»).
 7. [~] Simulator done 2026-11-13 11:12–11:27 (report `testcases/reports/2026-11-13_idea02_simulator.md`: C1–C5,
    K1–K3 pass, C6 skipped there; the dark page after the viewer was the simulator's own defect — `bugs/06`, fixed in
-   the simulator `49ded1a`); firmware `526c7452` + `35dc070c` (the judge's last delta: no forced clean base). Builds when the machine lock is free: simulator `simulator_x4_pro_win`, run criteria 1–3 on an OWN generated test
-   book (third-party books stay off the repo), WebP shots read; then `x4pro-krinik-debug` → `1.1.1-debug9` image →
-   card `/.firmware/` → eject → homework for the owner; his serial log read during his check.
+   the simulator `49ded1a`); firmware `526c7452` + `35dc070c` (the judge's last delta: no forced clean base); C7 (a PNG
+   picture) pass 11:34. Done: `x4pro-krinik-debug` → `1.1.1-debug9` image 11:32 (SHA256 `6b5f4f36…`) → card
+   `/.firmware/` 11:47 (SHA256 checked on the card) → reader ejected → homework 04. Left: the owner's check on the
+   reader and his serial log read during it (`tools/serial_log.py`).
 8. [ ] KCCP 1.1.3 itself (debug line + release 1.1.2 merged + this feature) is assembled after the owner's check —
    `STATUS.md` → Open work 2.
 

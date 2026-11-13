@@ -17,7 +17,8 @@ work project. From now on it is a standalone project.
     clone on the LOCAL branch `fix/gray-absolute-reset` (`49ded1a`); PR #62 (`windows`, `087cb54`) untouched.
   - **Idea 03 (caption stays with its picture):** recon + research (`researches/2026-11-13_figure_caption_keep_together.md`,
     СТП 01-2017 БГУИР 2.5 read verbatim); direction by the owner: re-typeset the books to `<figure>`/`<figcaption>` +
-    the firmware keeps a figure on one page (picture shrinks if needed); caption centred, no first-line indent.
+    the firmware keeps a figure on one page (picture shrinks if needed); no first-line indent (owner 11:13);
+    `[AI]` caption centred under the picture — the reading of СТП 2.5.5, not his word.
   - **Idea 04 (FB2 → EPUB on the reader):** first recon (upstream declined FB2 three times; papyrix-reader `lib/Fb2`,
     MIT); heavy → `/plan-epic`; test FB2 `D:\Hofshtadter_Gyodel-Esher-Bah-Eta-beskonechnaya-girlyanda.9y7ehg.198312.fb2.zip`.
   - **Idea 05 (shade tiles): AGREED, go-ahead 13:28** — a long tap on any tile opens Settings straight on «Плитки
@@ -26,14 +27,13 @@ work project. From now on it is a standalone project.
     Flashlight); EQUAL gaps between tiles and at the edges for any count (today the edge gap is half). Final view
     `homeworks/05_shade_mockups/final.html`. `[AI]` defaults: Back returns to the book; also in «Настройки → Экран».
   - **Idea 06 (Home buttons settings)** — the same screen kind for the Home menu items (owner 13:29); verbatim only.
-  - Battery research closed (owner 10:36); final log numbers in `PROJECT_HISTORY.md` (2026-11-13).
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
   2. **The owner's debug9 check (homework 04).** When he says the reader is on the cable (book screen, NOT USB drive):
      `.pio-venv/Scripts/python.exe -I -X utf8 tools/serial_log.py <scratch>/serial_debug9.log` in the background; watch
      `Image tap`, `Back swipe`, `[ERR]`, `OOM` (the debug image logs at LOG_LEVEL=1 — INF and up). His verdict → homework
      04 «Итог», `ideas/02` closure, `testcases/TC_idea02…` C6.
-  3. **Idea 05 → `/plan-task`** (the agreed design above), then code on `wip/krinik-debug10` from debug9: settings
+  3. **Idea 05 → `/plan-task`** (the agreed design above; code map `researches/2026-11-13_idea05_06_code_map.md`), then code on `wip/krinik-debug10` from debug9: settings
      storage of tile order/visibility, the «Плитки шторки» screen (reuse it for idea 06 «Кнопки главного экрана»), the
      shade row (variable tiles, equal gaps, long tap → Settings), icons, strings; judge → simulator → image.
 - **Open work, in order:**

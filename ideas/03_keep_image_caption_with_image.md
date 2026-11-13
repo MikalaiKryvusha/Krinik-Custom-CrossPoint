@@ -68,7 +68,7 @@
 the block. None of the owner's books uses it.
 
 **Census of the owner's card** (2026-11-13 10:53 +03:00, `G:\Книги`, 10 EPUB, script
-`caption_census.py` in the session scratchpad — moves to `tools/` with the re-typeset tool):
+`tools/caption_census.py`):
 
 | Book | `<img>` | `<figure>` | `<figcaption>` | «Рис…» paragraph right after a picture |
 |---|---|---|---|---|

@@ -68,7 +68,8 @@ WebP shots and the log lines READ for every case below.
 ## 6. Traces
 
 - `qa_runs/idea02_c1`, `idea02_c2c3`, `idea02_dark`, `idea02_ctrl_browser`, `idea02_dark_fix`, `idea02_c2c3_fix`,
-  `idea02_c4_k1_k2`, `idea02_find_p`, `idea02_c5`, `idea02_k3_debug8` — `log.txt` + `shots/*.webp` each.
+  `idea02_c4_k1_k2`, `idea02_find_p`, `idea02_c5`, `idea02_k3_debug8`, `idea02_smoke_final`, `idea02_find_png`,
+  `idea02_c7_png` — `log.txt` + `shots/*.webp` each.
 - The judge's reports: summarised in `ideas/02_image_fullscreen_on_tap.md` → «Judge findings».
 
 ## 7. Verdict
