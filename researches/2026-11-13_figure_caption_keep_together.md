@@ -67,5 +67,5 @@ FB2 source of one of them marks it the same way (`<image/>` then `<p><emphasis>�
 
 The standard answer has two halves, and both are ours to build: the books get the standard markup (a re-typeset tool;
 an FB2 converter — idea 04 — writes it at birth), and the reader honours it (`<figure>` with `break-inside: avoid` kept
-on one page, the picture shrunk when the two do not fit; the owner accepted a smaller in-page picture). Industry
+on one page, the picture shrunk when the two do not fit; `[OWNER] 2026-11-13 10:39 +03:00 · chat: «возможно это потребует уменьшения размера миниатюры картинки - но это и не важно»`, `ideas/03`). Industry
 confirms there is no third, engine-free way except burning the caption into the picture.

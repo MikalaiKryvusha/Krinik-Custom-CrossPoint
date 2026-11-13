@@ -1,57 +1,57 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-10 (chat closing). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-13 13:35 +03:00 (chat closing). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
 ## Where to continue
 
-- **Chat 2026-11-13 10:34 (in progress) — features for KCCP 1.1.3** (the owner's task): idea 02 (tap a book picture →
-  full screen, swipe Back → the book) on `wip/krinik-debug9` (`35dc070c`, local): judged ×3, host test, simulator
-  C1–C5, C7, K1–K3 pass (`testcases/reports/2026-11-13_idea02_simulator.md`); image `cp-2.0.0-krinik-1.1.1-debug9.bin`
-  (SHA256 `6b5f4f36…`) in `firmware-builds/`, **on the card since 11:47 (SHA256 checked there; card = debug9 + debug8 + 1.1.2, debug7 removed; reader ejected)**; homework 04
-  waits for the owner's check (serial logger: scratchpad `serial_debug9.log`, VID 303A). The simulator's
-  stale gray mode = `bugs/06` (fixed locally, `simulator` branch `fix/gray-absolute-reset`). Idea 03 (keep a caption
-  with its picture): recon + research done, direction = re-typeset tool + the firmware keeps a `<figure>` on one page,
-  caption styled by the GOSTs / the BSUIR standard (the owner, 11:13) — read them first. Idea 04 (FB2 → EPUB on the
-  reader): first recon, heavy, after 02/03; test FB2 at `D:\Hofshtadter_…fb2.zip`. Idea 05 (configure the shade's
-  quick tiles + enter that from the shade, owner 11:48): mockups `homeworks/05_shade_mockups/mockups.html` (А–Г, 1–4),
-  AGREED (owner 12:23–13:00): a long tap on any tile opens Settings straight on «Плитки шторки» (list with checkboxes
-  and ▲▼, portrait, cursor on the tapped tile); tiles sit with EQUAL gaps between them and at both edges for any count
-  (a firmware layout change: today the edge gap is half). Final view `homeworks/05_shade_mockups/final.html`.
-  `[AI]` defaults: Back returns to the book; the screen is also in «Настройки → Экран». Open: the tile set (7). NEXT:
-  the owner's answer on the tile set → `/plan-task` for idea 05 → code on a debug line.
-- **Chat 2026-11-09 20:30 → 2026-11-10 (CodeRabbit round 3, debug7/8, simulator PR #62) closed** — its full log moved
-  verbatim to `PROJECT_HISTORY.md` (entry 2026-11-10). Result: #4377 books-card title fix pushed (`c9d69cbd`); #4376
-  redraw-timer fix pushed (`94e1c3a2`) after the owner's reader check; debug7 (bugs 03/04) and debug8 (idea 01) PASS on
-  the reader; native Windows simulator PR **#62** opened and its CodeRabbit round 1 fixed (`087cb54`).
+- **Chat 2026-11-13 10:34 → 13:35 closed — features for KCCP 1.1.3** (the owner's task under `resume`). Results:
+  - **Idea 02 (tap a book picture → full screen, swipe Back → the same page): built.** `wip/krinik-debug9`
+    (`526c7452` + `35dc070c`, local in `firmware/`, not pushed) = debug8 + the picture tap + battery log OFF; judged
+    three times; host test `test/page_image_target/` 4/4 (red on a `<=` mutation); simulator C1–C5, C7, K1–K3 pass
+    (`testcases/reports/2026-11-13_idea02_simulator.md`; C6 — the second fast Back swipe — only on the reader). Image
+    `firmware-builds/cp-2.0.0-krinik-1.1.1-debug9.bin` (SHA256 `6b5f4f36…`) is on the reader's card since 11:47
+    (card = debug9 + debug8 + 1.1.2). **Homework 04 waits for the owner's check** — not verified on the reader yet.
+  - **Bug 06** — the simulator kept its absolute gray mode after the image viewer (pages dark); fixed in the simulator
+    clone on the LOCAL branch `fix/gray-absolute-reset` (`49ded1a`); PR #62 (`windows`, `087cb54`) untouched.
+  - **Idea 03 (caption stays with its picture):** recon + research (`researches/2026-11-13_figure_caption_keep_together.md`,
+    СТП 01-2017 БГУИР 2.5 read verbatim); direction by the owner: re-typeset the books to `<figure>`/`<figcaption>` +
+    the firmware keeps a figure on one page (picture shrinks if needed); caption centred, no first-line indent.
+  - **Idea 04 (FB2 → EPUB on the reader):** first recon (upstream declined FB2 three times; papyrix-reader `lib/Fb2`,
+    MIT); heavy → `/plan-epic`; test FB2 `D:\Hofshtadter_Gyodel-Esher-Bah-Eta-beskonechnaya-girlyanda.9y7ehg.198312.fb2.zip`.
+  - **Idea 05 (shade tiles): AGREED, go-ahead 13:28** — a long tap on any tile opens Settings straight on «Плитки
+    шторки» (list: icon · name · ▲▼ · firmware square checkbox; portrait; cursor on the tapped tile); seven tiles
+    (night mode — new iOS-style half-filled circle icon, cleanup, orientation, touch, Bluetooth, Sleep — crescent,
+    Flashlight); EQUAL gaps between tiles and at the edges for any count (today the edge gap is half). Final view
+    `homeworks/05_shade_mockups/final.html`. `[AI]` defaults: Back returns to the book; also in «Настройки → Экран».
+  - **Idea 06 (Home buttons settings)** — the same screen kind for the Home menu items (owner 13:29); verbatim only.
+  - Battery research closed (owner 10:36); final log numbers in `PROJECT_HISTORY.md` (2026-11-13).
 - **First steps next chat:**
-  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` — the PC is shared with KUMM and KAGO;
-     during another agent's quiet window: no builds, no simulator, no GUI windows.
-  2. Read reviews on simulator PR #62 (https://github.com/crosspoint-reader/crosspoint-simulator/pull/62) and on
-     firmware PRs #4328 #4332 #4375 #4376 #4377:
-     `gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`.
-     PR #62 at 02:10 +03:00: head `087cb54`, mergeable; CodeRabbit round 1 — all 4 threads resolved, the outside-diff finding acknowledged; `@coderabbitai review` → 02:16 «No actionable comments were generated in the recent review» over `ad131dc..087cb54`, check pass. **Goal reached (owner 01:36): no CodeRabbit remarks, the PR waits for a maintainer.** Replies: `qa_runs/pr-simulator-windows/replies-round1.md`.
-  3. The reader card holds debug9 + debug8 + 1.1.2 (`/.firmware/`, 2026-11-13 11:47); the owner installs debug9.
+  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
+  2. **The owner's debug9 check (homework 04).** When he says the reader is on the cable (book screen, NOT USB drive):
+     `.pio-venv/Scripts/python.exe -I -X utf8 tools/serial_log.py <scratch>/serial_debug9.log` in the background; watch
+     `Image tap`, `Back swipe`, `[ERR]`, `OOM` (the debug image logs at LOG_LEVEL=1 — INF and up). His verdict → homework
+     04 «Итог», `ideas/02` closure, `testcases/TC_idea02…` C6.
+  3. **Idea 05 → `/plan-task`** (the agreed design above), then code on `wip/krinik-debug10` from debug9: settings
+     storage of tile order/visibility, the «Плитки шторки» screen (reuse it for idea 06 «Кнопки главного экрана»), the
+     shade row (variable tiles, equal gaps, long tap → Settings), icons, strings; judge → simulator → image.
 - **Open work, in order:**
-  1. **Bug 01 PR** `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — waits for a free upstream slot (5/5 open) and the
-     owner's proofreading of the PR text.
-  2. **Debug line**: `wip/krinik-debug8` (`c072214b`, local in `firmware/`, not pushed) = 1.1.1-debug6 + bugs 03/04 +
-     idea 01. BACKLOG: merge release 1.1.2 (`198d385e`) into the debug line (conflicts in `lib/hal/HalFrontlight.{cpp,h}`,
-     `test/frontlight_dither/`), then `1.1.2-debugN`. The owner's open choice: the light-linger hold (400 ms) vs the
-     timer-redraw hold (≈ reset-to-sample) rules differ.
-  3. `bugs/05` — simulator on Windows: the firmware closes its UDP discovery socket with `close()`; found by reading,
-     not reproduced. Also open, upstream-side: socket handle inheritance into curl (judge note, PR #62 research).
-  4. Owner's open questions: proofread `GOAL.md`.
-  5. Delete the partial `C:\msys64` left by the killed 2026-11-09 14:44 install (KAGO said it is safe) — check the
-     machine lock first.
-- **Rules born this chat** (all in `AGENT_GUIDE.md`): reviewer bots can be wrong — trace a finding in code before
-  acting; after a code change an independent judge first, build after; a PR description carries no AI-participation
-  line and nothing sent out carries AI authorship (no `Co-Authored-By` trailer on pushed commits).
-- KNOWLEDGE: Windows UCRT `TZ` — three-letter names only, DST on US dates (simulator README, research 01); Winsock
-  sockets cannot be `dup()`-ed and `_execvp` does not replace the process (research 01); `MoveFileEx` for an
-  overwrite-safe replace; lessons EXP-0008…0010 (`EXPERIENCE.md`): Git Bash grep crashes on long pipes, a "defect" that
-  was my script quitting first, parallel shell calls must not rely on `cd`.
+  1. Idea 05 + 06 (one list component); 2. Idea 03 (re-typeset tool + firmware `<figure>`); 3. KCCP 1.1.3 assembly:
+     merge release 1.1.2 (`198d385e`) into the debug line (conflicts `lib/hal/HalFrontlight.{cpp,h}`,
+     `test/frontlight_dither/`); the owner's open choice: light-linger hold (400 ms) vs timer-redraw hold; 4. Idea 04
+     (epic). 5. Bug 01 PR `pr/library-tab-fit` (`d2b45c0e`, `d0c99508`) — a free upstream slot (5/5) + proofreading.
+     6. `bugs/05`, `bugs/06` (a simulator PR for 06 needs the owner's proofreading). 7. The test hook does not see
+     `tools/sim_run.sh` runs: a `testHook` block in `.kaif/kaif.json` — to be asked (the auto-mode
+     classifier refused the agent's edit). 8. Proofread `GOAL.md`. 9. Delete the partial `C:\msys64` (check the machine lock).
+  - Reviews to read: simulator PR #62 and firmware PRs #4328 #4332 #4375 #4376 #4377
+    (`gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`).
+- KNOWLEDGE: `python -I` ignores `PYTHONUTF8` — use `-X utf8` (AGENT_GUIDE Code style, updated);
+  the simulator's reader takes the OVERLAY gray path, only the viewer uses absolute (`bugs/06`); Settings screens are
+  portrait while the reader and its shade follow the reading orientation; the firmware checkbox is a square with a
+  filled inner square (FreeInkUI `list.h`); a launched Edge window is not a shown window (EXP-0014); a page server under
+  `timeout` dies (EXP-0013); `pdftotext` is at `/mingw64/bin` (Git for Windows); the debug image number lives in
+  `platformio.ini` (AGENT_GUIDE Build, updated). Reader clock may run ≈ 40 min fast (unverified, PROJECT_HISTORY).
 
 ## Language contract
 
@@ -145,34 +145,18 @@ already say KCCP. In the firmware fork it is still krinik:
 
 ### Device (Xteink X4 Pro, eFuse-locked: firmware only from the SD card)
 
-- Last install confirmed by the owner: **krinik 1.1.1-debug5** (owner, 2026-11-08: precise temperature and the Home "Sleep" item are
-  done and tested on the reader).
+- Last build confirmed on the reader: **1.1.1-debug8** (2026-11-09 23:46, homework 03); **debug9** is on the card since
+  2026-11-13 11:47, not checked yet (homework 04). Debug2–8 history: `PROJECT_HISTORY.md`.
 - [ ] Precise temperature rework (owner, 2026-11-08): dithering only at brightness **≤ 9 %**, off at **10 %** (now it runs up to the
   duty of 10 %).
-- Battery log every 20 min is a **DEBUG ONLY** aid — keep it out of release builds.
-- Debug line: debug3 (precise temperature), debug4 (battery log tick every 20 min), debug5 (= debug4 + "Sleep" item in the Home
-  menu under "Flashlight"). Images and SHA256 in `firmware-builds/`; evidence in
-  `qa_runs/precise-temperature-2026-11-06/`, `qa_runs/debug4-2026-11-06/`, `qa_runs/debug5-sleep-menu-2026-11-06/`.
-- The debug2–5 code was uncommitted on the laptop; it is now `wip/krinik-debug5` in both forks (see the code map). The debug2 image
-  itself is in `firmware-builds/` (`cp-2.0.0-krinik-1.1.1-debug2.bin`).
 - **KCCP 1.1.2** (frontlight) is published: https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2 (2026-11-08,
   bilingual notes, Latest; the image still says `cp-2.0.0-krinik-1.1.2` inside).
 - "Mama" build with OPDS/plugins: the Home menu has 8 rows and the "Mama" row runs off the screen — fix before the next mama build.
 
-### Hardware research
+### Hardware research and the tiles idea
 
-- Closed 2026-11-08: no charging cut-off (needs a board modification); the charger analysis and the battery/light
-  measurements moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-09, STATUS trim).
-- **Closed [2026-11-13 10:36 +03:00]: battery-discharge measurements stop; no more search for ways to cut the current
-  through the frontlight** — `[OWNER] 2026-11-13 10:36 +03:00 · chat: «там ты замерял разряд батареи, я думаю, что можно
-  прекратить эти замеры. Подсветка не много кушает заряда батареи, и можно перестать искать способы снижения тока через
-  подсветку»`. Open: whether the debug-only 20-minute battery log leaves the debug builds (asked in chat, same turn).
-- LED driver/current/ratings stay unknown — no longer researched (decision above).
-
-### Future (owner, 2026-11-06: "on the future")
-
-- Configurable Control Center tiles in a separate menu (add Sleep/Flashlight, hide Bluetooth/Clean). Recon:
-  `src/activities/util/FrontlightPanelActivity.*`, `kTileCount`, `runTile(idx)`, `buildPanelScreen`.
+- Closed 2026-11-13; moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-13, STATUS trim 2). The configurable
+  shade tiles are `ideas/05` now.
 
 ## Code map — where the code lives
 

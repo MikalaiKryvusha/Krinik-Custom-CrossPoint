@@ -27,6 +27,46 @@
 
 ## Entries (newest first)
 
+### 2026-11-13 — STATUS trim 2: closed hardware research, the tiles idea, old debug-line notes (moved verbatim)
+
+### Hardware research
+
+- Closed 2026-11-08: no charging cut-off (needs a board modification); the charger analysis and the battery/light
+  measurements moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-09, STATUS trim).
+- **Closed [2026-11-13 10:36 +03:00]: battery-discharge measurements stop; no more search for ways to cut the current
+  through the frontlight** — `[OWNER] 2026-11-13 10:36 +03:00 · chat: «там ты замерял разряд батареи, я думаю, что можно
+  прекратить эти замеры. Подсветка не много кушает заряда батареи, и можно перестать искать способы снижения тока через
+  подсветку»`. Open: whether the debug-only 20-minute battery log leaves the debug builds (asked in chat, same turn).
+- LED driver/current/ratings stay unknown — no longer researched (decision above).
+
+### Future (owner, 2026-11-06: "on the future")
+
+- Configurable Control Center tiles in a separate menu (add Sleep/Flashlight, hide Bluetooth/Clean). Recon:
+  `src/activities/util/FrontlightPanelActivity.*`, `kTileCount`, `runTile(idx)`, `buildPanelScreen`.
+
+From «Device»:
+
+- Battery log every 20 min is a **DEBUG ONLY** aid — keep it out of release builds.
+- Debug line: debug3 (precise temperature), debug4 (battery log tick every 20 min), debug5 (= debug4 + "Sleep" item in the Home
+  menu under "Flashlight"). Images and SHA256 in `firmware-builds/`; evidence in
+  `qa_runs/precise-temperature-2026-11-06/`, `qa_runs/debug4-2026-11-06/`, `qa_runs/debug5-sleep-menu-2026-11-06/`.
+- The debug2–5 code was uncommitted on the laptop; it is now `wip/krinik-debug5` in both forks (see the code map). The debug2 image
+  itself is in `firmware-builds/` (`cp-2.0.0-krinik-1.1.1-debug2.bin`).
+
+### 2026-11-13 — STATUS trim: the 2026-11-10 chat's handover lines (moved verbatim from STATUS "Where to continue")
+
+- **Chat 2026-11-09 20:30 → 2026-11-10 (CodeRabbit round 3, debug7/8, simulator PR #62) closed** — its full log moved
+  verbatim to `PROJECT_HISTORY.md` (entry 2026-11-10). Result: #4377 books-card title fix pushed (`c9d69cbd`); #4376
+  redraw-timer fix pushed (`94e1c3a2`) after the owner's reader check; debug7 (bugs 03/04) and debug8 (idea 01) PASS on
+  the reader; native Windows simulator PR **#62** opened and its CodeRabbit round 1 fixed (`087cb54`).
+- **Rules born this chat** (all in `AGENT_GUIDE.md`): reviewer bots can be wrong — trace a finding in code before
+  acting; after a code change an independent judge first, build after; a PR description carries no AI-participation
+  line and nothing sent out carries AI authorship (no `Co-Authored-By` trailer on pushed commits).
+- KNOWLEDGE: Windows UCRT `TZ` — three-letter names only, DST on US dates (simulator README, research 01); Winsock
+  sockets cannot be `dup()`-ed and `_execvp` does not replace the process (research 01); `MoveFileEx` for an
+  overwrite-safe replace; lessons EXP-0008…0010 (`EXPERIENCE.md`): Git Bash grep crashes on long pipes, a "defect" that
+  was my script quitting first, parallel shell calls must not rely on `cd`.
+
 ### 2026-11-13 — battery research closed; the debug battery log's final numbers ✅
 
 The owner closed it (`[OWNER] 2026-11-13 10:36 +03:00 · chat: «…можно прекратить эти замеры. Подсветка не много кушает

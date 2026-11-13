@@ -1150,7 +1150,7 @@ cognition» (80% deterministic / 20% the model); it is stated once there and app
 - **Languages:** code, comments, commit messages — English; on-device strings and owner-facing texts — Russian
   (STATUS.md → "Language contract").
 - **Scripts in `tools/`:** one header comment line saying what the script does and how to call it (the existing
-  convention); Python runs with `python -I`.
+  convention); Python runs with `python -I -X utf8` (`-I` ignores `PYTHONUTF8`, so UTF-8 output needs `-X utf8`; seen 2026-11-13).
 
 ---
 
