@@ -27,3 +27,18 @@
 
 > или это баг движка?
 
+## Recon (2026-11-13, code `wip/krinik-debug8` + the sample book; a subagent's report, the key points re-read by the agent)
+
+- **Not a bug — a missing rule.** The sample book (Hofstadter, «Гёдель, Эшер, Бах») marks a caption as a plain body
+  paragraph right after the picture: `<div class="image"><img class="z1" …/></div><p class="p1"><em>Рис. 2. …</em></p>`
+  (`OPS/ch1-6.xhtml:12-13`); `.image` has no `page-break-after: avoid` (`OPS/style.css:66-73`). 179 `<img>` in the
+  chapters, 149 followed by an `<em>Ри…` caption paragraph, ~30 by body text. Upstream `develop` lays out the same way.
+- **What the engine does** (`lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp`): a picture that does not fit the rest
+  of the page moves WHOLE to the next page (`:1901-1913`, re-read), never shrinks to the rest; a heading right above it
+  moves with it (`:1905-1911`). Keep-with-next exists for h1–h6 only; `page-break-*: avoid` is not honoured at all;
+  `max-width` is not parsed. The caption's first line can never pull the picture along (`canCarry` moves text lines only).
+- **Re-typesetting the books** helps only by burning the caption INTO the picture (the one way two blocks cannot split
+  today) — then the caption shrinks with the picture in landscape, is not searchable, and every book needs the tool.
+- **The engine fix** (recommended `[AI]`): when the first line after a picture does not fit, the picture moves to the
+  next page with it; when the two do not fit one page, the picture shrinks. Open owner question: what counts as the
+  caption (any paragraph right after a picture, or only a «Рис. N…» one) — goes to `interviews/`.
