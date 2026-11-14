@@ -39,8 +39,7 @@ work project. From now on it is a standalone project.
   the book, the long tap → the screen on that button → Back → the book). **Ф4 waits for the owner's word on the image**
   (the whole-epic judge, the device build, smoke, homework — `homeworks/06_kccp_1.1.3_debug1.md` grows into the
   1.1.3-debug2 homework). **Idea 09 built** (`9027b99a`, 20:24): every picture opens by its shape, simulator E1–E10
-  pass (`testcases/reports/2026-11-13_idea09.md`). Next in the loop: idea 03 (caption standards recon done) or idea 06
-  after the owner's answers.
+  pass (`testcases/reports/2026-11-13_idea09.md`).
 - **Chat 2026-11-13 13:51 → 16:21 closed** — its summary moved verbatim to `PROJECT_HISTORY.md` (entry «STATUS trim
   4»); debug10 `wip/krinik-debug10` is the base of the 1.1.3 line below.
 - **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
@@ -54,16 +53,16 @@ work project. From now on it is a standalone project.
   → «Решения владельца» (the verbatim block moved to `PROJECT_HISTORY.md`, «STATUS trim 4»).
 - **First steps next chat:**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
-  2. **Epic 01 Ф4** only on the owner's word (the image); meanwhile idea 06 (interview from the epic recon) and idea 09
-     (`ideas/09` plan S1–S5) on `wip/kccp-1.1.3-debug2`. Before any firmware commit: `sh tools/host_tests.sh` (new
-     failures + CRLF, EXP-0018/0019); a shade shot is measured by `tools/shade_gaps.py`.
+  2. **Epic 01 Ф4** only on the owner's word (the image); meanwhile epic 05 by its meta-plan's status, on
+     `wip/kccp-1.1.3-debug2`. Before any firmware commit: `sh tools/host_tests.sh` (new failures + CRLF,
+     EXP-0018/0019); a shade shot is measured by `tools/shade_gaps.py`.
   3. **Idea 06 = epic 05 «Кнопки домашнего экрана»** (`plans/05_EPIC_home_buttons.md`) reuses the epic 01 Ф2 screen;
      the next phase is the one its status names.
   4. The owner's debug9 check (homework 04, steps 2, 4–7) is superseded by the debug10 image (it carries everything of
      debug9); his verdict on picture opening (13:51 «работает») is recorded.
 - **Open work, in order:**
-  1. Epic 01 (idea 05) + idea 06; 2. Idea 09 (open a picture in the orientation that fits its shape — plan; the halves and
-     touches then follow that orientation, `ideas/07`); 3. Idea 03 (re-typeset tool + firmware `<figure>`); 4. KCCP 1.1.3
+  1. Epic 05 (idea 06) Ф3 → Ф5; epic 01 Ф4 and epic 05 Ф6 on the owner's word (the image); 2. Idea 09 — built
+     `9027b99a`, comes with the image; 3. Epic 07 (idea 03, `plans/07_EPIC_figure_caption.md`) after epic 05; 4. KCCP 1.1.3
      assembly: merge release 1.1.2 (`198d385e`) into the debug line (conflicts `lib/hal/HalFrontlight.{cpp,h}`,
      `test/frontlight_dither/`); the owner's open choice: light-linger hold (400 ms) vs timer-redraw hold; 5. Idea 04
      (epic). 6. Bug 01 PR `pr/library-tab-fit` — a free upstream slot (5/5) + proofreading. 7. `bugs/05`, `bugs/06`.

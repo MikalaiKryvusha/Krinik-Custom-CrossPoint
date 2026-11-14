@@ -32,3 +32,24 @@
 | Симулятор | экраны прошивки, ввод скриптом, снимки WebP | сборка из PowerShell: `$env:PYTHONUTF8 = "1"; $env:TEMP = "D:\work\ai_sandbox\KCCP\.tmp"; $env:TMP = $env:TEMP; .pio-venv\Scripts\pio.exe run -d firmware -e simulator_x4_pro_win`; прогон: `SIM_ENV=simulator_x4_pro_win sh tools/sim_run.sh <имя> '<скрипт>' '<снимки>'` | EXP-0004, EXP-0009, EXP-0015; сборка под читалку стирает бинарник симулятора |
 | Замер шторки | равные отступы ряда кнопок на снимке симулятора | `.pio-venv/Scripts/python.exe -I -X utf8 tools/shade_gaps.py <снимок.webp>`: края, кнопки, промежутки; выход 1, если разброс больше 2 точек половинного масштаба | снимки WebP в половинном масштабе: край кнопки точен до ±1 точки |
 | Сборка под читалку | образ для SD-карты | PowerShell, `PYTHONUTF8`, `TEMP` и `TMP` как у симулятора; `.pio-venv\Scripts\pio.exe run -d firmware -e x4pro-krinik-debug` | EXP-0004, EXP-0007 |
+
+## 3. Досье окружения — факты машины
+
+Правило — `AGENT_GUIDE.md` → «Environment dossier». Факт старше четырёх недель — гипотеза: перед опорой на него
+повтори пробу из третьего столбца.
+
+> **Досье окружения.** Снято: 2026-11-14 16:25 +03:00 · Обновление: `/refresh-context`, шаг досье.
+
+| Факт | Значение | Проба |
+|---|---|---|
+| ОС | Windows 11 Pro 10.0.26200 | PowerShell: `(Get-CimInstance Win32_OperatingSystem).Version` |
+| Процессор и память | AMD Ryzen 7 5700G, 16 логических ядер, 31,8 ГБ | PowerShell: `[Environment]::ProcessorCount`, `(Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory` |
+| Оболочки | Git Bash (MINGW64, MSYS 3.4.9), Windows PowerShell 5.1 | `uname -srmo`; `$PSVersionTable.PSVersion` |
+| Кодировки | консоль PowerShell UTF-8; ANSI по умолчанию windows-1251 (ACP 1251), OEM 866 — `Set-Content` пишет в 1251 | PowerShell: `[Console]::OutputEncoding`, `[System.Text.Encoding]::Default` |
+| Локаль | PowerShell ru-RU, интерфейс en-US; Git Bash `LANG` не задан | `Get-Culture`; `echo $LANG` |
+| Python | в Git Bash `python3` — заглушка Microsoft Store (`WindowsApps`); настоящий — `.pio-venv/Scripts/python.exe` 3.11.0 | `command -v python3`; `.pio-venv/Scripts/python.exe -V` |
+| Сборка | PlatformIO 6.2.0 (`.pio-venv`); cmake 4.4.5 и gcc 16.2.0 только с `F:\ai_sandbox\msys64\ucrt64\bin` в PATH; Node 24.15.0; gh 2.95.0 | `--version` у каждого |
+| `tar` / `curl` / `find` | Git Bash: GNU tar 1.35, curl 8.4.0 (mingw64), GNU find; PowerShell: `tar` = `C:\Windows\system32\tar.exe` (bsdtar), `curl` = псевдоним `Invoke-WebRequest`, `find` = `find.exe` Windows | `type -t tar curl find`; `Get-Command tar,curl,find` |
+| Окончания строк в git | этот репозиторий `core.autocrlf=true`; клон `firmware/` `core.autocrlf=false` (EXP-0007); помощник учётных данных `manager` | `git config --get core.autocrlf`; `git -C firmware config --get core.autocrlf` |
+| Менеджер пакетов | winget (из обеих оболочек); MSYS2 pacman в `F:\ai_sandbox\msys64` | `command -v winget` |
+| Ловушки, оплаченные инцидентами | EXP-0004 (cp1251 в Python из Git Bash), EXP-0007 и EXP-0019 (CRLF), EXP-0008 (`grep` падает на длинном потоке), EXP-0010 (`cd` в параллельных вызовах), EXP-0017 (временные файлы вне проекта) | `EXPERIENCE.md` |
