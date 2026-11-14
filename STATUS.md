@@ -1,12 +1,22 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-13 16:41 +03:00 (chat 13:51 → 16:21 closed: debug10 = ideas 07/08 + epic 01 Ф1). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-14 15:32 +03:00 (day loop: interview #004 applied, epic 05 planned). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
 ## Where to continue
 
-- **Day loop since 2026-11-13 19:01 +03:00 — the owner:** «работай автономно над читалкой, со сборкой не торопись, она
+- **Day loop since 2026-11-14 15:26 +03:00 — the owner:** «работай автономно над прошивкой в автономном цикле
+  дневном». First item done: his interview #004 answers applied (below); the loop works epic 05 Ф1 → Ф5, then idea 03.
+  The image still waits for his word (13.11 19:01).
+- **Epic 05 «Кнопки домашнего экрана» (idea 06) — meta-plan `plans/05_EPIC_home_buttons.md` (2026-11-14 15:31).**
+  Interview #004 answered by 2026-11-14 15:25 +03:00 (verbatim `a717ee3`): every Home button may be hidden except
+  «Настройки» (no checkbox, ▲ ▼ only); «Для любимой Мамы» a normal row, on, last, mama build only; the screen
+  «Кнопки домашнего экрана» sits in «Настройки → Экран» under «Кнопки в шторке»; a long tap on any Home button opens
+  it; the Home button list SCROLLS in every theme when it does not fit, the book cover outside the scroll. Phases:
+  Ф1 model + `homeButtons` key · Ф2 Home reads the model (8 sites) · Ф3 scroll · Ф4 the screen · Ф5 long tap · Ф6
+  acceptance (image on the owner's word). Ф3 closes the MASTER_PLAN phase-2 mama-menu task.
+- **Day loop 2026-11-13 19:01 +03:00 — the owner:** «работай автономно над читалкой, со сборкой не торопись, она
   мне пока не особо нужна. Работаем по фичам KCCP» · «дневной цикл». The debug1 IMAGE waits (no build, no card, no
   homework delivery until asked); the loop works the KCCP features: epic 01 Ф2 → Ф3, idea 06, idea 09, idea 03.
   The debug1 judge (19:00) found `frontlight_dither` red at `d56b53e9` (a fade check kept the old 10 % threshold) —
@@ -21,9 +31,6 @@ work project. From now on it is a standalone project.
   1.1.3-debug2 homework). **Idea 09 built** (`9027b99a`, 20:24): every picture opens by its shape, simulator E1–E10
   pass (`testcases/reports/2026-11-13_idea09.md`). Next in the loop: idea 03 (caption standards recon done) or idea 06
   after the owner's answers.
-- **❓ awaiting the owner: `interviews/interview_004_home_buttons.md`** (idea 06, five forks: which Home buttons may be
-  hidden and «Настройки», the mama row, the place in Settings, the long-tap entry, more buttons than fit). Filed
-  2026-11-13 20:08 +03:00, NOT shown yet (the owner is busy; a clean voice pass runs first); idea 06 waits on it.
 - **Chat 2026-11-13 13:51 → 16:21 closed** — its summary moved verbatim to `PROJECT_HISTORY.md` (entry «STATUS trim
   4»); debug10 `wip/krinik-debug10` is the base of the 1.1.3 line below.
 - **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
@@ -40,8 +47,8 @@ work project. From now on it is a standalone project.
   2. **Epic 01 Ф4** only on the owner's word (the image); meanwhile idea 06 (interview from the epic recon) and idea 09
      (`ideas/09` plan S1–S5) on `wip/kccp-1.1.3-debug2`. Before any firmware commit: `sh tools/host_tests.sh` (new
      failures + CRLF, EXP-0018/0019); a shade shot is measured by `tools/shade_gaps.py`.
-  3. **Idea 06 «Кнопки главного экрана»** reuses the Ф2 screen — its own epic after epic 01 (the owner asked 16:21
-     whether it comes in the next chat: yes, if the window allows after the shade).
+  3. **Idea 06 = epic 05 «Кнопки домашнего экрана»** (`plans/05_EPIC_home_buttons.md`) reuses the epic 01 Ф2 screen;
+     the next phase is the one its status names.
   4. The owner's debug9 check (homework 04, steps 2, 4–7) is superseded by the debug10 image (it carries everything of
      debug9); his verdict on picture opening (13:51 «работает») is recorded.
 - **Open work, in order:**
@@ -156,7 +163,8 @@ already say KCCP. In the firmware fork it is still krinik:
   duty of 10 %).
 - **KCCP 1.1.2** (frontlight) is published: https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2 (2026-11-08,
   bilingual notes, Latest; the image still says `cp-2.0.0-krinik-1.1.2` inside).
-- "Mama" build with OPDS/plugins: the Home menu has 8 rows and the "Mama" row runs off the screen — fix before the next mama build.
+- "Mama" build with OPDS/plugins: the Home menu has 8 rows and the "Mama" row runs off the screen — fix before the next
+  mama build; the owner's fix (interview #004, Q2 + Q5): the Home button list scrolls — epic 05 Ф3.
 
 ### Hardware research and the tiles idea
 

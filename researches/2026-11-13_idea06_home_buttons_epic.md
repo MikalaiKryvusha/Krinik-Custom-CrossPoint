@@ -1,6 +1,8 @@
 # Research — idea 06: the Home screen buttons settings (epic recon)
 
-> **Created:** 2026-11-13 · **Parent:** ideas/06_home_buttons_settings.md · **Status:** recon · **Outbound:** —
+> **Created:** 2026-11-13 · **Parent:** ideas/06_home_buttons_settings.md · **Status:** recon; the section-6 forks went
+> to `interviews/interview_004_home_buttons.md` (merged into five questions) and were answered 2026-11-14 (by 15:25
+> +03:00) — the decisions live in `plans/05_EPIC_home_buttons.md` → «Решения владельца» · **Outbound:** —
 
 The owner's ask (`ideas/06`, `[OWNER] 2026-11-13 13:29 +03:00 · chat`): «и дует меню с настройками кнопок главного
 экрана» — a settings screen for the Home buttons, the same kind as «Кнопки в шторке» (epic 01 Ф2). This is rung 1 of
