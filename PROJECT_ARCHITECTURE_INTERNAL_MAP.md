@@ -110,9 +110,12 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   (`isLocked`, `canToggle`); `visible(list, hasPluginsOpdsSlot)` = the buttons Home shows, `indexIn` = a button's row;
   key `homeButtons` in `settings.json` (omitted while default, `Home buttons:` logged at load); host test
   `test/home_menu_buttons/` built twice (`HomeMenuButtonsTest`, `HomeMenuButtonsMamaTest` with `-DKRINIK_MAMA=1`).
-- `src/activities/home/HomeActivity.{h,cpp}` — the Home screen: recent covers first, then the button rows; the order is
-  hard-coded in `menuItemToIndex`/`indexToMenuItem` (`.h`), the count, the labels/icons vector and the action switch
-  (`.cpp`) — epic 05 Ф2 moves them onto `homemenu` (the eight sites: `researches/2026-11-13_idea06_home_buttons_epic.md` §2.1).
+- `src/activities/home/HomeActivity.{h,cpp}` — the Home screen: recent covers first, then the button rows. Since epic 05
+  Ф2 (`f9ae704b`) `onEnter` reads `homemenu::visible(SETTINGS.homeButtons, slot)` into `shownButtons`; the count, the
+  labels/icons, the action switch, the first cursor and `CoverGridHomeUi`'s icon tabs index that one list. One mapping
+  `menuItemOf(Button) → HomeMenuItem`; `menuIndexOf` searches the list through it (hidden/absent → the first button).
+  Both `.cpp` files turn `-Wswitch` into an error by `#pragma` — the build has no `-Wall`. `shownButtons` is not
+  refreshed while Home stays alive under a pushed screen (only `onEnter`).
 - `firmware/platformio.local.ini` (ignored) — this PC's native Windows simulator envs (research 01).
 - `simulator/src/HalStorage.cpp` — the simulator's SD card over a host folder (`CROSSPOINT_SIM_SD`); `replaceFile`
   mirrors the device's remove-then-rename (a bare `rename` cannot overwrite on Windows, found 2026-11-09).

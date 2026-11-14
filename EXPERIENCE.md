@@ -82,6 +82,21 @@
 
 ## Entries
 
+### EXP-0021 · 2026-11-14 · ❌→✅ · #build #warnings #guard #firmware
+class: guard-not-proven-against-threat
+mechanized: #pragma GCC diagnostic error "-Wswitch" in src/activities/home/HomeActivity.cpp and src/components/CoverGridHomeUi.cpp (red on a removed case, 2026-11-14)
+**Context:** epic 05 Ф2 — comments and plan 08 claimed «-Wswitch names a new button» for the exhaustive switches over
+`homemenu::Button`.
+**Result:** ❌ the judge: the firmware build (device and simulator) has no `-Wall`, so `-Wswitch` never fires; a button
+without its label case would draw one row fewer than the tapped list. ✅ the files turn `-Wswitch` into an error; a
+removed case stops the build: «enumeration value 'Sleep' not handled in switch [-Werror=switch]».
+**Lesson:** a compiler warning named as a guard is checked in the REAL build's flags (`platformio.ini`, the framework's
+`cpp_flags`) and seen red there, never assumed from the warning's name.
+**Repro:** remove one `case homemenu::Button::…:` from `tabIconOf` in `CoverGridHomeUi.cpp`, `pio run -e
+simulator_x4_pro_win` → `[-Werror=switch]`, `[FAILED]`; restore.
+**Trigger:** writing «the compiler will catch it» in a comment, a plan or a commit.
+**Not for:** host tests (CMake sets its own flags — check them there separately).
+
 ### EXP-0020 · 2026-11-14 · ❌→✅ · #tests #mutation #model #firmware
 class: guard-not-proven-against-threat
 none-cheap: the test itself is the guard now; the carrier is the Repro mutation below

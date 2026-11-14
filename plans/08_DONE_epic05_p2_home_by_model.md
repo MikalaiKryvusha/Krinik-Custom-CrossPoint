@@ -1,7 +1,9 @@
 # Plan 08 — epic 05, phase 2: Home draws its buttons from the model
 
 > **Created:** 2026-11-14 · **Parent:** `plans/05_EPIC_home_buttons.md` → «Ф2 — домашний экран по модели» · **Status:**
-> 🔧 in work since 2026-11-14 15:57 +03:00 (Ф1 closed); drafted 2026-11-14 15:51 +03:00 · **Outbound:** —
+> ✅ phase closed 2026-11-14 16:22 +03:00 — firmware `f9ae704b`; simulator C1–C8 pass in all five themes (`testcases/reports/2026-11-14_epic05_p2.md`),
+> the `-Wswitch` error proven red, host suite 795/803 (the 8 known); judge: VERIFIED WITH CAVEATS, no blockers,
+> findings fixed · in work since 2026-11-14 15:57 +03:00 · **Outbound:** —
 
 ## Goal vector (Achieve)
 
@@ -29,18 +31,26 @@ Anchor (meta-plan, Ф2): «Домашний экран берёт порядок
 
 ## Steps
 
-- [ ] P2.1 One mapping `homemenu::Button ↔ HomeMenuItem` as an exhaustive `switch` over `Button` with no `default`, so
-      `-Wswitch` catches a new button; `Mama` under `#if KRINIK_MAMA` (judge Ф1, finding 8). Anchor: «во всех восьми
-      местах кода».
-- [ ] P2.2 `HomeActivity`: `menuItemToIndex`/`indexToMenuItem`, `getMenuItemCount`, the labels/icons vector, the
+- [x] P2.1 One mapping `homemenu::Button → HomeMenuItem` as an exhaustive `switch` over `Button` with no `default`; the
+      reverse searches the shown list through it (the Ф2 judge: two inverse switches are a pair). The build has no
+      `-Wall`, so each file turns `-Wswitch` into an error by `#pragma GCC diagnostic error "-Wswitch"` — proven red on
+      a removed case; `Mama` under `#if KRINIK_MAMA` (judge Ф1, finding 8). Anchor: «во всех восьми местах кода».
+- [x] P2.2 `HomeActivity`: `menuItemToIndex`/`indexToMenuItem`, `getMenuItemCount`, the labels/icons vector, the
       selection start and the action switch read the visible list; labels and icons by button.
-- [ ] P2.3 `CoverGridHomeUi`: `begin()` takes the visible list; `drawTabs` icons by button; `tabItems` capacity =
+- [x] P2.3 `CoverGridHomeUi`: `begin()` takes the visible list; `drawTabs` icons by button; `tabItems` capacity =
       `homemenu::kCount`.
-- [ ] P2.4 `goHome` keeps its name → `HomeMenuItem` map; Home resolves it through `indexIn` (−1 → the first button).
-- [ ] P2.5 Judge BEFORE the build; fix findings.
-- [ ] P2.6 Host suite (`sh tools/host_tests.sh`); simulator runs for criteria 1–5 by a case set
+- [x] P2.4 `goHome` keeps its name → `HomeMenuItem` map; Home resolves it through `indexIn` (−1 → the first button).
+- [x] P2.5 Judge BEFORE the build; fix findings.
+- [x] P2.6 Host suite (`sh tools/host_tests.sh`); simulator runs for criteria 1–5 by a case set
       `testcases/TC_epic05_p2_home_by_model.md`; run report.
-- [ ] P2.7 Commit, tick Ф2 in the meta-plan, write the Ф3 plan (and add `simulator_x4_pro_mama_win`).
+- [x] P2.7 Commit, tick Ф2 in the meta-plan, write the Ф3 plan (and add `simulator_x4_pro_mama_win`).
+
+## Carried forward (the Ф2 judge, 2026-11-14 16:1x)
+
+- **Ф5:** `shownButtons` is set only in `HomeActivity::onEnter`. If the «Кнопки домашнего экрана» screen is PUSHED over
+  Home, Home gets no `onEnter` when it closes and keeps the old order — meta-plan criterion 9 would fail. Ф5 recomputes
+  `shownButtons` (and `coverGridUi->begin`) on return, or leaves the screen through `goHome`.
+- **P2.7:** `PROJECT_ARCHITECTURE_INTERNAL_MAP.md` → the `HomeActivity` line says the order is hard-coded; rewrite it.
 
 ## Risks
 
@@ -48,3 +58,15 @@ Anchor (meta-plan, Ф2): «Домашний экран берёт порядок
    again before the judge). A missed site draws one order and acts on another — criterion 2 taps every button.
 2. **RoundedRaff paging vs the touch grid** (research §2.2, noticed, not verified) — criterion 1 taps in theme 3.
 3. **Upstream drift** in `HomeActivity.*` / `CoverGridHomeUi.*` (upstream files): keep the diff to the eight sites.
+
+## Decisions made without the owner
+
+- `[AI]` The reverse lookup (`HomeMenuItem` → row) searches the shown list through the one forward mapping — the Ф2
+  judge's finding 2; two inverse switches would be a pair that can drift.
+- `[AI]` `#pragma GCC diagnostic error "-Wswitch"` in `HomeActivity.cpp` and `CoverGridHomeUi.cpp`: the build has no
+  `-Wall` (the judge's finding 1), so the exhaustive switches over `homemenu::Button` / `HomeMenuItem` are guarded by
+  the file itself; proven red on a removed case.
+- `[AI]` A hidden or absent remembered button lands on the first BUTTON (`base + 0`), `NONE` on the first cover — the
+  meta-plan's «если эта кнопка выключена — на первую кнопку», as the absent plugins/OPDS slot behaved before.
+- `[AI]` The cover-grid tabs copy the shown list in `begin()` (`tabItems` capacity = `homemenu::kCount`).
+- PENDING settled: none were opened.

@@ -58,7 +58,7 @@ Anchor (meta-plan, Ф1): «кнопки со строковыми именами
       (`HomeMenuButtonsMamaTest`); `simulator_x4_pro_mama_win` (`-DKRINIK_MAMA=1`) goes into `platformio.local.ini`
       before Ф3 (meta-plan criterion 4).
 - [x] P1.7 Run report, commit on `wip/kccp-1.1.3-debug2`, tick Ф1 in the meta-plan, write the Ф2 plan
-      (`plans/08_epic05_p2_home_by_model.md`).
+      (`plans/08_DONE_epic05_p2_home_by_model.md`).
 
 ## Verification
 

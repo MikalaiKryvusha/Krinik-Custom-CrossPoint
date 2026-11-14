@@ -1,0 +1,45 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p2_tap4/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p2_tap4/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p2_tap4/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[4] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[4] [INF] [CPS] Home buttons: files,sleep,-library,plugins_opds,transfer,settings,flashlight
+[4] [DBG] [CPS] Resaving settings to update format
+[4] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-14 13:17
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[207] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p2_tap4/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[208] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p2_tap4/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[208] [DBG] [SDREG] Fonts directory not found: /fonts
+[208] [DBG] [SDREG] Discovery complete: 0 families
+[208] [DBG] [SDFS] SD font system ready (0 families discovered)
+[208] [DBG] [MAIN] Fonts setup
+[208] [DBG] [ACT] Entering activity: Boot
+[208] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[216] [DBG] [ACT] Exiting activity: Boot
+[216] [DBG] [ACT] Entering activity: Home
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p2_tap4/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[217] [DBG] [GFX] Time = 9 ms from clearScreen to displayBuffer
+[220] [DBG] [LIBIDX] phase prepare/prior: 1ms
+[220] [DBG] [LIBIDX] phase walk/metadata/stage: 0ms
+[220] [DBG] [LIBIDX] phase reconcile: 0ms
+[220] [DBG] [LIBIDX] phase title order: 0ms
+[221] [DBG] [LIBIDX] phase author/orders/emit: 1ms
+[221] [INF] [LIBIDX] built: 0 books, 0 folders, 0 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 2ms
+[221] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [216] [DBG] [ACT] Entering activity: Home
+[234] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[247] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3322] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3334] [DBG] [SLP] Sleep requested from the home menu
+[3335] [DBG] [ACT] Exiting activity: Home
+[3335] [DBG] [ACT] Entering activity: Sleep
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p2_tap4/sd/.sleep (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p2_tap4/sd/sleep (flags=0x0 errno=2 No such file or directory)
+[3336] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3338] [DBG] [MAIN] Entering deep sleep
