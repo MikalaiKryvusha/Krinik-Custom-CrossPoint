@@ -19,8 +19,13 @@ work project. From now on it is a standalone project.
   `be6e9a16`, `testcases/reports/2026-11-14_epic05_p1.md`). **Ф2 closed** (firmware `f9ae704b`: Home draws the
   model in all five themes, `testcases/reports/2026-11-14_epic05_p2.md`). **Ф3 closed** (firmware `a47582b0`: the
   button list scrolls, the mama button reachable, 0 off-screen draws; `testcases/reports/2026-11-14_epic05_p3.md`; the
-  Windows mama simulator env `simulator_x4_pro_mama_win` exists). Ф4 (the screen «Кнопки домашнего экрана») next;
-  carry the Ф2 judge's note: `shownButtons` is set only in `onEnter` (matters for Ф5).
+  Windows mama simulator env `simulator_x4_pro_mama_win` exists). **Ф4 built** (firmware `2fa20f3f`, the shade C1–C8 +
+  H1–H4 pass, `testcases/reports/2026-11-14_epic05_p4.md`; H5: «Для любимой Ма…» cut → ❓ interview #006, filed, NOT
+  shown, the clean voice pass first). Earlier Ф4 note, now done: (plan
+  `plans/10_epic05_p4_home_buttons_screen.md`, 2026-11-14 17:11 +03:00): uncommitted firmware tree — new `ToggleRowsActivity.{h,cpp}` +
+  `ToggleRowsLayout.h` (the shared base extracted from «Кнопки в шторке»), `ShadeTilesActivity.h` rewritten onto it;
+  NEXT: `ShadeTilesActivity.cpp` onto the base, `HomeButtonsActivity`, strings, the Settings row, the judge, then the
+  shade C1–C8 re-run + the Ф4 cases. Carry the Ф2 judge's note: `shownButtons` is set only in `onEnter` (Ф5).
 - **Epic 07 «подпись всегда с картинкой» (idea 03) — meta-plan `plans/07_EPIC_figure_caption.md` (2026-11-14).**
   Ф1 layout (a `<figure>` and any picture block with `page-break-inside`/`break-inside: avoid` kept on one page, the
   picture shrunk when the pair does not fit) · Ф2 caption look (centred, no first-line indent by ГОСТ 7.32 / БГУИР;
@@ -193,7 +198,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | a47582b0 |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 2fa20f3f |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |

@@ -99,6 +99,11 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   open; Back = `finish()`. The Bluetooth row is hidden where Bluetooth is not compiled in (the simulator). Row names are
   the screen's own short strings where the Settings name is too long (`STR_SHADE_TILE_ORIENTATION` «Ориентация»).
   The constructor's `cursorTile` is the phase 3 entry (the long-tapped button).
+- `src/activities/settings/ToggleRowsActivity.{h,cpp}` + `ToggleRowsLayout.h` (epic 05 Ф4, `2fa20f3f`) — the shared rows
+  screen of a user-ordered on/off list (icon, name, ▲ ▼, checkbox; stale-tap guard; portrait while open; save on exit)
+  with virtual rows; `ShadeTilesActivity` and `HomeScreenButtonsActivity` («Кнопки домашнего экрана», Settings → Display
+  under «Кнопки в шторке»; «Настройки» without a checkbox) derive. `src/util/HomeLibrarySlot.h` — the one test «does Home
+  draw the plugins/OPDS row», asked by Home and the screen.
 - `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: seven tiles by string id, on/off and order,
   `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), at least one on, the
   equal-gap row layout and touch slots; host test `test/shade_tiles/` (`ShadeTilesTest.cpp`, 12 cases); held by
