@@ -1,0 +1,34 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p1_key/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p1_key/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p1_key/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[11] [INF] [CPS] Shade tiles: sleep,night,-touch,-cleanup,-orientation,-bluetooth,-flashlight
+[11] [INF] [CPS] Home buttons: sleep,files,-transfer,settings,-library,-plugins_opds,-flashlight
+[11] [DBG] [CPS] Resaving settings to update format
+[11] [DBG] [CPS] Settings loaded from file
+[13] [DBG] [UI] Using Lyra theme
+[13] [INF] [CLK] RTC clock read: 2026-11-14 12:54
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[13] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[371] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p1_key/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[371] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p1_key/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[372] [DBG] [SDREG] Fonts directory not found: /fonts
+[372] [DBG] [SDREG] Discovery complete: 0 families
+[372] [DBG] [SDFS] SD font system ready (0 families discovered)
+[372] [DBG] [MAIN] Fonts setup
+[372] [DBG] [ACT] Entering activity: Boot
+[372] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[383] [DBG] [ACT] Exiting activity: Boot
+[383] [DBG] [ACT] Entering activity: Home
+[384] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [383] [DBG] [ACT] Entering activity: Home
+[399] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p1_key/shots/home.bmp
+[3711] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3711] [DBG] [ACT] Entering activity: FrontlightPanel
+[3712] [DBG] [GFX] Time = 3314 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [3711] [DBG] [ACT] Entering activity: FrontlightPanel
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p1_key/shots/shade.bmp

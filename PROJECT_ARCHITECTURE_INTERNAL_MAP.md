@@ -101,7 +101,18 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   The constructor's `cursorTile` is the phase 3 entry (the long-tapped button).
 - `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: seven tiles by string id, on/off and order,
   `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), at least one on, the
-  equal-gap row layout and touch slots; host test `test/shade_tiles/`; held by `CrossPointSettings::shadeTiles`.
+  equal-gap row layout and touch slots; host test `test/shade_tiles/` (`ShadeTilesTest.cpp`, 12 cases); held by
+  `CrossPointSettings::shadeTiles`. Since epic 05 Ф1 its token loop and ▲ ▼ edits come from `src/util/IdOrderList.h`
+  (namespace `idorder`: `forEachToken`, `appendToken`, `moveUp/moveDown/countOn`), the storage algorithm both models share.
+- `src/util/HomeMenuButtons.h` (1.1.3-debug2, epic 05 Ф1) — the Home button model, namespace `homemenu`: ids files,
+  library, plugins_opds (ONE row: «Плагины» or «OPDS браузер»), transfer, settings, flashlight, sleep and, under
+  `KRINIK_MAMA` only, mama (so `kCount` is 7 or 8 per build); default = today's order, all on; settings locked on
+  (`isLocked`, `canToggle`); `visible(list, hasPluginsOpdsSlot)` = the buttons Home shows, `indexIn` = a button's row;
+  key `homeButtons` in `settings.json` (omitted while default, `Home buttons:` logged at load); host test
+  `test/home_menu_buttons/` built twice (`HomeMenuButtonsTest`, `HomeMenuButtonsMamaTest` with `-DKRINIK_MAMA=1`).
+- `src/activities/home/HomeActivity.{h,cpp}` — the Home screen: recent covers first, then the button rows; the order is
+  hard-coded in `menuItemToIndex`/`indexToMenuItem` (`.h`), the count, the labels/icons vector and the action switch
+  (`.cpp`) — epic 05 Ф2 moves them onto `homemenu` (the eight sites: `researches/2026-11-13_idea06_home_buttons_epic.md` §2.1).
 - `firmware/platformio.local.ini` (ignored) — this PC's native Windows simulator envs (research 01).
 - `simulator/src/HalStorage.cpp` — the simulator's SD card over a host folder (`CROSSPOINT_SIM_SD`); `replaceFile`
   mirrors the device's remove-then-rename (a bare `rename` cannot overwrite on Windows, found 2026-11-09).

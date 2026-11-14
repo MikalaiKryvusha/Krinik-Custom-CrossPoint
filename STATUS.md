@@ -15,7 +15,15 @@ work project. From now on it is a standalone project.
   «Кнопки домашнего экрана» sits in «Настройки → Экран» under «Кнопки в шторке»; a long tap on any Home button opens
   it; the Home button list SCROLLS in every theme when it does not fit, the book cover outside the scroll. Phases:
   Ф1 model + `homeButtons` key · Ф2 Home reads the model (8 sites) · Ф3 scroll · Ф4 the screen · Ф5 long tap · Ф6
-  acceptance (image on the owner's word). Ф3 closes the MASTER_PLAN phase-2 mama-menu task.
+  acceptance (image on the owner's word). Ф3 closes the MASTER_PLAN phase-2 mama-menu task. **Ф1 closed** (firmware
+  `be6e9a16`, `testcases/reports/2026-11-14_epic05_p1.md`); Ф2 next by `plans/08_epic05_p2_home_by_model.md`.
+- **Epic 07 «подпись всегда с картинкой» (idea 03) — meta-plan `plans/07_EPIC_figure_caption.md` (2026-11-14).**
+  Ф1 layout (a `<figure>` and any picture block with `page-break-inside`/`break-inside: avoid` kept on one page, the
+  picture shrunk when the pair does not fit) · Ф2 caption look (centred, no first-line indent by ГОСТ 7.32 / БГУИР;
+  italic and size by mock-ups → homework) · Ф3 the re-typeset tool · Ф4 acceptance. Starts after epic 05.
+- **❓ awaiting the owner: `interviews/interview_005_caption_wording.md`** (one question: keep the author's «Рис. 2. …»
+  or rewrite to «Рисунок 2 –» БГУИР / «Рисунок 2 —» ГОСТ 7.32). Filed 2026-11-14, NOT shown yet (the owner is busy;
+  the clean voice pass runs first). Blocks only epic 07 Ф3.
 - **Day loop 2026-11-13 19:01 +03:00 — the owner:** «работай автономно над читалкой, со сборкой не торопись, она
   мне пока не особо нужна. Работаем по фичам KCCP» · «дневной цикл». The debug1 IMAGE waits (no build, no card, no
   homework delivery until asked); the loop works the KCCP features: epic 01 Ф2 → Ф3, idea 06, idea 09, idea 03.
@@ -182,7 +190,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 9027b99a |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | be6e9a16 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |

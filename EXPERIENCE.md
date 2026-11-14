@@ -82,6 +82,21 @@
 
 ## Entries
 
+### EXP-0020 · 2026-11-14 · ❌→✅ · #tests #mutation #model #firmware
+class: guard-not-proven-against-threat
+none-cheap: the test itself is the guard now; the carrier is the Repro mutation below
+**Context:** epic 05 Ф1, the Home button model: «Настройки» may not be switched off (`homemenu::canToggle`); the host test
+checked the refusal over `defaults()` only, and the mutation proof removed the lock entirely.
+**Result:** ❌ the judge's mutant `return index != 4;` (refuse by ROW, not by button) passed all 11 tests in both builds —
+Ф4 calls `canToggle` at a row after the owner moves «Настройки» with ▲ ▼. ✅ the test now also checks «Настройки» moved
+up and parsed first; the positional mutant goes red (`SettingsStaysOn`, plain and mama).
+**Lesson:** a rule keyed on an ITEM of a reorderable list is tested with the item at a moved position too, and the
+mutation proof includes the "keyed on the position" mutant, not only "rule removed".
+**Repro:** in `src/util/HomeMenuButtons.h` replace `return !isLocked(list[index].button);` with `return index != 4;`,
+rebuild `HomeMenuButtonsTest HomeMenuButtonsMamaTest`, `ctest -R HomeMenuButtons` → `SettingsStaysOn` Failed ×2; restore.
+**Trigger:** writing a test for a per-item rule of any user-ordered list (shade tiles, Home buttons).
+**Not for:** rules that are positional by design (the first/last row of a list).
+
 ### EXP-0019 · 2026-11-13 · ❌→✅ · #crlf #python #firmware #windows
 class: shell-lied
 mechanized: tools/host_tests.sh — refuses CRLF in firmware src/ lib/ test/ (tracked or new), red on a header turned CRLF (2026-11-13)
