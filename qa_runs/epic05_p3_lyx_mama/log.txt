@@ -1,0 +1,34 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[6] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[6] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep,mama
+[6] [DBG] [CPS] Resaving settings to update format
+[6] [DBG] [CPS] Settings loaded from file
+[8] [DBG] [UI] Using Lyra 3 Covers theme
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_lyx_mama/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_lyx_mama/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_lyx_mama/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[13] [INF] [CLK] RTC clock read: 2026-11-14 13:57
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[13] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[269] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_lyx_mama/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[270] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_lyx_mama/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[270] [DBG] [SDREG] Fonts directory not found: /fonts
+[270] [DBG] [SDREG] Discovery complete: 0 families
+[270] [DBG] [SDFS] SD font system ready (0 families discovered)
+[270] [DBG] [MAIN] Fonts setup
+[270] [DBG] [ACT] Entering activity: Boot
+[270] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[281] [DBG] [ACT] Exiting activity: Boot
+[281] [DBG] [ACT] Entering activity: Home
+[281] [DBG] [HOME] Menu geometry: top=372 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=6 rows=8
+[282] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [281] [DBG] [ACT] Entering activity: Home
+[297] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_lyx_mama/shots/a.bmp
+[3859] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_lyx_mama/shots/b.bmp
+[6857] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_lyx_mama/shots/c.bmp

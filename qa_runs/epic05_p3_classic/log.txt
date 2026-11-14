@@ -1,0 +1,34 @@
+[0] [DBG] [UI] Using Lyra theme
+[1] [INF] [MAIN] Device: xteink_x4_pro
+[3] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[3] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep,mama
+[3] [DBG] [CPS] Resaving settings to update format
+[3] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Classic theme
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_classic/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_classic/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_classic/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[11] [INF] [CLK] RTC clock read: 2026-11-14 13:57
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[11] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[443] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_classic/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[444] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_classic/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[444] [DBG] [SDREG] Fonts directory not found: /fonts
+[444] [DBG] [SDREG] Discovery complete: 0 families
+[444] [DBG] [SDFS] SD font system ready (0 families discovered)
+[444] [DBG] [MAIN] Fonts setup
+[444] [DBG] [ACT] Entering activity: Boot
+[444] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[457] [DBG] [ACT] Exiting activity: Boot
+[457] [DBG] [ACT] Entering activity: Home
+[457] [DBG] [HOME] Menu geometry: top=450 contentBottom=797 hints=0 vspace=10 row=41 spacing=8 visible=7 rows=8
+[458] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [457] [DBG] [ACT] Entering activity: Home
+[474] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_classic/shots/a.bmp
+[4039] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_classic/shots/b.bmp
+[7042] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p3_classic/shots/c.bmp

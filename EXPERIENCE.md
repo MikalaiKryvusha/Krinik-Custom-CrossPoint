@@ -82,6 +82,20 @@
 
 ## Entries
 
+### EXP-0022 · 2026-11-14 · ❌→✅ · #geometry #judge #simulator #home
+class: claim-before-evidence
+mechanized: LOG_DBG «Menu geometry» in HomeActivity::onEnter (firmware a47582b0) — the measured numbers are one grep away in every simulator run
+**Context:** epic 05 Ф3 — the judge simulated the Home row count for a 480×800 screen and proposed taking
+`verticalSpacing` off for Classic, «X4 Pro counts unchanged».
+**Result:** ❌ applied: Lyra lost its 7th row on the simulator — the real content bottom is 797 (a 3 px viewable inset),
+not 800, so (797 − 314 − 16 + 8) / 68 = 6.98 → 6. Found by a shot (6 rows) and then a `LOG_DBG` line with the numbers.
+✅ reverted; the measured geometry is in the code comment.
+**Lesson:** a geometry fix, mine or a judge's, is accepted only after the REAL numbers are printed on the stand; a
+simulation with assumed screen sizes proves the arithmetic, not the screen.
+**Repro:** `grep -a "Menu geometry" qa_runs/<run>/log.txt` → `top=314 contentBottom=797 … visible=7` on Lyra.
+**Trigger:** any change to a count of rows, pixels or slots derived from screen metrics.
+**Not for:** values the code reads at run time from the same source it draws with (no assumption to check).
+
 ### EXP-0021 · 2026-11-14 · ❌→✅ · #build #warnings #guard #firmware
 class: guard-not-proven-against-threat
 mechanized: #pragma GCC diagnostic error "-Wswitch" in src/activities/home/HomeActivity.cpp and src/components/CoverGridHomeUi.cpp (red on a removed case, 2026-11-14)

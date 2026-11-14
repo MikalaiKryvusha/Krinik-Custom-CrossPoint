@@ -115,7 +115,11 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   labels/icons, the action switch, the first cursor and `CoverGridHomeUi`'s icon tabs index that one list. One mapping
   `menuItemOf(Button) → HomeMenuItem`; `menuIndexOf` searches the list through it (hidden/absent → the first button).
   Both `.cpp` files turn `-Wswitch` into an error by `#pragma` — the build has no `-Wall`. `shownButtons` is not
-  refreshed while Home stays alive under a pushed screen (only `onEnter`).
+  refreshed while Home stays alive under a pushed screen (only `onEnter`). Since Ф3 (`a47582b0`) the list themes draw
+  the slice [`menuTopRow`, + `visibleMenuRows()`) of the menu rows (whole rows down to the content bottom minus the hint
+  band; X4 Pro: top 314, bottom 797, Lyra 7 rows), a thumb scroll bar while rows overflow; a swipe that starts on the
+  list scrolls by a page, keys pull the list to the selection; the cover grid does not scroll. `LOG_DBG` «Menu
+  geometry» on entry prints the numbers.
 - `firmware/platformio.local.ini` (ignored) — this PC's native Windows simulator envs (research 01).
 - `simulator/src/HalStorage.cpp` — the simulator's SD card over a host folder (`CROSSPOINT_SIM_SD`); `replaceFile`
   mirrors the device's remove-then-rename (a bare `rename` cannot overwrite on Windows, found 2026-11-09).
