@@ -45,7 +45,7 @@ Anchor (meta-plan, Ф2): «Домашний экран берёт порядок
       `testcases/TC_epic05_p2_home_by_model.md`; run report.
 - [x] P2.7 Commit, tick Ф2 in the meta-plan, write the Ф3 plan (and add `simulator_x4_pro_mama_win`).
 
-## Carried forward (the Ф2 judge, 2026-11-14 16:1x)
+## Carried forward (the Ф2 judge, ≈ 2026-11-14 16:11)
 
 - **Ф5:** `shownButtons` is set only in `HomeActivity::onEnter`. If the «Кнопки домашнего экрана» screen is PUSHED over
   Home, Home gets no `onEnter` when it closes and keeps the old order — meta-plan criterion 9 would fail. Ф5 recomputes

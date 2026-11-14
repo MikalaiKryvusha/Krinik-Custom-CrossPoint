@@ -1,31 +1,35 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-14 15:32 +03:00 (day loop: interview #004 applied, epic 05 planned). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-14 17:59 +03:00 (chat 15:26 → closed: epic 05 Ф1–Ф4 on the simulator, epic 07 planned). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
 ## Where to continue
 
-- **Day loop since 2026-11-14 15:26 +03:00 — the owner:** «работай автономно над прошивкой в автономном цикле
-  дневном». First item done: his interview #004 answers applied (below); the loop works epic 05 Ф1 → Ф5, then idea 03.
-  The image still waits for his word (13.11 19:01).
-- **Epic 05 «Кнопки домашнего экрана» (idea 06) — meta-plan `plans/05_EPIC_home_buttons.md` (2026-11-14 15:31).**
-  Interview #004 answered by 2026-11-14 15:25 +03:00 (verbatim `a717ee3`): every Home button may be hidden except
-  «Настройки» (no checkbox, ▲ ▼ only); «Для любимой Мамы» a normal row, on, last, mama build only; the screen
-  «Кнопки домашнего экрана» sits in «Настройки → Экран» under «Кнопки в шторке»; a long tap on any Home button opens
-  it; the Home button list SCROLLS in every theme when it does not fit, the book cover outside the scroll. Phases:
-  Ф1 model + `homeButtons` key · Ф2 Home reads the model (8 sites) · Ф3 scroll · Ф4 the screen · Ф5 long tap · Ф6
-  acceptance (image on the owner's word). Ф3 closes the MASTER_PLAN phase-2 mama-menu task. **Ф1 closed** (firmware
-  `be6e9a16`, `testcases/reports/2026-11-14_epic05_p1.md`). **Ф2 closed** (firmware `f9ae704b`: Home draws the
-  model in all five themes, `testcases/reports/2026-11-14_epic05_p2.md`). **Ф3 closed** (firmware `a47582b0`: the
-  button list scrolls, the mama button reachable, 0 off-screen draws; `testcases/reports/2026-11-14_epic05_p3.md`; the
-  Windows mama simulator env `simulator_x4_pro_mama_win` exists). **Ф4 built** (firmware `2fa20f3f`, the shade C1–C8 +
-  H1–H4 pass, `testcases/reports/2026-11-14_epic05_p4.md`; H5: «Для любимой Ма…» cut → ❓ interview #006, filed, NOT
-  shown, the clean voice pass first). Earlier Ф4 note, now done: (plan
-  `plans/10_epic05_p4_home_buttons_screen.md`, 2026-11-14 17:11 +03:00): uncommitted firmware tree — new `ToggleRowsActivity.{h,cpp}` +
-  `ToggleRowsLayout.h` (the shared base extracted from «Кнопки в шторке»), `ShadeTilesActivity.h` rewritten onto it;
-  NEXT: `ShadeTilesActivity.cpp` onto the base, `HomeButtonsActivity`, strings, the Settings row, the judge, then the
-  shade C1–C8 re-run + the Ф4 cases. Carry the Ф2 judge's note: `shownButtons` is set only in `onEnter` (Ф5).
+- **Chat 2026-11-14 15:26 → 17:39 (day loop, the owner 15:26: «работай автономно над прошивкой в автономном цикле
+  дневном») — closed by the 90 % context window.** Done: interview #004 applied (`b856ce2`); **epic 05 «Кнопки домашнего
+  экрана» Ф1–Ф4 on `wip/kccp-1.1.3-debug2`** (local, not pushed, NO image): Ф1 model `homemenu` + key `homeButtons`
+  (`be6e9a16`), Ф2 Home draws it in all five themes (`f9ae704b`), Ф3 the button list scrolls — the mama button reachable,
+  0 off-screen draws (`a47582b0`), Ф4 the screen «Кнопки домашнего экрана» + «Кнопки в шторке» on one shared base
+  `ToggleRowsActivity` (`2fa20f3f`). Run reports `testcases/reports/2026-11-14_epic05_p1…p4.md`. Epic 07 (idea 03)
+  planned. Windows mama simulator env `simulator_x4_pro_mama_win` added (`firmware/platformio.local.ini`). The closing
+  device build `x4pro-krinik-debug` of `2fa20f3f` compiles (RAM 34.3 %, Flash 83.0 %) — a compile check, no image made.
+- **Where to continue (the handover):**
+  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status`; `ListAgents` (shared PC: KUMM, KAGO).
+  2. **Show the owner interviews #005 and #006** (both filed, NEVER shown; run the clean-instance voice pass §7B on #006
+     first — #005 passed it). #006 decides the mama row's name on «Кнопки домашнего экрана» (plan 10 stays open on it).
+  3. **Epic 05 Ф5** (`[AI]`: #006 is a label and does not block it, plan 10) **— the long tap on a Home button opens «Кнопки домашнего экрана» on that button** (meta-plan criteria 7–9):
+     write `plans/11_epic05_p5_home_long_tap.md`; carry the Ф2 judge's note — `HomeActivity::shownButtons` is set only in
+     `onEnter`, so Home must refresh it when the pushed screen returns (or the screen leaves through `goHome`); the long
+     tap must claim the contact before `rowTouch` (EXP-0016); `HomeScreenButtonsActivity` already takes a `cursorButton`.
+  4. Then epic 05 Ф6 and epic 01 Ф4 — only on the owner's word about the image (13.11 19:01 «со сборкой не торопись»).
+  5. Then epic 07 Ф1 (`plans/07_EPIC_figure_caption.md`).
+  6. Every firmware change: the judge BEFORE the build; `sh tools/host_tests.sh` before the commit (EXP-0018/0019);
+     simulator scripts: keys `UP/DOWN/CONFIRM/BACK` (not `NEXT`), fast list swipes `SWIPE:…,60` (`HOUSE_RULES.md`).
+- KNOWLEDGE (14.11): the X4 Pro simulator's Home geometry (top 314, content bottom 797) → the code comment of
+  `HomeActivity::visibleMenuRows` + EXP-0022; `-Wswitch` is off in the firmware build → EXP-0021; the shade screen is
+  now a shared base → `PROJECT_ARCHITECTURE_INTERNAL_MAP.md`; the mama simulator stand and script key verbs →
+  `HOUSE_RULES.md`; the environment dossier → `HOUSE_RULES.md` §3.
 - **Epic 07 «подпись всегда с картинкой» (idea 03) — meta-plan `plans/07_EPIC_figure_caption.md` (2026-11-14).**
   Ф1 layout (a `<figure>` and any picture block with `page-break-inside`/`break-inside: avoid` kept on one page, the
   picture shrunk when the pair does not fit) · Ф2 caption look (centred, no first-line indent by ГОСТ 7.32 / БГУИР;
@@ -33,42 +37,18 @@ work project. From now on it is a standalone project.
 - **❓ awaiting the owner: `interviews/interview_005_caption_wording.md`** (one question: keep the author's «Рис. 2. …»
   or rewrite to «Рисунок 2 –» БГУИР / «Рисунок 2 —» ГОСТ 7.32). Filed 2026-11-14, NOT shown yet (the owner is busy;
   the clean voice pass runs first). Blocks only epic 07 Ф3.
-- **Day loop 2026-11-13 19:01 +03:00 — the owner:** «работай автономно над читалкой, со сборкой не торопись, она
-  мне пока не особо нужна. Работаем по фичам KCCP» · «дневной цикл». The debug1 IMAGE waits (no build, no card, no
-  homework delivery until asked); the loop works the KCCP features: epic 01 Ф2 → Ф3, idea 06, idea 09, idea 03.
-  The debug1 judge (19:00) found `frontlight_dither` red at `d56b53e9` (a fade check kept the old 10 % threshold) —
-  observed red, fixed (threshold = the 9 % duty), green on all three configurations, red on the old gate (control).
-  Draft homework for the image: `homeworks/06_kccp_1.1.3_debug1.md` (build data placeholders ⟨…⟩). Release-time debt
-  (judge): `README.md` / `USER_GUIDE.md` describe fractional mixing as always on and battery as «still being
-  measured» — fix before KCCP 1.1.3 ships.
+- **Release-time debt (the 13.11 judge):** `README.md` / `USER_GUIDE.md` describe fractional mixing as always on and
+  battery as «still being measured» — fix before KCCP 1.1.3 ships (the day-loop entry of 13.11 is in `PROJECT_HISTORY.md`,
+  «STATUS trim 5»). Draft homework for the image: `homeworks/06_kccp_1.1.3_debug1.md`.
 - **Epic 01 Ф2 + Ф3 closed** on `wip/kccp-1.1.3-debug2`: «Кнопки в шторке» `41718c61` (19:33, C1–C8) and the shade
   `261e5c63` (20:06, D1–D8: the owner's row with equal gaps measured by `tools/shade_gaps.py`, «Сон», «Фонарик» over
   the book, the long tap → the screen on that button → Back → the book). **Ф4 waits for the owner's word on the image**
   (the whole-epic judge, the device build, smoke, homework — `homeworks/06_kccp_1.1.3_debug1.md` grows into the
   1.1.3-debug2 homework). **Idea 09 built** (`9027b99a`, 20:24): every picture opens by its shape, simulator E1–E10
   pass (`testcases/reports/2026-11-13_idea09.md`).
-- **Chat 2026-11-13 13:51 → 16:21 closed** — its summary moved verbatim to `PROJECT_HISTORY.md` (entry «STATUS trim
-  4»); debug10 `wip/krinik-debug10` is the base of the 1.1.3 line below.
-- **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
-  сейчас есть, собираем в 1.1.3 - это будет наш очередной релиз. соответственно, для меня, для тестов на железе. пока
-  можешь собрать отладочкую сборку 1.1.3-debug1» (the answer to the agent's 17:05 question «называем 1.1.3-debug1 и
-  вливаем 1.1.2?»; earlier 17:03 «какие фичи поставит мне 1.1.3-debug1 ?»). Done 17:12–19:22: the line
-  `wip/kccp-1.1.3-debug1` (debug10 `ed5e2f0d` + release 1.1.2 merged + version 1.1.3 / `-debug1` + two test fixes),
-  judged, host tests green; the image waits for the owner's word (19:01). `[AI]` the «Кнопки в шторке» screen (epic 01 Ф2) is
-  NOT in debug1: the shade does not read its row until Ф3 — it comes with Ф3 in debug2 (said to the owner 17:08).
-- **The shade's elements are «кнопки»** (the owner 17:06) — applied; the record is in `plans/01_EPIC_shade_tiles.md`
-  → «Решения владельца» (the verbatim block moved to `PROJECT_HISTORY.md`, «STATUS trim 4»).
-- **First steps next chat:**
-  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
-  2. **Epic 01 Ф4** only on the owner's word (the image); meanwhile epic 05 by its meta-plan's status, on
-     `wip/kccp-1.1.3-debug2`. Before any firmware commit: `sh tools/host_tests.sh` (new failures + CRLF,
-     EXP-0018/0019); a shade shot is measured by `tools/shade_gaps.py`.
-  3. **Idea 06 = epic 05 «Кнопки домашнего экрана»** (`plans/05_EPIC_home_buttons.md`) reuses the epic 01 Ф2 screen;
-     the next phase is the one its status names.
-  4. The owner's debug9 check (homework 04, steps 2, 4–7) is superseded by the debug10 image (it carries everything of
-     debug9); his verdict on picture opening (13:51 «работает») is recorded.
+- **KCCP 1.1.3 = the next release** (the owner 2026-11-13 17:07, `MASTER_PLAN.md` → decision journal); 1.1.3-debug1 assembled, judged, host tests green; no device build, no image.
 - **Open work, in order:**
-  1. Epic 05 (idea 06) Ф3 → Ф5; epic 01 Ф4 and epic 05 Ф6 on the owner's word (the image); 2. Idea 09 — built
+  1. Epic 05 (idea 06) Ф3 → Ф5; epic 01 Ф4 and epic 05 Ф6 on the owner's word about the image (13.11 19:01 «со сборкой не торопись»); 2. Idea 09 — built
      `9027b99a`, comes with the image; 3. Epic 07 (idea 03, `plans/07_EPIC_figure_caption.md`) after epic 05; 4. KCCP 1.1.3
      assembly: merge release 1.1.2 (`198d385e`) into the debug line (conflicts `lib/hal/HalFrontlight.{cpp,h}`,
      `test/frontlight_dither/`); the owner's open choice: light-linger hold (400 ms) vs timer-redraw hold; 5. Idea 04
@@ -179,13 +159,8 @@ already say KCCP. In the firmware fork it is still krinik:
   duty of 10 %).
 - **KCCP 1.1.2** (frontlight) is published: https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2 (2026-11-08,
   bilingual notes, Latest; the image still says `cp-2.0.0-krinik-1.1.2` inside).
-- "Mama" build with OPDS/plugins: the Home menu has 8 rows and the "Mama" row runs off the screen — fix before the next
-  mama build; the owner's fix (interview #004, Q2 + Q5): the Home button list scrolls — epic 05 Ф3.
-
-### Hardware research and the tiles idea
-
-- Closed 2026-11-13; moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-13, STATUS trim 2). The configurable
-  shade tiles are `ideas/05` now.
+- "Mama" build with OPDS/plugins: the Home menu has 8 rows and the "Mama" row runs off the screen — fixed by epic 05 Ф3 (`a47582b0`,
+  the list scrolls) on the simulator; the reader check comes with the mama image.
 
 ## Code map — where the code lives
 
@@ -198,7 +173,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 2fa20f3f |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 5da8f37f |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |
@@ -217,16 +192,5 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 ## What is in this repo
 
-- `restore.mjs`, `settings.json`, `fonts/`, `РУКОВОДСТВО.epub`, `КАЛИБРОВКА.epub`, `covers/`, `guide_settings_section.xhtml` —
-  the owner's reader setup (how-to in `legacy/README.ru.md`).
-- `firmware-builds/` — own krinik images with SHA256 files (sources in the forks above).
-- `tools/` — font build, image and analysis scripts. `kuips-runner/` — `npm install` restores it.
-- `researches/`, `research/`, `interviews/` — analyses and owner interviews (Russian).
-- `qa_runs/` — evidence of builds, tests, PR preparation (logs, diffs, frames), filtered for publication.
-- `sleep/` — sleep-screen previews; the BMP files themselves stayed on the laptop.
-- `legacy/` — the laptop-era README, STATUS, HANDOVER, PROJECT_HISTORY (Russian) and `left-on-laptop.tsv`.
-
-## Left on the laptop — not published
-
-Moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-08, "Left on the laptop") on 2026-11-09; per-file list in
-`legacy/left-on-laptop.tsv`.
+The tree and each part's role: `PROJECT_STRUCTURE_EXTERNAL_MAP.md` (the old list moved to `PROJECT_HISTORY.md`, «STATUS
+trim 5»).

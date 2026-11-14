@@ -25,7 +25,7 @@ Anchor (meta-plan, Ф4): «Экран по образцу «Кнопки в шт
 
 1. **Rows** (meta-plan criteria 1–3). WHEN the screen opens from «Настройки → Экран», it shall show one row per Home
    button of this build in the stored order — icon (the Home glyph), name, ▲, ▼, a checkbox; «Настройки» with no
-   checkbox. Check: shot (plain: 7 rows; mama: 8 rows incl. «Для любимой Мамы»).
+   checkbox. Check: shot (a card with no plugins and no OPDS server: plain 6 rows, mama 7 incl. «Для любимой Мамы»; with them 7 / 8).
 2. **Toggle and move.** A tap on a row's checkbox switches it, ▲ / ▼ move it; Back saves `homeButtons` and Home shows
    the change. Check: `settings.json` read; a Home shot.
 3. **«Настройки» stays on.** A tap on the «Настройки» row changes nothing. Check: shot; no `-settings` in the key.
@@ -38,13 +38,13 @@ Anchor (meta-plan, Ф4): «Экран по образцу «Кнопки в шт
 - [x] P4.1 `ToggleRowsActivity` (`src/activities/settings/`): the drawing, the input, the stale-tap guard, portrait while
       open, save-on-exit — with virtual rows (count, shown, on, has-checkbox, can-turn-off, icon, name, move, title,
       note, save). `ShadeTilesActivity` derives from it unchanged in behaviour. Anchor: «Экран по образцу «Кнопки в шторке»».
-- [x] P4.2 `HomeButtonsActivity`: rows from `SETTINGS.homeButtons`, «Настройки» without a checkbox (`homemenu::canToggle`),
+- [x] P4.2 `HomeScreenButtonsActivity` (named `HomeButtonsActivity` in the draft): rows from `SETTINGS.homeButtons`, «Настройки» without a checkbox (`homemenu::canToggle`),
       the plugins/OPDS row labelled as Home labels it, the Home glyphs; strings `STR_HOME_BUTTONS`, `STR_HOME_BUTTONS_NOTE`.
 - [x] P4.3 `SettingsActivity`: `SettingAction::HomeButtons` right under `ShadeTiles` (touch boards).
 - [x] P4.4 Judge BEFORE the build; fix findings.
 - [x] P4.5 Host suite; simulator: criteria 1–6 (`testcases/TC_epic05_p4_home_buttons_screen.md`) + the shade C1–C8; run
       report.
-- [ ] P4.6 Commit, tick Ф4, write the Ф5 plan (with the Ф2 judge's note: Home refreshes `shownButtons` on return).
+- [x] P4.6 Commit (`2fa20f3f`), tick Ф4 (🟡 on #006), write the Ф5 plan (with the Ф2 judge's note: Home refreshes `shownButtons` on return).
 
 ## Risks
 
@@ -62,3 +62,4 @@ Anchor (meta-plan, Ф4): «Экран по образцу «Кнопки в шт
 - `[AI]` The screen's row is on touch boards only, as «Кнопки в шторке» (the judge's finding 8, signed here).
 - `[AI]` Names `HomeScreenButtons*` and `rowName()` (the judge's findings 5, 6).
 - The open item: the mama row's name — the owner's word, interview #006.
+- `[AI]` #006 (a label) does not block Ф5 (the long tap): Ф5 builds on the screen as it is; the label lands when answered.

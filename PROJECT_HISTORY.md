@@ -27,6 +27,60 @@
 
 ## Entries (newest first)
 
+### 2026-11-14 — STATUS trim 5 (2026-11-14 17:39 +03:00): closed items of 13.11 (moved verbatim)
+
+- **Day loop 2026-11-13 19:01 +03:00 — the owner:** «работай автономно над читалкой, со сборкой не торопись, она
+  мне пока не особо нужна. Работаем по фичам KCCP» · «дневной цикл». The debug1 IMAGE waits (no build, no card, no
+  homework delivery until asked); the loop works the KCCP features: epic 01 Ф2 → Ф3, idea 06, idea 09, idea 03.
+  The debug1 judge (19:00) found `frontlight_dither` red at `d56b53e9` (a fade check kept the old 10 % threshold) —
+  observed red, fixed (threshold = the 9 % duty), green on all three configurations, red on the old gate (control).
+  Draft homework for the image: `homeworks/06_kccp_1.1.3_debug1.md` (build data placeholders ⟨…⟩). Release-time debt
+  (judge): `README.md` / `USER_GUIDE.md` describe fractional mixing as always on and battery as «still being
+  measured» — fix before KCCP 1.1.3 ships.
+- **Chat 2026-11-13 13:51 → 16:21 closed** — its summary moved verbatim to `PROJECT_HISTORY.md` (entry «STATUS trim
+  4»); debug10 `wip/krinik-debug10` is the base of the 1.1.3 line below.
+- **The shade's elements are «кнопки»** (the owner 17:06) — applied; the record is in `plans/01_EPIC_shade_tiles.md`
+  → «Решения владельца» (the verbatim block moved to `PROJECT_HISTORY.md`, «STATUS trim 4»).
+
+- **First steps next chat:**
+  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status` and `ListAgents` (shared PC: KUMM, KAGO).
+  2. **Epic 01 Ф4** only on the owner's word (the image); meanwhile epic 05 by its meta-plan's status, on <!-- attribution-ok: the owner 2026-11-13 19:01 «со сборкой не торопись» — the day-loop entry of this trim -->
+     `wip/kccp-1.1.3-debug2`. Before any firmware commit: `sh tools/host_tests.sh` (new failures + CRLF,
+     EXP-0018/0019); a shade shot is measured by `tools/shade_gaps.py`.
+  3. **Idea 06 = epic 05 «Кнопки домашнего экрана»** (`plans/05_EPIC_home_buttons.md`) reuses the epic 01 Ф2 screen;
+     the next phase is the one its status names.
+  4. The owner's debug9 check (homework 04, steps 2, 4–7) is superseded by the debug10 image (it carries everything of
+     debug9); his verdict on picture opening (13:51 «работает») is recorded.
+
+#### What is in this repo (moved from STATUS)
+
+- `restore.mjs`, `settings.json`, `fonts/`, `РУКОВОДСТВО.epub`, `КАЛИБРОВКА.epub`, `covers/`, `guide_settings_section.xhtml` —
+  the owner's reader setup (how-to in `legacy/README.ru.md`).
+- `firmware-builds/` — own krinik images with SHA256 files (sources in the forks above).
+- `tools/` — font build, image and analysis scripts. `kuips-runner/` — `npm install` restores it.
+- `researches/`, `research/`, `interviews/` — analyses and owner interviews (Russian).
+- `qa_runs/` — evidence of builds, tests, PR preparation (logs, diffs, frames), filtered for publication.
+- `sleep/` — sleep-screen previews; the BMP files themselves stayed on the laptop.
+- `legacy/` — the laptop-era README, STATUS, HANDOVER, PROJECT_HISTORY (Russian) and `left-on-laptop.tsv`.
+
+#### Left on the laptop — not published (moved from STATUS)
+
+Moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-08, "Left on the laptop") on 2026-11-09; per-file list in
+`legacy/left-on-laptop.tsv`.
+
+- **KCCP 1.1.3 = the next release; 1.1.3-debug1 NOW for the reader — the owner 2026-11-13 17:07 +03:00:** «да, всё, что
+  сейчас есть, собираем в 1.1.3 - это будет наш очередной релиз. соответственно, для меня, для тестов на железе. пока
+  можешь собрать отладочкую сборку 1.1.3-debug1» (the answer to the agent's 17:05 question «называем 1.1.3-debug1 и
+  вливаем 1.1.2?»; earlier 17:03 «какие фичи поставит мне 1.1.3-debug1 ?»). Done 17:12–19:22: the line
+  `wip/kccp-1.1.3-debug1` (debug10 `ed5e2f0d` + release 1.1.2 merged + version 1.1.3 / `-debug1` + two test fixes),
+  judged, host tests green; the image waits for the owner's word (19:01). `[AI]` the «Кнопки в шторке» screen (epic 01 Ф2) is
+  NOT in debug1: the shade does not read its row until Ф3 — it comes with Ф3 in debug2 (said to the owner 17:08).
+
+### Hardware research and the tiles idea
+
+- Closed 2026-11-13; moved verbatim to `PROJECT_HISTORY.md` (entry 2026-11-13, STATUS trim 2). The configurable
+  shade tiles are `ideas/05` now.
+
 ### 2026-11-13 — STATUS trim 4 (2026-11-13 19:45 +03:00): the summary of the closed chat 13:51 → 16:21 (moved verbatim)
 
 - **Chat 2026-11-13 13:51 → 16:21 closed** (the owner's word 16:21 «закрывай чат, и продолжим в новом»). Done — detail in

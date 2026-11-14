@@ -72,7 +72,7 @@ Host test `test/home_menu_buttons/` (born in P1.3, proven red in P1.3), `ShadeTi
    owner's Home order resets to the default. Said in the image's homework.
 2. **A mama-build card read by a plain build** keeps the order without mama. Back on the mama build: if the plain build
    saved a non-default list, mama is appended OFF (criterion 2); if the plain list equals the plain default, the key
-   is dropped on save and mama comes back ON and last — a hidden or moved mama loses that state (the judge, 15:4x).
+   is dropped on save and mama comes back ON and last — a hidden or moved mama loses that state (the judge, ≈ 15:49).
    The mother's reader runs the mama build only, so this needs a card moved between builds.
 3. **Shared code regresses the shade** — guarded by the shade's 12 tests (criterion 7) and a shade smoke shot.
 

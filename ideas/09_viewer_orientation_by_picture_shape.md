@@ -54,7 +54,7 @@ from there as today (idea 07); the halves, swipes and Back follow the picture as
   The sleep cover «By Image» already chooses wide → LandscapeCounterClockwise, else Portrait (`BmpViewerActivity.cpp`
   ~540) — the same mapping as the owner's Б and Г.
 
-## Plan (ordinary — heaviness 0 of 5: one module, no external truth, one session, KCCP only, the owner asked)
+## Plan (ordinary — heaviness 0 of 5: one module, no external truth, one session, KCCP only, the owner asked) <!-- attribution-ok: the owner's request is quoted verbatim at the top of this idea -->
 
 - [x] S1 `shapeTurns()`: read the picture's size; wide = w > h, tall = h > w; return the quarter turns from the reading
       orientation to the target of the table above (0 for А, В, square, unreadable). Comment `[NOT-TESTED]`.
