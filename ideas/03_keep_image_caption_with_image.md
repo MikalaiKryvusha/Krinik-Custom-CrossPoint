@@ -2,7 +2,8 @@
 
 > **Created:** 2026-11-13 (the owner's request, chat — tossed mid-task while idea 02 was in recon) · **Parent:** — ·
 > **Status:** 🔬 recon done, direction set by the owner 2026-11-13 10:53 +03:00 (re-typeset to the standard + the
-> firmware honours `<figure>`); plan next, after idea 02 · **Outbound:** the firmware half is an upstream PR candidate
+> firmware honours `<figure>`); 📐 epic planned 2026-11-14 15:59 +03:00 — `plans/07_EPIC_figure_caption.md` (starts after epic 05; the
+> label wording waits for `interviews/interview_005_caption_wording.md`) · **Outbound:** the firmware half is an upstream PR candidate
 > (standard HTML5 semantics)
 
 `[OWNER] 2026-11-13 10:38 +03:00 · chat:`
