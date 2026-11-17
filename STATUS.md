@@ -1,6 +1,6 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-14 17:59 +03:00 (chat 15:26 → closed: epic 05 Ф1–Ф4 on the simulator, epic 07 planned). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-17 15:39 +03:00 (the 14:42 day loop: homework 08 shown, epic 07 Ф3 tool, epic 05 Ф5, plan 15 the guide). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
