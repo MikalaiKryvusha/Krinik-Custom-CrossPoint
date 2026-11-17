@@ -37,14 +37,31 @@ text is not in hand. The main text keeps its commas on a sample; paragraphs endi
 ## Hypotheses
 
 1. The book came this way (a converter dropped punctuation in the notes) — our checks never compare against meaning,
-   only structure (`epub_lint.mjs`: links, manifest, well-formedness).
+   only structure (`epub_lint.mjs`: links, manifest, well-formedness). **CONFIRMED** 2026-11-17 20:50 +03:00.
 2. One of our repair tools dropped the characters (`bracket_footnotes.mjs` rewrote these note markers into «[N]»; the
-   class `krinik-fn` on every note link is ours) — `tools/text_same.mjs <orig> <fixed>` would show it, given the
-   original file.
+   class `krinik-fn` on every note link is ours) — **REFUTED**, same moment.
+
+## Source check (2026-11-17 20:48–20:52 +03:00)
+
+The owner 20:47: «в корне D … там epub, и, скорее всего, оригинал FB2, из которого этот epub конвертили». Copied
+read-only to `.tmp/bug10/` (third-party, never committed): `…198312.fb2.zip` (FB2: FictionBook Editor 2.4, document
+date 2010-07-25, file 2022-06-11) and `…198312.fb2.epub` (the conversion, 4 374 089 B).
+
+- The notes [1] [4] [8] [12] [15] read the SAME in the FB2, the original EPUB and the card's book (`.tmp/bug10/
+  notes_compare.py`): «стр. 305 6», «n s 4 1895)», «Music The Arts and Ideas», «(Princeton N J Princeton University
+  Press 1975)» — the damage is in the FB2 source.
+- The whole text, original EPUB vs the card's book, chapter by chapter (whitespace and `[ ]` dropped, as
+  `tools/text_same.mjs`; `.tmp/bug10/text_diff.py`): **27 differences, all corrections by our tools** — Latin homoglyphs
+  → Cyrillic («He»→«Не», «cтp»→«стр», «Eтa»→«Ета», «ToмI»→«ТомI», «blееn»→«bleen»), Cyrillic «М» → Latin in «MIU»,
+  comment markers «{2}» → «К2», one doubled letter «Етаa»→«Ета», one comma inside a word «так, же,»→«также,». No stop,
+  comma or dash lost by us. (`text_same.mjs` stops at the first difference — it reported only the first of the 27.)
+
+The book's punctuation can be restored only from another source (a different edition of the Russian text) — never
+invented; the owner's choice.
 
 ## Next steps
 
-- [ ] Find the original file of the book (the source the owner downloaded) — needed for hypothesis 2.
+- [x] Find the original file of the book — on D: (above).
 - [ ] A punctuation check for books: notes without a final stop, page pairs `стр. N N`, an unmatched `)` — red on this
       copy, green on a clean book (the test book `qa_runs/sd_book_images/image_test.epub`).
 
