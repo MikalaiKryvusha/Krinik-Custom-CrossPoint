@@ -22,9 +22,10 @@ work project. From now on it is a standalone project.
   (`testcases/reports/2026-11-17_bug07_grid_night.md`); bug 07 waits only for the reader check with the debug2 image.
   Lessons EXP-0023, EXP-0024 (the contour server killed under `timeout` AGAIN — a guard is owed, see the entry).
   **Owner's debt / open from this chat:** (a) interview #006 answered 10:18 — **A, «Для Мамы» only on «Кнопки домашнего
-  экрана»** → apply to plan 10 «Decision at the fork» and build it (firmware); (b) interview #005 — the owner's remark
-  10:18 «покажи картинками. пока не увижу глазами - не о чем мне тут ответ давать» → render the three caption variants on
-  a book page in the simulator and show them; (c) DONE 10:24 — the reply to itsthisjustin posted in #4329 (the
+  экрана»** → DONE 10:36: firmware `da382c2f`, plan 10 → `plans/10_DONE_…`, epic 05 Ф4 closed; (b) interview #005 —
+  the owner's remark 10:18 «покажи картинками. пока не увижу глазами - не о чем мне тут ответ давать» → the three
+  variants rendered on a book page and shown 10:31 as one picture (`qa_runs/caption005_compare/compare.webp`, mockup page);
+  ❓ waits for his choice; (c) DONE 10:24 — the reply to itsthisjustin posted in #4329 (the
   owner: «Да, оба одобрено» · «отправляй»); (d) `bugs/08` (the shade's night button leaves pictures under the sheet
   negative) — the owner 10:21: «Пофиксить бы, в будущем. Пока как баг заведи и нам и в апстрим»; upstream issue #4515
   opened 10:24 (watch it for answers); the fix itself — later.
@@ -187,7 +188,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 07df1501 |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) + the mama row «Для Мамы» on the Home buttons screen (`da382c2f`, interview #006) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | da382c2f |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |

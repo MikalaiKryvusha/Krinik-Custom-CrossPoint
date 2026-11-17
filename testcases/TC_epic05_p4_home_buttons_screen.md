@@ -4,7 +4,7 @@
 screen), `ShadeTilesActivity` (refactored onto it), `HomeScreenButtonsActivity` (new), the «Настройки → Экран» row ·
 **Version/build:** simulators `simulator_x4_pro_win`, `simulator_x4_pro_mama_win`, then `1.1.3-debug2` on the owner's
 X4 Pro
-**Test basis:** `plans/10_epic05_p4_home_buttons_screen.md` → criteria 1–6; the meta-plan `plans/05_EPIC_home_buttons.md`
+**Test basis:** `plans/10_DONE_epic05_p4_home_buttons_screen.md` → criteria 1–6; the meta-plan `plans/05_EPIC_home_buttons.md`
 → criteria 1, 2, 3, 10; the owner, interview #004 Q1, Q3; the shade screen's own basis — `testcases/TC_epic01_p2_tiles_screen.md`.
 
 ## 1. Goal vector
@@ -41,5 +41,5 @@ Achieve: the owner switches Home buttons on and off and reorders them on a Setti
 | H2 | → «Кнопки домашнего экрана» (plain): shot — 6 rows (no plugins/OPDS), «Настройки» with no checkbox | smoke | pass · `epic05_p4_h2`: 6 rows |
 | H3 | tap «Передача файлов» row → unchecked; ▲ on «Сон» → «Сон» above «Фонарик»; Back → log `Home buttons saved: …-transfer…sleep,flashlight`; Home shot without «Передачи файлов», «Сон» above «Фонарик» | state transition | pass · `epic05_p4_h3`: the saved key, Home shot |
 | H4 | tap the «Настройки» row → no change (shot equal) | negative | pass · `epic05_p4_h3` (the tap on «Настройки») |
-| H5 | mama build: the screen shows 7 rows (no plugins/OPDS) incl. «Для любимой Мамы» (is the name whole before ▲?) | equivalence (build) | fail (taste) · `epic05_p4_h5`: «Для любимой Ма…» → interview #006 |
+| H5 | mama build: the screen shows 7 rows (no plugins/OPDS) incl. the mama row, its name whole before ▲ — «Для Мамы» since interview #006 → A (2026-11-17) | equivalence (build) | 2026-11-14 fail (taste) · `epic05_p4_h5`: «Для любимой Ма…» → interview #006; 2026-11-17: before `mama_label_before` «Для любимой Ма…», after — `mama_label_after` |
 | S-C1…C8 | the shade screen, epic 01 Ф2 scripts unchanged except the run names | regression | pass · `epic05_p4_c1`…`_c8`: the saved rows equal 2026-11-13 |

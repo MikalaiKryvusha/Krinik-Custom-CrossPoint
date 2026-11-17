@@ -1,7 +1,7 @@
 # Plan 10 — epic 05, phase 4: the screen «Кнопки домашнего экрана»
 
 > **Created:** 2026-11-14 · **Parent:** `plans/05_EPIC_home_buttons.md` → «Ф4 — экран «Кнопки домашнего экрана»» ·
-> **Status:** 🟡 built and run 2026-11-14 17:38 +03:00 — firmware `2fa20f3f`; the shade C1–C8 and H1–H4 pass, H5: the mama row's name is cut → `interviews/interview_006_mama_row_name.md`; closes after the owner's answer · **Outbound:** —
+> **Status:** ✅ DONE 2026-11-17 10:36 +03:00 — built and run 2026-11-14 17:38 +03:00 (firmware `2fa20f3f`; the shade C1–C8 and H1–H4 pass); H5 closed by interview #006 → A, firmware `da382c2f` · **Outbound:** —
 
 ## Goal vector (Achieve)
 
@@ -20,6 +20,8 @@ Anchor (meta-plan, Ф4): «Экран по образцу «Кнопки в шт
   tested shade screen · consulted: BUG_FIXING_FRAMEWORK.md «fix by form — one shared component instead of clones»,
   research 2026-11-13_idea06 §3 (both options named)` → one shared base `ToggleRowsActivity`; the shade screen's
   cases (epic 01 Ф2 C1–C8, Ф3 long-tap entry) are re-run on the refactored screen.
+- `[OWNER]` interview #006, Q1 → **A** (2026-11-17 10:18 +03:00, recorded by the review contour): the mama row reads
+  «Для Мамы» on this screen only; Home keeps «Для любимой Мамы». Applied in step P4.7.
 
 ## Acceptance criteria (phase)
 
@@ -45,6 +47,10 @@ Anchor (meta-plan, Ф4): «Экран по образцу «Кнопки в шт
 - [x] P4.5 Host suite; simulator: criteria 1–6 (`testcases/TC_epic05_p4_home_buttons_screen.md`) + the shade C1–C8; run
       report.
 - [x] P4.6 Commit (`2fa20f3f`), tick Ф4 (🟡 on #006), write the Ф5 plan (with the Ф2 judge's note: Home refreshes `shownButtons` on return).
+- [x] P4.7 Interview #006 → A (done 2026-11-17 10:36 +03:00, firmware `da382c2f`, report
+      `testcases/reports/2026-11-17_epic05_p4_mama_label.md`): `HomeScreenButtonsActivity::rowName` returns «Для Мамы» for the mama row; judge → mama
+      simulator build → H5 again (before: `qa_runs/mama_label_before/shots/rows.webp` «Для любимой Ма…») → host suite →
+      commit. Anchor: «Строка, которая открывает этот экран…» / risk 3 («a shorter name is the owner's word»).
 
 ## Risks
 
@@ -61,5 +67,13 @@ Anchor (meta-plan, Ф4): «Экран по образцу «Кнопки в шт
   the meta-plan's criterion 2 (6 rows) holds.
 - `[AI]` The screen's row is on touch boards only, as «Кнопки в шторке» (the judge's finding 8, signed here).
 - `[AI]` Names `HomeScreenButtons*` and `rowName()` (the judge's findings 5, 6).
-- The open item: the mama row's name — the owner's word, interview #006.
+- The mama row's name — the owner's word, interview #006 → A (2026-11-17 10:18 +03:00): «Для Мамы» on this screen.
 - `[AI]` #006 (a label) does not block Ф5 (the long tap): Ф5 builds on the screen as it is; the label lands when answered.
+- `[AI]` «Для Мамы» stays a literal in `rowName`, as Home's «Для любимой Мамы» is a literal: the mama build is
+  Russian-only, and an i18n key for one build's button would be a string with no English reader.
+
+## ✅ STATUS: DONE (2026-11-17 10:36 +03:00)
+
+Ф4 is closed: the screen «Кнопки домашнего экрана» works on the simulator in the plain and mama builds (H1–H5), the shade
+screen on the shared base keeps its C1–C8. Not verified on the readers (Ф6, with the image). Next: plan 11, Ф5 — the long
+tap on a Home button.

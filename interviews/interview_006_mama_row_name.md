@@ -1,10 +1,10 @@
 # Interview #006 — Подпись «Для любимой Мамы» на экране «Кнопки домашнего экрана»
 
 > Topic: строка маминой кнопки на экране «Кнопки домашнего экрана» (эпик 05, Ф4,
-> `plans/10_epic05_p4_home_buttons_screen.md`).
+> `plans/10_DONE_epic05_p4_home_buttons_screen.md`).
 > Source: прогон Ф4 на симуляторе маминой сборки, `testcases/reports/2026-11-14_epic05_p4.md`, кейс H5.
 > Created: 2026-11-14 17:34 +03:00
-> Status: **🟡 awaiting the owner's answers**
+> Status: **✅ answered 2026-11-17 10:18 +03:00 — Q1: A** · applied 2026-11-17 10:36 +03:00: firmware `da382c2f`, plan 10 step P4.7
 
 ## Что уже есть
 
@@ -21,7 +21,7 @@
 
 ### Q1. Как подписать кнопку «Для любимой Мамы» на экране «Кнопки домашнего экрана»?
 
-**Answer target:** `plans/10_epic05_p4_home_buttons_screen.md` → «Decision at the fork».
+**Answer target:** `plans/10_DONE_epic05_p4_home_buttons_screen.md` → «Decision at the fork».
 
 **Origin:** кейс H5 прогона Ф4.
 
