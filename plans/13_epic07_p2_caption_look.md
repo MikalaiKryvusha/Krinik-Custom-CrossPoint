@@ -1,7 +1,8 @@
 # Plan 13 — epic 07, phase 2: the caption has no first-line indent and stands centred under its picture
 
 > **Created:** 2026-11-17 · **Parent:** `plans/07_EPIC_figure_caption.md` → «Ф2 — вид подписи» (criterion 3) ·
-> **Status:** 📐 planned 2026-11-17 11:00 +03:00, starts when Ф1 (plan 12) closes · **Outbound:** —
+> **Status:** ⏸ code in `git stash` «epic07-p2-caption-wip» 2026-11-17 11:24 — the judge FIX FIRST (the caption inherits the figure's
+> alignment; a nested `<p>` gets the reader's indent; the test passes without the indent fix); parked for the debug3 image · **Outbound:** —
 
 ## Goal vector (Achieve)
 
