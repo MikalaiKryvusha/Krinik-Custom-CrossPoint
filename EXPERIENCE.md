@@ -82,6 +82,21 @@
 
 ## Entries
 
+### EXP-0026 · 2026-11-17 · ❌→✅ · #simulator #webp #golden #shots
+class: false-defect
+mechanized: tools/shot_diff.py (threshold 32, status bar cut; proven to fail on two different runs)
+**Context:** epic 07 Ф1 — «books with no figure lay out as before»: the default test book's 8 pages shot before and after.
+**Result:** ❌ a raw pixel diff said pages 2, 5, 7 changed (6434 / 7022 / 814 px) though they looked the same. The cause:
+WebP q90 is lossy and its encoder segments the whole frame — the status-bar clock changed (07:55 → 08:11) and shifted other
+blocks by up to 11 levels. ✅ With a threshold of 32 and the status bar cut: 0 px on all 8 pages; the control (two books)
+8067 px.
+**Lesson:** a golden over WebP shots compares content above a noise threshold with the clock cut, never bytes; read the
+diff's magnitude before calling a layout changed.
+**Repro:** `.pio-venv/Scripts/python.exe -I -X utf8 tools/shot_diff.py <before>/shots <after>/shots` → `TOTAL 0`; on two
+different runs → exit 1.
+**Trigger:** any «nothing else moved» claim made from simulator shots.
+**Not for:** a byte check of a file the tool writes (there bytes are the contract).
+
 ### EXP-0025 · 2026-11-17 · ✅ · #tests #windows #host #parser
 class: suite-not-run
 none-cheap: one-off; the known-failures list now names the three remaining tests instead of the whole target

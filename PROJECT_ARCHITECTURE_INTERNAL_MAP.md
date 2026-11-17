@@ -48,8 +48,16 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   `ActivityManager::goToSleep()`, then the redraw timer is armed from `SleepActivity::lastCustomImagePath()`).
 - `src/activities/boot_sleep/SleepActivity.cpp` — draws the sleep screen; records the custom image path for the
   delayed redraw (#4376) and repaints it on the timer wake (`redrawCustomImage`).
-- `lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp` — expat XHTML → text blocks → pages; queues anchor ids and
-  places them on pages (#4328); a malformed chapter is a parse error, `finishParse()` closes the last page.
+- `lib/Epub/Epub/parsers/ChapterHtmlSlimParser.cpp` — expat XHTML → text blocks → pages, streaming (a picture is placed
+  before the parser sees its caption); queues anchor ids and places them on pages (#4328); a malformed chapter is a parse
+  error, `finishParse()` closes the last page. Page breaks: `addLineToPage` breaks when a line overflows and
+  `breakPageCarryingLines` moves the page's trailing elements (orphan/widow lines, a heading kept with what follows) to
+  the next page through the carry ring (`recentLineOffsets` / anchors, 6 entries, `canCarry`). Epic 07 Ф1 (1.1.3-debug2,
+  in work): a `<figure>` or a block with CSS `break-inside: avoid` is a keep-together group — its first picture enters the
+  ring, a caption line that overflows carries the picture along, and a group that opens its page and still overflows
+  shrinks the picture (`shrinkGroupImageFor`, floor = viewport / 4); `figcaption` is a block. Host tests:
+  `test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp` (since 2026-11-17 it builds on Windows; three of its tests
+  fail only here — Windows cannot delete an open file).
 - `src/activities/reader/EpubReaderActivity.{h,cpp}` — the EPUB reader (the header holds the shown page's state:
   `currentPageLinks`, `currentPageFootnotes`, the overlay state): `loop()` routes input in priority order (overlay →
   long press = clip selection → Home-button actions → link tap (`currentPageLinks`, beats the zones) → centre tap = menu →
