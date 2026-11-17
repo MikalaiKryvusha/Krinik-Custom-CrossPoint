@@ -17,8 +17,16 @@ CHAPTER_RUNS = {
     "Библиотека": ["guide_library"],
     "Подключения": ["guide_network", "guide_sync"],
 }
-# Rows the reader shows and the simulator cannot (plan 15, G2): compile-time device rows, Bluetooth.
-DEVICE_ONLY = {"Точная температура", "Bluetooth-пульт"}
+# Guide names a capture on the standard card cannot show, each with its reason (plan 15, G2 and G4):
+DEVICE_ONLY = {
+    "Точная температура": "a device-build row (FREEINK_FRONTLIGHT_DITHER && X4 Pro)",
+    "Bluetooth-пульт": "the simulator is built without Bluetooth",
+    "Словарь": "the row exists only with a dictionary in /dictionaries (the guide says so)",
+    "Быстрый возврат из ссылок": "the row exists only with «Питание коротко» = «Ссылки и примечания» (the guide says so)",
+    "Зоны тапа": "a note under the two page-turn rows, not a row",
+    "Действия Home": "the list of actions the three Home key rows take, not a row",
+    "URL сервера синхронизации": "the row draws only its value («По умолчанию: sync.crosspointreader.com»)",
+}
 SPACE = re.compile(r"\s+")
 
 

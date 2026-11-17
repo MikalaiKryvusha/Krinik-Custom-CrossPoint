@@ -99,6 +99,11 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
       today's section → 16 names not shown (the renamed and gone rows above, plus «Словарь», «Действия Home», «URL
       сервера синхронизации» — the sync screen draws that row's value only); `--selftest` OK, red on a no-gap mutant.
 - [ ] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
+      Progress: the section rebuilt (the Экран chapter by the screens — 28 rows, «Перерисовка меню» dropped; seven
+      rows renamed to the reader's names; «Система» in the screen's order); `guide_screens_check.py` → 0 misses (the old
+      section → 11 with the same exceptions); voice-lint: 4 hits, all in old lines moved unchanged («та же», «снова»,
+      «здесь» in «Экран сна» / «Порядок обложек сна») — left for the owner's proofreading; the agent's own hit fixed.
+      Open: the clean §7B pass (running), the judge on criterion 3, then G5.
 - [ ] G5. The owner's proofreading (homework); then into `РУКОВОДСТВО.epub` (no build tool exists: `OEBPS/readme.xhtml`
       is edited and re-zipped — a tool for that is part of this step).
 
