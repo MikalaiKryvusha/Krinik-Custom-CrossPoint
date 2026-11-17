@@ -31,12 +31,17 @@ work project. From now on it is a standalone project.
   owner: «Да, оба одобрено» · «отправляй»); (d) `bugs/08` (the shade's night button leaves pictures under the sheet
   negative) — the owner 10:21: «Пофиксить бы, в будущем. Пока как баг заведи и нам и в апстрим»; upstream issue #4515
   opened 10:24 (watch it for answers); the fix itself — later.
+- **❓ awaiting the owner (one action):** wire the guard `tools/hooks/pretool-deny-server-timeout.mjs` (refuses
+  `timeout … review.mjs` page launches — the contour server died that way twice, EXP-0013/0024) into
+  `.claude/settings.json` → `hooks.PreToolUse`, matcher `Bash|PowerShell` (the exact block is in the script's header);
+  the agent's hook writes are refused by the auto-mode classifier.
 - **Where to continue (the handover):**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status`; `ListAgents` (shared PC: KUMM, KAGO).
-  2. **Show the owner interviews #005 and #006** (both filed, NEVER shown; run the clean-instance voice pass §7B on #006
-     first — #005 passed it). #006 decides the mama row's name on «Кнопки домашнего экрана» (plan 10 stays open on it).
-  3. **Epic 05 Ф5** (`[AI]`: #006 is a label and does not block it, plan 10) **— the long tap on a Home button opens «Кнопки домашнего экрана» on that button** (meta-plan criteria 7–9):
-     write `plans/11_epic05_p5_home_long_tap.md`; carry the Ф2 judge's note — `HomeActivity::shownButtons` is set only in
+  2. DONE 2026-11-17: interviews #005 and #006 shown and answered (above). **In work: epic 07 Ф1** —
+     `plans/12_epic07_p1_layout.md` (keep-together groups + picture shrink in `ChapterHtmlSlimParser`); then Ф2 (caption
+     centred, NO first-line indent — the owner repeated it 10:40), then Ф3 (the re-typeset tool, text unchanged).
+  3. **Epic 05 Ф5** (parked for epic 07) **— the long tap on a Home button opens «Кнопки домашнего экрана» on that button** (meta-plan criteria 7–9):
+     the plan `plans/11_epic05_p5_home_long_tap.md` is written (no code); carry the Ф2 judge's note — `HomeActivity::shownButtons` is set only in
      `onEnter`, so Home must refresh it when the pushed screen returns (or the screen leaves through `goHome`); the long
      tap must claim the contact before `rowTouch` (EXP-0016); `HomeScreenButtonsActivity` already takes a `cursorButton`.
   4. Then epic 05 Ф6 and epic 01 Ф4 — only on the owner's word about the image (13.11 19:01 «со сборкой не торопись»).

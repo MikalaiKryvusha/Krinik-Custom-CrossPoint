@@ -82,8 +82,25 @@
 
 ## Entries
 
+### EXP-0025 · 2026-11-17 · ✅ · #tests #windows #host #parser
+class: suite-not-run
+none-cheap: one-off; the known-failures list now names the three remaining tests instead of the whole target
+**Context:** epic 07 Ф1 needed parser host tests; `ChapterHtmlSlimParserTest` stood in the known-failures list as
+`_NOT_BUILT` since the Windows port (2026-11-09) — the whole layout suite (157 tests) had never run on this PC.
+**Tried / did:** read the build errors: 10 lines `file.open(path.c_str(), …)` with a `std::filesystem::path` (`wchar_t*`
+on Windows); `path.string().c_str()` on those lines only.
+**Result:** ✅ the suite builds and runs here: 155 pass, 3 fail only because Windows cannot delete an open file; the list
+names those three; the host count went 803 → 960.
+**Lesson:** a `_NOT_BUILT` entry in a known-failures list hides a whole suite; before trusting the host suite for a module,
+look at what its `_NOT_BUILT` entries cover and how cheap the build fix is.
+**Repro:** `grep NOT_BUILT tools/host_tests_known_failures.txt`; for each, `cmake --build firmware/build/test --target <name>`
+and read the first errors in the log.
+**Trigger:** starting work on a module whose host test is listed as `_NOT_BUILT`.
+**Not for:** targets that fail to build for a missing library (a real port, not a line fix).
+
 ### EXP-0024 · 2026-11-17 · ❌→✅ · #contour #review #server #timeout #recurrence
 class: own-process-killed
+none-cheap: the guard is written and self-tested — `tools/hooks/pretool-deny-server-timeout.mjs` (`--selftest` 6/6) — but wiring a hook into `.claude/settings.json` is refused to the agent by the auto-mode classifier (KAIF_FRAMEWORK.md, 2026-11-09); the wiring waits for the owner (STATUS)
 **Context:** showing interviews 005/006 with `timeout 20 node .kaif/tools/contour/review.mjs --queue --silent` — the
 second time after EXP-0013 (2026-11-13), whose lesson was in this journal; the session's recall grep covered only the
 task's own tags (cover, invert, dark), not the tool it was about to launch.
@@ -276,6 +293,7 @@ none-cheap: one-line S3 note; the lint itself should say «xmllint not found» �
 **Not for:** the link/manifest checks of the same lint, which do not need xmllint.
 
 <!-- class-ok: twins-missed — three unlike faces (EXP-0005 a regex rename matching extra C++ sites; EXP-0016 two consumers of one input gesture under different names; EXP-0023 two snapshot caches of one screen in two components); each face carries its own grep Repro, and a guard for the whole class would be a general code-search policy, not cheaply possible; the judge pass before every build is what caught EXP-0016 -->
+<!-- class-ok: own-process-killed — two faces of one launch (EXP-0013, EXP-0024: the review page under `timeout`); the guard tools/hooks/pretool-deny-server-timeout.mjs exists and passes its selftest, and only its wiring into .claude/settings.json is the owner's (the agent's hook writes are refused by the classifier) — once wired, this declaration becomes `mechanized:` -->
 <!-- class-ok: shell-lied — two unlike faces of Windows defaults (cp1251 stdout for Python, CRLF checkout); each is closed at its source (PYTHONUTF8=1 in the AGENT_GUIDE Build line, core.autocrlf=false in the firmware clone); a build wrapper that sets both is the mechanism to add next -->
 
 ### EXP-0010 · 2026-11-10 · ❌→✅ · #shell #cwd #parallel
