@@ -55,7 +55,10 @@ work project. From now on it is a standalone project.
 - **❓ homework 09 — the guide's five new lines** (`homeworks/09_guide_settings_proofread.md`, plan 15 G5): the owner
   proofreads the five `[AI]` lines of `guide_settings_section.xhtml` (the epub's settings chapters + the reader's
   changes) and decides his two text questions (the second «Проверить обновление» description; the separate file's
-  role); then the chapter goes into `РУКОВОДСТВО.epub`. Filed 2026-11-17 15:59 +03:00, the clean §7B pass running, not shown yet.
+  role); then the chapter goes into `РУКОВОДСТВО.epub`. Filed 2026-11-17 15:59 +03:00, its clean §7B pass applied
+  (`9db2811`); NOT shown yet — the contour raises one page at a time (I48) and the caption mock-up page (homework 08)
+  is open waiting for his letter: raise 09 with `review.mjs homeworks/09_guide_settings_proofread.md --proofread` (in the
+  background, never under `timeout`) once 08 is answered or closed.
 - **❓ awaiting the owner (one action):** wire the guard `tools/hooks/pretool-deny-server-timeout.mjs` (refuses
   `timeout … review.mjs` page launches — the contour server died that way twice, EXP-0013/0024) into
   `.claude/settings.json` → `hooks.PreToolUse`, matcher `Bash|PowerShell` (the exact block is in the script's header);
