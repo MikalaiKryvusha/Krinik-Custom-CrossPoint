@@ -78,7 +78,7 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
 - [x] G1. Capture the other settings screens the same way; extend the differences list. (The six chapters and the
       Экран sub-screens done 2026-11-17 15:30 +03:00; the deeper sub-screens 2026-11-17 15:31 +03:00 and the text tabs
       15:32 +03:00 (log mtime).)
-- [ ] G2. Read each changed setting's options in `src/SettingsList.cpp` and the Russian strings. Read so far (2026-11-17 15:33 +03:00,
+- [x] G2. Read each changed setting's options in `src/SettingsList.cpp` and the Russian strings. Read so far (2026-11-17 15:33 +03:00,
       `SettingsList.cpp` at `de8feb20`, `lib/I18n/translations/russian.yaml`):
       - Плавная подсветка: ВЫКЛ · 200 мс · 500 мс · 1000 мс (`lightRamp`, :56).
       - Очищать каждые: 1 стр. · 5 стр. · 10 стр. · 15 стр. · 30 стр. · Никогда (`refreshFrequency`, :85).
@@ -90,9 +90,10 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
       - **Device-only rows the simulator does not show** (compile-time `#if`, the device envs define them):
         «Точная температура» (флажок, `FREEINK_FRONTLIGHT_DITHER && FREEINK_DEVICE_X4PRO`, `platformio.ini` — the two
         `x4pro-krinik*` envs) — on the reader it stands in «Экран» right after «Плавная подсветка» (emit order :56 → :60);
-        «Вибрация» (`FREEINK_CAP_HAPTIC`) and «Теплота» (`FREEINK_CAP_WARMLIGHT`) — whether the X4 Pro build defines
-        them: to read in the SDK board profile. So criterion 1's capture is the SIMULATOR's list; the device list =
-        the capture + these rows.
+        «Вибрация» — `FREEINK_CAP_HAPTIC` = Metalio only, not on the X4 Pro; «Теплота» — `FREEINK_CAP_WARMLIGHT` is on
+        for the X4 Pro, but the setting has no category (`SettingsList.cpp:265`), so no settings screen shows it (the
+        shade's slider). So criterion 1's capture is the SIMULATOR's list; the device list = the capture + «Точная
+        температура» + «Bluetooth-пульт» (the simulator is built without Bluetooth).
 - [ ] G3. The comparison script (criteria 1–2) in `tools/`, proven red on today's section.
 - [ ] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
 - [ ] G5. The owner's proofreading (homework); then into `РУКОВОДСТВО.epub` (no build tool exists: `OEBPS/readme.xhtml`
