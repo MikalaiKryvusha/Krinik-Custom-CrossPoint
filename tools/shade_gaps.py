@@ -1,10 +1,13 @@
 # Measures the button row of a shade screenshot: the gaps at both edges and between the buttons (KCCP epic 01).
 # Usage: .pio-venv/Scripts/python.exe -I -X utf8 tools/shade_gaps.py <shot.webp> [land|port] [--max-spread N]
-#        [--frame sheet|content]
+#        [--frame sheet|content] [--inset L,R]
 # Prints the frame's edges, the buttons found and the gaps in the shot's pixels; exit 1 when the spread of the gaps is
 # above --max-spread (default 2: the shots are half-scale WebP, each edge is good to ±1 px). The end gaps count from
 # the sheet's visible edges (the shot's edges) by default — what the eye sees (KCCP bug 12: measured from the sliders'
 # content edges, a row 16 px + gap at the ends and gap between passed); --frame content is the old measurement.
+# The visible edge is the bezel's: --inset L,R in panel px (X4 Pro viewableInsets via getOrientedViewableTRBL;
+# the SIMULATOR's profile by default: port 3,3 · land 9,3 = Landscape CCW, the owner's reading orientation; the
+# reader: port 7,7, land CCW 9,3, land CW 3,9).
 import sys
 
 from PIL import Image
@@ -30,6 +33,10 @@ def main():
     if "--max-spread" in sys.argv:
         max_spread = int(sys.argv[sys.argv.index("--max-spread") + 1])
         args = [a for a in args if a != str(max_spread)]
+    inset = None
+    if "--inset" in sys.argv:
+        inset = sys.argv[sys.argv.index("--inset") + 1]
+        args = [a for a in args if a != inset]
     frame = "sheet"
     if "--frame" in sys.argv:
         frame = sys.argv[sys.argv.index("--frame") + 1]
@@ -52,7 +59,7 @@ def main():
         if xs and xs[-1] - xs[0] > width * 0.8:
             left, right = min(left, xs[0]), max(right, xs[-1])
     # The button squares: the band row that shows the most square-wide ink clusters (walls of outlined squares merge).
-    best = (None, [])
+    best = (None, [], -1)
     for y in range(int(band[0] * height), int(band[1] * height)):
         clusters = []
         for r in runs(row(y)):
@@ -61,11 +68,16 @@ def main():
             else:
                 clusters.append(list(r))
         squares = [c for c in clusters if BUTTON_MIN <= c[1] - c[0] + 1 <= BUTTON_MAX]
-        if len(squares) > len(best[1]):
-            best = (y, squares)
-    y, squares = best
+        # The most squares, then the widest: a row through the buttons' middles, not past their rounded corners
+        # (a corner row narrows each square, so an inner gap grows by two corners and an end gap by one).
+        width_sum = sum(c[1] - c[0] + 1 for c in squares)
+        if (len(squares), width_sum) > (len(best[1]), best[2] if len(best) > 2 else -1):
+            best = (y, squares, width_sum)
+    y, squares = best[0], best[1]
     if frame == "sheet":
-        left, right = 0, width - 1  # the sheet spans the screen's width: its visible edges are the shot's edges
+        # The sheet spans the screen; its visible edges are the bezel's (the shots are half scale).
+        lp, rp = (int(v) for v in (inset or ("9,3" if kind == "land" else "3,3")).split(","))
+        left, right = round(lp / 2), width - 1 - round(rp / 2)
     if not squares or right <= left:
         print(f"shade_gaps: no button row found in {path}")
         return 2

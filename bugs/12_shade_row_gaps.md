@@ -42,9 +42,13 @@ shot's edges by default (`--frame content` = the old frame); proven red on the d
 
 ## Verification
 
-- [ ] Independent judge over the diff.
-- [ ] Simulator: Home portrait and the book landscape, all buttons on — `shade_gaps.py` exit 0; shots read.
-- [ ] The owner's look on the reader (the taste is his).
+- [x] Independent judge over the diff — three rounds, OK WITH NOTES (the stale `[TESTED]` tag replaced; my claim that the
+      sheet ignores the safe area refuted — the simulator's X4 Pro profile has 3 px sides, the reader 7 px). Firmware
+      `3db21be8`.
+- [x] Simulator (`testcases/reports/2026-11-17_bug12_bug13_debug5.md`): portrait `[9, 9, 9, 10, 10, 9, 9]` spread 1,
+      landscape `[33, 32, 32, 33, 32, 31, 31]` spread 2 (debug4: `[15, 7, 7, 7, 7, 7, 15]`, spread 8). The guard also
+      measures through the buttons' middles now (a row near the rounded corners inflated the inner gaps).
+- [ ] The owner's look on the reader, image 1.1.3-debug5 (the taste is his; 7 buttons on the reader: ≈ 9 px everywhere).
 
 ## Decisions made without the owner
 

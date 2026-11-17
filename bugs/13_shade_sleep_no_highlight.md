@@ -29,9 +29,11 @@ filled; `runTile` sets it, `requestUpdateAndWait()`, then `requestSleep()`. `TWI
 
 ## Verification
 
-- [ ] Independent judge over the diff.
-- [ ] Simulator: a tap on «Сон» in the shade — the log order and a shot of the filled button.
-- [ ] The owner on the reader.
+- [x] Independent judge over the diff — OK WITH NOTES: the wait first sat inside the FreeInkApp dispatch and would drop
+      the tap's haptic tick → moved to `loop()` (`sleepAfterPaint`), as Home's. Firmware `3db21be8`.
+- [x] Simulator (`testcases/reports/2026-11-17_bug12_bug13_debug5.md`): `debug5_smoke_sleep/shots/3_tap_80ms.webp` — the
+      moon tile filled, taken before `Sleep requested from the home menu`, then the sleep screen.
+- [ ] The owner on the reader, image 1.1.3-debug5.
 
 ## Decisions made without the owner
 
