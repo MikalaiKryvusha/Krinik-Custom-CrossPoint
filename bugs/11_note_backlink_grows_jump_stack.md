@@ -54,7 +54,7 @@ survives TOC navigation and sleep) can turn a cross-reference into a return.
 - [x] Simulator, the owner's GEB (report `testcases/reports/2026-11-17_bug09_bug11_debug4.md`): `Saved position [1]` →
       `Link back to spine 8 closes jump [1]` → page 15/68 with «[4]»; the Back swipe after it: no `Restoring
       position`, the page turned back to 14/68.
-- [ ] The owner's check on the reader (image 1.1.3-debug4).
+- [ ] On the reader: not verified (the simulator only — `HOUSE_RULES.md` П2).
 
 ## Decisions made without the owner
 

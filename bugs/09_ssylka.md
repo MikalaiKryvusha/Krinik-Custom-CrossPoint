@@ -87,7 +87,7 @@ definition, one use); TOC span ids bypass it already.
       with note 4, [5] and [6] → page 2/18 with notes 5–8.
 - [x] Simulator smoke of the debug4 commit `3e223b4d`; image `cp-2.0.0-krinik-1.1.3-debug4.bin` built 2026-11-17
       20:32 +03:00.
-- [ ] The owner's check on the reader (the image waits for the reader on the wire).
+- [ ] On the reader: not verified (the simulator only; the agent observes the reader by its card screenshots and logs — `HOUSE_RULES.md` П2).
 
 Follow-ups from the judge (not regressions, not done): a `<span id>` around a picture in an empty block lands one page
 late (as `<img id>` does); an empty marker span INSIDE a paragraph is still dropped (record it as an inline anchor on

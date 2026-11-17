@@ -587,8 +587,10 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
    `Test-Path <letter>:\` is `False`. `[OWNER] 2026-11-09 20:09 +03:00 · chat: «после того, как прошивку закинул - отключай
    читалку, пусть будет правилом»`. Old images leave the card's `/.firmware/`; on 2026-11-09 the owner chose to keep
    the current debug, the previous debug as the fallback, and the latest release (`«и образы старые поудаляй»` →
-   «debug6 + debug5 + 1.1.2»). The copies stay in `firmware-builds/`. The functional run on the real reader is the owner's;
-   the agent prepares the image, the SHA256 and the checklist, and says "not verified on the reader" until he
+   «debug6 + debug5 + 1.1.2»). The copies stay in `firmware-builds/`. **Testing is the agent's, never the owner's** (`HOUSE_RULES.md`
+   П2): the owner USES the reader; no owner's check is a release gate and no checklist goes to him as his task. What the
+   simulator cannot show stays "not verified on the reader" and the agent looks for its own way to observe it (the card's
+   screenshots and logs after the owner has used the reader). Before 2026-11-17 this line read: the agent prepares the image, the SHA256 and the checklist, and says "not verified on the reader" until he
    reports.
 
 Grow this tooling over time; each command, stand and device gets its row in the house-rules file —

@@ -82,6 +82,21 @@
 
 ## Entries
 
+### EXP-0035 · 2026-11-17 · ❌ · #testing #owner #release #gate
+class: owner-as-tester
+mechanized: `HOUSE_RULES.md` П2; the AGENT_GUIDE device line rewritten
+**Context:** the owner asked «мы готовы выпускать релиз 1.1.3?»; earlier the same evening I sent him «что проверить на
+читалке» lists with debug4 and debug5.
+**Result:** ❌ I named «your check on the reader» as the release's first condition; the owner: «с каких это пор Я бля
+тестировщик у тебя, а НЕ ТЫ???». The canon already said it (TESTING_FRAMEWORK: «never "the owner will test"»), but the
+AGENT_GUIDE device line («the functional run on the real reader is the owner's») and the [AI] GOAL line («релиз, который
+я проверил на устройстве») taught the opposite.
+**Lesson:** readiness = the agent's own test pass with its report; the owner's use is not a test and never a gate; what
+the simulator cannot show is said as «not verified on the reader» with the agent's own next way to observe it.
+**Repro:** `grep -n -i "owner's check\|проверил на устройстве" STATUS.md GOAL.md MASTER_PLAN.md bugs/*.md` → empty.
+**Trigger:** writing a readiness answer, a release gate or a «what to check» line.
+**Not for:** taste verdicts (look, sound, text) — those are his.
+
 ### EXP-0034 · 2026-11-17 · ❌→✅ · #guard #frame #layout #shade
 class: guard-not-proven-against-threat
 mechanized: `tools/shade_gaps.py` measures the end gaps from the shot's edges (the sheet's visible edges) by default
