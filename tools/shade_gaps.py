@@ -1,7 +1,10 @@
 # Measures the button row of a shade screenshot: the gaps at both edges and between the buttons (KCCP epic 01).
 # Usage: .pio-venv/Scripts/python.exe -I -X utf8 tools/shade_gaps.py <shot.webp> [land|port] [--max-spread N]
-# Prints the content edges, the buttons found and the gaps in the shot's pixels; exit 1 when the spread of the gaps is
-# above --max-spread (default 2: the shots are half-scale WebP, each edge is good to ±1 px).
+#        [--frame sheet|content]
+# Prints the frame's edges, the buttons found and the gaps in the shot's pixels; exit 1 when the spread of the gaps is
+# above --max-spread (default 2: the shots are half-scale WebP, each edge is good to ±1 px). The end gaps count from
+# the sheet's visible edges (the shot's edges) by default — what the eye sees (KCCP bug 12: measured from the sliders'
+# content edges, a row 16 px + gap at the ends and gap between passed); --frame content is the old measurement.
 import sys
 
 from PIL import Image
@@ -27,6 +30,10 @@ def main():
     if "--max-spread" in sys.argv:
         max_spread = int(sys.argv[sys.argv.index("--max-spread") + 1])
         args = [a for a in args if a != str(max_spread)]
+    frame = "sheet"
+    if "--frame" in sys.argv:
+        frame = sys.argv[sys.argv.index("--frame") + 1]
+        args = [a for a in args if a != frame]
     path = args[0]
     im = Image.open(path).convert("L")
     width, height = im.size
@@ -57,13 +64,15 @@ def main():
         if len(squares) > len(best[1]):
             best = (y, squares)
     y, squares = best
+    if frame == "sheet":
+        left, right = 0, width - 1  # the sheet spans the screen's width: its visible edges are the shot's edges
     if not squares or right <= left:
         print(f"shade_gaps: no button row found in {path}")
         return 2
     gaps = [squares[0][0] - left] + [squares[i + 1][0] - squares[i][1] - 1 for i in range(len(squares) - 1)]
     gaps.append(right - squares[-1][1])
     spread = max(gaps) - min(gaps)
-    print(f"shade_gaps: {path} ({kind}, {width}x{height}): content {left}..{right}, row y {y}, "
+    print(f"shade_gaps: {path} ({kind}, {width}x{height}): {frame} {left}..{right}, row y {y}, "
           f"{len(squares)} buttons, gaps {gaps}, spread {spread}")
     return 0 if spread <= max_spread else 1
 
