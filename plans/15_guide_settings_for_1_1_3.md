@@ -44,12 +44,32 @@ Captured with `CROSSPOINT_SIM_SCREEN_TEXT=1` (runs `qa_runs/guide_display`, `gui
 Differences from `guide_settings_section.xhtml` seen so far: renamed — «Частота обновления» → «Очищать каждые»,
 «Очищать главный экран» → «Очищать домашний экран», «Перерисовка заставки сна» → «Обновлять заставку» (a time, not ВКЛ),
 «Перерисовка картинок» → «Обновлять картинки» (a time); missing in the guide — «Плавная подсветка», the whole
-«Калибровка экрана», both button screens; gone from the reader — «Перерисовка меню». The other chapters («Система»,
-«Чтение», «Кнопки», «Библиотека», «Подключения») are not captured yet.
+«Калибровка экрана», both button screens; gone from the reader — «Перерисовка меню».
+
+The other chapters (runs `qa_runs/guide_system`, `guide_reading`, `guide_keys`, `guide_library`, `guide_network`; every
+list fits one screen — the swipe shots equal the first ones, the last row ends above the bottom):
+
+- **Система:** Язык · Часы › · Раскладки клавиатуры › · Проверить обновление · Прошивка с SD карты · Показать скрытые
+  файлы · Об устройстве. Guide: «Проверить обновления», «Обновление системы с SD-карты», another order.
+- **Чтение:** Настройки текста › · Управление шрифтами › · Ориентация чтения (Альбомная 180°) · Изображения (Показать) ·
+  Стиль меню чтения (Список) · Настройка строки состояния › · Очистить кэш чтения. Guide has «Словарь» — not on this
+  screen (with no dictionary on the card? to read in the code).
+- **Кнопки:** Жесты кнопки «Домой» (Настроить) · Боковые кнопки (Назад/Вперёд) · Тачскрин для листания (флажок) ·
+  Следующая страница (Тап и свайп) · Предыдущая страница (Тап и свайп) · Открывать меню (Тап) · Боковая долго (Изменить
+  ориентацию) · Двойной клик питания: подсветка · Питание коротко (Сон). Guide: «Сенсорное управление чтением», «Долгое
+  нажатие», «Короткое нажатие PWR»; «Зоны тапа», «Быстрый возврат из ссылок» — not on this screen.
+- **Библиотека:** Использовать метаданные книг · Скрывать прочитанные · Прочитанные в Read. Guide: «Убирать прочитанные
+  из недавних», «Прочитанные — в папку Read».
+- **Подключения:** Wi-Fi сети › · CrossPoint Sync › · Серверы OPDS › · Плагины (Выключено). «Bluetooth-пульт» is absent
+  because the simulator is built without Bluetooth (`PROJECT_ARCHITECTURE_INTERNAL_MAP.md`, the shade) — not a difference.
+
+Not captured: the sub-screens one level deeper (Часы, Настройки текста, Настройка строки состояния, Жесты кнопки
+«Домой», CrossPoint Sync) — G1 continues there.
 
 ## Steps
 
-- [ ] G1. Capture the other settings screens the same way; extend the differences list.
+- [ ] G1. Capture the other settings screens the same way; extend the differences list. (The six chapters and the
+      Экран sub-screens done 2026-11-17 15:30 +03:00; the deeper sub-screens left.)
 - [ ] G2. Read each changed setting's options in `src/SettingsList.cpp` and the Russian strings.
 - [ ] G3. The comparison script (criteria 1–2) in `tools/`, proven red on today's section.
 - [ ] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
