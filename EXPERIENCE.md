@@ -124,6 +124,8 @@ out in — the same frame cannot disagree with the code.
 
 ### EXP-0033 · 2026-11-17 · ❌→✅ · #reader #claim #owner #back
 class: claim-before-evidence
+<!-- class-ok: claim-before-evidence — the class lives in chat sentences and handover prose, which no repository tool reads; the price was re-checked 2026-11-17 22:08: the guard is the judge's claim-wider-than-observation hunt (both entries were caught by a judge or a command run), a text linter would not see the chat -->
+
 none-cheap: a chat sentence is not machine-checkable; the judge read the code
 **Context:** bug 11 (a note's backlink); telling the owner what he will see after the fix.
 **Result:** ❌ I wrote «the next Back swipe then leaves the book» from memory; the judge read `ReaderUtils.h:277` — at

@@ -27,6 +27,109 @@
 
 ## Entries (newest first)
 
+### 2026-11-17 — STATUS trim 7 (2026-11-17 22:10 +03:00): the 19:45 chat (bugs 09–13, ideas 10–12, debug4, debug5, the KCCP 1.1.3 release), the 14:40 day loop and the items closed by the release (moved verbatim)
+
+- **Chat 2026-11-17 19:45 → 22:10 closed** (full entry: `PROJECT_HISTORY.md` → STATUS trim 7). Done and on the
+  simulator: bug 09 span footnote targets (`df4fab1a`), bug 11 note backlink (`87b8ead1`), bug 12 shade row from the
+  visible edges + bug 13 shade Sleep pressed (`3db21be8`), idea 10 shade without buttons (`1897783f`), the default shade
+  Night · Orientation · Flashlight · Sleep (`c1c38089`); images debug4 and debug5 put on the owner's card. Bug 10 (GEB
+  notes lost punctuation) — in the FB2 source, not our tools. New rules: П2 testing is the agent's, never the owner's;
+  П3 the fork only for upstream PRs; the voice engine is the shared `D:/work/ai_sandbox/tools/silero_tts`
+  (`.claude/settings.local.json`, gitignored).
+## Carry-over backlog (state on 2026-11-08, from the laptop)
+
+### Upstream contributions to crosspoint-reader
+
+- Open PRs (all 14/14 checks green on 2026-11-07, all waiting for maintainer review): #4328 `pr/epub-anchor-first-line`,
+  #4332 `pr/sleep-image-order`, #4375 `pr/screen-clean-menu`, #4376 `pr/screen-redraw-delay` (depends on #4375),
+  #4377 `pr/screen-calibration` (calibration with KEINKT; reconcile overlaps with #4375 when it lands).
+- Merged: #4329, #4330, #4331.
+- Upstream allows five open PRs per author. Do not close PRs to free a slot.
+- Ready locally, waiting for a free slot: **04** `pr/screen-clean-return` (text already proofread by the owner) — send command at
+  the end of `qa_runs/prs-2026-11-06/SEND_WHEN_READY.md`.
+- Ready, texts waiting for the owner's proofreading: **11** `pr/night-epub-images` (584c04e0), **12** `pr/lyra-title-lines`
+  (9d8bd77e), **13** `pr/viewer-reader-controls` (636126c5), **14** `pr/sleep-skip-truncated-bmp` (5977ce1e). Bodies:
+  `qa_runs/prs-2026-11-07-batch2/bodies/`; queue: `qa_runs/prs-2026-11-06/queue.json`. Builds and before/after frames were made on
+  those HEADs — do not rewrite the branches without a reason.
+- Two issue drafts for `lib/hal/` changes (upstream wants agreement first), unpublished, waiting for proofreading:
+  `qa_runs/prs-2026-11-07-batch2/issue-frontlight-park-before-sleep.md`, `issue-fat-dates-from-clock.md`.
+- Rule: no PR or issue text goes out without the owner's proofreading. Candidate analysis:
+  `researches/2026-11-08_krinik_upstream_candidates_batch2.md`.
+
+### Device (Xteink X4 Pro, eFuse-locked: firmware only from the SD card)
+
+- Last build confirmed on the reader: **1.1.1-debug8** (2026-11-09 23:46, homework 03); **debug9** is on the card since
+  2026-11-13 11:47, the owner 13:51: picture opening works (homework 04 steps 1, 3); the rest is superseded by the debug10 image. Debug2–8 history: `PROJECT_HISTORY.md`.
+- [ ] Precise temperature rework (owner, 2026-11-08): dithering only at brightness **≤ 9 %**, off at **10 %** (now it runs up to the
+  duty of 10 %).
+- **KCCP 1.1.2** (frontlight) is published: https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2 (2026-11-08,
+  bilingual notes, Latest; the image still says `cp-2.0.0-krinik-1.1.2` inside).
+- "Mama" build with OPDS/plugins: the Home menu has 8 rows and the "Mama" row runs off the screen — fixed by epic 05 Ф3 (`a47582b0`,
+  the list scrolls) on the simulator; the reader check comes with the mama image.
+
+- **Chat 2026-11-17 19:45 — `resume`; the owner's bug 09 + KCCP 1.1.3-debug4.** The owner filed `bugs/09_ssylka.md`
+  (GEB footnote links open the notes chapter's page 0) and put the reader on the wire (H:, KCCP 1.1.1-debug9): the
+  book, its caches and card state copied read-only to `.tmp/bug09/` (no log file, no serial port). Cause found and
+  fixed in the firmware (uncommitted at writing): `<span id>` footnote targets were dropped by upstream #2303's filter
+  (upstream #3667 open). His GEB screenshots of 13.11 (ch8 p57/p58): `[OWNER] 2026-11-17 19:48 «на одном снимке нет
+  подписи картинки» · «на втором - она переехала на новую страницу и там абзац, который не нужен подписям картинок»` —
+  epic 07's case; GEB needs the Ф3 tool's re-typeset (plain `<p>` captions), T9 of plan 14 runs on this copy. His
+  question 19:50 «мы близки к тому чтобы собрать очередную дебаг сборку…?» → answered: **debug4 = debug3 + epic 07
+  Ф2 + epic 05 Ф5 + bug 09 + bug 11** (his 20:01 «ТОЧНО ЛИ НУЖНО ДЕЛАТЬ ССЫЛКИ В ПРИМЕЧАНИЯХ ПОЛНОЦЕННЫМИ???» →
+  `bugs/11_note_backlink_grows_jump_stack.md`: a note's backlink now closes the jump). **Image
+  `firmware-builds/cp-2.0.0-krinik-1.1.3-debug4.bin` built 2026-11-17 20:32 +03:00** (firmware `3e223b4d`, 5 446 624 B,
+  SHA256 `e38a9338…`, RAM 34.3 %, Flash 83.0 %), the same commit's smoke clean (`testcases/reports/
+  2026-11-17_bug09_bug11_debug4.md`). **On the card 2026-11-17 20:43 +03:00** (the owner 20:42 «на проводе»):
+  `/.firmware/` = debug4 (SHA256 on the card = `e38a9338…`) + debug9 (fallback) + 1.1.2; debug8 removed (its copy in
+  `firmware-builds/`); ejected, `Test-Path H:\` False. **the owner flashes it for his own use** (the checklist I gave was wrong — testing is mine, `HOUSE_RULES.md` П2) — given in
+  chat (GEB [4] [5] [6] → their notes; a note's «[N]» → back to the text; captions in GEB unchanged until the
+  re-typeset); a homework document for debug4 is not written yet (supersedes homework 07). The punctuation part of his report → `bugs/10_geb_notes_lost_punctuation.md`: the
+  owner 20:47 gave the originals on D: — the notes lost their punctuation IN THE FB2 SOURCE (2010), our tools made 27
+  corrections and lost nothing; open: a punctuation check for books, the book itself only from another edition.
+  **His debug4 test, two shade bugs:** `bugs/12_shade_row_gaps.md` (20:51: huge ends, tight gaps — the row was spaced
+  inside the sliders' 16 px inset; research `researches/2026-11-17_shade_row_spacing.md` on his order; guard
+  `shade_gaps.py` now measures from the sheet's edge, red on debug4) and `bugs/13_shade_sleep_no_highlight.md` (20:53:
+  «Сон» in the shade not shown pressed before sleep — Home's debug8 fix ported). Both fixed (`3db21be8`, three judge
+  rounds), seen working on the simulator; **image `firmware-builds/cp-2.0.0-krinik-1.1.3-debug5.bin` built 2026-11-17
+  21:24 +03:00** (firmware `e4afb337`, 5 446 704 B, SHA256 `554f811a…`), the same commit's smoke clean
+  (`testcases/reports/2026-11-17_bug12_bug13_debug5.md`). **On the card 2026-11-17 21:27 +03:00** (the owner 21:27
+  «на проводе»): `/.firmware/` = debug5 (SHA256 on the card = `554f811a…`) + debug4 (fallback) + 1.1.2; debug9 removed
+  (its copy in `firmware-builds/`); ejected, `Test-Path H:\` False. **The owner flashes debug5 for his own use; the tests are mine** (П2: the 1.1.3 regression pass on the simulator, both builds, is not done yet). The voice
+  call said his name twice («Mikalai, Николай, …» since at least 16:10) — the owner 21:26 «Почему НИКОЛАЙ НИКОЛАЙ???» ·
+  «Нахуя два раза имя произносить???»: the door adds `callName` (default: git's «Mikalai») and the phrase opened with
+  «Николай»; fixed `.kaif/kaif.json` → `contour.callName = «Николай»` (the door then drops a leading «Николай,»; dry run
+  checked). Next: GEB re-typeset (plan 14 T9, the EPUB 2 form A). Homework 09 not raised.
+- **Chat 2026-11-17 14:40 — DAY LOOP** on the owner's word 14:42 «работай автономно в дейлупк» (`/dayloop`, no end time
+  named). Done: homework 08 — the clean §7B pass applied, committed `e7d5119`, the mock-up page shown (window on the
+  screen, screenshot ≈ 14:50; the owner's letter A–D awaited there); the contour's decision-name collision guarded and
+  filed (`b171cd6`, KAIF #199, EXP-0028); **epic 07 Ф3 tool** `tools/figure_retypeset.py` (`f8d213a`, plan 14, report
+  `testcases/reports/2026-11-17_epic07_p3.md`: the test book pass, the judge's loose-label finding fixed; T9 the owner's
+  two books blocked — the reader not on the wire); **epic 05 Ф5 DONE on the simulator** — firmware `de8feb20` (local),
+  `plans/11_DONE_epic05_p5_home_long_tap.md`, report `testcases/reports/2026-11-17_epic05_p5.md` (five themes + mama; the
+  judge's FIX FIRST — the grid's bottom-edge band — fixed and proven red on a mutant); EXP-0029 (CRLF again).
+- **KCCP 1.1.3-debug3 image built 2026-11-17 11:29** on the owner's word 11:21 «сделаешь мне дебаг3? накопилось фичей и
+  фиксов на неё?»: `firmware-builds/cp-2.0.0-krinik-1.1.3-debug3.bin` (5 445 104 B, SHA256 `4774fee2…`), firmware
+  `0d56b23a` (debug2 line + version bump; epic 07 Ф2 parked in `git stash` «epic07-p2-caption-wip» — its judge said FIX
+  FIRST: the caption inherits the figure's alignment, a nested `<p>` gets the indent, the test cannot fail on the indent);
+  simulator smoke of the same commit 0 errors (`qa_runs/debug3_smoke_home`, `…_book`); RAM 34.3 %, Flash 83.0 %.
+  **superseded by debug4** (the reader came on the wire 2026-11-17 19:46 as H:; debug4 goes instead): copy to `/.firmware/`, check SHA256,
+  eject; homework `homeworks/07_kccp_1.1.3_debug3.md`. This is the image of epic 01 Ф4 and epic 05 Ф6 (acceptance: the
+  agent's own test pass — `HOUSE_RULES.md` П2, never the owner's check).
+- **Homework 08 — the caption look ANSWERED** 2026-11-17 16:43 +03:00 on the mock-up page: «Готово», no remarks, no
+  letter (`interviews/decisions/caption_look.decision.json`, `noRemarks`); recorded in the homework 16:44 as `[AI]`
+  «nothing to change — the caption stays A (upright, the book's size)»; a letter B–D from the owner reopens it. Epic 07
+  Ф2 P2.4: the plan's tick and the Ф2 closure wait for the next epic-07 step (bug 09 came first).
+- **Release-time debt (the 13.11 judge):** `README.md` / `USER_GUIDE.md` describe fractional mixing as always on and
+  battery as «still being measured» — fix before KCCP 1.1.3 ships (the day-loop entry of 13.11 is in `PROJECT_HISTORY.md`,
+  «STATUS trim 5»). Draft homework for the image: `homeworks/06_kccp_1.1.3_debug1.md`.
+- **Epic 01 Ф2 + Ф3 closed** on `wip/kccp-1.1.3-debug2`: «Кнопки в шторке» `41718c61` (19:33, C1–C8) and the shade
+  `261e5c63` (20:06, D1–D8: the owner's row with equal gaps measured by `tools/shade_gaps.py`, «Сон», «Фонарик» over
+  the book, the long tap → the screen on that button → Back → the book). **Ф4 waits for the owner's word on the image**
+  (the whole-epic judge, the device build, smoke, homework — `homeworks/06_kccp_1.1.3_debug1.md` grows into the
+  1.1.3-debug2 homework). **Idea 09 built** (`9027b99a`, 20:24): every picture opens by its shape, simulator E1–E10
+  pass (`testcases/reports/2026-11-13_idea09.md`).
+- **KCCP 1.1.3 = the next release** (the owner 2026-11-13 17:07, `MASTER_PLAN.md` → decision journal); 1.1.3-debug1 assembled, judged, host tests green; no device build, no image.
+
 ### 2026-11-17 — STATUS trim 6 (2026-11-17 16:07 +03:00): closed items of 14.11 and the KNOWLEDGE lines of 13–14.11 (moved verbatim)
 
 - **2026-11-17 09:49 chat (the owner: «нам ответили по фиксу бага с инверсией обложки… у него воспроизвелось»):**

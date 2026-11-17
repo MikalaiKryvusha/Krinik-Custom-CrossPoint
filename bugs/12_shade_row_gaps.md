@@ -31,7 +31,7 @@ guard proved against the wrong frame.
 
 ## Research
 
-`researches/2026-11-17_shade_row_spacing.md` (the owner's order): space-evenly for a full-width icon row, the ends
+`researches/2026-11-17_shade_row_spacing.md` (`[OWNER] 2026-11-17 20:51 «Иди ищи в интернете, как дизайнеры расстояния считают для таких кейсов»`): space-evenly for a full-width icon row, the ends
 counted from the container's VISIBLE edge (padding = gap), ≥ 8 px between touch targets.
 
 ## Fix
