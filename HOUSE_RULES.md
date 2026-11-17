@@ -55,4 +55,5 @@
 | `tar` / `curl` / `find` | Git Bash: GNU tar 1.35, curl 8.4.0 (mingw64), GNU find; PowerShell: `tar` = `C:\Windows\system32\tar.exe` (bsdtar), `curl` = псевдоним `Invoke-WebRequest`, `find` = `find.exe` Windows | `type -t tar curl find`; `Get-Command tar,curl,find` |
 | Окончания строк в git | этот репозиторий `core.autocrlf=true`; клон `firmware/` `core.autocrlf=false` (EXP-0007); помощник учётных данных `manager` | `git config --get core.autocrlf`; `git -C firmware config --get core.autocrlf` |
 | Менеджер пакетов | winget (из обеих оболочек); MSYS2 pacman в `F:\ai_sandbox\msys64` | `command -v winget` |
+| Читалка на проводе (2026-11-17) | USB-накопитель `VID_303A&PID_1001`, карта — буква `H:` (FAT32, 14,5 ГБ; 2026-11-09 была `G:`); последовательного порта нет — живой лог так не снять | PowerShell: `Get-Volume`; `Get-PnpDevice -PresentOnly \| ? FriendlyName -match 'USB Mass'` |
 | Ловушки, оплаченные инцидентами | EXP-0004 (cp1251 в Python из Git Bash), EXP-0007 и EXP-0019 (CRLF), EXP-0008 (`grep` падает на длинном потоке), EXP-0010 (`cd` в параллельных вызовах), EXP-0017 (временные файлы вне проекта) | `EXPERIENCE.md` |

@@ -55,7 +55,11 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   the next page through the carry ring (`recentLineOffsets` / anchors, 6 entries, `canCarry`). Epic 07 Ф1 (1.1.3-debug2,
   in work): a `<figure>` or a block with CSS `break-inside: avoid` is a keep-together group — its first picture enters the
   ring, a caption line that overflows carries the picture along, and a group that opens its page and still overflows
-  shrinks the picture (`shrinkGroupImageFor`, floor = viewport / 4); `figcaption` is a block. Host tests:
+  shrinks the picture (`shrinkGroupImageFor`, floor = viewport / 4); `figcaption` is a block. Anchors (the state is in
+  `ChapterHtmlSlimParser.h`): a block's id → `pendingAnchorId` → `unplacedAnchorIds`, placed with the block's first
+  content (`aeee710b`); an inline id → `inlineAnchorIds` by visible offset; a `<span>` id is dropped (upstream #2303,
+  KePub heap guard) unless no visible text comes before the next block — then `spanAnchorCandidates` join that block's
+  anchors (bug 09, 1.1.3-debug4); all under `MAX_ANCHORS_PER_CHAPTER` = 1024 (`anchorCount()`). Host tests:
   `test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp` (since 2026-11-17 it builds on Windows; three of its tests
   fail only here — Windows cannot delete an open file).
 - `src/activities/reader/EpubReaderActivity.{h,cpp}` — the EPUB reader (the header holds the shown page's state:
