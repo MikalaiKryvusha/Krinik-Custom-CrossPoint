@@ -84,7 +84,8 @@ work project. From now on it is a standalone project.
         G4 restarts from the epub; no build tool for the epub).
      10. Proofread `GOAL.md`. 11. Delete the partial `C:\msys64` (check the machine lock).
   - Reviews to read: simulator PR #62 and firmware PRs #4328 #4332 #4375 #4376 #4377
-    (`gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`).
+    (`gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`). Checked 2026-11-17 16:08 +03:00:
+    all six OPEN, no activity after 2026-11-09 (the last entries are CI bots, CodeRabbit and the owner's own).
 
 ## Language contract
 
