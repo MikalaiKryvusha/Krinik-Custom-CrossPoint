@@ -22,17 +22,17 @@ Avoid: a caption indented like a paragraph. Achieve: the caption centred under i
 
 | Dimension | Values covered | Explicitly NOT covered (risk named) |
 |---|---|---|
-| indent source | the reader's setting (5 on the card, 3 in the host test); the book's CSS | a negative (hanging) CSS indent — zeroed by the same line (judge to confirm) |
-| caption markup | plain text; text with `<br/>` (breakTextLine suppresses the indent itself, read 2026-11-17) | a nested `<p>` inside `<figcaption>`: its own block resets the suppression — the Ф3 tool writes no nested `<p>` (low) |
-| alignment | no text-align (centred) | a book's own text-align on figcaption — wins by design |
+| indent source | the reader's setting (5 on the card, 3 in the host test); the book's CSS, positive and negative (a nested `<p>` with `text-indent: -1em`) | — |
+| caption markup | plain text; text with `<br/>` (breakTextLine suppresses the indent itself, read 2026-11-17); a nested `<p>` (host, since the judge) | inline markup only (`<em>`) — no new block, nothing to reset (low) |
+| alignment | no text-align (centred); a figure with its own text-align (the caption stays centred); the caption's own `text-align: left` (wins) | — |
 
 ## 4. Cases
 
 | # | Case (steps → expected) | Technique | Status + evidence |
 |---|---|---|---|
-| C1 smoke | host `CaptionHasNoFirstLineIndentAndIsCentred`: reader indent 3 + CSS 2em → caption x = 198, Center; the control paragraph indented | decision table | see the run report |
-| C2 | simulator, `--figure` book (card indent 5), landscape: captions 1 and 2 centred, no indent (shots) | use case | see the run report |
-| C3 | default book (no figcaption): pages equal to the Ф1 after-shots (`tools/shot_diff.py`) | regression | see the run report |
+| C1 smoke | host `CaptionHasNoFirstLineIndentAndIsCentred`: reader indent 3 + CSS 2em → caption x = 198, Center; the control paragraph indented | decision table | [TESTED: 2026-11-17 · testcases/reports/2026-11-17_epic07_p2.md] |
+| C2 | simulator, `--figure` book (card indent 5), landscape: captions 1 and 2 centred, no indent (shots) | use case | [TESTED: 2026-11-17 · testcases/reports/2026-11-17_epic07_p2.md] |
+| C3 | default book (no figcaption): pages equal to the Ф1 after-shots (`tools/shot_diff.py`) | regression | [TESTED: 2026-11-17 · testcases/reports/2026-11-17_epic07_p2.md] |
 
 ## 5. Control cases
 

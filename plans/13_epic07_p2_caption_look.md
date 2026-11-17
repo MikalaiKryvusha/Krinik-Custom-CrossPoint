@@ -1,8 +1,9 @@
 # Plan 13 — epic 07, phase 2: the caption has no first-line indent and stands centred under its picture
 
 > **Created:** 2026-11-17 · **Parent:** `plans/07_EPIC_figure_caption.md` → «Ф2 — вид подписи» (criterion 3) ·
-> **Status:** ⏸ code in `git stash` «epic07-p2-caption-wip» 2026-11-17 11:24 — the judge FIX FIRST (the caption inherits the figure's
-> alignment; a nested `<p>` gets the reader's indent; the test passes without the indent fix); parked for the debug3 image · **Outbound:** —
+> **Status:** 🔧 the indent + centring DONE on the simulator 2026-11-17 11:51 +03:00 (firmware `90406599`, report
+> `testcases/reports/2026-11-17_epic07_p2.md`; the judge FIX FIRST fixed); open: P2.4 italic × size mock-ups — the owner's
+> taste · **Outbound:** —
 
 ## Goal vector (Achieve)
 
@@ -33,12 +34,15 @@ Anchor (meta-plan, Ф2): «`<figcaption>` по центру под картин�
 
 ## Steps
 
-- [ ] P2.1 Host test first (red): a figcaption under a figure with the reader's paragraph indent on → no indent, centred.
-- [ ] P2.2 The parser change. Anchor: «без отступа красной строки».
-- [ ] P2.3 Judge → simulator (`--figure` book: shots), host suite, run report.
+- [x] P2.1 Host test first (red): a figcaption under a figure with the reader's paragraph indent on → no indent, centred.
+- [x] P2.2 The parser change. Anchor: «без отступа красной строки».
+- [x] P2.3 Judge → simulator (`--figure` book: shots), host suite, run report.
 - [ ] P2.4 Mock-ups for italic × size → homework to the owner (`homeworks/`), his verdict recorded.
 
 ## Decisions made without the owner
+
+- `[AI]` Every block born inside a caption gets no indent (`captionDepth`, `startNewTextBlock`): the judge's nested-`<p>` case.
+- `[AI]` The caption's alignment is defined (as headings), so a figure's `text-align` does not pass to it.
 
 - `[AI]` Centre by default (ГОСТ / БГУИР); a book's own `text-align` on its caption still wins — the owner's word binds
   the indent, not the alignment.
