@@ -1,0 +1,55 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[6] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[6] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep
+[6] [DBG] [CPS] Resaving settings to update format
+[6] [DBG] [CPS] Settings loaded from file
+[7] [DBG] [UI] Using Lyra theme
+[7] [INF] [CLK] RTC clock read: 2026-11-17 12:26
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[7] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[235] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[235] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[236] [DBG] [SDREG] Fonts directory not found: /fonts
+[236] [DBG] [SDREG] Discovery complete: 0 families
+[236] [DBG] [SDFS] SD font system ready (0 families discovered)
+[236] [DBG] [MAIN] Fonts setup
+[236] [DBG] [ACT] Entering activity: Boot
+[236] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] SCREEN: CrossPoint | Загрузка | dev-simulator
+[244] [DBG] [ACT] Exiting activity: Boot
+[244] [DBG] [ACT] Entering activity: Home
+[244] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
+[245] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:26 | 100% | Нет открытой книги | Выберите книгу ниже | Обзор файлов | Библиотека | Передача файлов | Настройки | Фонарик | Сон
+[SIM] WAIT matched: [244] [DBG] [ACT] Entering activity: Home
+[262] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[1848] [DBG] [ACT] Exiting activity: Home
+[1848] [DBG] [ACT] Entering activity: SettingsList
+[1848] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:26 | 100% | Настройки | dev-simulator | Система | Экран | Чтение | Кнопки | Библиотека | Подключения
+[SIM] WAIT matched: [1848] [DBG] [ACT] Entering activity: SettingsList
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/shots/list.bmp
+[4449] [DBG] [ACT] Pushed to activity stack, new size = 1
+[4449] [DBG] [ACT] Entering activity: Settings
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
+[4449] [DBG] [DREG] No /dictionaries directory on SD card
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
+[4450] [DBG] [DREG] No /.dictionaries directory on SD card
+[4451] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:26 | 100% | Экран | Настройки сна | Кнопки в шторке | Кнопки домашнего экрана | Плавная подсветка | 200 мс | Скрыть % батареи | Никогда | Тема интерфейса | Lyra | Ночной режим | Настройки очисток экрана | Калибровка экрана
+[SIM] WAIT matched: [4449] [DBG] [ACT] Entering activity: Settings
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/shots/display.bmp
+[7529] [DBG] [LIST] Settings swipe delta=9 count=9
+[7529] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/shots/display2.bmp
+[10003] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10003] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10527] [DBG] [LIST] Settings swipe delta=9 count=9
+[10527] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_display/shots/display3.bmp
