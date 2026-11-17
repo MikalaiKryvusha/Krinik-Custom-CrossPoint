@@ -25,11 +25,10 @@ work project. From now on it is a standalone project.
   **❓ waits for the reader on the wire** (G: here is a game disc, not the reader): copy to `/.firmware/`, check SHA256,
   eject; homework `homeworks/07_kccp_1.1.3_debug3.md`. This is the image of epic 01 Ф4 and epic 05 Ф6 (acceptance by
   the owner's check).
-- **❓ homework 08 — the caption look** (`homeworks/08_caption_look.md`, the four mock-ups
-  `qa_runs/caption_look_compare/caption_look.webp` — renamed from `compare.webp`: the contour keys a mock-up verdict by
-  the bare file name and would have overwritten #005's `compare.decision.json`): upright / italic × body size / 0.85em):
-  the owner picks A–D on the mock-up page (shown ≈ 14:50); then epic 07 Ф2 P2.4 sets the caption's default font by his
-  choice and Ф2 closes.
+- **Homework 08 — the caption look ANSWERED** 2026-11-17 16:43 +03:00 on the mock-up page: «Готово», no remarks, no
+  letter (`interviews/decisions/caption_look.decision.json`, `noRemarks`); recorded in the homework 16:44 as `[AI]`
+  «nothing to change — the caption stays A (upright, the book's size)»; a letter B–D from the owner reopens it. Epic 07
+  Ф2 P2.4: the plan's tick and the Ф2 closure wait for the next epic-07 step (bug 09 came first).
 - **❓ homework 09 — the guide's five new lines** (`homeworks/09_guide_settings_proofread.md`, plan 15 G5): the owner
   proofreads the five `[AI]` lines of `guide_settings_section.xhtml` (the epub's settings chapters + the reader's
   changes) and decides his two text questions (the second «Проверить обновление» description; the separate file's
