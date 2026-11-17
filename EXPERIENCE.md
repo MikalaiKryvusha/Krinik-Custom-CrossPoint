@@ -82,6 +82,18 @@
 
 ## Entries
 
+### EXP-0027 · 2026-11-17 · ❌→✅ · #stamps #clock #reports
+class: claim-before-evidence
+mechanized: .kaif/hooks/clock-now.mjs fills the NOW placeholder — on Write/Edit only; this face is the bypass
+**Context:** epic 07 Ф1/Ф2 run reports and statuses filled by `python` text replacement during a fast loop.
+**Result:** ❌ moments typed by feel, some ahead of the clock (11:44–11:51 written at a real 11:42); the clock-now hook never
+saw them — it fills the placeholder only in Write/Edit. ✅ Replaced by log mtimes / commit times or marked ≈ (`5807c28`).
+**Lesson:** a run's moment comes from its artifact — `date -r <log> '+%H:%M'`, the commit's `%ad` — or a probe in the same
+call; a stamp written through a script bypasses the clock hook, so the script reads the moment itself.
+**Repro:** `for f in qa_runs/<run>/log.txt; do date -r $f '+%H:%M'; done`; `git log -1 --format=%ad --date=format:%H:%M`.
+**Trigger:** writing a run table or a status stamp through `python`/`sed`.
+**Not for:** stamps written with Write/Edit and the NOW placeholder (the hook fills those).
+
 ### EXP-0026 · 2026-11-17 · ❌→✅ · #simulator #webp #golden #shots
 class: false-defect
 mechanized: tools/shot_diff.py (threshold 32, status bar cut; proven to fail on two different runs)
