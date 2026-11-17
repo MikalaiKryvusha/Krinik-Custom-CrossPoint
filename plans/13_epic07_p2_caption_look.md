@@ -1,7 +1,7 @@
 # Plan 13 — epic 07, phase 2: the caption has no first-line indent and stands centred under its picture
 
 > **Created:** 2026-11-17 · **Parent:** `plans/07_EPIC_figure_caption.md` → «Ф2 — вид подписи» (criterion 3) ·
-> **Status:** 🔧 the indent + centring DONE on the simulator 2026-11-17 11:51 +03:00 (firmware `90406599`, report
+> **Status:** 🔧 the indent + centring DONE on the simulator 2026-11-17 11:42 +03:00 (commit) (firmware `90406599`, report
 > `testcases/reports/2026-11-17_epic07_p2.md`; the judge FIX FIRST fixed); open: P2.4 italic × size mock-ups — the owner's
 > taste · **Outbound:** —
 

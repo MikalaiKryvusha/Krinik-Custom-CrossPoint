@@ -48,7 +48,7 @@ work project. From now on it is a standalone project.
   2. DONE 2026-11-17: interviews #005 and #006 shown and answered (above). **Epic 07 Ф1 DONE on the simulator 11:16**
      (`plans/12_DONE_epic07_p1_layout.md`, report `testcases/reports/2026-11-17_epic07_p1.md`: a `<figure>` /
      `break-inside: avoid` block keeps picture + caption on one page, the picture shrinks; old books unchanged; the parser
-     host suite now runs on Windows, 963 host tests). **Ф2 indent + centring DONE 11:51** (firmware `90406599`,
+     host suite now runs on Windows, 963 host tests). **Ф2 indent + centring DONE 11:42** (firmware `90406599`,
      `testcases/reports/2026-11-17_epic07_p2.md`; after the debug3 image); open P2.4 italic × size mock-ups (homework), then Ф3 (the re-typeset tool, text unchanged — #005 → A).
      The owner's books change only after Ф3 re-typesets them.
   3. **Epic 05 Ф5** (parked for epic 07) **— the long tap on a Home button opens «Кнопки домашнего экрана» on that button** (meta-plan criteria 7–9):
