@@ -26,5 +26,9 @@
   "qa_runs/caption005_compare/compare.webp": {
     "at": "2026-11-17T07:31:25.337Z",
     "transport": "страница"
+  },
+  "qa_runs/caption_look_compare/caption_look.webp": {
+    "at": "2026-11-17T11:48:29.220Z",
+    "transport": "страница"
   }
 }

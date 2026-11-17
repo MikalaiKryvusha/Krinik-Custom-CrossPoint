@@ -82,6 +82,20 @@
 
 ## Entries
 
+### EXP-0028 · 2026-11-17 · ❌→✅ · #contour #review #mockup #decision #names
+class: overwrote-tracked
+mechanized: `.kaif/tools/contour/core.mjs` refuses to overwrite another document's decision record (bugs/KAIF/01, origin #199; probe red on the original, green on the patch)
+**Context:** epic 07 Ф2 — a second mock-up picture made by the same compose script as #005's, both named `compare.webp`
+in two `qa_runs/` folders, about to be shown on the contour's mock-up face.
+**Result:** ❌ the contour names a decision file by the BARE file name (`interviews/decisions/compare.decision.json`): the
+new verdict would have replaced the owner's #005 answer for every reader of it. ✅ Caught by reading `decisionPaths` before
+the show; the picture renamed `caption_look.webp`; a local guard; ticket delivered.
+**Lesson:** a picture or page that goes to the owner gets a name unique across the project — the record of his verdict is
+keyed by it; before a show, `ls interviews/decisions/<name>.decision.json` must say «No such file».
+**Repro:** `ls interviews/decisions/$(basename <picture> | sed 's/\.[^.]*$//').decision.json` → must not exist.
+**Trigger:** `review.mjs <picture> --mockup` (and any `review.mjs <doc>` show of a new document).
+**Not for:** a document shown again for the SAME question (its own record is expected there).
+
 ### EXP-0027 · 2026-11-17 · ❌→✅ · #stamps #clock #reports
 class: claim-before-evidence
 mechanized: .kaif/hooks/clock-now.mjs fills the NOW placeholder — on Write/Edit only; this face is the bypass

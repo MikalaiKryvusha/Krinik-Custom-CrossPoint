@@ -913,6 +913,12 @@ export function recordDecision(root, docPath, payload, cfg = loadContourConfig(r
   if (payload.rev) record.rev = payload.rev;
   if (isMd) record.revAfter = bodyHash(readFileSync(abs, 'utf8'));
   const prev = existsSync(p.decision) ? readJson(p.decision) : null;
+  // KCCP local remediation (bugs/KAIF/01): the decision file is named by the BARE file name, so two documents with one name in
+  // two folders share it — refuse to overwrite another document's record instead of losing the owner's answer silently.
+  if (prev && prev.document && prev.document !== record.document) {
+    throw new Error('decision file ' + p.decision + ' belongs to ' + prev.document + ', not to ' + record.document +
+      ' — two documents share one file name; rename one (bugs/KAIF/01)');
+  }
   const decision = { ...record };                          // place 2 — merged; the archive and the caller get THIS record as it came
   if (prev && payload.rev && prev.revAfter === payload.rev && (prev.kind || 'interview') === record.kind) {
     if (prev.answers || record.answers) decision.answers = { ...(prev.answers || {}), ...(record.answers || {}) };
@@ -929,7 +935,10 @@ export function recordDecision(root, docPath, payload, cfg = loadContourConfig(r
 export function readDecision(root, docPath, cfg = loadContourConfig(root)) {
   const p = decisionPaths(root, docPath, cfg).decision;
   if (!existsSync(p)) return null;
-  return readJson(p);
+  const rec = readJson(p);
+  // KCCP local remediation (bugs/KAIF/01): another document's record under the same bare file name is not this one's answer
+  if (rec && rec.document && rec.document !== docPath.replace(/\\/g, '/')) return null;
+  return rec;
 }
 
 // ── C7/I4: the sending gate — one function for both sides, never throws ───────────────────────
