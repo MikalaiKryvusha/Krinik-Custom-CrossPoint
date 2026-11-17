@@ -18,9 +18,11 @@ work project. From now on it is a standalone project.
   `bugs/11_note_backlink_grows_jump_stack.md`: a note's backlink now closes the jump). **Image
   `firmware-builds/cp-2.0.0-krinik-1.1.3-debug4.bin` built 2026-11-17 20:32 +03:00** (firmware `3e223b4d`, 5 446 624 B,
   SHA256 `e38a9338…`, RAM 34.3 %, Flash 83.0 %), the same commit's smoke clean (`testcases/reports/
-  2026-11-17_bug09_bug11_debug4.md`). **❓ waits for the reader on the wire** (it was unplugged after the copies):
-  copy to `/.firmware/`, check SHA256, keep debug4 + debug9 (fallback) + 1.1.2, eject; homework for debug4 to write
-  (supersedes homework 07). The punctuation part of his report → `bugs/10_geb_notes_lost_punctuation.md` (the book's
+  2026-11-17_bug09_bug11_debug4.md`). **On the card 2026-11-17 20:43 +03:00** (the owner 20:42 «на проводе»):
+  `/.firmware/` = debug4 (SHA256 on the card = `e38a9338…`) + debug9 (fallback) + 1.1.2; debug8 removed (its copy in
+  `firmware-builds/`); ejected, `Test-Path H:\` False. **❓ the owner flashes and tests** — the checklist was given in
+  chat (GEB [4] [5] [6] → their notes; a note's «[N]» → back to the text; captions in GEB unchanged until the
+  re-typeset); a homework document for debug4 is not written yet (supersedes homework 07). The punctuation part of his report → `bugs/10_geb_notes_lost_punctuation.md` (the book's
   notes lost commas, stops, dashes; our checks blind to it; asked him for the book's original file). Next after the
   card: GEB re-typeset by the Ф3 tool (plan 14 T9), then bug 10's punctuation check. Homework 09 not raised yet.
 - **Chat 2026-11-17 14:40 — DAY LOOP** on the owner's word 14:42 «работай автономно в дейлупк» (`/dayloop`, no end time
