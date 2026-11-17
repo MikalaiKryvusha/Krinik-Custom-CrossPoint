@@ -52,6 +52,10 @@ work project. From now on it is a standalone project.
   the bare file name and would have overwritten #005's `compare.decision.json`): upright / italic × body size / 0.85em):
   the owner picks A–D on the mock-up page (shown ≈ 14:50); then epic 07 Ф2 P2.4 sets the caption's default font by his
   choice and Ф2 closes.
+- **❓ homework 09 — the guide's five new lines** (`homeworks/09_guide_settings_proofread.md`, plan 15 G5): the owner
+  proofreads the five `[AI]` lines of `guide_settings_section.xhtml` (the epub's settings chapters + the reader's
+  changes) and decides his two text questions (the second «Проверить обновление» description; the separate file's
+  role); then the chapter goes into `РУКОВОДСТВО.epub`. Filed 2026-11-17 15:59 +03:00, the clean §7B pass running, not shown yet.
 - **❓ awaiting the owner (one action):** wire the guard `tools/hooks/pretool-deny-server-timeout.mjs` (refuses
   `timeout … review.mjs` page launches — the contour server died that way twice, EXP-0013/0024) into
   `.claude/settings.json` → `hooks.PreToolUse`, matcher `Bash|PowerShell` (the exact block is in the script's header);

@@ -82,6 +82,18 @@
 
 ## Entries
 
+### EXP-0031 · 2026-11-17 · ❌→✅ · #qa_runs #glob #cleanup #tracked
+class: overwrote-tracked
+mechanized: `tools/clean_run_cards.sh <run…>` — removes only named runs' `sd/`, refuses tracked files and globs (proven on `guide_after`)
+**Context:** plan 15 captures named `qa_runs/guide_*`; their card copies removed with `rm -rf qa_runs/guide_*/sd`.
+**Result:** ❌ the glob also hit `qa_runs/guide_after/sd` and `guide_before/sd` — a 2026-11-08 run committed WITH its card
+(`7a52b12`); 8 tracked files deleted in the tree (not committed: the commits named their paths). ✅ `git checkout --`.
+**Lesson:** a cleanup names the runs it made, never a prefix glob; `git status --short | grep '^ D'` after any `rm -rf`
+under `qa_runs/`.
+**Repro:** `git status --short | grep '^ D'` → empty after a cleanup.
+**Trigger:** `rm -rf` with a glob under `qa_runs/`.
+**Not for:** `.tmp/` (ignored, nothing tracked there).
+
 ### EXP-0030 · 2026-11-17 · ❌→✅ · #stamps #clock #recurrence #guard
 class: claim-before-evidence
 mechanized: `tools/stamp_guard.py` — staged lines with a stamp ahead of the clock → exit 1 (proven on a staged probe)
