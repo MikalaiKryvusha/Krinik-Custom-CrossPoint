@@ -1,6 +1,6 @@
 # Builds a small EPUB 3 test book with pictures and captions (own generated content, safe for the public repo) for the
 # simulator runs of ideas 02 (tap a picture → full screen) and 03 (keep a caption with its picture).
-# Usage: python -I tools/make_image_test_epub.py <out.epub> [--figure]   (Pillow: the .pio-venv python)
+# Usage: python -I tools/make_image_test_epub.py <out.epub> [--figure] [--label=author|bguir|gost]   (Pillow: the .pio-venv python)
 #   default   — captions as in the owner's FB2-converted books: <div><img/></div><p><em>Рис. N. …</em></p>
 #   --figure  — the standard markup: <figure><img/><figcaption>Рис. N. …</figcaption></figure>
 import io
@@ -50,8 +50,26 @@ def picture_bytes(name, size, label):
     return out.getvalue()
 
 
+# --label= sets how a caption starts (interview #005 shows the three side by side): author — the owner's books today,
+# «Рис. 1. Название.»; bguir — БГУИР СТП 01–2024 2.5.5, «Рисунок 1 – Название», no final dot; gost — ГОСТ 7.32-2017
+# 6.5.7, «Рисунок 1 — Название», no final dot. With any --label= picture 1 carries the interview's example title; without
+# the flag the book is the one the earlier runs used, byte for byte.
+LABEL_ARG = next((a.split("=", 1)[1] for a in sys.argv[2:] if a.startswith("--label=")), None)
+LABEL = LABEL_ARG or "author"
+TITLES = {1: "Адольф фон Мензель. «Концерт флейтистов в Сансуси»"} if LABEL_ARG else {}
+
+
+def caption_text(number):
+    title = TITLES.get(number, f"Тестовая картинка номер {number} с подписью под ней")
+    if LABEL == "bguir":
+        return f"Рисунок {number} – {title}"
+    if LABEL == "gost":
+        return f"Рисунок {number} — {title}"
+    return f"Рис. {number}. {title}."
+
+
 def picture_block(name, number, figure):
-    caption = f"Рис. {number}. Тестовая картинка номер {number} с подписью под ней."
+    caption = caption_text(number)
     if figure:
         return (f'<figure class="fig"><img src="images/{name}" alt=""/>'
                 f"<figcaption>{caption}</figcaption></figure>")
