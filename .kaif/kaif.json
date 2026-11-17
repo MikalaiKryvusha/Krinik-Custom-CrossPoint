@@ -16,5 +16,8 @@
   "canonArtifacts": [],
   "build": "3aa4b346ba3b",
   "prerelease": "2.10",
-  "projectName": "Krinik Custom CrossPoint"
+  "projectName": "Krinik Custom CrossPoint",
+  "contour": {
+    "callName": "Николай"
+  }
 }

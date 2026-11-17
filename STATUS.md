@@ -31,9 +31,13 @@ work project. From now on it is a standalone project.
   «Сон» in the shade not shown pressed before sleep — Home's debug8 fix ported). Both fixed (`3db21be8`, three judge
   rounds), seen working on the simulator; **image `firmware-builds/cp-2.0.0-krinik-1.1.3-debug5.bin` built 2026-11-17
   21:24 +03:00** (firmware `e4afb337`, 5 446 704 B, SHA256 `554f811a…`), the same commit's smoke clean
-  (`testcases/reports/2026-11-17_bug12_bug13_debug5.md`). **❓ waits for the reader on the wire** (copy, SHA256 on the
-  card, keep debug5 + debug4 + 1.1.2 — debug9 leaves, eject). Next: GEB re-typeset (plan 14 T9, the EPUB 2 form A).
-  Homework 09 not raised.
+  (`testcases/reports/2026-11-17_bug12_bug13_debug5.md`). **On the card 2026-11-17 21:27 +03:00** (the owner 21:27
+  «на проводе»): `/.firmware/` = debug5 (SHA256 on the card = `554f811a…`) + debug4 (fallback) + 1.1.2; debug9 removed
+  (its copy in `firmware-builds/`); ejected, `Test-Path H:\` False. **❓ the owner flashes and tests debug5.** The voice
+  call said his name twice («Mikalai, Николай, …» since at least 16:10) — the owner 21:26 «Почему НИКОЛАЙ НИКОЛАЙ???» ·
+  «Нахуя два раза имя произносить???»: the door adds `callName` (default: git's «Mikalai») and the phrase opened with
+  «Николай»; fixed `.kaif/kaif.json` → `contour.callName = «Николай»` (the door then drops a leading «Николай,»; dry run
+  checked). Next: GEB re-typeset (plan 14 T9, the EPUB 2 form A). Homework 09 not raised.
 - **Chat 2026-11-17 14:40 — DAY LOOP** on the owner's word 14:42 «работай автономно в дейлупк» (`/dayloop`, no end time
   named). Done: homework 08 — the clean §7B pass applied, committed `e7d5119`, the mock-up page shown (window on the
   screen, screenshot ≈ 14:50; the owner's letter A–D awaited there); the contour's decision-name collision guarded and
