@@ -6,6 +6,8 @@ work project. From now on it is a standalone project.
 
 ## Where to continue
 
+- **Chat 2026-11-17 14:40 — DAY LOOP** on the owner's word 14:42 «работай автономно в дейлупк» (`/dayloop`, no end time
+  named). In flight first: homework 08 clean §7B pass (the 11:44 one died on the API limit) → commit → show the mock-up.
 - **Chat 2026-11-14 15:26 → 17:39 (day loop, the owner 15:26: «работай автономно над прошивкой в автономном цикле
   дневном») — closed by the 90 % context window.** Done: interview #004 applied (`b856ce2`); **epic 05 «Кнопки домашнего
   экрана» Ф1–Ф4 on `wip/kccp-1.1.3-debug2`** (local, not pushed, NO image): Ф1 model `homemenu` + key `homeButtons`
@@ -39,6 +41,10 @@ work project. From now on it is a standalone project.
   **❓ waits for the reader on the wire** (G: here is a game disc, not the reader): copy to `/.firmware/`, check SHA256,
   eject; homework `homeworks/07_kccp_1.1.3_debug3.md`. This is the image of epic 01 Ф4 and epic 05 Ф6 (acceptance by
   the owner's check).
+- **❓ homework 08 — the caption look** (`homeworks/08_caption_look.md`, the four mock-ups
+  `qa_runs/caption_look_compare/caption_look.webp` — renamed from `compare.webp`: the contour keys a mock-up verdict by
+  the bare file name and would have overwritten #005's `compare.decision.json`): upright / italic × body size / 0.85em): the owner picks A–D; then epic 07
+  Ф2 P2.4 sets the caption's default font by his choice and Ф2 closes; then Ф3 (the re-typeset tool, the author's text).
 - **❓ awaiting the owner (one action):** wire the guard `tools/hooks/pretool-deny-server-timeout.mjs` (refuses
   `timeout … review.mjs` page launches — the contour server died that way twice, EXP-0013/0024) into
   `.claude/settings.json` → `hooks.PreToolUse`, matcher `Bash|PowerShell` (the exact block is in the script's header);
