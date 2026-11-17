@@ -1,0 +1,154 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/bug05_repro/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/bug05_repro/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/bug05_repro/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[4] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[4] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep
+[4] [DBG] [CPS] Resaving settings to update format
+[4] [DBG] [CPS] Settings loaded from file
+[5] [DBG] [UI] Using Lyra theme
+[5] [INF] [CLK] RTC clock read: 2026-11-17 13:09
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[220] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/bug05_repro/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[221] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/bug05_repro/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[221] [DBG] [SDREG] Fonts directory not found: /fonts
+[221] [DBG] [SDREG] Discovery complete: 0 families
+[221] [DBG] [SDFS] SD font system ready (0 families discovered)
+[221] [DBG] [MAIN] Fonts setup
+[221] [DBG] [ACT] Entering activity: Boot
+[222] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[232] [DBG] [ACT] Exiting activity: Boot
+[232] [DBG] [ACT] Entering activity: Home
+[232] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
+[232] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [232] [DBG] [ACT] Entering activity: Home
+[245] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1829] [DBG] [ACT] Exiting activity: Home
+[1830] [DBG] [ACT] Entering activity: CrossPointWebServer
+[1830] [DBG] [WEBACT] Free heap at onEnter: 1048576 bytes
+[1830] [DBG] [WEBACT] Free heap after SD font cache release: 1048576 bytes
+[1830] [DBG] [WEBACT] Launching NetworkModeSelectionActivity...
+[1830] [DBG] [ACT] Pushed to activity stack, new size = 1
+[1830] [DBG] [ACT] Entering activity: NetworkModeSelection
+[1831] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [1830] [DBG] [ACT] Entering activity: NetworkModeSelection
+[3424] [DBG] [ACT] Exiting activity: NetworkModeSelection
+[3424] [DBG] [ACT] Popped from activity stack, new size = 0
+[3424] [DBG] [ACT] Handling result for popped activity
+[3424] [DBG] [WEBACT] Network mode selected: Create Hotspot
+[3424] [DBG] [WEBACT] Starting Access Point mode...
+[3424] [DBG] [WEBACT] Free heap before AP start: 1048576 bytes
+[3624] [DBG] [WEBACT] Access Point started!
+[3624] [DBG] [WEBACT] SSID: CrossPoint-Reader
+[3624] [DBG] [WEBACT] IP: 127.0.0.1
+[3624] [DBG] [WEBACT] mDNS started: http://crosspoint.local/
+[3624] [DBG] [WEBACT] DNS server started for captive portal
+[3624] [DBG] [WEBACT] Free heap after AP start: 1048576 bytes
+[3624] [DBG] [WEBACT] Starting web server...
+[3624] [DBG] [WEBACT] Free heap before SD font cache release: 1048576 bytes
+[3624] [DBG] [WEBACT] Free heap before server alloc: 1048576 bytes
+[3624] [DBG] [WEB] [MEM] Free heap before begin: 1048576 bytes
+[3624] [DBG] [WEB] Network mode: AP
+[3624] [DBG] [WEB] Creating web server on port 80...
+[3624] [DBG] [WEB] [MEM] Free heap after WebServer allocation: 1048576 bytes
+[3624] [DBG] [WEB] Setting up routes...
+[3624] [DBG] [WEB] [MEM] Free heap after route setup: 1048576 bytes
+[3624] [DBG] [WEB] WebDAV handler initialized
+[3625] [DBG] [WEB] [SIM] WebServer running at http://127.0.0.1:8080/
+[3625] [DBG] [WEB] Starting WebSocket server on port 81...
+[3625] [DBG] [WS] [SIM] WebSocket server running at ws://127.0.0.1:8081/
+[3625] [DBG] [WEB] WebSocket server started
+[3625] [DBG] [WEB] Discovery UDP enabled on port 8134
+[3625] [DBG] [WEB] Web server started on port 80
+[3625] [DBG] [WEB] Access at http://127.0.0.1/
+[3625] [DBG] [WEB] WebSocket at ws://127.0.0.1:81/
+[3625] [DBG] [WEB] [MEM] Free heap after server.begin(): 1048576 bytes
+[3625] [DBG] [WEBACT] Web server started successfully
+[3625] [DBG] [LOOP] New max loop duration: 201 ms (activity: 201 ms)
+[3628] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[6923] [DBG] [ACT] Exiting activity: CrossPointWebServer
+[6923] [DBG] [WEBACT] Free heap at onExit start: 1048576 bytes
+[6953] [DBG] [MAIN] Silent restart (target=home)
+[6953] [DBG] [GFX] Time = 3328 ms from clearScreen to displayBuffer
+[7006] [DBG] [WEBACT] Free heap at onExit end: 1048576 bytes
+[7006] [DBG] [WEB] STOP INITIATED - setting running=false first
+[7006] [DBG] [WEB] [MEM] Free heap before stop: 1048576 bytes
+[7006] [DBG] [WEB] Stopping WebSocket server...
+[7006] [DBG] [WEB] WebSocket server stopped
+[7026] [DBG] [WEB] [MEM] Free heap after server->stop(): 1048576 bytes
+[7037] [DBG] [WEB] Web server stopped and deleted
+[7037] [DBG] [WEB] [MEM] Free heap after delete server: 1048576 bytes
+[7037] [DBG] [WEB] [MEM] Free heap final: 1048576 bytes
+[7037] [DBG] [ACT] Entering activity: Home
+[7037] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
+[7037] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [7037] [DBG] [ACT] Entering activity: Home
+[7051] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[8633] [DBG] [ACT] Exiting activity: Home
+[8633] [DBG] [ACT] Entering activity: CrossPointWebServer
+[8633] [DBG] [WEBACT] Free heap at onEnter: 1048576 bytes
+[8633] [DBG] [WEBACT] Free heap after SD font cache release: 1048576 bytes
+[8633] [DBG] [WEBACT] Launching NetworkModeSelectionActivity...
+[8633] [DBG] [ACT] Pushed to activity stack, new size = 1
+[8633] [DBG] [ACT] Entering activity: NetworkModeSelection
+[8634] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [8633] [DBG] [ACT] Entering activity: NetworkModeSelection
+[10004] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10004] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[10232] [DBG] [ACT] Exiting activity: NetworkModeSelection
+[10232] [DBG] [ACT] Popped from activity stack, new size = 0
+[10232] [DBG] [ACT] Handling result for popped activity
+[10232] [DBG] [WEBACT] Network mode selected: Create Hotspot
+[10232] [DBG] [WEBACT] Starting Access Point mode...
+[10232] [DBG] [WEBACT] Free heap before AP start: 1048576 bytes
+[10433] [DBG] [WEBACT] Access Point started!
+[10433] [DBG] [WEBACT] SSID: CrossPoint-Reader
+[10433] [DBG] [WEBACT] IP: 127.0.0.1
+[10433] [DBG] [WEBACT] mDNS started: http://crosspoint.local/
+[10433] [DBG] [WEBACT] DNS server started for captive portal
+[10433] [DBG] [WEBACT] Free heap after AP start: 1048576 bytes
+[10433] [DBG] [WEBACT] Starting web server...
+[10433] [DBG] [WEBACT] Free heap before SD font cache release: 1048576 bytes
+[10433] [DBG] [WEBACT] Free heap before server alloc: 1048576 bytes
+[10433] [DBG] [WEB] [MEM] Free heap before begin: 1048576 bytes
+[10433] [DBG] [WEB] Network mode: AP
+[10433] [DBG] [WEB] Creating web server on port 80...
+[10433] [DBG] [WEB] [MEM] Free heap after WebServer allocation: 1048576 bytes
+[10433] [DBG] [WEB] Setting up routes...
+[10434] [DBG] [WEB] [MEM] Free heap after route setup: 1048576 bytes
+[10434] [DBG] [WEB] WebDAV handler initialized
+[10434] [DBG] [WEB] [SIM] WebServer running at http://127.0.0.1:8080/
+[10434] [DBG] [WEB] Starting WebSocket server on port 81...
+[10434] [DBG] [WS] [SIM] WebSocket server running at ws://127.0.0.1:8081/
+[10434] [DBG] [WEB] WebSocket server started
+[10434] [DBG] [WEB] Discovery UDP failed on port 8134
+[10434] [DBG] [WEB] Web server started on port 80
+[10434] [DBG] [WEB] Access at http://127.0.0.1/
+[10434] [DBG] [WEB] WebSocket at ws://127.0.0.1:81/
+[10434] [DBG] [WEB] [MEM] Free heap after server.begin(): 1048576 bytes
+[10434] [DBG] [WEBACT] Web server started successfully
+[10435] [DBG] [LOOP] New max loop duration: 203 ms (activity: 203 ms)
+[10436] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[10440] [DBG] [WEB] handleClient active, server running on port 80
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/bug05_repro/shots/hot2.bmp
+[14725] [DBG] [ACT] Exiting activity: CrossPointWebServer
+[14725] [DBG] [WEBACT] Free heap at onExit start: 1048576 bytes
+[14755] [DBG] [MAIN] Silent restart (target=home)
+[14755] [DBG] [GFX] Time = 4320 ms from clearScreen to displayBuffer
+[14809] [DBG] [WEBACT] Free heap at onExit end: 1048576 bytes
+[14809] [DBG] [WEB] STOP INITIATED - setting running=false first
+[14809] [DBG] [WEB] [MEM] Free heap before stop: 1048576 bytes
+[14809] [DBG] [WEB] Stopping WebSocket server...
+[14809] [DBG] [WEB] WebSocket server stopped
+[14829] [DBG] [WEB] [MEM] Free heap after server->stop(): 1048576 bytes
+[14840] [DBG] [WEB] Web server stopped and deleted
+[14840] [DBG] [WEB] [MEM] Free heap after delete server: 1048576 bytes
+[14840] [DBG] [WEB] [MEM] Free heap final: 1048576 bytes
+[14840] [DBG] [ACT] Entering activity: Home
+[14840] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
+[14840] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[14853] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
