@@ -82,6 +82,32 @@
 
 ## Entries
 
+### EXP-0033 · 2026-11-17 · ❌→✅ · #reader #claim #owner #back
+class: claim-before-evidence
+none-cheap: a chat sentence is not machine-checkable; the judge read the code
+**Context:** bug 11 (a note's backlink); telling the owner what he will see after the fix.
+**Result:** ❌ I wrote «the next Back swipe then leaves the book» from memory; the judge read `ReaderUtils.h:277` — at
+footnote depth 0 the X4 Pro's edge swipe is not a Back (it turns the page back, seen in run `bug11_green`). ✅ corrected
+in chat and in `bugs/11`.
+**Lesson:** what the owner will SEE after a change is read from the code path or a run before it is said, never
+reasoned from how a gesture «usually» works.
+**Repro:** `grep -n wasBackGesture firmware/src/activities/reader/ReaderUtils.h`.
+**Trigger:** promising the owner a screen or a gesture result.
+**Not for:** behaviour already shown in a run's shots or log.
+
+### EXP-0032 · 2026-11-17 · ❌→✅ · #simulator #tap #coordinates #shots
+class: guessed-instead-of-measured
+none-cheap: a coordinate read off a shot by eye has no check except the run itself
+**Context:** bug 09 runs on the owner's book: tapping a footnote link «[4]» in landscape (orientation 3).
+**Result:** ❌ six runs missed: the link's place guessed by eye on the half-scale shot was ≈ 80 px off, and I chased
+rotation theories instead. ✅ `simulator/src/HalGPIO.cpp` `logicalToPanelNormalized`: a script's 0–1 TAP is LOGICAL in
+the CURRENT orientation (= the shot's own axes); a 6× grid crop of the shot gave the exact box, the next tap hit.
+**Lesson:** TAP x,y = (shot px ×2) / (800−1, 480−1) for landscape, (480−1, 800−1) for portrait — measure the target's box
+on a grid crop of the shot, never by eye.
+**Repro:** `.pio-venv/Scripts/python.exe -I -X utf8 tools/shot_crop.py <shot> .tmp/crop.png x0 y0 x1 y1`; then the TAP.
+**Trigger:** a TAP on a small target (a link, a marker) in a simulator script.
+**Not for:** big targets (Home rows, buttons) the earlier reports already give coordinates for.
+
 ### EXP-0031 · 2026-11-17 · ❌→✅ · #qa_runs #glob #cleanup #tracked
 class: overwrote-tracked
 mechanized: `tools/clean_run_cards.sh <run…>` — removes only named runs' `sd/`, refuses tracked files and globs (proven on `guide_after`)

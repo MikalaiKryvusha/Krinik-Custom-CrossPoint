@@ -145,6 +145,10 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   the tabs accept `InputLongPress`, claimed only inside the tabs' SDK hit rect (`ensureMinTouchRect`: ≥ 44 px, snapped to
   the screen edge within 12 px — wider than the drawn bar); `actionWasLongPress()` tells Home.
 - `firmware/platformio.local.ini` (ignored) — this PC's native Windows simulator envs (research 01).
+- The book position: `<book cache>/progress.bin` (`EpubReaderActivity::onEnter`) — little-endian u16 spine index, u16
+  page, then optionally u16 chapter page count and u32 visible-text offset (4, 6 or 10 bytes).
+- `simulator/src/SimScreenText.cpp` — with `CROSSPOINT_SIM_SCREEN_TEXT=1` every refresh logs the screen's strings as one
+  `[SIM] SCREEN:` line (reading order, no coordinates); `tools/guide_screens_check.py` reads it.
 - `simulator/src/HalStorage.cpp` — the simulator's SD card over a host folder (`CROSSPOINT_SIM_SD`); `replaceFile`
   mirrors the device's remove-then-rename (a bare `rename` cannot overwrite on Windows, found 2026-11-09).
 

@@ -79,9 +79,20 @@ definition, one use); TOC span ids bypass it already.
 
 ## Verification
 
-- [ ] Independent judge over the diff (before any build).
-- [ ] Simulator, the owner's GEB: links [4] [5] [6] each land on their note — shots.
-- [ ] Simulator smoke of the same commit; image 1.1.3-debug4; the owner's check on the reader.
+- [x] Independent judge over the diff (before any build) — 2026-11-17 ≈ 20:09 +03:00 OK WITH NOTES; finding 2 (span
+      markers could eat the 1024 cap → span ids stop at half of it, `MAX_ANCHORS_BEFORE_SPAN_IDS_STOP`, test
+      `SpanMarkersLeaveRoomForRealTargets` red on the full-cap mutant) and 6 (two tests sharpened) fixed. Committed
+      firmware `df4fab1a`.
+- [x] Simulator, the owner's GEB (report `testcases/reports/2026-11-17_bug09_bug11_debug4.md`): [4] → the notes page
+      with note 4, [5] and [6] → page 2/18 with notes 5–8.
+- [x] Simulator smoke of the debug4 commit `3e223b4d`; image `cp-2.0.0-krinik-1.1.3-debug4.bin` built 2026-11-17
+      20:32 +03:00.
+- [ ] The owner's check on the reader (the image waits for the reader on the wire).
+
+Follow-ups from the judge (not regressions, not done): a `<span id>` around a picture in an empty block lands one page
+late (as `<img id>` does); an empty marker span INSIDE a paragraph is still dropped (record it as an inline anchor on
+`</span>`); hidden text clears a candidate (the clear sits before the skip check); a span before a table is dropped
+(`flushPendingAnchor` instead of `flushBlockStartAnchors` at table start).
 
 ## Decisions made without the owner
 

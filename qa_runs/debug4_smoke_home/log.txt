@@ -1,0 +1,44 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/debug4_smoke_home/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/debug4_smoke_home/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/debug4_smoke_home/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[5] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra theme
+[6] [INF] [CLK] RTC clock read: 2026-11-17 17:23
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[231] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/debug4_smoke_home/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[231] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/debug4_smoke_home/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[232] [DBG] [SDREG] Fonts directory not found: /fonts
+[232] [DBG] [SDREG] Discovery complete: 0 families
+[232] [DBG] [SDFS] SD font system ready (0 families discovered)
+[232] [DBG] [MAIN] Fonts setup
+[232] [DBG] [ACT] Entering activity: Boot
+[232] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[241] [DBG] [ACT] Exiting activity: Boot
+[241] [DBG] [ACT] Entering activity: Home
+[241] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
+[241] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [241] [DBG] [ACT] Entering activity: Home
+[255] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/debug4_smoke_home/shots/1_home.bmp
+[3388] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3805] [DBG] [HOME] Long tap on flashlight: home buttons screen
+[3805] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3805] [DBG] [ACT] Entering activity: HomeScreenButtons
+[3806] [DBG] [TRA] Rows geometry: rows=6 rowH=56 bodyH=527 labelRoom=242
+[3807] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/debug4_smoke_home/shots/2_buttons_screen.bmp
+[6836] [DBG] [ACT] Exiting activity: HomeScreenButtons
+[6837] [DBG] [ACT] Popped from activity stack, new size = 0
+[6837] [DBG] [ACT] Handling result for popped activity
+[6837] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/debug4_smoke_home/shots/3_back_home.bmp
+[10010] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10010] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
