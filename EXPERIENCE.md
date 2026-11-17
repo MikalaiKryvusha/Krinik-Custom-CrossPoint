@@ -82,6 +82,18 @@
 
 ## Entries
 
+### EXP-0036 · 2026-11-17 · ❌ · #fork #release #owner-rule #repeat
+class: question-already-answered
+mechanized: `HOUSE_RULES.md` П3 (read at every entry)
+**Context:** the 1.1.3 release needed its firmware source published.
+**Result:** ❌ I asked the owner «A — archive in the KCCP release / B — a branch in the fork, as 1.1.2», though his rule
+(2026-11-08, STATUS code map) says the fork is for upstream PRs only. The owner: «сколько раз тебе повторять».
+**Lesson:** an option that breaks a standing owner rule is never offered; the house rules are checked before writing a
+question's options.
+**Repro:** `grep -n "П3" HOUSE_RULES.md`.
+**Trigger:** any question whose options touch the fork, a release or where code lives.
+**Not for:** —
+
 ### EXP-0035 · 2026-11-17 · ❌ · #testing #owner #release #gate
 class: owner-as-tester
 mechanized: `HOUSE_RULES.md` П2; the AGENT_GUIDE device line rewritten

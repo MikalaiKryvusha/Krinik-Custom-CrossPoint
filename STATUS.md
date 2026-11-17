@@ -223,6 +223,10 @@ already say KCCP. In the firmware fork it is still krinik:
 
 **Rule (owner, 2026-11-08):** the fork `MikalaiKryvusha/crosspoint-reader` exists only to send pull requests to upstream `develop` — keep it
 clean. KCCP releases live in **this repo** (all of them: `kccp-1.1.2` and the historical `krinik-*` / `v2.0.0-krinik.1`).
+- The 1.1.3 firmware source: `[OWNER] 2026-11-17 21:59 · chat: «у нас есть KCCP проект в гите»` (asked where to publish
+  it) → the firmware and SDK source archives are attached to the `kccp-1.1.3` release of THIS repo; the fork untouched.
+  `[OWNER] 2026-11-17 21:59 · chat: «форк оригинального кроспоинта нам ТОЛЬКО ДЛЯ ПОДГОТОВКИ АПСТРИМ ПР И ВСЁ»` → the
+  decision below is taken: the KCCP firmware branches move into the KCCP project (how — a task for the next chat).
 - [ ] Owner decision (Russian interview on the PC): where the KCCP firmware branches (`nikolai`, `release/*`, `wip/*`, `pr-assets`) live
   instead of the fork, then move them and leave the fork with `develop` and `pr/*` only.
 
