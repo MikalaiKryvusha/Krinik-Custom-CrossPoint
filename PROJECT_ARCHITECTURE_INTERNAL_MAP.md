@@ -117,7 +117,7 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   under «Кнопки в шторке»; «Настройки» without a checkbox) derive. `src/util/HomeLibrarySlot.h` — the one test «does Home
   draw the plugins/OPDS row», asked by Home and the screen.
 - `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: seven tiles by string id, on/off and order,
-  `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), at least one on, the
+  `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), all may be off (idea 10: no row then), the
   equal-gap row layout and touch slots; host test `test/shade_tiles/` (`ShadeTilesTest.cpp`, 12 cases); held by
   `CrossPointSettings::shadeTiles`. Since epic 05 Ф1 its token loop and ▲ ▼ edits come from `src/util/IdOrderList.h`
   (namespace `idorder`: `forEachToken`, `appendToken`, `moveUp/moveDown/countOn`), the storage algorithm both models share.
