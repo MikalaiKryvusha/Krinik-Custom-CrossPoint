@@ -82,6 +82,20 @@
 
 ## Entries
 
+### EXP-0029 · 2026-11-17 · ❌→✅ · #crlf #python #firmware #windows #recurrence
+class: shell-lied
+mechanized: `tools/host_tests.sh` refuses CRLF in firmware sources (EXP-0019) — but only when it runs; this time the edit came AFTER the host run
+**Context:** epic 05 Ф5 — flipping `[NOT-TESTED]` markers in four firmware files with a one-off `pathlib.write_text` script,
+after the host suite had already run green.
+**Result:** ❌ all four files became CRLF (`git diff --stat` +1425/−1320) — EXP-0019 repeated: the recall grep before the
+script covered the task's tags (home, long tap), not the tool (python writing firmware). ✅ caught by the diff stat before
+the commit; `sed -i 's/\r$//'`; `git ls-files --eol` → `i/lf w/lf`.   → link: EXP-0019
+**Lesson:** a scripted edit in `firmware/` writes bytes (`write_bytes(t.encode())`) and is followed at once by
+`git -C firmware ls-files --eol -- <files>`; a green host run before the edit proves nothing about it.
+**Repro:** `git -C firmware diff --stat` after the script — a whole-file count means line endings.
+**Trigger:** any script that rewrites a file under `firmware/`.
+**Not for:** Edit/Write tool edits (they keep the file's endings).
+
 ### EXP-0028 · 2026-11-17 · ❌→✅ · #contour #review #mockup #decision #names
 class: overwrote-tracked
 mechanized: `.kaif/tools/contour/core.mjs` refuses to overwrite another document's decision record (bugs/KAIF/01, origin #199; probe red on the original, green on the patch)

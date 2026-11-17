@@ -1,0 +1,152 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[5] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [RBS] Recent books loaded from file (1 entries)
+[7] [DBG] [UI] Using Lyra theme
+[7] [INF] [CLK] RTC clock read: 2026-11-17 12:15
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[7] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[232] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[232] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[233] [DBG] [SDREG] Fonts directory not found: /fonts
+[233] [DBG] [SDREG] Discovery complete: 0 families
+[233] [DBG] [SDFS] SD font system ready (0 families discovered)
+[233] [DBG] [MAIN] Fonts setup
+[233] [DBG] [ACT] Entering activity: Boot
+[233] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[243] [DBG] [ACT] Exiting activity: Boot
+[243] [DBG] [ACT] Entering activity: Home
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/library.idx (flags=0x0 errno=2 No such file or directory)
+[244] [DBG] [GFX] Time = 11 ms from clearScreen to displayBuffer
+[248] [DBG] [LIBIDX] phase prepare/prior: 1ms
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/epub_18410865917726542998/book.bin (flags=0x0 errno=2 No such file or directory)
+[249] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[249] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[250] [DBG] [EBP] Successfully parsed package metadata
+[250] [DBG] [LIBIDX] phase walk/metadata/stage: 2ms
+[250] [DBG] [LIBIDX] phase reconcile: 0ms
+[250] [DBG] [LIBIDX] phase title order: 0ms
+[252] [DBG] [LIBIDX] phase author/orders/emit: 2ms
+[253] [INF] [LIBIDX] built: 1 books, 1 folders, 1 parsed, 0 metadata reused, replaced 1, 0 dup dropped, 0 unreadable, 6ms
+[253] [DBG] [EBP] Loading ePub: /guide.epub
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/epub_18410865917726542998/book.bin (flags=0x0 errno=2 No such file or directory)
+[253] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/epub_18410865917726542998/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[254] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [243] [DBG] [ACT] Entering activity: Home
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/epub_18410865917726542998/thumb_218.bmp (flags=0x0 errno=2 No such file or directory)
+[268] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[269] [DBG] [GFX] Time = 2 ms from clearScreen to displayBuffer
+[270] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[272] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[272] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[272] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[272] [DBG] [ZIP] Decompressed 462 bytes into 897 bytes
+[272] [DBG] [EBP] Successfully parsed content.opf
+[273] [DBG] [EBP] Generating thumb BMP from JPG cover image
+[273] [DBG] [ZIP] Decompressed 28995 bytes into 44350 bytes
+[275] [DBG] [JPG] Converting JPEG to 1-bit BMP (target: 130x218)
+[279] [DBG] [JPG] JPEG dimensions: 480x800
+[279] [DBG] [JPG] Scaling source 480x800 (decode grid 480x800) -> 130x218 (target 130x218)
+[378] [DBG] [JPG] Successfully converted JPEG to BMP
+[378] [DBG] [EBP] Generated thumb BMP from JPG cover image, success: yes
+[378] [DBG] [GFX] Time = 111 ms from clearScreen to displayBuffer
+[393] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/shots/home.bmp
+[4072] [DBG] [ACT] Exiting activity: Home
+[4072] [DBG] [ACT] Entering activity: EpubReader
+[4072] [INF] [MEM] reader enter: free=1048576 max_block=1048576
+[4093] [DBG] [SDFS] Font size 8 unavailable, snapping to 12
+[4094] [DBG] [GFX] Time = 3702 ms from clearScreen to displayBuffer
+[4104] [DBG] [EBP] Loading ePub: /guide.epub
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/epub_18410865917726542998/book.bin (flags=0x0 errno=2 No such file or directory)
+[4119] [DBG] [EBP] Cache not found, building spine/TOC cache
+[4120] [DBG] [BMC] Entering write mode
+[4120] [DBG] [BMC] Beginning content opf pass
+[4120] [DBG] [ZIP] Decompressed 176 bytes into 244 bytes
+[4120] [DBG] [EBP] Parsing content.opf: OEBPS/content.opf
+[4121] [DBG] [COF] Found EPUB 3 nav document: OEBPS/nav.xhtml
+[4121] [DBG] [COF] Using fast index for 4 manifest items
+[4121] [DBG] [ZIP] Decompressed 462 bytes into 897 bytes
+[4121] [DBG] [EBP] Successfully parsed content.opf
+[4122] [DBG] [EBP] OPF pass completed in 2 ms
+[4122] [DBG] [BMC] Beginning toc pass
+[4122] [DBG] [EBP] Attempting to parse EPUB 3 nav document
+[4122] [DBG] [EBP] Parsing toc nav file: OEBPS/nav.xhtml
+[4122] [DBG] [NAV] Found nav toc element
+[4122] [DBG] [NAV] Finished parsing nav toc
+[4122] [DBG] [ZIP] Decompressed 258 bytes into 337 bytes
+[4122] [DBG] [EBP] Parsed TOC nav items
+[4122] [DBG] [EBP] TOC pass completed in 0 ms
+[4122] [DBG] [BMC] Wrote 1 spine, 1 TOC entries
+[4123] [DBG] [BMC] Successfully built book.bin
+[4123] [DBG] [EBP] buildBookBin completed in 1 ms
+[4123] [DBG] [EBP] Total indexing completed in 3 ms
+[4123] [DBG] [EBP] CSS files to parse: 1
+[4123] [DBG] [EBP] Parsing CSS file: OEBPS/style.css
+[4124] [DBG] [ZIP] Decompressed 154 bytes into 263 bytes
+[4124] [DBG] [CSS] Parsed 4 rules from 263 bytes
+[4125] [DBG] [CSS] Saved 4 rules to complete cache
+[4125] [DBG] [EBP] Loaded 4 CSS style rules from 1 files (0 identical duplicates skipped, complete)
+[4125] [DBG] [BMC] Loaded cache data: 1 spine, 1 TOC entries
+[4125] [DBG] [EBP] Loaded ePub: /guide.epub
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/epub_18410865917726542998/progress.bin (flags=0x0 errno=2 No such file or directory)
+[4125] [DBG] [EBP] Core Metadata: cover(15)=OEBPS/cover.jpg, textReference(0)=
+[4125] [DBG] [LOOP] New max loop duration: 53 ms (activity: 53 ms)
+[4126] [DBG] [ERS] Loading file: OEBPS/readme.xhtml, index: 0
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l7_grid/sd/.crosspoint/epub_18410865917726542998/sections/0.bin (flags=0x0 errno=2 No such file or directory)
+[4126] [DBG] [ERS] Cache not found, building...
+[4126] [DBG] [ERS] Heap before section build: 1048576 (max block 1048576)
+[4127] [DBG] [ZIP] Decompressed 9749 bytes into 32252 bytes
+[4127] [DBG] [SCT] Streamed temp HTML to /.crosspoint/epub_18410865917726542998/html/.tmp_0.html (32252 bytes)
+[4128] [DBG] [CSS] Loaded 4 rules from complete cache
+[4154] [DBG] [SCT] Page 0 processed
+[4156] [DBG] [SCT] Page 1 processed
+[4157] [DBG] [SCT] Page 2 processed
+[4159] [DBG] [SCT] Page 3 processed
+[4160] [DBG] [SCT] Page 4 processed
+[4162] [DBG] [SCT] Page 5 processed
+[4163] [DBG] [SCT] Page 6 processed
+[4164] [DBG] [SCT] Page 7 processed
+[4166] [DBG] [SCT] Page 8 processed
+[4167] [DBG] [FDC] Prewarm: 31 glyphs in 1963 bytes from 2 groups (0 missed)
+[4168] [DBG] [FDC] Prewarm: 67 glyphs in 3394 bytes from 3 groups (0 missed)
+[4169] [DBG] [GFX] Time = 3 ms from clearScreen to displayBuffer
+[4176] [DBG] [ERS] Page render (tiled): prewarm=2ms bw_render=1ms display=1ms gray_lsb=1ms gray_msb=1ms gray_display=4ms cleanup=0ms total=10ms
+[4176] [DBG] [ERS] Rendered page in 10ms
+[4219] [DBG] [ERS] Progress saved: spine=0 offset=0 page=0
+[4224] [DBG] [SCT] Page 9 processed
+[4226] [DBG] [SCT] Page 10 processed
+[4228] [DBG] [SCT] Page 11 processed
+[4231] [DBG] [SCT] Page 12 processed
+[4233] [DBG] [SCT] Page 13 processed
+[4237] [DBG] [SCT] Page 14 processed
+[4239] [DBG] [SCT] Page 15 processed
+[4242] [DBG] [SCT] Page 16 processed
+[4244] [DBG] [SCT] Page 17 processed
+[4249] [DBG] [SCT] Page 18 processed
+[4250] [DBG] [SCT] Page 19 processed
+[4254] [DBG] [SCT] Page 20 processed
+[4256] [DBG] [SCT] Page 21 processed
+[4281] [DBG] [SCT] Page 22 processed
+[4282] [DBG] [SCT] Page 23 processed
+[4286] [DBG] [SCT] Page 24 processed
+[4288] [DBG] [SCT] Page 25 processed
+[4291] [DBG] [SCT] Page 26 processed
+[4310] [DBG] [SCT] Page 27 processed
+[4313] [DBG] [SCT] Page 28 processed
+[4352] [DBG] [SCT] Page 29 processed
+[4354] [DBG] [SCT] Page 30 processed
+[4356] [DBG] [EHP] Time to parse and build pages: 228 ms
+[4357] [DBG] [SCT] Page 31 processed
+[4580] [DBG] [FDC] Prewarm: 32 glyphs in 1932 bytes from 3 groups (0 missed)
+[4581] [DBG] [FDC] Prewarm: 65 glyphs in 3393 bytes from 4 groups (0 missed)
+[4581] [DBG] [ERS] Idle prewarm: page 1 in 2ms

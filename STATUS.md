@@ -7,7 +7,13 @@ work project. From now on it is a standalone project.
 ## Where to continue
 
 - **Chat 2026-11-17 14:40 — DAY LOOP** on the owner's word 14:42 «работай автономно в дейлупк» (`/dayloop`, no end time
-  named). In flight first: homework 08 clean §7B pass (the 11:44 one died on the API limit) → commit → show the mock-up.
+  named). Done: homework 08 — the clean §7B pass applied, committed `e7d5119`, the mock-up page shown (window on the
+  screen, screenshot ≈ 14:50; the owner's letter A–D awaited there); the contour's decision-name collision guarded and
+  filed (`b171cd6`, KAIF #199, EXP-0028); **epic 07 Ф3 tool** `tools/figure_retypeset.py` (`f8d213a`, plan 14, report
+  `testcases/reports/2026-11-17_epic07_p3.md`: the test book pass, the judge's loose-label finding fixed; T9 the owner's
+  two books blocked — the reader not on the wire); **epic 05 Ф5 DONE on the simulator** — firmware `de8feb20` (local),
+  `plans/11_DONE_epic05_p5_home_long_tap.md`, report `testcases/reports/2026-11-17_epic05_p5.md` (five themes + mama; the
+  judge's FIX FIRST — the grid's bottom-edge band — fixed and proven red on a mutant); EXP-0029 (CRLF again).
 - **Chat 2026-11-14 15:26 → 17:39 (day loop, the owner 15:26: «работай автономно над прошивкой в автономном цикле
   дневном») — closed by the 90 % context window.** Done: interview #004 applied (`b856ce2`); **epic 05 «Кнопки домашнего
   экрана» Ф1–Ф4 on `wip/kccp-1.1.3-debug2`** (local, not pushed, NO image): Ф1 model `homemenu` + key `homeButtons`
@@ -28,8 +34,8 @@ work project. From now on it is a standalone project.
   the owner's remark 10:18 «покажи картинками. пока не увижу глазами - не о чем мне тут ответ давать» → the three
   variants rendered on a book page and shown 10:31 as one picture (`qa_runs/caption005_compare/compare.webp`, mockup page);
   answered 10:40 — **A, the author's text**, and repeated: «НЕ НУЖНА КРАСНАЯ СТРОКА… подпись ВСЕГДА должна быть рядом с
-  картинкой» → **epic 07 started now** (the owner's debt before the plan); epic 05 Ф5 parked: `plans/11_epic05_p5_home_long_tap.md`
-  (planned, no code); (c) DONE 10:24 — the reply to itsthisjustin posted in #4329 (the
+  картинкой» → **epic 07 started now** (the owner's debt before the plan); epic 05 Ф5 parked then (planned, no code;
+  built in the 14:42 day loop — `plans/11_DONE_epic05_p5_home_long_tap.md`); (c) DONE 10:24 — the reply to itsthisjustin posted in #4329 (the
   owner: «Да, оба одобрено» · «отправляй»); (d) `bugs/08` (the shade's night button leaves pictures under the sheet
   negative) — the owner 10:21: «Пофиксить бы, в будущем. Пока как баг заведи и нам и в апстрим»; upstream issue #4515
   opened 10:24 (watch it for answers); the fix itself — later.
@@ -43,8 +49,9 @@ work project. From now on it is a standalone project.
   the owner's check).
 - **❓ homework 08 — the caption look** (`homeworks/08_caption_look.md`, the four mock-ups
   `qa_runs/caption_look_compare/caption_look.webp` — renamed from `compare.webp`: the contour keys a mock-up verdict by
-  the bare file name and would have overwritten #005's `compare.decision.json`): upright / italic × body size / 0.85em): the owner picks A–D; then epic 07
-  Ф2 P2.4 sets the caption's default font by his choice and Ф2 closes; then Ф3 (the re-typeset tool, the author's text).
+  the bare file name and would have overwritten #005's `compare.decision.json`): upright / italic × body size / 0.85em):
+  the owner picks A–D on the mock-up page (shown ≈ 14:50); then epic 07 Ф2 P2.4 sets the caption's default font by his
+  choice and Ф2 closes.
 - **❓ awaiting the owner (one action):** wire the guard `tools/hooks/pretool-deny-server-timeout.mjs` (refuses
   `timeout … review.mjs` page launches — the contour server died that way twice, EXP-0013/0024) into
   `.claude/settings.json` → `hooks.PreToolUse`, matcher `Bash|PowerShell` (the exact block is in the script's header);
@@ -55,27 +62,21 @@ work project. From now on it is a standalone project.
      (`plans/12_DONE_epic07_p1_layout.md`, report `testcases/reports/2026-11-17_epic07_p1.md`: a `<figure>` /
      `break-inside: avoid` block keeps picture + caption on one page, the picture shrinks; old books unchanged; the parser
      host suite now runs on Windows, 963 host tests). **Ф2 indent + centring DONE 11:42** (firmware `90406599`,
-     `testcases/reports/2026-11-17_epic07_p2.md`; after the debug3 image); open P2.4 italic × size mock-ups (homework), then Ф3 (the re-typeset tool, text unchanged — #005 → A).
-     The owner's books change only after Ф3 re-typesets them.
-  3. **Epic 05 Ф5** (parked for epic 07) **— the long tap on a Home button opens «Кнопки домашнего экрана» on that button** (meta-plan criteria 7–9):
-     the plan `plans/11_epic05_p5_home_long_tap.md` is written (no code); carry the Ф2 judge's note — `HomeActivity::shownButtons` is set only in
-     `onEnter`, so Home must refresh it when the pushed screen returns (or the screen leaves through `goHome`); the long
-     tap must claim the contact before `rowTouch` (EXP-0016); `HomeScreenButtonsActivity` already takes a `cursorButton`.
-  4. Then epic 05 Ф6 and epic 01 Ф4 — only on the owner's word about the image (13.11 19:01 «со сборкой не торопись»).
-  5. Then epic 07 Ф1 (`plans/07_EPIC_figure_caption.md`).
-  6. Every firmware change: the judge BEFORE the build; `sh tools/host_tests.sh` before the commit (EXP-0018/0019);
+     `testcases/reports/2026-11-17_epic07_p2.md`; after the debug3 image); open P2.4 — the owner's A–D (homework 08).
+     **Ф3 tool DONE on the test book** (`f8d213a`, plan 14); open P3.6: the owner's two books when the reader is on the
+     wire (`--list` read + census). The owner's books change only after the tool re-typesets them (Ф4 homework).
+  3. **Epic 05 Ф5 DONE on the simulator** (`de8feb20`); next Ф6 (acceptance: judge over the epic, image, homework) and
+     epic 01 Ф4 — only on the owner's word about the image (13.11 19:01 «со сборкой не торопись»).
+  4. The on-device guide (open work 9 below) — rewrite «Настройки: Экран» from `SettingsActivity::sectionFor()`.
+  5. Every firmware change: the judge BEFORE the build; `sh tools/host_tests.sh` before the commit (EXP-0018/0019);
      simulator scripts: keys `UP/DOWN/CONFIRM/BACK` (not `NEXT`), fast list swipes `SWIPE:…,60` (`HOUSE_RULES.md`).
 - KNOWLEDGE (14.11): the X4 Pro simulator's Home geometry (top 314, content bottom 797) → the code comment of
   `HomeActivity::visibleMenuRows` + EXP-0022; `-Wswitch` is off in the firmware build → EXP-0021; the shade screen is
   now a shared base → `PROJECT_ARCHITECTURE_INTERNAL_MAP.md`; the mama simulator stand and script key verbs →
   `HOUSE_RULES.md`; the environment dossier → `HOUSE_RULES.md` §3.
 - **Epic 07 «подпись всегда с картинкой» (idea 03) — meta-plan `plans/07_EPIC_figure_caption.md` (2026-11-14).**
-  Ф1 layout (a `<figure>` and any picture block with `page-break-inside`/`break-inside: avoid` kept on one page, the
-  picture shrunk when the pair does not fit) · Ф2 caption look (centred, no first-line indent by ГОСТ 7.32 / БГУИР;
-  italic and size by mock-ups → homework) · Ф3 the re-typeset tool · Ф4 acceptance. Starts after epic 05.
-- **❓ awaiting the owner: `interviews/interview_005_caption_wording.md`** (one question: keep the author's «Рис. 2. …»
-  or rewrite to «Рисунок 2 –» БГУИР / «Рисунок 2 —» ГОСТ 7.32). Filed 2026-11-14, NOT shown yet (the owner is busy;
-  the clean voice pass runs first). Blocks only epic 07 Ф3.
+  Ф1 layout DONE · Ф2 caption look (centring + no indent DONE; italic × size waits for homework 08) · Ф3 the re-typeset
+  tool DONE on the test book (the owner's books wait for the reader) · Ф4 acceptance. Interview #005 answered 10:40 (A).
 - **Release-time debt (the 13.11 judge):** `README.md` / `USER_GUIDE.md` describe fractional mixing as always on and
   battery as «still being measured» — fix before KCCP 1.1.3 ships (the day-loop entry of 13.11 is in `PROJECT_HISTORY.md`,
   «STATUS trim 5»). Draft homework for the image: `homeworks/06_kccp_1.1.3_debug1.md`.
@@ -87,13 +88,17 @@ work project. From now on it is a standalone project.
   pass (`testcases/reports/2026-11-13_idea09.md`).
 - **KCCP 1.1.3 = the next release** (the owner 2026-11-13 17:07, `MASTER_PLAN.md` → decision journal); 1.1.3-debug1 assembled, judged, host tests green; no device build, no image.
 - **Open work, in order:**
-  1. Epic 05 (idea 06) Ф3 → Ф5; epic 01 Ф4 and epic 05 Ф6 on the owner's word about the image (13.11 19:01 «со сборкой не торопись»); 2. Idea 09 — built
+  1. Epic 05 (idea 06) Ф1–Ф5 done on the simulator; epic 01 Ф4 and epic 05 Ф6 on the owner's word about the image (13.11 19:01 «со сборкой не торопись»); 2. Idea 09 — built
      `9027b99a`, comes with the image; 3. Epic 07 (idea 03, `plans/07_EPIC_figure_caption.md`) after epic 05; 4. KCCP 1.1.3
      assembly: merge release 1.1.2 (`198d385e`) into the debug line (conflicts `lib/hal/HalFrontlight.{cpp,h}`,
      `test/frontlight_dither/`); the owner's open choice: light-linger hold (400 ms) vs timer-redraw hold; 5. Idea 04
      (epic). 6. Bug 01 PR `pr/library-tab-fit` — a free upstream slot (5/5) + proofreading. 7. `bugs/05`, `bugs/06`.
      8. The test hook does not see `tools/sim_run.sh` / ctest runs: a `testHook` block in `.kaif/kaif.json` — to be asked.
      9. Idea 08 S6: the on-device guide `guide_settings_section.xhtml` (the nine sleep options now under «Настройки сна»).
+        Read 2026-11-17 15:02 +03:00: wider than S6 — the guide's «Настройки: Экран» is one flat list (file last changed `7a52b12`,
+        2026-11-08 14:05); the
+        sub-screens «Настройки сна», «Настройки очисток экрана», «Калибровка экрана», «Кнопки в шторке», «Кнопки
+        домашнего экрана» are missing — rewrite the section from `SettingsActivity::sectionFor()` as one task (owner text).
      10. Proofread `GOAL.md`. 11. Delete the partial `C:\msys64` (check the machine lock).
   - Reviews to read: simulator PR #62 and firmware PRs #4328 #4332 #4375 #4376 #4377
     (`gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`).
@@ -212,7 +217,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) + the mama row «Для Мамы» on the Home buttons screen (`da382c2f`, interview #006) + epic 07 Ф1 figure keep-together (`869a5bd3`) + version 1.1.3-debug3 (`0d56b23a`) — local, not pushed; image `cp-2.0.0-krinik-1.1.3-debug3.bin` 2026-11-17 11:29 + epic 07 Ф2 caption (`90406599`, after the image) | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 90406599 |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) + the mama row «Для Мамы» on the Home buttons screen (`da382c2f`, interview #006) + epic 07 Ф1 figure keep-together (`869a5bd3`) + version 1.1.3-debug3 (`0d56b23a`) — local, not pushed; image `cp-2.0.0-krinik-1.1.3-debug3.bin` 2026-11-17 11:29 + epic 07 Ф2 caption (`90406599`, after the image) + epic 05 Ф5 the long tap on a Home button (`de8feb20`) | crosspoint-reader · `wip/kccp-1.1.3-debug2` | de8feb20 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |

@@ -132,7 +132,14 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   the slice [`menuTopRow`, + `visibleMenuRows()`) of the menu rows (whole rows down to the content bottom minus the hint
   band; X4 Pro: top 314, bottom 797, Lyra 7 rows), a thumb scroll bar while rows overflow; a swipe that starts on the
   list scrolls by a page, keys pull the list to the selection; the cover grid does not scroll. `LOG_DBG` «Menu
-  geometry» on entry prints the numbers.
+  geometry» on entry prints the numbers. Since Ф5 (`de8feb20`) a long tap on a button PUSHES «Кнопки домашнего экрана»
+  (`HomeScreenButtonsActivity(button)`): list themes claim the long press only for a contact that began on a button row
+  (`contactOnButton`, `buttonAt`, checked before the cover/row touches); on the pop `onButtonSettingsClosed` re-reads
+  `shownButtons` under the render lock — Home is popped back to, so no `onEnter` and no «Entering activity: Home» line.
+- `src/components/CoverGridHomeUi.{h,cpp}` — the cover-grid Home (theme 4) on FreeInkUI: the current book, the grid, one
+  icon tab per shown button (`buttons`, `setButtons`); `selectedAction` returns the tapped tab or cover. Since epic 05 Ф5
+  the tabs accept `InputLongPress`, claimed only inside the tabs' SDK hit rect (`ensureMinTouchRect`: ≥ 44 px, snapped to
+  the screen edge within 12 px — wider than the drawn bar); `actionWasLongPress()` tells Home.
 - `firmware/platformio.local.ini` (ignored) — this PC's native Windows simulator envs (research 01).
 - `simulator/src/HalStorage.cpp` — the simulator's SD card over a host folder (`CROSSPOINT_SIM_SD`); `replaceFile`
   mirrors the device's remove-then-rename (a bare `rename` cannot overwrite on Windows, found 2026-11-09).

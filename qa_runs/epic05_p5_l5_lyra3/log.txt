@@ -1,0 +1,37 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l5_lyra3/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l5_lyra3/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l5_lyra3/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[5] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[6] [DBG] [UI] Using Lyra 3 Covers theme
+[6] [INF] [CLK] RTC clock read: 2026-11-17 12:13
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[289] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l5_lyra3/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[290] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l5_lyra3/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[290] [DBG] [SDREG] Fonts directory not found: /fonts
+[290] [DBG] [SDREG] Discovery complete: 0 families
+[290] [DBG] [SDFS] SD font system ready (0 families discovered)
+[290] [DBG] [MAIN] Fonts setup
+[290] [DBG] [ACT] Entering activity: Boot
+[290] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[304] [DBG] [ACT] Exiting activity: Boot
+[304] [DBG] [ACT] Entering activity: Home
+[304] [DBG] [HOME] Menu geometry: top=372 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=6 rows=6
+[305] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [304] [DBG] [ACT] Entering activity: Home
+[323] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l5_lyra3/shots/home.bmp
+[3461] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[3878] [DBG] [HOME] Long tap on flashlight: home buttons screen
+[3878] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3878] [DBG] [ACT] Entering activity: HomeScreenButtons
+[3879] [DBG] [TRA] Rows geometry: rows=6 rowH=56 bodyH=527 labelRoom=242
+[3879] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/epic05_p5_l5_lyra3/shots/screen.bmp
