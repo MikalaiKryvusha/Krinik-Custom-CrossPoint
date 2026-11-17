@@ -106,7 +106,7 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
       (criterion 2: every guide name on a captured screen of its chapter; criterion 1 stays the judge's read):
       today's section → 16 names not shown (the renamed and gone rows above, plus «Словарь», «Действия Home», «URL
       сервера синхронизации» — the sync screen draws that row's value only); `--selftest` OK, red on a no-gap mutant.
-- [ ] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
+- [x] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
       First draft (`44cbf99`, on the separate file) REVERTED ≈ 2026-11-17 15:44 +03:00: its base was the stale file; the
       clean §7B pass found the owner's newer text in the epub. Restart: base = the epub's settings chapters
       (`OEBPS/readme.xhtml`), the owner's lines kept as they are; changes only where the reader differs — the «Настройки
@@ -121,7 +121,11 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
       verbatim; new: «Настройки сна» line + the nine rows in the screen's order, «Кнопки в шторке», «Кнопки домашнего
       экрана», «Точная температура» [AI]; «Настройки очисток экрана» «последний» → «предпоследний» [AI-ed]);
       `guide_screens_check.py` 0 misses (the old file 11); voice-lint 6 hits, all in the owner's epub lines kept
-      verbatim, none in the [AI] lines. Open: a clean §7B pass + the judge on criterion 3 over the [AI] lines, then G5.
+      verbatim, none in the [AI] lines. The clean §7B pass + judge on the [AI] lines (2026-11-17 15:58 +03:00): the
+      orders, defaults, 9 %, the one-button rule, the long taps confirmed by file:line; fixed — «▲ ▼» (no such glyphs in
+      the reader's fonts; the screens say «стрелки») → «стрелки», «со всеми настройками сна» (contradicted: «Обновлять
+      заставку» stands in the clean screen), «без него» (ambiguous) → «целыми шагами», «Настройки» always on Home said,
+      «сразу на этой кнопке» → «строка этой кнопки уже выделена». Check 0 misses; voice hits 6, all in owner lines.
 - [ ] G5. The owner's proofreading (homework); then into `РУКОВОДСТВО.epub` (no build tool exists: `OEBPS/readme.xhtml`
       is edited and re-zipped — a tool for that is part of this step).
 
