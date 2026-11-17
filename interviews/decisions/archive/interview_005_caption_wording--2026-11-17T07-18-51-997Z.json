@@ -1,0 +1,17 @@
+{
+  "kind": "interview",
+  "document": "interviews/interview_005_caption_wording.md",
+  "by": "Mikalai Kryvusha",
+  "at": "2026-11-17T07:18:51.997Z",
+  "atHuman": "17 ноября 2026, 10:18 (+03:00)",
+  "comment": "",
+  "answers": {
+    "Q1": {
+      "choice": "",
+      "text": "",
+      "comment": "покажи картинками. пока не увижу глазами - не о чем мне тут ответ давать"
+    }
+  },
+  "rev": "b079f5160cf1b2ce730f9fd3f15a2d473d417123135d57271934a6523540c24e",
+  "revAfter": "40a4f76f331c3c6ea2d6488e67ee96440a708062c14a70930064ed0a8e1cf323"
+}

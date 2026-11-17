@@ -82,6 +82,20 @@
 
 ## Entries
 
+### EXP-0024 · 2026-11-17 · ❌→✅ · #contour #review #server #timeout #recurrence
+class: own-process-killed
+**Context:** showing interviews 005/006 with `timeout 20 node .kaif/tools/contour/review.mjs --queue --silent` — the
+second time after EXP-0013 (2026-11-13), whose lesson was in this journal; the session's recall grep covered only the
+task's own tags (cover, invert, dark), not the tool it was about to launch.
+**Result:** ❌ the page server died at 20 s; the owner saw «СЕРВЕР КОНТУРА НЕДОСТУПЕН» («контур ты сломал», 10:18).
+✅ relaunched in the background on the same port 58794, HTTP 200; the owner's answer to #006 was recorded at 10:18.
+**Lesson:** EXP-0013 failed as text: recall by the task's tags misses the lesson of the TOOL used mid-task. A launch of
+a page server needs a guard that refuses it under `timeout` — a text reminder has now been passed twice.   → link: EXP-0013
+**Repro:** before any `review.mjs` call: `grep -n "review.mjs" EXPERIENCE.md`; launch only with `run_in_background`, then
+`curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:<port>/` → `200`.
+**Trigger:** any `review.mjs` call that is not `--list` / `--check` / `--call` / `--mark-*`.
+**Not for:** the print-and-exit flags named above.
+
 ### EXP-0023 · 2026-11-17 · ❌ · #upstream #pr #cache #night #twins #firmware
 class: twins-missed
 none-cheap: the twin is a second cache of the same pixels in another component; the carrier is the Repro grep below

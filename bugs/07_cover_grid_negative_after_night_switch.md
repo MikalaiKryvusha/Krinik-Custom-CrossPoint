@@ -1,6 +1,7 @@
 # Bug 07 — «Сетка обложек»: covers paste back as a negative after a night ↔ day switch on Home
 
-**Status:** 🔴 OPEN — the cause is read in the code, the fix exists upstream; not reproduced on our stand yet · **Severity:** S2
+**Status:** 🔧 fixed on `wip/kccp-1.1.3-debug2` `07df1501` (2026-11-17 10:21 +03:00), simulator red → green both ways; waits
+for the owner's reader with the debug2 image · **Severity:** S2
 **Version/build:** KCCP `wip/kccp-1.1.3-debug1` (`bcbd6dab`) and `wip/kccp-1.1.3-debug2` (`5da8f37f`); upstream before
 `b9c23473` · **When/context:** 2026-11-17 09:54 +03:00, the owner: «нам ответили по фиксу бага с инверсией обложки… у него
 воспроизвелось» · **Fixing:** after the owner's word — port the upstream hunk (below) onto `wip/kccp-1.1.3-debug2`
@@ -40,10 +41,20 @@ open in KCCP) + the EPUB reader overlay page (its own NIGHT_MODE action calls di
 short-lived store/restore pairs inside one frame (SleepActivity band, ReaderUtils, ScreenshotUtil — no polarity switch
 between them). Not checked: the shade's night tile toggled while a reader overlay snapshot is held.`
 
-## Repro (to do — the stand step that comes next)
+## Repro (deterministic)
 
-Simulator `simulator_x4_pro_win`, theme 4 card (`qa_runs/sd_theme4`) with recent books, night mode on → Home → open the
-shade → night tile off → shade closes → shot of Home: expected positive covers; on debug2 expected negative.
+The stand and the scripts: `testcases/TC_bug07_cover_grid_night_switch.md`, run report
+`testcases/reports/2026-11-17_bug07_grid_night.md`. Old binary (`2fa20f3f` code): `qa_runs/grid_night_red/shots/after.webp`
+and `qa_runs/grid_day_red/shots/after.webp` show both covers negative after night → day and day → night. With the port:
+`qa_runs/grid_night_green/`, `qa_runs/grid_day_green/` positive; Lyra (#4329 path) positive before and after.
+
+## Seen alongside — not this fix
+
+While the shade stays open after its night button, the Home pixels under it keep the old polarity: a cover below the
+shade shows as a negative until the shade closes (`grid_night_green/shots/shade.webp`). The shade converts the frame under
+itself only over the photo viewer (`FrontlightPanelActivity::runTile` → `grayglass::viewerUnderneath` →
+`renderer.invertScreen()`). On Lyra the cover card sits under the shade's body and is hidden. The owner decides whether it
+is worth a fix.
 
 ## Fix plan
 

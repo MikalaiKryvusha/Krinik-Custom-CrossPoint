@@ -17,8 +17,17 @@ work project. From now on it is a standalone project.
 - **2026-11-17 09:49 chat (the owner: «нам ответили по фиксу бага с инверсией обложки… у него воспроизвелось»):**
   upstream #4329 comments read (itsthisjustin 2026-11-16 19:10/19:12 UTC: the negative covers came back on «Сетка
   обложек»). Cause read in the code: the grid theme has its own snapshot cache `HomeCoverCache`, not covered by #4329;
-  upstream fixed it in #4494 (`b9c23473`). KCCP debug1/debug2 still carry it → `bugs/07_cover_grid_negative_after_night_switch.md`
-  (port on the owner's word). Lesson EXP-0023.
+  upstream fixed it in #4494 (`b9c23473`). Ported onto debug2 on the owner's word (10:04 «Всё делаем»): `07df1501`
+  (author Justin), simulator red on the old build and green both ways, host 795/803 = the 8 known
+  (`testcases/reports/2026-11-17_bug07_grid_night.md`); bug 07 waits only for the reader check with the debug2 image.
+  Lessons EXP-0023, EXP-0024 (the contour server killed under `timeout` AGAIN — a guard is owed, see the entry).
+  **Owner's debt / open from this chat:** (a) interview #006 answered 10:18 — **A, «Для Мамы» only on «Кнопки домашнего
+  экрана»** → apply to plan 10 «Decision at the fork» and build it (firmware); (b) interview #005 — the owner's remark
+  10:18 «покажи картинками. пока не увижу глазами - не о чем мне тут ответ давать» → render the three caption variants on
+  a book page in the simulator and show them; (c) DONE 10:24 — the reply to itsthisjustin posted in #4329 (the
+  owner: «Да, оба одобрено» · «отправляй»); (d) `bugs/08` (the shade's night button leaves pictures under the sheet
+  negative) — the owner 10:21: «Пофиксить бы, в будущем. Пока как баг заведи и нам и в апстрим»; upstream issue #4515
+  opened 10:24 (watch it for answers); the fix itself — later.
 - **Where to continue (the handover):**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status`; `ListAgents` (shared PC: KUMM, KAGO).
   2. **Show the owner interviews #005 and #006** (both filed, NEVER shown; run the clean-instance voice pass §7B on #006
@@ -178,7 +187,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 5da8f37f |
+| 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) — local, not pushed, no image | crosspoint-reader · `wip/kccp-1.1.3-debug2` | 07df1501 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
 | debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |

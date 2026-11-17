@@ -1,0 +1,17 @@
+{
+  "kind": "interview",
+  "document": "interviews/interview_006_mama_row_name.md",
+  "by": "Mikalai Kryvusha",
+  "at": "2026-11-17T07:18:18.194Z",
+  "atHuman": "17 ноября 2026, 10:18 (+03:00)",
+  "comment": "",
+  "answers": {
+    "Q1": {
+      "choice": "A",
+      "text": "",
+      "comment": ""
+    }
+  },
+  "rev": "adbdd34220cf5c99970041d3e572daec57403b15c54485a36595dd51ba46bde0",
+  "revAfter": "6a0a1794f1896295c64d311b5e6795b7f6feaef32c78158418e13932f7261c47"
+}
