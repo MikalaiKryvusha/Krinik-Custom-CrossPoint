@@ -94,7 +94,10 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
         for the X4 Pro, but the setting has no category (`SettingsList.cpp:265`), so no settings screen shows it (the
         shade's slider). So criterion 1's capture is the SIMULATOR's list; the device list = the capture + «Точная
         температура» + «Bluetooth-пульт» (the simulator is built without Bluetooth).
-- [ ] G3. The comparison script (criteria 1–2) in `tools/`, proven red on today's section.
+- [x] G3. The comparison script (criteria 1–2) in `tools/`, proven red on today's section. `tools/guide_screens_check.py`
+      (criterion 2: every guide name on a captured screen of its chapter; criterion 1 stays the judge's read):
+      today's section → 16 names not shown (the renamed and gone rows above, plus «Словарь», «Действия Home», «URL
+      сервера синхронизации» — the sync screen draws that row's value only); `--selftest` OK, red on a no-gap mutant.
 - [ ] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
 - [ ] G5. The owner's proofreading (homework); then into `РУКОВОДСТВО.epub` (no build tool exists: `OEBPS/readme.xhtml`
       is edited and re-zipped — a tool for that is part of this step).
