@@ -117,6 +117,11 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
       (`HalFrontlight.cpp:50–52`, the comment «fractional warm/cool mixing» :49); «Кнопки в шторке» keeps at least one
       button on (`ShadeTiles.h:76`); the clean screen's own note (`STR_SCREEN_CLEAN_NOTE`). Then voice-lint, a clean
       §7B pass, the judge on criterion 3.
+      Restart done (the draft in `guide_settings_section.xhtml` = the epub's six settings chapters, the owner's lines
+      verbatim; new: «Настройки сна» line + the nine rows in the screen's order, «Кнопки в шторке», «Кнопки домашнего
+      экрана», «Точная температура» [AI]; «Настройки очисток экрана» «последний» → «предпоследний» [AI-ed]);
+      `guide_screens_check.py` 0 misses (the old file 11); voice-lint 6 hits, all in the owner's epub lines kept
+      verbatim, none in the [AI] lines. Open: a clean §7B pass + the judge on criterion 3 over the [AI] lines, then G5.
 - [ ] G5. The owner's proofreading (homework); then into `РУКОВОДСТВО.epub` (no build tool exists: `OEBPS/readme.xhtml`
       is edited and re-zipped — a tool for that is part of this step).
 

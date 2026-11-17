@@ -27,6 +27,9 @@ DEVICE_ONLY = {
     "Действия Home": "the list of actions the three Home key rows take, not a row",
     "URL сервера синхронизации": "the row draws only its value («По умолчанию: sync.crosspointreader.com»)",
 }
+# A name allowed outside its screen's chapter, with the reason (plan 15 G5 asks the owner):
+ELSEWHERE = {("Подключения", "Проверить обновление"):
+             "the owner's second, longer description; the row stands under «Система» (asked in plan 15 G5)"}
 SPACE = re.compile(r"\s+")
 
 
@@ -75,7 +78,7 @@ def check(guide_text, screens):
             misses.append((chapter, "(no capture for this chapter)"))
             continue
         for name in names:
-            if name in DEVICE_ONLY:
+            if name in DEVICE_ONLY or (chapter, name) in ELSEWHERE:
                 continue
             # «Имя пользователя, Пароль» names two rows: each part must be shown
             if not all(shown(part, screens[chapter]) for part in name.split(",")):
