@@ -45,3 +45,6 @@ interviews/decisions/*.lock
 
 # Windows port of crosspoint-simulator (fork MikalaiKryvusha/crosspoint-simulator, branch windows) - own repo
 /simulator/
+
+# Claude Code personal settings of this machine (the voice engine env, KAIF_VOICE_*)
+.claude/settings.local.json
