@@ -82,6 +82,23 @@
 
 ## Entries
 
+### EXP-0023 · 2026-11-17 · ❌ · #upstream #pr #cache #night #twins #firmware
+class: twins-missed
+none-cheap: the twin is a second cache of the same pixels in another component; the carrier is the Repro grep below
+**Context:** upstream PR #4329 (2026-11-04) — the Home cover pasted back as a negative after a night ↔ day switch.
+**Tried / did:** the polarity check went into `HomeActivity` around its own snapshot `coverBuffer`; tested on the
+single-cover themes. No search for other snapshot caches of the same screen.
+**Result:** ❌ merged, then the maintainer reproduced it on «Сетка обложек» (2026-11-16): that theme keeps its own
+PSRAM snapshots in `HomeCoverCache`, and `HomeActivity::render` returns into the grid branch before our check. He fixed
+it upstream in #4494 (`b9c23473`); KCCP still carries it — bugs/07.
+**Lesson:** a fix to a pixel snapshot (store → paste back later) is a fix to EVERY snapshot of that screen: list all
+store/paste sites first and walk every theme/branch that reaches them; a theme switch at the top of `render()` is a
+second code path, not a detail.   → link: bugs/07
+**Repro:** `git -C firmware grep -n -E "copyRegionToBuffer|copyBufferToRegion|storeBwBuffer|restoreBwBuffer" -- src lib`
+→ every hit that survives across renders gets the same invalidation; then one run per Home theme (0–4).
+**Trigger:** fixing anything that caches framebuffer bytes (covers, overlay pages, bands) against a state change.
+**Not for:** store/restore pairs inside one frame with no state change between them.
+
 ### EXP-0022 · 2026-11-14 · ❌→✅ · #geometry #judge #simulator #home
 class: claim-before-evidence
 mechanized: LOG_DBG «Menu geometry» in HomeActivity::onEnter (firmware a47582b0) — the measured numbers are one grep away in every simulator run
@@ -244,7 +261,7 @@ none-cheap: one-line S3 note; the lint itself should say «xmllint not found» �
 **Trigger:** an `undefined` in the XHTML lines of `epub_lint.mjs`.
 **Not for:** the link/manifest checks of the same lint, which do not need xmllint.
 
-<!-- class-ok: twins-missed — two unlike faces (EXP-0005 a regex rename matching extra C++ sites; EXP-0016 two consumers of one input gesture under different names); each face carries its own grep Repro, and a guard for the whole class would be a general code-search policy, not cheaply possible; the judge pass before every build is what caught EXP-0016 -->
+<!-- class-ok: twins-missed — three unlike faces (EXP-0005 a regex rename matching extra C++ sites; EXP-0016 two consumers of one input gesture under different names; EXP-0023 two snapshot caches of one screen in two components); each face carries its own grep Repro, and a guard for the whole class would be a general code-search policy, not cheaply possible; the judge pass before every build is what caught EXP-0016 -->
 <!-- class-ok: shell-lied — two unlike faces of Windows defaults (cp1251 stdout for Python, CRLF checkout); each is closed at its source (PYTHONUTF8=1 in the AGENT_GUIDE Build line, core.autocrlf=false in the firmware clone); a build wrapper that sets both is the mechanism to add next -->
 
 ### EXP-0010 · 2026-11-10 · ❌→✅ · #shell #cwd #parallel

@@ -14,6 +14,11 @@ work project. From now on it is a standalone project.
   `ToggleRowsActivity` (`2fa20f3f`). Run reports `testcases/reports/2026-11-14_epic05_p1…p4.md`. Epic 07 (idea 03)
   planned. Windows mama simulator env `simulator_x4_pro_mama_win` added (`firmware/platformio.local.ini`). The closing
   device build `x4pro-krinik-debug` of `2fa20f3f` compiles (RAM 34.3 %, Flash 83.0 %) — a compile check, no image made.
+- **2026-11-17 09:49 chat (the owner: «нам ответили по фиксу бага с инверсией обложки… у него воспроизвелось»):**
+  upstream #4329 comments read (itsthisjustin 2026-11-16 19:10/19:12 UTC: the negative covers came back on «Сетка
+  обложек»). Cause read in the code: the grid theme has its own snapshot cache `HomeCoverCache`, not covered by #4329;
+  upstream fixed it in #4494 (`b9c23473`). KCCP debug1/debug2 still carry it → `bugs/07_cover_grid_negative_after_night_switch.md`
+  (port on the owner's word). Lesson EXP-0023.
 - **Where to continue (the handover):**
   1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status`; `ListAgents` (shared PC: KUMM, KAGO).
   2. **Show the owner interviews #005 and #006** (both filed, NEVER shown; run the clean-instance voice pass §7B on #006
