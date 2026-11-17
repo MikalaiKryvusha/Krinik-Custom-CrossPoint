@@ -38,3 +38,11 @@ A minimal shade: the light sliders only, when the owner wants no buttons.
 ## Links
 
 Epic 01 · `src/util/ShadeTiles.h` · `FrontlightPanelActivity` · `ShadeTilesActivity`
+
+## Дополнение владельца (2026-11-17 21:46, дословно)
+
+> в сборке KCCP по умолчанию в шторке
+> - Тема
+> - Ориентация
+> - Фонарик
+> - Сон
