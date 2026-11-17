@@ -3,51 +3,59 @@
 [SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
 [SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/sd/plugins (flags=0x0 errno=2 No such file or directory)
 [SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/sd/.plugins (flags=0x0 errno=2 No such file or directory)
-[5] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
-[5] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep
-[5] [DBG] [CPS] Resaving settings to update format
-[5] [DBG] [CPS] Settings loaded from file
+[4] [INF] [CPS] Shade tiles: night,cleanup,orientation,touch,bluetooth,-sleep,-flashlight
+[4] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep
+[4] [DBG] [CPS] Resaving settings to update format
+[4] [DBG] [CPS] Settings loaded from file
 [5] [DBG] [UI] Using Lyra theme
-[6] [INF] [CLK] RTC clock read: 2026-11-17 12:30
+[6] [INF] [CLK] RTC clock read: 2026-11-17 12:32
 [SIM] Frontlight: on, brightness=57%, warmth=80%
 [6] [DBG] [MAIN] Starting CrossPoint version dev-simulator
-[214] [DBG] [MAIN] Display initialized
+[212] [DBG] [MAIN] Display initialized
 [SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/sd/.fonts (flags=0x0 errno=2 No such file or directory)
-[214] [DBG] [SDREG] Fonts directory not found: /.fonts
+[213] [DBG] [SDREG] Fonts directory not found: /.fonts
 [SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/sd/fonts (flags=0x0 errno=2 No such file or directory)
-[215] [DBG] [SDREG] Fonts directory not found: /fonts
-[215] [DBG] [SDREG] Discovery complete: 0 families
-[215] [DBG] [SDFS] SD font system ready (0 families discovered)
-[215] [DBG] [MAIN] Fonts setup
-[215] [DBG] [ACT] Entering activity: Boot
-[215] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[213] [DBG] [SDREG] Fonts directory not found: /fonts
+[213] [DBG] [SDREG] Discovery complete: 0 families
+[213] [DBG] [SDFS] SD font system ready (0 families discovered)
+[213] [DBG] [MAIN] Fonts setup
+[213] [DBG] [ACT] Entering activity: Boot
+[213] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
 [SIM] SCREEN: CrossPoint | Загрузка | dev-simulator
-[223] [DBG] [ACT] Exiting activity: Boot
-[223] [DBG] [ACT] Entering activity: Home
-[223] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
-[224] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
-[SIM] SCREEN: 12:30 | 100% | Нет открытой книги | Выберите книгу ниже | Обзор файлов | Библиотека | Передача файлов | Настройки | Фонарик | Сон
-[SIM] WAIT matched: [223] [DBG] [ACT] Entering activity: Home
-[239] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
-[1818] [DBG] [ACT] Exiting activity: Home
-[1818] [DBG] [ACT] Entering activity: SettingsList
-[1819] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
-[SIM] SCREEN: 12:30 | 100% | Настройки | dev-simulator | Система | Экран | Чтение | Кнопки | Библиотека | Подключения
-[SIM] WAIT matched: [1818] [DBG] [ACT] Entering activity: SettingsList
-[3415] [DBG] [ACT] Pushed to activity stack, new size = 1
-[3415] [DBG] [ACT] Entering activity: Settings
+[221] [DBG] [ACT] Exiting activity: Boot
+[221] [DBG] [ACT] Entering activity: Home
+[221] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
+[222] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:32 | 100% | Нет открытой книги | Выберите книгу ниже | Обзор файлов | Библиотека | Передача файлов | Настройки | Фонарик | Сон
+[SIM] WAIT matched: [221] [DBG] [ACT] Entering activity: Home
+[236] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[1827] [DBG] [ACT] Exiting activity: Home
+[1827] [DBG] [ACT] Entering activity: SettingsList
+[1827] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:32 | 100% | Настройки | dev-simulator | Система | Экран | Чтение | Кнопки | Библиотека | Подключения
+[SIM] WAIT matched: [1827] [DBG] [ACT] Entering activity: SettingsList
+[3427] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3427] [DBG] [ACT] Entering activity: Settings
 [SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/sd/dictionaries (flags=0x0 errno=2 No such file or directory)
-[3415] [DBG] [DREG] No /dictionaries directory on SD card
+[3428] [DBG] [DREG] No /dictionaries directory on SD card
 [SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/sd/.dictionaries (flags=0x0 errno=2 No such file or directory)
-[3416] [DBG] [DREG] No /.dictionaries directory on SD card
-[3416] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
-[SIM] SCREEN: 12:30 | 100% | Чтение | Настройки текста | Управление шрифтами | Ориентация чтения | Альбомная 180° | Изображения | Показать | Стиль меню чтения | Список | Настройка строки состояния | Очистить кэш чтения
-[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/shots/a.bmp
-[4422] [DBG] [ACT] Pushed to activity stack, new size = 2
-[4422] [DBG] [ACT] Entering activity: TextSettings
-[4423] [DBG] [FDC] Prewarm: 36 glyphs in 1849 bytes from 2 groups (0 missed)
-[4423] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
-[SIM] SCREEN: 12:30 | 100% | Настройки текста | Съешь | ещё | этих | мягких | французских | булок, | да | выпей | же | чаю | Съешь | ещё | этих | мягких | Предпросмотр "Noto Sans, 12 pt" | Шрифт | Размер | Разметка | Стиль | Noto Sans | Выбран
-[5396] [DBG] [LIST] TextSettings swipe delta=1 count=1
-[5397] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
-[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/shots/b.bmp
+[3428] [DBG] [DREG] No /.dictionaries directory on SD card
+[3429] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:32 | 100% | Чтение | Настройки текста | Управление шрифтами | Ориентация чтения | Альбомная 180° | Изображения | Показать | Стиль меню чтения | Список | Настройка строки состояния | Очистить кэш чтения
+[4421] [DBG] [ACT] Pushed to activity stack, new size = 2
+[4421] [DBG] [ACT] Entering activity: TextSettings
+[4422] [DBG] [FDC] Prewarm: 36 glyphs in 1849 bytes from 2 groups (0 missed)
+[4422] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:32 | 100% | Настройки текста | Съешь | ещё | этих | мягких | французских | булок, | да | выпей | же | чаю | Съешь | ещё | этих | мягких | Предпросмотр "Noto Sans, 12 pt" | Шрифт | Размер | Разметка | Стиль | Noto Sans | Выбран
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/shots/font.bmp
+[8930] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:32 | 100% | Настройки текста | Съешь | ещё | этих | мягких | французских | булок, | да | выпей | же | чаю | Съешь | ещё | этих | мягких | Предпросмотр "Noto Sans, 12 pt" | Шрифт | Размер | Разметка | Стиль | 12 pt | Выбран | 14 pt | 16 pt | 18 pt
+[10007] [INF] [MEM] Free: 1048576 bytes, Total: 1048576 bytes, Min Free: 1048576 bytes, MaxAlloc: 1048576 bytes
+[10007] [INF] [MEM] PSRAM: Free: 8388608 bytes, Total: 8388608 bytes, Min Free: 8388608 bytes, MaxAlloc: 8388608 bytes
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/shots/size.bmp
+[11923] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:32 | 100% | Настройки текста | Съешь | ещё | этих | мягких | французских | булок, | да | выпей | же | чаю | Съешь | ещё | этих | мягких | Предпросмотр "Noto Sans, 12 pt" | Шрифт | Размер | Разметка | Стиль | Межстрочный интервал | +10% | Межсловный интервал | 100% | Межбуквенный интервал | 0 px | Доп. интервал абзаца | Отступ абзаца | 5 | Выравнивание | Стиль книги | Поля | 5
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/shots/layout.bmp
+[14922] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[SIM] SCREEN: 12:32 | 100% | Настройки текста | Съешь | ещё | этих | мягких | французских | булок, | да | выпей | же | чаю | Съешь | ещё | этих | мягких | Предпросмотр "Noto Sans, 12 pt" | Шрифт | Размер | Разметка | Стиль | Фокусное чтение | Hyphenation (no preview) | Embedded Style (no preview) | Text Anti-Aliasing (no preview)
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/guide_text/shots/style.bmp

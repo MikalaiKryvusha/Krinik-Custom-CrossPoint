@@ -68,14 +68,16 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
 - **Часы**, **Настройка строки состояния**, **CrossPoint Sync** — the rows match the guide's `›` lines by name.
 - **Жесты кнопки «Домой»:** Нажатие (Домой) · Двойное нажатие (Вкл./выкл. подсветку) · Долгое нажатие (Меню). Guide:
   one line «› Действия Home».
-- **Настройки текста:** tabs Шрифт · Размер · Разметка · Стиль; only the «Шрифт» tab captured (Noto Sans, «Выбран») —
-  the other tabs need a tap each (G1 left).
+- **Настройки текста:** tabs Шрифт (Noto Sans) · Размер (12 / 14 / 16 / 18 pt) · Разметка (Межстрочный интервал +10% ·
+  Межсловный интервал 100% · Межбуквенный интервал 0 px · Доп. интервал абзаца · Отступ абзаца 5 · Выравнивание «Стиль
+  книги» · Поля 5) · Стиль (Фокусное чтение · Hyphenation · Embedded Style · Text Anti-Aliasing, the last three «(no
+  preview)», untranslated) — the names match the guide's `›` lines.
 
 ## Steps
 
-- [ ] G1. Capture the other settings screens the same way; extend the differences list. (The six chapters and the
-      Экран sub-screens done 2026-11-17 15:30 +03:00; the deeper sub-screens 2026-11-17 15:31 +03:00 except the text tabs Размер,
-      Разметка, Стиль.)
+- [x] G1. Capture the other settings screens the same way; extend the differences list. (The six chapters and the
+      Экран sub-screens done 2026-11-17 15:30 +03:00; the deeper sub-screens 2026-11-17 15:31 +03:00 and the text tabs
+      15:32 +03:00 (log mtime).)
 - [ ] G2. Read each changed setting's options in `src/SettingsList.cpp` and the Russian strings.
 - [ ] G3. The comparison script (criteria 1–2) in `tools/`, proven red on today's section.
 - [ ] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
