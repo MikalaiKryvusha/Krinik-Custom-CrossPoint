@@ -27,6 +27,40 @@
 
 ## Entries (newest first)
 
+### 2026-11-17 — STATUS trim 6 (2026-11-17 16:07 +03:00): closed items of 14.11 and the KNOWLEDGE lines of 13–14.11 (moved verbatim)
+
+- **2026-11-17 09:49 chat (the owner: «нам ответили по фиксу бага с инверсией обложки… у него воспроизвелось»):**
+  upstream #4329 comments read (itsthisjustin 2026-11-16 19:10/19:12 UTC: the negative covers came back on «Сетка
+  обложек»). Cause read in the code: the grid theme has its own snapshot cache `HomeCoverCache`, not covered by #4329;
+  upstream fixed it in #4494 (`b9c23473`). Ported onto debug2 on the owner's word (10:04 «Всё делаем»): `07df1501`
+  (author Justin), simulator red on the old build and green both ways, host 795/803 = the 8 known
+  (`testcases/reports/2026-11-17_bug07_grid_night.md`); bug 07 waits only for the reader check with the debug2 image.
+  Lessons EXP-0023, EXP-0024 (the contour server killed under `timeout` AGAIN — a guard is owed, see the entry).
+  **Owner's debt / open from this chat:** (a) interview #006 answered 10:18 — **A, «Для Мамы» only on «Кнопки домашнего
+  экрана»** → DONE 10:36: firmware `da382c2f`, plan 10 → `plans/10_DONE_…`, epic 05 Ф4 closed; (b) interview #005 —
+  the owner's remark 10:18 «покажи картинками. пока не увижу глазами - не о чем мне тут ответ давать» → the three
+  variants rendered on a book page and shown 10:31 as one picture (`qa_runs/caption005_compare/compare.webp`, mockup page);
+  answered 10:40 — **A, the author's text**, and repeated: «НЕ НУЖНА КРАСНАЯ СТРОКА… подпись ВСЕГДА должна быть рядом с
+  картинкой» → **epic 07 started now** (the owner's debt before the plan); epic 05 Ф5 parked then (planned, no code;
+  built in the 14:42 day loop — `plans/11_DONE_epic05_p5_home_long_tap.md`); (c) DONE 10:24 — the reply to itsthisjustin posted in #4329 (the
+  owner: «Да, оба одобрено» · «отправляй»); (d) `bugs/08` (the shade's night button leaves pictures under the sheet
+  negative) — the owner 10:21: «Пофиксить бы, в будущем. Пока как баг заведи и нам и в апстрим»; upstream issue #4515
+  opened 10:24 (watch it for answers); the fix itself — later.
+- **Chat 2026-11-14 15:26 → 17:39 (day loop, the owner 15:26: «работай автономно над прошивкой в автономном цикле
+  дневном») — closed by the 90 % context window.** Done: interview #004 applied (`b856ce2`); **epic 05 «Кнопки домашнего
+  экрана» Ф1–Ф4 on `wip/kccp-1.1.3-debug2`** (local, not pushed, NO image): Ф1 model `homemenu` + key `homeButtons`
+  (`be6e9a16`), Ф2 Home draws it in all five themes (`f9ae704b`), Ф3 the button list scrolls — the mama button reachable,
+  0 off-screen draws (`a47582b0`), Ф4 the screen «Кнопки домашнего экрана» + «Кнопки в шторке» on one shared base
+  `ToggleRowsActivity` (`2fa20f3f`). Run reports `testcases/reports/2026-11-14_epic05_p1…p4.md`. Epic 07 (idea 03)
+  planned. Windows mama simulator env `simulator_x4_pro_mama_win` added (`firmware/platformio.local.ini`). The closing
+  device build `x4pro-krinik-debug` of `2fa20f3f` compiles (RAM 34.3 %, Flash 83.0 %) — a compile check, no image made.
+- KNOWLEDGE (14.11): the X4 Pro simulator's Home geometry (top 314, content bottom 797) → the code comment of
+  `HomeActivity::visibleMenuRows` + EXP-0022; `-Wswitch` is off in the firmware build → EXP-0021; the shade screen is
+  now a shared base → `PROJECT_ARCHITECTURE_INTERNAL_MAP.md`; the mama simulator stand and script key verbs →
+  `HOUSE_RULES.md`; the environment dossier → `HOUSE_RULES.md` §3.
+- KNOWLEDGE (13.11): the facts of the chats live in the maps, `EXPERIENCE.md` (EXP-0012…0019) and
+  `HOUSE_RULES.md`; the 13:51 → 16:21 KNOWLEDGE paragraph moved verbatim to `PROJECT_HISTORY.md` («STATUS trim 4»).
+
 ### 2026-11-14 — STATUS trim 5 (2026-11-14 17:39 +03:00): closed items of 13.11 (moved verbatim)
 
 - **Day loop 2026-11-13 19:01 +03:00 — the owner:** «работай автономно над читалкой, со сборкой не торопись, она
