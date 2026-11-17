@@ -82,6 +82,19 @@
 
 ## Entries
 
+### EXP-0034 · 2026-11-17 · ❌→✅ · #guard #frame #layout #shade
+class: guard-not-proven-against-threat
+mechanized: `tools/shade_gaps.py` measures the end gaps from the shot's edges (the sheet's visible edges) by default
+**Context:** epic 01 Ф3 (13.11) «equal gaps» in the shade's button row, measured by `shade_gaps.py`.
+**Result:** ❌ the guard measured from the slider row's edges — the same 16 px inset the layout used — so it passed a
+row whose ends were 16 px + gap; the owner saw it on the reader (bug 12, 20:51). ✅ the guard's frame = the eye's frame,
+red on the debug4 shot (spread 9), green on the fix.
+**Lesson:** a layout guard measures in the frame the PERSON sees (the visible edge), never in the frame the code laid
+out in — the same frame cannot disagree with the code.
+**Repro:** `tools/shade_gaps.py qa_runs/bug12_before/shots/shade_home.webp port` → exit 1.
+**Trigger:** writing a guard for spacing, alignment or centring.
+**Not for:** guards over values the person never sees.
+
 ### EXP-0033 · 2026-11-17 · ❌→✅ · #reader #claim #owner #back
 class: claim-before-evidence
 none-cheap: a chat sentence is not machine-checkable; the judge read the code

@@ -90,6 +90,14 @@ CSS `break-inside: avoid` с `page-break-inside: avoid`, как у Standard Eboo
    decision says: keep EPUB 2, write a `<div>` with the property. A `<p>` caption in that `<div>` would still get the
    reader's paragraph indent (Ф2 suppresses it for `<figcaption>` only, `plan 13` design) — the owner's word «НЕ НУЖНА
    КРАСНАЯ СТРОКА». So the EPUB 2 form is a fork decided when the version is known: `FORK:` line then.
+   **Known 2026-11-17 ≈ 21:05 +03:00:** the owner's GEB is EPUB 2.0 (`<package version="2.0">`; the tool: «EPUB 2: not
+   re-typeset»). Recon in the firmware: `ParsedText::resolveFirstLineIndent` gives NO first-line indent when the block's
+   alignment is not natural — a caption `<p>` with CSS `text-align: center` is centred and unindented with no firmware
+   change. `FORK: options <A EPUB 2 → <div class="kccp-figure"> (break-inside: avoid) + <p class="kccp-caption">
+   (text-align: center) | B <figure> inside EPUB 2 (not valid XHTML 1.1) | C convert the book to EPUB 3> · price of error
+   <an invalid book in other readers (B); a heavy conversion (C); a caption without Ф2's look (A, refuted by the recon)>
+   · consulted <the meta-plan's [AI] (a div with the property), the firmware's indent rule above, the owner's
+   «НЕ НУЖНА КРАСНАЯ СТРОКА»>` → A, to build after debug5 (bugs 12, 13 first).
 2. **The reader's layout cache is keyed by the book's path** (`lib/Epub/Epub.cpp:29`, `epub_<hash of the path>`), and a
    cache found on the card is loaded without comparing the file (`Epub.cpp:478`). A re-typeset book copied over the old
    one under the same name would show the OLD layout. Ф4's homework says: copy under the new name, delete the old file

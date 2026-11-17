@@ -22,9 +22,14 @@ work project. From now on it is a standalone project.
   `/.firmware/` = debug4 (SHA256 on the card = `e38a9338…`) + debug9 (fallback) + 1.1.2; debug8 removed (its copy in
   `firmware-builds/`); ejected, `Test-Path H:\` False. **❓ the owner flashes and tests** — the checklist was given in
   chat (GEB [4] [5] [6] → their notes; a note's «[N]» → back to the text; captions in GEB unchanged until the
-  re-typeset); a homework document for debug4 is not written yet (supersedes homework 07). The punctuation part of his report → `bugs/10_geb_notes_lost_punctuation.md` (the book's
-  notes lost commas, stops, dashes; our checks blind to it; asked him for the book's original file). Next after the
-  card: GEB re-typeset by the Ф3 tool (plan 14 T9), then bug 10's punctuation check. Homework 09 not raised yet.
+  re-typeset); a homework document for debug4 is not written yet (supersedes homework 07). The punctuation part of his report → `bugs/10_geb_notes_lost_punctuation.md`: the
+  owner 20:47 gave the originals on D: — the notes lost their punctuation IN THE FB2 SOURCE (2010), our tools made 27
+  corrections and lost nothing; open: a punctuation check for books, the book itself only from another edition.
+  **His debug4 test, two shade bugs:** `bugs/12_shade_row_gaps.md` (20:51: huge ends, tight gaps — the row was spaced
+  inside the sliders' 16 px inset; research `researches/2026-11-17_shade_row_spacing.md` on his order; guard
+  `shade_gaps.py` now measures from the sheet's edge, red on debug4) and `bugs/13_shade_sleep_no_highlight.md` (20:53:
+  «Сон» in the shade not shown pressed before sleep — Home's debug8 fix ported). Both fixed in the firmware, uncommitted
+  at writing, the judge reading; then simulator → debug5. Next: GEB re-typeset (plan 14 T9). Homework 09 not raised.
 - **Chat 2026-11-17 14:40 — DAY LOOP** on the owner's word 14:42 «работай автономно в дейлупк» (`/dayloop`, no end time
   named). Done: homework 08 — the clean §7B pass applied, committed `e7d5119`, the mock-up page shown (window on the
   screen, screenshot ≈ 14:50; the owner's letter A–D awaited there); the contour's decision-name collision guarded and
