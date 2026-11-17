@@ -1,16 +1,24 @@
 # Plan 15 — the on-device guide («РУКОВОДСТВО.epub») describes the KCCP 1.1.3 settings screens as they are
 
 > **Created:** 2026-11-17 · **Parent:** `ideas/08_sleep_settings_submenu.md` → S6; STATUS open work 9; the release-time
-> debt for KCCP 1.1.3 · **Status:** 📐 recon done 2026-11-17 15:28 +03:00 (the screens' texts captured on the simulator, below); no text
-> written yet · **Outbound:** the rewritten section → the owner's proofreading (owner text), then into the epub on his word
+> debt for KCCP 1.1.3 · **Status:** 📐 recon done 2026-11-17 15:28 +03:00 (the screens' texts captured on the simulator,
+> below); **corrected 2026-11-17 15:45 +03:00** — the G4 draft (`44cbf99`) was built on the stale separate file while the epub holds the
+> owner's newer text: the draft reverted, G4 restarts from the epub · **Outbound:** the rewritten chapter → the owner's
+> proofreading (owner text), then into the epub on his word
 
 ## Goal vector (Achieve)
 
 The owner (and his mother) read the settings chapter of the guide on the reader and find each setting where the
-reader shows it, under the name the reader shows. Today the chapter «Настройки: Экран» is one flat list written for the
-2026-11-05 build (`РУКОВОДСТВО.epub` → `OEBPS/readme.xhtml`); the separate source `guide_settings_section.xhtml`
-(2026-11-08) is newer than the epub and older than debug10 (idea 08's sub-screens), epic 01 («Кнопки в шторке») and
-epic 05 («Кнопки домашнего экрана»).
+reader shows it, under the name the reader shows. The guide on the reader is `РУКОВОДСТВО.epub` → `OEBPS/readme.xhtml`
+(entry mtime 2026-11-05 14:58): its settings chapters already carry the reader's new names and the owner's text for them
+(«Плавная подсветка», «Настройки очисток экрана», «Калибровка экрана»…) — `tools/guide_screens_check.py` on it: 1 miss
+(«Проверить обновление» stands under «Подключения», the screen has it under «Система»). It lacks what came after it:
+the «Настройки сна» sub-screen (idea 08, debug10 — the nine rows are there, flat under «Экран»), «Кнопки в шторке»
+(epic 01), «Кнопки домашнего экрана» (epic 05), «Точная температура». The separate file `guide_settings_section.xhtml`
+(in the repo since 2026-11-08, its own date unknown) is OLDER in content than the epub (the old names: «Частота
+обновления», «Перерисовка меню»…); nothing records what it is for — a drift pair with the epub (owner's question, G5).
+Correction 2026-11-17 15:45 +03:00: this paragraph said the opposite (the epub older); the clean §7B pass of the G4 draft found the epub's
+text.
 
 ## Acceptance criteria
 
@@ -99,11 +107,16 @@ One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `
       today's section → 16 names not shown (the renamed and gone rows above, plus «Словарь», «Действия Home», «URL
       сервера синхронизации» — the sync screen draws that row's value only); `--selftest` OK, red on a no-gap mutant.
 - [ ] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
-      Progress: the section rebuilt (the Экран chapter by the screens — 28 rows, «Перерисовка меню» dropped; seven
-      rows renamed to the reader's names; «Система» in the screen's order); `guide_screens_check.py` → 0 misses (the old
-      section → 11 with the same exceptions); voice-lint: 4 hits, all in old lines moved unchanged («та же», «снова»,
-      «здесь» in «Экран сна» / «Порядок обложек сна») — left for the owner's proofreading; the agent's own hit fixed.
-      Open: the clean §7B pass (running), the judge on criterion 3, then G5.
+      First draft (`44cbf99`, on the separate file) REVERTED ≈ 2026-11-17 15:44 +03:00: its base was the stale file; the
+      clean §7B pass found the owner's newer text in the epub. Restart: base = the epub's settings chapters
+      (`OEBPS/readme.xhtml`), the owner's lines kept as they are; changes only where the reader differs — the «Настройки
+      сна» sub-screen as `›` rows, the rows «Кнопки в шторке», «Кнопки домашнего экрана», «Точная температура»,
+      «Проверить обновление» under «Система». Facts the pass confirmed, to use: two calibration files —
+      `/.crosspoint/panel_curve.txt` for pictures and own sleep images, `/.crosspoint/panel_curve_book.txt` for pictures
+      in books (`PanelCurve.h:17,24`), the built-in curve without a file; «Точная температура» 9 % / 10 %
+      (`HalFrontlight.cpp:50–52`, the comment «fractional warm/cool mixing» :49); «Кнопки в шторке» keeps at least one
+      button on (`ShadeTiles.h:76`); the clean screen's own note (`STR_SCREEN_CLEAN_NOTE`). Then voice-lint, a clean
+      §7B pass, the judge on criterion 3.
 - [ ] G5. The owner's proofreading (homework); then into `РУКОВОДСТВО.epub` (no build tool exists: `OEBPS/readme.xhtml`
       is edited and re-zipped — a tool for that is part of this step).
 

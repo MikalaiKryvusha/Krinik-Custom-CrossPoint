@@ -82,6 +82,18 @@
 
 ## Entries
 
+### EXP-0030 · 2026-11-17 · ❌→✅ · #stamps #clock #recurrence #guard
+class: claim-before-evidence
+mechanized: `tools/stamp_guard.py` — staged lines with a stamp ahead of the clock → exit 1 (proven on a staged probe)
+**Context:** the 14:42 day loop — plan 15 progress lines written through `sed` and a Python script.
+**Result:** ❌ EXP-0027 twice more in one session: «15:33» at a real 15:32, «15:46» at a real 15:45 — the lesson was
+in the journal and in context. ✅ both replaced by a log mtime / «≈»; a guard written.   → link: EXP-0027
+**Lesson:** a text lesson does not hold a stamp typed by feel; the stamp guard runs before every commit that carries
+stamps written outside Write/Edit (the clock hook covers those).
+**Repro:** `.pio-venv/Scripts/python.exe -I -X utf8 tools/stamp_guard.py` after `git add`.
+**Trigger:** a commit whose staged text carries a moment written by `sed`/`python`.
+**Not for:** stamps the clock hook filled (the NOW placeholder in Write/Edit).
+
 ### EXP-0029 · 2026-11-17 · ❌→✅ · #crlf #python #firmware #windows #recurrence
 class: shell-lied
 mechanized: `tools/host_tests.sh` refuses CRLF in firmware sources (EXP-0019) — but only when it runs; this time the edit came AFTER the host run

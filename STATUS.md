@@ -99,7 +99,8 @@ work project. From now on it is a standalone project.
         2026-11-08 14:05); the
         sub-screens «Настройки сна», «Настройки очисток экрана», «Калибровка экрана», «Кнопки в шторке», «Кнопки
         домашнего экрана» are missing → `plans/15_guide_settings_for_1_1_3.md` (the screens captured on the simulator;
-        the guide inside the epub is older still — 2026-11-05; no build tool for it).
+        corrected 2026-11-17 15:45 +03:00: the epub's guide is the NEWER text, the separate file the older one; the G4 draft reverted,
+        G4 restarts from the epub; no build tool for the epub).
      10. Proofread `GOAL.md`. 11. Delete the partial `C:\msys64` (check the machine lock).
   - Reviews to read: simulator PR #62 and firmware PRs #4328 #4332 #4375 #4376 #4377
     (`gh api repos/<owner>/<repo>/pulls/<n>/comments --jq '.[]|select(.created_at>"<last read>")'`).
