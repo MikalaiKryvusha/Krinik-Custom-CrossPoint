@@ -16,7 +16,10 @@ reader shows it, under the name the reader shows. The guide on the reader is `Р
 the «Настройки сна» sub-screen (idea 08, debug10 — the nine rows are there, flat under «Экран»), «Кнопки в шторке»
 (epic 01), «Кнопки домашнего экрана» (epic 05), «Точная температура». The separate file `guide_settings_section.xhtml`
 (in the repo since 2026-11-08, its own date unknown) is OLDER in content than the epub (the old names: «Частота
-обновления», «Перерисовка меню»…); nothing records what it is for — a drift pair with the epub (owner's question, G5).
+обновления», «Перерисовка меню»…); the agent named it the guide source at the KAIF install (`AGENT_GUIDE.md:1169`,
+`/release` step 3 «rebuild РУКОВОДСТВО.epub from guide_settings_section.xhtml»), with no owner's word — a drift pair with
+the epub (owner's question, G5). Correction 2026-11-17 16:05 +03:00: this line said «nothing records what it is for» (the homework 09
+clean pass found the two records).
 Correction 2026-11-17 15:45 +03:00: this paragraph said the opposite (the epub older); the clean §7B pass of the G4 draft found the epub's
 text.
 
