@@ -1,0 +1,34 @@
+[0] [DBG] [UI] Using Lyra theme
+[0] [INF] [MAIN] Device: xteink_x4_pro
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/rc_default_shade/sd/.crosspoint/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/rc_default_shade/sd/plugins (flags=0x0 errno=2 No such file or directory)
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/rc_default_shade/sd/.plugins (flags=0x0 errno=2 No such file or directory)
+[5] [INF] [CPS] Shade tiles: night,orientation,flashlight,sleep,-cleanup,-touch,-bluetooth
+[5] [INF] [CPS] Home buttons: files,library,plugins_opds,transfer,settings,flashlight,sleep
+[5] [DBG] [CPS] Resaving settings to update format
+[5] [DBG] [CPS] Settings loaded from file
+[7] [DBG] [UI] Using Lyra theme
+[7] [INF] [CLK] RTC clock read: 2026-11-17 18:56
+[SIM] Frontlight: on, brightness=57%, warmth=80%
+[7] [DBG] [MAIN] Starting CrossPoint version dev-simulator
+[251] [DBG] [MAIN] Display initialized
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/rc_default_shade/sd/.fonts (flags=0x0 errno=2 No such file or directory)
+[252] [DBG] [SDREG] Fonts directory not found: /.fonts
+[SIM] open failed: D:/work/ai_sandbox/KCCP/qa_runs/rc_default_shade/sd/fonts (flags=0x0 errno=2 No such file or directory)
+[252] [DBG] [SDREG] Fonts directory not found: /fonts
+[252] [DBG] [SDREG] Discovery complete: 0 families
+[252] [DBG] [SDFS] SD font system ready (0 families discovered)
+[252] [DBG] [MAIN] Fonts setup
+[252] [DBG] [ACT] Entering activity: Boot
+[252] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[260] [DBG] [ACT] Exiting activity: Boot
+[260] [DBG] [ACT] Entering activity: Home
+[260] [DBG] [HOME] Menu geometry: top=314 contentBottom=797 hints=0 vspace=16 row=60 spacing=8 visible=7 rows=6
+[261] [DBG] [GFX] Time = 0 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [260] [DBG] [ACT] Entering activity: Home
+[276] [DBG] [GFX] Time = 1 ms from clearScreen to displayBuffer
+[3593] [DBG] [ACT] Pushed to activity stack, new size = 1
+[3593] [DBG] [ACT] Entering activity: FrontlightPanel
+[3593] [DBG] [GFX] Time = 3318 ms from clearScreen to displayBuffer
+[SIM] WAIT matched: [3593] [DBG] [ACT] Entering activity: FrontlightPanel
+[SIM] Saved screenshot: D:/work/ai_sandbox/KCCP/qa_runs/rc_default_shade/shots/shade.bmp

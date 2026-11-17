@@ -16,7 +16,7 @@ The firmware, the reader setup and the research behind it — and the improvemen
 <p align="center"><i>❤️ Dedicated to my mother, Sofia Fadeevna Kryvusha — a great reader and lover of books, who gave me my love of reading.</i></p>
 
 <p align="center">
-  <a href="https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2"><img src="https://img.shields.io/badge/firmware-KCCP_1.1.2-1E1E1E.svg" alt="Firmware: KCCP 1.1.2"></a>
+  <a href="https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.3"><img src="https://img.shields.io/badge/firmware-KCCP_1.1.3-1E1E1E.svg" alt="Firmware: KCCP 1.1.3"></a>
   <a href="https://github.com/crosspoint-reader/crosspoint-reader"><img src="https://img.shields.io/badge/based_on-CrossPoint_Reader_2.0.0-2C7BE5.svg" alt="Based on CrossPoint Reader 2.0.0"></a>
   <img src="https://img.shields.io/badge/device-Xteink_X4_Pro-555D60.svg" alt="Device: Xteink X4 Pro">
   <a href="https://github.com/crosspoint-reader/crosspoint-reader/pulls?q=author%3AMikalaiKryvusha"><img src="https://img.shields.io/badge/upstream_PRs-3_merged_·_5_open-3DDC84.svg" alt="Upstream PRs: 3 merged, 5 open"></a>
@@ -51,9 +51,9 @@ ways — and into contributions to the original CrossPoint.
 
 ### Roadmap
 
-✅ — done and tested on the reader · 🛠 **DEBUG ONLY:** before a feature — a debugging aid in debug builds, not for release · 📝 **TO DO** — planned.
+✅ — done and tested · 🛠 **DEBUG ONLY:** before a feature — a debugging aid in debug builds, not for release · 📝 **TO DO** — planned.
 "debug → next" — done and tested in a debug build, goes into the next release.
-Versions are KCCP versions; 1.0.0–1.1.1 were released under the old name *krinik*. Latest: **[KCCP 1.1.2](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2)**.
+Versions are KCCP versions; 1.0.0–1.1.1 were released under the old name *krinik*. Latest: **[KCCP 1.1.3](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.3)**.
 
 | Feature | Status | KCCP |
 |---|---|---|
@@ -84,18 +84,33 @@ Versions are KCCP versions; 1.0.0–1.1.1 were released under the old name *krin
 | Anchor after an unavailable-image placeholder leads to its text | ✅ | 1.1.1 |
 | Smooth frontlight from the current brightness, also at low levels; one animation for wake, flashlight and sleep | ✅ | 1.1.2 |
 | Cold and warm channels computed separately with fractional values; 11-bit PWM at 39 kHz | ✅ | 1.1.2 |
-| Precise temperature: dithering only at low brightness | ✅ | debug&nbsp;→&nbsp;next |
+| "Precise temperature" (on by default): fractional mixing of the cold and warm channels only at brightness ≤ 9 %, off from 10 % | ✅ | 1.1.3 |
 | 🛠&nbsp;**DEBUG&nbsp;ONLY**: Battery log every 20 minutes | ✅ | debug4 |
-| "Sleep" item in the Home menu | ✅ | debug&nbsp;→&nbsp;next |
-| "Sleep" on Home shows its selection before the sleep starts | ✅ | debug8 |
-| Sleep-screen redraw timed from the sleep; a press that does not wake no longer shifts or cancels it | ✅ | debug7 |
-| Light lingering at sleep: with Short Power Button ≠ Sleep only a hold cancels the sleep, a click does not | ✅ | debug7 |
+| "Sleep" item in the Home menu | ✅ | 1.1.3 |
+| "Sleep" on Home shows its selection before the sleep starts | ✅ | 1.1.3 |
+| Sleep-screen redraw timed from the sleep; a press that does not wake no longer shifts or cancels it | ✅ | 1.1.3 |
+| Light lingering at sleep: with Short Power Button ≠ Sleep only a hold cancels the sleep, a click does not | ✅ | 1.1.3 |
+| A tap on a picture in a book opens it full screen | ✅ | 1.1.3 |
+| Picture viewer: a long tap on the right half turns the picture clockwise, on the left half counterclockwise; taps, swipes and keys follow the picture as it stands | ✅ | 1.1.3 |
+| A picture opens turned by its shape: a wide one in a portrait reader, a tall one in a landscape reader | ✅ | 1.1.3 |
+| Sleep settings in their own menu: Settings → Display → Sleep settings | ✅ | 1.1.3 |
+| Control Center buttons: pick, order and switch off each one in Settings → Display → Control Center buttons; Sleep and Flashlight added; a long tap on a button opens this screen | ✅ | 1.1.3 |
+| Control Center without buttons: with every button off it shows only the light controls | ✅ | 1.1.3 |
+| Control Center buttons by default: Night mode, Orientation, Flashlight, Sleep | ✅ | 1.1.3 |
+| Control Center buttons spaced evenly from edge to edge | ✅ | 1.1.3 |
+| "Sleep" in the Control Center shows the tap before the sleep starts | ✅ | 1.1.3 |
+| Home buttons: pick and order them in Settings → Display → Home buttons; "Settings" always stays; a long tap on a button opens this screen | ✅ | 1.1.3 |
+| Home button list scrolls when the buttons do not fit; Mom's build: "For beloved Mom" last by default | ✅ | 1.1.3 |
+| Cover Grid Home stays positive after the night switch in the Control Center | ✅ | 1.1.3 |
+| A picture and its caption stay on one page in books that mark them as a figure; the caption is centred, without a first-line indent | ✅ | 1.1.3 |
+| A footnote link whose target wraps the whole note opens the note's page | ✅ | 1.1.3 |
+| The back link at the start of a note returns to the text; Back does not walk the same jump again | ✅ | 1.1.3 |
 
 | Planned | Status |
 |---|---|
 | Rename the firmware krinik → KCCP (version string, build names, releases) | 📝&nbsp;**TO&nbsp;DO** |
-| Precise temperature: dithering only at brightness ≤ 9 %, off at 10 % | 📝&nbsp;**TO&nbsp;DO** |
-| Configurable Control Center: add Sleep and Flashlight, hide Bluetooth or Clean | 📝&nbsp;**TO&nbsp;DO** |
+| Headings stay on one page with the text after them and get no first-line indent | 📝&nbsp;**TO&nbsp;DO** |
+| Control Center buttons Settings, File Transfer and Library, like on Home | 📝&nbsp;**TO&nbsp;DO** |
 | "Unplug the charger" reminder at a chosen battery level | 📝&nbsp;**TO&nbsp;DO** |
 | Own voltage → percent battery scale for the X4 Pro | 📝&nbsp;**TO&nbsp;DO** |
 | True gray book images in dark mode (now dithering) | 📝&nbsp;**TO&nbsp;DO** |
@@ -103,14 +118,13 @@ Versions are KCCP versions; 1.0.0–1.1.1 were released under the old name *krin
 | File dates from the reader's clock | 📝&nbsp;**TO&nbsp;DO** |
 | Option to update from KCCP releases instead of the official CrossPoint ones | 📝&nbsp;**TO&nbsp;DO** |
 | Gray without ghosts: do not keep the sharp header line in one place, show its inversion from time to time | 📝&nbsp;**TO&nbsp;DO** |
-| Mom's build: fit the 8-row Home menu on the screen | 📝&nbsp;**TO&nbsp;DO** |
 | Russian translation with short labels — as a pull request to CrossPoint | 📝&nbsp;**TO&nbsp;DO** |
 | LED driver: current and ratings of the frontlight | 📝&nbsp;**TO&nbsp;DO** |
 
-Latest release — **[KCCP 1.1.2](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2)**, all releases with images and SHA256 sums —
+Latest release — **[KCCP 1.1.3](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.3)**, all releases with images and SHA256 sums —
 [Releases](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases). The reader is flashed from the SD card:
-**Settings → System → Update from SD card**. Inside the 1.1.2 image the name is still `cp-2.0.0-krinik-1.1.2`; it becomes KCCP in the
-next version.
+**Settings → System → Update from SD card**. Inside the 1.1.3 image the name is still `cp-2.0.0-krinik-1.1.3`; the rename to KCCP is
+planned.
 
 ### Contribution to CrossPoint
 
@@ -179,7 +193,7 @@ CrossPoint firmware executable (it includes wolfSSL), with the source in the
 <p align="center"><i>❤️ Проект посвящён моей маме — Кривуше Софии Фадеевне, очень большому читателю-книголюбу, которая привила мне любовь к чтению книг.</i></p>
 
 <p align="center">
-  <a href="https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2"><img src="https://img.shields.io/badge/прошивка-KCCP_1.1.2-1E1E1E.svg" alt="Прошивка: KCCP 1.1.2"></a>
+  <a href="https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.3"><img src="https://img.shields.io/badge/прошивка-KCCP_1.1.3-1E1E1E.svg" alt="Прошивка: KCCP 1.1.3"></a>
   <a href="https://github.com/crosspoint-reader/crosspoint-reader"><img src="https://img.shields.io/badge/основа-CrossPoint_Reader_2.0.0-2C7BE5.svg" alt="Основа: CrossPoint Reader 2.0.0"></a>
   <img src="https://img.shields.io/badge/читалка-Xteink_X4_Pro-555D60.svg" alt="Читалка: Xteink X4 Pro">
   <a href="https://github.com/crosspoint-reader/crosspoint-reader/pulls?q=author%3AMikalaiKryvusha"><img src="https://img.shields.io/badge/PR_в_апстрим-3_принято_·_5_открыто-3DDC84.svg" alt="PR в апстрим: 3 принято, 5 открыто"></a>
@@ -214,9 +228,9 @@ CrossPoint firmware executable (it includes wolfSSL), with the source in the
 
 ### Дорожная карта
 
-✅ — сделано и проверено на читалке · 🛠 **ТОЛЬКО ДЛЯ ОТЛАДКИ:** перед фичей — инструмент отладки в отладочных сборках, не для релиза · 📝 **TO DO** — в планах.
+✅ — сделано и проверено · 🛠 **ТОЛЬКО ДЛЯ ОТЛАДКИ:** перед фичей — инструмент отладки в отладочных сборках, не для релиза · 📝 **TO DO** — в планах.
 «debug → след.» — сделано и проверено в отладочной сборке, войдёт в следующий релиз.
-Версии — версии KCCP; 1.0.0–1.1.1 выпускались под прежним именем *krinik*. Последняя: **[KCCP 1.1.2](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2)**.
+Версии — версии KCCP; 1.0.0–1.1.1 выпускались под прежним именем *krinik*. Последняя: **[KCCP 1.1.3](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.3)**.
 
 | Фича | Статус | KCCP |
 |---|---|---|
@@ -247,18 +261,33 @@ CrossPoint firmware executable (it includes wolfSSL), with the source in the
 | Якорь после заглушки недоступной картинки ведёт к своему тексту | ✅ | 1.1.1 |
 | Плавная подсветка с текущей яркости, в том числе на малых значениях; одна анимация для пробуждения, фонарика и сна | ✅ | 1.1.2 |
 | Холодный и тёплый каналы раздельно с дробными значениями; 11-битный ШИМ на 39 кГц | ✅ | 1.1.2 |
-| Точная температура: дизеринг только на малой яркости | ✅ | debug&nbsp;→&nbsp;след. |
+| «Точная температура» (по умолчанию включена): тёплый и холодный каналы смешиваются дробно только при яркости до 9 %, с 10 % — целыми шагами | ✅ | 1.1.3 |
 | 🛠&nbsp;**ТОЛЬКО&nbsp;ДЛЯ&nbsp;ОТЛАДКИ**: Лог батареи раз в 20 минут | ✅ | debug4 |
-| Пункт «Сон» в главном меню | ✅ | debug&nbsp;→&nbsp;след. |
-| «Сон» на главном экране выделяется до начала сна | ✅ | debug8 |
-| Перерисовка заставки отсчитывается от ухода в сон; нажатие, которое не будит, её не сдвигает и не отменяет | ✅ | debug7 |
-| Подсветка на засыпании: при «Короткое нажатие PWR» не «Сон» сон отменяет только удержание, щелчок — нет | ✅ | debug7 |
+| Пункт «Сон» в главном меню | ✅ | 1.1.3 |
+| «Сон» на главном экране выделяется до начала сна | ✅ | 1.1.3 |
+| Перерисовка заставки отсчитывается от ухода в сон; нажатие, которое не будит, её не сдвигает и не отменяет | ✅ | 1.1.3 |
+| Подсветка на засыпании: при «Короткое нажатие PWR» не «Сон» сон отменяет только удержание, щелчок — нет | ✅ | 1.1.3 |
+| Тап по картинке в книге открывает её на весь экран | ✅ | 1.1.3 |
+| Просмотр картинок: долгий тап по правой половине поворачивает картинку по часовой стрелке, по левой — против; тапы, свайпы и кнопки работают так, как стоит картинка | ✅ | 1.1.3 |
+| Картинка открывается повёрнутой по своей форме: широкая — на книжной читалке, высокая — на альбомной | ✅ | 1.1.3 |
+| Настройки сна в своём меню: Настройки → Экран → Настройки сна | ✅ | 1.1.3 |
+| Кнопки в шторке: выбор, порядок и выключение каждой в Настройки → Экран → Кнопки в шторке; добавлены «Сон» и «Фонарик»; долгий тап по кнопке открывает этот экран | ✅ | 1.1.3 |
+| Шторка без кнопок: если выключить все кнопки, в шторке остаются только регуляторы подсветки | ✅ | 1.1.3 |
+| Кнопки в шторке по умолчанию: «Ночной режим», «Ориентация», «Фонарик», «Сон» | ✅ | 1.1.3 |
+| Кнопки в шторке стоят с равными промежутками от края до края | ✅ | 1.1.3 |
+| «Сон» в шторке показывает нажатие до начала сна | ✅ | 1.1.3 |
+| Кнопки домашнего экрана: выбор и порядок в Настройки → Экран → Кнопки домашнего экрана; «Настройки» остаются всегда; долгий тап по кнопке открывает этот экран | ✅ | 1.1.3 |
+| Список кнопок домашнего экрана прокручивается, если кнопки не помещаются; мамина сборка: «Для любимой Мамы» по умолчанию последняя | ✅ | 1.1.3 |
+| «Сетка обложек» на главном экране не уходит в негатив после «Ночи» в шторке | ✅ | 1.1.3 |
+| Картинка и подпись к ней держатся на одной странице в книгах, где они размечены как рисунок; подпись по центру, без красной строки | ✅ | 1.1.3 |
+| Ссылка на сноску, цель которой охватывает всю сноску, открывает страницу сноски | ✅ | 1.1.3 |
+| Обратная ссылка в начале сноски возвращает в текст; «Назад» не проходит этот переход заново | ✅ | 1.1.3 |
 
 | В планах | Статус |
 |---|---|
 | Переименовать прошивку krinik → KCCP (строка версии, имена сборок, релизы) | 📝&nbsp;**TO&nbsp;DO** |
-| Точная температура: дизеринг только при яркости ≤ 9 %, на 10 % выключен | 📝&nbsp;**TO&nbsp;DO** |
-| Настраиваемая шторка: добавить Сон и Фонарик, скрывать Bluetooth или Очистку | 📝&nbsp;**TO&nbsp;DO** |
+| Заголовок держится на одной странице с текстом после него и стоит без красной строки | 📝&nbsp;**TO&nbsp;DO** |
+| Кнопки «Настройки», «Передача файлов» и «Библиотека» в шторке, как на главном экране | 📝&nbsp;**TO&nbsp;DO** |
 | Напоминание «отключи зарядку» на выбранном уровне заряда | 📝&nbsp;**TO&nbsp;DO** |
 | Своя шкала «напряжение → процент» для X4 Pro | 📝&nbsp;**TO&nbsp;DO** |
 | Настоящие серые картинки в книге в тёмной теме (сейчас дизеринг) | 📝&nbsp;**TO&nbsp;DO** |
@@ -266,14 +295,13 @@ CrossPoint firmware executable (it includes wolfSSL), with the source in the
 | Даты файлов от часов читалки | 📝&nbsp;**TO&nbsp;DO** |
 | Опция обновления из релизов KCCP, а не из официальных CrossPoint | 📝&nbsp;**TO&nbsp;DO** |
 | Серый без призраков: не держать резкую линию заголовка на одном месте, иногда показывать её инверсию | 📝&nbsp;**TO&nbsp;DO** |
-| Мамина сборка: главное меню из 8 строк помещается на экран | 📝&nbsp;**TO&nbsp;DO** |
 | Русский перевод с короткими подписями — пулл-реквестом в CrossPoint | 📝&nbsp;**TO&nbsp;DO** |
 | Драйвер подсветки: ток и номиналы светодиодов | 📝&nbsp;**TO&nbsp;DO** |
 
-Последний релиз — **[KCCP 1.1.2](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.2)**, все релизы с образами и суммами SHA256 —
+Последний релиз — **[KCCP 1.1.3](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.3)**, все релизы с образами и суммами SHA256 —
 [Releases](https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases). Читалка прошивается с SD-карты:
-**Настройки → Система → Обновление системы с SD-карты**. Внутри образа 1.1.2 имя пока `cp-2.0.0-krinik-1.1.2`; на KCCP оно сменится в
-следующей версии.
+**Настройки → Система → Обновление системы с SD-карты**. Внутри образа 1.1.3 имя пока `cp-2.0.0-krinik-1.1.3`; переименование в KCCP —
+в планах.
 
 ### Вклад в CrossPoint
 
