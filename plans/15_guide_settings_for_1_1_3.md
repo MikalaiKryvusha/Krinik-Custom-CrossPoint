@@ -63,13 +63,19 @@ list fits one screen — the swipe shots equal the first ones, the last row ends
 - **Подключения:** Wi-Fi сети › · CrossPoint Sync › · Серверы OPDS › · Плагины (Выключено). «Bluetooth-пульт» is absent
   because the simulator is built without Bluetooth (`PROJECT_ARCHITECTURE_INTERNAL_MAP.md`, the shade) — not a difference.
 
-Not captured: the sub-screens one level deeper (Часы, Настройки текста, Настройка строки состояния, Жесты кнопки
-«Домой», CrossPoint Sync) — G1 continues there.
+One level deeper (runs `qa_runs/guide_clock`, `guide_text`, `guide_statusbar`, `guide_homekey`, `guide_sync`):
+
+- **Часы**, **Настройка строки состояния**, **CrossPoint Sync** — the rows match the guide's `›` lines by name.
+- **Жесты кнопки «Домой»:** Нажатие (Домой) · Двойное нажатие (Вкл./выкл. подсветку) · Долгое нажатие (Меню). Guide:
+  one line «› Действия Home».
+- **Настройки текста:** tabs Шрифт · Размер · Разметка · Стиль; only the «Шрифт» tab captured (Noto Sans, «Выбран») —
+  the other tabs need a tap each (G1 left).
 
 ## Steps
 
 - [ ] G1. Capture the other settings screens the same way; extend the differences list. (The six chapters and the
-      Экран sub-screens done 2026-11-17 15:30 +03:00; the deeper sub-screens left.)
+      Экран sub-screens done 2026-11-17 15:30 +03:00; the deeper sub-screens 2026-11-17 15:31 +03:00 except the text tabs Размер,
+      Разметка, Стиль.)
 - [ ] G2. Read each changed setting's options in `src/SettingsList.cpp` and the Russian strings.
 - [ ] G3. The comparison script (criteria 1–2) in `tools/`, proven red on today's section.
 - [ ] G4. Rewrite the section by the portrait; voice-lint + a clean §7B pass; the judge on criterion 3.
