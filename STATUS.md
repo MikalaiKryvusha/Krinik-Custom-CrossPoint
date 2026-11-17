@@ -25,7 +25,9 @@ work project. From now on it is a standalone project.
   экрана»** → DONE 10:36: firmware `da382c2f`, plan 10 → `plans/10_DONE_…`, epic 05 Ф4 closed; (b) interview #005 —
   the owner's remark 10:18 «покажи картинками. пока не увижу глазами - не о чем мне тут ответ давать» → the three
   variants rendered on a book page and shown 10:31 as one picture (`qa_runs/caption005_compare/compare.webp`, mockup page);
-  ❓ waits for his choice; (c) DONE 10:24 — the reply to itsthisjustin posted in #4329 (the
+  answered 10:40 — **A, the author's text**, and repeated: «НЕ НУЖНА КРАСНАЯ СТРОКА… подпись ВСЕГДА должна быть рядом с
+  картинкой» → **epic 07 started now** (the owner's debt before the plan); epic 05 Ф5 parked: `plans/11_epic05_p5_home_long_tap.md`
+  (planned, no code); (c) DONE 10:24 — the reply to itsthisjustin posted in #4329 (the
   owner: «Да, оба одобрено» · «отправляй»); (d) `bugs/08` (the shade's night button leaves pictures under the sheet
   negative) — the owner 10:21: «Пофиксить бы, в будущем. Пока как баг заведи и нам и в апстрим»; upstream issue #4515
   opened 10:24 (watch it for answers); the fix itself — later.
