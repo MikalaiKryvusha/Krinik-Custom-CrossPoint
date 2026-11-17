@@ -6,6 +6,13 @@ work project. From now on it is a standalone project.
 
 ## Where to continue
 
+- **DEBT — the 1.1.3 release judge pass** (`/fable-judge` over the published `kccp-1.1.3` notes and the README 1.1.3
+  rows: every claim against firmware `c1c38089` vs `198d385e`, the Known list, EN = RU) — skipped on the owner's word
+  `[OWNER] 2026-11-17 22:00 · chat: «судью отзывай, нет на него времени» · «судейство - наш долг на потом»`; a refuted
+  claim is corrected where it stands (the release body via `gh release edit`, the README). Also not done before the
+  release: the full 1.1.3 regression pass on the simulator (features were run phase by phase) and the owner's
+  proofreading of the README and the notes.
+
 - **Chat 2026-11-17 19:45 — `resume`; the owner's bug 09 + KCCP 1.1.3-debug4.** The owner filed `bugs/09_ssylka.md`
   (GEB footnote links open the notes chapter's page 0) and put the reader on the wire (H:, KCCP 1.1.1-debug9): the
   book, its caches and card state copied read-only to `.tmp/bug09/` (no log file, no serial port). Cause found and
