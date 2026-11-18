@@ -33,6 +33,8 @@ KCCP/                         # the reader workspace — NO firmware source here
 ├── testcases/                # case sets TC_<feature>.md + reports/<date>_<work>.md (run reports, kaif-testrun-lint)
 ├── .kaif/ · .claude/ .agents/ .grok/ .cline/ .roo/   # KAIF machinery and agent skills
 ├── simulator/                # (ignored) clone of MikalaiKryvusha/crosspoint-simulator, branch windows (native Windows port)
+├── epub-linter/              # (ignored) sub-project: clone of MikalaiKryvusha/Krinik-EPUB-Linter (Python CLI that checks and
+│                             #   repairs the owner's books; developed here, lives in its own GitHub repo)
 ├── .pio-venv/                # (ignored) PlatformIO Core venv for this PC
 └── firmware/                 # (ignored) clone of MikalaiKryvusha/crosspoint-reader + freeink-sdk submodule;
                               #   firmware/platformio.local.ini (ignored) holds this PC's simulator envs
@@ -49,6 +51,7 @@ KCCP/                         # the reader workspace — NO firmware source here
 | `tools/shade_gaps.py` | measures a shade shot: the content edges, the buttons, the gaps; exit 1 when the gaps spread more than 2 half-scale px (the old equal-slot row: 34) | Pillow in `.pio-venv/` |
 | `tools/shot_diff.py` | compares the same-named WebP shots of two simulator runs (status bar cut, threshold for WebP noise); exit 1 on a difference — the layout golden | Pillow in `.pio-venv/` |
 | `tools/shot_crop.py` | crops a shot around a box, ×6 with a 10 px labelled grid — to measure a simulator TAP target (EXP-0032) | Pillow in `.pio-venv/` |
+| `epub-linter/` | sub-project Krinik EPUB Linter (`krinik_epub_linter.py`: `survey` · `fix` · `check` · `proofread` · `textfix`; pytest in `tests/`) — the owner's books are checked and repaired here, including the figure caption pairs (moving in from `tools/figure_retypeset.py`, the owner 2026-11-18 08:49); commits go to its own repo `MikalaiKryvusha/Krinik-EPUB-Linter` | Python 3 stdlib; LanguageTool for `proofread` |
 | `tools/figure_retypeset.py` | re-typesets a COPY of an EPUB 3: a picture block + the «Рис…»/«Fig…» paragraph right after it → `<figure class="kccp-figure">` + `<figcaption>` (the paragraph's class/style dropped), CSS `break-inside: avoid` appended; EPUB 2 refused (exit 3); `--selftest` (epic 07 Ф3, plan 14) | Python stdlib; census check: `tools/caption_census.py` |
 | `tools/guide_screens_check.py` | every `<b>name</b>` of the guide's «Настройки: X» chapters must appear on a simulator screen of that chapter (runs `qa_runs/guide_*` with `CROSSPOINT_SIM_SCREEN_TEXT=1`); exit 1 on a miss; `--selftest` (plan 15) | the capture runs; Python stdlib |
 | `tools/clean_run_cards.sh` | removes `qa_runs/<run>/sd` (the card copy) of NAMED runs before their evidence is committed; refuses globs and runs whose `sd/` git tracks (EXP-0031) | git, sh |

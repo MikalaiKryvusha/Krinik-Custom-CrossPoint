@@ -46,5 +46,9 @@ interviews/decisions/*.lock
 # Windows port of crosspoint-simulator (fork MikalaiKryvusha/crosspoint-simulator, branch windows) - own repo
 /simulator/
 
+# Krinik EPUB Linter - a sub-project with its own repo (MikalaiKryvusha/Krinik-EPUB-Linter), developed here
+# (the owner 2026-11-18 08:52 «качай из гита его внутрь KCCP, как суб-проект»)
+/epub-linter/
+
 # Claude Code personal settings of this machine (the voice engine env, KAIF_VOICE_*)
 .claude/settings.local.json
