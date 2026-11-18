@@ -6,6 +6,14 @@ work project. From now on it is a standalone project.
 
 ## Where to continue
 
+- **DEBT — the closing judge pass of the 2026-11-18 08:44 chat** was skipped on the owner's word `[OWNER] 2026-11-18 10:41 ·
+  chat: «пока этот чат закрывать. Сразу после твоего суб-агента, без судейства»` — the next `/end-chat-soft` runs
+  `/fable-judge` over this chat's claims (the 1.1.4 block below, the two run reports of 2026-11-18, the linter `6343dcc`).
+  KNOWLEDGE (this chat): HOUSE_RULES П4 (reading tests on the owner's settings and book) and П5 (image names, release
+  content); the stand row «Книга Николая на его настройках» and `tools/sim_pages.sh`, `tools/park_runs.sh`,
+  `tools/kel_tests.sh`, `TARGETS=` of `tools/host_tests.sh`; EXPERIENCE 0037–0039; the maps (BlockStyle heading keep, the
+  shade model, `epub-linter/`); researches on FB2 converters and the update channel; ideas 11–13.
+
 - **KCCP 1.1.4 — in work since 2026-11-18 08:44 +03:00** on the owner's word «давай скорее делать 1.1.4, так как я вчера
   начал читать и ужас с этими заголовками, и переносами подписей картинок на следующие страницы»: (1) bugs 14 (a lonely
   heading) and 15 (a heading's first-line indent) in the firmware, branch `wip/kccp-1.1.4` from the 1.1.3 release
@@ -34,7 +42,20 @@ work project. From now on it is a standalone project.
   The second judge over `fb217e8d` came back VERIFIED WITH CAVEATS — MAJOR 1 fixed in `78d89fcd`; its minors are open:
   the dialog drawn over a stale frame (ToggleRowsActivity render), the Wi-Fi guard after the DRM-loan time sync,
   `canTurnOn` without a host test, «Up to 8 rows» comment, the 10-row screen never run (Bluetooth hidden on the simulator).
-  **Next, in order:** (1) the idea 12 judge — fix, then (2) the debug2 image `cp-2.0.0-kccp-1.1.4-debug2.bin` after a smoke of the same commit (the mama image only for
+  **The chat closed on the owner's word** `[OWNER] 2026-11-18 10:41 · chat: «пока этот чат закрывать. Сразу после твоего
+  суб-агента, без судейства»` — the closing judge pass is a debt; the test release was NOT built or published yet.
+  **The idea 12 judge (10:43): GO with conditions** — the trace debug2 → `kccp-1.1.4-test1` works (sizes, JSON key order,
+  board tag, `build_unflags` all checked). Before publishing: **MAJOR** — a reader on test1 is never offered the real
+  `kccp-1.1.4` (`KccpVersion.h` drops the tag's suffix, only `-debug` counts as pre-release): count any suffix after the
+  KCCP version («-test1», «-debugN») as pre-release and add host cases (tags `-test1` / final × images debug2 / test1 /
+  release) — or tell the owner the way back from test1 is an SD flash; minors: the parser test sets the suffix before the
+  feed (OtaUpdater sets it mid-stream), `x4pro-krinik-otatest` replaces base's `build_unflags` (take
+  `${env:x4pro-krinik-debug.build_unflags}` + the version line; check the image's strings), «Нет обновлений» cannot tell
+  «no asset» from «not newer» at LOG_LEVEL 1, the notes must say plainly it is a debug-env test build. Conditions: same
+  commit for debug2 and test1 after a smoke; control — debug2 against `kccp-1.1.3` Latest shows «Нет обновлений»;
+  publish non-draft, NOT prerelease; `gh api …/releases/latest --jq '.tag_name,.assets[].name'` must print the test tag and
+  asset; Latest put right after the test only on the owner's word.
+  **Next, in order:** (1) the idea 12 judge's MAJOR and minors above, then (2) the debug2 image `cp-2.0.0-kccp-1.1.4-debug2.bin` after a smoke of the same commit (the mama image only for
   the release, П5); (3) the owner's two answers asked 2026-11-18 ≈ 10:25 in chat — idea 11: Back from Settings/Library/
   Transfer opened over a book goes Home (A, as now) or back to the book (B); idea 12: a warning before the CrossPoint
   channel installs upstream (B recommended); (4) GEB proofreading below; (5) the README of the three projects; (6) the
@@ -64,28 +85,9 @@ work project. From now on it is a standalone project.
   release: the full 1.1.3 regression pass on the simulator (features were run phase by phase) and the owner's
   proofreading of the README and the notes.
 
-- **KCCP 1.1.3 RELEASED 2026-11-17 22:04 +03:00** on the owner's word 21:42 «Версию 1.1.3 готовим Релиз и выпускаем
-  релиз в GitHub KCCP» · 21:56 «скорее выпускаем релиз и закрываем мягко чат»:
-  https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint/releases/tag/kccp-1.1.3 (Latest; tag `kccp-1.1.3`, commit
-  `0ac2031`). Image `firmware-builds/cp-2.0.0-krinik-1.1.3.bin` (env `x4pro-krinik`, firmware `c1c38089`, SHA256
-  `0f958152…`, Flash 83.0 %); assets: the image, `RUKOVODSTVO-krinik.epub` (edition 1.1.2), `SHA256SUMS.txt`, the source
-  archives `crosspoint-reader-kccp-1.1.3-src.tar.gz` + `freeink-sdk-kccp-1.1.3-src.tar.gz` (the owner 21:59 «у нас есть
-  KCCP проект в гите» — the fork is for upstream PRs only, `HOUSE_RULES.md` П3). Notes kept in
-  `docs/releases/kccp-1.1.3.md`. Not looked at in a browser — only the body read back through the API.
-- **The handover — do first, in order:**
-  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status`; `ListAgents`.
-  2. The DEBT above: the release judge pass over the published notes and the README 1.1.3 rows; correct what is refuted
-     (`gh release edit kccp-1.1.3 --notes-file docs/releases/kccp-1.1.3.md` after fixing the file).
-  3. The full 1.1.3 regression pass on the simulator (both builds), its report in `testcases/reports/`.
-  4. Move the KCCP firmware branches out of the fork into the KCCP project (the owner 21:59, decision journal) — how is a
-     plan to write first; until then `firmware/` `wip/kccp-1.1.3-debug2` stays local, never pushed to the fork.
-  5. KCCP 1.1.4: bugs 14 (a lonely heading — `page-break-after: avoid` ignored, `CssParser.cpp:1069`) and 15 (a heading's
-     first-line indent — CSS `text-indent: 0` loses to the reader's indent, `ParsedText::resolveFirstLineIndent`), idea
-     11 (shade Settings / File Transfer / Library), idea 12 (update channel KCCP / CrossPoint, KCCP by default), plan 14
-     the EPUB 2 form A (GEB is EPUB 2), homework 09 asked in chat as theses (the owner's answer awaited).
-  KNOWLEDGE: written today into the documents — HOUSE_RULES П2 · П3 · the voice-engine and reader-on-the-wire rows;
-  the internal map (anchors and span ids, `progress.bin`, `SimScreenText`); `researches/2026-11-17_shade_row_spacing.md`;
-  EXPERIENCE 0032–0036; the simulator X4 Pro profile has 3 px side insets (the reader 7 px) — `tools/shade_gaps.py` header.
+- **Moved 2026-11-18 (STATUS trim 8):** the 1.1.3 release record, the 2026-11-17 handovers and the epic 07 line →
+  `PROJECT_HISTORY.md` → «STATUS trim 8». The 1.1.3 release: tag `kccp-1.1.3` (Latest), image
+  `firmware-builds/cp-2.0.0-krinik-1.1.3.bin`, notes `docs/releases/kccp-1.1.3.md`.
 - **Bug 08** (the shade's night button leaves pictures under the sheet negative, `bugs/08_…`): upstream issue
   #4515 opened 2026-11-17 10:24 +03:00 — `[OWNER] 2026-11-17 10:21 «Пофиксить бы, в будущем. Пока как баг заведи и нам
   и в апстрим»` (`bugs/08_…`); watch it, the fix waits for its answer.
@@ -95,23 +97,6 @@ work project. From now on it is a standalone project.
   `timeout … review.mjs` page launches — the contour server died that way twice, EXP-0013/0024) into
   `.claude/settings.json` → `hooks.PreToolUse`, matcher `Bash|PowerShell` (the exact block is in the script's header);
   the agent's hook writes are refused by the auto-mode classifier.
-- **Where to continue (the handover):**
-  1. `node D:/work/ai_sandbox/_tools/machine-lock.mjs status`; `ListAgents` (shared PC: KUMM, KAGO).
-  2. DONE 2026-11-17: interviews #005 and #006 shown and answered (above). **Epic 07 Ф1 DONE on the simulator 11:16**
-     (`plans/12_DONE_epic07_p1_layout.md`, report `testcases/reports/2026-11-17_epic07_p1.md`: a `<figure>` /
-     `break-inside: avoid` block keeps picture + caption on one page, the picture shrinks; old books unchanged; the parser
-     host suite now runs on Windows, 963 host tests). **Ф2 indent + centring DONE 11:42** (firmware `90406599`,
-     `testcases/reports/2026-11-17_epic07_p2.md`; after the debug3 image); open P2.4 — the owner's A–D (homework 08).
-     **Ф3 tool DONE on the test book** (`f8d213a`, plan 14); open P3.6: the owner's two books when the reader is on the
-     wire (`--list` read + census). The owner's books change only after the tool re-typesets them (Ф4 homework).
-  3. **Epic 05 Ф5 DONE on the simulator** (`de8feb20`); next Ф6 (acceptance: judge over the epic, image, homework) and
-     epic 01 Ф4 — only on the owner's word about the image (13.11 19:01 «со сборкой не торопись»).
-  4. The on-device guide (open work 9 below) — rewrite «Настройки: Экран» from `SettingsActivity::sectionFor()`.
-  5. Every firmware change: the judge BEFORE the build; `sh tools/host_tests.sh` before the commit (EXP-0018/0019);
-     simulator scripts: keys `UP/DOWN/CONFIRM/BACK` (not `NEXT`), fast list swipes `SWIPE:…,60` (`HOUSE_RULES.md`).
-- **Epic 07 «подпись всегда с картинкой» (idea 03) — meta-plan `plans/07_EPIC_figure_caption.md` (2026-11-14).**
-  Ф1 layout DONE · Ф2 caption look (centring + no indent DONE; italic × size waits for homework 08) · Ф3 the re-typeset
-  tool DONE on the test book (the owner's books wait for the reader) · Ф4 acceptance. Interview #005 answered 10:40 (A).
 - **Open work, in order:**
   1. Epic 05 (idea 06) Ф1–Ф5 done on the simulator; epic 01 Ф4 and epic 05 Ф6 on the owner's word about the image (13.11 19:01 «со сборкой не торопись»); 2. Idea 09 — built
      `9027b99a`, comes with the image; 3. Epic 07 (idea 03, `plans/07_EPIC_figure_caption.md`) after epic 05; 4. KCCP 1.1.3
@@ -139,58 +124,10 @@ work project. From now on it is a standalone project.
 - Files under `legacy/` and older `researches/`, `interviews/`, `qa_runs/` notes are Russian; they are an archive, translate only
   what an active task needs.
 
-## START HERE — Task 0: bring the project up on the owner's PC and deploy KAIF 2.9 + 2.10 WIP
+## Task 0 — moved
 
-This is the first and only task until it is closed. Do it in order; each step has an exit you can check.
-
-1. **Clone the workspace.**
-   - [x] `git clone https://github.com/MikalaiKryvusha/Krinik-Custom-CrossPoint.git` into the owner's chosen folder.
-   - [x] Inside it, clone the firmware fork with its SDK submodule (it is ignored by this repo's `.gitignore`):
-     `git clone --recurse-submodules https://github.com/MikalaiKryvusha/crosspoint-reader.git firmware`,
-     then `git -C firmware remote add upstream https://github.com/crosspoint-reader/crosspoint-reader.git`.
-   - [ ] Clone KEINKT beside it if calibration work is planned: `https://github.com/MikalaiKryvusha/KEINKT.git` (separate project,
-     its own STATUS).
-   - Exit: `git -C firmware branch -r` lists `origin/wip/krinik-debug5` and `origin/release/krinik-1.1.2`.
-
-2. **Restore the toolchain.** The laptop was macOS; the PC may not be — adapt, do not copy paths.
-   - [ ] Python 3 + PlatformIO Core (a venv inside the workspace, ignored by git), Node.js ≥ 20, CMake for host tests, `gh` logged in
-     as MikalaiKryvusha.
-   - [ ] Build check on `wip/krinik-debug5`: `pio run -e x4pro-krinik-debug` → SUCCESS, image ≈ 5.4 MB.
-   - [ ] Host tests: configure `firmware/test` with CMake, build, `ctest` (run serially if `ParserStopTest` flakes under `-j`;
-     the last laptop run was 936/936).
-   - [ ] Simulator: `pio run -e simulator_x4_pro` builds and opens.
-   - Exit: the three commands above pass; record versions of PlatformIO, Node, CMake in the closing report.
-
-3. **Deploy KAIF from `main` (2.9 release + 2.10 WIP).**
-   - [x] Download the entry file into the workspace root:
-     `curl -fsSL https://raw.githubusercontent.com/MikalaiKryvusha/KAIF/main/KAIF.md -o KAIF.md`.
-   - [x] Run it with the owner's phrasing: **"Deploy KAIF from KAIF.md, my working language is Russian"** — payload English,
-     owner-facing documents Russian, tracking to the origin.
-   - [x] Record the exact KAIF commit SHA that was installed (`main` moves daily; 2.10 is unreleased). If the 2.10 WIP installer
-     fails, report the failure upstream (KAIF field report, see step 5) and fall back to the `v2.9` tag:
-     `https://raw.githubusercontent.com/MikalaiKryvusha/KAIF/v2.9/KAIF.md`.
-   - [x] `GOAL.md` comes from the owner, not from the agent: KAIF asks for it after the install — run that as a Russian interview.
-   - Exit: `.kaif/kaif.json` exists with the version and origin; the KAIF self-check of the install summary is green.
-
-4. **Adapt the legacy material into the KAIF canon** (KAIF's own adaptation task drives this; the inputs are below).
-   - [ ] The backlog below and `legacy/STATUS.ru.md` + the head of `legacy/HANDOVER.ru.md` → the new `STATUS.md` backlog, in English.
-   - [ ] `legacy/PROJECT_HISTORY.ru.md` → `PROJECT_HISTORY.md` (archive, may stay Russian, mark it so).
-   - [ ] `legacy/README.ru.md` is the device setup guide (`restore.mjs`, fonts, settings) → the owner-facing README section,
-     Russian; the agent-facing parts in English.
-   - [ ] Lessons scattered in the legacy docs (flaky `ctest -j`, `pio run -e x4pro` wiping the simulator binary, SD-only flashing
-     because the reader is eFuse-locked, the 5-open-PR limit upstream) → `EXPERIENCE.md` entries.
-   - Exit: no active rule lives only in `legacy/`; `legacy/` is referenced as archive.
-
-5. **Owner decisions — via a Russian interview, never decided by the agent.**
-   - [ ] What happens to the private bulk that stayed on the laptop (see "Left on the laptop").
-   - [ ] Whether `wip/krinik-debug5` becomes the next krinik release line.
-   - KAIF defects found during the install go upstream by KAIF's own field-report route; they contain nothing personal beyond
-     what is already public here.
-
-6. **Close Task 0.**
-   - [ ] Commit and push; the closing report (Russian) names the KAIF SHA, toolchain versions, build/test results.
-   - [ ] Tell the owner the laptop can now clone this repo. `~/Xteink` on the laptop is retired only on the owner's word, after a
-     by-name check that everything listed in `legacy/left-on-laptop.tsv` is either moved or knowingly dropped.
+The «START HERE — Task 0» checklist moved verbatim to `PROJECT_HISTORY.md` → «STATUS trim 8»; its open boxes (the KEINKT
+clone, the owner's decision on the laptop bulk, retiring `~/Xteink`) wait there.
 
 ## Next after Task 0 — rename the firmware krinik → KCCP
 
