@@ -1,6 +1,6 @@
 # Bug 15 — a heading aligned left gets the reader's first-line indent
 
-**Status:** 🔧 fix in work — KCCP 1.1.4, firmware branch `wip/kccp-1.1.4`, started 2026-11-18 08:53 +03:00
+**Status:** ✅ DONE (see the end) — KCCP 1.1.4, firmware branch `wip/kccp-1.1.4`, started 2026-11-18 08:53 +03:00
 **Severity:** S2 · **Version/build:** KCCP 1.1.3 · **When/context:** the owner reading GEB, screenshots 2026-11-17
 21:34–21:35, filed 2026-11-17 21:39 · **Fixing:** this session, with bug 14
 
@@ -49,7 +49,20 @@ GEB's CSS (every heading class carries page-break-after: avoid)>` → A.
 
 ## Decisions made without the owner
 
-(filled at closing)
+- `[AI]` FORK → A (the line above): «heading» = a kept block (h1–h6 or CSS `break-after: avoid`). A body paragraph a
+  publisher marks keep-with-next (a lead-in before a list) loses the reader's indent too — the judge's finding 2,
+  accepted as the heuristic's price. Reversible.
+- `[AI]` A negative (hanging) CSS indent on a heading still applies.
+
+## ✅ STATUS: DONE (2026-11-18 09:45 +03:00)
+
+Firmware `d727eeef`, debug image `cp-2.0.0-krinik-1.1.4-debug1.bin` (`21671e33`).
+- Hygiene: `ChapterWidowOrphanTest.KeptHeadingHasNoFirstLineIndentAndBodyKeepsIt` (red on the mutant without the rule),
+  the full host suite as in bug 14.
+- Functional run: GEB «ГЛАВА I: Головоломка MU» on the owner's settings — before: the first line indented, «MU» alone on
+  the second line; after: no indent, the title fits one line. Shot read
+  (`testcases/reports/2026-11-18_kccp114_headings_captions.md`).
+- Not verified on the reader: it is not on the wire.
 
 ## Links
 

@@ -82,6 +82,17 @@
 
 ## Entries
 
+### EXP-0039 · 2026-11-18 · ❌→✅ · #qa_runs #glob #mv #tracked
+class: overwrote-tracked
+mechanized: `sh tools/park_runs.sh <dest> <run…>` — moves named runs to `.tmp/<dest>/`, refuses a run git tracks (proven on `cap_look_A`)
+**Context:** parking today's GEB runs (third-party text) out of `qa_runs/` with `mv qa_runs/cap_* .tmp/b14_runs/`.
+**Result:** ❌ the glob also took the tracked homework-08 runs `cap_look_A…D`; caught at once by EXP-0031's
+`git status --short | grep '^ D'` (8 files); ✅ moved back. EXP-0031's tool covers `rm` of `sd/`, not `mv` of runs.
+**Lesson:** moving or deleting runs goes through a script that checks each run against git, never a prefix glob.   → link: EXP-0031
+**Repro:** `sh tools/park_runs.sh probe cap_look_A` → `REFUSED`.
+**Trigger:** any `mv`/`rm` of whole runs under `qa_runs/`.
+**Not for:** files inside `.tmp/`.
+
 ### EXP-0038 · 2026-11-18 · ❌→✅ · #regex #python #linter #epub #real-data
 class: fixture-not-real-data
 mechanized: `epub-linter/tests/test_figures.py::test_no_break_space_runs_stay_linear` (red on the old regex in 15 s, green 0.5 s budget) + `HOUSE_RULES.md` П4

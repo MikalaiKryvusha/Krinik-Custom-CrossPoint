@@ -15,6 +15,20 @@ work project. From now on it is a standalone project.
   (`HOUSE_RULES.md` П4); (4) the READMEs of the three projects link each other — KCCP firmware, Krinik EPUB Linter,
   KEINKT (`[OWNER]` 08:53 «Три проекта в README их нужно будет "связать" - сослаться друг на друга, они всё друг друга
   дополняют»; the linter's README already links KCCP) — done with the 1.1.4 README. The 1.1.3 debts below wait behind it.
+  **Done 2026-11-18 09:48 +03:00:** bugs 14, 15 DONE on the simulator (firmware `d727eeef`; the owner's GEB and settings, run report
+  `testcases/reports/2026-11-18_kccp114_headings_captions.md`); image **`firmware-builds/cp-2.0.0-krinik-1.1.4-debug1.bin`**
+  (`21671e33`, SHA256 `928442f2…`) — waits for the reader on the wire, with the linter's GEB (151 captions bound; copy over
+  the old file under the same name: the cache bumps 21/78 re-lay it, the progress stays). The linter `8ef77a9` (local,
+  push with the 1.1.4 README). **Next in 1.1.4:** idea 11 (shade Settings / File Transfer / Library — WIP patch
+  `.tmp/idea11_wip.patch`, the model only), idea 12 (update channel — recon: `OtaUpdater.cpp:22` asks upstream's
+  releases/latest for `crosspoint-<tag>-<board>.bin`; the KCCP channel needs our repo, our asset name per build — the
+  owner's and the mama build — and the KCCP version compare), then the release on the owner's word.
+- **Epic 16 «FB2 → EPUB converter» — the owner's word 2026-11-18 09:45** (`ideas/04`, verbatim): PC prototype first (a
+  hybrid of the best open converters + Krinik EPUB Linter, custom error handling), tested on the simulator (09:46); the
+  device only after the full extended simulator testing, positive and negative (09:46); then a seamless open on the reader
+  (a converter screen with a progress bar and percent, the EPUB clone beside the FB2) and a «Настройки конвертора»
+  section with few options. Research `researches/2026-11-18_fb2_to_epub3_converters.md`; meta-plan
+  `plans/16_EPIC_fb2_converter.md`.
 - **DEBT — the 1.1.3 release judge pass** (`/fable-judge` over the published `kccp-1.1.3` notes and the README 1.1.3
   rows: every claim against firmware `c1c38089` vs `198d385e`, the Known list, EN = RU) — skipped on the owner's word
   `[OWNER] 2026-11-17 22:00 · chat: «судью отзывай, нет на него времени» · «судейство - наш долг на потом»`; a refuted
@@ -181,8 +195,8 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| KCCP 1.1.4 (in work) = release 1.1.3 + bugs 14, 15 — local, not pushed | crosspoint-reader · `wip/kccp-1.1.4` | c1c38089 |
-| Krinik EPUB Linter (sub-project, clone `epub-linter/`) | `MikalaiKryvusha/Krinik-EPUB-Linter` · `main` | a96c5aa |
+| KCCP 1.1.4 (in work) = release 1.1.3 + bugs 14, 15 (`d727eeef`) + version 1.1.4-debug1 (`21671e33`, image 2026-11-18 09:44) — local, not pushed | crosspoint-reader · `wip/kccp-1.1.4` | 21671e33 |
+| Krinik EPUB Linter (sub-project, clone `epub-linter/`) = 1.0.0 + the figure captions (`krinik_figures.py`, 1.1.0) — local, not pushed | `MikalaiKryvusha/Krinik-EPUB-Linter` · `main` | 8ef77a9 |
 | 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) + the mama row «Для Мамы» on the Home buttons screen (`da382c2f`, interview #006) + epic 07 Ф1 figure keep-together (`869a5bd3`) + version 1.1.3-debug3 (`0d56b23a`) — local, not pushed; image `cp-2.0.0-krinik-1.1.3-debug3.bin` 2026-11-17 11:29 + epic 07 Ф2 caption (`90406599`, after the image) + epic 05 Ф5 the long tap on a Home button (`de8feb20`) + bug 09 span footnote targets (`df4fab1a`) + bug 11 note backlink (`87b8ead1`) + version 1.1.3-debug4 (`3e223b4d`) — image `cp-2.0.0-krinik-1.1.3-debug4.bin` 2026-11-17 20:32 + bugs 12/13 the shade (`3db21be8`) + version 1.1.3-debug5 (`e4afb337`) — image `cp-2.0.0-krinik-1.1.3-debug5.bin` 2026-11-17 21:24 | crosspoint-reader · `wip/kccp-1.1.3-debug2` | e4afb337 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |

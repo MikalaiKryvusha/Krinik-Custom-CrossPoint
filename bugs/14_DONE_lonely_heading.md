@@ -1,6 +1,6 @@
 # Bug 14 — a heading the book marks `page-break-after: avoid` stays alone at the page bottom
 
-**Status:** 🔧 fix in work — KCCP 1.1.4, firmware branch `wip/kccp-1.1.4` (from the 1.1.3 release `c1c38089`), started 2026-11-18 08:53 +03:00
+**Status:** ✅ DONE (see the end) — KCCP 1.1.4, firmware branch `wip/kccp-1.1.4` (from the 1.1.3 release `c1c38089`), started 2026-11-18 08:53 +03:00
 **Severity:** S2 · **Version/build:** KCCP 1.1.3 (`cp-2.0.0-krinik-1.1.3.bin`) · **When/context:** the owner reading GEB
 on his reader, screenshots 2026-11-17 21:34–21:35, filed 2026-11-17 21:39 · **Fixing:** this session
 
@@ -59,7 +59,11 @@ for exactly that.` The three agree once `avoid` is read; the defect is the firmw
    closes, so B needs a retroactive carry — more code, and the inner <p> still is not a heading for bug 15; C: misses a
    wrapper with break-after alone> · consulted <CSS Fragmentation 3 §3.1 (break-after of a box applies at its end edge,
    which its last child shares); GEB's markup (every heading wrapper has both break-after and break-inside: avoid, one
-   child each)>` → A, the risk tier (b) named below.
+   child each)>` → A, the risk tier (b) named below. **Revised 2026-11-18 ≈ 09:10 +03:00 → C** on the judge's MAJOR (A
+   makes every paragraph of a big `break-after: avoid` wrapper kept — pages up to 6 lines short, the indent lost; a
+   heading + a kept epigraph over 6 lines leaves the heading alone again): a wrapper reaches inside only with
+   `break-inside: avoid` too (`BlockStyle::keepContentWithNext`), which every GEB heading class has (`title`, `title1`,
+   `title2`, `title3`, `subtitle` — `style.css` read). A wrapper with `break-after` alone keeps only its own direct text.
 4. `SECTION_FILE_VERSION` 77 → 78: cached chapters are laid out again.
 5. Host tests in `test/chapter_html_slim_parser/` (`ChapterWidowOrphanTest`): a `<p style="page-break-after: avoid">`
    and a `<div style="page-break-after: avoid"><p>` move with the next paragraph; the same `<p>` without the property
@@ -68,15 +72,34 @@ for exactly that.` The three agree once `avoid` is read; the defect is the firmw
 
 ## Risks
 
-- (b) A book whose big wrapper carries `page-break-after: avoid` gets pages shortened by up to 6 lines where a paragraph
-  opens a page. Not seen in the owner's books; the census of their CSS is a step of the simulator run.
+- (b) A wrapper with `break-after: avoid` alone around a heading's inner `<p>` (no `break-inside`) does not keep it —
+  the lonely heading stays for that markup (not in the owner's books). A spacer paragraph (`<p>&nbsp;</p>`) between a
+  heading and its text resets the keep (the judge's finding 3; true for h1–h6 before this change too); GEB's headings are
+  followed by their text directly. A heading before a table row or an `<hr>` is never carried (unchanged).
 - (c) The cache bump re-lays every book once (first open of each chapter is slower).
 
 ## Decisions made without the owner
 
-(filled at closing)
+- `[AI]` FORK → C (the line above): a wrapper's keep reaches its inner blocks only with `break-inside: avoid` too — the
+  judge refuted A. Reversible.
+- `[AI]` `avoid-page` counts as `avoid` (CSS Fragmentation 3); `avoid-column` / `avoid-region` do not (no columns).
+- `[AI]` The CSS and section caches are bumped (21, 78): every book is laid out again once.
+- `[AI]` A spacer paragraph between a heading and its text still resets the keep (judge's finding 3) — not in GEB, left.
+- PENDING settled: «GEB's every heading class carries both properties» — confirmed by reading `style.css` (5 classes).
 
 ## Links
 
 - Bug 15 (the same headings drawn with a first-line indent) — fixed together, same branch.
+- Run report `testcases/reports/2026-11-18_kccp114_headings_captions.md`.
+
+## ✅ STATUS: DONE (2026-11-18 09:45 +03:00)
+
+Firmware `d727eeef` (fix), `21671e33` (1.1.4-debug1), branch `wip/kccp-1.1.4`, local; image
+`firmware-builds/cp-2.0.0-krinik-1.1.4-debug1.bin`.
+- Hygiene: host suite 978, 10 failed = the known list; five mutants red; the judge VERIFIED WITH CAVEATS, its major fixed.
+- Functional run: the owner's GEB on his settings (`HOUSE_RULES.md` П4) — page 27 (his 28) ended with «Прыжки за пределы
+  системы» before, ends with text after; the heading opens page 28 with its text. Shots read.
+- Not verified on the reader: it is not on the wire; the image goes to the card when it is.
+- `TWINS: searched <page-break-after / break-after readers in lib/Epub> — found 0 other sites; the forced break reads the
+  same property at the element's close (ChapterHtmlSlimParser.cpp:2912), unchanged.`
 - `PROJECT_ARCHITECTURE_INTERNAL_MAP.md` → `ChapterHtmlSlimParser.cpp` (the carry ring).
