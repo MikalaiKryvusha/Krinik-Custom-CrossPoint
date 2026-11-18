@@ -26,6 +26,27 @@ if [ -n "$CRLF" ]; then
 fi
 BUILD_LOG=$TMPD/host_tests_build.log
 CTEST_LOG=$TMPD/host_tests_ctest.log
+FAILED_LIST=$TMPD/host_tests_failed.txt
+# TARGETS="ChapterHtmlSlimParserTest CssParserTest" sh tools/host_tests.sh — build and run only these test programs,
+# with the same PATH and TEMP/TMP as the full run. Why: an environment typed by hand once set TMP to the harness's
+# F:\Temp («export TEMP=… TMP=$TEMP» expands $TEMP before the assignment) and the tests wrote there (EXP-0037).
+if [ -n "${TARGETS:-}" ]; then
+  # shellcheck disable=SC2086
+  cmake --build "$FW/build/test" --target $TARGETS >"$BUILD_LOG" 2>&1 || { echo "host_tests: build failed: $BUILD_LOG"; exit 2; }
+  : >"$FAILED_LIST"
+  for t in $TARGETS; do
+    exe=$(find "$FW/build/test" -type f \( -name "$t.exe" -o -name "$t" \) | head -1)
+    [ -n "$exe" ] || { echo "host_tests: no program $t"; exit 2; }
+    (cd "$(dirname "$exe")" && "$exe" --gtest_brief=1 >"$TMPD/host_tests_$t.log" 2>&1)
+    echo "host_tests: $t: $(grep -a -E '^\[  PASSED  \]' "$TMPD/host_tests_$t.log") of $(grep -a -o -E '^\[==========\] [0-9]+ tests' "$TMPD/host_tests_$t.log" | grep -o -E '[0-9]+')"
+    sed -n 's/^\[  FAILED  \] \([^ ]*\) (.*$/\1/p' "$TMPD/host_tests_$t.log" >>"$FAILED_LIST"
+  done
+  rm -rf "$TMPD/crosspoint_css_parser_test"
+  NEW=$(sort -u "$FAILED_LIST" | grep -vxF -f "$KNOWN" || true)
+  [ -z "$NEW" ] || { printf 'host_tests: NEW failures: %s\n' "$(echo $NEW)"; exit 1; }
+  echo "host_tests: no new failure in $TARGETS"
+  exit 0
+fi
 if [ "${SKIP_BUILD:-0}" != 1 ]; then
   cmake --build "$FW/build/test" -- -k 0 >"$BUILD_LOG" 2>&1  # the known NOT_BUILT targets fail here by design
 fi
@@ -36,7 +57,6 @@ SUMMARY=$(grep -m1 "tests passed" "$CTEST_LOG")
 [ -n "$SUMMARY" ] || { echo "host_tests: no ctest summary in $CTEST_LOG"; exit 2; }
 echo "host_tests: $SUMMARY"
 # The failing names, one per line, sorted: "  N - Name (Failed)" / "(Not Run)".
-FAILED_LIST=$TMPD/host_tests_failed.txt
 sed -n 's/^[[:space:]]*[0-9][0-9]* - \([^ ]*\) (.*)$/\1/p' "$CTEST_LOG" | sort >"$FAILED_LIST"
 NEW=$(grep -vxF -f "$KNOWN" "$FAILED_LIST" || true)
 GONE=$(grep -v '^$' "$KNOWN" | grep -vxF -f "$FAILED_LIST" || true)

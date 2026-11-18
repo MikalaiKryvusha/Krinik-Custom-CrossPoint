@@ -58,7 +58,7 @@
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
 >      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand,
 >      overwrote-tracked, tool-crash, false-defect, wrong-directory, missing-dependency, own-process-killed,
->      wrote-outside-project, suite-not-run -->
+>      wrote-outside-project, suite-not-run, owner-as-tester, guessed-instead-of-measured, fixture-not-real-data -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -81,6 +81,33 @@
 > Skill: `/experience` (capture a lesson · recall relevant lessons).
 
 ## Entries
+
+### EXP-0038 · 2026-11-18 · ❌→✅ · #regex #python #linter #epub #real-data
+class: fixture-not-real-data
+mechanized: `epub-linter/tests/test_figures.py::test_no_break_space_runs_stay_linear` (red on the old regex in 15 s, green 0.5 s budget) + `HOUSE_RULES.md` П4
+**Context:** the caption binder moved from `tools/figure_retypeset.py` into Krinik EPUB Linter; its self-test (9 mutants)
+had passed on our own test book on 2026-11-17.
+**Result:** ❌ `survey` on the owner's GEB ran > 5 min: the blank-text regex `(?:\s|&nbsp;|…|\xa0)*$` — `\s` already
+matches U+00A0, so a run of N no-break spaces (GEB's poem indents) backtracks 2^N ways (22 → 0.27 s, ×4 per 2 more). ✅
+`not ENTITY.sub('', t).strip()`; the whole book binds in 0.12 s.
+**Lesson:** a tool proven on our fixture is not proven on the owner's book; and a regex `(A|B)*` whose alternatives can
+match the same character is exponential on a long run of it — keep alternatives disjoint or drop the regex.
+**Repro:** `epub-linter/.venv/Scripts/python.exe -m pytest -q epub-linter/tests/test_figures.py -k linear`.
+**Trigger:** writing a `*`/`+` over an alternation; finishing any book tool before a run on the owner's copy.
+**Not for:** regexes whose alternatives start with distinct literal characters.
+
+### EXP-0037 · 2026-11-18 · ❌→✅ · #temp #env #host-tests #shell
+class: wrote-outside-project
+mechanized: `TARGETS="<Test …>" sh tools/host_tests.sh` — targeted host tests with the script's own PATH/TEMP/TMP (red on a known list missing one name)
+**Context:** bugs 14/15 — running two host-test programs by hand, the environment typed in one line:
+`export PATH=… TEMP=$(cygpath -w …) TMP=$TEMP`.
+**Result:** ❌ `$TEMP` expanded BEFORE the assignment, so `TMP` kept the harness's `F:\Temp`; the parser tests (which take
+`std::filesystem::temp_directory_path()`, TMP first on Windows) left four files there. ✅ removed; the script mode written.
+**Lesson:** a second strike of EXP-0017's class: temp paths come from the project's script, never from a hand-typed
+environment; in one `export` a variable cannot feed the next.   → link: EXP-0017
+**Repro:** `TARGETS="ChapterHtmlSlimParserTest CssParserTest" sh tools/host_tests.sh` → `no new failure`; `ls /f/Temp/crosspoint-*` → none.
+**Trigger:** running any host-test program outside the full `sh tools/host_tests.sh`.
+**Not for:** the simulator (`tools/sim_run.sh` sets its own folders).
 
 ### EXP-0036 · 2026-11-17 · ❌ · #fork #release #owner-rule #repeat
 class: question-already-answered

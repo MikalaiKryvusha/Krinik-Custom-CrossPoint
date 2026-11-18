@@ -62,6 +62,12 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   anchors (bug 09, 1.1.3-debug4); all under `MAX_ANCHORS_PER_CHAPTER` = 1024 (`anchorCount()`). Host tests:
   `test/chapter_html_slim_parser/ChapterHtmlSlimParserTest.cpp` (since 2026-11-17 it builds on Windows; three of its tests
   fail only here — Windows cannot delete an open file).
+- `lib/Epub/Epub/blocks/BlockStyle.h` — a block's resolved style (`fromCssStyle`; `getCombinedBlockStyle` accumulates
+  the stack on the Horizontal axis, the Vertical one merges into a reused empty block). Headings (KCCP 1.1.4, bugs 14/15):
+  `keepWithNext` — h1–h6 and any block with CSS `break-after: avoid` (`CssStyle::breakAfterAvoid`, wire byte 2) keep their
+  lines with what follows; `keepContentWithNext` — `break-after` + `break-inside: avoid` together (GEB's
+  `<div class="title3"><p>`) make every inner block kept; `ParsedText::resolveFirstLineIndent` gives a kept block no
+  reader's indent (a hanging CSS indent stays).
 - `src/activities/reader/EpubReaderActivity.{h,cpp}` — the EPUB reader (the header holds the shown page's state:
   `currentPageLinks`, `currentPageFootnotes`, the overlay state): `loop()` routes input in priority order (overlay →
   long press = clip selection → Home-button actions → link tap (`currentPageLinks`, beats the zones) → centre tap = menu →

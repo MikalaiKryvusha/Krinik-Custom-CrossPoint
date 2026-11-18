@@ -3,7 +3,12 @@
 > **Created:** 2026-11-17 · **Parent:** `plans/07_EPIC_figure_caption.md` → «Ф3 — инструмент перевёрстки» (criterion 4) ·
 > **Status:** 🔧 planned 2026-11-17 14:45 +03:00, started in the day loop while Ф2 P2.4 (the caption font) waits for the owner's
 > choice (homework 08); P3.1–P3.5 done 2026-11-17 15:08 +03:00 on the test book (report `testcases/reports/2026-11-17_epic07_p3.md`, the
-> judge VERIFIED WITH CAVEATS, its majors fixed); open: P3.6 the owner's two books — the reader on the wire · **Outbound:** —
+> judge VERIFIED WITH CAVEATS, its majors fixed); open: P3.6 the owner's two books — the reader on the wire;
+> **moved 2026-11-18 into Krinik EPUB Linter** (`[OWNER]` 08:49 «Значит это должно делаться на уровне Krinik EPUB Linter -
+> инструмента, который верифицирует и чинит книги»): `epub-linter/krinik_figures.py`, run by `fix` (`8ef77a9`), with the
+> EPUB 2 form (risk 1, FORK → A: `<div>` + `<p class="krinik-caption">`); `tools/figure_retypeset.py` removed from KCCP (a
+> pair — and its blank-text regex hung on GEB's poem indents, fixed in the linter); P3.6 GEB done 2026-11-18 09:27 +03:00 — 151 pairs (148
+> «Рис.» + 3 «РИС.»), read caption by caption; Tegmark waits for the reader on the wire · **Outbound:** —
 
 ## Goal vector (Achieve)
 
