@@ -18,16 +18,39 @@ work project. From now on it is a standalone project.
   **Done 2026-11-18 09:48 +03:00:** bugs 14, 15 DONE on the simulator (firmware `d727eeef`; the owner's GEB and settings, run report
   `testcases/reports/2026-11-18_kccp114_headings_captions.md`); image **`firmware-builds/cp-2.0.0-kccp-1.1.4-debug1.bin`**
   (`21671e33`, SHA256 `928442f2…`) — waits for the reader on the wire, with the linter's GEB (153 captions bound — `.tmp/kel_out2/`, linter `6343dcc`; copy over
-  the old file under the same name: the cache bumps 21/78 re-lay it, the progress stays). The linter `8ef77a9` (local,
-  push with the 1.1.4 README). **Next in 1.1.4:** idea 11 (shade Settings / File Transfer / Library — WIP patch
-  `.tmp/idea11_wip.patch`, the model only), idea 12 (update channel — recon: `OtaUpdater.cpp:22` asks upstream's
-  releases/latest for `crosspoint-<tag>-<board>.bin`; the KCCP channel needs our repo, our asset name per build — the
-  owner's and the mama build — and the KCCP version compare), then the release on the owner's word.
+  the old file under the same name: the cache bumps 21/78 re-lay it, the progress stays). The linter `6343dcc` (local,
+  push with the 1.1.4 README after the owner's proofreading).
+  **Done 2026-11-18 10:33 +03:00 (firmware, local, not pushed — П3):** idea 11 `b493939b` + `fb217e8d` — Settings / File Transfer /
+  Library in the shade (off by default, Home's goTo* and glyphs; at most 8 buttons on, the ninth refused with «Достигнут
+  лимит кнопок в шторке» [OK] — `[OWNER]` 10:10; no replace while Wi-Fi is on; HALF over the gray viewer); version names
+  by П5 `253d5712` (`cp-…-kccp-…`, `-debug2`, mama `cp-…-kccpm-…`); idea 12 `357f2101` — «Канал обновлений: KCCP /
+  CrossPoint» in Settings → System, KCCP releases by default (`researches/2026-11-18_idea12_update_channel.md`).
+  Simulator runs `qa_runs/i11_*`, `i12_setting` (no report yet — write it with the debug2 smoke).
+  **OTA test release — `AUTH: [OWNER] 2026-11-18 10:34 · chat: «разрешаю собрать и опубликовать тестовый релиз для
+  тестирования обновления из GH по боевому пути»`:** tag `kccp-1.1.4-test1`, marked latest (the device reads
+  `releases/latest`), one asset `cp-2.0.0-kccp-1.1.4-test1.bin` from env `x4pro-krinik-otatest` (`78d89fcd`), notes
+  `docs/releases/kccp-1.1.4-test1.md`; the owner installs debug2 from SD, then «Проверить обновление» on the KCCP
+  channel. Gate: the judge over `253d5712`/`357f2101`/`78d89fcd` (running 2026-11-18 10:36 +03:00), then the smoke, then both images.
+  The second judge over `fb217e8d` came back VERIFIED WITH CAVEATS — MAJOR 1 fixed in `78d89fcd`; its minors are open:
+  the dialog drawn over a stale frame (ToggleRowsActivity render), the Wi-Fi guard after the DRM-loan time sync,
+  `canTurnOn` without a host test, «Up to 8 rows» comment, the 10-row screen never run (Bluetooth hidden on the simulator).
+  **Next, in order:** (1) the idea 12 judge — fix, then (2) the debug2 image `cp-2.0.0-kccp-1.1.4-debug2.bin` after a smoke of the same commit (the mama image only for
+  the release, П5); (3) the owner's two answers asked 2026-11-18 ≈ 10:25 in chat — idea 11: Back from Settings/Library/
+  Transfer opened over a book goes Home (A, as now) or back to the book (B); idea 12: a warning before the CrossPoint
+  channel installs upstream (B recommended); (4) GEB proofreading below; (5) the README of the three projects; (6) the
+  release on the owner's word (both release images, no debug — П5).
 - **GEB proofreading (Krinik EPUB Linter)** — `[OWNER] 2026-11-18 10:10 · chat: «опечаток я много видел в книге, кстати. В
   основном - неверные формы слов, неверное согласование падежей, склонений и вот таких особенностий русского языка»`:
   run the linter's `proofread` (built-in checks + local LanguageTool, needs Java 17+ — probe) on the owner's GEB copy,
   review the report, apply the reviewed fixes with `textfix --apply` (logged); the book then goes to the card with the
-  1.1.4 image.
+  1.1.4 image. **Ran 2026-11-18 10:33 +03:00:** Java 21 found, LanguageTool 6.8 in `epub-linter/.venv/languagetool` (`LTP_PATH`); 7 528
+  paragraphs, 1 950 remarks (spelling 953 — mostly names and terms, punctuation 381, grammar 155, typos 86) —
+  `.tmp/geb_proof/`; the reviewer agent kept 42 real errors of 241 grammar/typo hits (`.tmp/geb_proof/fixes_grammar_typos.json`,
+  every decision in `review_notes.md`; ~4 of 5 hits were false — formal systems, notation, style); read one by one and
+  applied 2026-11-18 10:36 +03:00: `textfix --apply` 42 applied / 0 skipped, `check` clean, 68 XML well-formed. **The book for the
+  owner's card:** `.tmp/kel_out3/Дуглас Хофштадтер. Гёдель, Эшер, Бах. Эта бесконечная гирлянда.epub` (153 captions
+  bound + 42 fixes, log beside it). Left: 7 doubtful, the OCR letter mix-ups inside the TNT formulas (invisible on the
+  reader), spelling (953) and punctuation (381) not reviewed.
 - **Epic 16 «FB2 → EPUB converter» — the owner's word 2026-11-18 09:45** (`ideas/04`, verbatim): PC prototype first (a
   hybrid of the best open converters + Krinik EPUB Linter, custom error handling), tested on the simulator (09:46); the
   device only after the full extended simulator testing, positive and negative (09:46); then a seamless open on the reader
@@ -200,8 +223,8 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| KCCP 1.1.4 (in work) = release 1.1.3 + bugs 14, 15 (`d727eeef`) + version 1.1.4-debug1 (`21671e33`, image 2026-11-18 09:44) — local, not pushed | crosspoint-reader · `wip/kccp-1.1.4` | 21671e33 |
-| Krinik EPUB Linter (sub-project, clone `epub-linter/`) = 1.0.0 + the figure captions (`krinik_figures.py`, 1.1.0) — local, not pushed | `MikalaiKryvusha/Krinik-EPUB-Linter` · `main` | 8ef77a9 |
+| KCCP 1.1.4 (in work) = release 1.1.3 + bugs 14, 15 (`d727eeef`) + version 1.1.4-debug1 (`21671e33`, image 2026-11-18 09:44) + idea 11 (`b493939b`, `fb217e8d`) + П5 names / debug2 (`253d5712`) + idea 12 (`357f2101`) — local, not pushed | crosspoint-reader · `wip/kccp-1.1.4` | 357f2101 |
+| Krinik EPUB Linter (sub-project, clone `epub-linter/`) = 1.0.0 + the figure captions (`krinik_figures.py`, 1.1.0; `8ef77a9`, the judge fixes `6343dcc`) — local, not pushed | `MikalaiKryvusha/Krinik-EPUB-Linter` · `main` | 6343dcc |
 | 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) + the mama row «Для Мамы» on the Home buttons screen (`da382c2f`, interview #006) + epic 07 Ф1 figure keep-together (`869a5bd3`) + version 1.1.3-debug3 (`0d56b23a`) — local, not pushed; image `cp-2.0.0-krinik-1.1.3-debug3.bin` 2026-11-17 11:29 + epic 07 Ф2 caption (`90406599`, after the image) + epic 05 Ф5 the long tap on a Home button (`de8feb20`) + bug 09 span footnote targets (`df4fab1a`) + bug 11 note backlink (`87b8ead1`) + version 1.1.3-debug4 (`3e223b4d`) — image `cp-2.0.0-krinik-1.1.3-debug4.bin` 2026-11-17 20:32 + bugs 12/13 the shade (`3db21be8`) + version 1.1.3-debug5 (`e4afb337`) — image `cp-2.0.0-krinik-1.1.3-debug5.bin` 2026-11-17 21:24 | crosspoint-reader · `wip/kccp-1.1.3-debug2` | e4afb337 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
 | debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
