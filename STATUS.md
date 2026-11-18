@@ -16,13 +16,18 @@ work project. From now on it is a standalone project.
   KEINKT (`[OWNER]` 08:53 «Три проекта в README их нужно будет "связать" - сослаться друг на друга, они всё друг друга
   дополняют»; the linter's README already links KCCP) — done with the 1.1.4 README. The 1.1.3 debts below wait behind it.
   **Done 2026-11-18 09:48 +03:00:** bugs 14, 15 DONE on the simulator (firmware `d727eeef`; the owner's GEB and settings, run report
-  `testcases/reports/2026-11-18_kccp114_headings_captions.md`); image **`firmware-builds/cp-2.0.0-krinik-1.1.4-debug1.bin`**
-  (`21671e33`, SHA256 `928442f2…`) — waits for the reader on the wire, with the linter's GEB (151 captions bound; copy over
+  `testcases/reports/2026-11-18_kccp114_headings_captions.md`); image **`firmware-builds/cp-2.0.0-kccp-1.1.4-debug1.bin`**
+  (`21671e33`, SHA256 `928442f2…`) — waits for the reader on the wire, with the linter's GEB (153 captions bound — `.tmp/kel_out2/`, linter `6343dcc`; copy over
   the old file under the same name: the cache bumps 21/78 re-lay it, the progress stays). The linter `8ef77a9` (local,
   push with the 1.1.4 README). **Next in 1.1.4:** idea 11 (shade Settings / File Transfer / Library — WIP patch
   `.tmp/idea11_wip.patch`, the model only), idea 12 (update channel — recon: `OtaUpdater.cpp:22` asks upstream's
   releases/latest for `crosspoint-<tag>-<board>.bin`; the KCCP channel needs our repo, our asset name per build — the
   owner's and the mama build — and the KCCP version compare), then the release on the owner's word.
+- **GEB proofreading (Krinik EPUB Linter)** — `[OWNER] 2026-11-18 10:10 · chat: «опечаток я много видел в книге, кстати. В
+  основном - неверные формы слов, неверное согласование падежей, склонений и вот таких особенностий русского языка»`:
+  run the linter's `proofread` (built-in checks + local LanguageTool, needs Java 17+ — probe) on the owner's GEB copy,
+  review the report, apply the reviewed fixes with `textfix --apply` (logged); the book then goes to the card with the
+  1.1.4 image.
 - **Epic 16 «FB2 → EPUB converter» — the owner's word 2026-11-18 09:45** (`ideas/04`, verbatim): PC prototype first (a
   hybrid of the best open converters + Krinik EPUB Linter, custom error handling), tested on the simulator (09:46); the
   device only after the full extended simulator testing, positive and negative (09:46); then a seamless open on the reader

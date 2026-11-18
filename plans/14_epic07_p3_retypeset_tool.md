@@ -7,7 +7,7 @@
 > **moved 2026-11-18 into Krinik EPUB Linter** (`[OWNER]` 08:49 «Значит это должно делаться на уровне Krinik EPUB Linter -
 > инструмента, который верифицирует и чинит книги»): `epub-linter/krinik_figures.py`, run by `fix` (`8ef77a9`), with the
 > EPUB 2 form (risk 1, FORK → A: `<div>` + `<p class="krinik-caption">`); `tools/figure_retypeset.py` removed from KCCP (a
-> pair — and its blank-text regex hung on GEB's poem indents, fixed in the linter); P3.6 GEB done 2026-11-18 09:27 +03:00 — 151 pairs (148
+> pair — and its blank-text regex hung on GEB's poem indents, fixed in the linter); P3.6 GEB done 2026-11-18 09:27 +03:00 — 151 pairs (corrected 2026-11-18 10:10 +03:00: 151 of 153 — the judge found «Рис. I.» in a bare <span> and the book's typo «Ри. 27.»; with `6343dcc` 153 of 153) (148
 > «Рис.» + 3 «РИС.»), read caption by caption; Tegmark waits for the reader on the wire · **Outbound:** —
 
 ## Goal vector (Achieve)

@@ -56,7 +56,7 @@ GEB's CSS (every heading class carries page-break-after: avoid)>` → A.
 
 ## ✅ STATUS: DONE (2026-11-18 09:45 +03:00)
 
-Firmware `d727eeef`, debug image `cp-2.0.0-krinik-1.1.4-debug1.bin` (`21671e33`).
+Firmware `d727eeef`, debug image `cp-2.0.0-kccp-1.1.4-debug1.bin` (`21671e33`).
 - Hygiene: `ChapterWidowOrphanTest.KeptHeadingHasNoFirstLineIndentAndBodyKeepsIt` (red on the mutant without the rule),
   the full host suite as in bug 14.
 - Functional run: GEB «ГЛАВА I: Головоломка MU» on the owner's settings — before: the first line indented, «MU» alone on

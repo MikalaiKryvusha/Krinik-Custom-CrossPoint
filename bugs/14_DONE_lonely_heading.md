@@ -95,7 +95,7 @@ for exactly that.` The three agree once `avoid` is read; the defect is the firmw
 ## ✅ STATUS: DONE (2026-11-18 09:45 +03:00)
 
 Firmware `d727eeef` (fix), `21671e33` (1.1.4-debug1), branch `wip/kccp-1.1.4`, local; image
-`firmware-builds/cp-2.0.0-krinik-1.1.4-debug1.bin`.
+`firmware-builds/cp-2.0.0-kccp-1.1.4-debug1.bin`.
 - Hygiene: host suite 978, 10 failed = the known list; five mutants red; the judge VERIFIED WITH CAVEATS, its major fixed.
 - Functional run: the owner's GEB on his settings (`HOUSE_RULES.md` П4) — page 27 (his 28) ended with «Прыжки за пределы
   системы» before, ends with text after; the heading opens page 28 with its text. Shots read.

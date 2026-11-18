@@ -18,7 +18,7 @@ Anchor (meta-plan, Ф1): «Команда `fb2` в Krinik EPUB Linter: FB2 и FB
 ## Acceptance criteria (phase)
 
 1. **The owner's test book converts.** `krinik-epub-linter fb2 D:/Hofshtadter_…9y7ehg.198312.fb2.zip -o .tmp/fb2_out`
-   writes one EPUB 3 whose `check` is clean, with 180 images, 91 notes each linked both ways, 151 captions bound, 0
+   writes one EPUB 3 whose `check` is clean, with 180 images, 91 notes each linked both ways, 153 captions bound, 0
    broken internal links, every XHTML well-formed, mimetype first and stored. Check: the linter's `check` + a count script
    + `.tmp/xml_ok.py`-style well-formedness, all printed in the run report.
 2. **The text is complete.** Every paragraph text of the FB2's main body appears in the EPUB in order (whitespace and the

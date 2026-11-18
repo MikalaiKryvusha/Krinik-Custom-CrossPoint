@@ -44,14 +44,15 @@ page) ahead of his reader. The device is not involved — not verified on the re
   inheritance, no indent rule, a keep leaking past the wrapper, a keep from a `break-after`-only wrapper); the linter —
   157 tests, six mutants red, ruff clean; `stamp_guard` on each commit.
 - Functional run: the owner's GEB on his settings opened in the simulator at the pages of his screenshots, each page's
-  shot READ; the linter run on his GEB copy, its 151 captions READ.
+  shot READ; the linter run on his GEB copy, its 151 captions READ (151 of 153 — corrected below after the judge;
+  with linter `6343dcc` 153 of 153).
 
 | Case | Before (1.1.3 code) | After |
 |---|---|---|
 | Bug 15 — «ГЛАВА I: Головоломка MU» (page 1, his `ch10_p1`) | first line indented, «MU» alone on the second line from the left edge | **pass** — no indent; the title fits one line |
 | Bug 14 — «Прыжки за пределы системы» (page 27 here = his page 28) | the heading is the last line of page 27, its text on page 28 | **pass** — page 27 ends with text; the heading opens page 28 with its text |
 | Bug 14 — «Внутри и снаружи системы» (his page 20) | on this stand the heading already opened page 20 (one line of offset) | **pass** — still at the top with its text |
-| Linter on GEB — `survey` / `check` | 151 captions as plain paragraphs after a picture; `check` exit 1 naming them | **pass** — `fix` bound 151 in 43 files (148 «Рис.» + 3 «РИС.» — the census's 148 counted only «Рис»), EPUB 2 `<div>` form, the CSS rule once; `check` clean; 68 XML files well-formed; mimetype first and stored; the input's SHA256 unchanged |
+| Linter on GEB — `survey` / `check` | 151 captions as plain paragraphs after a picture; `check` exit 1 naming them | **partial** at `8ef77a9` (corrected 2026-11-18 10:14 +03:00 after the judge: the book has 153 captions right after a picture; «Рис. I.» in a bare `<span>` and the typo «Ри. 27.» stayed unbound while `check` read clean — the detector judged its own misses; the second picture of figure 43 only) → **pass** at `6343dcc`: 153 in 44 files, both pictures of figure 43 in one block, `check` clean, 68 XML well-formed, the input unchanged. At `8ef77a9`: `fix` bound 151 in 43 files (148 «Рис.» + 3 «РИС.» — the census's 148 counted only «Рис»), EPUB 2 `<div>` form, the CSS rule once; `check` clean; 68 XML files well-formed; mimetype first and stored; the input's SHA256 unchanged |
 | Caption look — «Рис. 2. Адольф фон Мензель…» (spine 7, page 16) | justified, first-line indent | **pass** — centred, no indent, under the picture |
 | Caption keep — «Рис. 5. М. К. Эшер. «Водопад»» (spine 7, page 55) | the picture alone on page 55, its caption opens page 56 — the owner's complaint seen | **pass** — the picture shrunk 406 → 392 px, the caption centred under it on page 55 (log `Figure picture shrunk 406 -> 392 px for its caption`) |
 | Caption keep — «Рис. 7. … «Рука с зеркальным шаром»» (page 59) | the picture alone on page 59, its caption at the top of page 60 | **pass** — shrunk 447 → 395 px, the caption under it on page 59 |
@@ -63,7 +64,11 @@ page) ahead of his reader. The device is not involved — not verified on the re
 - Krinik EPUB Linter: the blank-text regex of the caption binder (inherited from `tools/figure_retypeset.py`) backtracked
   exponentially on runs of no-break spaces — `survey` on GEB did not finish in 5 min. Fixed, guarded (EXP-0038).
 - A hand-typed test environment sent four test files to `F:\Temp` (EXP-0037) — removed; `TARGETS=` mode of
-  `tools/host_tests.sh`.
+  `tools/host_tests.sh`. pytest's own temp folders landed there too (`F:\Temp\pytest-of-krinik`, removed) —
+  `tools/kel_tests.sh`.
+- The judge over the linter (VERIFIED WITH CAVEATS): 2 of 153 captions missed while `check` read clean; the tests built
+  their expected markup from the code's constants, so a justified, indented caption passed — both fixed in `6343dcc`
+  (literal expectations, mutants M7–M12 red).
 
 ## 6. Traces
 
@@ -73,6 +78,6 @@ screenshots `.tmp/bug14/shots/`; the linter output `.tmp/kel_out/`; the caption 
 ## 7. Verdict
 
 **pass on the simulator** (headings: bugs 14, 15; captions: the linter's binding + the 1.1.3 keep group, on the owner's
-book and settings); image `firmware-builds/cp-2.0.0-krinik-1.1.4-debug1.bin` (5 447 376 B, SHA256 `928442f2…`) built
+book and settings); image `firmware-builds/cp-2.0.0-kccp-1.1.4-debug1.bin` (5 447 376 B, SHA256 `928442f2…`) built
 after the smoke of the same commit. Not verified on the reader: the reader is not on the wire (no removable volume,
 09:00); the image and the re-typeset GEB go to the card when it is.
