@@ -122,7 +122,7 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   with virtual rows; `ShadeTilesActivity` and `HomeScreenButtonsActivity` («Кнопки домашнего экрана», Settings → Display
   under «Кнопки в шторке»; «Настройки» without a checkbox) derive. `src/util/HomeLibrarySlot.h` — the one test «does Home
   draw the plugins/OPDS row», asked by Home and the screen.
-- `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: seven tiles by string id, on/off and order,
+- `src/util/ShadeTiles.h` (debug10, epic 01) — the shade tile model: ten tiles by string id (since 1.1.4 idea 11 also settings · transfer · library, off by default; at most `kMaxOn` = 8 on — what fits the portrait row at 56 px, «Кнопки в шторке» refuses the ninth with a modal), on/off and order,
   `parse`/`format` of the `settings.json` string `shadeTiles` ("night,cleanup,…,-sleep"), all may be off (idea 10: no row then), the
   equal-gap row layout and touch slots; host test `test/shade_tiles/` (`ShadeTilesTest.cpp`, 12 cases); held by
   `CrossPointSettings::shadeTiles`. Since epic 05 Ф1 its token loop and ▲ ▼ edits come from `src/util/IdOrderList.h`
