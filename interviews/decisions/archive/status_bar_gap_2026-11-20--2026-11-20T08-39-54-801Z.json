@@ -1,0 +1,12 @@
+{
+  "kind": "proofread",
+  "document": ".tmp/mock/out2/status_bar_gap_2026-11-20.md",
+  "by": "Mikalai Kryvusha",
+  "at": "2026-11-20T08:39:54.801Z",
+  "atHuman": "20 ноября 2026, 11:39 (+03:00)",
+  "comment": "",
+  "comments": {
+    "p5": "12"
+  },
+  "revAfter": "76d741ff20668b3e13ff38b74fbe3d05e79f523f072f2553641f35887270f262"
+}

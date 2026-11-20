@@ -46,5 +46,9 @@
   "reports/2026-11-20_crosspoint_flash_budget.md": {
     "at": "2026-11-20T07:37:42.708Z",
     "transport": "страница"
+  },
+  ".tmp/mock/out2/status_bar_gap_2026-11-20.md": {
+    "at": "2026-11-20T08:30:07.956Z",
+    "transport": "страница"
   }
 }
