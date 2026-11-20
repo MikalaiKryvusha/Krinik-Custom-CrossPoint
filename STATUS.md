@@ -31,6 +31,21 @@ work project. From now on it is a standalone project.
   too). Any reply goes out only after the owner's proofreading. Checked 2026-11-20: upstream `develop` `3331d189` (2026-11-19)
   already resets the cover cache on a polarity change (`HomeCoverCache.cpp:35–41`); the reply draft for the owner's
   proofreading — `qa_runs/issue4515/reply_draft_2026-11-20.md` (not sent).
+  **State 2026-11-20 10:40 +03:00:** mock-ups (b)(c) + bug 16 shown through the contour 10:33
+  (`.tmp/mock/out/mockups_1_1_4_2026-11-20.md`, `--proofread`; the owner was in a full-screen game, the window behind it;
+  his answer → `interviews/decisions/mockups_1_1_4_2026-11-20.decision.json`). Firmware working tree `wip/kccp-1.1.4`
+  UNCOMMITTED: mock-up edits (circle icon, `denseRows` on touch + variant 2 rows 44/6 in `ReaderToolbarUi.cpp`, the
+  status-bar gap 5 in `EpubReaderActivity.cpp`) — kept or reverted by his pick; the version check (g) + the otatest unflags
+  (`KccpVersion.h`, `OtaUpdater.cpp`, `test/kccp_version`, `platformio.ini`) — host 9/9, two mutants red, judge running
+  (it rode along in a mock-up build before its review — the order of the owner's rule was broken, said in chat).
+  Simulator `fix/x4pro-viewable-insets` (local, uncommitted) — the stand's X4 Pro insets = the device's (EXP-0041).
+  (e) done: `reports/2026-11-20_crosspoint_flash_budget.md` (`38f7cdb`), sums verified; shown 10:40 (`--notice`).
+  **The owner's verdicts 10:36** (`dbfa003`): lists — variant 2 (touch rows max(theme row, 44) + gap 6; button boards
+  unchanged); circle — no remark, kept; bug 16 — no carried line, a render-time squeeze of the page's lines (design in
+  `bugs/16_…` Fix plan 3) + the gap setting. The mock-up gap is reverted in the firmware tree.
+  Release-process consequence (the version judge 2026-11-20): GitHub `releases/latest` never returns a release marked
+  pre-release, so a `-testN`/`-rcN` must be published as Latest — and then every older KCCP-channel reader (the mother's
+  too) is offered it; publish a pre-release as Latest only on the owner's word and put the release back right after.
   (g) `[OWNER] 2026-11-20 10:20 · chat: «нужно проверку версий найчить различать -debug1, 2, 3»` → `kccpversion::isNewer`
   orders pre-releases of one KCCP version (label, then the number as a number; the release beats all; no downgrade) —
   with the idea 12 judge's MAJOR (test1 → the real 1.1.4); host cases `DebugBuildsAreOrdered`, `TestReleaseMatrix`.

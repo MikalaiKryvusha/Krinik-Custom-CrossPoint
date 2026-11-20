@@ -52,12 +52,20 @@ its auto-page-turn branch at :1694); `XtcReaderActivity.cpp:110` draws the bar o
 
 ## Fix plan
 
-1. Mock-ups on the owner's stand: today · status bar + `screenMargin` · status bar + 2 × `screenMargin` (the page of
-   «ГЛАВА II» p. 25), shown to the owner.
-2. Then the setting he asked for (a minimum gap above the status bar), default by his pick; the twins — every reader that
-   reserves the status bar (`git grep -n "getStatusBarHeight()" -- src`) — follow the same rule.
-3. The line-spacing idea («играться межстроковым отступом») is a vertical-justification feature; it is shown to the owner
-   as an option only if the plain gap is not enough.
+1. ✅ Mock-ups shown 2026-11-20 10:33 (`.tmp/mock/out/mockups_1_1_4_2026-11-20.md`): the reader's screenshot vs a 5 px gap
+   on the corrected stand — the gap carried the page's last line to the next page (11 → 10 lines, 43 px at the bottom).
+2. **The owner's verdict** (10:36, verbatim, `interviews/decisions/mockups_1_1_4_2026-11-20.decision.json` p13): «нет, мне
+   не нравится, что ради двух пикселей целую строку перенесли на следующую страницу. Я за то, чтобы чуть-чуть пикселей
+   получать от изменения динамически межстрочного интервала того, что сейчас на экране, уплотнения».
+3. The design (`[AI]`, to be shown with its run): pagination stays as today (no line is ever carried for the gap). At
+   RENDER time, a page whose content bottom comes closer than the gap G to the status bar has its lines moved up
+   progressively — line k of n by round(k × need / (n − 1)), need = contentBottom − (H − G) ≤ G — so the last line ends G
+   above the bar; the link/footnote hit rects take the same shift. With G = 5 and 11 lines that is < 1 px per line gap.
+   FORK: options <squeeze at pagination (cache format, page counts change) | squeeze at render (pages unchanged)> · price of
+   error <reflowed pages and moved bookmarks vs a sub-pixel shift> · consulted <the owner's word «динамически … того, что
+   сейчас на экране» · KISS — the render-time form changes no cache>.
+4. G is the setting he asked for earlier («настройку отступа внизу минимального»); its default and range go to him with
+   the run's shots. Twins: only `EpubReaderActivity.cpp:1700` reserves the text area (see TWINS above).
 
 ## Decisions made without the owner
 
