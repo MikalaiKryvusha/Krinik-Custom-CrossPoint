@@ -99,20 +99,47 @@ line-art vs photo by the histogram's two ends plus a second feature).
 - **Still in every frame:** faint dots on the white inside the picture's frame — this repo's curve maps 255 → 217. Option
   `[AI]`: what the filter turned white is drawn pure white past the curve. Open until the card's curve is read.
 
+## The setting (2026-11-20 14:27 +03:00)
+
+`[OWNER] 2026-11-20 14:27 +03:00 · chat:` «Будет опцией в настройках, чекбокс» · «Что-то типа
+Чистить фон чертежей»
+
+- The filter is a checkbox in Settings; its label — «Чистить фон чертежей» (the owner's words, «что-то типа»).
+- The place: «Настройки → Чтение» — `[OWNER] 2026-11-20 14:28 +03:00 · chat:` «нет, это идет опцией по читалке» · «а не по
+  экрану» (on the agent's proposal «Экран → Калибровка экрана», voice call 14:28).
+- The default: on — `[OWNER] 2026-11-20 14:30 +03:00 · chat:` «включен» (on the proposal «включён по умолчанию и чистит
+  картинки книги везде — и на странице, и в просмотрщике»).
+- The scope: everywhere — `[OWNER] 2026-11-20 14:30 +03:00 · chat:` «везде» · 14:31 «и на странице, и во фулл скрин
+  просмотрщике, и в просмотре картинок из обзора файлов». In the code that is two paths: the page — `ImageBlock`
+  (pixel cache `.pxc`, key `_k<curve hash>`, curve «Калибровка книг», off by default); the viewer — `BmpViewerActivity`
+  (book picture tap AND the file browser; cache `view_*.bmp`, curve «Калибровка картинок», on by default; JPEG/PNG through
+  the decoders, BMP through `BmpToBmpConverter`).
+
 ## Plan
 
-1. [ ] Stand: a simulator card with `i_016.jpg`, `i_140.jpg` and the owner's `panel_curve.txt` (the card's copy when
-       the reader is on the wire; this repo's file until then), opened in the viewer; the cached BMPs read and measured
-       (criteria 1–2 «today»).
-2. [ ] Recon (the fork below): how readers and image tools clean line art — binarization (a threshold, Otsu), auto
-       levels (white/black point), and how they DETECT a bilevel picture (histogram share near the two ends).
-3. [ ] Mock-ups on the owner's picture and on the photo control: today · auto levels (the near-white band to white,
-       the near-black band to black, the edge tones stretched, not cut) at two or three band widths, the same 480×800
-       frame, blind labels — shown to the owner on a page. Hard binarization is out: it destroys the picture's
-       anti-aliasing (`[OWNER] 2026-11-20 14:20 +03:00`, quoted above).
-4. [ ] His pick → firmware: the detector + the filter in the viewer's decode path (`JpegToFramebufferConverter`,
-       `PngToFramebufferConverter`), a host test on both pictures, the simulator run, the cache version bump.
+Done before the firmware work: [x] recon (research 2026-11-20) · [x] mock-ups (the owner picked 90 %, 14:25) · [x] the
+setting's label, place, default and scope (the owner, 14:27–14:31).
 
-`FORK: options <auto levels: white/black point at a fixed band | auto levels: band from the picture's own histogram>
-· price of error <a photo or a gray drawing loses its tones; noise wider than the band stays> · consulted <the owner
-14:20: binarization out · recon of step 2 — pending · the owner's eye on the mock-ups>` — not decided yet.
+`FORK: options <white point by a fixed band | white point by the picture's darkness weight> · price of error <a photo
+loses its tones; noise wider than the band stays> · consulted <research 2026-11-20 (white point / contrast stretch is the
+established cure; the detector by the histogram's two ends + a second feature) · the owner 14:22–14:25: his darkness
+weight at 90 %, photos left alone>` — decided: the darkness weight at 90 % behind the two-feature detector.
+
+Branch `wip/kccp-line-art-filter` from `wip/kccp-1.1.4` `8a8b44bc` (mergeable into 1.1.4 or 1.1.5 — the owner decides
+which release carries it).
+
+- [ ] **F1 — the core**, `src/util/LineArtFilter.h` (pure, host-testable): `isLineArt(hist)` (middle 96..223 < 20 % AND
+      white ≥ 224 ≥ 50 %), `whiteCut(hist, 90)` (the darkness-weight cut), `composeTone(curve, cut, out[256])` (filter
+      then the panel curve — the decoders already take one 256-entry tone table, so no decoder pixel loop changes). Host
+      test `test/line_art_filter/` on the histograms of GEB `i_016` (line art, cut 203), `i_140` (photo), `i_003` (dark),
+      a bilevel picture (no-op), all-white, all-black, empty; mutation proof (detector inverted, cut at 80 %).
+- [ ] **F2 — the histogram pass**: one gray histogram per picture before its render — JPEG (JPEGDEC at a reduced scale
+      for big pictures), PNG, BMP; 1 KB of counters, no new heap beyond the decoder's own.
+- [ ] **F3 — the viewer** (`BmpViewerActivity::prepareCache`, book picture and file browser): when the setting is on and
+      the picture is line art, the composed tone table; the cache key carries the cut.
+- [ ] **F4 — the page** (`ImageBlock`): the same; the `.pxc` name carries `_f<cut>`.
+- [ ] **F5 — the setting**: `CrossPointSettings::cleanLineArt = 1`, key `cleanLineArt`, a Toggle in «Чтение»
+      (`STR_CAT_READER`), `STR_CLEAN_LINE_ART` «Чистить фон чертежей» / «Clean drawing background».
+- [ ] **F6 — verification**: the independent review BEFORE the build (the owner's rule); the full host suite; simulator
+      runs — the file browser opens `i_016.jpg` (clean), `i_140.jpg` (identical to today), the setting off = today (the
+      control case), a GEB page with `i_016` on the owner's settings (П4); the run report in `testcases/reports/`.
