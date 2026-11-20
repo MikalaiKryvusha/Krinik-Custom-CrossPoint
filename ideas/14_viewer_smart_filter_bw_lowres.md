@@ -58,6 +58,47 @@ real grayscale pictures look as today.
   absolute-gray level 2 is lighter on the panel than assumed. Settled by the stand run below and the card's
   `panel_curve.txt` when the reader is on the wire — not by reasoning.
 
+## The owner's darkness-weight rule — the first mock-up (2026-11-20 14:22–14:23 +03:00)
+
+`[OWNER] 2026-11-20 14:22 +03:00 · chat:` «наверное, нужен такой алгоритм, который считает "весс" темноты на картинке, и
+диапазон ниже 80% от этого веса - рисуется белам» · «можешь набрасать такой алгоритм тут локально и эту картинку
+прогдать?» · «открыть мне обработанный вариант в вс коде» · «я примерно тебе сказал» · «вероятно. я говорю некорректно»
+
+Read as `[AI]`: every pixel weighs its darkness (255 − gray); walking the levels from black to white, the levels that hold
+the first P % of the picture's darkness stay as they are, every lighter level becomes white. The mock-up
+`.tmp/bug17/mock_viewer.py` copies the viewer's path of `wip/kccp-1.1.4` (fit + bilinear + `panel_curve.txt` + 4×4 Bayer to
+4 levels) and renders «today» and P = 80 / 90 / 95 % for GEB `i_016.jpg` and the photo `i_140.jpg` (Turing):
+`.tmp/bug17/idea14_darkness_weight_mock.webp` (lossless, opened in VS Code 14:23). The «today» column reproduces the gray
+squares of the owner's photo.
+
+| P | formula `i_016` (cut, look) | photo `i_140` (cut, look) |
+|---|---|---|
+| 80 % | lighter than 155 → white; background clean, digit edges ragged | lighter than 153 → white; posterized, ruined |
+| 90 % | lighter than 203 → white; background clean, edges smooth — `[AI]` the best | lighter than 192 → white; face burnt out |
+| 95 % | lighter than 239 → white; dirt halos stay near the digits | lighter than 225 → white; background torn |
+
+So the rule cleans line art and needs a DETECTOR that keeps photos out (the «smart» part). Still seen in every column: the
+white inside the picture's frame carries faint dots — this repo's curve maps 255 → 217 (the open question above).
+
+## The smart filter — the second mock-up (2026-11-20 14:25–14:26 +03:00)
+
+`[OWNER] 2026-11-20 14:23 +03:00 · chat:` «и такие алгоритмы уже формально существуют и описаны» →
+`researches/2026-11-20_line_art_cleanup_algorithms.md` (white point / contrast stretch; background-only cleaning;
+line-art vs photo by the histogram's two ends plus a second feature).
+`[OWNER] 2026-11-20 14:25 +03:00 · chat:` «вес 90% вроде хорошо сработал, но, фото, конечно же, не нужно гонять таким
+алгоритмом. Алгоритм сам должен понимать, фото нужно гонять алгоритмом, или нет»
+
+- **The detector** `[AI]` (`.tmp/bug17/detector_scan.py` over all 180 GEB pictures, table `.tmp/bug17/detector_scan.txt`):
+  line art = middle grays (96..223) < 20 % AND white (≥ 224) ≥ 50 %. 113 of 180 pass. The middle share alone let in dark
+  pictures (the cover, Bach `i_003`, the painting `i_004`, the film stills `i_100`, dark Escher patterns) — the white
+  background feature removes them all; conservative misses: the bold blob text `i_019`, the pattern `i_021`, PNG with
+  alpha `i_091` (needs its own handling), notes `i_052`/`i_053` (middle 20–24 %).
+- **The mock-up** `.tmp/bug17/idea14_smart_filter_mock.webp` (opened in VS Code 14:26): detector + darkness weight 90 % on
+  `i_016` (cut 203), `i_078` (181), `i_088` (178) — cleaned; `i_177` Babbage engraving, `i_140` Turing, `i_003` Bach —
+  detected as photos, untouched (identical frames).
+- **Still in every frame:** faint dots on the white inside the picture's frame — this repo's curve maps 255 → 217. Option
+  `[AI]`: what the filter turned white is drawn pure white past the curve. Open until the card's curve is read.
+
 ## Plan
 
 1. [ ] Stand: a simulator card with `i_016.jpg`, `i_140.jpg` and the owner's `panel_curve.txt` (the card's copy when
