@@ -192,6 +192,18 @@ buffer (the same pass counts the histogram), filtered, upscaled bicubic (Keys a 
 sharpened (Gaussian σ 3, +160 %, threshold 2) through a 19-row window, written to the viewer's `.pxc`; a big source, a
 progressive JPEG or no memory → today's path.
 
+**The reader's N, how it was reached (2026-11-20 15:29–15:45 +03:00):** (1) blur on the small source, both enlarged
+(`.tmp/bug17/sharp_device.py`) — mean gray diff 3.4/1.6 vs Pillow; shown, `[OWNER] 15:31 «пилоу чище, у "для читалки"
+появился мусор»` → rejected; (2) a true Gaussian σ 3 on the enlarged rows — diff 0.4/0.5 but a visible halo (my float math
+kept the bicubic overshoot Pillow clips between its passes) — not shown; (3) a byte-exact integer replica of Pillow's own
+steps (`.tmp/bug17/pillow_exact.py`: bicubic horizontal then vertical with 8-bit clipping, Gaussian(3) = 3 box passes of
+radius 2.4166667 each rounded, unsharp applied only where |U − B| > 2 — Pillow's threshold is strict, found by isolating the
+stages) — 0 differing bytes on `i_016`, `i_001`, `i_078`. Firmware: `lib/Epub/Epub/converters/SharpUpscale.h` streams it
+in row rings (H 5, U 10, three box passes × 7 rows; ~29 KB for a 480-wide output + the source ≤ 8192 px), host test
+`test/sharp_upscale` 5/5 byte-exact against Pillow goldens on synthetic line art; the decoders' histogram pass stores the
+source grays (JPEG at scale 1 only); the viewer draws an enlarged line-art picture through it when the heap allows
+(16 KB margin), else the bilinear path; cache key `|f1n1`.
+
 The filter itself: firmware `5a9e1624` on `wip/kccp-line-art-filter` (local, П3), run report
 `testcases/reports/2026-11-20_idea14_smart_filter.md` (all cases pass on the simulator, the reader not verified).
 

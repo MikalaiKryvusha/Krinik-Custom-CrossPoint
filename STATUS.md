@@ -18,6 +18,18 @@ work project. From now on it is a standalone project.
   suite 1002, no new failure; NO reader image yet. **Waiting for the owner:** the floor 160 (`kMinCut`, mock-up shown),
   BMP files in the file browser (not filtered now), the scaler pick A–F (`.tmp/bug17/idea14_scalers_mock.webp`, shown in
   VS Code 15:20, key beside it) → then the chosen scaler on the simulator (the owner 15:14 «потом на симуляторе»).
+  The scaler: the owner picked N (bicubic + unsharp 3/160/2) for line art only (15:26–15:28); a byte-exact Pillow replica
+  in rings — `lib/Epub/Epub/converters/SharpUpscale.h`, host test `test/sharp_upscale` 6/6 byte-exact against Pillow
+  goldens; wired into the viewer: firmware `353cb8b5` (same branch, local) — enlarged ≥ ×2 line art ≤ 8192 source px,
+  photos keep the bilinear; simulator: the viewer cache vs Pillow N 26/252 800 and 5/239 040 pixels differ (JPEG decoders),
+  shown to the owner ≈ 15:58 (`.tmp/bug17/idea14_n_simulator.webp`); report `testcases/reports/2026-11-20_idea14_sharp_upscale.md`;
+  host suite 1008, no new failure. NO reader image yet; the reader's N time unmeasured.
+- **The repo's GitHub issues #1–#4 (filed 2026-11-11, never tracked in `bugs/` or here)** — checked against the code
+  2026-11-20 15:39 +03:00 on the owner's question «из этого мы всё починили?»: #1 (Library duplicates / stale book cache after
+  USB Drive) not fixed — `UsbDriveActivity::onExit` marks nothing, the EPUB cache is keyed by path only; #2 (`text-align:
+  inherit` → left) not fixed — `CssParser::interpretAlignment` falls to `Left`; #3 (`text-indent: 0` ignored) partly — 1.1.4
+  bug 15 keeps the indent off headings, body paragraphs with `text-indent: 0` still get it; #4 (SVG cover small) not fixed —
+  the «never enlarge» clamp at `ChapterHtmlSlimParser.cpp` ≈ 1893. Which release takes them — the owner's word.
 - **Handover — the 2026-11-20 09:38 chat closed 2026-11-20 12:19 +03:00** on the owner's word `[OWNER] 2026-11-20 12:15 · chat: «и пора закрывать
   чат»`; its full blocks moved verbatim to `PROJECT_HISTORY.md` → «STATUS trim 9». Firmware `wip/kccp-1.1.4` HEAD `8a8b44bc`
   (local, П3) = 1.1.3 + bugs 14/15 + ideas 11/12 + the version order (`b2b92ef5`) + toolbar lists variant 2 and the night
