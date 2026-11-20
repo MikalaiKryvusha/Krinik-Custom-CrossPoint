@@ -41,9 +41,12 @@ work project. From now on it is a standalone project.
      `wip/kccp-1.1.4` fast-forwarded to `f06f8850`, version `-debug3` `fc97043d` (the otatest unflag follows); host suite
      1008, no new failure; smoke of `fc97043d` on his settings and GEB (boot → book → toolbar → shade → Home, 9 known TTF
      `[ERR]`) and the viewer (filter + N, photo untouched, control off) — `testcases/reports/2026-11-20_kccp114_debug3.md`;
-     image `firmware-builds/cp-2.0.0-kccp-1.1.4-debug3.bin` (SHA256 `5b13f6dc…`, 83.3 % of app0). **Waits:** the reader on
-     the wire (not connected 17:17) → copy to `/.firmware/`, keep debug3 + debug2 + 1.1.3 there, eject (AGENT_GUIDE
-     device line). Points 1–3 next — the owner's order.
+     image `firmware-builds/cp-2.0.0-kccp-1.1.4-debug3.bin` (SHA256 `5b13f6dc…`, 83.3 % of app0). **On his card**
+     `/.firmware/` 2026-11-20 17:24 +03:00 (the card's copy hashed equal), the reader ejected; he installs it. The card also holds
+     debug2, 1.1.3 and 1.1.2 (not removed: its earlier removal was refused by the auto-mode classifier). No new
+     `/screenshots/` since 12:16. The stands' `settings.json` (`.tmp/b14_sd`, `.tmp/b17_geb_on`) refreshed from his card
+     (14:31: `statusBarGap` 12, `updateChannel` 0, the 1.1.4 shade list). **The push of this repo was refused by the
+     auto-mode classifier at 17:19** — local commits wait for his word. Points 1–3 next — the owner's order.
 - **⚠️ Force-closed 2026-11-20 17:00 +03:00** (the owner 16:59 «сейчас новый чат открою»): ceremonies skipped (judge
   pass, bonsai trim, README, showcase linters) — the first `/end-chat-soft` pays this debt. Standing falsehood: none.
   KNOWLEDGE: the line-art filter and Pillow's N (`LineArtFilter.h`, `SharpUpscale.h`, the map); the simulator build needs
