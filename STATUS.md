@@ -36,7 +36,16 @@ work project. From now on it is a standalone project.
      справа луче, так как это рисунок, не чертеж · 2 слева лучше, так как это текста · 3 слева лучше, так как мелкие
      текста»`; a third detector class (recon → GEB mock-up → his eye); the `[AI]` ×2 minimum goes.
   3. N for big sources: stream the source rows from the decoder (the 8192-px whole-source limit drops `i_056`, `i_078`).
-  4. Open: does the filter + N go into 1.1.4 (a debug3 image to his card) or 1.1.5 — asked 16:12, not answered yet.
+  4. The release: the filter + N go into **1.1.4** — `[OWNER] 2026-11-20 16:59 +03:00 · chat: «фильтры давай в 1.1.3,
+     сейчас новый чат открою»` → «1.1.4» (corrected the same minute). Next: merge `wip/kccp-line-art-filter`
+     (`5a9e1624`, `353cb8b5`, `f06f8850`) into `wip/kccp-1.1.4`, the full host suite, a smoke, a debug3 image to his card
+     (HOUSE_RULES П5 names); points 1–3 after or with it — the owner's order.
+- **⚠️ Force-closed 2026-11-20 17:00 +03:00** (the owner 16:59 «сейчас новый чат открою»): ceremonies skipped (judge
+  pass, bonsai trim, README, showcase linters) — the first `/end-chat-soft` pays this debt. Standing falsehood: none.
+  KNOWLEDGE: the line-art filter and Pillow's N (`LineArtFilter.h`, `SharpUpscale.h`, the map); the simulator build needs
+  UCRT64 on PATH (HOUSE_RULES); Pillow's unsharp threshold is strict (idea 14); EXP-0043 (never «твой баг»; questions in
+  the owner's terms); the four GitHub issues #1–#4 now tracked here (1.1.5). Firmware branch `wip/kccp-line-art-filter`
+  is local (П3), not pushed.
 - **Handover — the 2026-11-20 09:38 chat closed 2026-11-20 12:19 +03:00** on the owner's word `[OWNER] 2026-11-20 12:15 · chat: «и пора закрывать
   чат»`; its full blocks moved verbatim to `PROJECT_HISTORY.md` → «STATUS trim 9». Firmware `wip/kccp-1.1.4` HEAD `8a8b44bc`
   (local, П3) = 1.1.3 + bugs 14/15 + ideas 11/12 + the version order (`b2b92ef5`) + toolbar lists variant 2 and the night
