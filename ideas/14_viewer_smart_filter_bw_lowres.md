@@ -174,7 +174,23 @@ the curve, the Bayer dither) → shown to the owner → his pick → the simulat
 upscalers: today's JPEG bilinear (the firmware's exact sampling), today's PNG nearest, bicubic, Lanczos, bicubic + unsharp
 mask, Scale2x with a gray tolerance (×2 steps, then bilinear to fit); rows GEB `i_016` (×8.8), `i_001` (×8.9), `i_078`
 (×2). Blind letters A–F, the key in `.tmp/bug17/idea14_scalers_mock.webp.key.txt` (revealed after the owner's pick). Sheet
-`.tmp/bug17/idea14_scalers_mock.webp`; its show waits for KUMM's real-input window (the game in front, 15:16).
+`.tmp/bug17/idea14_scalers_mock.webp`; shown in VS Code 15:20. `[OWNER] 2026-11-20 15:22 +03:00 · chat:` «A и E достойны
+внимания» → A = bicubic, E = bicubic + unsharp mask (radius 3, 160 %, threshold 2). The device cost differs: bicubic needs 4
+source rows (the JPEG decoder streams 8–16-row bands — rows kept across bands), the unsharp mask one more pass; round 2
+compares A, E, a milder E and the sharpening done on the SOURCE before the bicubic (cheaper on the reader).
+Round 2 (15:24): `scaler_mock.py --round2`, blind K–N, key `.tmp/bug17/idea14_scalers_round2.webp.key.txt`, sheet
+`.tmp/bug17/idea14_scalers_round2.webp`, opened in VS Code. `[OWNER] 2026-11-20 15:24 +03:00 · chat:` «N если дешевле
+всех, то его и берём» → the key: K = source unsharp (1, 160 %, 2) then bicubic — the cheapest; L = bicubic (round 1 A);
+M = bicubic + unsharp (2, 100 %, 2); N = bicubic + unsharp (3, 160 %, 2) on the output (round 1 E) — the most expensive.
+The condition failed; asked in chat 15:25: N (his eye's pick, an extra output pass on the first opening, cached after) or K
+(cheapest); `[AI]` recommends N. `[OWNER] 2026-11-20 15:26 +03:00 · chat:` «хочется N» → the viewer's upscale = bicubic
++ unsharp mask (3, 160 %, 2) on the output. Next: does N apply to photos too (a mock-up of today vs N on GEB photos), then
+the firmware and the simulator. `[OWNER] 2026-11-20 15:28 +03:00 · chat:` «Y лучше для фото, X слишком перешарпленный»
+(X = N, Y = today's bilinear; `.tmp/bug17/idea14_scaler_photos.webp`) → N for line art only; photos keep the bilinear.
+`[AI]` design: in the viewer, an enlarged picture the detector calls line art (the setting on) is decoded once into a gray
+buffer (the same pass counts the histogram), filtered, upscaled bicubic (Keys a = −0.5, centre-aligned as Pillow) and
+sharpened (Gaussian σ 3, +160 %, threshold 2) through a 19-row window, written to the viewer's `.pxc`; a big source, a
+progressive JPEG or no memory → today's path.
 
 The filter itself: firmware `5a9e1624` on `wip/kccp-line-art-filter` (local, П3), run report
 `testcases/reports/2026-11-20_idea14_smart_filter.md` (all cases pass on the simulator, the reader not verified).

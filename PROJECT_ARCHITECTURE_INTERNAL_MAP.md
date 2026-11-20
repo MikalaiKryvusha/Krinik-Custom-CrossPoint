@@ -82,7 +82,8 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
 - `lib/Epub/Epub/converters/` — the picture decoders behind `ImageToFramebufferDecoder` (JPEG — JPEGDEC 8-bit gray, coarse
   1/2..1/8 DCT scale then a fine bilinear/nearest scale; PNG — PNGdec scanlines; GIF); `RenderConfig.toneCurve` is the one
   256-entry tone table applied to every gray before the 4×4 Bayer dither to 4 levels (`DitherUtils.h`); `PixelCache.h`
-  streams the 2-bit result to a `.pxc`. KCCP idea 14: `LineArtFilter.h` — line art told from a photo by its histogram
+  streams the 2-bit result to a `.pxc` (uint16 w, h, then rows of 4 px per byte, MSB first) in row bands — free heap on an
+  image page is routinely ~55 KB (its header comment). KCCP idea 14: `LineArtFilter.h` — line art told from a photo by its histogram
   (`grayHistogram`, one counting decode at the render's scale, refused over 480×800 of area), the darkness-weight white cut
   (never below `kMinCut`) as `RenderConfig::sourceFilter`, applied to the SOURCE grays before scaling — the panel curve
   stays after it (host test `test/line_art_filter/`, real GEB histograms);
