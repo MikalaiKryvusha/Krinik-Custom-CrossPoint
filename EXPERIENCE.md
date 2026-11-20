@@ -82,6 +82,19 @@
 
 ## Entries
 
+### EXP-0041 · 2026-11-20 · ❌→✅ · #simulator #stand #geometry #real-data
+class: fixture-not-real-data
+mechanized: `simulator/src/BoardConfig.h` XTEINK_X4_PRO viewableInsets = the SDK device profile {9, 7, 3, 7} (branch `fix/x4pro-viewable-insets`); proven by the row profile below
+**Context:** bug 16 mock-up — a 5 px gap above the status bar printed a page pixel-identical to «today» on the simulator.
+**Result:** ❌ the stand's X4 Pro had the default insets {9, 3, 3, 3}; the device has {9, 7, 3, 7}: in landscape the page sat
+4 px higher and the bar 4 px lower than on the reader (sim text 22…443 / bar 454 vs reader 26…446 / 450), so a 3 px defect
+looked like 11 px. ✅ the simulator profile = the device's; the bar now lands on 450–465 as on the owner's screenshot.
+**Lesson:** a geometry bug is reproduced only after the stand's frame is matched to the owner's screenshot by numbers
+(row profile of both); a stand board profile is checked against the SDK device profile, not trusted.
+**Repro:** `.pio-venv/Scripts/python.exe -I -X utf8 tools/shot_rows.py <reader shot.webp> <sim shot.webp>` → the status bar band equal.
+**Trigger:** any spacing/margin bug judged on the simulator.
+**Not for:** content bugs (which line breaks where) — those also need the owner's book (П4), not just the frame.
+
 ### EXP-0040 · 2026-11-20 · ❌ · #build #wait #subagent #owner
 class: claim-before-evidence
 none-cheap: a turn ended to wait is a chat act no repository tool sees; the carrier is the Trigger below
