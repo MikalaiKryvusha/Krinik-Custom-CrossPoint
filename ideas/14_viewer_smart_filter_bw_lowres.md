@@ -115,6 +115,15 @@ line-art vs photo by the histogram's two ends plus a second feature).
   (book picture tap AND the file browser; cache `view_*.bmp`, curve «Калибровка картинок», on by default; JPEG/PNG through
   the decoders, BMP through `BmpToBmpConverter`).
 
+- The size limit: pictures larger than the screen's area (480×800) are not cleaned — shown reduced, their noise averages
+  away, and their histogram pass costs the most. `[OWNER] 2026-11-20 14:36 +03:00 · chat:` «можно картинки меньше
+  определённого разрешения не чистить, как считаешь?» → the agent proposed the opposite limit (big ones not cleaned) →
+  14:37 «480×800 пикселей · Да, согласен» · «но не строго такая длина такая высота» · «учитывай, что они могут быть
+  вертикальный или пейзажные» → the limit is the AREA, 384 000 px, any shape (`lineart::sizeQualifies`: w × h).
+- Speed (the owner 14:35 «фильтр написан оптимально? работать будет быстро?»): the filter adds no work per pixel (the
+  same one tone-table lookup); its price is one extra gray-only decode before the first render, paid once — the page and
+  the viewer cache the result; big JPEGs at the coarse DCT scale, 1-bit grayscale PNGs skipped. Not measured on the reader.
+
 ## Plan
 
 Done before the firmware work: [x] recon (research 2026-11-20) · [x] mock-ups (the owner picked 90 %, 14:25) · [x] the
@@ -127,6 +136,11 @@ weight at 90 %, photos left alone>` — decided: the darkness weight at 90 % beh
 
 Branch `wip/kccp-line-art-filter` from `wip/kccp-1.1.4` `8a8b44bc` (mergeable into 1.1.4 or 1.1.5 — the owner decides
 which release carries it).
+
+Progress 2026-11-20 14:42 +03:00: F1–F5 written (not built — the independent review runs first, the owner's rule); F1 host
+test 6/6, mutation-proven (the detector inverted → 4 of 5 red; 80 % instead of 90 % → the cut case red); the core lives in
+`lib/Epub/Epub/converters/LineArtFilter.h` (beside the decoders, not `src/util/`); the size limit added (the owner
+14:37); cases `testcases/TC_idea14_smart_filter.md`; the stand cards `.tmp/b17_i_016_{on,off}`, `.tmp/b17_i_140_{on,off}`.
 
 - [ ] **F1 — the core**, `src/util/LineArtFilter.h` (pure, host-testable): `isLineArt(hist)` (middle 96..223 < 20 % AND
       white ≥ 224 ≥ 50 %), `whiteCut(hist, 90)` (the darkness-weight cut), `composeTone(curve, cut, out[256])` (filter
