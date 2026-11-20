@@ -58,7 +58,7 @@ work project. From now on it is a standalone project.
   (`5f76db9`) — answered in chat from the report's numbers: ru+en only — i18n ≈ 393 KB, hyphenation ≈ 284 KB (no feature
   lost); by his and his mother's use — NotoSans sizes (one size kept ≈ 661 KB), Bluetooth 219, OPDS 107, plugins 81,
   KOReader 68, LCP 24; two crypto libraries (wolfSSL 177 + mbedTLS 70) — engineering. KCCP build flags; an interview
-  offered (which features they use), not yet asked.
+  `interviews/interview_007_flash_cuts_and_issue_reply.md` (Q1–Q5 the cuts, Q6 the #4515 reply) shown 2026-11-20 11:59 on his «покажи» (typed «gjrf;b»); answers → `interviews/decisions/interview_007_flash_cuts_and_issue_reply.decision.json`.
   (g) `[OWNER] 2026-11-20 10:20 · chat: «нужно проверку версий найчить различать -debug1, 2, 3»` → `kccpversion::isNewer`
   orders pre-releases of one KCCP version (label, then the number as a number; the release beats all; no downgrade) —
   with the idea 12 judge's MAJOR (test1 → the real 1.1.4); host cases `DebugBuildsAreOrdered`, `TestReleaseMatrix`.
