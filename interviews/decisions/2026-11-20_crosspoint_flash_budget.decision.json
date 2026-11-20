@@ -1,0 +1,9 @@
+{
+  "kind": "notice",
+  "document": "reports/2026-11-20_crosspoint_flash_budget.md",
+  "by": "Mikalai Kryvusha",
+  "at": "2026-11-20T07:42:59.067Z",
+  "atHuman": "20 ноября 2026, 10:42 (+03:00)",
+  "comment": "есть понимание, что можно выбросить, оптимизировать?",
+  "revAfter": "f49314514409b91059efd359a21595760bde1f0ad80f5ee7a3ed88783d6edc3b"
+}

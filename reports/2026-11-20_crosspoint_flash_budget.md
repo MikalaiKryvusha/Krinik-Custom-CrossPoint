@@ -148,3 +148,7 @@ C:\Users\krinik\.platformio\penv\Scripts\python.exe -I -X utf8 -m esp_idf_size -
    раздела. В прошивке две криптобиблиотеки: wolfSSL 176,8 КБ для TLS и mbedTLS crypto 70,2 КБ; mbedTLS
    подтягивают `wpa_supplicant` (WPA), `ObfuscationUtils` (base64) и `WolfsslCrypto` из ContentProtection
    (по разделу «Archive member included…» линкер-карты).
+
+---
+
+**Комментарий владельца (20 ноября 2026, 10:42 (+03:00)):** есть понимание, что можно выбросить, оптимизировать? <!-- owner-review: by Mikalai Kryvusha · 20 ноября 2026, 10:42 (+03:00) -->
