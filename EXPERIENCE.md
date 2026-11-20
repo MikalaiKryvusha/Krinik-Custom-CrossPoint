@@ -58,7 +58,8 @@
 >      etalon-from-dirty-tree, shell-lied, escaping-layer, twins-missed,
 >      field-dropped-in-rebuild, shared-machine-not-checked, ritual-run-by-hand,
 >      overwrote-tracked, tool-crash, false-defect, wrong-directory, missing-dependency, own-process-killed,
->      wrote-outside-project, suite-not-run, owner-as-tester, guessed-instead-of-measured, fixture-not-real-data -->
+>      wrote-outside-project, suite-not-run, owner-as-tester, guessed-instead-of-measured, fixture-not-real-data,
+     owner-word-misread -->
 >
 > | Class slug | The failure it names |
 > |---|---|
@@ -81,6 +82,33 @@
 > Skill: `/experience` (capture a lesson · recall relevant lessons).
 
 ## Entries
+
+### EXP-0046 · 2026-11-20 · ❌ · #card #delivery #owner #captions #book
+class: owner-decision-not-applied
+mechanized: `HOUSE_RULES.md` stand row «Сборка под читалку» — before ejecting the reader, `grep -n -i "to the card\|not copied" STATUS.md`, every pending item copied in the same visit
+**Context:** the owner's decision 2026-11-18 08:49 — captions are fixed in the book by Krinik EPUB Linter; its output
+(`.tmp/kel_out3/…epub`, 153 captions bound) was made 2026-11-18 10:36 and recorded in STATUS «to the card (not copied yet)».
+**Result:** ❌ the reader was on the wire twice after (debug2 12:16, debug3 17:24); I copied only the images. 2026-11-20
+17:34 the owner met the torn captions of figures 17 and 18 in his old book: «чиним две недели это» · «отвратительная работа».
+**Lesson:** a fix whose artifact lives on the owner's device is not done until it is on the device; a card visit carries
+EVERY pending card item, not only the one the visit was for.   → link: bugs/18
+**Repro:** `grep -n -i "to the card\|not copied" STATUS.md` → empty after a card visit.
+**Trigger:** the reader on the wire / about to eject it.
+**Not for:** items the owner asked to hold.
+
+### EXP-0045 · 2026-11-20 · ❌ · #closing #owner #wording
+class: owner-word-misread
+none-cheap: a chat reading is not machine-checkable; the carrier is the Trigger below
+**Context:** the owner, angry: «закрывай нахуй чат. продолжим в новом. Я недоволен.»
+**Result:** ❌ I took /end-chat-force (no ceremonies); the owner: «с церемониями» · «кто тебя просил без церемоний?» ·
+«без судействва» · then «БЕЗ СУДЕЙСТВА!» · «НО МЯГКО!». The skill descriptions already say it: a closing phrase without
+«срочно / прямо сейчас / без церемоний» is the soft closure; anger is not urgency. I also wavered on «без судействва»
+after his «где я это просил?» — reading his plain words against their face value.
+**Lesson:** the closing mode is chosen by the urgency WORDS only; the owner's plain words are taken at face value, and when
+he asks for the quote, the quote is shown without re-interpreting it.
+**Repro:** before invoking a closing skill, quote the owner's words that name urgency; none → `/end-chat-soft`.
+**Trigger:** the owner says to close the chat.
+**Not for:** —
 
 ### EXP-0044 · 2026-11-20 · ❌→✅ · #stamps #clock #hook #placeholder
 class: guessed-instead-of-measured

@@ -257,3 +257,54 @@ What it changes (the next phase, not built):
 2. N for big sources: `i_056` (160 K px) and `i_078` (56 K px) exceed the reader's 8192-px whole-source limit — N must
    stream the source rows straight from the decoder (the horizontal pass per decoded row) instead of holding the source.
 3. BMP in the viewer gets the filter and N too (the owner 16:30), through `BmpToBmpConverter` / `Bitmap::readRowGray`.
+
+### Plan — point 3: BMP in the viewer (started 2026-11-20 17:30 +03:00)
+
+**Goal (Achieve).** A BMP picture opened in the full-screen viewer is cleaned and enlarged exactly as a JPEG or a PNG
+of the same pixels: line art → the filter on its source grays; line art enlarged at least ×2 → N; a photo → as today.
+Source: `[OWNER] 2026-11-20 16:30 +03:00 · chat: «нет, чистим всё в полноэкранном вьювере. Это работа с рендером
+изображения во вьювере»`.
+
+**Acceptance.**
+- A1. `i_016` saved as an 8-bit BMP opens with `Line art 36x91: lighter than 203 -> white` and `Sharp upscale 36x91 ->
+  316x800` in the log; its viewer cache equals the JPEG run's cache to within the JPEG decoders' source difference
+  (Meter: `.tmp/bug17/compare_view_cache.py`-style level diff; Target: ≤ 0.1 % of pixels).
+- A2. `i_140` (a photo) as a BMP: no `Line art`, no `Sharp upscale` line; the shot equals today's (`tools/shot_diff.py`, 0).
+- A3. Control: `cleanLineArt: 0` → the BMP drawn by today's converter (no `Line art` line).
+- A4. Host: `test/bmp_to_bmp` gains a case — a flat light-gray BMP through the converter with a source filter comes out
+  all white, without it not (red when the filter is not applied).
+
+**Steps.**
+- [ ] B1. `BmpToBmpConverter::bmpFileToBmpStream(…, sourceFilter = nullptr)`: every source gray row read passes the
+      table before scaling (the sleep cover passes none — unchanged).
+- [ ] B2. The viewer: one line-art verdict for all three formats (`judgeLineArt`: the histogram + the source for N,
+      the filter table, `sharpDue`), the JPEG/PNG branch moved onto it unchanged; the BMP row pass `bmpGrayPass`
+      (`readRowGray`, the area limit `lineart::sizeQualifies`); BMP > 2 bits per pixel only; `VIEW_CACHE_VERSION` v3
+      (debug3 cached BMPs under the N key unfiltered).
+- [ ] B3. The independent review before the build (the owner's rule); fixes.
+- [ ] B4. Host suite; simulator: A1–A3 on BMP cards made from GEB `i_016` / `i_140`; the JPEG cards again (no change);
+      run report.
+
+**State at the 2026-11-20 17:03 chat's close:** B1 done (host `BmpToBmpTest` 5/5, the new case red with the filter loop
+disabled; the suite now builds on Windows, `BmpToBmpTest_NOT_BUILT` left the known list); B2 written, NOT built — firmware
+`76eb0688` + comment fix `ee134d23` on the local branch `wip/kccp-idea14-bmp` (from `fc97043d`); B3 — the independent
+review ran (2026-11-20 ≈ 17:40 +03:00): no BLOCKER/MAJOR; JPEG/PNG behaviour unchanged by reading; findings to apply
+before the build:
+1. MINOR — the 24-bit calibration card (480×800, `CalibrationCardStorage.cpp`) passes `sizeQualifies` and runs the
+   detector (middle 22.95 % vs the 20 % limit — spared narrowly); add `&& !calibcard::isCalibrationPath(filePath)` to the
+   BMP condition, fix the comment that says calibration cards are ≤ 2 bits.
+2. MINOR, the owner's — `bmpBpp > 2` excludes ≤ 2-bit BMPs against «чистим всё»; the real effect: a 2-bit line-art BMP
+   larger than the screen keeps its 170 level; small ≤ 2-bit BMPs are drawn as is (not enlarged, not cleaned) since
+   before. Reviewer's advice: clean ≤ 2-bit BMPs that go through the converter; ask him about the rest (`interviews/`).
+3. MINOR — `SourceFilterCleansBeforeScaling` cannot tell before-scaling from after (a flat picture): add a 0|255 edge
+   case — the filtered source keeps its edge grays, a filter after the scaling would whiten them.
+4. MINOR — `judgeLineArt`'s `[TESTED]` tag copied from the moved code → `[NOT-TESTED]` until cases 1, 3 re-run on the build.
+5. NIT — the test comment blamed `adjustPixel` (a no-op) — fixed in `ee134d23`.
+6. NIT — `bmpGrayPass` reads a bottom-up BMP backwards: loop in file order (`y = topDown ? i : height-1-i`).
+7. NIT — `bmpGrayPass` re-reads the size: pass the expected width/height, refuse a mismatch.
+8. NIT — the v3 bump rebuilds every viewer cache once (also JPEG/PNG and setting-off): say so in the comment.
+9. NIT — for BMP the N look (Bayer) and the converter fallback (Atkinson) differ; record, no fix.
+B4 — the simulator cases 10–13 (`testcases/TC_idea14_smart_filter.md`) after the fixes and the build.
+**The detector misses dark-heavy line art** (bug 18): figure 15 `i_019` (white 47.1 %) and figure 17 `i_021` (white
+42.1 %, black 49.2 %) fail `kMinWhitePercent` 50; «white ≥ black» rejected (still misses `i_021`, lets in the halftone
+`i_144`). Next: a rule measured over all 174 GEB pictures, the flipped pictures shown to the owner.

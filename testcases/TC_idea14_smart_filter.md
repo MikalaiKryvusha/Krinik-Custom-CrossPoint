@@ -37,3 +37,17 @@ GEB PNGs are 1-bit and skipped), the reader itself (eFuse; the image after the s
 | 7 | smoke | Settings → «Чтение» (`CROSSPOINT_SIM_SCREEN_TEXT=1`) | the row «Чистить фон чертежей», checked | pass — run report 2026-11-20 |
 | 8 | measure | the logs of cases 1, 5 | `Gray histogram … ms` beside `render time … ms` — the extra decode's price | pass — run report 2026-11-20 |
 | 9 | hygiene | `TARGETS="LineArtFilterTest" sh tools/host_tests.sh` (6 cases, mutation-proven); the full `sh tools/host_tests.sh` | 6/6; no new failure | pass — run report 2026-11-20 |
+
+### BMP in the viewer (point 3; the owner 2026-11-20 16:30 «нет, чистим всё в полноэкранном вьювере»)
+
+Dimensions: the format (8-bit grayscale BMP · 24-bit RGB BMP · ≤ 2-bit BMP), the content (line art · photo), the setting
+(on · off), the path (N enlarged ≥ ×2 · the converter). Not covered: a BMP line art enlarged < ×2 or larger than the
+screen (the converter path with the filter) — host case 14 covers the converter's filter.
+
+| # | Kind | Steps (simulator `simulator_x4_pro_win`) | Expected | Status |
+|---|---|---|---|---|
+| 10 | smoke | card `.tmp/b17_bmp_016_on` (`i_016` as an 8-bit grayscale BMP): boot opens `/i_016.bmp` in the viewer | log `Line art 36x91: lighter than 203 -> white` and `Sharp upscale 36x91 -> 316x800`; the viewer cache equals Pillow N on the BMP's grays: `.tmp/bug17/compare_view_cache_file.py` 0 mismatching pixels at the 480×800 offset | — |
+| 11 | smoke | card `.tmp/b17_bmp_140_on` (`i_140` as a 24-bit BMP, a photo) | `Gray histogram` counted, no `Line art`, no `Sharp upscale` | — |
+| 12 | control | card `.tmp/b17_bmp_016_off` (the setting off) | no `Gray histogram`, no `Line art`, no `Sharp upscale` | — |
+| 13 | regression | the JPEG cards of cases 1 and 3 on the new build | the same log lines as on `fc97043d`; `tools/shot_diff.py` against the `d114_3_*` shots TOTAL 0 | — |
+| 14 | hygiene | `TARGETS="BmpToBmpTest" sh tools/host_tests.sh` (`SourceFilterCleansBeforeScaling`, mutation-proven); the full suite | 5/5; no new failure | pass (BmpToBmpTest 5/5, mutant red) — the full suite after the build |

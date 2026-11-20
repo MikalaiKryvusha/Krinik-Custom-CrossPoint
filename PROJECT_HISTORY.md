@@ -27,6 +27,68 @@
 
 ## Entries (newest first)
 
+### 2026-11-20 — STATUS trim 10: the 14:14 and 17:03 chats closing (idea 14 into 1.1.4, debug3 to the card, bug 18)
+
+Moved verbatim from `STATUS.md` → «Where to continue» by the 17:03 chat's `/end-chat-soft`.
+
+The code map's closed rows (both lines absorbed by the 1.1.3 release):
+
+| debug10 = debug9 + ideas 07 (rotation, touch by the picture, keys), 08 (sleep settings) + epic 01 Ф1 — local, not pushed, no image | crosspoint-reader · `wip/krinik-debug10` | ed5e2f0d |
+| debug9 = debug8 + idea 02 (picture tap → full screen), battery log off — local, not pushed | crosspoint-reader · `wip/krinik-debug9` | 35dc070c |
+
+  KNOWLEDGE (this chat): HOUSE_RULES П4 (reading tests on the owner's settings and book) and П5 (image names, release
+- **GEB proofreading (Krinik EPUB Linter)** — `[OWNER] 2026-11-18 10:10 · chat: «опечаток я много видел в книге, кстати. В
+  основном - неверные формы слов, неверное согласование падежей, склонений и вот таких особенностий русского языка»`:
+  run the linter's `proofread` (built-in checks + local LanguageTool, needs Java 17+ — probe) on the owner's GEB copy,
+  review the report, apply the reviewed fixes with `textfix --apply` (logged); the book then goes to the card with the
+  1.1.4 image. **Ran 2026-11-18 10:33 +03:00:** Java 21 found, LanguageTool 6.8 in `epub-linter/.venv/languagetool` (`LTP_PATH`); 7 528
+  paragraphs, 1 950 remarks (spelling 953 — mostly names and terms, punctuation 381, grammar 155, typos 86) —
+  `.tmp/geb_proof/`; the reviewer agent kept 42 real errors of 241 grammar/typo hits (`.tmp/geb_proof/fixes_grammar_typos.json`,
+  every decision in `review_notes.md`; ~4 of 5 hits were false — formal systems, notation, style); read one by one and
+  applied 2026-11-18 10:36 +03:00: `textfix --apply` 42 applied / 0 skipped, `check` clean, 68 XML well-formed. **The book for the
+  owner's card:** `.tmp/kel_out3/Дуглас Хофштадтер. Гёдель, Эшер, Бах. Эта бесконечная гирлянда.epub` (153 captions
+  bound + 42 fixes, log beside it). Left: 7 doubtful, the OCR letter mix-ups inside the TNT formulas (invisible on the
+  reader), spelling (953) and punctuation (381) not reviewed.
+- **Moved 2026-11-18 (STATUS trim 8):** the 1.1.3 release record, the 2026-11-17 handovers and the epic 07 line →
+  `PROJECT_HISTORY.md` → «STATUS trim 8». The 1.1.3 release: tag `kccp-1.1.3` (Latest), image
+  `firmware-builds/cp-2.0.0-krinik-1.1.3.bin`, notes `docs/releases/kccp-1.1.3.md`.
+- **The 2026-11-20 14:14 chat (in work):** `/resume` on the owner's word; the owner's photo from his reader → **idea 14**
+  (`ideas/14_viewer_smart_filter_bw_lowres.md`, the owner 14:19 «это не баг, это импрувмент вьювера картинок»): a smart
+  filter (auto levels, NOT binarization — it destroys the picture's anti-aliasing, the owner 14:20) for black-and-white
+  low-resolution pictures in the viewer; measured: the source (GEB `i_016.jpg`, 36×91) carries JPEG noise, the viewer
+  enlarges ×8.8 and the panel curve turns the near-white noise into light gray. Interview #007 status closed (Q1–Q3/Q5 →
+  the plan, Q4 waits). EXP-0043: a bug the owner found is never «твой баг» (`[OWNER] 2026-11-20 14:16 · chat: «ПРОЕКТ ТВОЙ!»`).
+  **Built:** firmware `5a9e1624` on the local branch `wip/kccp-line-art-filter` (from `wip/kccp-1.1.4` `8a8b44bc`, П3):
+  «Настройки → Чтение → Чистить фон чертежей», on by default, page + viewer + file browser, pictures ≤ 480×800 of area; two
+  independent reviews applied; simulator run report `testcases/reports/2026-11-20_idea14_smart_filter.md` all pass; host
+  suite 1002, no new failure; NO reader image yet. The floor 160 stays (`[AI]` under his 14:20 rule; 16:29 «я утвердил
+  вариант»). The scaler: the owner picked N (bicubic + unsharp 3/160/2) for line art only (15:26–15:28); a byte-exact Pillow replica
+  in rings — `lib/Epub/Epub/converters/SharpUpscale.h`, host test `test/sharp_upscale` 6/6 byte-exact against Pillow
+  goldens; wired into the viewer: firmware `353cb8b5` (same branch, local) — enlarged ≥ ×2 line art ≤ 8192 source px,
+  photos keep the bilinear; simulator: the viewer cache vs Pillow N 26/252 800 and 5/239 040 pixels differ (JPEG decoders),
+  shown to the owner ≈ 15:58 (`.tmp/bug17/idea14_n_simulator.webp`); report `testcases/reports/2026-11-20_idea14_sharp_upscale.md`;
+  host suite 1008, no new failure. NO reader image yet; the reader's N time unmeasured.
+  4. The release: the filter + N go into **1.1.4** — `[OWNER] 2026-11-20 16:59 +03:00 · chat: «фильтры давай в 1.1.3,
+     сейчас новый чат открою»` → «1.1.4» (corrected the same minute). **Done 2026-11-20 17:18 +03:00 up to the card:**
+     `wip/kccp-1.1.4` fast-forwarded to `f06f8850`, version `-debug3` `fc97043d` (the otatest unflag follows); host suite
+     1008, no new failure; smoke of `fc97043d` on his settings and GEB (boot → book → toolbar → shade → Home, 9 known TTF
+     `[ERR]`) and the viewer (filter + N, photo untouched, control off) — `testcases/reports/2026-11-20_kccp114_debug3.md`;
+     image `firmware-builds/cp-2.0.0-kccp-1.1.4-debug3.bin` (SHA256 `5b13f6dc…`, 83.3 % of app0). **On his card**
+     `/.firmware/` 2026-11-20 17:24 +03:00 (the card's copy hashed equal), the reader ejected; he installs it. The card also holds
+     debug2, 1.1.3 and 1.1.2 (not removed: its earlier removal was refused by the auto-mode classifier). No new
+     `/screenshots/` since 12:16. The stands' `settings.json` (`.tmp/b14_sd`, `.tmp/b17_geb_on`) refreshed from his card
+     (14:31: `statusBarGap` 12, `updateChannel` 0, the 1.1.4 shade list). **The push of this repo was refused by the
+     auto-mode classifier at 17:19** — local commits wait for his word. Points 1–3 next — the owner's order.
+- **⚠️ Force-closed 2026-11-20 17:00 +03:00** (the owner 16:59 «сейчас новый чат открою»): ceremonies skipped (judge
+  pass, bonsai trim, README, showcase linters) — the first `/end-chat-soft` pays this debt. Standing falsehood: none.
+  KNOWLEDGE: the line-art filter and Pillow's N (`LineArtFilter.h`, `SharpUpscale.h`, the map); the simulator build needs
+  UCRT64 on PATH (HOUSE_RULES); Pillow's unsharp threshold is strict (idea 14); EXP-0043 (never «твой баг»; questions in
+  the owner's terms); the four GitHub issues #1–#4 now tracked here (1.1.5). Firmware branch `wip/kccp-line-art-filter`
+  is local (П3), not pushed.
+- **The closing judge of the 2026-11-20 chat** (the owner 12:21 «нет времени на судейство»; it had already run, finished
+  12:22): VERIFIED WITH CAVEATS — no false claim of substance; fixed at once: the smoke path (parked), 83.2 % of app0 (not
+  83.1), the bug 16 report's stale «default waits»; open: the flash report's block rows sum to 1 B less than its total.
+
 ### 2026-11-20 — STATUS trim 9: the 09:38 chat closing (KCCP 1.1.4-debug2 to the card)
 
 #### From «Where to continue» — the 2026-11-20 chat block (verbatim)

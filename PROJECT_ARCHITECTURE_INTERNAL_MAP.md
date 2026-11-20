@@ -88,6 +88,12 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   (never below `kMinCut`) as `RenderConfig::sourceFilter`, applied to the SOURCE grays before scaling — the panel curve
   stays after it (host test `test/line_art_filter/`, real GEB histograms);
   `test/page_squeeze/` guards bug 16's squeeze.
+- `lib/BmpToBmpConverter/BmpToBmpConverter.{h,cpp}` — a BMP of any depth to a screen-ready 2-bit BMP (1-bit sources stay
+  1-bit): source rows by `Bitmap::readRowGray` (display order, seek per row), bilinear up / area-average down, the tone
+  curve AFTER the scaling, `adjustPixel` (a no-op: `USE_BRIGHTNESS = false`, `BitmapHelpers.cpp`) and an Atkinson dither
+  whose legacy thresholds turn every gray ≥ 150 white (`BitmapHelpers.h`; a flat 215 dithers all white, 170 does not); callers — the sleep cover (`SleepActivity`) and the viewer. KCCP idea 14 (1.1.4, in work): an optional
+  `sourceFilter` on every source row before the scaling. Host test `test/bmp_to_bmp/` (builds on Windows since
+  2026-11-20, `path.string()`).
 - `src/activities/reader/ReaderToolbarUi.{h,cpp}` — the bottom sheet of a book opened by a centre tap (FreeInkUI on
   `UiAppHost`): the toolbar (chapter ◀ ▶, progress track with a knob, meta line) and the tool row of three icon slots
   Contents / Text / More (`kToolRowH` 80, the active one in an outline pill); a slot opens a PANEL in the same sheet —

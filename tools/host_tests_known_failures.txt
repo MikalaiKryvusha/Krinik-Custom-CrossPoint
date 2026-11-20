@@ -1,4 +1,3 @@
-BmpToBmpTest_NOT_BUILT
 BookMetadataCacheTest_NOT_BUILT
 ChapterBlockDecorationTest.FirstLetterRuleCapturesQuoteAndLetter
 ChapterInlineSizeTest.MixedSizesWithinALineSurviveTheCache
