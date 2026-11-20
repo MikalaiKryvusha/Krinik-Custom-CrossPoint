@@ -169,6 +169,13 @@ turns the ~9 px soft ramps of a ×8.8 bilinear edge into dotted bands. Proposed 
 симуляторе» · «и мне показывать» → the order: a PC prototype of the scalers through the viewer's own pipeline (the filter,
 the curve, the Bayer dither) → shown to the owner → his pick → the simulator → shown.
 
+**Scaler prototype 1 (2026-11-20 15:16 +03:00):** `.tmp/bug17/scaler_mock.py` — the viewer's path of firmware
+`5a9e1624` (the filter on the source, the upscale to fit 480×800, the panel curve, the 4×4 Bayer to 4 levels) with six
+upscalers: today's JPEG bilinear (the firmware's exact sampling), today's PNG nearest, bicubic, Lanczos, bicubic + unsharp
+mask, Scale2x with a gray tolerance (×2 steps, then bilinear to fit); rows GEB `i_016` (×8.8), `i_001` (×8.9), `i_078`
+(×2). Blind letters A–F, the key in `.tmp/bug17/idea14_scalers_mock.webp.key.txt` (revealed after the owner's pick). Sheet
+`.tmp/bug17/idea14_scalers_mock.webp`; its show waits for KUMM's real-input window (the game in front, 15:16).
+
 The filter itself: firmware `5a9e1624` on `wip/kccp-line-art-filter` (local, П3), run report
 `testcases/reports/2026-11-20_idea14_smart_filter.md` (all cases pass on the simulator, the reader not verified).
 

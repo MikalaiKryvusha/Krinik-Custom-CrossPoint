@@ -12,6 +12,12 @@ work project. From now on it is a standalone project.
   low-resolution pictures in the viewer; measured: the source (GEB `i_016.jpg`, 36×91) carries JPEG noise, the viewer
   enlarges ×8.8 and the panel curve turns the near-white noise into light gray. Interview #007 status closed (Q1–Q3/Q5 →
   the plan, Q4 waits). EXP-0043: a bug the owner found is never «твой баг» (`[OWNER] 2026-11-20 14:16 · chat: «ПРОЕКТ ТВОЙ!»`).
+  **Built:** firmware `5a9e1624` on the local branch `wip/kccp-line-art-filter` (from `wip/kccp-1.1.4` `8a8b44bc`, П3):
+  «Настройки → Чтение → Чистить фон чертежей», on by default, page + viewer + file browser, pictures ≤ 480×800 of area; two
+  independent reviews applied; simulator run report `testcases/reports/2026-11-20_idea14_smart_filter.md` all pass; host
+  suite 1002, no new failure; NO reader image yet. **Waiting for the owner:** the floor 160 (`kMinCut`, mock-up shown),
+  BMP files in the file browser (not filtered now), the scaler pick A–F (`.tmp/bug17/idea14_scalers_mock.webp`, shown in
+  VS Code 15:20, key beside it) → then the chosen scaler on the simulator (the owner 15:14 «потом на симуляторе»).
 - **Handover — the 2026-11-20 09:38 chat closed 2026-11-20 12:19 +03:00** on the owner's word `[OWNER] 2026-11-20 12:15 · chat: «и пора закрывать
   чат»`; its full blocks moved verbatim to `PROJECT_HISTORY.md` → «STATUS trim 9». Firmware `wip/kccp-1.1.4` HEAD `8a8b44bc`
   (local, П3) = 1.1.3 + bugs 14/15 + ideas 11/12 + the version order (`b2b92ef5`) + toolbar lists variant 2 and the night
