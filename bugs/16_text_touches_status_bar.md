@@ -1,6 +1,7 @@
 # Bug 16 — the last line of a book page touches the status bar, while the top gap is large
 
-**Status:** 🔧 fix committed, pending the owner's default and the reader — firmware `7173e6bd` (2026-11-20), run report
+**Status:** 🔧 fix committed, pending the reader — firmware `7173e6bd` + the owner's default 12 (`8a8b44bc`, his pick
+2026-11-20 11:39 «12»), run report
 `testcases/reports/2026-11-20_bug16_status_bar_gap_squeeze.md` (all pass on the simulator); the default value page shown
 2026-11-20 ≈ 11:30 (`.tmp/mock/out2/status_bar_gap_2026-11-20.md`). Earlier: 🔴 OPEN — mock-ups first (`[OWNER] 2026-11-20 09:40 · chat: «макеты нарисуешь»`, said for the shade circle and the
 toolbar lists; the same way taken here)
