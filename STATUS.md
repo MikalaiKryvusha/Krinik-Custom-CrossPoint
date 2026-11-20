@@ -29,7 +29,11 @@ work project. From now on it is a standalone project.
   USB Drive) not fixed — `UsbDriveActivity::onExit` marks nothing, the EPUB cache is keyed by path only; #2 (`text-align:
   inherit` → left) not fixed — `CssParser::interpretAlignment` falls to `Left`; #3 (`text-indent: 0` ignored) partly — 1.1.4
   bug 15 keeps the indent off headings, body paragraphs with `text-indent: 0` still get it; #4 (SVG cover small) not fixed —
-  the «never enlarge» clamp at `ChapterHtmlSlimParser.cpp` ≈ 1893. Which release takes them — the owner's word.
+  the «never enlarge» clamp at `ChapterHtmlSlimParser.cpp` ≈ 1893. Release: 1.1.5 — `[OWNER] 2026-11-20 16:11 +03:00 ·
+  chat: «4 в 1.1.5»`.
+- **Asked again in plain words 16:12** (the owner 16:11: «1 не понимаю · 2 не понимаю · 3 не полнимаю» — the first wording
+  was in the agent's terms): the floor (keep the edges of dark drawings), BMP files left as they are, N only from ×2; and
+  whether the filter + N go into 1.1.4 (debug3 to his card) or 1.1.5.
 - **Handover — the 2026-11-20 09:38 chat closed 2026-11-20 12:19 +03:00** on the owner's word `[OWNER] 2026-11-20 12:15 · chat: «и пора закрывать
   чат»`; its full blocks moved verbatim to `PROJECT_HISTORY.md` → «STATUS trim 9». Firmware `wip/kccp-1.1.4` HEAD `8a8b44bc`
   (local, П3) = 1.1.3 + bugs 14/15 + ideas 11/12 + the version order (`b2b92ef5`) + toolbar lists variant 2 and the night

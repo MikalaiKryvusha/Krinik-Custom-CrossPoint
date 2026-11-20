@@ -94,6 +94,10 @@ never attributed to the owner in any wording — the canon's English possessive 
 **Repro:** before sending, read every «твой/твоя/твоё» in the reply next to «баг», «долг», «ошибка» aloud — none may stand.
 **Trigger:** writing to the owner about a bug, a defect or a debt.
 **Not for:** his decisions and his words («твой ответ», «твоё слово») — those are his.
+**Second face, same day (16:11):** three questions put in the agent's terms («нижняя граница порога 160», «BMP в обзоре
+файлов», «порог ×2 для N») → «1 не понимаю · 2 не понимаю · 3 не полнимаю»; re-asked as what he will see (the dark tree
+whose edges break; .bmp sleep pictures left as they are; soft vs sharp by how much a picture is enlarged). Before sending a
+question: name what he sees on the screen, not the parameter (`/interview` step 3a, the scenario lines).
 
 ### EXP-0042 · 2026-11-20 · ❌→✅ · #fonts #metrics #geometry #judge #simulator
 class: guessed-instead-of-measured
