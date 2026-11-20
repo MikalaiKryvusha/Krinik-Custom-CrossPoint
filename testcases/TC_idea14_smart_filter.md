@@ -1,7 +1,8 @@
 # TC — idea 14: «Чистить фон чертежей» — the line-art filter on the page, in the viewer and in the file browser
 
 > **Created:** 2026-11-20 · **Parent:** `ideas/14_viewer_smart_filter_bw_lowres.md` (the owner's words 14:16–14:37) ·
-> **Status:** written before the run · **Outbound:** —
+> **Status:** written before the run; executed 2026-11-20 15:04–15:14 +03:00 on the simulator, all pass
+> (`testcases/reports/2026-11-20_idea14_smart_filter.md`); the reader not verified · **Outbound:** —
 
 ## Test basis
 
@@ -27,12 +28,12 @@ GEB PNGs are 1-bit and skipped), the reader itself (eFuse; the image after the s
 
 | # | Kind | Steps (simulator `simulator_x4_pro_win`) | Expected | Status |
 |---|---|---|---|---|
-| 1 | smoke | card `.tmp/b17_i_016_on`: boot opens `/i_016.jpg` in the viewer | log `Line art 36x91: lighter than 203 -> white`; the shot has no gray squares around the digits | — |
-| 2 | control | card `.tmp/b17_i_016_off` (the setting off) | no `Line art` line; the shot shows the gray squares (today) | — |
-| 3 | smoke | card `.tmp/b17_i_140_on` (photo) | no `Line art` line; the shot equals case 4's (`tools/shot_diff.py` TOTAL 0) | — |
-| 4 | control | card `.tmp/b17_i_140_off` | the photo as today | — |
-| 5 | smoke | GEB chapter II (spine 10) on the owner's settings, the page with `i_016` (≈ p. 22–31), the setting on | log `Line art 36x91` from `IMG`; the picture on the page clean | — |
-| 6 | control | the same page, the setting off | no `Line art` line from `IMG` | — |
-| 7 | smoke | Settings → «Чтение» (`CROSSPOINT_SIM_SCREEN_TEXT=1`) | the row «Чистить фон чертежей», checked | — |
-| 8 | measure | the logs of cases 1, 5 | `Gray histogram … ms` beside `render time … ms` — the extra decode's price | — |
-| 9 | hygiene | `TARGETS="LineArtFilterTest" sh tools/host_tests.sh` (6 cases, mutation-proven); the full `sh tools/host_tests.sh` | 6/6; no new failure | — |
+| 1 | smoke | card `.tmp/b17_i_016_on`: boot opens `/i_016.jpg` in the viewer | log `Line art 36x91: lighter than 203 -> white`; the shot has no gray squares around the digits | pass — run report 2026-11-20 |
+| 2 | control | card `.tmp/b17_i_016_off` (the setting off) | no `Line art` line; the shot shows the gray squares (today) | pass — run report 2026-11-20 |
+| 3 | smoke | card `.tmp/b17_i_140_on` (photo) | no `Line art` line; the shot equals case 4's (`tools/shot_diff.py` TOTAL 0) | pass — run report 2026-11-20 |
+| 4 | control | card `.tmp/b17_i_140_off` | the photo as today | pass — run report 2026-11-20 |
+| 5 | smoke | GEB chapter II (spine 10) on the owner's settings, the page with `i_016` (≈ p. 22–31), the setting on | log `Line art 36x91` from `IMG`; the picture on the page clean | pass — run report 2026-11-20 |
+| 6 | control | the same page, the setting off | no `Line art` line from `IMG` | pass — run report 2026-11-20 |
+| 7 | smoke | Settings → «Чтение» (`CROSSPOINT_SIM_SCREEN_TEXT=1`) | the row «Чистить фон чертежей», checked | pass — run report 2026-11-20 |
+| 8 | measure | the logs of cases 1, 5 | `Gray histogram … ms` beside `render time … ms` — the extra decode's price | pass — run report 2026-11-20 |
+| 9 | hygiene | `TARGETS="LineArtFilterTest" sh tools/host_tests.sh` (6 cases, mutation-proven); the full `sh tools/host_tests.sh` | 6/6; no new failure | pass — run report 2026-11-20 |

@@ -142,6 +142,36 @@ test 6/6, mutation-proven (the detector inverted → 4 of 5 red; 80 % instead of
 `lib/Epub/Epub/converters/LineArtFilter.h` (beside the decoders, not `src/util/`); the size limit added (the owner
 14:37); cases `testcases/TC_idea14_smart_filter.md`; the stand cards `.tmp/b17_i_016_{on,off}`, `.tmp/b17_i_140_{on,off}`.
 
+**The independent review (2026-11-20 ≈ 14:50 +03:00, a fresh agent on the diff + the owner's words) and what was done:**
+1. MAJOR — JPEG histogram counted at 1/2 for pictures over 64K px while drawn at full scale (i_088 and i_056 read as
+   photos, cuts moved) → fixed: `grayHistogram(path, config, hist)` decodes at the DCT scale the render pass picks for the
+   same config (`chooseJpegScale`, progressive 1/8).
+2. MAJOR — the cut applied after the bilinear enlargement (a hard step at every edge's light end; the owner's mock-up cut
+   the source) → fixed: `RenderConfig::sourceFilter`, applied to the source grays in the JPEG and PNG callbacks before
+   scaling; the panel curve unchanged.
+3. MAJOR, the owner's decision — the 90 % rule erases every edge gray of a dark-heavy drawing (i_022: cut 50; «3³³»
+   i_001: cut 13; 2 of the 37 GEB line-art JPEGs within the area) → `kMinCut = 160` `[AI]`, mock-up
+   `.tmp/bug17/idea14_floor_mock.webp` opened for the owner ≈ 14:51, asked in chat; host case `CutNeverBelowTheFloor`
+   (red with the floor 0).
+4. MINOR — a failed count is cached as filtered; the scratch held through the decode → the scratch is freed when nothing is
+   cut; a failed count (low heap, read error) stays cached unfiltered until the cache is cleared — `[AI]` accepted, rare.
+5. MINOR — the cache name not versioned → `_f1` / `|f1` (`lineart::kVersion`).
+6. MINOR — GIF never filtered (default `grayHistogram` false, now free: no extra `getDimensions`); BMP in the file browser
+   not filtered — told to the owner, his word awaited.
+7. MINOR — an extra decoder open for the size check → the area check moved into `grayHistogram` (from the header).
+
+**The scaling question** — `[OWNER] 2026-11-20 15:13 +03:00 · chat:` «и что за машстабирование в читалке? может не самый
+лучший алгоритм масштабирования там?». Read in the code: JPEG — bilinear upscale (`JpegToFramebufferConverter`, «fineScale >
+1.0»), nearest-neighbour downscale; PNG — nearest (rows repeated, Bresenham columns); then the 4×4 Bayer dither to 4 levels
+turns the ~9 px soft ramps of a ×8.8 bilinear edge into dotted bands. Proposed to the owner: recon of upscalers for line art
+(bicubic, Lanczos, pixel-art / edge-directed scalers) → mock-ups on the formula → his pick by eye.
+`[OWNER] 2026-11-20 15:14–15:15 +03:00 · chat:` «Нужно их пробовать локально как прототип, без прошивки» · «потом на
+симуляторе» · «и мне показывать» → the order: a PC prototype of the scalers through the viewer's own pipeline (the filter,
+the curve, the Bayer dither) → shown to the owner → his pick → the simulator → shown.
+
+The filter itself: firmware `5a9e1624` on `wip/kccp-line-art-filter` (local, П3), run report
+`testcases/reports/2026-11-20_idea14_smart_filter.md` (all cases pass on the simulator, the reader not verified).
+
 - [ ] **F1 — the core**, `src/util/LineArtFilter.h` (pure, host-testable): `isLineArt(hist)` (middle 96..223 < 20 % AND
       white ≥ 224 ≥ 50 %), `whiteCut(hist, 90)` (the darkness-weight cut), `composeTone(curve, cut, out[256])` (filter
       then the panel curve — the decoders already take one 256-entry tone table, so no decoder pixel loop changes). Host
