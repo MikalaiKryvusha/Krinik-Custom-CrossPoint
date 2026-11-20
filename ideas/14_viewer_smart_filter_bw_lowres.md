@@ -124,6 +124,19 @@ line-art vs photo by the histogram's two ends plus a second feature).
   same one tone-table lookup); its price is one extra gray-only decode before the first render, paid once — the page and
   the viewer cache the result; big JPEGs at the coarse DCT scale, 1-bit grayscale PNGs skipped. Not measured on the reader.
 
+## Decisions made without the owner
+
+`[OWNER] 2026-11-20 16:29 +03:00 · chat:` «1 не понимаю · ты давал мне отсматривать картинки, я утвердил вариант» — the
+owner judges by the pictures he approved and does not want parameter questions; the details below are the agent's,
+cheap to reverse (AGENT_GUIDE: «is it cheap to reverse? If yes — decide yourself»), each a constant:
+- `[AI]` the floor `kMinCut = 160` — derived from his rule 14:20 «не уничтожить антиалиасинг»: without it the 90 % rule
+  erases the edges of 2 of 37 GEB drawings (i_022, i_001); the other 35 are unchanged.
+- `[AI]` BMP files in the file browser are not filtered (they come prepared for the screen: sleep pictures, calibration
+  cards).
+- `[AI]` N only from an enlargement of ×2 (he saw N at ×2 and ×8.8 only) and a source ≤ 8192 px (the reader's heap).
+- `[AI]` a line-art picture N could not draw (low heap) is shown bilinear and not cached; GIF pictures are not filtered.
+- `[AI]` the detector thresholds (middle < 20 %, white ≥ 50 %) — from the scan of all 180 GEB pictures.
+
 ## Plan
 
 Done before the firmware work: [x] recon (research 2026-11-20) · [x] mock-ups (the owner picked 90 %, 14:25) · [x] the
