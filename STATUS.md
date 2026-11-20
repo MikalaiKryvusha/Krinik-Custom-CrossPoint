@@ -1,6 +1,6 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-20 09:45 +03:00 (the 09:38 chat: the owner's screenshots page, tasks b–d below). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-20 17:18 +03:00 (the 17:03 chat: idea 14 merged into 1.1.4, image debug3 built). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
@@ -37,9 +37,13 @@ work project. From now on it is a standalone project.
      текста»`; a third detector class (recon → GEB mock-up → his eye); the `[AI]` ×2 minimum goes.
   3. N for big sources: stream the source rows from the decoder (the 8192-px whole-source limit drops `i_056`, `i_078`).
   4. The release: the filter + N go into **1.1.4** — `[OWNER] 2026-11-20 16:59 +03:00 · chat: «фильтры давай в 1.1.3,
-     сейчас новый чат открою»` → «1.1.4» (corrected the same minute). Next: merge `wip/kccp-line-art-filter`
-     (`5a9e1624`, `353cb8b5`, `f06f8850`) into `wip/kccp-1.1.4`, the full host suite, a smoke, a debug3 image to his card
-     (HOUSE_RULES П5 names); points 1–3 after or with it — the owner's order.
+     сейчас новый чат открою»` → «1.1.4» (corrected the same minute). **Done 2026-11-20 17:18 +03:00 up to the card:**
+     `wip/kccp-1.1.4` fast-forwarded to `f06f8850`, version `-debug3` `fc97043d` (the otatest unflag follows); host suite
+     1008, no new failure; smoke of `fc97043d` on his settings and GEB (boot → book → toolbar → shade → Home, 9 known TTF
+     `[ERR]`) and the viewer (filter + N, photo untouched, control off) — `testcases/reports/2026-11-20_kccp114_debug3.md`;
+     image `firmware-builds/cp-2.0.0-kccp-1.1.4-debug3.bin` (SHA256 `5b13f6dc…`, 83.3 % of app0). **Waits:** the reader on
+     the wire (not connected 17:17) → copy to `/.firmware/`, keep debug3 + debug2 + 1.1.3 there, eject (AGENT_GUIDE
+     device line). Points 1–3 next — the owner's order.
 - **⚠️ Force-closed 2026-11-20 17:00 +03:00** (the owner 16:59 «сейчас новый чат открою»): ceremonies skipped (judge
   pass, bonsai trim, README, showcase linters) — the first `/end-chat-soft` pays this debt. Standing falsehood: none.
   KNOWLEDGE: the line-art filter and Pillow's N (`LineArtFilter.h`, `SharpUpscale.h`, the map); the simulator build needs
@@ -191,7 +195,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| KCCP 1.1.4 (in work) = release 1.1.3 + bugs 14, 15 (`d727eeef`) + version 1.1.4-debug1 (`21671e33`, image 2026-11-18 09:44) + idea 11 (`b493939b`, `fb217e8d`) + П5 names / debug2 (`253d5712`) + idea 12 (`357f2101`) + the otatest env (`78d89fcd`) + the version order (`b2b92ef5`) + lists variant 2 and the night circle (`48d7d52c`) + bug 16 the status-bar gap (`7173e6bd`, default 12 `8a8b44bc`) — local, not pushed | crosspoint-reader · `wip/kccp-1.1.4` | 8a8b44bc |
+| KCCP 1.1.4 (in work) = release 1.1.3 + bugs 14, 15 (`d727eeef`) + version 1.1.4-debug1 (`21671e33`, image 2026-11-18 09:44) + idea 11 (`b493939b`, `fb217e8d`) + П5 names / debug2 (`253d5712`) + idea 12 (`357f2101`) + the otatest env (`78d89fcd`) + the version order (`b2b92ef5`) + lists variant 2 and the night circle (`48d7d52c`) + bug 16 the status-bar gap (`7173e6bd`, default 12 `8a8b44bc`) + idea 14 the line-art filter and N (`5a9e1624`, `353cb8b5`, `f06f8850`) + version debug3 (`fc97043d`, image 2026-11-20 17:16) — local, not pushed | crosspoint-reader · `wip/kccp-1.1.4` | fc97043d |
 | Krinik EPUB Linter (sub-project, clone `epub-linter/`) = 1.0.0 + the figure captions (`krinik_figures.py`, 1.1.0; `8ef77a9`, the judge fixes `6343dcc`) — local, not pushed | `MikalaiKryvusha/Krinik-EPUB-Linter` · `main` | 6343dcc |
 | 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) + the mama row «Для Мамы» on the Home buttons screen (`da382c2f`, interview #006) + epic 07 Ф1 figure keep-together (`869a5bd3`) + version 1.1.3-debug3 (`0d56b23a`) — local, not pushed; image `cp-2.0.0-krinik-1.1.3-debug3.bin` 2026-11-17 11:29 + epic 07 Ф2 caption (`90406599`, after the image) + epic 05 Ф5 the long tap on a Home button (`de8feb20`) + bug 09 span footnote targets (`df4fab1a`) + bug 11 note backlink (`87b8ead1`) + version 1.1.3-debug4 (`3e223b4d`) — image `cp-2.0.0-krinik-1.1.3-debug4.bin` 2026-11-17 20:32 + bugs 12/13 the shade (`3db21be8`) + version 1.1.3-debug5 (`e4afb337`) — image `cp-2.0.0-krinik-1.1.3-debug5.bin` 2026-11-17 21:24 | crosspoint-reader · `wip/kccp-1.1.3-debug2` | e4afb337 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |

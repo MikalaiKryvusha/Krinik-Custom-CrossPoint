@@ -21,8 +21,11 @@ owner reclassified it as an improvement 14:19).
 # Idea 14 — the picture viewer cleans black-and-white low-resolution pictures with a smart filter
 
 > **Created:** 2026-11-20 (the owner's words and photo above) · **Parent:** — · **Status:** 🔬 cause measured
-> 2026-11-20 14:20 +03:00 (the source is dirty, the viewer magnifies the dirt); next — the stand run and the filter
-> mock-ups · **Outbound:** the filter's look → the owner (mock-ups, taste class)
+> 2026-11-20 14:20 +03:00 (the source is dirty, the viewer magnifies the dirt); the filter built `5a9e1624`; N built
+> `353cb8b5`; 🔧 merged into 1.1.4 `fc97043d` (debug3, the owner 16:59 «1.1.4») 2026-11-20 17:18 +03:00, image
+> `cp-2.0.0-kccp-1.1.4-debug3.bin` (run report `testcases/reports/2026-11-20_kccp114_debug3.md`), the reader not verified;
+> next — BMP in the viewer, N by content, N streaming (section «N by content, not by scale») · **Outbound:** the filter's
+> look → the owner (mock-ups, taste class)
 
 ## Goal vector
 

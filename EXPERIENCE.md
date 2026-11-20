@@ -82,6 +82,16 @@
 
 ## Entries
 
+### EXP-0044 · 2026-11-20 · ❌→✅ · #stamps #clock #hook #placeholder
+class: guessed-instead-of-measured
+none-cheap: S3 papercut, caught by the read-back the canon already demands
+**Context:** a run report's `Created:` written with the clock hook's placeholder from memory, in `U+301A/U+301B` brackets.
+**Result:** ❌ the hook left it literal; ✅ seen on the read-back, rewritten with `U+27E6/U+27E7`, filled.
+**Lesson:** the placeholder is the hook's exact token (`.kaif/hooks/clock-now.mjs` header), not a look-alike bracket.
+**Repro:** after a write with a placeholder: `grep -n '〚\|⟦' <file>` → empty.
+**Trigger:** writing a moment through the clock placeholder.
+**Not for:** —
+
 ### EXP-0043 · 2026-11-20 · ❌ · #owner #wording #translation #bugs
 class: text-in-agents-world
 none-cheap: a chat sentence is not machine-checkable; the carrier is the Trigger below

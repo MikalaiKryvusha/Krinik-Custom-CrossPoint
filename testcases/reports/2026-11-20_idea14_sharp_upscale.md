@@ -18,11 +18,11 @@ The X4 Pro simulator, viewer cards `.tmp/b17_i_016_on`, `.tmp/b17_i_001_on` (set
 
 | # | Moment | Command | Exit / outcome |
 |---|---|---|---|
-| 1 | 2026-11-20 ≈ 15:55 +03:00 | `TARGETS="SharpUpscaleTest LineArtFilterTest" sh tools/host_tests.sh` | 6/6 · 7/7 |
-| 2 | 2026-11-20 ≈ 15:55 +03:00 | the threshold mutated to `>=` in `SharpUpscale.h`, the same command, then restored | 3 of 6 red (the three Pillow goldens) |
-| 3 | 2026-11-20 ≈ 15:57 +03:00 | `SD_TEMPLATE=../.tmp/b17_<card> SIM_ENV=simulator_x4_pro_win sh tools/sim_run.sh idea14n_<card> '0:WAIT:Entering activity: BmpViewer;6000:SHOT:view;8000:QUIT' ''` for `i_016_on`, `i_001_on`, `i_140_on`, `i_016_off` | 0 · 0 errors each |
-| 4 | 2026-11-20 ≈ 15:58 +03:00 | `.tmp/bug17/compare_view_cache.py <view_*.bmp> .tmp/geb_in.epub OPS/images/<pic>.jpg panel_curve.txt` | see Checks |
-| 5 | 2026-11-20 ≈ 15:58 +03:00 | `sh tools/host_tests.sh` | 1008 tests, «no new failure (known list: 10)» |
+| 1 | ≈ 2026-11-20 15:55 +03:00 | `TARGETS="SharpUpscaleTest LineArtFilterTest" sh tools/host_tests.sh` | 6/6 · 7/7 |
+| 2 | ≈ 2026-11-20 15:55 +03:00 | the threshold mutated to `>=` in `SharpUpscale.h`, the same command, then restored | 3 of 6 red (the three Pillow goldens) |
+| 3 | ≈ 2026-11-20 15:57 +03:00 | `SD_TEMPLATE=../.tmp/b17_<card> SIM_ENV=simulator_x4_pro_win sh tools/sim_run.sh idea14n_<card> '0:WAIT:Entering activity: BmpViewer;6000:SHOT:view;8000:QUIT' ''` for `i_016_on`, `i_001_on`, `i_140_on`, `i_016_off` | 0 · 0 errors each |
+| 4 | ≈ 2026-11-20 15:58 +03:00 | `.tmp/bug17/compare_view_cache.py <view_*.bmp> .tmp/geb_in.epub OPS/images/<pic>.jpg panel_curve.txt` | see Checks |
+| 5 | ≈ 2026-11-20 15:58 +03:00 | `sh tools/host_tests.sh` | 1008 tests, «no new failure (known list: 10)» |
 
 ## 4. Checks
 
