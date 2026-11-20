@@ -62,5 +62,5 @@ this report — the book's text); `.tmp/mock/out2/gap_squeeze.webp`; build logs 
 ## Verdict
 
 pass — no line is carried, the gap grows with the setting up to the page's line-gap budget, G 0 is today's page. Not
-verified on the reader: the e-ink look of the 1 px tighter line gaps — with the 1.1.4-debug2 image; the default value
-waits for the owner's pick.
+verified on the reader: the e-ink look of the 1 px tighter line gaps — with the 1.1.4-debug2 image; the default is the owner's
+pick 12 (2026-11-20 11:39, firmware 8a8b44bc).

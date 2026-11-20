@@ -6,65 +6,43 @@ work project. From now on it is a standalone project.
 
 ## Where to continue
 
-- **The 2026-11-20 09:38 chat — the owner's tasks, in the order given** (they come before the 1.1.4 steps below):
-  (a) the reader's screenshots (reader on the wire, card `H:`): the four never analysed — `ch11_p25`, `ch11_p45` (19.11),
-  `ch9_p45`, `ch9_p54` (17–18.11; `ch10_p1/p20/p28` were bugs 14/15) — copied to `.tmp/screens_2026-11-20/` (WebP, upright),
-  the page `reader_screens_2026-11-20.md` shown 2026-11-20 09:44 +03:00 through the contour (`--proofread`, a field under each shot);
-  his remarks land in `interviews/decisions/reader_screens_2026-11-20.decision.json`. The card holds images 1.1.2 and 1.1.3
-  only (no 1.1.4) and GEB of 11.11 (no linter fixes); his fresh `settings.json` → `.tmp/screens_2026-11-20/`.
-  **Answered 2026-11-20 09:46 +03:00** (`1d1c67c`, verbatim): shots 1–2 — the bottom line touches the status bar while the top
-  gap is huge, wants a minimum-bottom-gap setting (measured: 3 px under the last line's descenders vs 26 px above the first;
-  `EpubReaderActivity.cpp:1700` reserves `max(screenMargin, statusBarHeight)` at the bottom — the margin is not added to
-  the status bar's 19 px) → bug 16, mock-ups first; shot 3 — a heading off-centre with an indent (bug 15, fixed in 1.1.4,
-  not on the reader); shot 4 — a caption carried over (fixed in the linter's GEB + keep-together, not on the card).
-  (e) optional — `[OWNER] 2026-11-20 09:50 · chat: «написать отчёт о том, что там много места занимает в прошивке кроспоинт
-  оригинальной, почти всю память программ занимает в ESP32 - побить на функциональные блоки и перечислить таблицей»` → a
-  background agent builds upstream `develop` `x4pro` in a `.tmp/` worktree and writes
-  `reports/2026-11-20_crosspoint_flash_budget.md`; no other PlatformIO build until it reports.
-  (b) `[OWNER] 2026-11-20 09:39 · chat: «кружок кнопки переключения темы сделать больше радиусом, на прочентов 20»`;
-  (c) `[OWNER] 2026-11-20 09:40 · chat: «В меню, вызываемое в книге по тапу в центре - меню, которое внизу открывается, есть
-  три кнопки. по ним открываеются листаемые списки - в них почему-то огромные отступы, нужно сделать более тестно»`;
-  (b) and (c) start with mock-ups — `[OWNER] 2026-11-20 09:40 · chat: «макеты нарисуешь»`.
-  (d) upstream issue #4515 (bug 08): `AlmostGivingUp` (new to the project) asked the model 2026-11-18 12:01 UTC and on
-  2026-11-19 14:54 UTC wrote he will try a fix — his read: Cover Grid's `HomeCoverCache` is not invalidated on a Night switch
-  (that is the bug 07 class, fixed upstream inside #4494 `b9c23473`; #4515 is the frame under the OPEN sheet, book pictures
-  too). Any reply goes out only after the owner's proofreading. Checked 2026-11-20: upstream `develop` `3331d189` (2026-11-19)
-  already resets the cover cache on a polarity change (`HomeCoverCache.cpp:35–41`); the reply draft for the owner's
-  proofreading — `qa_runs/issue4515/reply_draft_2026-11-20.md` (not sent).
-  **State 2026-11-20 10:40 +03:00:** mock-ups (b)(c) + bug 16 shown through the contour 10:33
-  (`.tmp/mock/out/mockups_1_1_4_2026-11-20.md`, `--proofread`; the owner was in a full-screen game, the window behind it;
-  his answer → `interviews/decisions/mockups_1_1_4_2026-11-20.decision.json`). **Committed 2026-11-20 10:48 +03:00 (local, П3):**
-  firmware `b2b92ef5` — the version order (g) + the judge's MAJOR + the otatest unflags (host 9/9, two mutants red, the
-  full suite no new failure; it rode along in a mock-up build before its review — the order of the owner's rule was
-  broken, said in chat; two judges after, no BLOCKER/MAJOR); `48d7d52c` — lists variant 2 + the circle (run report
-  `testcases/reports/2026-11-20_kccp114_lists_circle_version.md`). Simulator `fix/x4pro-viewable-insets` `190cff0`
-  (EXP-0041). **Bug 16 committed** firmware `7173e6bd` (local, П3): the render-time squeeze (`PageSqueeze.h`,
-  `Page::squeezeBottom` via `Section::loadPage`, `PageLine::inkBottom`, `UITheme::statusTextRise`), setting «Отступ над
-  строкой состояния» (`statusBarGap` 0..20, default 5 `[AI]`); three judges; run report
-  `testcases/reports/2026-11-20_bug16_status_bar_gap_squeeze.md` — gap 0 pixel-identical, 5 → 9 px, 10 → 12 px, same lines
-  and page count (EXP-0042: the font-metric air gate removed). **The owner's default** `[OWNER] 2026-11-20 11:39 · review
-  page: «12»` (`59557a9`) → firmware `8a8b44bc` (default 12; read literally as the setting's value — on his landscape page
-  10 and 12 look the same, said in chat); his card without the key shows the last ink 12 px above the status text.
-  **Then:** the debug2 smoke and image (П5 name
-  `cp-2.0.0-kccp-1.1.4-debug2.bin`), the OTA test release (`AUTH` 2026-11-18 10:34) after it.
-  (e) done: `reports/2026-11-20_crosspoint_flash_budget.md` (`38f7cdb`), sums verified; shown 10:40 (`--notice`).
-  **The owner's verdicts 10:36** (`dbfa003`): lists — variant 2 (touch rows max(theme row, 44) + gap 6; button boards
-  unchanged); circle — no remark, kept; bug 16 — no carried line, a render-time squeeze of the page's lines (design in
-  `bugs/16_…` Fix plan 3) + the gap setting. The mock-up gap is reverted in the firmware tree.
-  Release-process consequence (the version judge 2026-11-20): GitHub `releases/latest` never returns a release marked
-  pre-release, so a `-testN`/`-rcN` must be published as Latest — and then every older KCCP-channel reader (the mother's
-  too) is offered it; publish a pre-release as Latest only on the owner's word and put the release back right after.
-  (h) `[OWNER] 2026-11-20 10:42 · review page of the flash report: «есть понимание, что можно выбросить, оптимизировать?»`
-  (`5f76db9`) — answered in chat from the report's numbers: ru+en only — i18n ≈ 393 KB, hyphenation ≈ 284 KB (no feature
-  lost); by his and his mother's use — NotoSans sizes (one size kept ≈ 661 KB), Bluetooth 219, OPDS 107, plugins 81,
-  KOReader 68, LCP 24; two crypto libraries (wolfSSL 177 + mbedTLS 70) — engineering. KCCP build flags; an interview
-  `interviews/interview_007_flash_cuts_and_issue_reply.md` (Q1–Q5 the cuts, Q6 the #4515 reply) shown 2026-11-20 11:59 on his «покажи» (typed «gjrf;b»); answers → `interviews/decisions/interview_007_flash_cuts_and_issue_reply.decision.json`.
-  (g) `[OWNER] 2026-11-20 10:20 · chat: «нужно проверку версий найчить различать -debug1, 2, 3»` → `kccpversion::isNewer`
-  orders pre-releases of one KCCP version (label, then the number as a number; the release beats all; no downgrade) —
-  with the idea 12 judge's MAJOR (test1 → the real 1.1.4); host cases `DebugBuildsAreOrdered`, `TestReleaseMatrix`.
-  (f) `[OWNER] 2026-11-20 10:08 · chat: «это будет 1.1.4 ?» · «какая у нас последняя версия?»` — answered: last release
-  `kccp-1.1.3` (Latest, 2026-11-17 22:04 +03:00); (b)(c) and bug 16 go into 1.1.4 → the next reader image 1.1.4-debug2.
+- **Handover — the 2026-11-20 09:38 chat closed 2026-11-20 12:19 +03:00** on the owner's word `[OWNER] 2026-11-20 12:15 · chat: «и пора закрывать
+  чат»`; its full blocks moved verbatim to `PROJECT_HISTORY.md` → «STATUS trim 9». Firmware `wip/kccp-1.1.4` HEAD `8a8b44bc`
+  (local, П3) = 1.1.3 + bugs 14/15 + ideas 11/12 + the version order (`b2b92ef5`) + toolbar lists variant 2 and the night
+  circle (`48d7d52c`) + bug 16 the status-bar gap squeeze (`7173e6bd`, default 12 `8a8b44bc`). Image
+  `firmware-builds/cp-2.0.0-kccp-1.1.4-debug2.bin` (SHA256 `f4e4937e…`) built from `8a8b44bc` after a smoke of the same
+  commit (`.tmp/ui_mock_2026-11-20/d114_2_smoke`, parked: Boot → book → toolbar → shade → Home, 9 known TTF `[ERR]`), copied to the owner's card
+  `/.firmware/` 2026-11-20 12:16 +03:00, the reader ejected; he installs it. The card still holds `cp-2.0.0-krinik-1.1.2.bin` (its
+  removal was refused by the auto-mode classifier) and 1.1.3. The owner asked what to check on the device (12:16) — the list
+  went to chat: install, the page bottom, headings, the toolbar lists under a finger, the shade circle and buttons,
+  «Настройки → Чтение → Отступ над строкой состояния» 12. Simulator branch `fix/x4pro-viewable-insets` `190cff0` (local).
+  **Next, in order:**
+  1. The owner's device feedback on debug2 — read his card's `/screenshots/` when the reader is on the wire (HOUSE_RULES П4).
+  2. Interview #007 answers (`5685f78`) → a plan (`/plan-epic`: build system, i18n, hyphenation, fonts, П5 names):
+     language-variant builds — `interview #007 Q1: «можно пересобрать разные варианты сборки, типа RU, EN, PT, DE и так
+     далее? Мне с мамой хватило бы _RU_EN»`, Q2 the same for hyphenation; Q3 one light built-in font, the full fonts
+     (Literata and the approved ones) as an SD-card folder; Q4 Bluetooth — he asked «что это вообще такое???», answered in
+     chat (a wireless page-turner; he switched its button off) — removal waits for his word; Q5 keep OPDS, plugins, KOReader,
+     LCP. The numbers: `reports/2026-11-20_crosspoint_flash_budget.md` (upstream; the KCCP debug2 image is 83.2 % of app0, PlatformIO counts 83.1 %).
+  3. The OTA test release `kccp-1.1.4-test1` (`AUTH: [OWNER] 2026-11-18 10:34 · chat: «разрешаю собрать и опубликовать
+     тестовый релиз для тестирования обновления из GH по боевому пути»`): the judge's MAJOR is fixed (`b2b92ef5`); build env
+     `x4pro-krinik-otatest` from the SAME commit as debug2 (`8a8b44bc`), smoke, publish non-prerelease Latest, check
+     `gh api …/releases/latest`; a pre-release as Latest is offered to every older KCCP-channel reader (the mother's too) —
+     put the release back right after, on his word. Notes `docs/releases/kccp-1.1.4-test1.md`.
+  4. Still open from 2026-11-18 (moved blocks): his two answers — idea 11: Back from Settings/Library/Transfer opened over a
+     book goes Home (A, as now) or to the book (B); idea 12: a warning before the CrossPoint channel installs upstream (B
+     recommended); the GEB proofreading leftovers (spelling 953, punctuation 381 unreviewed); the README linking the three
+     projects; the linter's GEB `.tmp/kel_out3/…epub` to the card (not copied yet; 1.1.4's cache bump re-lays it).
+  5. Upstream issue #4515: the reply posted 2026-11-20 12:10 +03:00 (`#issuecomment-7035293194`) on `interview #007 Q6: A`;
+     watch `AlmostGivingUp`'s answer.
+  KNOWLEDGE: the simulator's X4 Pro insets = the device's (EXP-0041, HOUSE_RULES stand row, simulator `190cff0`); font
+  metrics are not ink (EXP-0042, `Page.cpp`); a build in another worktree blocks nothing (EXP-0040, AGENT_GUIDE Build);
+  HOUSE_RULES П5 item 6 (the pre-release order); `tools/shot_rows.py`; `shot_diff … 32` in landscape (HOUSE_RULES); the
+  internal map (ReaderToolbarUi, Page.{h,cpp}, the squeeze); the flash report.
 
+- **The closing judge of the 2026-11-20 chat** (the owner 12:21 «нет времени на судейство»; it had already run, finished
+  12:22): VERIFIED WITH CAVEATS — no false claim of substance; fixed at once: the smoke path (parked), 83.2 % of app0 (not
+  83.1), the bug 16 report's stale «default waits»; open: the flash report's block rows sum to 1 B less than its total.
 - **DEBT — the closing judge pass of the 2026-11-18 08:44 chat** was skipped on the owner's word `[OWNER] 2026-11-18 10:41 ·
   chat: «пока этот чат закрывать. Сразу после твоего суб-агента, без судейства»` — the next `/end-chat-soft` runs
   `/fable-judge` over this chat's claims (the 1.1.4 block below, the two run reports of 2026-11-18, the linter `6343dcc`).
@@ -73,52 +51,6 @@ work project. From now on it is a standalone project.
   `tools/kel_tests.sh`, `TARGETS=` of `tools/host_tests.sh`; EXPERIENCE 0037–0039; the maps (BlockStyle heading keep, the
   shade model, `epub-linter/`); researches on FB2 converters and the update channel; ideas 11–13.
 
-- **KCCP 1.1.4 — in work since 2026-11-18 08:44 +03:00** on the owner's word «давай скорее делать 1.1.4, так как я вчера
-  начал читать и ужас с этими заголовками, и переносами подписей картинок на следующие страницы»: (1) bugs 14 (a lonely
-  heading) and 15 (a heading's first-line indent) in the firmware, branch `wip/kccp-1.1.4` from the 1.1.3 release
-  `c1c38089`; (2) the captions are the book's markup and are fixed in Krinik EPUB Linter (`[OWNER]` 08:49), now the
-  sub-project `epub-linter/` (`[OWNER]` 08:52, own repo) — the figure pairs move there from `tools/figure_retypeset.py`,
-  with the EPUB 2 form (GEB is EPUB 2.0); (3) every reading test on the owner's settings and his GEB copy
-  (`HOUSE_RULES.md` П4); (4) the READMEs of the three projects link each other — KCCP firmware, Krinik EPUB Linter,
-  KEINKT (`[OWNER]` 08:53 «Три проекта в README их нужно будет "связать" - сослаться друг на друга, они всё друг друга
-  дополняют»; the linter's README already links KCCP) — done with the 1.1.4 README. The 1.1.3 debts below wait behind it.
-  **Done 2026-11-18 09:48 +03:00:** bugs 14, 15 DONE on the simulator (firmware `d727eeef`; the owner's GEB and settings, run report
-  `testcases/reports/2026-11-18_kccp114_headings_captions.md`); image **`firmware-builds/cp-2.0.0-kccp-1.1.4-debug1.bin`**
-  (`21671e33`, SHA256 `928442f2…`) — waits for the reader on the wire, with the linter's GEB (153 captions bound — `.tmp/kel_out2/`, linter `6343dcc`; copy over
-  the old file under the same name: the cache bumps 21/78 re-lay it, the progress stays). The linter `6343dcc` (local,
-  push with the 1.1.4 README after the owner's proofreading).
-  **Done 2026-11-18 10:33 +03:00 (firmware, local, not pushed — П3):** idea 11 `b493939b` + `fb217e8d` — Settings / File Transfer /
-  Library in the shade (off by default, Home's goTo* and glyphs; at most 8 buttons on, the ninth refused with «Достигнут
-  лимит кнопок в шторке» [OK] — `[OWNER]` 10:10; no replace while Wi-Fi is on; HALF over the gray viewer); version names
-  by П5 `253d5712` (`cp-…-kccp-…`, `-debug2`, mama `cp-…-kccpm-…`); idea 12 `357f2101` — «Канал обновлений: KCCP /
-  CrossPoint» in Settings → System, KCCP releases by default (`researches/2026-11-18_idea12_update_channel.md`).
-  Simulator runs `qa_runs/i11_*`, `i12_setting` (no report yet — write it with the debug2 smoke).
-  **OTA test release — `AUTH: [OWNER] 2026-11-18 10:34 · chat: «разрешаю собрать и опубликовать тестовый релиз для
-  тестирования обновления из GH по боевому пути»`:** tag `kccp-1.1.4-test1`, marked latest (the device reads
-  `releases/latest`), one asset `cp-2.0.0-kccp-1.1.4-test1.bin` from env `x4pro-krinik-otatest` (`78d89fcd`), notes
-  `docs/releases/kccp-1.1.4-test1.md`; the owner installs debug2 from SD, then «Проверить обновление» on the KCCP
-  channel. Gate: the judge over `253d5712`/`357f2101`/`78d89fcd` (running 2026-11-18 10:36 +03:00), then the smoke, then both images.
-  The second judge over `fb217e8d` came back VERIFIED WITH CAVEATS — MAJOR 1 fixed in `78d89fcd`; its minors are open:
-  the dialog drawn over a stale frame (ToggleRowsActivity render), the Wi-Fi guard after the DRM-loan time sync,
-  `canTurnOn` without a host test, «Up to 8 rows» comment, the 10-row screen never run (Bluetooth hidden on the simulator).
-  **The chat closed on the owner's word** `[OWNER] 2026-11-18 10:41 · chat: «пока этот чат закрывать. Сразу после твоего
-  суб-агента, без судейства»` — the closing judge pass is a debt; the test release was NOT built or published yet.
-  **The idea 12 judge (10:43): GO with conditions** — the trace debug2 → `kccp-1.1.4-test1` works (sizes, JSON key order,
-  board tag, `build_unflags` all checked). Before publishing: **MAJOR** — a reader on test1 is never offered the real
-  `kccp-1.1.4` (`KccpVersion.h` drops the tag's suffix, only `-debug` counts as pre-release): count any suffix after the
-  KCCP version («-test1», «-debugN») as pre-release and add host cases (tags `-test1` / final × images debug2 / test1 /
-  release) — or tell the owner the way back from test1 is an SD flash; minors: the parser test sets the suffix before the
-  feed (OtaUpdater sets it mid-stream), `x4pro-krinik-otatest` replaces base's `build_unflags` (take
-  `${env:x4pro-krinik-debug.build_unflags}` + the version line; check the image's strings), «Нет обновлений» cannot tell
-  «no asset» from «not newer» at LOG_LEVEL 1, the notes must say plainly it is a debug-env test build. Conditions: same
-  commit for debug2 and test1 after a smoke; control — debug2 against `kccp-1.1.3` Latest shows «Нет обновлений»;
-  publish non-draft, NOT prerelease; `gh api …/releases/latest --jq '.tag_name,.assets[].name'` must print the test tag and
-  asset; Latest put right after the test only on the owner's word.
-  **Next, in order:** (1) the idea 12 judge's MAJOR and minors above, then (2) the debug2 image `cp-2.0.0-kccp-1.1.4-debug2.bin` after a smoke of the same commit (the mama image only for
-  the release, П5); (3) the owner's two answers asked 2026-11-18 ≈ 10:25 in chat — idea 11: Back from Settings/Library/
-  Transfer opened over a book goes Home (A, as now) or back to the book (B); idea 12: a warning before the CrossPoint
-  channel installs upstream (B recommended); (4) GEB proofreading below; (5) the README of the three projects; (6) the
-  release on the owner's word (both release images, no debug — П5).
 - **GEB proofreading (Krinik EPUB Linter)** — `[OWNER] 2026-11-18 10:10 · chat: «опечаток я много видел в книге, кстати. В
   основном - неверные формы слов, неверное согласование падежей, склонений и вот таких особенностий русского языка»`:
   run the linter's `proofread` (built-in checks + local LanguageTool, needs Java 17+ — probe) on the owner's GEB copy,
