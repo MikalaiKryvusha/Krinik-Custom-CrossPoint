@@ -27,8 +27,8 @@ work project. From now on it is a standalone project.
   checkout stays on `fc97043d`); the independent review ran, no BLOCKER/MAJOR, 9 findings to apply first — listed in
   `ideas/14_viewer_smart_filter_bw_lowres.md` → «State at the 2026-11-20 17:03 chat's close»; BMP stand cards
   `.tmp/b17_bmp_{016_on,016_off,140_on}`, compare `.tmp/bug17/compare_view_cache_file.py`, cases 10–14 in
-  `testcases/TC_idea14_smart_filter.md`. **This repo's push was refused by the auto-mode classifier at 17:19** — the
-  commits since `50082d4` are local and wait for his word.
+  `testcases/TC_idea14_smart_filter.md`. This repo pushed 2026-11-20 17:45 +03:00 (`50082d4..d8f9d9d`) on `[OWNER] 2026-11-20
+  17:44 · chat: «разрешаю пуш»` (the classifier had refused it at 17:19); firmware branches local (П3).
   KNOWLEDGE: the BMP converter (internal map — `adjustPixel` is a no-op, Atkinson whitens ≥ 150); `BmpToBmpTest` builds on
   Windows (known list); the `sim_run` WAIT-time trap and the card-visit grep (HOUSE_RULES); EXP-0044 (the clock placeholder
   ⟦ ⟧ is U+27E6/27E7), EXP-0045 (the closing mode by urgency words only), EXP-0046 (a fix on the device is done only on the
