@@ -28,7 +28,14 @@ work project. From now on it is a standalone project.
   (d) upstream issue #4515 (bug 08): `AlmostGivingUp` (new to the project) asked the model 2026-11-18 12:01 UTC and on
   2026-11-19 14:54 UTC wrote he will try a fix — his read: Cover Grid's `HomeCoverCache` is not invalidated on a Night switch
   (that is the bug 07 class, fixed upstream inside #4494 `b9c23473`; #4515 is the frame under the OPEN sheet, book pictures
-  too). Any reply goes out only after the owner's proofreading.
+  too). Any reply goes out only after the owner's proofreading. Checked 2026-11-20: upstream `develop` `3331d189` (2026-11-19)
+  already resets the cover cache on a polarity change (`HomeCoverCache.cpp:35–41`); the reply draft for the owner's
+  proofreading — `qa_runs/issue4515/reply_draft_2026-11-20.md` (not sent).
+  (g) `[OWNER] 2026-11-20 10:20 · chat: «нужно проверку версий найчить различать -debug1, 2, 3»` → `kccpversion::isNewer`
+  orders pre-releases of one KCCP version (label, then the number as a number; the release beats all; no downgrade) —
+  with the idea 12 judge's MAJOR (test1 → the real 1.1.4); host cases `DebugBuildsAreOrdered`, `TestReleaseMatrix`.
+  (f) `[OWNER] 2026-11-20 10:08 · chat: «это будет 1.1.4 ?» · «какая у нас последняя версия?»` — answered: last release
+  `kccp-1.1.3` (Latest, 2026-11-17 22:04 +03:00); (b)(c) and bug 16 go into 1.1.4 → the next reader image 1.1.4-debug2.
 
 - **DEBT — the closing judge pass of the 2026-11-18 08:44 chat** was skipped on the owner's word `[OWNER] 2026-11-18 10:41 ·
   chat: «пока этот чат закрывать. Сразу после твоего суб-агента, без судейства»` — the next `/end-chat-soft` runs

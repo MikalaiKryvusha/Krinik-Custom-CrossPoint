@@ -6,6 +6,7 @@
 2. Откройте «Настройки → Система» и убедитесь, что «Канал обновлений» — KCCP.
 3. Нажмите «Проверить обновление». Читалка находит `kccp-1.1.4-test1`, ставит его и перезагружается.
 4. В «Об устройстве» стоит версия `cp-2.0.0-kccp-1.1.4-test1`; повторная проверка обновления больше не предлагает.
+5. Когда выйдет релиз KCCP 1.1.4, проверка обновления на читалке с `-test1` предложит его.
 
 ---
 
@@ -17,3 +18,4 @@ To check:
 2. Open «Settings → System» and make sure «Update channel» is KCCP.
 3. Tap «Check for Updates». The reader finds `kccp-1.1.4-test1`, installs it and restarts.
 4. «About» shows `cp-2.0.0-kccp-1.1.4-test1`; a second check offers no update.
+5. Once the KCCP 1.1.4 release is out, «Check for Updates» on the `-test1` reader offers it.

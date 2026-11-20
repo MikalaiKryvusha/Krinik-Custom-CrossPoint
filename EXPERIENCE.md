@@ -82,6 +82,19 @@
 
 ## Entries
 
+### EXP-0040 · 2026-11-20 · ❌ · #build #wait #subagent #owner
+class: claim-before-evidence
+none-cheap: a turn ended to wait is a chat act no repository tool sees; the carrier is the Trigger below
+**Context:** a background agent built upstream `develop` (`x4pro`) in its own worktree `.tmp/upstream_develop` for the flash
+report; I held my simulator build and ended two turns «waiting», reading «one PlatformIO build at a time» as a machine lock.
+**Result:** ❌ the owner: «тебя это не держит. у тебя хватает работы». The rule's reason is the SAME tree: `pio run -e x4pro`
+in `firmware/` wipes `firmware/.pio/build/simulator_*`; a worktree has its own `.pio`, so the two builds do not touch.
+**Lesson:** before waiting on another job, name what exactly it blocks (a file, a folder, a lock); a build in another tree
+blocks nothing of mine — start my build and take the next task in the same turn.
+**Repro:** `ls <worktree>/.pio/build` vs `ls firmware/.pio/build` — different folders → build in parallel.
+**Trigger:** about to end a turn «waiting for» a background agent or build.
+**Not for:** two builds in the same `firmware/` tree (they do wipe each other's outputs).
+
 ### EXP-0039 · 2026-11-18 · ❌→✅ · #qa_runs #glob #mv #tracked
 class: overwrote-tracked
 mechanized: `sh tools/park_runs.sh <dest> <run…>` — moves named runs to `.tmp/<dest>/`, refuses a run git tracks (proven on `cap_look_A`)

@@ -37,6 +37,19 @@ viewable inset + `max(SETTINGS.screenMargin, statusBarHeight)`. With the status 
 `statusBarVerticalMargin`, the text lane itself) replaces the margin instead of adding to it, so the text area ends exactly
 where the status bar text begins. The top gap is the margin plus the first line's half-leading.
 
+## The stand did not match the reader (found 2026-11-20)
+
+The first mock-up run printed the page pixel-identical to «today»: on the simulator the page sat 4 px higher and the status
+bar 4 px lower than on the reader (text 22…443 and bar 454 on the simulator, 26…446 and 450 on the reader). The cause is the
+simulator's X4 Pro profile: `simulator/src/BoardConfig.h` gave it the default viewable insets `{9, 3, 3, 3}` while the
+device profile (`freeink-sdk/.../BoardConfig.h` `XTEINK_X4_PRO`) has `{9, 7, 3, 7}`; in landscape the side insets become the
+top and the bottom. Fixed on the simulator branch `fix/x4pro-viewable-insets` (local); the page is to be compared with the
+reader's own screenshot again on the rebuilt stand.
+
+TWINS: searched `getStatusBarHeight()` in `src/` — `EpubReaderActivity.cpp:1700` is the only text-area reservation (plus
+its auto-page-turn branch at :1694); `XtcReaderActivity.cpp:110` draws the bar over a pre-rendered page (no text area);
+`StatusBarSettingsActivity.cpp` and `BaseTheme.cpp:839` draw the bar itself.
+
 ## Fix plan
 
 1. Mock-ups on the owner's stand: today · status bar + `screenMargin` · status bar + 2 × `screenMargin` (the page of

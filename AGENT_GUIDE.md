@@ -544,8 +544,9 @@ pio run -d firmware -e simulator_x4_pro        # desktop simulator binary
   `[OWNER] 2026-11-09 14:44 +03:00 · chat: «а как ты это всё поставишь сейчас? если идет дамп C?» · «спроси у него»`.
   The first MSYS2 install (winget, 14:44) was killed mid-way and left a partial `C:\msys64`.
   The laptop was macOS: adapt, never copy its paths (`~/.platformio/penv/bin/pio`, `$HOME/Xteink/...`).
-- Run PlatformIO ONE build at a time; `pio run -e x4pro` wipes the simulator binary — rebuild the simulator after
-  a device build.
+- Run PlatformIO ONE build at a time IN ONE TREE; `pio run -e x4pro` wipes the simulator binary — rebuild the simulator
+  after a device build. A build in another worktree (its own `.pio`, e.g. `.tmp/upstream_develop`) blocks nothing here —
+  build in parallel and keep working (`[OWNER] 2026-11-20 10:08 · chat: «тебя это не держит. у тебя хватает работы»`; EXP-0040).
 - The reader is eFuse-locked: a firmware image reaches it ONLY from the SD card. Images and their SHA256 files go
   to `firmware-builds/`.
 
