@@ -1,10 +1,34 @@
 # STATUS — Krinik Custom CrossPoint (KCCP)
 
-Updated 2026-11-17 15:39 +03:00 (the 14:42 day loop: homework 08 shown, epic 07 Ф3 tool, epic 05 Ф5, plan 15 the guide). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
+Updated 2026-11-20 09:45 +03:00 (the 09:38 chat: the owner's screenshots page, tasks b–d below). Licence: MIT (owner, 2026-11-08: «как у оригинального CP, или MIT»); fonts OFL, firmware images GPLv3.
  Moved off the owner's laptop, where it lived as a loose folder (`~/Xteink`) beside an unrelated
 work project. From now on it is a standalone project.
 
 ## Where to continue
+
+- **The 2026-11-20 09:38 chat — the owner's tasks, in the order given** (they come before the 1.1.4 steps below):
+  (a) the reader's screenshots (reader on the wire, card `H:`): the four never analysed — `ch11_p25`, `ch11_p45` (19.11),
+  `ch9_p45`, `ch9_p54` (17–18.11; `ch10_p1/p20/p28` were bugs 14/15) — copied to `.tmp/screens_2026-11-20/` (WebP, upright),
+  the page `reader_screens_2026-11-20.md` shown 2026-11-20 09:44 +03:00 through the contour (`--proofread`, a field under each shot);
+  his remarks land in `interviews/decisions/reader_screens_2026-11-20.decision.json`. The card holds images 1.1.2 and 1.1.3
+  only (no 1.1.4) and GEB of 11.11 (no linter fixes); his fresh `settings.json` → `.tmp/screens_2026-11-20/`.
+  **Answered 2026-11-20 09:46 +03:00** (`1d1c67c`, verbatim): shots 1–2 — the bottom line touches the status bar while the top
+  gap is huge, wants a minimum-bottom-gap setting (measured: 3 px under the last line's descenders vs 26 px above the first;
+  `EpubReaderActivity.cpp:1700` reserves `max(screenMargin, statusBarHeight)` at the bottom — the margin is not added to
+  the status bar's 19 px) → bug 16, mock-ups first; shot 3 — a heading off-centre with an indent (bug 15, fixed in 1.1.4,
+  not on the reader); shot 4 — a caption carried over (fixed in the linter's GEB + keep-together, not on the card).
+  (e) optional — `[OWNER] 2026-11-20 09:50 · chat: «написать отчёт о том, что там много места занимает в прошивке кроспоинт
+  оригинальной, почти всю память программ занимает в ESP32 - побить на функциональные блоки и перечислить таблицей»` → a
+  background agent builds upstream `develop` `x4pro` in a `.tmp/` worktree and writes
+  `reports/2026-11-20_crosspoint_flash_budget.md`; no other PlatformIO build until it reports.
+  (b) `[OWNER] 2026-11-20 09:39 · chat: «кружок кнопки переключения темы сделать больше радиусом, на прочентов 20»`;
+  (c) `[OWNER] 2026-11-20 09:40 · chat: «В меню, вызываемое в книге по тапу в центре - меню, которое внизу открывается, есть
+  три кнопки. по ним открываеются листаемые списки - в них почему-то огромные отступы, нужно сделать более тестно»`;
+  (b) and (c) start with mock-ups — `[OWNER] 2026-11-20 09:40 · chat: «макеты нарисуешь»`.
+  (d) upstream issue #4515 (bug 08): `AlmostGivingUp` (new to the project) asked the model 2026-11-18 12:01 UTC and on
+  2026-11-19 14:54 UTC wrote he will try a fix — his read: Cover Grid's `HomeCoverCache` is not invalidated on a Night switch
+  (that is the bug 07 class, fixed upstream inside #4494 `b9c23473`; #4515 is the frame under the OPEN sheet, book pictures
+  too). Any reply goes out only after the owner's proofreading.
 
 - **DEBT — the closing judge pass of the 2026-11-18 08:44 chat** was skipped on the owner's word `[OWNER] 2026-11-18 10:41 ·
   chat: «пока этот чат закрывать. Сразу после твоего суб-агента, без судейства»` — the next `/end-chat-soft` runs

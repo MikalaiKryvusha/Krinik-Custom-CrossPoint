@@ -72,6 +72,11 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   `currentPageLinks`, `currentPageFootnotes`, the overlay state): `loop()` routes input in priority order (overlay →
   long press = clip selection → Home-button actions → link tap (`currentPageLinks`, beats the zones) → centre tap = menu →
   Back → side taps / swipes / buttons = page turn); the page render keeps the current page's links for hit-testing.
+- `src/activities/reader/ReaderToolbarUi.{h,cpp}` — the bottom sheet of a book opened by a centre tap (FreeInkUI on
+  `UiAppHost`): the toolbar (chapter ◀ ▶, progress track with a knob, meta line) and the tool row of three icon slots
+  Contents / Text / More (`kToolRowH` 80, the active one in an outline pill); a slot opens a PANEL in the same sheet —
+  title, a scrolling list sized to whole rows (row height `tokens.rowHeight` + gap `max(listRowGap, listTouchRowGap)`,
+  or the theme's `listRowHeight` + `listRowGap` when the reader sets `model.denseRows`), the tool row at the bottom.
 - `src/activities/util/BmpViewerActivity.cpp` — the file browser's full-screen image viewer (BMP/JPEG/PNG through the
   panel curve, cache `/.crosspoint/view_*.bmp`, siblings of the folder, long tap rotates); opened by
   `ActivityManager::goToReader` for an image file (replace), and since debug9 pushed over the book reader for a tapped
