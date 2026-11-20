@@ -131,8 +131,8 @@ owner judges by the pictures he approved and does not want parameter questions; 
 cheap to reverse (AGENT_GUIDE: «is it cheap to reverse? If yes — decide yourself»), each a constant:
 - `[AI]` the floor `kMinCut = 160` — derived from his rule 14:20 «не уничтожить антиалиасинг»: without it the 90 % rule
   erases the edges of 2 of 37 GEB drawings (i_022, i_001); the other 35 are unchanged.
-- `[AI]` BMP files in the file browser are not filtered (they come prepared for the screen: sleep pictures, calibration
-  cards).
+- ~~`[AI]` BMP files in the file browser are not filtered (they come prepared for the screen: sleep pictures, calibration
+  cards).~~ → `[OWNER] 2026-11-20 16:30 +03:00 · chat:` «нет, чистим всё в полноэкранном вьювере. Это работа с рендером изображения во вьювере» — BMP gets the filter and N too.
 - `[AI]` N only from an enlargement of ×2 (he saw N at ×2 and ×8.8 only) and a source ≤ 8192 px (the reader's heap).
 - `[AI]` a line-art picture N could not draw (low heap) is shown bilinear and not cached; GIF pictures are not filtered.
 - `[AI]` the detector thresholds (middle < 20 %, white ≥ 50 %) — from the scan of all 180 GEB pictures.
@@ -235,3 +235,22 @@ The filter itself: firmware `5a9e1624` on `wip/kccp-line-art-filter` (local, П3
 - [ ] **F6 — verification**: the independent review BEFORE the build (the owner's rule); the full host suite; simulator
       runs — the file browser opens `i_016.jpg` (clean), `i_140.jpg` (identical to today), the setting off = today (the
       control case), a GEB page with `i_016` on the owner's settings (П4); the run report in `testcases/reports/`.
+
+## N by content, not by scale (2026-11-20 16:30–16:52 +03:00)
+
+`[OWNER] 2026-11-20 16:30 +03:00 · chat:` (on «Если чуть-чуть, например в 1,2 раза … растягивается как сейчас, мягко»)
+«покажи сравнение» → `.tmp/bug17/idea14_slight_enlarge.webp` (blind X = N, Y = today's bilinear; the filter on in both):
+`[OWNER] 2026-11-20 16:52 +03:00 · chat:` «1 справа луче, так как это рисунок, не чертеж · 2 слева лучше, так как это
+текста · 3 слева лучше, так как мелкие текста» → the arches `i_088` (×1.34, an illustration with hatching) — the bilinear;
+the text sheet `i_056` (×1.45) and the layers `i_078` (×2, small text) — N.
+
+What it changes (the next phase, not built):
+1. N follows the CONTENT: text and diagrams («чертёж», «текст») get N at any enlargement; drawings / illustrations
+   («рисунок»: hatching, texture) keep the bilinear. The ×2 minimum (an `[AI]` constant) is not the owner's criterion —
+   to be replaced. A third class is needed in the detector: text/diagram vs illustration (both are «line art» today:
+   `i_088` middle 19.4 % / white 65 %, `i_056` 15.8 % / 70 %, `i_078` 10.4 % / 77 %) — recon first (how document-image
+   tools tell text from halftone/hatching: stroke-width statistics, connected components, edge density), then a mock-up
+   on GEB pictures, the owner's eye deciding.
+2. N for big sources: `i_056` (160 K px) and `i_078` (56 K px) exceed the reader's 8192-px whole-source limit — N must
+   stream the source rows straight from the decoder (the horizontal pass per decoded row) instead of holding the source.
+3. BMP in the viewer gets the filter and N too (the owner 16:30), through `BmpToBmpConverter` / `Bitmap::readRowGray`.

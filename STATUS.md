@@ -15,10 +15,8 @@ work project. From now on it is a standalone project.
   **Built:** firmware `5a9e1624` on the local branch `wip/kccp-line-art-filter` (from `wip/kccp-1.1.4` `8a8b44bc`, П3):
   «Настройки → Чтение → Чистить фон чертежей», on by default, page + viewer + file browser, pictures ≤ 480×800 of area; two
   independent reviews applied; simulator run report `testcases/reports/2026-11-20_idea14_smart_filter.md` all pass; host
-  suite 1002, no new failure; NO reader image yet. **Waiting for the owner:** the floor 160 (`kMinCut`, mock-up shown),
-  BMP files in the file browser (not filtered now), the scaler pick A–F (`.tmp/bug17/idea14_scalers_mock.webp`, shown in
-  VS Code 15:20, key beside it) → then the chosen scaler on the simulator (the owner 15:14 «потом на симуляторе»).
-  The scaler: the owner picked N (bicubic + unsharp 3/160/2) for line art only (15:26–15:28); a byte-exact Pillow replica
+  suite 1002, no new failure; NO reader image yet. The floor 160 stays (`[AI]` under his 14:20 rule; 16:29 «я утвердил
+  вариант»). The scaler: the owner picked N (bicubic + unsharp 3/160/2) for line art only (15:26–15:28); a byte-exact Pillow replica
   in rings — `lib/Epub/Epub/converters/SharpUpscale.h`, host test `test/sharp_upscale` 6/6 byte-exact against Pillow
   goldens; wired into the viewer: firmware `353cb8b5` (same branch, local) — enlarged ≥ ×2 line art ≤ 8192 source px,
   photos keep the bilinear; simulator: the viewer cache vs Pillow N 26/252 800 and 5/239 040 pixels differ (JPEG decoders),
@@ -31,9 +29,14 @@ work project. From now on it is a standalone project.
   bug 15 keeps the indent off headings, body paragraphs with `text-indent: 0` still get it; #4 (SVG cover small) not fixed —
   the «never enlarge» clamp at `ChapterHtmlSlimParser.cpp` ≈ 1893. Release: 1.1.5 — `[OWNER] 2026-11-20 16:11 +03:00 ·
   chat: «4 в 1.1.5»`.
-- **Asked again in plain words 16:12 — answered 16:29** (the floor, BMP and ×2 are the agent's, recorded in idea 14 «Decisions made without the owner»: «я утвердил вариант») (the owner 16:11: «1 не понимаю · 2 не понимаю · 3 не полнимаю» — the first wording
-  was in the agent's terms): the floor (keep the edges of dark drawings), BMP files left as they are, N only from ×2; and
-  whether the filter + N go into 1.1.4 (debug3 to his card) or 1.1.5.
+- **Idea 14 — next, in order** (the owner's words 16:30–16:52, idea 14 «N by content, not by scale»):
+  1. BMP in the full-screen viewer gets the filter and N too — `[OWNER] 2026-11-20 16:30 · chat: «нет, чистим всё в
+     полноэкранном вьювере. Это работа с рендером изображения во вьювере»` (`BmpToBmpConverter`, `Bitmap::readRowGray`).
+  2. N by content: text and diagrams → N, drawings with hatching → the bilinear — `[OWNER] 2026-11-20 16:52 · chat: «1
+     справа луче, так как это рисунок, не чертеж · 2 слева лучше, так как это текста · 3 слева лучше, так как мелкие
+     текста»`; a third detector class (recon → GEB mock-up → his eye); the `[AI]` ×2 minimum goes.
+  3. N for big sources: stream the source rows from the decoder (the 8192-px whole-source limit drops `i_056`, `i_078`).
+  4. Open: does the filter + N go into 1.1.4 (a debug3 image to his card) or 1.1.5 — asked 16:12, not answered yet.
 - **Handover — the 2026-11-20 09:38 chat closed 2026-11-20 12:19 +03:00** on the owner's word `[OWNER] 2026-11-20 12:15 · chat: «и пора закрывать
   чат»`; its full blocks moved verbatim to `PROJECT_HISTORY.md` → «STATUS trim 9». Firmware `wip/kccp-1.1.4` HEAD `8a8b44bc`
   (local, П3) = 1.1.3 + bugs 14/15 + ideas 11/12 + the version order (`b2b92ef5`) + toolbar lists variant 2 and the night
