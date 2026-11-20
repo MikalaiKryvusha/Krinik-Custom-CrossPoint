@@ -82,6 +82,21 @@
 
 ## Entries
 
+### EXP-0042 · 2026-11-20 · ❌→✅ · #fonts #metrics #geometry #judge #simulator
+class: guessed-instead-of-measured
+none-cheap: the carrier is the run — a geometry rule is accepted only with its simulator shot measured by tools/shot_rows.py
+**Context:** bug 16 squeeze — two judges proposed an «air» gate between lines from font metrics (the advance; then
+ascender + descender + 1 px); both were built.
+**Result:** ❌ on the owner's page both gates blocked every gap inside a paragraph: Literata's max ascender + descender (and
+its advance) exceed the 37 px pitch of his «+10 %» spacing, while the rendered ink keeps 3 px between lines — the squeeze
+moved 1 px instead of 7–10. ✅ the gate removed; the text-only rule and the 1 px cap guard collisions.
+**Lesson:** font metrics are maxima of the whole font, not the ink of a line; a spacing rule derived from them (mine or a
+judge's) is accepted only after the stand shows its effect on the owner's page in numbers.
+**Repro:** `.pio-venv/Scripts/python.exe -I -X utf8 tools/shot_rows.py <before.webp> <after.webp>` → the line bands moved as
+the rule promises.
+**Trigger:** writing a layout condition on ascender / descender / advance / line height.
+**Not for:** the parser's own pagination clamp (it frames the full glyph box on purpose).
+
 ### EXP-0041 · 2026-11-20 · ❌→✅ · #simulator #stand #geometry #real-data
 class: fixture-not-real-data
 mechanized: `simulator/src/BoardConfig.h` XTEINK_X4_PRO viewableInsets = the SDK device profile {9, 7, 3, 7} (branch `fix/x4pro-viewable-insets`); proven by the row profile below

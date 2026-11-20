@@ -1,6 +1,8 @@
 # Bug 16 — the last line of a book page touches the status bar, while the top gap is large
 
-**Status:** 🔴 OPEN — mock-ups first (`[OWNER] 2026-11-20 09:40 · chat: «макеты нарисуешь»`, said for the shade circle and the
+**Status:** 🔧 fix committed, pending the owner's default and the reader — firmware `7173e6bd` (2026-11-20), run report
+`testcases/reports/2026-11-20_bug16_status_bar_gap_squeeze.md` (all pass on the simulator); the default value page shown
+2026-11-20 ≈ 11:30 (`.tmp/mock/out2/status_bar_gap_2026-11-20.md`). Earlier: 🔴 OPEN — mock-ups first (`[OWNER] 2026-11-20 09:40 · chat: «макеты нарисуешь»`, said for the shade circle and the
 toolbar lists; the same way taken here)
 **Severity:** S2 · **Version/build:** KCCP 1.1.3 on the reader; the same code in `wip/kccp-1.1.4` (`78d89fcd`) and upstream
 `develop` · **When/context:** the owner's screenshots 2026-11-19 13:08 and 15:07 (GEB, «ГЛАВА II», pages 25 and 45),
@@ -66,6 +68,15 @@ its auto-page-turn branch at :1694); `XtcReaderActivity.cpp:110` draws the bar o
    сейчас на экране» · KISS — the render-time form changes no cache>.
 4. G is the setting he asked for earlier («настройку отступа внизу минимального»); its default and range go to him with
    the run's shots. Twins: only `EpubReaderActivity.cpp:1700` reserves the text area (see TWINS above).
+5. Built 2026-11-20 (uncommitted, firmware `wip/kccp-1.1.4`): `PageSqueeze.h` (+ host test), `Page::squeezeBottom`,
+   `Section::loadPage` squeezes every page, setting «Отступ над строкой состояния» (`statusBarGap`, 0..20, default 5 `[AI]`).
+   Three judges: (1) the setting was hidden (`withTextSettings`), the spaced line box was not the glyph bottom, a gap next
+   to a picture could overlap — fixed; (2) drop caps, tight spacing — fixed. **The first simulator run (gap 5/10) moved
+   only 1 px:** the air check used the parser's glyph bottom = the font's whole advanceY, larger than the 37 px pitch,
+   so no gap inside a paragraph qualified although the ink had 3 px of air; and the gap was measured from the text area's
+   bottom while the status text is drawn 4 px above it. Fixed: `PageLine::inkBottom` (ascender + descender from the
+   baseline), the limit = the status text's top via `UITheme::statusTextRise()` (shared with `BaseTheme::drawStatusBar`).
+   Control: gap 0 is pixel-identical to the page before the change (row profile of `b16_g0` = `d114_2_land`).
 
 ## Decisions made without the owner
 

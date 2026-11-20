@@ -38,7 +38,13 @@ work project. From now on it is a standalone project.
   full suite no new failure; it rode along in a mock-up build before its review — the order of the owner's rule was
   broken, said in chat; two judges after, no BLOCKER/MAJOR); `48d7d52c` — lists variant 2 + the circle (run report
   `testcases/reports/2026-11-20_kccp114_lists_circle_version.md`). Simulator `fix/x4pro-viewable-insets` `190cff0`
-  (EXP-0041). **Next:** bug 16 — the render-time squeeze + the gap setting; then the debug2 smoke and image (П5 name
+  (EXP-0041). **Bug 16 committed** firmware `7173e6bd` (local, П3): the render-time squeeze (`PageSqueeze.h`,
+  `Page::squeezeBottom` via `Section::loadPage`, `PageLine::inkBottom`, `UITheme::statusTextRise`), setting «Отступ над
+  строкой состояния» (`statusBarGap` 0..20, default 5 `[AI]`); three judges; run report
+  `testcases/reports/2026-11-20_bug16_status_bar_gap_squeeze.md` — gap 0 pixel-identical, 5 → 9 px, 10 → 12 px, same lines
+  and page count (EXP-0042: the font-metric air gate removed). **Waiting:** the owner's default — page
+  `.tmp/mock/out2/status_bar_gap_2026-11-20.md` shown ≈ 11:30 (his answer → `interviews/decisions/status_bar_gap_2026-11-20.decision.json`).
+  **Then:** the debug2 smoke and image (П5 name
   `cp-2.0.0-kccp-1.1.4-debug2.bin`), the OTA test release (`AUTH` 2026-11-18 10:34) after it.
   (e) done: `reports/2026-11-20_crosspoint_flash_budget.md` (`38f7cdb`), sums verified; shown 10:40 (`--notice`).
   **The owner's verdicts 10:36** (`dbfa003`): lists — variant 2 (touch rows max(theme row, 44) + gap 6; button boards

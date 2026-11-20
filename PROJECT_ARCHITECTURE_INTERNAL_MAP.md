@@ -72,6 +72,13 @@ simulator (tools/sim_run.sh) ──shots + log──▶ qa_runs/ ──▶ PR fr
   `currentPageLinks`, `currentPageFootnotes`, the overlay state): `loop()` routes input in priority order (overlay →
   long press = clip selection → Home-button actions → link tap (`currentPageLinks`, beats the zones) → centre tap = menu →
   Back → side taps / swipes / buttons = page turn); the page render keeps the current page's links for hit-testing.
+- `lib/Epub/Epub/Page.{h,cpp}` — one laid-out page from the section cache: `elements` (PageLine — `yPos` = the top of
+  the line box, the line ends at yPos + lineHeight; PageImage; PageDropCap — yPos = the last spanned line's baseline;
+  PageBorderBox — yPos + height), page-relative `links` and `footnotes`; `Section::loadPage` is the one door every
+  reader path loads a page through (render, clip selection, the next-page prefetch). `Page.cpp` holds the element
+  (de)serialization, the render paths and (KCCP 1.1.4, bug 16) `Page::squeezeBottom` — the gap above the status bar
+  taken from the shown page's line gaps (`PageSqueeze.h`, setting `statusBarGap`); `PageLine::glyphBottom` is the
+  parser's clamp formula, `PageLine::inkBottom` the real ink bottom.
 - `src/activities/reader/ReaderToolbarUi.{h,cpp}` — the bottom sheet of a book opened by a centre tap (FreeInkUI on
   `UiAppHost`): the toolbar (chapter ◀ ▶, progress track with a knob, meta line) and the tool row of three icon slots
   Contents / Text / More (`kToolRowH` 80, the active one in an outline pill); a slot opens a PANEL in the same sheet —
