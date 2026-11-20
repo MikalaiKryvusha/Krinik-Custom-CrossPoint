@@ -9,6 +9,9 @@ from PIL import Image, ImageDraw
 
 SUPERSAMPLE = 8  # draw large, then reduce: smooth edges before the 1-bit threshold
 THRESHOLD = 128  # mean coverage of a target pixel at or above this → black
+# half_circle: the circle's diameter as a share of the icon. 2/3 until 2026-11-20 (radius 10.7 px at 32), then ×1.2 on the
+# owner's word «кружок кнопки переключения темы сделать больше радиусом, на прочентов 20» (chat 2026-11-20 09:39) → 0.8.
+HALF_CIRCLE_DIAMETER = 2 / 3 * 1.2
 
 
 def draw(shape, size):
@@ -23,6 +26,7 @@ def draw(shape, size):
     elif shape == "half_circle":
         # iOS-style appearance glyph: a ring with its left half filled (the owner: «круг черный и белый по половине»).
         ring = SUPERSAMPLE * 2
+        m = round(big * (1 - HALF_CIRCLE_DIAMETER) / 2)
         box = [m, m, big - m, big - m]
         d.ellipse(box, fill=255)
         inner = [m + ring, m + ring, big - m - ring, big - m - ring]

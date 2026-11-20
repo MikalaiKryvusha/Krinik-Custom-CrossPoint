@@ -33,12 +33,13 @@ work project. From now on it is a standalone project.
   proofreading — `qa_runs/issue4515/reply_draft_2026-11-20.md` (not sent).
   **State 2026-11-20 10:40 +03:00:** mock-ups (b)(c) + bug 16 shown through the contour 10:33
   (`.tmp/mock/out/mockups_1_1_4_2026-11-20.md`, `--proofread`; the owner was in a full-screen game, the window behind it;
-  his answer → `interviews/decisions/mockups_1_1_4_2026-11-20.decision.json`). Firmware working tree `wip/kccp-1.1.4`
-  UNCOMMITTED: mock-up edits (circle icon, `denseRows` on touch + variant 2 rows 44/6 in `ReaderToolbarUi.cpp`, the
-  status-bar gap 5 in `EpubReaderActivity.cpp`) — kept or reverted by his pick; the version check (g) + the otatest unflags
-  (`KccpVersion.h`, `OtaUpdater.cpp`, `test/kccp_version`, `platformio.ini`) — host 9/9, two mutants red, judge running
-  (it rode along in a mock-up build before its review — the order of the owner's rule was broken, said in chat).
-  Simulator `fix/x4pro-viewable-insets` (local, uncommitted) — the stand's X4 Pro insets = the device's (EXP-0041).
+  his answer → `interviews/decisions/mockups_1_1_4_2026-11-20.decision.json`). **Committed 2026-11-20 10:48 +03:00 (local, П3):**
+  firmware `b2b92ef5` — the version order (g) + the judge's MAJOR + the otatest unflags (host 9/9, two mutants red, the
+  full suite no new failure; it rode along in a mock-up build before its review — the order of the owner's rule was
+  broken, said in chat; two judges after, no BLOCKER/MAJOR); `48d7d52c` — lists variant 2 + the circle (run report
+  `testcases/reports/2026-11-20_kccp114_lists_circle_version.md`). Simulator `fix/x4pro-viewable-insets` `190cff0`
+  (EXP-0041). **Next:** bug 16 — the render-time squeeze + the gap setting; then the debug2 smoke and image (П5 name
+  `cp-2.0.0-kccp-1.1.4-debug2.bin`), the OTA test release (`AUTH` 2026-11-18 10:34) after it.
   (e) done: `reports/2026-11-20_crosspoint_flash_budget.md` (`38f7cdb`), sums verified; shown 10:40 (`--notice`).
   **The owner's verdicts 10:36** (`dbfa003`): lists — variant 2 (touch rows max(theme row, 44) + gap 6; button boards
   unchanged); circle — no remark, kept; bug 16 — no carried line, a render-time squeeze of the page's lines (design in
@@ -46,6 +47,11 @@ work project. From now on it is a standalone project.
   Release-process consequence (the version judge 2026-11-20): GitHub `releases/latest` never returns a release marked
   pre-release, so a `-testN`/`-rcN` must be published as Latest — and then every older KCCP-channel reader (the mother's
   too) is offered it; publish a pre-release as Latest only on the owner's word and put the release back right after.
+  (h) `[OWNER] 2026-11-20 10:42 · review page of the flash report: «есть понимание, что можно выбросить, оптимизировать?»`
+  (`5f76db9`) — answered in chat from the report's numbers: ru+en only — i18n ≈ 393 KB, hyphenation ≈ 284 KB (no feature
+  lost); by his and his mother's use — NotoSans sizes (one size kept ≈ 661 KB), Bluetooth 219, OPDS 107, plugins 81,
+  KOReader 68, LCP 24; two crypto libraries (wolfSSL 177 + mbedTLS 70) — engineering. KCCP build flags; an interview
+  offered (which features they use), not yet asked.
   (g) `[OWNER] 2026-11-20 10:20 · chat: «нужно проверку версий найчить различать -debug1, 2, 3»` → `kccpversion::isNewer`
   orders pre-releases of one KCCP version (label, then the number as a number; the release beats all; no downgrade) —
   with the idea 12 judge's MAJOR (test1 → the real 1.1.4); host cases `DebugBuildsAreOrdered`, `TestReleaseMatrix`.
@@ -206,7 +212,7 @@ The firmware code is not in this repo; it is in the owner's public forks.
 
 | What | Repo · branch | HEAD |
 |---|---|---|
-| KCCP 1.1.4 (in work) = release 1.1.3 + bugs 14, 15 (`d727eeef`) + version 1.1.4-debug1 (`21671e33`, image 2026-11-18 09:44) + idea 11 (`b493939b`, `fb217e8d`) + П5 names / debug2 (`253d5712`) + idea 12 (`357f2101`) — local, not pushed | crosspoint-reader · `wip/kccp-1.1.4` | 357f2101 |
+| KCCP 1.1.4 (in work) = release 1.1.3 + bugs 14, 15 (`d727eeef`) + version 1.1.4-debug1 (`21671e33`, image 2026-11-18 09:44) + idea 11 (`b493939b`, `fb217e8d`) + П5 names / debug2 (`253d5712`) + idea 12 (`357f2101`) + the otatest env (`78d89fcd`) + the version order (`b2b92ef5`) + lists variant 2 and the night circle (`48d7d52c`) — local, not pushed | crosspoint-reader · `wip/kccp-1.1.4` | 48d7d52c |
 | Krinik EPUB Linter (sub-project, clone `epub-linter/`) = 1.0.0 + the figure captions (`krinik_figures.py`, 1.1.0; `8ef77a9`, the judge fixes `6343dcc`) — local, not pushed | `MikalaiKryvusha/Krinik-EPUB-Linter` · `main` | 6343dcc |
 | 1.1.3-debug2 (in work) = debug1 + epic 01 Ф2 «Кнопки в шторке» (`41718c61`) + LF fix (`376bcf11`) + Ф3 the shade (`261e5c63`) + idea 09 the viewer opens by shape (`9027b99a`) + epic 05 Ф1 the Home button model (`be6e9a16`) + Ф2 Home draws the model (`f9ae704b`) + Ф3 the button list scrolls (`a47582b0`) + Ф4 «Кнопки домашнего экрана» on the shared rows screen (`2fa20f3f`) + comment fixes (`5da8f37f`) + bug 07 the Cover Grid polarity (port of upstream `b9c23473`, `07df1501`) + the mama row «Для Мамы» on the Home buttons screen (`da382c2f`, interview #006) + epic 07 Ф1 figure keep-together (`869a5bd3`) + version 1.1.3-debug3 (`0d56b23a`) — local, not pushed; image `cp-2.0.0-krinik-1.1.3-debug3.bin` 2026-11-17 11:29 + epic 07 Ф2 caption (`90406599`, after the image) + epic 05 Ф5 the long tap on a Home button (`de8feb20`) + bug 09 span footnote targets (`df4fab1a`) + bug 11 note backlink (`87b8ead1`) + version 1.1.3-debug4 (`3e223b4d`) — image `cp-2.0.0-krinik-1.1.3-debug4.bin` 2026-11-17 20:32 + bugs 12/13 the shade (`3db21be8`) + version 1.1.3-debug5 (`e4afb337`) — image `cp-2.0.0-krinik-1.1.3-debug5.bin` 2026-11-17 21:24 | crosspoint-reader · `wip/kccp-1.1.3-debug2` | e4afb337 |
 | 1.1.3-debug1 = debug10 + release 1.1.2 merged (`c6998e86`) + version 1.1.3 / `-debug1` + «Точная температура» ≤ 9 % (`d56b53e9`) + the dither test fix (`84c33f85`) + the remote-button test stub fix (`bcbd6dab`, red since debug10 `8538f3dd`) — local, not pushed; two judges passed; host suite 773/781 = the 8 known (`sh tools/host_tests.sh`, 19:22); NO image (the owner 19:01: not needed yet) | crosspoint-reader · `wip/kccp-1.1.3-debug1` | bcbd6dab |
