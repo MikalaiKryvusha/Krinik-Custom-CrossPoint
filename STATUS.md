@@ -6,6 +6,12 @@ work project. From now on it is a standalone project.
 
 ## Where to continue
 
+- **The 2026-11-20 14:14 chat (in work):** `/resume` on the owner's word; the owner's photo from his reader → **idea 14**
+  (`ideas/14_viewer_smart_filter_bw_lowres.md`, the owner 14:19 «это не баг, это импрувмент вьювера картинок»): a smart
+  filter (auto levels, NOT binarization — it destroys the picture's anti-aliasing, the owner 14:20) for black-and-white
+  low-resolution pictures in the viewer; measured: the source (GEB `i_016.jpg`, 36×91) carries JPEG noise, the viewer
+  enlarges ×8.8 and the panel curve turns the near-white noise into light gray. Interview #007 status closed (Q1–Q3/Q5 →
+  the plan, Q4 waits). EXP-0043: a bug the owner found is never «твой баг» (`[OWNER] 2026-11-20 14:16 · chat: «ПРОЕКТ ТВОЙ!»`).
 - **Handover — the 2026-11-20 09:38 chat closed 2026-11-20 12:19 +03:00** on the owner's word `[OWNER] 2026-11-20 12:15 · chat: «и пора закрывать
   чат»`; its full blocks moved verbatim to `PROJECT_HISTORY.md` → «STATUS trim 9». Firmware `wip/kccp-1.1.4` HEAD `8a8b44bc`
   (local, П3) = 1.1.3 + bugs 14/15 + ideas 11/12 + the version order (`b2b92ef5`) + toolbar lists variant 2 and the night

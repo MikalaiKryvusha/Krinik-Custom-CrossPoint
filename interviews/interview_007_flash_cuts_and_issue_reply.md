@@ -4,7 +4,9 @@
 > Source: отчёт `reports/2026-11-20_crosspoint_flash_budget.md` и твой вопрос к нему «есть понимание, что можно выбросить,
 > оптимизировать?» (2026-11-20 10:42); черновик `qa_runs/issue4515/reply_draft_2026-11-20.md`.
 > Created: 2026-11-20
-> Status: ⏳ waiting for the owner
+> Status: ✅ answered 2026-11-20 12:09 +03:00 · applied: Q6 — the reply posted 12:10 (`#issuecomment-7035293194`) ·
+> applying: Q1–Q3, Q5 → the build-variants plan (`STATUS.md` → «Where to continue», item 2) · Q4 answered by a question
+> («что это вообще такое???») — explained in chat 2026-11-20, the removal waits for his word
 
 ## Что уже есть
 

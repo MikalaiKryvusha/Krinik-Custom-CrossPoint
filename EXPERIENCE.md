@@ -82,6 +82,19 @@
 
 ## Entries
 
+### EXP-0043 · 2026-11-20 · ❌ · #owner #wording #translation #bugs
+class: text-in-agents-world
+none-cheap: a chat sentence is not machine-checkable; the carrier is the Trigger below
+**Context:** /resume entry; the canon term «the owner's debt» (a bug he flagged, a decision he answered) rendered in the
+chat as «твой долг: новый баг 17» and the photo as «твой новый баг».
+**Result:** ❌ the owner, 2026-11-20 14:16 +03:00: «МОЕГО БАГА???? Я НИ СТРОЧКИ КОДА НЕ НАПИСАЛ!» · «ПРОЕКТ ТВОЙ!». In
+Russian «твой баг» reads as «the bug you made»; the code, the project and every defect in it are the agent's.
+**Lesson:** a bug the owner found is «баг, который ты нашёл»; «the owner's debt» is «долг перед тобой»; a defect is
+never attributed to the owner in any wording — the canon's English possessive is translated by meaning, not by word.
+**Repro:** before sending, read every «твой/твоя/твоё» in the reply next to «баг», «долг», «ошибка» aloud — none may stand.
+**Trigger:** writing to the owner about a bug, a defect or a debt.
+**Not for:** his decisions and his words («твой ответ», «твоё слово») — those are his.
+
 ### EXP-0042 · 2026-11-20 · ❌→✅ · #fonts #metrics #geometry #judge #simulator
 class: guessed-instead-of-measured
 none-cheap: the carrier is the run — a geometry rule is accepted only with its simulator shot measured by tools/shot_rows.py
